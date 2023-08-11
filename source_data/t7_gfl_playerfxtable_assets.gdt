@@ -1,0 +1,23 @@
+{
+	"zm_playerfx" ( "playerfxtable.gdf" )
+	{
+		"wallRunHand" "fx\\player\\fx_plyr_hand_wallrun_dust.efx"
+		"footstep" "player_footstep"
+		"footstepTracker" ""
+		"land" "player_land"
+		"jumpStart" "player_jump_start"
+		"leapStart" "player_jump_start"
+		"doubleJumpStart" ""
+		"slideLeftKnee" ""
+		"slideRightKnee" ""
+		"slideLeftFoot" "player_slide_left_foot"
+		"playerJet" ""
+		"playerJetWeak" ""
+		"playerJetEMP" ""
+		"underWaterBreathing" "fx\\player\\fx_plyr_swim_bubbles_body.efx"
+		"splashSmall" "fx\\player\\fx_plyr_water_splash_sm.efx"
+		"splashMed" "fx\\player\\fx_plyr_water_splash_md.efx"
+		"splashLarge" "fx\\player\\fx_plyr_water_splash_md.efx"
+		"splashMassive" "fx\\player\\fx_plyr_water_splash_md.efx"
+	}
+}

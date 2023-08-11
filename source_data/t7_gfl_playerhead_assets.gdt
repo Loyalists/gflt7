@@ -1,0 +1,128 @@
+{
+	"ph_cp_male_head_2" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 2"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head4"
+		"gender" "0"
+	}
+	"ph_cp_male_head_4" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 4"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head6"
+		"gender" "0"
+	}
+	"ph_cp_male_head_8" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 8"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head10"
+		"gender" "0"
+	}
+	"ph_cp_male_head_5" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 5"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head7"
+		"gender" "0"
+	}
+	"ph_cp_male_head_3" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 3"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head5"
+		"gender" "0"
+	}
+	"ph_cp_male_head_9" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 9"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head11"
+		"gender" "0"
+	}
+	"ph_cp_male_head_1" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 1"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head3"
+		"gender" "0"
+	}
+	"ph_cp_male_head_6" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 6"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head8"
+		"gender" "0"
+	}
+	"ph_cp_male_head_7" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 7"
+		"iconImage" "t7_menu_cp_silhouette_male"
+		"model" "c_hro_playermale_head9"
+		"gender" "0"
+	}
+	"ph_cp_female_head_7" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 7"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head9"
+		"gender" "1"
+	}
+	"ph_cp_female_head_6" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 6"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head8"
+		"gender" "1"
+	}
+	"ph_cp_female_head_1" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 1"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head3"
+		"gender" "1"
+	}
+	"ph_cp_female_head_5" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 5"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head7"
+		"gender" "1"
+	}
+	"ph_cp_female_head_9" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 9"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head11"
+		"gender" "1"
+	}
+	"ph_cp_female_head_2" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 2"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head4"
+		"gender" "1"
+	}
+	"ph_cp_female_head_8" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 8"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head10"
+		"gender" "1"
+	}
+	"ph_cp_female_head_3" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 3"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head5"
+		"gender" "1"
+	}
+	"ph_cp_female_head_4" ( "playerhead.gdf" )
+	{
+		"displayName" "Head 4"
+		"iconImage" "t7_menu_cp_silhouette_female"
+		"model" "c_hro_playerfemale_head6"
+		"gender" "1"
+	}
+}

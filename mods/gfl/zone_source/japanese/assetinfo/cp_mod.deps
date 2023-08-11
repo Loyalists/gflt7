@@ -1,0 +1,30 @@
+version,3421953,593
+ignore_missing_shipped,core_pre_gfx
+ignore_missing_shipped,core_pre_gfx
+ignore_missing_shipped,core_patch
+ignore_missing_shipped,core_patch
+ignore_missing_shipped,core_gfx
+ignore_missing_shipped,core_gfx
+ignore_missing_shipped,core_post_gfx
+ignore_missing_shipped,core_post_gfx
+ignore_missing_shipped,core_ui
+ignore_missing_shipped,core_ui
+ignore_missing_shipped,core_common
+ignore_missing_shipped,core_common
+ignore_missing_shipped,cp_common
+ignore_missing_shipped,cp_common
+ignore_missing_shipped,cp_patch
+ignore_missing_shipped,cp_patch
+texturecombo,cp_mod
+assetlist,cp_mod
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\loc\cp_mod.zone,1690624529,b19f1970,8217c928,80551571,48e35ba3
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_pre_gfx.csv,1638882744,4f38c8d2,54dbe0ad,a26fe6dd,7ce6fe27
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_patch.csv,1638882651,38d4c92a,0186498f,35efb776,59863d59
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_gfx.csv,1638882743,4cd6243d,831296e2,f2d7c4d8,2e2c9159
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_post_gfx.csv,1638882651,84cba858,ca582e11,0ecc058e,9dc718da
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_ui.csv,1638882690,01204c23,9c4fe4b0,62b426bd,ba245684
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_common.csv,1638882743,a3ad7aa0,5eb6c0c3,18f265cb,cb497d24
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\cp_common.csv,1638882650,8ee06235,a7640b7c,aa51cd70,23867651
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\cp_patch.csv,1638882651,85cbec15,508b9569,3f7ad166,c4149f3a
+errorcount,0

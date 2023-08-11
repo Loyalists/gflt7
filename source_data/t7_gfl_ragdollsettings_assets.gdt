@@ -1,0 +1,16 @@
+{
+	"ragdollsettings" ( "ragdollsettings.gdf" )
+	{
+		"configstringFileType" "scriptbundle"
+		"femaleIdleAnim" "ai_fem_rifle_stn_exposed_dth_pose"
+		"humanIdleAnim" "ai_base_rifle_stn_exposed_dth_pose"
+		"monkeyIdleAnim" "rtrg_ai_zm_dlc5_monkey_dth_pose"
+		"playerIdleAnim" "pb_death_base_pose"
+		"robotIdleAnim" "ai_robot_base_stn_exposed_dth_pose"
+		"type" "ragdollsettings"
+		"vmType" "None"
+		"warlordIdleAnim" "ai_wrlrd_stn_combat_dth_pose"
+		"zombie_quadIdleAnim" "ai_zm_dlc5_quad_dth_pose"
+		"zombieIdleAnim" "ai_zombie_base_dth_pose"
+	}
+}

@@ -1,0 +1,5 @@
+index,type,name,resident,streamed,parentStack
+1,string,,0,0,||assetlist
+2,sound,zm_mod.en,28,0,||assetlist
+3,keyvaluepairs,en_zm_mod,1119,0,||assetlist
+4,assetlist,,32,0,

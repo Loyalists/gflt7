@@ -1,0 +1,3001 @@
+{
+	"pbt_cp_male_helmet_none" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_NOHELMET"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "tag_origin"
+	}
+	"pbt_cp_male_helmet_01_prologue" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_PROLOGUE"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet1"
+	}
+	"pbt_cp_male_helmet_02_newworld" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_NEWWORLD"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet2"
+	}
+	"pbt_cp_male_helmet_03_blackstation" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_BLACKSTATION"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet3"
+	}
+	"pbt_cp_male_helmet_04_biodomes" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_BIODOMES"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet4"
+	}
+	"pbt_cp_male_helmet_05_sgen" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_SGEN"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet5"
+	}
+	"pbt_cp_male_helmet_06_vengeance" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_VENGEANCE"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet6"
+	}
+	"pbt_cp_male_helmet_07_ramses" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_RAMSES"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet7"
+	}
+	"pbt_cp_male_helmet_08_infection" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_INFECTION"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet8"
+	}
+	"pbt_cp_male_helmet_09_aquifer" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_AQUIFER"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet9"
+	}
+	"pbt_cp_male_helmet_10_lotus" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_LOTUS"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet10"
+	}
+	"pbt_cp_male_helmet_11_zurich" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_ZURICH"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet11"
+	}
+	"pbt_cp_male_helmet_12_endgame" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_ENDGAME"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playermale_helmet12"
+	}
+	"pbt_zm_helmet_no_model" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "NO_HEAD"
+		"iconImage" ""
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "tag_origin"
+	}
+	"pbt_cp_female_helmet_none" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_NOHELMET"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "tag_origin"
+	}
+	"pbt_cp_female_helmet_01_prologue" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_PROLOGUE"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet1"
+	}
+	"pbt_cp_female_helmet_02_newworld" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_NEWWORLD"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet2"
+	}
+	"pbt_cp_female_helmet_03_blackstation" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_BLACKSTATION"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet3"
+	}
+	"pbt_cp_female_helmet_04_biodomes" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_BIODOMES"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet4"
+	}
+	"pbt_cp_female_helmet_05_sgen" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_SGEN"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet5"
+	}
+	"pbt_cp_female_helmet_06_vengeance" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_VENGEANCE"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet6"
+	}
+	"pbt_cp_female_helmet_07_ramses" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_RAMSES"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet7"
+	}
+	"pbt_cp_female_helmet_08_infection" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_INFECTION"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet8"
+	}
+	"pbt_cp_female_helmet_09_aquifer" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_AQUIFER"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet9"
+	}
+	"pbt_cp_female_helmet_10_lotus" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_LOTUS"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet10"
+	}
+	"pbt_cp_female_helmet_11_zurich" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_ZURICH"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet11"
+	}
+	"pbt_cp_female_helmet_12_endgame" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "CPUI_OUTFIT_ENDGAME"
+		"iconImage" "menu_mp_lobby_none_selected"
+		"impactTypeCorpse" "flesh"
+		"impactType" "flesh"
+		"xmodel" "c_hro_playefermale_helmet12"
+	}
+	"pbt_loot_theme_mercenary_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_mercenary_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head3_skin3"
+	}
+	"pbt_loot_theme_mercenary_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head1_skin4"
+	}
+	"pbt_loot_theme_mercenary_head4_bronze" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_BRONZE"
+		"iconImage" "t7_pbt_loot_mercenary_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head4_skin3"
+	}
+	"pbt_loot_theme_mercenary_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head2_skin4"
+	}
+	"pbt_loot_theme_mercenary_head1_dragon" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_MERCENARY_DRAGON"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head1_dragon"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head1_skin5"
+	}
+	"pbt_loot_theme_mercenary_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head4_skin4"
+	}
+	"pbt_loot_theme_mercenary_head2_samurai" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_SAMURAI"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head2_samurai"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head2_skin5"
+	}
+	"pbt_loot_theme_mercenary_head4_wilddog" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_WILD_DOG"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head4_wilddog"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head4_skin5"
+	}
+	"pbt_loot_theme_mercenary_head1_haida" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_MERCENARY_HAIDA"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head1_haida"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head1_skin6"
+	}
+	"pbt_loot_theme_mercenary_head5_fury" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_MERCENARY_FURY"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head5_fury"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head5_skin1"
+	}
+	"pbt_loot_theme_mercenary_head6_goblinking" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_GOBLINKING"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head6_goblinking"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head6_skin1"
+	}
+	"pbt_loot_theme_mercenary_head3_poseidon" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_POSEIDON"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head3_poseidon"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head3_skin4"
+	}
+	"pbt_loot_theme_mercenary_head4_jade" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_JADE"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head4_jade"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head4_skin6"
+	}
+	"pbt_loot_theme_mercenary_head2_cobra" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_COBRA"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head2_cobra"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head2_skin6"
+	}
+	"pbt_loot_theme_mercenary_head3_frankenstein" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_FRANKENSTEIN"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head3_frankenstein"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head3_skin5"
+	}
+	"pbt_loot_theme_mercenary_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head5_skin2"
+	}
+	"pbt_loot_theme_mercenary_head4_tigershark" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_TIGERSHARK"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head4_tigershark"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head4_skin7"
+	}
+	"pbt_loot_theme_mercenary_head6_bonewarrior" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_BONE_WARRIOR"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head6_bonewarrior"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head6_skin2"
+	}
+	"pbt_loot_theme_mercenary_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head3_skin6"
+	}
+	"pbt_loot_theme_mercenary_head6_golem" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_GOLEM"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head6_golem"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head6_skin3"
+	}
+	"pbt_loot_theme_mercenary_head5_actionfigure" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_MERCENARY_ACTIONFIGURE"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head5_actionfigure"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head5_skin3"
+	}
+	"pbt_loot_theme_mercenary_head5_frost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_FROST"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head5_frost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head5_skin4"
+	}
+	"pbt_loot_theme_mercenary_head1_scrum" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_MERCENARY_SCRUM"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head1_scrum"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head1_skin7"
+	}
+	"pbt_loot_theme_mercenary_head6_death_racer" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_DEATH_RACER"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head6_death_racer"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head6_skin4"
+	}
+	"pbt_loot_theme_mercenary_head5_scorch" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_SCORCH"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head5_scorch"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head5_skin5"
+	}
+	"pbt_loot_theme_mercenary_head1_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "0"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head1_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head1_skin8"
+	}
+	"pbt_loot_theme_mercenary_head4_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head4_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head4_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head4_skin8"
+	}
+	"pbt_loot_theme_mercenary_head2_knightmare" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_MERCENARY_KNIGHTMARE"
+		"iconImage" "t7_pbt_loot_theme_mercenary_head2_knightmare"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_warrior_mpc_head2_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_warrior_head2_skin7"
+	}
+	"pbt_loot_theme_outrider_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_outrider_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head3_skin3"
+	}
+	"pbt_loot_theme_outrider_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_outrider_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head1_skin4"
+	}
+	"pbt_loot_theme_outrider_head4_matador" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_MATADOR"
+		"iconImage" "t7_pbt_loot_outrider_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head4_skin3"
+	}
+	"pbt_loot_theme_outrider_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_outrider_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_hunter_head2_skin4"
+	}
+	"pbt_loot_theme_outrider_head1_muertos" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_MUERTOS"
+		"iconImage" "t7_pbt_loot_theme_outrider_head1_muertos"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head1_skin5"
+	}
+	"pbt_loot_theme_outrider_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_outrider_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head4_skin4"
+	}
+	"pbt_loot_theme_outrider_head2_ashblood" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_ASH_AND_BLOOD"
+		"iconImage" "t7_pbt_loot_theme_outrider_head2_ashblood"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_hunter_head2_skin5"
+	}
+	"pbt_loot_theme_outrider_head4_angelofdeath" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_ANGEL_OF_DEATH"
+		"iconImage" "t7_pbt_loot_theme_outrider_head4_angelofdeath"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head4_skin5"
+	}
+	"pbt_loot_theme_outrider_head1_pharaoh" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_PHARAOH"
+		"iconImage" "t7_pbt_loot_theme_outrider_head1_pharaoh"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head1_skin6"
+	}
+	"pbt_loot_theme_outrider_head5_tango" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_TANGO"
+		"iconImage" "t7_pbt_loot_theme_outrider_head5_tango"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head5_skin1"
+	}
+	"pbt_loot_theme_outrider_head6_posh" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_POSH"
+		"iconImage" "t7_pbt_loot_theme_outrider_head6_posh"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head6_skin1"
+	}
+	"pbt_loot_theme_outrider_head3_ensnared" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_ENSNARED"
+		"iconImage" "t7_pbt_loot_theme_outrider_head3_ensnared"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head3_skin4"
+	}
+	"pbt_loot_theme_outrider_head4_armadeiras" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_ARMADEIRAS"
+		"iconImage" "t7_pbt_loot_theme_outrider_head4_armadeiras"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head4_skin6"
+	}
+	"pbt_loot_theme_outrider_head2_flashdance" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_FLASHDANCE"
+		"iconImage" "t7_pbt_loot_theme_outrider_head2_flashdance"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_hunter_head2_skin6"
+	}
+	"pbt_loot_theme_outrider_head3_phoenix" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_PHOENIX"
+		"iconImage" "t7_pbt_loot_theme_outrider_head3_phoenix"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head3_skin5"
+	}
+	"pbt_loot_theme_outrider_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_outrider_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head5_skin2"
+	}
+	"pbt_loot_theme_outrider_head4_cliffhanger" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_CLIFFHANGER"
+		"iconImage" "t7_pbt_loot_theme_outrider_head4_cliffhanger"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head4_skin7"
+	}
+	"pbt_loot_theme_outrider_head6_bride" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_BRIDE"
+		"iconImage" "t7_pbt_loot_theme_outrider_head6_bride"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head6_skin2"
+	}
+	"pbt_loot_theme_outrider_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_outrider_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head3_skin6"
+	}
+	"pbt_loot_theme_outrider_head6_reggae" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_REGGAE"
+		"iconImage" "t7_pbt_loot_theme_outrider_head6_reggae"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head6_skin3"
+	}
+	"pbt_loot_theme_outrider_head5_bloodrite" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_BLOODRITE"
+		"iconImage" "t7_pbt_loot_theme_outrider_head5_bloodrite"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head5_skin3"
+	}
+	"pbt_loot_theme_outrider_head5_angelofmercy" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_ANGELOFMERCY"
+		"iconImage" "t7_pbt_loot_theme_outrider_head5_angelofmercy"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head5_skin4"
+	}
+	"pbt_loot_theme_outrider_head1_constrictor" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_CONSTRICTOR"
+		"iconImage" "t7_pbt_loot_theme_outrider_head1_constrictor"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head1_skin7"
+	}
+	"pbt_loot_theme_outrider_head6_mystic" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_MYSTIC"
+		"iconImage" "t7_pbt_loot_theme_outrider_head6_mystic"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head6_skin4"
+	}
+	"pbt_loot_theme_outrider_head5_omega3" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_OMEGA3"
+		"iconImage" "t7_pbt_loot_theme_outrider_head5_omega3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head5_skin5"
+	}
+	"pbt_loot_theme_outrider_head1_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_outrider_head1_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head1_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head1_skin8"
+	}
+	"pbt_loot_theme_outrider_head5_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_outrider_head5_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_head5_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head5_skin6"
+	}
+	"pbt_loot_theme_outrider_head3_anhanga" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_OUTRIDER_ANHANGA"
+		"iconImage" "t7_pbt_loot_theme_outrider_head3_anhanga"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_hunter_mpc_head3_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_hunter_head3_skin7"
+	}
+	"pbt_loot_theme_technomancer_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_technomancer_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head3_skin3"
+	}
+	"pbt_loot_theme_technomancer_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head1_skin4"
+	}
+	"pbt_loot_theme_technomancer_head4_vampire" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_VAMPIRE"
+		"iconImage" "t7_pbt_loot_technomancer_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head4_skin3"
+	}
+	"pbt_loot_theme_technomancer_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head2_skin4"
+	}
+	"pbt_loot_theme_technomancer_head1_templar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_TEMPLAR"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head1_templar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head1_skin5"
+	}
+	"pbt_loot_theme_technomancer_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head4_skin4"
+	}
+	"pbt_loot_theme_technomancer_head2_deity" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_DEITY"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head2_deity"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head2_skin5"
+	}
+	"pbt_loot_theme_technomancer_head4_tribaltech" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_TRIBAL_TECH"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head4_tribaltech"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head4_skin5"
+	}
+	"pbt_loot_theme_technomancer_head1_ukpunk" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_UKPUNK"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head1_ukpunk"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head1_skin6"
+	}
+	"pbt_loot_theme_technomancer_head5_paladin" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_PALADIN"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head5_paladin"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head5_skin1"
+	}
+	"pbt_loot_theme_technomancer_head6_grapsus" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_GRAPSUS"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head6_grapsus"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head6_skin1"
+	}
+	"pbt_loot_theme_technomancer_head3_paradise" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_PARADISE"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head3_paradise"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head3_skin4"
+	}
+	"pbt_loot_theme_technomancer_head4_art_deco" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_ART_DECO"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head4_art_deco"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head4_skin6"
+	}
+	"pbt_loot_theme_technomancer_head2_mantis" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_MANTIS"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head2_mantis"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head2_skin6"
+	}
+	"pbt_loot_theme_technomancer_head3_bpm" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_BPM"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head3_bpm"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head3_skin5"
+	}
+	"pbt_loot_theme_technomancer_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head5_skin2"
+	}
+	"pbt_loot_theme_technomancer_head4_cyborg" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_CYBORG"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head4_cyborg"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head4_skin7"
+	}
+	"pbt_loot_theme_technomancer_head6_brainian" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_BRAINIAN"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head6_brainian"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head6_skin2"
+	}
+	"pbt_loot_theme_technomancer_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head3_skin6"
+	}
+	"pbt_loot_theme_technomancer_head6_mad_scientist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_MAD_SCIENTIST"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head6_mad_scientist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head6_skin3"
+	}
+	"pbt_loot_theme_technomancer_head5_heatstroke" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_HEATSTROKE"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head5_heatstroke"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head5_skin3"
+	}
+	"pbt_loot_theme_technomancer_head5_highvoltage" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_HIGHVOLTAGE"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head5_highvoltage"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head5_skin4"
+	}
+	"pbt_loot_theme_technomancer_head1_strix" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_STRIX"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head1_strix"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head1_skin7"
+	}
+	"pbt_loot_theme_technomancer_head6_scarab" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_SCARAB"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head6_scarab"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head6_skin4"
+	}
+	"pbt_loot_theme_technomancer_head5_sultan" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_SULTAN"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head5_sultan"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head5_skin5"
+	}
+	"pbt_loot_theme_technomancer_head4_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head4_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head4_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head4_skin8"
+	}
+	"pbt_loot_theme_technomancer_head3_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head3_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head3_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head3_skin7"
+	}
+	"pbt_loot_theme_technomancer_head4_oracle" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TECHNOMANCER_ORACLE"
+		"iconImage" "t7_pbt_loot_theme_technomancer_head4_oracle"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_technomancer_mpc_head4_skin9"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_techno_head4_skin9"
+	}
+	"pbt_loot_theme_battery_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_battery_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head3_skin3"
+	}
+	"pbt_loot_theme_battery_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_battery_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head1_skin4"
+	}
+	"pbt_loot_theme_battery_head4_comics" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_COMICS"
+		"iconImage" "t7_pbt_loot_battery_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head4_skin3"
+	}
+	"pbt_loot_theme_battery_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_battery_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head2_skin4"
+	}
+	"pbt_loot_theme_battery_head1_80s_flash" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_80S_FLASH"
+		"iconImage" "t7_pbt_loot_theme_battery_head1_80s_flash"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head1_skin5"
+	}
+	"pbt_loot_theme_battery_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_battery_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head4_skin4"
+	}
+	"pbt_loot_theme_battery_head2_jailbird" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_JAIL_BIRD"
+		"iconImage" "t7_pbt_loot_theme_battery_head2_jailbird"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head2_skin5"
+	}
+	"pbt_loot_theme_battery_head4_steampunk" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_STEAMPUNK"
+		"iconImage" "t7_pbt_loot_theme_battery_head4_steampunk"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head4_skin5"
+	}
+	"pbt_loot_theme_battery_head1_mma" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_MMA"
+		"iconImage" "t7_pbt_loot_theme_battery_head1_mma"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head1_skin6"
+	}
+	"pbt_loot_theme_battery_head5_prototype" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_PROTOTYPE"
+		"iconImage" "t7_pbt_loot_theme_battery_head5_prototype"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head5_skin1"
+	}
+	"pbt_loot_theme_battery_head6_valkyrie" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_VALKYRIE"
+		"iconImage" "t7_pbt_loot_theme_battery_head6_valkyrie"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head6_skin1"
+	}
+	"pbt_loot_theme_battery_head3_pitcrew" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_PIT_CREW"
+		"iconImage" "t7_pbt_loot_theme_battery_head3_pitcrew"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head3_skin4"
+	}
+	"pbt_loot_theme_battery_head4_bomber" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_BOMBER"
+		"iconImage" "t7_pbt_loot_theme_battery_head4_bomber"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head4_skin6"
+	}
+	"pbt_loot_theme_battery_head2_doubleplay" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_DOUBLE_PLAY"
+		"iconImage" "t7_pbt_loot_theme_battery_head2_doubleplay"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head2_skin6"
+	}
+	"pbt_loot_theme_battery_head3_stuntgirl" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_STUNT_GIRL"
+		"iconImage" "t7_pbt_loot_theme_battery_head3_stuntgirl"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head3_skin5"
+	}
+	"pbt_loot_theme_battery_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_battery_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head5_skin2"
+	}
+	"pbt_loot_theme_battery_head4_halfpipe" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_HALFPIPE"
+		"iconImage" "t7_pbt_loot_theme_battery_head4_halfpipe"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head4_skin7"
+	}
+	"pbt_loot_theme_battery_head6_gorgon" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_GORGON"
+		"iconImage" "t7_pbt_loot_theme_battery_head6_gorgon"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head6_skin2"
+	}
+	"pbt_loot_theme_battery_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_battery_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head3_skin6"
+	}
+	"pbt_loot_theme_battery_head6_berserker" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_BERSERKER"
+		"iconImage" "t7_pbt_loot_theme_battery_head6_berserker"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head6_skin3"
+	}
+	"pbt_loot_theme_battery_head5_paintball" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_PAINTBALL"
+		"iconImage" "t7_pbt_loot_theme_battery_head5_paintball"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head5_skin3"
+	}
+	"pbt_loot_theme_battery_head5_afterburn" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_AFTERBURN"
+		"iconImage" "t7_pbt_loot_theme_battery_head5_afterburn"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head5_skin4"
+	}
+	"pbt_loot_theme_battery_head1_anarchy" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_ANARCHY"
+		"iconImage" "t7_pbt_loot_theme_battery_head1_anarchy"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head1_skin7"
+	}
+	"pbt_loot_theme_battery_head6_torque" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_TORQUE"
+		"iconImage" "t7_pbt_loot_theme_battery_head6_torque"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head6_skin4"
+	}
+	"pbt_loot_theme_battery_head5_sting" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_STING"
+		"iconImage" "t7_pbt_loot_theme_battery_head5_sting"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head5_skin5"
+	}
+	"pbt_loot_theme_battery_head1_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_battery_head1_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head1_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head1_skin8"
+	}
+	"pbt_loot_theme_battery_head3_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_battery_head3_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_mpc_head3_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head3_skin7"
+	}
+	"pbt_loot_theme_battery_head5_pixel" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_BATTERY_ARCADE"
+		"iconImage" "t7_pbt_loot_theme_battery_head5_arcade"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_battery_head5_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_battery_head5_skin6"
+	}
+	"pbt_loot_theme_enforcer_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_enforcer_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head3_skin3"
+	}
+	"pbt_loot_theme_enforcer_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head1_skin4"
+	}
+	"pbt_loot_theme_enforcer_head4_school" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_SCHOOL"
+		"iconImage" "t7_pbt_loot_enforcer_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head4_skin3"
+	}
+	"pbt_loot_theme_enforcer_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head2_skin4"
+	}
+	"pbt_loot_theme_enforcer_head1_imperial" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_IMPERIAL"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head1_imperial"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head1_skin5"
+	}
+	"pbt_loot_theme_enforcer_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head4_skin4"
+	}
+	"pbt_loot_theme_enforcer_head2_goth" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_GOTH"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head2_goth"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head2_skin5"
+	}
+	"pbt_loot_theme_enforcer_head4_future_cop" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_FUTURE_COP"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head4_future_cop"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head4_skin5"
+	}
+	"pbt_loot_theme_enforcer_head1_gangsta" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_GANGSTA"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head1_gangsta"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head1_skin6"
+	}
+	"pbt_loot_theme_enforcer_head3_luchadora" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_LUCHADORA"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head3_luchadora"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head3_skin4"
+	}
+	"pbt_loot_theme_enforcer_head4_freakshow" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_FREAKSHOW"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head4_freakshow"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head4_skin6"
+	}
+	"pbt_loot_theme_enforcer_head5_outlaw" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_OUTLAW"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head5_outlaw"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head5_skin1"
+	}
+	"pbt_loot_theme_enforcer_head6_sakura" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_SAKURA"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head6_sakura"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head6_skin1"
+	}
+	"pbt_loot_theme_enforcer_head2_metalhead" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_METAL_HEAD"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head2_metalhead"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head2_skin6"
+	}
+	"pbt_loot_theme_enforcer_head3_shuriken" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_SHURIKEN"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head3_shuriken"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head3_skin5"
+	}
+	"pbt_loot_theme_enforcer_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head5_skin2"
+	}
+	"pbt_loot_theme_enforcer_head4_imperator" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_IMPERATOR"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head4_imperator"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head4_skin7"
+	}
+	"pbt_loot_theme_enforcer_head6_bloodsucker" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_BLOODSUCKER"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head6_bloodsucker"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head6_skin2"
+	}
+	"pbt_loot_theme_enforcer_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head3_skin6"
+	}
+	"pbt_loot_theme_enforcer_head6_psycho_nurse" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_PSYCHO_NURSE"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head6_psycho_nurse"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head6_skin3"
+	}
+	"pbt_loot_theme_enforcer_head5_tombstone" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_TOMBSTONE"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head5_tombstone"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head5_skin3"
+	}
+	"pbt_loot_theme_enforcer_head5_sicaria" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_SICARIA"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head5_sicaria"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head5_skin4"
+	}
+	"pbt_loot_theme_enforcer_head1_war" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_ARTOFWAR"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head1_war"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head1_skin7"
+	}
+	"pbt_loot_theme_enforcer_head6_pixie" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_PIXIE"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head6_pixie"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head6_skin4"
+	}
+	"pbt_loot_theme_enforcer_head5_desperada" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_DESPERADA"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head5_desperada"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head5_skin5"
+	}
+	"pbt_loot_theme_enforcer_head2_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head2_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head2_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head2_skin7"
+	}
+	"pbt_loot_theme_enforcer_head3_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head3_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head3_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head3_skin7"
+	}
+	"pbt_loot_theme_enforcer_head4_terracotta" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ENFORCER_TERRACOTTA"
+		"iconImage" "t7_pbt_loot_theme_enforcer_head4_terracotta"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_gunslinger_mpc_head4_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_gunslinger_head4_skin8"
+	}
+	"pbt_loot_theme_trapper_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_trapper_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head3_skin3"
+	}
+	"pbt_loot_theme_trapper_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_trapper_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head1_skin4"
+	}
+	"pbt_loot_theme_trapper_head4_cannibal" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_CANNIBAL"
+		"iconImage" "t7_pbt_loot_trapper_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head4_skin3"
+	}
+	"pbt_loot_theme_trapper_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_trapper_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head2_skin4"
+	}
+	"pbt_loot_theme_trapper_head1_arapaima" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_ARAPAIMA"
+		"iconImage" "t7_pbt_loot_theme_trapper_head1_arapaima"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head1_skin5"
+	}
+	"pbt_loot_theme_trapper_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_trapper_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head4_skin4"
+	}
+	"pbt_loot_theme_trapper_head2_poisonfrog" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_POISON_FROG"
+		"iconImage" "t7_pbt_loot_theme_trapper_head2_poisonfrog"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head2_skin5"
+	}
+	"pbt_loot_theme_trapper_head4_safari" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_SAFARI"
+		"iconImage" "t7_pbt_loot_theme_trapper_head4_safari"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head4_skin5"
+	}
+	"pbt_loot_theme_trapper_head1_mayan" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_MAYAN"
+		"iconImage" "t7_pbt_loot_theme_trapper_head1_mayan"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head1_skin6"
+	}
+	"pbt_loot_theme_trapper_head3_oni" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_ONI"
+		"iconImage" "t7_pbt_loot_theme_trapper_head3_oni"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head3_skin4"
+	}
+	"pbt_loot_theme_trapper_head4_druid" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_DRUID"
+		"iconImage" "t7_pbt_loot_theme_trapper_head4_druid"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head4_skin6"
+	}
+	"pbt_loot_theme_trapper_head5_doomsday" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_DOOMSDAY"
+		"iconImage" "t7_pbt_loot_theme_trapper_head5_doomsday"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head5_skin1"
+	}
+	"pbt_loot_theme_trapper_head6_black_metal" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_BLACK_METAL"
+		"iconImage" "t7_pbt_loot_theme_trapper_head6_black_metal"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head6_skin1"
+	}
+	"pbt_loot_theme_trapper_head2_timber" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_TIMBER"
+		"iconImage" "t7_pbt_loot_theme_trapper_head2_timber"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head2_skin6"
+	}
+	"pbt_loot_theme_trapper_head3_mummy" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_MUMMY"
+		"iconImage" "t7_pbt_loot_theme_trapper_head3_mummy"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head3_skin5"
+	}
+	"pbt_loot_theme_trapper_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_trapper_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head5_skin2"
+	}
+	"pbt_loot_theme_trapper_head4_raven" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_RAVEN"
+		"iconImage" "t7_pbt_loot_theme_trapper_head4_raven"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head4_skin7"
+	}
+	"pbt_loot_theme_trapper_head6_demon" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_DEMON"
+		"iconImage" "t7_pbt_loot_theme_trapper_head6_lucifer"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head6_skin2"
+	}
+	"pbt_loot_theme_trapper_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_trapper_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head3_skin6"
+	}
+	"pbt_loot_theme_trapper_head6_garden_gnomad" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_GARDEN_GNOMAD"
+		"iconImage" "t7_pbt_loot_theme_trapper_head6_garden_gnomad"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head6_skin3"
+	}
+	"pbt_loot_theme_trapper_head5_noogie" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_NOOGIE"
+		"iconImage" "t7_pbt_loot_theme_trapper_head5_noogie"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head5_skin3"
+	}
+	"pbt_loot_theme_trapper_head5_primal" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_PRIMAL"
+		"iconImage" "t7_pbt_loot_theme_trapper_head5_primal"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head5_skin4"
+	}
+	"pbt_loot_theme_trapper_head1_undertow" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_UNDERTOW"
+		"iconImage" "t7_pbt_loot_theme_trapper_head1_undertow"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head1_skin7"
+	}
+	"pbt_loot_theme_trapper_head6_dark_arts" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_DARK_ARTS"
+		"iconImage" "t7_pbt_loot_theme_trapper_head6_dark_arts"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head6_skin4"
+	}
+	"pbt_loot_theme_trapper_head5_roadkill" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_ROADKILL"
+		"iconImage" "t7_pbt_loot_theme_trapper_head5_roadkill"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_nomad_head5_skin5"
+	}
+	"pbt_loot_theme_trapper_head1_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_trapper_head1_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head1_skin9"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head1_skin9"
+	}
+	"pbt_loot_theme_trapper_head2_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_trapper_head2_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head2_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head2_skin7"
+	}
+	"pbt_loot_theme_trapper_head4_slither" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_TRAPPER_SLITHER"
+		"iconImage" "t7_pbt_loot_theme_trapper_head4_slither"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_nomad_mpc_head4_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_ct7_mp_nomad_head4_skin8"
+	}
+	"pbt_loot_theme_reaper_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_reaper_head3_skin3"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head3_skin3"
+	}
+	"pbt_loot_theme_reaper_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_reaper_head1_night"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head1_skin4"
+	}
+	"pbt_loot_theme_reaper_head4_invader" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_INVADER"
+		"iconImage" "t7_pbt_loot_reaper_head4_skin3"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head4_skin3"
+	}
+	"pbt_loot_theme_reaper_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_reaper_head2_caterpillar"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head2_skin4"
+	}
+	"pbt_loot_theme_reaper_head1_scribe" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_SCRIBE"
+		"iconImage" "t7_pbt_loot_theme_reaper_head1_scribe"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head1_skin5"
+	}
+	"pbt_loot_theme_reaper_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_reaper_head4_geist"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head4_skin4"
+	}
+	"pbt_loot_theme_reaper_head2_jester" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_JESTER"
+		"iconImage" "t7_pbt_loot_theme_reaper_head2_jester"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head2_skin5"
+	}
+	"pbt_loot_theme_reaper_head4_maggot" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_MAGGOT"
+		"iconImage" "t7_pbt_loot_theme_reaper_head4_maggot"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head4_skin5"
+	}
+	"pbt_loot_theme_reaper_head1_supercar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_SUPER_CAR"
+		"iconImage" "t7_pbt_loot_theme_reaper_head1_supercar"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head1_skin6"
+	}
+	"pbt_loot_theme_reaper_head3_hydro" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_HYDRO"
+		"iconImage" "t7_pbt_loot_theme_reaper_head3_abyss"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head3_skin4"
+	}
+	"pbt_loot_theme_reaper_head4_series4" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_SERIES_4"
+		"iconImage" "t7_pbt_loot_theme_reaper_head4_series4"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head4_skin6"
+	}
+	"pbt_loot_theme_reaper_head5_warden" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_WARDEN"
+		"iconImage" "t7_pbt_loot_theme_reaper_head5_warden"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head5_skin1"
+	}
+	"pbt_loot_theme_reaper_head6_graphic" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_GRAPHIC"
+		"iconImage" "t7_pbt_loot_theme_reaper_head6_graphic"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head6_skin1"
+	}
+	"pbt_loot_theme_reaper_head2_zulu" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_ZULU"
+		"iconImage" "t7_pbt_loot_theme_reaper_head2_zulu"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head2_skin6"
+	}
+	"pbt_loot_theme_reaper_head3_pinball" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_PINBALL"
+		"iconImage" "t7_pbt_loot_theme_reaper_head3_pinball"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head3_skin5"
+	}
+	"pbt_loot_theme_reaper_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_reaper_head5_panda"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head5_skin2"
+	}
+	"pbt_loot_theme_reaper_head4_tarantula" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_TARANTULA"
+		"iconImage" "t7_pbt_loot_theme_reaper_head4_tarantula"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head4_skin7"
+	}
+	"pbt_loot_theme_reaper_head6_hearse" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_HEARSE"
+		"iconImage" "t7_pbt_loot_theme_reaper_head6_hearse"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head6_skin2"
+	}
+	"pbt_loot_theme_reaper_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_reaper_head3_ardent"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head3_skin6"
+	}
+	"pbt_loot_theme_reaper_head6_puzzle" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_PUZZLE"
+		"iconImage" "t7_pbt_loot_theme_reaper_head6_puzzle"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head6_skin3"
+	}
+	"pbt_loot_theme_reaper_head5_covert" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_COVERT"
+		"iconImage" "t7_pbt_loot_theme_reaper_head5_covert"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head5_skin3"
+	}
+	"pbt_loot_theme_reaper_head5_royalorder" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_ROYALORDER"
+		"iconImage" "t7_pbt_loot_theme_reaper_head5_royalorder"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head5_skin4"
+	}
+	"pbt_loot_theme_reaper_head1_fracture" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_FRACTURE"
+		"iconImage" "t7_pbt_loot_theme_reaper_head1_fracture"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head1_skin7"
+	}
+	"pbt_loot_theme_reaper_head6_time_to_die" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_TIME_TO_DIE"
+		"iconImage" "t7_pbt_loot_theme_reaper_head6_time_to_die"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head6_skin4"
+	}
+	"pbt_loot_theme_reaper_head5_fstop" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_FSTOP"
+		"iconImage" "t7_pbt_loot_theme_reaper_head5_fstop"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head5_skin5"
+	}
+	"pbt_loot_theme_reaper_head1_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_reaper_head1_permafrost"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head1_skin9"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head1_skin9"
+	}
+	"pbt_loot_theme_reaper_head4_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_reaper_head4_hive"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head4_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head4_skin8"
+	}
+	"pbt_loot_theme_reaper_head1_mach3" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_REAPER_MACH3"
+		"iconImage" "t7_pbt_loot_theme_reaper_head1_mach3"
+		"impactTypeCorpse" "robot light"
+		"impactType" "robot light"
+		"xmodel" "c_t7_mp_reaper_mpc_head1_skin10"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_reaper_head1_skin10"
+	}
+	"pbt_loot_theme_spectre_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_spectre_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head3_skin3"
+	}
+	"pbt_loot_theme_spectre_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_spectre_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head1_skin4"
+	}
+	"pbt_loot_theme_spectre_head4_psychodelic" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_PSYCHODELIC"
+		"iconImage" "t7_pbt_loot_spectre_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head4_skin3"
+	}
+	"pbt_loot_theme_spectre_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_spectre_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head2_skin4"
+	}
+	"pbt_loot_theme_spectre_head1_illuminati" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_ILLUMINATI"
+		"iconImage" "t7_pbt_loot_theme_spectre_head1_illuminati"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head1_skin5"
+	}
+	"pbt_loot_theme_spectre_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_spectre_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head4_skin4"
+	}
+	"pbt_loot_theme_spectre_head2_venom" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_VENOM"
+		"iconImage" "t7_pbt_loot_theme_spectre_head2_venom"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head2_skin5"
+	}
+	"pbt_loot_theme_spectre_head4_kabuki" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_KABUKI"
+		"iconImage" "t7_pbt_loot_theme_spectre_head4_kabuki"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head4_skin5"
+	}
+	"pbt_loot_theme_spectre_head1_toontown" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_TOON_TOWN"
+		"iconImage" "t7_pbt_loot_theme_spectre_head1_toontown"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head1_skin6"
+	}
+	"pbt_loot_theme_spectre_head3_darkstar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_DARKSTAR"
+		"iconImage" "t7_pbt_loot_theme_spectre_head3_darkstar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head3_skin4"
+	}
+	"pbt_loot_theme_spectre_head4_dragonfly" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_DRAGONFLY"
+		"iconImage" "t7_pbt_loot_theme_spectre_head4_dragonfly"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head4_skin6"
+	}
+	"pbt_loot_theme_spectre_head2_shank" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_SHANK"
+		"iconImage" "t7_pbt_loot_theme_spectre_head2_shank"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head2_skin6"
+	}
+	"pbt_loot_theme_spectre_head3_joust" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_JOUST"
+		"iconImage" "t7_pbt_loot_theme_spectre_head3_joust"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head3_skin5"
+	}
+	"pbt_loot_theme_spectre_head5_yellowjacket" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_YELLOW_JACKET"
+		"iconImage" "t7_pbt_loot_theme_spectre_head5_yellowjacket"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head5_skin1"
+	}
+	"pbt_loot_theme_spectre_head6_chrome" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_CHROME"
+		"iconImage" "t7_pbt_loot_theme_spectre_head6_chrome"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head6_skin1"
+	}
+	"pbt_loot_theme_spectre_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_spectre_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head5_skin2"
+	}
+	"pbt_loot_theme_spectre_head4_surgeon" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTER_SURGEON"
+		"iconImage" "t7_pbt_loot_theme_spectre_head4_surgeon"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head4_skin7"
+	}
+	"pbt_loot_theme_spectre_head6_phantom" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_PHANTOM"
+		"iconImage" "t7_pbt_loot_theme_spectre_head6_phantom"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head6_skin2"
+	}
+	"pbt_loot_theme_spectre_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_spectre_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head3_skin6"
+	}
+	"pbt_loot_theme_spectre_head6_crash" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_CRASH"
+		"iconImage" "t7_pbt_loot_theme_spectre_head6_crash"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head6_skin3"
+	}
+	"pbt_loot_theme_spectre_head5_galactic" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_GALACTIC"
+		"iconImage" "t7_pbt_loot_theme_spectre_head5_galactic"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head5_skin3"
+	}
+	"pbt_loot_theme_spectre_head5_ultra9" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_ULTRA9"
+		"iconImage" "t7_pbt_loot_theme_spectre_head5_ultra9"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head5_skin4"
+	}
+	"pbt_loot_theme_spectre_head1_zap" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_ZAP"
+		"iconImage" "t7_pbt_loot_theme_spectre_head1_zap"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head1_skin7"
+	}
+	"pbt_loot_theme_spectre_head6_masquerade" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_MASQUERADE"
+		"iconImage" "t7_pbt_loot_theme_spectre_head6_masquerade"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head6_skin4"
+	}
+	"pbt_loot_theme_spectre_head5_ayakashi" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_AYAKASHI"
+		"iconImage" "t7_pbt_loot_theme_spectre_head5_ayakashi"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head5_skin5"
+	}
+	"pbt_loot_theme_spectre_head4_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_spectre_head4_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head4_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head4_skin8"
+	}
+	"pbt_loot_theme_spectre_head1_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_spectre_head1_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head1_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head1_skin8"
+	}
+	"pbt_loot_theme_spectre_head6_bountyhunter" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SPECTRE_BOUNTYHUNTER"
+		"iconImage" "t7_pbt_loot_theme_spectre_head6_bountyhunter"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_assassin_mpc_head6_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_t7_mp_assassin_head6_skin5"
+	}
+	"pbt_loot_theme_firebreak_head3_sky" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_SKY"
+		"iconImage" "t7_pbt_loot_firebreak_head3_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head3_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head3_skin3"
+	}
+	"pbt_loot_theme_firebreak_head1_night" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_NIGHT"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head1_night"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head1_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head1_skin4"
+	}
+	"pbt_loot_theme_firebreak_head4_winterbone" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_WINTER_BONE"
+		"iconImage" "t7_pbt_loot_firebreak_head4_skin3"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head4_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head4_skin3"
+	}
+	"pbt_loot_theme_firebreak_head2_caterpillar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_CATERPILLAR"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head2_caterpillar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head2_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head2_skin4"
+	}
+	"pbt_loot_theme_firebreak_head1_oceanic" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_OCEANIC"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head1_oceanic"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head1_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head1_skin5"
+	}
+	"pbt_loot_theme_firebreak_head4_geist" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_GEIST"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head4_geist"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head4_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head4_skin4"
+	}
+	"pbt_loot_theme_firebreak_head2_eviction" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_EVICTION"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head2_eviction"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head2_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head2_skin5"
+	}
+	"pbt_loot_theme_firebreak_head4_davey_jones" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_DAVEY_JONES"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head4_davey_jones"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head4_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head4_skin5"
+	}
+	"pbt_loot_theme_firebreak_head1_evil_clown" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_EVIL_CLOWN"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head1_evil_clown"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head1_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head1_skin6"
+	}
+	"pbt_loot_theme_firebreak_head3_reptile" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_REPTILE"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head3_reptile"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head3_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head3_skin4"
+	}
+	"pbt_loot_theme_firebreak_head4_baroque" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_BAROQUE"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head4_baroque"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head4_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head4_skin6"
+	}
+	"pbt_loot_theme_firebreak_head2_goon" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_GOON"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head2_goon"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head2_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head2_skin6"
+	}
+	"pbt_loot_theme_firebreak_head3_outbreak" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_OUTBREAK"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head3_outbreak"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head3_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head3_skin5"
+	}
+	"pbt_loot_theme_firebreak_head5_orbit" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_ORBIT"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head5_orbit"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head5_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head5_skin1"
+	}
+	"pbt_loot_theme_firebreak_head6_solar" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_SOLAR"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head6_solar"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head6_skin1"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head6_skin1"
+	}
+	"pbt_loot_theme_firebreak_head5_panda" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PANDA"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head5_panda"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head5_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head5_skin2"
+	}
+	"pbt_loot_theme_firebreak_head4_combustion" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_COMBUSTION"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head4_combustion"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head4_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head4_skin7"
+	}
+	"pbt_loot_theme_firebreak_head6_jackolantern" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_JACK_O_LANTERN"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head6_jackolantern"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head6_skin2"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head6_skin2"
+	}
+	"pbt_loot_theme_firebreak_head3_ardent" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_ARDENT"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head3_ardent"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head3_skin6"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head3_skin6"
+	}
+	"pbt_loot_theme_firebreak_head6_speedster" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_SPEEDSTER"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head6_speedster"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head6_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head6_skin3"
+	}
+	"pbt_loot_theme_firebreak_head5_fate" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_FATE"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head5_fate"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head5_skin3"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head5_skin3"
+	}
+	"pbt_loot_theme_firebreak_head5_molten" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_MOLTEN"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head5_molten"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head5_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head5_skin4"
+	}
+	"pbt_loot_theme_firebreak_head1_fumigate" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_FUMIGATE"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head1_fumigate"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head1_skin7"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head1_skin7"
+	}
+	"pbt_loot_theme_firebreak_head6_void" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_VOID"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head6_void"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head6_skin4"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head6_skin4"
+	}
+	"pbt_loot_theme_firebreak_head5_abyss" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_ABYSS"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head5_abyss"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head5_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head5_skin5"
+	}
+	"pbt_loot_theme_firebreak_head6_permafrost" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_PERMAFROST"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head6_permafrost"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_head6_skin5"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head6_skin5"
+	}
+	"pbt_loot_theme_firebreak_head4_hive" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_HIVE"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head4_hive"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head4_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head4_skin8"
+	}
+	"pbt_loot_theme_firebreak_head1_flashpoint" ( "playerhelmetstyle.gdf" )
+	{
+		"accentColorCount" "1"
+		"displayName" "HEROES_FIREBREAK_FLASHPOINT"
+		"iconImage" "t7_pbt_loot_theme_firebreak_head1_flashpoint"
+		"impactTypeCorpse" "flesh corpse"
+		"impactType" "flesh"
+		"xmodel" "c_t7_mp_firebreak_mpc_head1_skin8"
+		"accentColor1OptionsCount" "1"
+		"color_1_1" "cc_c_t7_mp_firebreak_head1_skin8"
+	}
+}

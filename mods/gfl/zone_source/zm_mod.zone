@@ -1,0 +1,98 @@
+>mode,zm
+>type,common
+
+#include "zm_mod.class"
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+rawfile,dummy.cfg
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+sound,zm_mod
+
+// zm scripts
+scriptparsetree,scripts/gfl/zm/character_zm.gsc
+scriptparsetree,scripts/gfl/zm/character_randomizer.gsc
+scriptparsetree,scripts/gfl/zm/character_randomizer.csc
+scriptparsetree,scripts/gfl/zm/gameplay.gsc
+scriptparsetree,scripts/gfl/zm/gameplay.csc
+scriptparsetree,scripts/gfl/zm/perkplus.gsc
+scriptparsetree,scripts/gfl/zm/t8_perkloss.gsc
+scriptparsetree,scripts/gfl/zm/magicboxshare.gsc
+scriptparsetree,scripts/gfl/zm/mule_kick_indicator.gsc
+scriptparsetree,scripts/gfl/zm/zm_bot.gsc
+
+scriptparsetree,scripts/zm/_zm_ffotd.gsc
+scriptparsetree,scripts/zm/_zm_ffotd.csc
+
+scriptparsetree,scripts/zm/gametypes/infinityloader.gsc
+scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
+scriptparsetree,scripts/zm/gametypes/_clientids.gsc
+scriptparsetree,scripts/zm/_zm_counter.gsc
+scriptparsetree,scripts/zm/_zm_mod.csc
+scriptparsetree,scripts/zm/_zm_mod.gsc
+
+scriptparsetree,scripts/zm/bo4_full_ammo.gsc
+scriptparsetree,scripts/zm/better_nuke.gsc
+
+scriptparsetree,scripts/zm/_zm_powerup_free_perk.csc
+scriptparsetree,scripts/zm/_zm_powerup_free_perk.gsc
+
+// TF's Zombie Options
+scriptparsetree,scripts/zm/zmSaveData.gsc
+
+// NSZ Zombie Money 
+scriptparsetree,scripts/_NSZ/nsz_powerup_money.gsc
+scriptparsetree,scripts/_NSZ/nsz_powerup_money.csc
+xmodel,powerup_money
+
+//Custom Powerups By ZoekMeMaar
+scriptparsetree,scripts/_ZoekMeMaar/custom_powerup_free_packapunch_with_time.gsc
+scriptparsetree,scripts/_ZoekMeMaar/custom_powerup_free_packapunch_with_time.csc
+xmodel,free_packapunch
+
+//timed gameplay
+scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
+
+// scriptparsetree,scripts/zm/_zm_weap_riotshield.csc
+// scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
+
+scriptparsetree,scripts/zm/zm_damagefeedback.gsc
+
+//Frost Iceforge's BO4 Carpenter
+// scriptparsetree,scripts/zm/bo4_carpenter.gsc
+// scriptparsetree,scripts/zm/_zm_powerup_carpenter.gsc
+
+// unlimited and random bgbs
+// requires T7MTEnhancements to compile
+// https://github.com/Scobalula/T7MTEnhancements
+scriptparsetree,scripts/zm/_zm_bgb.csc
+scriptparsetree,scripts/zm/_zm_bgb.gsc
+scriptparsetree,scripts/zm/_zm_bgb_machine.csc
+scriptparsetree,scripts/zm/_zm_bgb_machine.gsc
+
+// gfl icons
+image,uie_t7_zm_hud_score_char1
+image,uie_t7_zm_hud_score_char1_old
+image,uie_t7_zm_hud_score_char1_old_helmet
+image,uie_t7_zm_hud_score_char1_gold_helmet
+image,uie_t7_zm_hud_score_char2
+image,uie_t7_zm_hud_score_char2_old
+image,uie_t7_zm_hud_score_char2_old_helmet
+image,uie_t7_zm_hud_score_char2_gold_helmet
+image,uie_t7_zm_hud_score_char3
+image,uie_t7_zm_hud_score_char3_old
+image,uie_t7_zm_hud_score_char3_old_helmet
+image,uie_t7_zm_hud_score_char3_gold_helmet
+image,uie_t7_zm_hud_score_char4
+image,uie_t7_zm_hud_score_char4_old
+image,uie_t7_zm_hud_score_char4_old_helmet
+image,uie_t7_zm_hud_score_char4_gold_helmet
+image,uie_t7_zm_hud_score_char5
+image,uie_t7_zm_hud_score_char6
+image,uie_t7_zm_hud_score_char7
+image,uie_t7_zm_hud_score_char8
+
+material,specialty_giant_three_guns_zombies
+material,specialty_three_guns_zombies
+material,specialty_giant_ads_zombies
+material,specialty_ads_zombies
