@@ -168,3 +168,4 @@ ignore_missing_shipped,core_common
 >level.xpak_read,base_patch_tu30
 >level.xpak_read,base_patch_tu31
 >level.xpak_read,base_patch_tu32
+localize,gfl_character

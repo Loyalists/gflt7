@@ -17,10 +17,12 @@ function init()
 function init_character_icon_table()
 {
 	level.character_icon_table = [];
-	level.character_icon_table[0] = "uie_t7_zm_hud_score_ro635";
+	level.character_icon_table[0] = undefined;
 	level.character_icon_table[1] = "uie_t7_zm_hud_score_ro635";
 	level.character_icon_table[2] = "uie_t7_zm_hud_score_g36c";
 	level.character_icon_table[3] = "uie_t7_zm_hud_score_rfb";
+	level.character_icon_table[4] = "uie_t7_zm_hud_score_st_ar15";
+	level.character_icon_table[5] = "uie_t7_zm_hud_score_m4a1";
 }
 
 function init_playerlist_icon_uimodel( n_local_client )
@@ -72,7 +74,10 @@ function set_character_icon_for_uimodel( target, index )
     }
 
     image_name = level.character_icon_table[index];
-    SetUIModelValue( model, image_name );
+    if ( isdefined(image_name) )
+    {
+        SetUIModelValue( model, image_name );
+    }
 }
 
 function get_icon_uimodel( target )

@@ -77,3 +77,7 @@ end
 Engine.IsCharacterCustomizationItemLocked = function(f35_arg0, f36_local1, f36_local2, f36_arg0)
     return false
 end
+
+Engine.IsSpecialistTransmissionLocked = function( f11_arg0, f11_arg1, f11_arg2 )
+	return false
+end

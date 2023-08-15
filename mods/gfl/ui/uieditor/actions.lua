@@ -1,7 +1,7 @@
 require("ui.uieditor.actions_og")
 
 function OpenWorkshop(arg0, arg1, arg2)
-    Engine.OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2502115671")
+    Engine.OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=3019676071")
 end
 
 function NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)

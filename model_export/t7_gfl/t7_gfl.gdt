@@ -7617,6 +7617,7 @@
 	"t7_cp_hud_commswidget_rachel" [ "t7_cp_hud_commswidget_diaz" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\global\\t7_cp_hud_commswidget_rachel.tif"
+		"coreSemantic" "Linear4ch"
 	}
 	"t7_cp_hud_commswidget_rachel_sing" [ "t7_cp_hud_commswidget_rachel" ]
 	{
@@ -7939,5 +7940,175 @@
 	}
 	"p7_fxanim_cp_zurich_tree_krueger_split_torso_mod" [ "t7_gfl_placeholder" ]
 	{
+	}
+	"uie_t7_zm_hud_score_m4a1" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\global\\uie_t7_zm_hud_score_m4a1.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_st_ar15" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\global\\uie_t7_zm_hud_score_st_ar15.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_char1_mask" [ "uie_t7_zm_hud_score_char1" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char2_mask" [ "uie_t7_zm_hud_score_char2" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char3_mask" [ "uie_t7_zm_hud_score_char3" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char4_mask" [ "uie_t7_zm_hud_score_char4" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char5_helmet" [ "uie_t7_zm_hud_score_vepley" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char5_mask" [ "uie_t7_zm_hud_score_vepley" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char6_helmet" [ "uie_t7_zm_hud_score_suomi" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char6_mask" [ "uie_t7_zm_hud_score_suomi" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char7_helmet" [ "uie_t7_zm_hud_score_mp7" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char7_mask" [ "uie_t7_zm_hud_score_mp7" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char8_helmet" [ "uie_t7_zm_hud_score_tololo" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char8_mask" [ "uie_t7_zm_hud_score_tololo" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char1_helmet" [ "uie_t7_zm_hud_score_char1" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char2_helmet" [ "uie_t7_zm_hud_score_char2" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char3_helmet" [ "uie_t7_zm_hud_score_char3" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char4_helmet" [ "uie_t7_zm_hud_score_char4" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char5_gold_helmet" [ "uie_t7_zm_hud_score_vepley" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char6_gold_helmet" [ "uie_t7_zm_hud_score_suomi" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char7_gold_helmet" [ "uie_t7_zm_hud_score_mp7" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char8_gold_helmet" [ "uie_t7_zm_hud_score_tololo" ]
+	{
+		"coreSemantic" "Linear4ch"
 	}
 }

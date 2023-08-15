@@ -8,20 +8,39 @@
 
 function main()
 {
-    if ( !( level.script == "cp_mi_cairo_infection" || level.script == "cp_mi_cairo_infection2" ) ) 
+    if ( !( level.script == "cp_mi_cairo_infection" || level.script == "cp_mi_cairo_infection2" || level.script == "cp_mi_cairo_infection3" ) ) 
     {
         return;
     }
 
     if (level.script == "cp_mi_cairo_infection")
     {
-        level thread character_util::reset_friendly_characters();
+        infection_main();
+    }
+    else if (level.script == "cp_mi_cairo_infection2")
+    {
+        infection2_main();
     }
     else
     {
-        level thread character_util::reset_friendly_characters("generic_infection", 0.2, &check_ww2_gi_model_name);
-        level thread character_util::reset_enemy_characters("generic", 0.2, &check_german_model_name);
+        infection3_main();
     }
+}
+
+function infection_main()
+{
+    level thread character_util::reset_friendly_characters();
+}
+
+function infection2_main()
+{
+    level thread character_util::reset_friendly_characters("generic_infection", 0.2, &check_ww2_gi_model_name);
+    level thread character_util::reset_enemy_characters("generic", 0.2, &check_german_model_name);
+}
+
+function infection3_main()
+{
+    level thread character_util::reset_zombie_characters("sf", 0.2);
 }
 
 function check_ww2_gi_model_name()

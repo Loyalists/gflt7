@@ -47,4 +47,5 @@ function reset_character_for_spawner(team, type = "generic", check_model_name_fu
 
 	self character_util::randomize_character(type);
 	self character_util::set_force_reset_flag();
+	self character_util::disable_gib();
 }

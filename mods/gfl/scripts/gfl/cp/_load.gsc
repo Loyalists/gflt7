@@ -1,7 +1,10 @@
-#using scripts\gfl\_utility;
+#using scripts\shared\array_shared;
+#using scripts\shared\spawner_shared;
+
 #using scripts\gfl\character;
 #using scripts\gfl\character_util;
 #using scripts\gfl\cp\safehouse;
+#using scripts\gfl\cp\cp_mi_eth_prologue;
 #using scripts\gfl\cp\cp_mi_sing_vengeance;
 #using scripts\gfl\cp\cp_mi_cairo_aquifer;
 #using scripts\gfl\cp\cp_mi_cairo_ramses;
@@ -21,9 +24,13 @@ function main()
 	character::init_character_table();
 	thread set_character_name_for_all_ais();
 	// thread character_util::reset_all_characters();
-
+	spawner::add_archetype_spawn_function("human", &character_util::disable_gib);
+	spawner::add_archetype_spawn_function("human_riotshield", &character_util::disable_gib);
+	spawner::add_archetype_spawn_function("civilian", &character_util::disable_gib);
+	
 	// map related patches
 	thread safehouse::main();
+	thread cp_mi_eth_prologue::main();
 	thread cp_mi_sing_vengeance::main();
 	thread cp_mi_cairo_aquifer::main();
 	thread cp_mi_cairo_ramses::main();

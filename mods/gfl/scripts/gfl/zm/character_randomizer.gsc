@@ -3,9 +3,11 @@
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\flag_shared;
 #using scripts\shared\util_shared;
+#using scripts\shared\spawner_shared;
 
 #using scripts\zm\_zm_audio;
 
+#using scripts\gfl\character;
 #using scripts\gfl\character_util;
 #using scripts\gfl\zm\character_zm;
 
@@ -17,8 +19,10 @@
 function init()
 {
 	clientfield::register("toplayer", "gfl_character_icon", VERSION_SHIP, 4, "int");
+	character::init_character_table();
 	character_zm::init_character_table();
 	init_randomized_character_table();
+	spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
 
 	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
 	{
@@ -45,8 +49,46 @@ function init()
 		if( GetDvarInt("tfoption_randomize_character") )
 		{
 			callback::on_spawned( &set_custom_character );
+			if ( level.script == "zm_zod" )
+			{
+				callback::on_spawned( &altbody_cc_fix );
+			}
 		}
 	}
+}
+
+function zombie_model_fix()
+{
+	self endon( "death" );
+	level endon("game_ended");
+	level endon("end_game");
+
+	if (isvehicle(self) || isplayer(self))
+	{
+		return;
+	}
+
+	if ( !self character_util::is_force_reset_required() && self character_util::is_character_swapped() )
+	{
+		return;
+	}
+
+	if ( !( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") || issubstr(self.model, "c_zsf_") ) )
+	{
+		return;
+	}
+
+	type = "generic";
+	if ( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") )
+	{
+		type = "sf";
+	}
+	
+	characters = character_util::get_characters(type);
+	character = array::random(characters);
+	self character_util::swap_character(type, character);
+	self character_util::set_force_reset_flag();
+	self character_util::disable_gib();
 }
 
 function init_moon()
@@ -96,7 +138,6 @@ function altbody_cc_fix()
 {
 	self endon("disconnect");
 	self endon("death");
-	level waittill("initial_blackscreen_passed");
 
 	while (true)
 	{
@@ -187,6 +228,16 @@ function set_character_customization()
 				func_index = "rfb";
 				break;
 			}
+			case "t7_gfl_st_ar15":
+			{
+				func_index = "st_ar15";
+				break;
+			}
+			case "t7_gfl_m4a1":
+			{
+				func_index = "m4a1";
+				break;
+			}
 			default:
 			{
 				func_index = undefined;
@@ -243,6 +294,16 @@ function set_icon(func_index)
 		case "rfb":
 		{
 			icon_index = 3;
+			break;
+		}
+		case "st_ar15":
+		{
+			icon_index = 4;
+			break;
+		}
+		case "m4a1":
+		{
+			icon_index = 5;
 			break;
 		}
 		default:

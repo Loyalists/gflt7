@@ -4,6 +4,19 @@
 
 #namespace character_util;
 
+function disable_gib()
+{
+	if(isdefined(self.gib_data))
+	{
+		self.gib_data = undefined;
+	}
+
+	if(isdefined(self.gibdef))
+	{
+		self.gibdef = undefined;
+	}
+}
+
 function reset_all_characters(type = "generic", wait_interval = 0.5, check_model_name_func = undefined)
 {
 	level endon("game_ended");
@@ -19,6 +32,7 @@ function reset_all_characters(type = "generic", wait_interval = 0.5, check_model
 
 			ai randomize_character(type);
 			ai set_force_reset_flag();
+			ai disable_gib();
 		}
 
 		wait(wait_interval);
@@ -45,6 +59,7 @@ function reset_friendly_characters(type = "generic", wait_interval = 0.5, check_
 
 			ai randomize_character(type);
 			ai set_force_reset_flag();
+			ai disable_gib();
 		}
 
 		wait(wait_interval);
@@ -71,6 +86,7 @@ function reset_friendly_civilian_characters(type = "generic", wait_interval = 0.
 
 			ai randomize_character(type);
 			ai set_force_reset_flag();
+			ai disable_gib();
 		}
 
 		wait(wait_interval);
@@ -92,22 +108,53 @@ function reset_enemy_characters(type = "generic", wait_interval = 0.5, check_mod
 
 			ai randomize_character(type);
 			ai set_force_reset_flag();
+			ai disable_gib();
 		}
 
 		wait(wait_interval);
 	}
 }
 
-function is_swapping_required(check_model_name_func = undefined)
+function reset_zombie_characters(type = "generic", wait_interval = 0.5, check_model_name_func = undefined)
+{
+	level endon("game_ended");
+	while(true)
+	{
+		aiarray = getaiarray();
+		foreach(ai in aiarray)
+		{
+			if ( !ai is_swapping_required(check_model_name_func, false) )
+			{
+				continue;
+			}
+
+			if ( !ai is_zombie() )
+			{
+				continue;
+			}
+
+			ai randomize_character(type);
+			ai set_force_reset_flag();
+			ai disable_gib();
+		}
+
+		wait(wait_interval);
+	}
+}
+
+function is_swapping_required(check_model_name_func = undefined, check_archetype = true)
 {
 	if ( self is_hero() )
 	{
 		return false;
 	}
 
-	if ( !( self character_util::is_human() || self character_util::is_civilian() ) )
+	if ( check_archetype )
 	{
-		return false;
+		if ( !( self character_util::is_human() || self character_util::is_civilian() ) )
+		{
+			return false;
+		}
 	}
 	
 	if ( IsFunctionPtr(check_model_name_func) && !self [[check_model_name_func]]() )
@@ -154,6 +201,7 @@ function swap_character(type, character)
 
 	func = level.charactertable[type][character];
 	self [[func]]();
+	self.character_table_index = character;
 }
 
 function swap_to_cc()
@@ -230,6 +278,21 @@ function is_hero()
 	}
 
 	if (issubstr(self.model, "_hro_"))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+function is_zombie()
+{
+	if (isvehicle(self))
+	{
+		return false;
+	}
+
+	if (issubstr(self.archetype, "zombie"))
 	{
 		return true;
 	}

@@ -4,7 +4,11 @@
 
 function init_character_table()
 {
-	level.charactertable = [];
+	if ( !isdefined(level.charactertable) )
+	{
+		level.charactertable = [];
+	}
+	
 	level.charactertable["generic"] = [];
 	level.charactertable["generic"]["ak12"] = &swap_to_ak12;
 	level.charactertable["generic"]["p90"] = &swap_to_p90;
