@@ -2,8 +2,6 @@
 *.zip
 *.7z
 *.gdb
-*.xmodel_bin
-*.xmodel_export
 
 _ignored
 _backup
