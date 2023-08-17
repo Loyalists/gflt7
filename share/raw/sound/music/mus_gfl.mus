@@ -1,0 +1,458 @@
+{
+    "Name": "mus_gfl",
+    "StateArray": [
+        {
+            "Name": "mus_gfl_brain",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_brain",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 0,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_elecwar_h",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_elecwar_h",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 1,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_departure",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_departure",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 2,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_autonome",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_autonome",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 3,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_room",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_room",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 4,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_barbarous_funera",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_barbarous_funera",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 5,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_ev5_intermission",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_ev5_intermission",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 6,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_greenlight",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_greenlight",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 7,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_nihilism",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_nihilism",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 8,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_safety_first",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_safety_first",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 9,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_synthesis_catalyst",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_synthesis_catalyst",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 10,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_all_systems_go",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_all_systems_go",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 11,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_fixed_point_lobby",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_fixed_point_lobby",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 12,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_move_on",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_move_on",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 13,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "mus_gfl_hope",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_hope",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 14,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        }
+    ],
+    "StateNames": [
+        "mus_gfl_brain",
+        "mus_gfl_elecwar_h",
+        "mus_gfl_departure",
+        "mus_gfl_autonome",
+        "mus_gfl_room",
+        "mus_gfl_barbarous_funera",
+        "mus_gfl_ev5_intermission",
+        "mus_gfl_greenlight",
+        "mus_gfl_nihilism",
+        "mus_gfl_safety_first",
+        "mus_gfl_synthesis_catalyst",
+        "mus_gfl_all_systems_go",
+        "mus_gfl_fixed_point_lobby",
+        "mus_gfl_move_on",
+        "mus_gfl_hope"
+    ],
+    "LoopIndex": 15
+}
