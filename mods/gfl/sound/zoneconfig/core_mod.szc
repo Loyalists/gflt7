@@ -1,0 +1,19 @@
+{ 
+    "Name" : "core_mod", 
+    "IsStandalone" : true, 
+    "IsProduction" : false, 
+    "IsShipped" : false, 
+    "DontDeploy" : false, 
+    "NoStreamBank" : false, 
+    "MapFile" : "", 
+    "Standalone" : true, 
+    "Builds" : [ "T7" ], 
+    "MusicFiles" : [ "mus_gfl" ],
+    "Sources" : [ 
+        { "Type" : "ALIAS", 
+        "Name" : "core_mod",
+        "Filename" : "core_mod.csv", 
+        "Specs" : [ ] 
+        }
+    ] 
+}

@@ -24,9 +24,15 @@ function init()
 	init_randomized_character_table();
 	spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
 
+	if( !( GetDvarInt("tfoption_player_determined_character") || GetDvarInt("tfoption_randomize_character") ) )
+	{
+		return;
+	}
+
 	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
 	{
-		init_moon();
+		// prone to crash
+		// init_moon();
 		return;
 	}
 
@@ -34,10 +40,6 @@ function init()
 	{
 		level.save_character_customization_func = &save_character_customization_func;
 		callback::on_spawned( &set_character_customization );
-		if ( level.script == "zm_zod" )
-		{
-			callback::on_spawned( &altbody_cc_fix );
-		}
 
 		if( GetDvarInt("tfoption_randomize_character") )
 		{
@@ -49,11 +51,12 @@ function init()
 		if( GetDvarInt("tfoption_randomize_character") )
 		{
 			callback::on_spawned( &set_custom_character );
-			if ( level.script == "zm_zod" )
-			{
-				callback::on_spawned( &altbody_cc_fix );
-			}
 		}
+	}
+
+	if ( level.script == "zm_zod" )
+	{
+		callback::on_spawned( &altbody_cc_fix );
 	}
 }
 

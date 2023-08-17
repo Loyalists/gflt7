@@ -13,6 +13,7 @@ rawfile,zm_mod.cfg
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // for some reason the game tends to freeze when switching from/to different modes (cp/mp/zm) so we just put everything in core_mod
+sound,core_mod
 
 // GLOBAL
 xmodel,c_54i_cqb_mpc_fb_fe
@@ -89,6 +90,12 @@ rawfile,ui/t7/utility/CCUtility.lua
 rawfile,ui/t7/utility/CCUtility_og.luac
 rawfile,ui/t7/utility/LobbyUtility.lua
 rawfile,ui/t7/utility/LobbyUtility_og.luac
+
+rawfile,ui/t6/CoDBase.lua
+rawfile,ui/t6/CoDBase_og.luac
+
+// rawfile,ui_mp/T6/HUD/Loading.lua
+// rawfile,ui_mp/T6/HUD/Loading_og.luac
 
 // prevent player from opening up the black market tab in character customization
 rawfile,ui/uieditor/menus/CharacterCustomization/PersonalizeCharacter.lua

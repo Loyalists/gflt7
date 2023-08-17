@@ -224,7 +224,7 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     table.insert(f26_local0, {
         models = {
             label = "Player-Determined Playermodel",
-            description = "Uses the currently selected playermodel from Characters Menu. \nPartially functional on Moon and Origins.",
+            description = "Uses the currently selected playermodel from Characters Menu. \nDoesn't work on Moon and Origins.",
             profileVarName = "player_determined_character",
             widgetType = "tfcheckbox"
         },

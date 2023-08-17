@@ -9,7 +9,7 @@ material,20480,990
 computeshaderset,256,0
 techset,1024,22
 image,49152,1002
-sound,32,0
+sound,32,1
 sound_patch,16,0
 col_map,2,0
 com_map,2,0
@@ -46,7 +46,7 @@ player_character,8,0
 aitype,96,0
 character,150,8
 xmodelalias,48,1
-rawfile,5000,60
+rawfile,5000,62
 stringtable,200,12
 structuredtable,96,0
 leaderboarddef,256,0

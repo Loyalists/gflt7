@@ -9,7 +9,7 @@ material,20480,0
 computeshaderset,256,0
 techset,1024,0
 image,49152,0
-sound,32,0
+sound,32,1
 sound_patch,16,0
 col_map,2,0
 com_map,2,0

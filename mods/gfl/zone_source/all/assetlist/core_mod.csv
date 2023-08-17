@@ -3174,6 +3174,7 @@ image,uie_t7_zm_hud_score_ro635
 image,uie_t7_zm_hud_score_st_ar15
 image,uie_t7_zm_hud_score_super_sass
 image,uie_t7_zm_hud_score_ump45
+sound,core_mod
 customizationtable,zm_character_customization
 customizationtable,zm_character_customization_zmhd
 fx,player/fx_plyr_footstep_dust
@@ -3197,6 +3198,8 @@ rawfile,lua/shared/codshared.lua
 rawfile,mod.cfg
 rawfile,mp_mod.cfg
 rawfile,ui/hudinject/hudinject.lua
+rawfile,ui/t6/codbase.lua
+rawfile,ui/t6/codbase_og.luac
 rawfile,ui/t6/lobby/lobbymenubuttons.lua
 rawfile,ui/t6/lobby/lobbymenus.lua
 rawfile,ui/t7/utility/blackmarketutility.lua

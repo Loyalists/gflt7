@@ -11,16 +11,44 @@ ignore_missing_shipped,core_ui
 ignore_missing_shipped,core_ui
 ignore_missing_shipped,core_common
 ignore_missing_shipped,core_common
+sound,core_mod,japanese
 localize,gfl_character
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\gfl_character.str,1691904312,
 texturecombo,core_mod
 assetlist,core_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\loc\core_mod.zone,1691947425,5f78dfdf,5fe2834f,f2a0e0ff,2624ac1c
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\loc\core_mod.zone,1692294681,b2c3dad3,12b3805e,5753c307,fc0bac12
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_pre_gfx.csv,1638882744,4f38c8d2,54dbe0ad,a26fe6dd,7ce6fe27
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_patch.csv,1638882651,38d4c92a,0186498f,35efb776,59863d59
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_gfx.csv,1638882743,4cd6243d,831296e2,f2d7c4d8,2e2c9159
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_post_gfx.csv,1638882651,84cba858,ca582e11,0ecc058e,9dc718da
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_ui.csv,1638882690,01204c23,9c4fe4b0,62b426bd,ba245684
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\japanese\assetlist\core_common.csv,1638882743,a3ad7aa0,5eb6c0c3,18f265cb,cb497d24
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\active_build.cfg,1638881132,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\volume_group.csv,1638881090,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\curve.csv,1638881136,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\pan.csv,1638881136,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\duck_group.csv,1638881090,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\aquifer_cockpit.ctx,1638881132,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\battle.ctx,1638881347,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\boot.ctx,1638881347,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\foley.ctx,1638881086,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\healthstate.ctx,1638881347,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\igc.ctx,1638881086,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\laststand.ctx,1638881132,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\mature.ctx,1638881347,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\movement.ctx,1638881133,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\perspective.ctx,1638881086,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\plr_body.ctx,1638881133,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\plr_gender.ctx,1638881133,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\plr_impact.ctx,1638881347,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\plr_stance.ctx,1638881086,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\plr_vehicle.ctx,1638881133,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\ringoff_plr.ctx,1638881086,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\train.ctx,1638881347,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\vehicle.ctx,1638881086,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\japanese\sound\zone\core_mod.japanese.alias.sz,1692294693,
 errorcount,0

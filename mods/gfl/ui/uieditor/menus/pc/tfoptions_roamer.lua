@@ -59,7 +59,7 @@ DataSources.TFOptionsRoamerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsRoamerP
     table.insert(f26_local0, {
         models = {
             label = "Roamer Enabled",
-            description = "Roamer allows you to wait at the end of every round, before the next round starts. No more crawlers! To start the next round, press ADS + Melee",
+            description = "Roamer allows you to wait at the end of every round, before the next round starts. No more crawlers! \nTo start the next round, press ADS + Melee.",
             profileVarName = "roamer_enabled",
             widgetType = "tfcheckbox"
         },

@@ -28,7 +28,6 @@ end
 
 DataSources.TFOptionsWeaponsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsWeaponsP1", function(f26_arg0)
     local f26_local0 = {}
-    -- table.insert(f26_local0, {models = {label = "Add MW 2019 Weapons to box", description = "Adds all the Modern Warfare 2019 weapons to the mystery box.", profileVarName = "weap_mw2019", widgetType = "tfcheckbox"}, properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties})
     table.insert(f26_local0, {
         models = {
             label = "Start With Max Ammo",
@@ -68,7 +67,7 @@ DataSources.TFOptionsWeaponsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsWeapon
     table.insert(f26_local0, {
         models = {
             label = "Share Weapon from Mystery Box",
-            description = "Share the weapon from Mystery Box with others.\nPress Melee key to perform the operation.",
+            description = "Share the weapon from Mystery Box with others.\nTo share a weapon, Press Melee key.",
             profileVarName = "boxshare",
             widgetType = "tfcheckbox"
         },

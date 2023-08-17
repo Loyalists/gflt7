@@ -129,6 +129,7 @@ function create_tf_options_defaults() {
     SetDvar("tfoption_bgb_cost", 1);
     SetDvar("tfoption_modmenu", 0);
     SetDvar("tfoption_player_determined_character", 0);
+    SetDvar("tfoption_disable_intro_movie", 0);
 }
 
 function pre_load()

@@ -57,6 +57,7 @@ CoD.TFOptionIndexes["bgb_cost"] = 56
 CoD.TFOptionIndexes["bot_command"] = 57
 CoD.TFOptionIndexes["modmenu"] = 58
 CoD.TFOptionIndexes["player_determined_character"] = 59
+CoD.TFOptionIndexes["disable_intro_movie"] = 60
 
 if not CoD.TFPCUtil then
     CoD.TFPCUtil = {}
@@ -235,6 +236,7 @@ CoD.TFPCUtil.ResetToDefault = function()
     CoD.TFPCUtil.SetToSaveData("bgb_cost", 1, 0)
     CoD.TFPCUtil.SetToSaveData("modmenu", 0, 0)
     CoD.TFPCUtil.SetToSaveData("player_determined_character", 1, 0)
+    CoD.TFPCUtil.SetToSaveData("disable_intro_movie", 0, 0)
 end
 
 CoD.TFPCUtil.LoadTFOptions = function()
@@ -292,6 +294,7 @@ CoD.TFPCUtil.LoadTFOptions = function()
     CoD.TFPCUtil.LoadFromSaveData("bgb_cost")
     CoD.TFPCUtil.LoadFromSaveData("modmenu")
     CoD.TFPCUtil.LoadFromSaveData("player_determined_character")
+    CoD.TFPCUtil.LoadFromSaveData("disable_intro_movie")
 end
 
 CoD.TFPCUtil.CheckBoxOptionChecked = function(itemRef, updateTable)
