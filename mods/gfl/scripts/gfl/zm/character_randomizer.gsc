@@ -216,27 +216,27 @@ function set_character_customization()
 	{
 		switch (self.cc_bodystyle_name)
 		{
-			case "t7_gfl_ro635":
+			case "t7_gfl_ro635_fb":
 			{
 				func_index = "ro635";
 				break;
 			}
-			case "t7_gfl_g36c":
+			case "t7_gfl_g36c_fb":
 			{
 				func_index = "g36c";
 				break;
 			}
-			case "t7_gfl_rfb":
+			case "t7_gfl_rfb_fb":
 			{
 				func_index = "rfb";
 				break;
 			}
-			case "t7_gfl_st_ar15":
+			case "t7_gfl_st_ar15_fb":
 			{
 				func_index = "st_ar15";
 				break;
 			}
-			case "t7_gfl_m4a1":
+			case "t7_gfl_m4a1_fb":
 			{
 				func_index = "m4a1";
 				break;

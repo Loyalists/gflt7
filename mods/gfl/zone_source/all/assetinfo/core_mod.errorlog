@@ -1,0 +1,19 @@
+return 3000
+^33856 warnings encountered while processing xmodel 't7_gfl_mp7_casual_viewhands'. Log can be found here: D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\\xmesh\v6\t7_gfl_mp7_casual_viewhands_f0_s1.000000_geo_LAIAOYJMOCGKKBI445XDTVORO5.log
+  xmodel:t7_gfl_mp7_casual_viewhands
+    playerbodystyle:pbt_gfl_body_mp7_casual
+      playerbodytype:pbt_zm_zod_magician
+        customizationtable:zm_character_customization
+          csv:zone_source/core_mod.zone
+^36258 warnings encountered while processing xmodel 't7_gfl_mp7_casual_viewlegs'. Log can be found here: D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\\xmesh\v6\t7_gfl_mp7_casual_viewlegs_f0_s1.000000_geo_GH42RAYD4WSB755FKHNVUCSJW3.log
+  xmodel:t7_gfl_mp7_casual_tights_viewlegs
+    playerbodystyle:pbt_gfl_body_mp7_casual
+      playerbodytype:pbt_zm_zod_magician
+        customizationtable:zm_character_customization
+          csv:zone_source/core_mod.zone
+^39236 warnings encountered while processing xmodel 't7_gfl_mp7_casual_body'. Log can be found here: D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\\xmesh\v6\t7_gfl_mp7_casual_body_f0_s1.000000_geo_DKTRH4A72UWYBPNDSJ4WGUOR6Z.log
+  xmodel:t7_gfl_mp7_casual_tights_body_mp
+    playerbodystyle:pbt_gfl_body_mp7_casual
+      playerbodytype:pbt_zm_zod_magician
+        customizationtable:zm_character_customization
+          csv:zone_source/core_mod.zone

@@ -757,7 +757,11 @@ xmodel,t7_gfl_m4a1_v2_body_mp
 xmodel,t7_gfl_m4a1_v2_fb_mp
 xmodel,t7_gfl_m4a1_v2_viewhands
 xmodel,t7_gfl_m4a1_v2_viewlegs
+xmodel,t7_gfl_mp7_casual_tights_body_mp
 xmodel,t7_gfl_mp7_casual_tights_fb
+xmodel,t7_gfl_mp7_casual_tights_fb_mp
+xmodel,t7_gfl_mp7_casual_tights_viewlegs
+xmodel,t7_gfl_mp7_casual_viewhands
 xmodel,t7_gfl_mp7_fb
 xmodel,t7_gfl_mp7_tights_fb
 xmodel,t7_gfl_negev_body_mp
@@ -801,8 +805,8 @@ xmodel,t7_gfl_ump45_v2_fb_mp
 xmodel,t7_gfl_ump45_v2_viewhands
 xmodel,t7_gfl_ump45_v2_viewlegs
 xmodel,t7_gfl_vepley_backpack_fb
-xmodel,t7_gfl_vepley_backpack_fb_mp
 xmodel,t7_gfl_vepley_fb
+xmodel,t7_gfl_vepley_fb_mp
 xmodel,t7_gfl_vespid_fb
 xmodel,tag_origin
 xmodelmesh,p7_zm_der_magic_box_fake_col85208d31
@@ -945,7 +949,11 @@ xmodelmesh,t7_gfl_m4a1_v2_viewhands26319170
 xmodelmesh,t7_gfl_m4a1_v2_viewlegsef35c01a
 xmodelmesh,t7_gfl_mp7_body91a2f1a
 xmodelmesh,t7_gfl_mp7_bodybef4009a
+xmodelmesh,t7_gfl_mp7_casual_body336ae3a3
 xmodelmesh,t7_gfl_mp7_casual_fbac7efa0b
+xmodelmesh,t7_gfl_mp7_casual_fbbdbf14e2
+xmodelmesh,t7_gfl_mp7_casual_viewhands44ea368
+xmodelmesh,t7_gfl_mp7_casual_viewlegs5ad37c9a
 xmodelmesh,t7_gfl_mp7_fb714ebb8b
 xmodelmesh,t7_gfl_mp7_fb_lod13b21a472
 xmodelmesh,t7_gfl_mp7_fb_lod148cc4919
