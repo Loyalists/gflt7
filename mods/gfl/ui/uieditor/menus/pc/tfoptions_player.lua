@@ -182,8 +182,8 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Starting Points",
-            description = "Choose how many points to start a game with.",
+            label = "TF_SCORE",
+            description = "TF_SCORE_DESC",
             profileVarName = "starting_points",
             datasource = "TFOptionsStartingPoints",
             widgetType = "dropdown"
@@ -192,8 +192,8 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     })
     table.insert(f26_local0, {
         models = {
-            label = "Move Speed Multiplier",
-            description = "Tweak the player speed. 1 is default.",
+            label = "TF_SPEED",
+            description = "TF_SPEED_DESC",
             profileVarName = "move_speed",
             lowValue = 0.1,
             highValue = 2,
@@ -204,8 +204,8 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     })
     table.insert(f26_local0, {
         models = {
-            label = "Player Health",
-            description = "Choose how many hits from a zombie it takes to down the player.",
+            label = "TF_HEALTH",
+            description = "TF_HEALTH_DESC",
             profileVarName = "higher_health",
             datasource = "TFOptionsPlayerHealth",
             widgetType = "dropdown"
@@ -214,8 +214,8 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     })
     table.insert(f26_local0, {
         models = {
-            label = "EXO Movement",
-            description = "Enable EXO movement. (Probably won't work on any maps that use EXO movement, such as SoE or Der Eisendrache)",
+            label = "TF_EXO",
+            description = "TF_EXO_DESC",
             profileVarName = "exo_movement",
             widgetType = "tfcheckbox"
         },
@@ -223,8 +223,8 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     })
     table.insert(f26_local0, {
         models = {
-            label = "Player-Determined Playermodel",
-            description = "Uses the currently selected playermodel from Characters Menu. \nDoesn't work on Moon and Origins.",
+            label = "TF_PLAYER_DETERMINED_CHARACTER",
+            description = "TF_PLAYER_DETERMINED_CHARACTER_DESC",
             profileVarName = "player_determined_character",
             widgetType = "tfcheckbox"
         },
@@ -232,8 +232,8 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     })
     table.insert(f26_local0, {
         models = {
-            label = "Randomized Playermodel",
-            description = "Randomizes the model of each player so that more GFL characters can be chosen, adding additional variety to the gameplay. \nIf both 'Player-Determined Playermodel' and 'Randomized Playermodel' are enabled the playermodel will only be randomized for Bots. \nDoesn't work on Moon and Origins.",
+            label = "TF_RANDOMIZED_CHARACTER",
+            description = "TF_RANDOMIZED_CHARACTER_DESC",
             profileVarName = "randomize_character",
             widgetType = "tfcheckbox"
         },

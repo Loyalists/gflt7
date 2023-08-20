@@ -170,3 +170,5 @@ ignore_missing_shipped,core_common
 >level.xpak_read,base_patch_tu32
 sound,core_mod
 localize,gfl_character
+localize,tf
+localize,tf_menu

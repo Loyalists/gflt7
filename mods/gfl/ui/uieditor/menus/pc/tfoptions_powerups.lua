@@ -196,8 +196,8 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Powerup Spawn Amount",
-            description = "Choose how many powerups spawn per round.",
+            label = "TF_MORE_POWERUPS",
+            description = "TF_MORE_POWERUPS_DESC",
             profileVarName = "more_powerups",
             datasource = "TFOptionsPowerups",
             widgetType = "dropdown"
@@ -206,8 +206,8 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
     })
     table.insert(f26_local0, {
         models = {
-            label = "Improved Nuke",
-            description = "Nukes now give a set amount of points per zombie killed (Minimum of 400).",
+            label = "TF_BETTER_NUKE",
+            description = "TF_BETTER_NUKE_DESC",
             profileVarName = "better_nuke",
             widgetType = "tfcheckbox"
         },
@@ -215,8 +215,8 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
     })
     table.insert(f26_local0, {
         models = {
-            label = "Improved Nuke Points",
-            description = "Choose how many points per zombie you get.",
+            label = "TF_BETTER_NUKE_POINTS",
+            description = "TF_BETTER_NUKE_POINTS_DESC",
             profileVarName = "better_nuke_points",
             lowValue = 0,
             highValue = 200,
@@ -227,8 +227,8 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
     })
     table.insert(f26_local0, {
         models = {
-            label = "BO4 Max Ammo",
-            description = "Max Ammos refill your clip as well.",
+            label = "TF_BO4_MAX_AMMO",
+            description = "TF_BO4_MAX_AMMO_DESC",
             profileVarName = "bo4_max_ammo",
             widgetType = "tfcheckbox"
         },
@@ -237,8 +237,8 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
     -- table.insert(f26_local0, {models = {label = "BO4 Carpenter", description = "Carpenters repair your shield", profileVarName = "bo4_carpenter", widgetType = "tfcheckbox"}, properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties})
     table.insert(f26_local0, {
         models = {
-            label = "Enable Free Perk Powerup",
-            description = "Enabling lets the free perk powerup drop.",
+            label = "TF_PERK_POWERUP",
+            description = "TF_PERK_POWERUP_DESC",
             profileVarName = "perk_powerup",
             widgetType = "tfcheckbox"
         },
@@ -246,8 +246,8 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
     })
     table.insert(f26_local0, {
         models = {
-            label = "Enable Zombie Cash Powerup",
-            description = "Adds a zombie cash powerup that can give points.",
+            label = "TF_ZCASH_POWERUP",
+            description = "TF_ZCASH_POWERUP_DESC",
             profileVarName = "zcash_powerup",
             widgetType = "tfcheckbox"
         },
@@ -255,8 +255,8 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
     })
     table.insert(f26_local0, {
         models = {
-            label = "Enable Packapunch Powerup",
-            description = "Adds a packapunch powerup that temporarily upgrades the weapon you're currently holding.",
+            label = "TF_PAP_POWERUP",
+            description = "TF_PAP_POWERUP_DESC",
             profileVarName = "packapunch_powerup",
             widgetType = "tfcheckbox"
         },

@@ -22,8 +22,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Player Options",
-            description = "Open the player options menu.",
+            label = "TF_MENU_PLAYER_OPTIONS",
+            description = "TF_MENU_PLAYER_OPTIONS_DESC",
             page = "TFOptionsPlayerPage",
             widgetType = "navbutton"
         },
@@ -31,8 +31,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Game Options",
-            description = "Open the game options menu.",
+            label = "TF_MENU_GAME_OPTIONS",
+            description = "TF_MENU_GAME_OPTIONS_DESC",
             page = "TFOptionsGamePage",
             widgetType = "navbutton"
         },
@@ -40,8 +40,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Bot Options",
-            description = "Open the bot options menu.",
+            label = "TF_MENU_BOT_OPTIONS",
+            description = "TF_MENU_BOT_OPTIONS_DESC",
             page = "TFOptionsBotPage",
             widgetType = "navbutton"
         },
@@ -49,8 +49,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Weapon Options",
-            description = "Open the weapon options menu.",
+            label = "TF_MENU_WEAPON_OPTIONS",
+            description = "TF_MENU_WEAPON_OPTIONS_DESC",
             page = "TFOptionsWeaponsPage",
             widgetType = "navbutton"
         },
@@ -58,8 +58,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Powerup Options",
-            description = "Open the powerup options menu.",
+            label = "TF_MENU_POWERUP_OPTIONS",
+            description = "TF_MENU_POWERUP_OPTIONS_DESC",
             page = "TFOptionsPowerupsPage",
             widgetType = "navbutton"
         },
@@ -67,8 +67,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Zombie Options",
-            description = "Open the zombie options menu.",
+            label = "TF_MENU_ZOMBIE_OPTIONS",
+            description = "TF_MENU_ZOMBIE_OPTIONS_DESC",
             page = "TFOptionsZombiesPage",
             widgetType = "navbutton"
         },
@@ -76,8 +76,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Perk Options",
-            description = "Open the perk options menu.",
+            label = "TF_MENU_PERK_OPTIONS",
+            description = "TF_MENU_PERK_OPTIONS_DESC",
             page = "TFOptionsPerksPage",
             widgetType = "navbutton"
         },
@@ -85,8 +85,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "GobbleGum Options",
-            description = "Open the gobblegum options menu.",
+            label = "TF_MENU_BGB_OPTIONS",
+            description = "TF_MENU_BGB_OPTIONS_DESC",
             page = "TFOptionsBGBPage",
             widgetType = "navbutton"
         },
@@ -94,8 +94,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Roamer Options",
-            description = "Open the roamer options menu.",
+            label = "TF_MENU_ROAMER_OPTIONS",
+            description = "TF_MENU_ROAMER_OPTIONS_DESC",
             page = "TFOptionsRoamerPage",
             widgetType = "navbutton"
         },
@@ -103,8 +103,8 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Open Server Settings",
-            description = "Open the server settings menu.",
+            label = "TF_MENU_SERVER_OPTIONS",
+            description = "TF_MENU_SERVER_OPTIONS_DESC",
             page = "ServerSettings",
             widgetType = "navbutton"
         },
@@ -137,8 +137,8 @@ DataSources.TFOptionsP2 = DataSourceHelpers.ListSetup("PC.TFOptionsP2", function
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Enable Cheats",
-            description = "Use console commands without having developer mode enabled.",
+            label = "TF_CHEATS",
+            description = "TF_CHEATS_DESC",
             profileVarName = "cheats",
             widgetType = "tfcheckbox"
         },
@@ -146,8 +146,8 @@ DataSources.TFOptionsP2 = DataSourceHelpers.ListSetup("PC.TFOptionsP2", function
     })
     table.insert(f26_local0, {
         models = {
-            label = "Enable Mod Menu",
-            description = "Enables GSC Mod Menu.",
+            label = "TF_MODMENU",
+            description = "TF_MODMENU_DESC",
             profileVarName = "modmenu",
             widgetType = "tfcheckbox"
         },

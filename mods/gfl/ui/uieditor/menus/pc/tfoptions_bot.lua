@@ -23,7 +23,7 @@ DataSources.TFOptionsBot = DataSourceHelpers.ListSetup("PC.TFOptionsBot", functi
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Bots",
+            label = "TF_BOTS",
             description = "MENU_FRIENDLY_BOTS",
             profileVarName = "bot",
             widgetType = "tfcheckbox"
@@ -32,8 +32,8 @@ DataSources.TFOptionsBot = DataSourceHelpers.ListSetup("PC.TFOptionsBot", functi
     })
     table.insert(f26_local0, {
         models = {
-            label = "Bot Count",
-            description = "Defines the total of bot players.",
+            label = "TF_BOT_COUNT",
+            description = "TF_BOT_COUNT_DESC",
             profileVarName = "bot_count",
             lowValue = 1,
             highValue = 3,
@@ -44,8 +44,8 @@ DataSources.TFOptionsBot = DataSourceHelpers.ListSetup("PC.TFOptionsBot", functi
     })
     table.insert(f26_local0, {
         models = {
-            label = "Bot Command",
-            description = "Enables bot commands to control bots.",
+            label = "TF_BOT_COMMAND",
+            description = "TF_BOT_COMMAND_DESC",
             profileVarName = "bot_command",
             widgetType = "tfcheckbox"
         },

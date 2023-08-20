@@ -22,8 +22,8 @@ DataSources.TFOptionsPerksP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPerksP1"
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Remove Perk Limit",
-            description = "Let the player buy unlimited perks.",
+            label = "TF_NO_PERK_LIM",
+            description = "TF_NO_PERK_LIM_DESC",
             profileVarName = "no_perk_lim",
             widgetType = "tfcheckbox"
         },
@@ -31,8 +31,8 @@ DataSources.TFOptionsPerksP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPerksP1"
     })
     table.insert(f26_local0, {
         models = {
-            label = "Bigger Mulekick",
-            description = "Mulekick now lets you carry 4 weapons.",
+            label = "TF_BIGGER_MULE",
+            description = "TF_BIGGER_MULE_DESC",
             profileVarName = "bigger_mule",
             widgetType = "tfcheckbox"
         },
@@ -40,8 +40,8 @@ DataSources.TFOptionsPerksP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPerksP1"
     })
     table.insert(f26_local0, {
         models = {
-            label = "Spawn With Perkaholic",
-            description = "Choose whether to start with perkaholic.",
+            label = "TF_PERKAHOLIC",
+            description = "TF_PERKAHOLIC_DESC",
             profileVarName = "perkaholic",
             widgetType = "tfcheckbox"
         },
@@ -49,8 +49,8 @@ DataSources.TFOptionsPerksP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPerksP1"
     })
     table.insert(f26_local0, {
         models = {
-            label = "Spawn with Quick Revive",
-            description = "Choose whether to start with quick revive.",
+            label = "TF_SPAWN_WITH_QUICK_RES",
+            description = "TF_SPAWN_WITH_QUICK_RES_DESC",
             profileVarName = "spawn_with_quick_res",
             widgetType = "tfcheckbox"
         },
@@ -58,8 +58,8 @@ DataSources.TFOptionsPerksP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPerksP1"
     })
     table.insert(f26_local0, {
         models = {
-            label = "Time-based perk loss",
-            description = "Perks are gradually lost as time goes by when a player is downed.",
+            label = "TF_T8_PERKLOSS",
+            description = "TF_T8_PERKLOSS_DESC",
             profileVarName = "perk_lose",
             widgetType = "tfcheckbox"
         },
@@ -67,8 +67,8 @@ DataSources.TFOptionsPerksP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPerksP1"
     })
     table.insert(f26_local0, {
         models = {
-            label = "PerkPlus",
-            description = "Enable additional perk enhancements: \n\n^2Speed Cola^7: Speed up the purchase of perks and gobblegums, ADS, switching weapons, and melee speed, and removes the “first raise” animation\n^3Stamin-Up^7: Raise your weapon after sprinting much quicker, fire and throw grenades while running, and unlimited sprint\n^3Double Tap Root Beer^7: Special Weapon charges faster\n^1Widow’s Wine^7: Gives PhD Flopper explosive resistance (only works when there is only one damage protection perk on the map)\nDeadshot Daiquiri: When you have 4 perks including Deadshot, kill 5 zombies with headshots in a row to activate a x1.25 multiplier to headshot damage. You will see the Deadshot icon next to the weapon’s ammo count to know it is active. Disappears/resets when you get a non-headshot kill.",
+            label = "TF_PERKPLUS",
+            description = "TF_PERKPLUS_DESC",
             profileVarName = "perkplus",
             widgetType = "tfcheckbox"
         },

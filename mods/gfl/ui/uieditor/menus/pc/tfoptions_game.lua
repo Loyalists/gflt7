@@ -22,8 +22,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Starting Round",
-            description = "Choose which round to start on.",
+            label = "TF_ROUND",
+            description = "TF_ROUND_DESC",
             profileVarName = "starting_round",
             lowValue = 1,
             highValue = 255,
@@ -34,8 +34,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "Zombie Counter Enabled",
-            description = "Adds a zombie counter at the top left of the screen to show you how many zombies are left in the wave.",
+            label = "TF_ZCOUNTER",
+            description = "TF_ZCOUNTER_DESC",
             profileVarName = "zcounter_enabled",
             widgetType = "tfcheckbox"
         },
@@ -43,8 +43,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "No Round Delay",
-            description = "Removes the delay between rounds. Obviously pointless if you have roamer enabled.",
+            label = "TF_NO_ROUND_DELAY",
+            description = "TF_NO_ROUND_DELAY_DESC",
             profileVarName = "no_round_delay",
             widgetType = "tfcheckbox"
         },
@@ -52,8 +52,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "Zombie Hitmarkers",
-            description = "Show hitmarkers when damaging zombies.",
+            label = "TF_HITMARKERS",
+            description = "TF_HITMARKERS_DESC",
             profileVarName = "hitmarkers",
             widgetType = "tfcheckbox"
         },
@@ -61,8 +61,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "Timed Gameplay",
-            description = "Enables timed gameplay mode. When active, zombies don't stop spawning and the goal is to last as long as possible. Not compatible with roamer or the zombie counter.",
+            label = "TF_TIMED_GAMEPLAY",
+            description = "TF_TIMED_GAMEPLAY_DESC",
             profileVarName = "timed_gameplay",
             widgetType = "tfcheckbox"
         },
@@ -70,8 +70,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "Start with All Doors Open",
-            description = "Opens all doors on the map.",
+            label = "TF_OPEN_ALL_DOORS",
+            description = "TF_OPEN_ALL_DOORS_DESC",
             profileVarName = "open_all_doors",
             widgetType = "tfcheckbox"
         },
@@ -79,8 +79,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "Mystery Box in All Locations",
-            description = "Spawns the mystery box in every possible location at once. Prevents teddies.",
+            label = "TF_EVERY_BOX",
+            description = "TF_EVERY_BOX_DESC",
             profileVarName = "every_box",
             widgetType = "tfcheckbox"
         },
@@ -88,8 +88,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "Start with Power Enabled",
-            description = "Turn on the power when the game starts.",
+            label = "TF_START_POWER",
+            description = "TF_START_POWER_DESC",
             profileVarName = "start_power",
             widgetType = "tfcheckbox"
         },
@@ -97,8 +97,8 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "Round Revive",
-            description = "Revive all players at the end of the round and gain full health.",
+            label = "TF_ROUND_REVIVE",
+            description = "TF_ROUND_REVIVE_DESC",
             profileVarName = "roundrevive",
             widgetType = "tfcheckbox"
         },

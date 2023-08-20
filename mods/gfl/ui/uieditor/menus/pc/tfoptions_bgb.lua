@@ -57,8 +57,8 @@ DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", functi
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Random GobbleGum",
-            description = "All GobbleGums are available and selected at random.",
+            label = "TF_BGB_LOADOUT",
+            description = "TF_BGB_LOADOUT_DESC",
             profileVarName = "bgb_loadout",
             widgetType = "tfcheckbox"
         },
@@ -66,8 +66,8 @@ DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", functi
     })
     table.insert(f26_local0, {
         models = {
-            label = "Fixed GobbleGum Cost",
-            description = "Cost of Gobblegum will not change.",
+            label = "TF_BGB_FIXED_COST",
+            description = "TF_BGB_FIXED_COST_DESC",
             profileVarName = "fixed_cost",
             widgetType = "tfcheckbox"
         },
@@ -75,8 +75,8 @@ DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", functi
     })
     table.insert(f26_local0, {
         models = {
-            label = "GobbleGum Base Cost",
-            description = "Base cost of GobbleGum.",
+            label = "TF_BGB_COST",
+            description = "TF_BGB_COST_DESC",
             profileVarName = "bgb_cost",
             datasource = "TFOptionsBGBCost",
             widgetType = "dropdown"

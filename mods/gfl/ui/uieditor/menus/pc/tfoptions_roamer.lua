@@ -58,8 +58,8 @@ DataSources.TFOptionsRoamerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsRoamerP
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Roamer Enabled",
-            description = "Roamer allows you to wait at the end of every round, before the next round starts. No more crawlers! \nTo start the next round, press ADS + Melee.",
+            label = "TF_ROAMER_ENABLED",
+            description = "TF_ROAMER_ENABLED_DESC",
             profileVarName = "roamer_enabled",
             widgetType = "tfcheckbox"
         },
@@ -67,8 +67,8 @@ DataSources.TFOptionsRoamerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsRoamerP
     })
     table.insert(f26_local0, {
         models = {
-            label = "Roamer Time Between Rounds",
-            description = "Choose how long you have between rounds.",
+            label = "TF_ROAMER_TIME",
+            description = "TF_ROAMER_TIME_DESC",
             profileVarName = "roamer_time",
             datasource = "TFOptionsRoamerTime",
             widgetType = "dropdown"
