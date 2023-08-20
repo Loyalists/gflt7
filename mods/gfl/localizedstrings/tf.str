@@ -853,7 +853,7 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
-REFERENCE            ROAMER_ENABLED_DESC
+REFERENCE            ROAMER_TIME_DESC
 LANG_ENGLISH         "Choose how long you have between rounds."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
