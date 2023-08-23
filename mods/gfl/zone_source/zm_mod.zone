@@ -112,7 +112,5 @@ image,uie_t7_zm_hud_score_char8_helmet
 image,uie_t7_zm_hud_score_char8_gold_helmet
 image,uie_t7_zm_hud_score_char8_mask
 
-material,specialty_giant_three_guns_zombies
 material,specialty_three_guns_zombies
-material,specialty_giant_ads_zombies
 material,specialty_ads_zombies

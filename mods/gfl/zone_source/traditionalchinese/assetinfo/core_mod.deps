@@ -15,13 +15,13 @@ sound,core_mod,traditionalchinese
 localize,gfl_character
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\gfl_character.str,1691904312,
 localize,tf
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\tf.str,1692514571,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\tf.str,1692518380,
 localize,tf_menu
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\tf_menu.str,1692512548,
 texturecombo,core_mod
 assetlist,core_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\loc\core_mod.zone,1692514898,e33716a9,7b0f540d,d69551a2,d15a10b5
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\loc\core_mod.zone,1692722681,e33716a9,7b0f540d,d69551a2,d15a10b5
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\traditionalchinese\assetlist\core_pre_gfx.csv,1638882744,4f38c8d2,54dbe0ad,a26fe6dd,7ce6fe27
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\traditionalchinese\assetlist\core_patch.csv,1638882651,38d4c92a,0186498f,35efb776,59863d59
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\traditionalchinese\assetlist\core_gfx.csv,1638882743,4cd6243d,831296e2,f2d7c4d8,2e2c9159
@@ -54,5 +54,5 @@ assetlist,core_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\traditionalchinese\sound\zone\core_mod.traditionalchinese.alias.sz,1692514911,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\traditionalchinese\sound\zone\core_mod.traditionalchinese.alias.sz,1692722696,
 errorcount,0

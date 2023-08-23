@@ -35,7 +35,6 @@
 
 #namespace mule_kick_indicator;
 
-#precache( "material", "specialty_giant_three_guns_zombies");
 #precache( "material", "specialty_three_guns_zombies");
 
 function init()
@@ -63,23 +62,17 @@ function quad_kick_indicator()
 
 	if( !isDefined( self.mulekick_icon ) )
 	{
-	self.mulekick_icon = newClientHudElem(self);
-	self.mulekick_icon.horzAlign = "right";
-	self.mulekick_icon.vertAlign = "bottom";
-	self.mulekick_icon.x = -150;
-	self.mulekick_icon.y = -120;
-	self.mulekick_icon.alpha = 0;
-	self.mulekick_icon.archived = true;
-	self.mulekick_icon.hidewheninmenu = true;
+		self.mulekick_icon = newClientHudElem(self);
+		self.mulekick_icon.horzAlign = "right";
+		self.mulekick_icon.vertAlign = "bottom";
+		self.mulekick_icon.x = -150;
+		self.mulekick_icon.y = -120;
+		self.mulekick_icon.alpha = 0;
+		self.mulekick_icon.archived = true;
+		self.mulekick_icon.hidewheninmenu = true;
 	}
-	if(level.script == "zm_zod" )
-	{
-		self.mulekick_icon setShader( "specialty_three_guns_zombies", 24, 24 ); 
-	}
-	else
-	{
-		self.mulekick_icon setShader( "specialty_giant_three_guns_zombies", 24, 24 ); 
-	}
+
+	self.mulekick_icon setShader( "specialty_three_guns_zombies", 24, 24 ); 
 	
 	while(1)
 	{
@@ -117,23 +110,17 @@ function mule_kick_indicator()
 
 	if( !isDefined( self.mulekick_icon ) )
 	{
-	self.mulekick_icon = newClientHudElem(self);
-	self.mulekick_icon.horzAlign = "right";
-	self.mulekick_icon.vertAlign = "bottom";
-	self.mulekick_icon.x = -150;
-	self.mulekick_icon.y = -120;
-	self.mulekick_icon.alpha = 0;
-	self.mulekick_icon.archived = true;
-	self.mulekick_icon.hidewheninmenu = true;
+		self.mulekick_icon = newClientHudElem(self);
+		self.mulekick_icon.horzAlign = "right";
+		self.mulekick_icon.vertAlign = "bottom";
+		self.mulekick_icon.x = -150;
+		self.mulekick_icon.y = -120;
+		self.mulekick_icon.alpha = 0;
+		self.mulekick_icon.archived = true;
+		self.mulekick_icon.hidewheninmenu = true;
 	}
-	if(level.script == "zm_zod" )
-	{
-		self.mulekick_icon setShader( "specialty_three_guns_zombies", 24, 24 ); 
-	}
-	else
-	{
-		self.mulekick_icon setShader( "specialty_giant_three_guns_zombies", 24, 24 ); 
-	}
+
+	self.mulekick_icon setShader( "specialty_three_guns_zombies", 24, 24 ); 
 
 	while(1)
 	{

@@ -41,6 +41,7 @@ function init_character_table()
 	level.charactertable["zm"]["vepley"] = &swap_to_vepley;
 	level.charactertable["zm"]["m4a1"] = &swap_to_m4a1;
 	level.charactertable["zm"]["mp7_casual_tights"] = &swap_to_mp7_casual_tights;
+	level.charactertable["zm"]["tac50"] = &swap_to_tac50;
 
 	level.charactertable["zm_moon"] = [];
 	level.charactertable["zm_moon"]["m16a1"] = &swap_to_m16a1_moon;
@@ -61,6 +62,7 @@ function init_character_table()
 	level.additional_bodystyle_table["t7_gfl_m4a1_fb"] = 3;
 	level.additional_bodystyle_table["t7_gfl_g36c_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_rfb_fb"] = 1;
+	level.additional_bodystyle_table["t7_gfl_tac50_v2_fb"] = 2;
 	level.additional_bodystyle_table["t7_gfl_vepley_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_mp7_casual_tights_fb"] = 1;
 }
@@ -216,6 +218,13 @@ function swap_to_rfb()
 {
 	self.cc_bodytype = 13;
 	self.cc_bodystyle = 1;
+	self character_util::swap_to_cc();
+}
+
+function swap_to_tac50()
+{
+	self.cc_bodytype = 13;
+	self.cc_bodystyle = 2;
 	self character_util::swap_to_cc();
 }
 

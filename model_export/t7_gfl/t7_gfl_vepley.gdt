@@ -8355,9 +8355,6 @@
 	"c_zom_zod_femme_viewbody" [ "t7_gfl_vepley_body_mp" ]
 	{
 	}
-	"c_zom_zod_femme_mpc_fb" [ "t7_gfl_vepley_fb_mp" ]
-	{
-	}
 	"c_zom_zod_femme_viewhands" [ "t7_gfl_vepley_viewhands" ]
 	{
 	}
@@ -8368,6 +8365,9 @@
 	{
 	}
 	"c_cia_blackstation_victim_4_fb_corpse" [ "t7_gfl_vepley_fb" ]
+	{
+	}
+	"c_zom_zod_femme_mpc_fb" [ "t7_gfl_vepley_backpack_fb_mp" ]
 	{
 	}
 }

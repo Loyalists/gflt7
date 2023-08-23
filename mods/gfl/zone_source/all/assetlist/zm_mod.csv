@@ -4,8 +4,6 @@ xmodelmesh,bo2_zombie_money69fc709a
 xmodelmesh,pack_a_punch96eb4d2
 material,mc/mtl_x2icon_gold
 material,specialty_ads_zombies
-material,specialty_giant_ads_zombies
-material,specialty_giant_three_guns_zombies
 material,specialty_three_guns_zombies
 techset,2d_blend#da7372ff
 techset,mc/lit_advanced#e6142445
@@ -15,8 +13,6 @@ image,$identitynormalmap
 image,$specular_mask
 image,$white_ao
 image,i_specialty_ads_zombies
-image,i_specialty_giant_ads_zombies
-image,i_specialty_giant_three_guns_zombies
 image,i_specialty_three_guns_zombies
 image,metal_gold_g
 image,uie_t7_zm_hud_score_char1

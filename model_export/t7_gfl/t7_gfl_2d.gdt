@@ -1871,7 +1871,7 @@
 	"i_specialty_ads_zombies" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\specialty_giant_ads_zombies.png"
+		"baseImage" "model_export\\t7_gfl\\global\\perk\\ui_icon_perks_zm_deadshot_classic.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -3740,7 +3740,7 @@
 	"i_specialty_three_guns_zombies" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\specialty_three_guns_zombies.png"
+		"baseImage" "model_export\\t7_gfl\\global\\perk\\ui_icon_perks_zm_mulekick.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4356,24 +4356,6 @@
 		"textureAtlasColumnCount" "1"
 		"textureAtlasRowCount" "1"
 		"type" "image"
-	}
-	"specialty_giant_three_guns_zombies" [ "specialty_three_guns_zombies" ]
-	{
-		"colorMap" "i_specialty_giant_three_guns_zombies"
-	}
-	"i_specialty_giant_three_guns_zombies" [ "i_specialty_three_guns_zombies" ]
-	{
-		"baseImage" "model_export\\t7_gfl\\global\\specialty_giant_three_guns_zombies.png"
-		"coreSemantic" "Linear4ch"
-	}
-	"specialty_giant_ads_zombies" [ "specialty_ads_zombies" ]
-	{
-		"colorMap" "i_specialty_giant_ads_zombies"
-	}
-	"i_specialty_giant_ads_zombies" [ "i_specialty_ads_zombies" ]
-	{
-		"baseImage" "model_export\\t7_gfl\\global\\specialty_giant_ads_zombies.png"
-		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_9a91" [ "t7_menu_mp_hero_background_with_g11" ]
 	{

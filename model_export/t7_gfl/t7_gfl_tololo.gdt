@@ -7769,9 +7769,6 @@
 	"c_t7_mp_technomancer_viewarms1_skin1" [ "t7_gfl_tololo_viewhands" ]
 	{
 	}
-	"c_t7_mp_technomancer_viewarms1_skin2" [ "t7_gfl_tololo_viewhands" ]
-	{
-	}
 	"c_t7_mp_technomancer_viewarms2_skin4" [ "t7_gfl_tololo_viewhands" ]
 	{
 	}
@@ -7794,9 +7791,6 @@
 	{
 	}
 	"c_t7_mp_technomancer_viewlegs1_skin15" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin2" [ "t7_gfl_tololo_viewlegs" ]
 	{
 	}
 	"c_t7_mp_technomancer_viewlegs1_skin6" [ "t7_gfl_tololo_viewlegs" ]

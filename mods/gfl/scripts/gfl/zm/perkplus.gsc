@@ -33,7 +33,6 @@
 
 #namespace perkplus;
 
-#precache( "material", "specialty_giant_ads_zombies");
 #precache( "material", "specialty_ads_zombies");
 
 function init()
@@ -258,14 +257,7 @@ function deadshot_icon()
 	self.deadshot_icon.archived = true;
 	self.deadshot_icon.hidewheninmenu = true;
 	
-	if(level.script == "zm_zod" )
-	{
-		self.deadshot_icon setShader( "specialty_ads_zombies", 24, 24 ); 
-	}
-	else
-	{
-		self.deadshot_icon setShader( "specialty_giant_ads_zombies", 24, 24 ); 
-	}
+	self.deadshot_icon setShader( "specialty_ads_zombies", 24, 24 ); 
 
 	while(isdefined(self))
 	{
