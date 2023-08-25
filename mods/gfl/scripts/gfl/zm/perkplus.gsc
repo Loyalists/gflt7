@@ -39,12 +39,16 @@ function init()
 {
 	callback::on_connect( &on_player_connect );
 	deadshot_dealer();
+	thread main();
 }
 
 function main()
 {
+    level endon("end_game");
+    level endon("game_ended");
+    level waittill( "initial_blackscreen_passed" );
+	
 	thread phdwine();
-	thread mulekick_return_watcher();
 }
 
 function on_player_connect()
@@ -52,7 +56,6 @@ function on_player_connect()
 	self endon("disconnect");
 	
 	self thread set_perk();
-	self thread mulekick_return();
 }
 
 function set_perk()
@@ -130,7 +133,6 @@ function phdwine()
 {
 	level endon("game_ended");
 	level endon("end_game");
-	level waittill( "initial_blackscreen_passed" ); 
 
 	if(isDefined(level.perk_damage_override) && level.perk_damage_override.size == 1 && checkwine())
 	{
@@ -325,106 +327,4 @@ function isprimaries(weapon)
 		}
 	}
 	return false;
-}
-
-function mulekick_return_watcher()
-{
-	level endon("end_game");
-	level endon("game_ended");
-
-	while (1) 
-	{
-		foreach(player in GetPlayers())
-		{
-			if (player.sessionstate != "spectator" && isAlive(player) && player isOnGround() && isDefined(player.cansave) && !player laststand::player_is_in_laststand() )
-			{
-				me = player getXuid(true);
-				if( player hasPerk("specialty_additionalprimaryweapon") && player GetWeaponsListPrimaries().size >= 3 )
-				{
-					weapon = player GetWeaponsListPrimaries()[2];
-					if(isweapon(weapon) && isdefined(weapon) && self hasweapon(weapon) && weapon != self.laststandpistol && weapon != level.zombie_powerup_weapon[ "minigun" ] && zm_weapons::is_weapon_or_base_included( weapon ) 
-					&& !IsSubStr( weapon.name, "bottle") && !IsSubStr( weapon.name, "hero") && !IsSubStr( weapon.name, "elemental") && !IsSubStr( weapon.name, "staff") && !IsSubStr( weapon.name, "grenade") 
-					&& !IsSubStr( weapon.name, "wine") && weapon.name != "knife" && !IsSubStr( weapon.name, "equip") && !IsSubStr( weapon.name,"perk" ))
-					{
-						level.mulekick_weapon[me] = weapon;
-						level.mulekick_clip[me] = player getWeaponAmmoClip(weapon);
-						level.mulekick_stock[me] = player getWeaponAmmostock(weapon);
-					}
-					else
-					{
-						level.mulekick_weapon[me] = [];
-						level.mulekick_clip[me] = [];
-						level.mulekick_stock[me] = [];
-					}
-				}
-			}
-		}
-		WAIT_SERVER_FRAME;
-		wait 2.0001;
-	}
-}
-
-function mulekick_return()
-{
-	self endon("disconnect");
-
-	while (isdefined(self)) 
-	{
-		self waittill("perk_acquired");
-		result = false;
-		if(!isDefined(self.perks_active))
-		{
-			continue;
-		}
-		foreach(perk in self.perks_active) 
-		{
-			if(perk == "specialty_additionalprimaryweapon")
-			{
-				result = true;
-			}
-		}
-		if(result)
-		{
-			self thread return_mulekick_weapon();
-			self util::waittill_any_return( "fake_death", "death", "player_downed", "specialty_additionalprimaryweapon_stop" );
-		}
-		WAIT_SERVER_FRAME;
-	}
-}
-
-function return_mulekick_weapon()
-{
-	self notify("elmg_mulekick_return");
-	self endon("elmg_mulekick_return");
-	WAIT_SERVER_FRAME;
-	wait 0.2;
-	me = self getXuid(true);
-
-	weapon = level.mulekick_weapon[me];
-	if(isDefined(weapon) && self GetWeaponsListPrimaries().size <= 2 && zm_weapons::is_weapon_or_base_included( weapon ))
-	{
-		self zm_weapons::give_build_kit_weapon( weapon );
-		scoreevents::processScoreEvent( "getbackmulekick" , self );
-		if(isDefined(level.mulekick_stock[me]))
-		{
-			stock_ammo = level.mulekick_stock[me];
-		}
-		if(isDefined(level.mulekick_clip[me]))
-		{
-			clip_ammo = level.mulekick_clip[me];
-		}
-		if(isDefined(stock_ammo))
-		{
-			self SetWeaponAmmoStock(weapon, stock_ammo);
-		}
-		if(isDefined(clip_ammo))
-		{
-			self SetWeaponAmmoClip(weapon, clip_ammo);
-		}
-		else
-		{
-			self SetWeaponAmmoClip(weapon, weapon.clipsize);
-		}
-		self SetSpawnWeapon(weapon);
-	}
 }

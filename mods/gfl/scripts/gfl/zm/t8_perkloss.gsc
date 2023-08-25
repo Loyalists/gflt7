@@ -35,6 +35,7 @@
 function init()
 {
 	callback::on_connect( &on_player_connect );
+	thread main();
 }
 
 function on_player_connect()
@@ -47,6 +48,10 @@ function on_player_connect()
 
 function main()
 {
+    level endon("end_game");
+    level endon("game_ended");
+    level waittill( "initial_blackscreen_passed" );
+	
 	thread lockrevivefunc();
 }
 
@@ -98,7 +103,7 @@ function check_to_cant_save_perks()
 	return false;
 }
 
-function elmg_get_player_perk_size()
+function get_player_perk_size()
 {
 	num = 0;
 	a_str_perks = GetArrayKeys( level._custom_perks );
@@ -119,11 +124,9 @@ function perkrestore()
 
 	while (1) 
 	{
-		//self util::waittill_any_return( "player_revived");
 		self waittill("player_revived");
-		//self.tempperks = [];
 		wait 0.3;
-		if(self elmg_get_player_perk_size() == 0)
+		if(self get_player_perk_size() == 0)
 		{
 			a_keys = GetArrayKeys( level._custom_perks );
 			for ( i = 0; i < a_keys.size; i++ )
@@ -153,6 +156,7 @@ function perkrestore()
 			}
 
 		}
+		self notify("t8_perkloss_perk_restored");
 	}
 }
 
@@ -263,7 +267,9 @@ function flash_perk_icon(perk)
 	self endon(perk + "_nomore");
 	
 	if(level.script == "zm_basement" || level.script == "zm_der_hafen")
-		break;
+	{
+		return;
+	}
 
 	while (isdefined(self)) 
 	{

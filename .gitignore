@@ -2,6 +2,8 @@
 *.zip
 *.7z
 *.gdb
+dummy
+user_aliases.csv
 
 _ignored
 _backup

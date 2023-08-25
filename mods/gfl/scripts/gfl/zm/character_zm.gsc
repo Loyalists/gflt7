@@ -57,9 +57,9 @@ function init_character_table()
 	level.additional_bodystyle_table["c_zom_der_dempsey_mpc_fb"] = 1;
 	level.additional_bodystyle_table["c_zom_dlc3_dempsey_mpc_fb"] = 1;
 	level.additional_bodystyle_table["c_t7_zm_dlchd_waw_dempsey_mpc_fb"] = 2;
+	level.additional_bodystyle_table["t7_gfl_m4a1_v2_fb"] = 3;
 	level.additional_bodystyle_table["t7_gfl_ro635_fb"] = 1;
-	level.additional_bodystyle_table["t7_gfl_st_ar15_fb"] = 2;
-	level.additional_bodystyle_table["t7_gfl_m4a1_fb"] = 3;
+	level.additional_bodystyle_table["t7_gfl_st_ar15_v2_fb"] = 2;
 	level.additional_bodystyle_table["t7_gfl_g36c_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_rfb_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_tac50_v2_fb"] = 2;

@@ -19,6 +19,7 @@ scriptparsetree,scripts/gfl/zm/perkplus.gsc
 scriptparsetree,scripts/gfl/zm/t8_perkloss.gsc
 scriptparsetree,scripts/gfl/zm/magicboxshare.gsc
 scriptparsetree,scripts/gfl/zm/mule_kick_indicator.gsc
+scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
 
 scriptparsetree,scripts/zm/_zm_ffotd.gsc

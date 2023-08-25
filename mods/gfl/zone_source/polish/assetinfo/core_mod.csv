@@ -128,5 +128,6 @@ index,type,name,resident,streamed,parentStack
 127,localize,TF_MENU_ROAMER_OPTIONS_DESC,58,0,||assetlist
 128,localize,TF_MENU_SERVER_OPTIONS,44,0,||assetlist
 129,localize,TF_MENU_SERVER_OPTIONS_DESC,59,0,||assetlist
-130,keyvaluepairs,po_core_mod,1098,0,||assetlist
-131,assetlist,,2064,0,
+130,localize,MENU_GFL,26,0,||assetlist
+131,keyvaluepairs,po_core_mod,1096,0,||assetlist
+132,assetlist,,2080,0,

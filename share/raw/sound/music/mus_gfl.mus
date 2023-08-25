@@ -5,7 +5,7 @@
             "Name": "mus_gfl_brain",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_brain",
+                    "AliasName": "mus_gfl_brain_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -34,7 +34,7 @@
             "Name": "mus_gfl_elecwar_h",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_elecwar_h",
+                    "AliasName": "mus_gfl_elecwar_h_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -63,7 +63,7 @@
             "Name": "mus_gfl_departure",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_departure",
+                    "AliasName": "mus_gfl_departure_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -92,7 +92,7 @@
             "Name": "mus_gfl_autonome",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_autonome",
+                    "AliasName": "mus_gfl_autonome_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -121,7 +121,7 @@
             "Name": "mus_gfl_room",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_room",
+                    "AliasName": "mus_gfl_room_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -150,7 +150,7 @@
             "Name": "mus_gfl_barbarous_funera",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_barbarous_funera",
+                    "AliasName": "mus_gfl_barbarous_funera_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -179,7 +179,7 @@
             "Name": "mus_gfl_ev5_intermission",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_ev5_intermission",
+                    "AliasName": "mus_gfl_ev5_intermission_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -208,7 +208,7 @@
             "Name": "mus_gfl_greenlight",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_greenlight",
+                    "AliasName": "mus_gfl_greenlight_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -237,7 +237,7 @@
             "Name": "mus_gfl_nihilism",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_nihilism",
+                    "AliasName": "mus_gfl_nihilism_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -266,7 +266,7 @@
             "Name": "mus_gfl_safety_first",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_safety_first",
+                    "AliasName": "mus_gfl_safety_first_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -295,7 +295,7 @@
             "Name": "mus_gfl_synthesis_catalyst",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_synthesis_catalyst",
+                    "AliasName": "mus_gfl_synthesis_catalyst_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -324,7 +324,7 @@
             "Name": "mus_gfl_all_systems_go",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_all_systems_go",
+                    "AliasName": "mus_gfl_all_systems_go_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -353,7 +353,7 @@
             "Name": "mus_gfl_fixed_point_lobby",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_fixed_point_lobby",
+                    "AliasName": "mus_gfl_fixed_point_lobby_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -382,7 +382,7 @@
             "Name": "mus_gfl_move_on",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_move_on",
+                    "AliasName": "mus_gfl_move_on_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -411,7 +411,7 @@
             "Name": "mus_gfl_hope",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_hope",
+                    "AliasName": "mus_gfl_hope_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,

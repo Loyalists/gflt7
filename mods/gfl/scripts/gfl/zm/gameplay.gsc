@@ -31,6 +31,7 @@
 #using scripts\gfl\zm\t8_perkloss;
 #using scripts\gfl\zm\magicboxshare;
 #using scripts\gfl\zm\mule_kick_indicator;
+#using scripts\gfl\zm\mule_kick_return;
 #using scripts\gfl\zm\zm_bot;
 
 #insert scripts\shared\shared.gsh;
@@ -51,13 +52,16 @@ function init()
     if( GetDvarInt("tfoption_perk_lose") )
     {
         t8_perkloss::init();
-        thread t8_perkloss::main();
     }
 
     if( GetDvarInt("tfoption_perkplus") )
     {
         perkplus::init();
-        thread perkplus::main();
+    }
+
+    if( GetDvarInt("tfoption_perkplus") || GetDvarInt("tfoption_perk_lose") )
+    {
+        mule_kick_return::init();
     }
 
     if( GetDvarInt("tfoption_boxshare") )

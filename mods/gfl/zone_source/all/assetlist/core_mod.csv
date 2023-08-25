@@ -3188,6 +3188,7 @@ image,uie_t7_zm_hud_score_rfb
 image,uie_t7_zm_hud_score_ro635
 image,uie_t7_zm_hud_score_st_ar15
 image,uie_t7_zm_hud_score_super_sass
+image,uie_t7_zm_hud_score_tac50
 image,uie_t7_zm_hud_score_ump45
 sound,core_mod
 customizationtable,zm_character_customization
@@ -3218,6 +3219,7 @@ rawfile,ui/t6/codbase_og.luac
 rawfile,ui/t6/lobby/lobbymenubuttons.lua
 rawfile,ui/t6/lobby/lobbymenus.lua
 rawfile,ui/t7/utility/blackmarketutility.lua
+rawfile,ui/t7/utility/blackmarketutility_og.luac
 rawfile,ui/t7/utility/ccutility.lua
 rawfile,ui/t7/utility/ccutility_og.luac
 rawfile,ui/t7/utility/codutilityrequire.lua
@@ -3275,6 +3277,7 @@ stringtable,gamedata/stats/mp/mp_statstable.csv
 stringtable,gamedata/stats/mp/statsmilestones3.csv
 stringtable,gamedata/stats/zm/statsmilestones3.csv
 stringtable,gamedata/stats/zm/zm_statstable.csv
+stringtable,gamedata/tables/common/music_player.csv
 stringtable,gamedata/weapons/common/attachmenttable.csv
 stringtable,gamedata/weapons/cp/cp_gunlevels.csv
 stringtable,gamedata/weapons/zm/zm_gunlevels.csv

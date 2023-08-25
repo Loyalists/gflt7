@@ -231,14 +231,19 @@ function set_character_customization()
 				func_index = "rfb";
 				break;
 			}
-			case "t7_gfl_st_ar15_fb":
+			case "t7_gfl_st_ar15_v2_fb":
 			{
 				func_index = "st_ar15";
 				break;
 			}
-			case "t7_gfl_m4a1_fb":
+			case "t7_gfl_m4a1_v2_fb":
 			{
 				func_index = "m4a1";
+				break;
+			}
+			case "t7_gfl_tac50_v2_fb":
+			{
+				func_index = "tac50";
 				break;
 			}
 			default:
@@ -307,6 +312,11 @@ function set_icon(func_index)
 		case "m4a1":
 		{
 			icon_index = 5;
+			break;
+		}
+		case "tac50":
+		{
+			icon_index = 6;
 			break;
 		}
 		default:

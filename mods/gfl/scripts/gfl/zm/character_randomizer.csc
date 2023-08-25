@@ -23,6 +23,7 @@ function init_character_icon_table()
 	level.character_icon_table[3] = "uie_t7_zm_hud_score_rfb";
 	level.character_icon_table[4] = "uie_t7_zm_hud_score_st_ar15";
 	level.character_icon_table[5] = "uie_t7_zm_hud_score_m4a1";
+	level.character_icon_table[6] = "uie_t7_zm_hud_score_tac50";
 }
 
 function init_playerlist_icon_uimodel( n_local_client )
