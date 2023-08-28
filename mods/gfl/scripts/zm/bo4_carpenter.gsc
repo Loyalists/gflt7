@@ -22,6 +22,9 @@ function __init__() {}
 //BO4 Carpenter
 function carpenter_upgrade()
 {
+	level endon("game_ended");
+	level endon("end_game");
+
 	shield_name = get_riot_shield();
 	while(isDefined(shield_name))
 	{
@@ -47,12 +50,10 @@ function carpenter_upgrade()
 	}
 }
 
-function get_riot_shield () {
+function get_riot_shield() {
 	keys = GetArrayKeys( level.zombie_weapons );
 	foreach(weapon in keys) {
-		iPrintLn(weapon.name);
 		if (weapon.isRiotshield) {
-			iPrintLn(weapon.name);
 			return(weapon.name);
 		}
 	}

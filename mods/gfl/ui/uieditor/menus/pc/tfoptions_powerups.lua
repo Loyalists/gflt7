@@ -149,7 +149,6 @@ DataSources.TFOptionsBetterNukePoints = DataSourceHelpers.ListSetup("PC.TFOption
     return f15_local0
 end, true)
 
-
 DataSources.TFOptionsPowerups = DataSourceHelpers.ListSetup("PC.TFOptionsPowerups", function(f15_arg0)
     local f15_local0 = {}
     table.insert(f15_local0, {
@@ -190,7 +189,6 @@ DataSources.TFOptionsPowerups = DataSourceHelpers.ListSetup("PC.TFOptionsPowerup
     })
     return f15_local0
 end, true)
-
 
 DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPowerupsP1", function(f26_arg0)
     local f26_local0 = {}
@@ -234,7 +232,15 @@ DataSources.TFOptionsPowerupsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPower
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
-    -- table.insert(f26_local0, {models = {label = "BO4 Carpenter", description = "Carpenters repair your shield", profileVarName = "bo4_carpenter", widgetType = "tfcheckbox"}, properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties})
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_BO4_CARPENTER",
+            description = "TF_BO4_CARPENTER_DESC",
+            profileVarName = "bo4_carpenter",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
     table.insert(f26_local0, {
         models = {
             label = "TF_PERK_POWERUP",

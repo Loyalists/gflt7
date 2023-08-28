@@ -9,6 +9,9 @@
 
 #using scripts\gfl\zm\gameplay;
 
+//bo4 carpenter
+#using scripts\zm\_zm_weap_riotshield;
+
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 

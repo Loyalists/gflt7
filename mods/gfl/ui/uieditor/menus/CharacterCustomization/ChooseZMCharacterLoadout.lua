@@ -119,11 +119,12 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:addElement( BlackBG )
 	self.BlackBG = BlackBG
 	
+	local title = Engine.Localize( "CPUI_CHOOSE_CHARACTER_CAPS" )
 	local GenericMenuFrame0 = CoD.GenericMenuFrame.new( f8_local1, controller )
 	GenericMenuFrame0:setLeftRight( true, false, 0, 1280 )
 	GenericMenuFrame0:setTopBottom( true, false, 0, 720 )
-	GenericMenuFrame0.titleLabel:setText( "CHOOSE CHARACTER" )
-	GenericMenuFrame0.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText( "CHOOSE CHARACTER" )
+	GenericMenuFrame0.titleLabel:setText( title )
+	GenericMenuFrame0.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText( title )
 	GenericMenuFrame0.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.FeatureIcon.FeatureIcon:setImage( RegisterImage( "uie_t7_mp_icon_header_character" ) )
 	self:addElement( GenericMenuFrame0 )
 	self.GenericMenuFrame0 = GenericMenuFrame0

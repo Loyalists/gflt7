@@ -22,9 +22,9 @@ xmodel,c_54i_cqb_mpc_fb_fe
 material,gfl_logo
 // material,gfl_victory
 image,uie_img_t7_menu_frontend_asset_bo3logo
-image,t7_menu_zm_loadscreen_sumpf
 
 localize,gfl_character
+localize,gfl_menu
 localize,tf
 localize,tf_menu
 localize,menu
@@ -92,9 +92,10 @@ rawfile,ui/t7/utility/BlackMarketUtility.lua
 rawfile,ui/t7/utility/BlackMarketUtility_og.luac
 rawfile,ui/t7/utility/CCUtility.lua
 rawfile,ui/t7/utility/CCUtility_og.luac
-rawfile,ui/t7/utility/LobbyUtility.lua
-rawfile,ui/t7/utility/LobbyUtility_og.luac
+// rawfile,ui/t7/utility/LobbyUtility.lua
+// rawfile,ui/t7/utility/LobbyUtility_og.luac
 
+// random music tracks in lobby
 rawfile,ui/t6/CoDBase.lua
 rawfile,ui/t6/CoDBase_og.luac
 
@@ -323,7 +324,6 @@ xmodel,t7_gfl_ak12_fb
 xmodel,t7_gfl_mp7_fb
 xmodel,t7_gfl_mp7_tights_fb
 xmodel,t7_gfl_mp7_casual_tights_fb
-xmodel,t7_gfl_nyto_fb
 xmodel,t7_gfl_p90_fb
 xmodel,t7_gfl_rfb_fb
 xmodel,t7_gfl_suomi_fb
@@ -345,6 +345,33 @@ xmodel,t7_gfl_vespid_fb
 xmodel,t7_gfl_ripper_fb
 xmodel,t7_gfl_guard_fb
 xmodel,t7_gfl_jaeger_fb
+//xmodel,t7_gfl_nyto_fb
+
+xmodel,c_hro_playefermale_helmet1
+xmodel,c_hro_playefermale_helmet10
+xmodel,c_hro_playefermale_helmet11
+xmodel,c_hro_playefermale_helmet12
+xmodel,c_hro_playefermale_helmet2
+xmodel,c_hro_playefermale_helmet3
+xmodel,c_hro_playefermale_helmet4
+xmodel,c_hro_playefermale_helmet5
+xmodel,c_hro_playefermale_helmet6
+xmodel,c_hro_playefermale_helmet7
+xmodel,c_hro_playefermale_helmet8
+xmodel,c_hro_playefermale_helmet9
+
+xmodel,c_hro_playermale_helmet1
+xmodel,c_hro_playermale_helmet10
+xmodel,c_hro_playermale_helmet11
+xmodel,c_hro_playermale_helmet12
+xmodel,c_hro_playermale_helmet2
+xmodel,c_hro_playermale_helmet3
+xmodel,c_hro_playermale_helmet4
+xmodel,c_hro_playermale_helmet5
+xmodel,c_hro_playermale_helmet6
+xmodel,c_hro_playermale_helmet7
+xmodel,c_hro_playermale_helmet8
+xmodel,c_hro_playermale_helmet9
 
 // PLAYER_FEMALE
 xmodel,c_hro_playerfemale_prologue_fb

@@ -18,7 +18,10 @@
 
 function init()
 {
-	clientfield::register("toplayer", "gfl_character_icon", VERSION_SHIP, 4, "int");
+	// clientfield::register("toplayer", "gfl_character_icon", VERSION_SHIP, 4, "int");
+	util::registerClientSys( "gfl_character_icon" );
+    callback::on_connect(&on_player_connect);
+
 	character::init_character_table();
 	character_zm::init_character_table();
 	init_randomized_character_table();
@@ -58,6 +61,11 @@ function init()
 	{
 		callback::on_spawned( &altbody_cc_fix );
 	}
+}
+
+function on_player_connect()
+{
+    util::setClientSysState( "gfl_character_icon", "none", self );
 }
 
 function zombie_model_fix()
@@ -254,10 +262,7 @@ function set_character_customization()
 		}
 	}
 
-	if ( isdefined( func_index ) )
-	{
-		self set_icon(func_index);
-	}
+	self set_icon(func_index);
 }
 
 function set_custom_character_for_bot()
@@ -286,47 +291,14 @@ function set_custom_character()
 
 function set_icon(func_index)
 {
-	icon_index = 0;
-	switch (func_index)
+	icon_index = "none";
+	if ( isdefined(func_index) )
 	{
-		case "ro635":
-		{
-			icon_index = 1;
-			break;
-		}
-		case "g36c":
-		{
-			icon_index = 2;
-			break;
-		}
-		case "rfb":
-		{
-			icon_index = 3;
-			break;
-		}
-		case "st_ar15":
-		{
-			icon_index = 4;
-			break;
-		}
-		case "m4a1":
-		{
-			icon_index = 5;
-			break;
-		}
-		case "tac50":
-		{
-			icon_index = 6;
-			break;
-		}
-		default:
-		{
-			icon_index = 0;
-			break;
-		}
+		icon_index = func_index;
 	}
 	// works for the current client only
-	self clientfield::set_to_player("gfl_character_icon", icon_index);
+	// self clientfield::set_to_player("gfl_character_icon", icon_index);
+	util::setClientSysState( "gfl_character_icon", icon_index, self );
 }
 
 function revolve_character_test()

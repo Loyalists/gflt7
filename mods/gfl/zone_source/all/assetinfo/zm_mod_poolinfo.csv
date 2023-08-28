@@ -8,7 +8,7 @@ xmodelmesh,34816,2
 material,20480,3
 computeshaderset,256,0
 techset,1024,2
-image,49152,48
+image,49152,50
 sound,32,1
 sound_patch,16,0
 col_map,2,0
@@ -53,7 +53,7 @@ leaderboarddef,256,0
 ddl,64,0
 glasses,2,0
 texturelist,8,0
-scriptparsetree,1024,34
+scriptparsetree,1024,38
 keyvaluepairs,64,1
 vehicle,64,0
 addon_map_ents,1,0

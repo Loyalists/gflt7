@@ -14,7 +14,9 @@ image,$specular_mask
 image,$white_ao
 image,i_specialty_ads_zombies
 image,i_specialty_three_guns_zombies
+image,img_loadscreen_zm_factory
 image,metal_gold_g
+image,t7_menu_zm_loadscreen_sumpf
 image,uie_t7_zm_hud_score_char1
 image,uie_t7_zm_hud_score_char1_gold_helmet
 image,uie_t7_zm_hud_score_char1_helmet
@@ -81,9 +83,13 @@ scriptparsetree,scripts/zm/_zm_ffotd.csc
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_mod.csc
 scriptparsetree,scripts/zm/_zm_mod.gsc
+scriptparsetree,scripts/zm/_zm_powerup_carpenter.gsc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.csc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.gsc
+scriptparsetree,scripts/zm/_zm_weap_riotshield.csc
+scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc
+scriptparsetree,scripts/zm/bo4_carpenter.gsc
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc
 scriptparsetree,scripts/zm/gametypes/_clientids.gsc
 scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc

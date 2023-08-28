@@ -4010,7 +4010,7 @@
 	"t7_menu_zm_loadscreen_sumpf" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_zm_loadscreen_sumpf.png"
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_sumpf.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4485,6 +4485,16 @@
 	"t7_gfl_chibi_m4_sopmod_ii" [ "t7_gfl_chibi_m16a1" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\global\\chibi\\m4_sopmod_ii.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"img_loadscreen_zm_factory" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\img_loadscreen_zm_factory.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_zm_loadscreen_cosmodrome" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\img_loadscreen_zm_factory.png"
 		"coreSemantic" "Linear4ch"
 	}
 }

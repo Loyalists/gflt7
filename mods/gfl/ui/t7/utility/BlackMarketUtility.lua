@@ -149,6 +149,7 @@ CoD.BlackMarketUtility.BuildCallingCardSets = function ( f108_arg0 )
 		}
 		local f108_local16 = 0
 		for f108_local20, f108_local21 in ipairs( f108_local11 ) do
+			f108_local21.models.isLocked = false
 			if not f108_local21.properties.isExpert then
 				if not f108_local21.models.isLocked then
 					f108_local16 = f108_local16 + 1

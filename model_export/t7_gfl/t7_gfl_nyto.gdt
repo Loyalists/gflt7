@@ -10358,9 +10358,6 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_hro_goh_min_base_fb" [ "t7_gfl_nyto_fb" ]
-	{
-	}
 	"mtl_gfl_nyto_cf_m_hair_b_117_00" [ "mtl_gfl_nyto_cf_m_hair_b_02" ]
 	{
 		"colorMap" "i_gfl_nyto_cf_m_hair_b_117_00_c"

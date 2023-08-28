@@ -195,12 +195,6 @@ end
 
 f0_local0.IsLootHero = function ( f13_arg0 )
 	return false
-
-	-- if f13_arg0 ~= nil and f13_arg0.assetName ~= nil and f13_arg0.assetName == "pbt_mp_blackmarket" then
-	-- 	return true
-	-- else
-	-- 	return false
-	-- end
 end
 
 f0_local0.GetLootItemVersion = function ( f14_arg0 )

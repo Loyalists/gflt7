@@ -13,20 +13,6 @@ VERSION             "1"
 CONFIG              "C:\projects\cod\t7\bin\StringEd.cfg"
 FILENOTES           ""
 
-REFERENCE            MENU_SELECT_NAME
-LANG_ENGLISH         "SELECT"
-LANG_GERMAN         "#same"
-LANG_SPANISH         "#same"
-LANG_RUSSIAN         "#same"
-LANG_PORTUGUESE         "#same"
-LANG_POLISH         "#same"
-LANG_JAPANESE         "#same"
-LANG_FRENCH         "#same"
-LANG_ENGLISHARABIC         "#same"
-LANG_ITALIAN         "#same"
-LANG_TRADITIONALCHINESE         "#same"
-LANG_SIMPLIFIEDCHINESE         "#same"
-
 REFERENCE            MENU_SELECT_DESC
 LANG_ENGLISH         "Choose the preferred T-Doll as your in-game character!"
 LANG_GERMAN         "#same"

@@ -30,8 +30,8 @@ DataSources.TFOptionsWeaponsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsWeapon
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Start With Max Ammo",
-            description = "Choose whether you start the game with max ammo in your pistol.",
+            label = "TF_MAX_AMMO",
+            description = "TF_MAX_AMMO_DESC",
             profileVarName = "max_ammo",
             widgetType = "tfcheckbox"
         },
@@ -39,8 +39,8 @@ DataSources.TFOptionsWeaponsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsWeapon
     })
     table.insert(f26_local0, {
         models = {
-            label = "Start With RK5",
-            description = "Changes the starting pistol to the RK5, as if the player has completed the super ee.",
+            label = "TF_START_RK5",
+            description = "TF_START_RK5_DESC",
             profileVarName = "start_rk5",
             widgetType = "tfcheckbox"
         },
@@ -48,8 +48,8 @@ DataSources.TFOptionsWeaponsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsWeapon
     })
     table.insert(f26_local0, {
         models = {
-            label = "Start With Bowie Knife",
-            description = "Gives every player the bowie knife.",
+            label = "TF_START_BOWIE",
+            description = "TF_START_BOWIE_DESC",
             profileVarName = "start_bowie",
             widgetType = "tfcheckbox"
         },
@@ -57,8 +57,8 @@ DataSources.TFOptionsWeaponsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsWeapon
     })
     table.insert(f26_local0, {
         models = {
-            label = "Random Starting Weapon",
-            description = "Gives every player a random starting weapon.",
+            label = "TF_RANDOM_WEAPON",
+            description = "TF_RANDOM_WEAPON_DESC",
             profileVarName = "random_weapon",
             widgetType = "tfcheckbox"
         },
@@ -66,8 +66,8 @@ DataSources.TFOptionsWeaponsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsWeapon
     })
     table.insert(f26_local0, {
         models = {
-            label = "Share Weapon from Mystery Box",
-            description = "Share the weapon from Mystery Box with others.\nTo share a weapon, Press Melee key.",
+            label = "TF_BOXSHARE",
+            description = "TF_BOXSHARE_DESC",
             profileVarName = "boxshare",
             widgetType = "tfcheckbox"
         },

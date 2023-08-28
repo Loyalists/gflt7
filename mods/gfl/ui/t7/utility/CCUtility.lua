@@ -82,7 +82,7 @@ CoD.CCUtility.CreateCarouselItemLoadoutDatasource = function ( f7_arg0, f7_arg1,
 				if CoD.CCUtility.customizationMode == Enum.eModes.MODE_ZOMBIES then
 					table.insert( f8_local0, {
 						models = {
-							name = Engine.Localize( "GFL_CHARACTER_MENU_SELECT_NAME" ),
+							name = Engine.Localize( "MENU_SELECT_CAPS" ),
 							gameImageOff = f8_local5.gameImageOff,
 							gameImageOn = f8_local5.gameImageOn,
 							description = Engine.Localize( "GFL_CHARACTER_MENU_SELECT_DESC" ),

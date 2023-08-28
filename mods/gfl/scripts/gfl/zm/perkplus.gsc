@@ -242,8 +242,14 @@ function widows_wine_contact_explosion()
 function deadshot_dealer()
 {
 	zm_spawner::register_zombie_death_event_callback(&on_zombie_killed);
-	callback::on_connect(&deadshot_icon);
+	callback::on_connect(&init_deadshot_dealer);
 	zm::register_actor_damage_callback( &deadshot_damage );
+}
+
+function init_deadshot_dealer()
+{
+	self.deadshot_killstreak = 0;
+	self thread deadshot_icon();
 }
 
 function deadshot_icon()

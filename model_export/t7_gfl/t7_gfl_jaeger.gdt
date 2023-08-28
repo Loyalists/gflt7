@@ -8129,4 +8129,7 @@
 	"c_t7_zm_dlchd_origins_player_body_mpc" [ "t7_gfl_jaeger_fb_mp" ]
 	{
 	}
+	"c_hro_goh_min_base_fb" [ "t7_gfl_jaeger_fb" ]
+	{
+	}
 }

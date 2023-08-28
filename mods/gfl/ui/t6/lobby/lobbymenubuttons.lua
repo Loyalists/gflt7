@@ -757,19 +757,6 @@ CoD.LobbyButtons.CP_DOA_LEADERBOARD = {
         return IsBooleanDvarSet("tu1_build")
     end
 }
-CoD.LobbyButtons.ZM_TFOPTIONS = {
-    stringRef = "TF'S ZOMBIE OPTIONS",
-    action = OpenServerSettings,
-    param = "ZMLobbyOnlineCustomGame",
-    customId = "btnTFOptions",
-    starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
-}
-
-CoD.LobbyButtons.OPEN_WORKSHOP = {
-    stringRef = "WORKSHOP",
-    action = OpenWorkshop,
-    customId = "btnOpenWorkshop"
-}
 
 CoD.LobbyBase.OpenServerSettings = function(arg0, arg1)
     CoD.LobbyBase.SetLeaderActivity(arg1, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
@@ -783,8 +770,22 @@ CoD.LobbyBase.OpenServerSettings = function(arg0, arg1)
     end)
 end
 
+CoD.LobbyButtons.ZM_TFOPTIONS = {
+    stringRef = "GFL_MENU_TFOPTIONS",
+    action = OpenServerSettings,
+    param = "ZMLobbyOnlineCustomGame",
+    customId = "btnTFOptions",
+    starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
+}
+
+CoD.LobbyButtons.OPEN_WORKSHOP = {
+    stringRef = "GFL_MENU_WORKSHOP",
+    action = OpenWorkshop,
+    customId = "btnOpenWorkshop"
+}
+
 CoD.LobbyButtons.ZM_CHARACTERS = {
-    stringRef = "CHARACTERS",
+    stringRef = "GFL_MENU_CHARACTERS",
     action = OpenZMChooseCharacterLoadout,
     param = LuaEnums.CHOOSE_CHARACTER_OPENED_FROM.LOBBY,
     customId = "btnZMCharacters"

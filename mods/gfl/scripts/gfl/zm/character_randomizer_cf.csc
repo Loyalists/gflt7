@@ -10,20 +10,20 @@
 
 function init()
 {
-    util::register_system( "gfl_character_icon", &set_character_icon );
+	clientfield::register("toplayer", "gfl_character_icon", VERSION_SHIP, 4, "int", &set_character_icon, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT);
     init_character_icon_table();
 }
 
 function init_character_icon_table()
 {
 	level.character_icon_table = [];
-	level.character_icon_table["none"] = undefined;
-	level.character_icon_table["ro635"] = "uie_t7_zm_hud_score_ro635";
-	level.character_icon_table["g36c"] = "uie_t7_zm_hud_score_g36c";
-	level.character_icon_table["rfb"] = "uie_t7_zm_hud_score_rfb";
-	level.character_icon_table["st_ar15"] = "uie_t7_zm_hud_score_st_ar15";
-	level.character_icon_table["m4a1"] = "uie_t7_zm_hud_score_m4a1";
-	level.character_icon_table["tac50"] = "uie_t7_zm_hud_score_tac50";
+	level.character_icon_table[0] = undefined;
+	level.character_icon_table[1] = "uie_t7_zm_hud_score_ro635";
+	level.character_icon_table[2] = "uie_t7_zm_hud_score_g36c";
+	level.character_icon_table[3] = "uie_t7_zm_hud_score_rfb";
+	level.character_icon_table[4] = "uie_t7_zm_hud_score_st_ar15";
+	level.character_icon_table[5] = "uie_t7_zm_hud_score_m4a1";
+	level.character_icon_table[6] = "uie_t7_zm_hud_score_tac50";
 }
 
 function init_playerlist_icon_uimodel( n_local_client )
@@ -37,7 +37,7 @@ function init_playerlist_icon_uimodel( n_local_client )
     self.playerlist_icon_uimodel[0] = CreateUIModel( controllerModel, "PlayerList." + 0 + ".zombiePlayerIcon" );
 }
 
-function set_character_icon(clientnum, state, oldstate)
+function set_character_icon( n_local_client, n_old, n_new, b_new_ent, b_initial_snap, str_field, b_was_time_jump )
 {
 	self notify("character_icon_reset");
 	self endon("character_icon_reset");
@@ -46,19 +46,20 @@ function set_character_icon(clientnum, state, oldstate)
 
     if ( !isdefined(self.playerlist_icon_uimodel) )
     {
-        init_playerlist_icon_uimodel(clientnum);
+        init_playerlist_icon_uimodel(n_local_client);
     }
 
-    if ( !isdefined(state) || state == "none" || !isdefined(level.character_icon_table[state]) )
+    index = n_new;
+    if ( index == 0 || index >= level.character_icon_table.size )
     {
         return;
     }
 
     while(true)
     {
-        if (clientnum == 0)
+        if (n_local_client == 0)
         {
-            set_character_icon_for_uimodel(clientnum, state);
+            set_character_icon_for_uimodel(n_local_client, index);
         }
         WAIT_CLIENT_FRAME;
     }

@@ -42,7 +42,8 @@
 #using scripts\zm\bo4_full_ammo;
 
 //bo4 carpenter
-// #using scripts\zm\bo4_carpenter;
+#using scripts\zm\_zm_weap_riotshield;
+#using scripts\zm\bo4_carpenter;
 
 //better nuke
 #using scripts\zm\better_nuke;
@@ -356,33 +357,33 @@ function apply_choices() {
     
 
     //bo4 max ammo
-    if(GetDvarInt("tfoption_bo4_max_ammo") == 1) {
+    if( GetDvarInt("tfoption_bo4_max_ammo") ) {
         level._custom_powerups[ "full_ammo" ].grab_powerup = &bo4_full_ammo::grab_full_ammo;
     }
 
     //bo4 carpenter
-    // if(true) {
-    //     level thread bo4_carpenter::carpenter_upgrade();
-    // }
+    if( GetDvarInt("tfoption_bo4_carpenter") ) {
+        level thread bo4_carpenter::carpenter_upgrade();
+    }
 
-    if(GetDvarInt("tfoption_better_nuke") == 1)
+    if( GetDvarInt("tfoption_better_nuke") )
     {
         level._custom_powerups[ "nuke" ].grab_powerup = &better_nuke::grab_nuke;
     }
 
     //free perk
-    if(GetDvarInt("tfoption_perk_powerup") == 1) 
+    if( GetDvarInt("tfoption_perk_powerup") ) 
     {
         level.zombie_powerups["free_perk"].func_should_drop_with_regular_powerups = &zm_powerups::func_should_always_drop;
     }
 
     //zombie cash powerup
-    if(GetDvarInt("tfoption_zcash_powerup") == 1) {
+    if( GetDvarInt("tfoption_zcash_powerup") ) {
         nsz_powerup_money::init_zcash_powerup();
     }
 
     //packapunch powerup
-    if(GetDvarInt("tfoption_packapunch_powerup") == 1) {
+    if( GetDvarInt("tfoption_packapunch_powerup") ) {
         custom_powerup_free_packapunch_with_time::init_packapunch_powerup();
     }
 
@@ -396,7 +397,7 @@ function apply_choices() {
     // }
 
     //ROAMER MOD
-    if(GetDvarInt("tfoption_roamer_enabled") == 1){
+    if( GetDvarInt("tfoption_roamer_enabled") ){
         createRoamerHud();
         level.round_end_custom_logic = &roamer;
         zombie_utility::set_zombie_var( "zombie_between_round_time", 0);
@@ -406,12 +407,12 @@ function apply_choices() {
     }
 
     //ZOMBIE COUNTER
-    if(GetDvarInt("tfoption_zcounter_enabled") == 1) {
+    if( GetDvarInt("tfoption_zcounter_enabled") ) {
         zm_counter::_INIT_ZCOUNTER();
     }
 
     //Timed Gameplay
-    if(GetDvarInt("tfoption_timed_gameplay") == 1) {
+    if( GetDvarInt("tfoption_timed_gameplay") ) {
         ugxmods_timedgp::timed_gameplay();
     }
 

@@ -9,6 +9,10 @@ rawfile,dummy.cfg
 
 sound,zm_mod
 
+image,t7_menu_zm_loadscreen_sumpf
+image,img_loadscreen_zm_factory
+//image,t7_menu_zm_loadscreen_cosmodrome
+
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_zm.gsc
 scriptparsetree,scripts/gfl/zm/character_randomizer.gsc
@@ -54,14 +58,13 @@ xmodel,free_packapunch
 //timed gameplay
 scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
 
-// scriptparsetree,scripts/zm/_zm_weap_riotshield.csc
-// scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
-
 scriptparsetree,scripts/zm/zm_damagefeedback.gsc
 
 //Frost Iceforge's BO4 Carpenter
-// scriptparsetree,scripts/zm/bo4_carpenter.gsc
-// scriptparsetree,scripts/zm/_zm_powerup_carpenter.gsc
+scriptparsetree,scripts/zm/bo4_carpenter.gsc
+scriptparsetree,scripts/zm/_zm_powerup_carpenter.gsc
+scriptparsetree,scripts/zm/_zm_weap_riotshield.csc
+scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
 
 // unlimited and random bgbs
 // requires T7MTEnhancements to compile

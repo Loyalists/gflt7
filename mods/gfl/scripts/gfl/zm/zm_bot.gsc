@@ -1,13 +1,13 @@
-#using scripts\shared\bots\_bot;
+#using scripts\codescripts\struct;
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\flag_shared;
 #using scripts\shared\array_shared;
 #using scripts\shared\util_shared;
 #using scripts\shared\laststand_shared;
 #using scripts\shared\math_shared;
+#using scripts\shared\bots\_bot;
 #using scripts\shared\bots\_bot_combat;
 #using scripts\shared\bots\bot_buttons;
-#using scripts\codescripts\struct;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_equipment;
@@ -28,7 +28,7 @@ function main()
 	SetDvar("bot_difficulty","3");
 	level.getBotSettings = &get_bot_settings;
     level.botsettings.headshotweight = 90;
-	level.onbotspawned = &bot_connect;
+	level.onbotspawned = &bot_spawn;
 	level.botthreatengage = &engage_threat;
 	level.onbotdamage = &bot_got_damage;
 	level.botidle = &bot_idle;
@@ -499,6 +499,7 @@ function bot_health()
 {	
 	level endon( "game_ended" );
 	self endon("disconnect");
+	self endon("death");
 
 	self thread health_regen();
 	self thread health_boost();
@@ -508,6 +509,7 @@ function health_regen()
 {	
 	level endon( "game_ended" );
 	self endon("disconnect");
+	self endon("death");
 
 	while(true) 
 	{
@@ -519,6 +521,8 @@ function health_regen()
 function regain_full_health()
 {	
 	level endon( "game_ended" );
+	self endon("disconnect");
+	self endon("death");
 	self endon("damage");
 
 	wait(3); 
@@ -533,6 +537,7 @@ function health_boost()
 {	
 	level endon( "game_ended" );
 	self endon("disconnect");
+	self endon("death");
 
 	while(true) 
 	{
@@ -552,6 +557,16 @@ function find_closet_zombie()
 
 	foreach( ai_actor in GetAITeamArray("axis"))
 	{
+		// cotd fix
+		// hopefully the bots won't piss off george
+		if ( ai_actor.archetype == "zombie_george" )
+		{
+			if ( !(ai_actor flag::exists("george_is_enraged") && ai_actor flag::get("george_is_enraged")) )
+			{
+				continue;
+			}
+		}
+
 		if(isalive(ai_actor))
 		{
 			ArrayInsert(zombies, ai_actor, zombies.size);
@@ -683,7 +698,7 @@ function mplayer_origin()
 	return player.origin;
 }
 
-function bot_connect()
+function bot_spawn()
 {
 	wait 1;
 	self zm::spectator_respawn_player();
@@ -738,9 +753,11 @@ function bot_setup()
 
 	self.box_share_distance = 512;
 	self.follow_player_distance = 240;
+	self.magic_box_distance = 3000;
+	self.wallbuy_distance = 300;
+	self.open_door_distance = 1500;
 	self thread pesSuit();
 	self thread bot_health();
-    //self thread bot_got_damage();	
 	self zm_perks::give_perk( "specialty_quickrevive", false );
 	self zm_perks::give_perk( "specialty_fastreload", false );
 	self zm_perks::give_perk( "specialty_armorvest", false );
@@ -772,17 +789,21 @@ function bot_setup()
 
 function bot_got_damage()
 {
-	foreach(player in GetPlayers())
+	if ( !isdefined(self.bot.damage) || !isdefined(self.bot.damage.entity) )
 	{
-		if(player IsTestClient())
-		{
-			player botpressbutton(0);
-			player botlookatpoint(self.bot.damage.entity getcentroid());
-			player bot_combat::set_threat(self.bot.damage.entity);
-			player botlookatpoint(self.bot.damage.entity getcentroid());
-			player bot_combat::set_threat(self.bot.damage.entity);
-		}
+		return;
 	}
+
+	if( self bot_combat::has_threat() )
+	{
+		return;
+	}
+
+	self botpressbutton(0);
+	self botlookatpoint(self.bot.damage.entity getcentroid());
+	self bot_combat::set_threat(self.bot.damage.entity);
+	self botlookatpoint(self.bot.damage.entity getcentroid());
+	self bot_combat::set_threat(self.bot.damage.entity);
 }
 
 function get_downed_players()
@@ -917,6 +938,11 @@ function pesSuit()
 
 function bot_likes_weapon(weapon)
 {
+	if ( !isdefined(weapon) )
+	{
+		return false;
+	}
+
 	if ( self zm_weapons::has_weapon_or_upgrade( weapon.rootweapon ) )
 	{
 		return false;
@@ -953,28 +979,25 @@ function bot_likes_weapon(weapon)
 	target_weapon_cost = int(zm_weapons::get_weapon_cost( weapon.rootweapon ));
 	current_weapon_cost = int(zm_weapons::get_weapon_cost( current_weapon.rootweapon ));
 
-	if( target_weapon_cost > 0 && current_weapon_cost > 0 )
+	// IPrintLnBold("target:" + target_weapon_cost);
+	// IPrintLnBold("current:" + current_weapon_cost);
+	if ( target_weapon_cost >= current_weapon_cost )
 	{
-		// IPrintLnBold("target:" + target_weapon_cost);
-		// IPrintLnBold("current:" + current_weapon_cost);
-		if ( target_weapon_cost >= current_weapon_cost )
-		{
-			return true;
-		}
-		else
-		{
-			// IPrintLnBold("bot doesn't like the weapon");
-			return false;
-		}
+		return true;
+	}
+	else
+	{
+		// IPrintLnBold("bot doesn't like the weapon");
+		return false;
 	}
 
 	if(
-	weapon.rootweapon.weapClass == "rocketlauncher" ||
-	weapon.rootweapon.weapClass == "mg" ||
-	weapon.rootweapon.inventorytype != "primary" ||
-	weapon.rootweapon.weapClass == "wonder" ||
-	weapon.rootweapon.weapClass == "spread" ||
-	zm_weapons::is_wonder_weapon( weapon.rootweapon )
+		weapon.rootweapon.weapClass == "rocketlauncher" ||
+		weapon.rootweapon.weapClass == "mg" ||
+		weapon.rootweapon.inventorytype != "primary" ||
+		weapon.rootweapon.weapClass == "wonder" ||
+		weapon.rootweapon.weapClass == "spread" ||
+		zm_weapons::is_wonder_weapon( weapon.rootweapon )
 	)
 	{
 		return true;
@@ -1086,11 +1109,6 @@ function magicbox()
 	usable_box = [];
 	foreach(box in boxes)
 	{
-		// if( !IsEntity(box) )
-		// {
-		// 	continue;
-		// }
-
 		//IPrintLnBold(box.zbarrier zm_magicbox::get_magic_box_zbarrier_state());
 		if(self zm_score::can_player_purchase(box.zombie_cost) && (box.zbarrier zm_magicbox::get_magic_box_zbarrier_state() == "close" || box.zbarrier zm_magicbox::get_magic_box_zbarrier_state() == "initial" || box.zbarrier zm_magicbox::get_magic_box_zbarrier_state() == "arriving"))
 		{
@@ -1103,7 +1121,7 @@ function magicbox()
 	}
 	if(usable_box.size != 0)
 	{
-		finalbox = ArrayGetClosest(self.origin, usable_box);
+		finalbox = ArrayGetClosest(self.origin, usable_box, self.magic_box_distance);
 	}
 	else
 	{
@@ -1111,115 +1129,91 @@ function magicbox()
 		return false;
 	}
 	
-	if(isDefined(finalbox)) 
+	if ( !isdefined(finalbox) )
 	{
-		if(!self check_playable_area(finalbox.unitrigger_stub.origin))
-		{
-			usable_box = undefined;
-			return false;
-		}
+		usable_box = undefined;
+		return false;
+	}
 
-		if(self botgetgoalposition() == finalbox.unitrigger_stub.origin && self botgoalreached())
+	if(!self check_playable_area(finalbox.unitrigger_stub.origin))
+	{
+		usable_box = undefined;
+		return false;
+	}
+
+	if(self botgetgoalposition() == finalbox.unitrigger_stub.origin && self botgoalreached())
+	{
+		//IPrintLnBold("bot hit box" , finalbox.chest_user.name );
+		self BotTapButton(3);
+		self BotTapButton(3);
+		if(isDefined(finalbox.chest_user) && finalbox.chest_user == self)
 		{
-			//IPrintLnBold("bot hit box" , finalbox.chest_user.name );
-			self BotTapButton(3);
-			self BotTapButton(3);
-			if(isDefined(finalbox.chest_user) && finalbox.chest_user == self)
+			//IPrintLnBold("box used");
+			self.bot_is_using_box = true;
+			self SetMoveSpeedScale(0);
+			//self FreezeControlsAllowLook(1);
+			finalbox.zbarrier util::waittill_any( "randomization_done"); 
+			if(self GetWeaponsListPrimaries().size == 2)
 			{
-				//IPrintLnBold("box used");
-				self.bot_is_using_box = true;
-				self SetMoveSpeedScale(0);//self FreezeControlsAllowLook(1);
-				finalbox.zbarrier util::waittill_any( "randomization_done"); 
-				if(self GetWeaponsListPrimaries().size == 2)
+				if(self GetCurrentWeapon() == self GetWeaponsListPrimaries()[0])
 				{
-					if(self GetCurrentWeapon() == self GetWeaponsListPrimaries()[0])
-					{
-						self SetSpawnWeapon(self GetWeaponsListPrimaries()[1]);
-					}
-					else
-					{
-						self SetSpawnWeapon(self GetWeaponsListPrimaries()[0]);
-					}	
+					self SetSpawnWeapon(self GetWeaponsListPrimaries()[1]);
 				}
-				wait 1;
-				self BotSetGoal(finalbox.unitrigger_stub.origin);
-				self thread bot_is_used_box(finalbox);					
+				else
+				{
+					self SetSpawnWeapon(self GetWeaponsListPrimaries()[0]);
+				}	
+			}
+			wait 1;
+			self BotSetGoal(finalbox.unitrigger_stub.origin);
+			self thread bot_is_used_box(finalbox);					
+			while(self IsSwitchingWeapons() && self IsFiring())
+			{
+				wait 0.05;
+			}
+			self BotSetGoal(finalbox.unitrigger_stub.origin);
+			
+			if(	bot_likes_weapon(finalbox.zbarrier.weapon) )
+			{
 				while(self IsSwitchingWeapons() && self IsFiring())
 				{
 					wait 0.05;
 				}
 				self BotSetGoal(finalbox.unitrigger_stub.origin);
-				if(int(zm_weapons::get_weapon_cost( finalbox.zbarrier.weapon.rootweapon )) >= int(zm_weapons::get_weapon_cost(self GetCurrentWeapon().rootweapon)) 
-				&& int(zm_weapons::get_weapon_cost( finalbox.zbarrier.weapon.rootweapon )) 
-				&& int(zm_weapons::get_weapon_cost(self GetCurrentWeapon().rootweapon))
-				)
-				{
-					while(self IsSwitchingWeapons() && self IsFiring())
-					{
-						wait 0.05;
-					}
-					self BotSetGoal(finalbox.unitrigger_stub.origin);
-					self BotTapButton(3);
-					self BotTapButton(3);
-					self BotTapButton(3);
-					//IPrintLnBold("hit the weapon");
-					//IPrintLnBold("got a weapon " , finalbox.zbarrier.weapon.rootweapon.name);
-				}
-				else
-				{
-					if(
-					finalbox.zbarrier.weapon.rootweapon.weapClass == "rocketlauncher" ||
-					finalbox.zbarrier.weapon.rootweapon.weapClass == "mg" ||
-					finalbox.zbarrier.weapon.rootweapon.inventorytype != "primary" ||
-					finalbox.zbarrier.weapon.rootweapon.weapClass == "wonder" ||
-					finalbox.zbarrier.weapon.rootweapon.weapClass == "spread" ||
-					zm_weapons::is_wonder_weapon( finalbox.zbarrier.weapon.rootweapon )
-					)
-					{					
-						while(self IsSwitchingWeapons() && self IsFiring())
-						{
-							wait 0.05;
-						}
-						self BotSetGoal(finalbox.unitrigger_stub.origin);
-						self BotTapButton(3);
-						self BotTapButton(3);
-						self BotTapButton(3);
-						//IPrintLnBold("hit the weapon");
-						wait 0.1;
-						//IPrintLnBold("got a weapon ", finalbox.zbarrier.weapon.rootweapon.name);
-					}
-					else
-					{
-						//IPrintLnBold("bot dont like weapon", finalbox.zbarrier.weapon.rootweapon.name);
-						self botlookatpoint(finalbox.zbarrier.weapon_model.origin);
-						wait 1;
-						self bottapbutton(2);
-					}
-				}
-				self SetMoveSpeedScale(1);
-				self.bot_is_using_box = undefined;
+				self BotTapButton(3);
+				self BotTapButton(3);
+				self BotTapButton(3);
+				wait 0.1;
+				//IPrintLnBold("hit the weapon");
+				//IPrintLnBold("got a weapon " , finalbox.zbarrier.weapon.rootweapon.name);
 			}
 			else
 			{
-				self SetMoveSpeedScale(1);
-				self.bot_is_using_box = undefined;
+				//IPrintLnBold("bot dont like weapon", finalbox.zbarrier.weapon.rootweapon.name);
+				self botlookatpoint(finalbox.zbarrier.weapon_model.origin);
+				wait 1;
+				self bottapbutton(2);
 			}
+			self SetMoveSpeedScale(1);
+			self.bot_is_using_box = undefined;
 		}
 		else
 		{
-			self BotSetGoal(finalbox.unitrigger_stub.origin);
+			self SetMoveSpeedScale(1);
+			self.bot_is_using_box = undefined;
 		}
-		if(self GetVelocity() == 0)
-		{
-			self thread release_stuck();
-		}
-		return true;
 	}
 	else
 	{
-		usable_box = undefined;
-		return false;
+		self BotSetGoal(finalbox.unitrigger_stub.origin);
 	}
+
+	if(self GetVelocity() == 0)
+	{
+		self thread release_stuck();
+	}
+	
+	return true;
 }
 
 function bot_is_used_box(box)
@@ -1273,9 +1267,10 @@ function wallbuy()
 			ArrayInsert(usable_wallbuy, wallbuy, usable_wallbuy.size);
 		}
 	}
+	
 	if(usable_wallbuy.size != 0)
 	{
-		finalwallbuy = ArrayGetClosest(self.origin, usable_wallbuy,300);
+		finalwallbuy = ArrayGetClosest(self.origin, usable_wallbuy, self.wallbuy_distance);
 	}
 	else
 	{
@@ -1283,46 +1278,45 @@ function wallbuy()
 		return false;
 	}
 	
-	if(isDefined(finalwallbuy)) 
-	{
-		weapon_model_origin = struct::get( finalwallbuy.target, "targetname" ).origin;
-		finalwallbuy_origin = finalwallbuy.trigger_stub.origin;//BulletTrace(weapon_model_origin + (0,0,10),weapon_model_origin - (0,0,10000),true,false,false,false)["position"];
-		if( !self check_playable_area(finalwallbuy_origin) )
-		{
-			usable_wallbuy = undefined;
-			return false;
-		}
-		
-		if(self botgetgoalposition() == finalwallbuy_origin && self botgoalreached())
-		{
-			//IPrintLnBold("buying ",finalwallbuy.weapon.name);
-			self botlookatpoint(weapon_model_origin);
-			self BotTapButton(3);
-			//IPrintLnBold("buying weapon " , finalwallbuy.weapon.name);	
-			self thread wait_for_hasweapon();
-			//self thread had_weapon_reset_view();
-		}
-		else
-		{
-			//IPrintLnBold("going to ",finalwallbuy.weapon.name);
-			//self bot::approach_point(finalwallbuy.trigger_stub.origin, 0, 100, 70);
-			//IPrintLnBold(self.name , " " , finalwallbuy.weapon.name , " " , finalwallbuy.trigger_stub.radius );
-			self BotSetGoal(finalwallbuy_origin);
-		}
-		//self bot::clear_stuck();
-		if(self GetVelocity() == 0)
-		{
-			////IPrintLnBold("bot wallbuy stuck");
-			self thread release_stuck();//self bot::clear_stuck();//self thread bot::stuck_resolution();
-			//return false;
-		}
-		return true;
-	}
-	else
+	if ( !isdefined(finalwallbuy) )
 	{
 		usable_wallbuy = undefined;
 		return false;
 	}
+
+	weapon_model_origin = struct::get( finalwallbuy.target, "targetname" ).origin;
+	finalwallbuy_origin = finalwallbuy.trigger_stub.origin;
+	//BulletTrace(weapon_model_origin + (0,0,10),weapon_model_origin - (0,0,10000),true,false,false,false)["position"];
+	if( !self check_playable_area(finalwallbuy_origin) )
+	{
+		usable_wallbuy = undefined;
+		return false;
+	}
+	
+	if(self botgetgoalposition() == finalwallbuy_origin && self botgoalreached())
+	{
+		//IPrintLnBold("buying ",finalwallbuy.weapon.name);
+		self botlookatpoint(weapon_model_origin);
+		self BotTapButton(3);
+		//IPrintLnBold("buying weapon " , finalwallbuy.weapon.name);	
+		self thread wait_for_hasweapon();
+		//self thread had_weapon_reset_view();
+	}
+	else
+	{
+		//IPrintLnBold("going to ",finalwallbuy.weapon.name);
+		//self bot::approach_point(finalwallbuy.trigger_stub.origin, 0, 100, 70);
+		//IPrintLnBold(self.name , " " , finalwallbuy.weapon.name , " " , finalwallbuy.trigger_stub.radius );
+		self BotSetGoal(finalwallbuy_origin);
+	}
+	//self bot::clear_stuck();
+	if(self GetVelocity() == 0)
+	{
+		//IPrintLnBold("bot wallbuy stuck");
+		self thread release_stuck();
+		//return false;
+	}
+	return true;
 }
 
 function release_stuck()
@@ -1386,11 +1380,6 @@ function openDoors()
 	Doors = [];
 	foreach(door in GetEntArray( "zombie_door", "targetname" ))
 	{
-		// if( !IsEntity(door) )
-		// {
-		// 	continue;
-		// }
-
 		if( !( self check_life_brush(door.origin) || self check_playable_area(door.origin) ) )
 		{
 			continue;
@@ -1407,11 +1396,6 @@ function openDoors()
 
 	foreach( airlock in GetEntArray( "zombie_airlock_buy", "targetname" ) )
 	{
-		// if( !IsEntity(airlock) )
-		// {
-		// 	continue;
-		// }
-
 		if( !( self check_life_brush(airlock.origin) || self check_playable_area(airlock.origin) ) )
 		{
 			continue;
@@ -1428,11 +1412,6 @@ function openDoors()
 
 	foreach(debris in GetEntArray( "zombie_debris", "targetname" ))
 	{
-		// if( !IsEntity(debris) )
-		// {
-		// 	continue;
-		// }
-
 		if( !( self check_life_brush(debris.origin) || self check_playable_area(debris.origin) ) )
 		{
 			continue;
@@ -1443,7 +1422,7 @@ function openDoors()
 			ArrayInsert(Doors, debris, Doors.size);
 		}
 	}
-	nearDoor = ArrayGetClosest(self.origin, Doors,1500);
+	nearDoor = ArrayGetClosest(self.origin, Doors, self.open_door_distance);
 	//IPrintLnBold("script_noteworthy " , nearDoor.script_noteworthy);
 	//IPrintLnBold("targetname ", nearDoor.targetname);
 	//PlayFX("zombie/fx_monkey_lightning_zmb", self botgetgoalposition());
@@ -1570,8 +1549,16 @@ function check_life_brush(origin)
 
 function engage_threat()
 {
-	if(!isDefined(self.is_going_to_reviving))
+	if( isDefined(self.is_going_to_reviving) )
 	{
+		return;
+	}
+
+	if( !self bot_combat::has_threat() )
+	{
+		return;
+	}
+
 	if(!self.bot.threat.wasvisible && self.bot.threat.visible && !self isthrowinggrenade() && !self fragbuttonpressed() && !self secondaryoffhandbuttonpressed() && !self isswitchingweapons())
 	{
 		visibleroll = randomint(100);
@@ -1613,7 +1600,6 @@ function engage_threat()
 	}*/
 	self bot_combat::update_weapon_ads();
 	self fire_weapon();
-	}
 }
 
 function fire_weapon()

@@ -94,8 +94,8 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "Extra Points Per Kill",
-            description = "Get extra points for killing zombies.",
+            label = "TF_KILL_BONUS",
+            description = "TF_KILL_BONUS_DESC",
             profileVarName = "extra_cash",
             lowValue = 0,
             highValue = 100,
@@ -106,8 +106,8 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
-            label = "Extra Points Per Melee Kill",
-            description = "Get extra points for killing zombies by melee.",
+            label = "TF_MELEE_BONUS",
+            description = "TF_MELEE_BONUS_DESC",
             profileVarName = "melee_bonus",
             lowValue = 0,
             highValue = 100,
@@ -118,8 +118,8 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
-            label = "Extra Points Per Headshot Kill",
-            description = "Get extra points for killing zombies by headshots.",
+            label = "TF_HEADSHOT_BONUS",
+            description = "TF_HEADSHOT_BONUS_DESC",
             profileVarName = "headshot_bonus",
             lowValue = 0,
             highValue = 100,
@@ -130,8 +130,8 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
-            label = "Max Spawned Zombies",
-            description = "Maximum number of zombies that can be spawned at any time. 24 is the default. Higher numbers can cause issues with lag. Highest value I've tested is 40.",
+            label = "TF_MAX_ZOMBIES",
+            description = "TF_MAX_ZOMBIES_DESC",
             profileVarName = "max_zombies",
             lowValue = 1,
             highValue = 64,
@@ -142,8 +142,8 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
-            label = "Weaker Zombies",
-            description = "Zombie's strength increases slower.",
+            label = "TF_WEAKER_ZOMBIES",
+            description = "TF_WEAKER_ZOMBIES_DESC",
             profileVarName = "weaker_zombs",
             widgetType = "tfcheckbox"
         },
@@ -151,8 +151,8 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
-            label = "Zombies Always Sprint",
-            description = "Zombies will always sprint, even on round 1.",
+            label = "TF_ZOMBS_ALWAYS_SPRINT",
+            description = "TF_ZOMBS_ALWAYS_SPRINT_DESC",
             profileVarName = "zombs_always_sprint",
             widgetType = "tfcheckbox"
         },
@@ -160,8 +160,8 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
-            label = "No Zombie Spawn Delay",
-            description = "Sets the zombie spawn delay to 0. With this, zombies spawn instantly.",
+            label = "TF_NO_DELAY",
+            description = "TF_NO_DELAY_DESC",
             profileVarName = "no_delay",
             widgetType = "tfcheckbox"
         },
