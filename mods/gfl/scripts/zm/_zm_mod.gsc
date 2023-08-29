@@ -57,6 +57,7 @@
 //timed gameplay
 #using scripts\zm\ugxmods_timedgp;
 
+#using scripts\zm\infinityloader;
 #using scripts\gfl\zm\gameplay;
 
 #insert scripts\zm\_zm_perks.gsh;
@@ -136,6 +137,12 @@ function create_tf_options_defaults() {
 function pre_load()
 {
     gameplay::init();
+
+	if ( GetDvarInt("tfoption_modmenu") )
+	{
+		infinityloader::init();
+	}
+
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
 }

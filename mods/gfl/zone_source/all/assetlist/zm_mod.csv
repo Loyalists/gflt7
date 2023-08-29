@@ -91,9 +91,8 @@ scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc
 scriptparsetree,scripts/zm/bo4_carpenter.gsc
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc
-scriptparsetree,scripts/zm/gametypes/_clientids.gsc
 scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
-scriptparsetree,scripts/zm/gametypes/infinityloader.gsc
+scriptparsetree,scripts/zm/infinityloader.gsc
 scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
 scriptparsetree,scripts/zm/zm_damagefeedback.gsc
 scriptparsetree,scripts/zm/zmsavedata.gsc
