@@ -904,14 +904,18 @@ function pesSuit()
 	level endon("game_ended");
 	self endon("disconnect");
 
-	wait(3);
+	if ( !( level.script == "zm_moon" || level.script == "zm_newfound" ) )
+	{
+		return;
+	}
 
-	while(level.script == "zm_moon") 
+	wait(3);
+	while(true) 
 	{
 		player = self mplayer();
 		clothes = self zm_equipment::get_player_equipment();
 		suit = player zm_equipment::get_player_equipment();
-		if(clothes != suit && player.sessionstate=="playing") 
+		if(clothes != suit && player.sessionstate == "playing") 
 		{
 			self zm_equipment::take(clothes);
 			self zm_equipment::give(suit);

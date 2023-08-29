@@ -20,7 +20,7 @@ function init()
 {
 	// clientfield::register("toplayer", "gfl_character_icon", VERSION_SHIP, 4, "int");
 	util::registerClientSys( "gfl_character_icon" );
-    callback::on_connect(&on_player_connect);
+	callback::on_connect(&on_player_connect);
 
 	character::init_character_table();
 	character_zm::init_character_table();
