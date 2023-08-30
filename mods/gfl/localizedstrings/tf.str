@@ -56,7 +56,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            MODMENU_DESC
-LANG_ENGLISH         "Enables GSC Mod Menu."
+LANG_ENGLISH         "Enables GSC Mod Menu "EnCoReV14". \nPress Crouch + Reload in game to open the mod menu."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -518,7 +518,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            BOT_COUNT_DESC
-LANG_ENGLISH         "Defines the total of bot players."
+LANG_ENGLISH         "Defines the total of bot players. \nThe total number of players will not exceed the player limit of party. If bots don't spawn, check Player Limit in Social Menu."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"

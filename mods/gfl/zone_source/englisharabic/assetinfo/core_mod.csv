@@ -38,7 +38,7 @@ index,type,name,resident,streamed,parentStack
 37,localize,TF_CHEATS,24,0,||assetlist
 38,localize,TF_CHEATS_DESC,75,0,||assetlist
 39,localize,TF_MODMENU,27,0,||assetlist
-40,localize,TF_MODMENU_DESC,38,0,||assetlist
+40,localize,TF_MODMENU_DESC,103,0,||assetlist
 41,localize,TF_SCORE,25,0,||assetlist
 42,localize,TF_SCORE_DESC,59,0,||assetlist
 43,localize,TF_SPEED,31,0,||assetlist
@@ -71,7 +71,7 @@ index,type,name,resident,streamed,parentStack
 70,localize,TF_ROUND_REVIVE_DESC,86,0,||assetlist
 71,localize,TF_BOTS,13,0,||assetlist
 72,localize,TF_BOT_COUNT,23,0,||assetlist
-73,localize,TF_BOT_COUNT_DESC,52,0,||assetlist
+73,localize,TF_BOT_COUNT_DESC,180,0,||assetlist
 74,localize,TF_BOT_COMMAND,27,0,||assetlist
 75,localize,TF_BOT_COMMAND_DESC,58,0,||assetlist
 76,localize,TF_BGB_LOADOUT,32,0,||assetlist
@@ -157,5 +157,5 @@ index,type,name,resident,streamed,parentStack
 156,localize,TF_MENU_SERVER_OPTIONS,44,0,||assetlist
 157,localize,TF_MENU_SERVER_OPTIONS_DESC,59,0,||assetlist
 158,localize,MENU_GFL,26,0,||assetlist
-159,keyvaluepairs,ea_core_mod,1094,0,||assetlist
+159,keyvaluepairs,ea_core_mod,1093,0,||assetlist
 160,assetlist,,2528,0,

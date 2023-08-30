@@ -4497,4 +4497,14 @@
 		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\img_loadscreen_zm_factory.png"
 		"coreSemantic" "Linear4ch"
 	}
+	"t7_menu_zm_loadscreen_theater" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_theater.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_zm_loadscreen_asylum" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_theater.png"
+		"coreSemantic" "Linear4ch"
+	}
 }

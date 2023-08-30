@@ -2,7 +2,7 @@ index,type,name,resident,streamed,parentStack
 1,string,,55,0,||assetlist
 2,rawfile,dummy.cfg,25,0,|zone_source/zm_mod.zone|csv
 3,sound,zm_mod.all,18647,0,||assetlist
-4,scriptparsetree,scripts/gfl/zm/character_zm.gsc,5993,0,|zone_source/zm_mod.zone|csv
+4,scriptparsetree,scripts/gfl/zm/character_zm.gsc,5977,0,|zone_source/zm_mod.zone|csv
 5,scriptparsetree,scripts/gfl/zm/character_randomizer.gsc,6732,0,|zone_source/zm_mod.zone|csv
 6,scriptparsetree,scripts/gfl/zm/character_randomizer.csc,1888,0,|zone_source/zm_mod.zone|csv
 7,scriptparsetree,scripts/gfl/zm/gameplay.gsc,4216,0,|zone_source/zm_mod.zone|csv
@@ -98,6 +98,7 @@ index,type,name,resident,streamed,parentStack
 97,image,uie_t7_zm_hud_score_char8_helmet,16417,0,|zone_source/zm_mod.zone|csv
 98,image,uie_t7_zm_hud_score_char8_gold_helmet,16422,0,|zone_source/zm_mod.zone|csv
 99,image,uie_t7_zm_hud_score_char8_mask,16415,0,|zone_source/zm_mod.zone|csv
-100,image,t7_menu_zm_loadscreen_sumpf,2073628,0,|zone_source/zm_mod.zone|csv
-101,image,img_loadscreen_zm_factory,2073626,0,|zone_source/zm_mod.zone|csv
-102,assetlist,,1601,0,
+100,image,img_loadscreen_zm_factory,2073626,0,|zone_source/zm_mod.zone|csv
+101,image,t7_menu_zm_loadscreen_sumpf,2073628,0,|zone_source/zm_mod.zone|csv
+102,image,t7_menu_zm_loadscreen_theater,2073630,0,|zone_source/zm_mod.zone|csv
+103,assetlist,,1617,0,
