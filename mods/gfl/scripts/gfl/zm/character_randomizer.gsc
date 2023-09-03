@@ -175,15 +175,20 @@ function save_character_customization_func()
 
 	bodytype = self GetCharacterBodyType();
 	bodystyle = 0;
-	model = self GetCharacterBodyModel();
 	bodystyle_name = undefined;
+	
+	model = self GetCharacterBodyModel();
 	modelsubstrs = GetArrayKeys(level.additional_bodystyle_table);
 	foreach( modelsubstr in modelsubstrs )
 	{
 		if( isdefined(model) && issubstr(model, modelsubstr) )
 		{
 			bodystyle = level.additional_bodystyle_table[modelsubstr];
-			bodystyle_name = modelsubstr;
+			character = level.model_to_character_table[modelsubstr];
+			if ( isdefined(character) )
+			{
+				bodystyle_name = character;
+			}
 			break;
 		}
 	}
@@ -222,44 +227,7 @@ function set_character_customization()
 	func_index = undefined;
 	if ( isdefined( self.cc_bodystyle_name ) )
 	{
-		switch (self.cc_bodystyle_name)
-		{
-			case "t7_gfl_ro635_fb":
-			{
-				func_index = "ro635";
-				break;
-			}
-			case "t7_gfl_g36c_fb":
-			{
-				func_index = "g36c";
-				break;
-			}
-			case "t7_gfl_rfb_fb":
-			{
-				func_index = "rfb";
-				break;
-			}
-			case "t7_gfl_st_ar15_v2_fb":
-			{
-				func_index = "st_ar15";
-				break;
-			}
-			case "t7_gfl_m4a1_v2_fb":
-			{
-				func_index = "m4a1";
-				break;
-			}
-			case "t7_gfl_tac50_v2_fb":
-			{
-				func_index = "tac50";
-				break;
-			}
-			default:
-			{
-				func_index = undefined;
-				break;
-			}
-		}
+		func_index = self.cc_bodystyle_name;
 	}
 
 	self set_icon(func_index);
@@ -333,34 +301,6 @@ function random_character_test()
 		self set_custom_character();
 		wait 2;
 	}
-}
-
-function is_vanilla_map()
-{
-	maps = [];
-	maps[maps.size] = "zm_zod";
-	maps[maps.size] = "zm_factory";
-	maps[maps.size] = "zm_castle";
-	maps[maps.size] = "zm_island";
-	maps[maps.size] = "zm_stalingrad";
-	maps[maps.size] = "zm_genesis";
-	maps[maps.size] = "zm_asylum";
-	maps[maps.size] = "zm_cosmodrome";
-	maps[maps.size] = "zm_prototype";
-	maps[maps.size] = "zm_sumpf";
-	maps[maps.size] = "zm_temple";
-	maps[maps.size] = "zm_theater";
-	maps[maps.size] = "zm_moon";
-	maps[maps.size] = "zm_tomb";
-
-	foreach( map in maps )
-	{
-		if ( level.script == map )
-		{
-			return true;
-		}
-	}
-	return false;
 }
 
 function test_if_overrided()

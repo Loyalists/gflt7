@@ -28,6 +28,35 @@
 		"viewArmsModel" "t7_gfl_9a91_viewhands"
 		"xmodel" "t7_gfl_9a91_fb_mp"
 	}
+	"pbt_gfl_body_dima" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "Dima"
+		"firstPersonCinematicModel" "t7_gfl_dima_body_mp"
+		"firstPersonLegsModel" "t7_gfl_dima_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "t7_gfl_dima_viewhands"
+		"xmodel" "t7_gfl_dima_fb_mp"
+	}
 	"pbt_gfl_body_g11" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"

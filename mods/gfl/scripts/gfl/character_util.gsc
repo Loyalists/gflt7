@@ -25,7 +25,7 @@ function reset_all_characters(type = "generic", wait_interval = 0.5, check_model
 		aiarray = getaiarray();
 		foreach(ai in aiarray)
 		{
-			if ( !ai is_swapping_required(check_model_name_func) )
+			if ( !ai is_swapping_required(check_model_name_func, &is_human_or_civilian) )
 			{
 				continue;
 			}
@@ -47,12 +47,7 @@ function reset_friendly_characters(type = "generic", wait_interval = 0.5, check_
 		aiarray = getaiteamarray("allies");
 		foreach(ai in aiarray)
 		{
-			if ( !ai is_swapping_required(check_model_name_func) )
-			{
-				continue;
-			}
-
-			if ( !ai is_human() )
+			if ( !ai is_swapping_required(check_model_name_func, &is_human) )
 			{
 				continue;
 			}
@@ -74,12 +69,7 @@ function reset_friendly_civilian_characters(type = "generic", wait_interval = 0.
 		aiarray = getaiteamarray("allies");
 		foreach(ai in aiarray)
 		{
-			if ( !ai is_swapping_required(check_model_name_func) )
-			{
-				continue;
-			}
-
-			if ( !ai is_civilian() )
+			if ( !ai is_swapping_required(check_model_name_func, &is_civilian) )
 			{
 				continue;
 			}
@@ -101,7 +91,7 @@ function reset_enemy_characters(type = "generic", wait_interval = 0.5, check_mod
 		aiarray = getaiteamarray("axis");
 		foreach(ai in aiarray)
 		{
-			if ( !ai is_swapping_required(check_model_name_func) )
+			if ( !ai is_swapping_required(check_model_name_func, &is_human_or_civilian) )
 			{
 				continue;
 			}
@@ -123,12 +113,7 @@ function reset_zombie_characters(type = "generic", wait_interval = 0.5, check_mo
 		aiarray = getaiarray();
 		foreach(ai in aiarray)
 		{
-			if ( !ai is_swapping_required(check_model_name_func, false) )
-			{
-				continue;
-			}
-
-			if ( !ai is_zombie() )
+			if ( !ai is_swapping_required(check_model_name_func, &is_zombie) )
 			{
 				continue;
 			}
@@ -142,21 +127,18 @@ function reset_zombie_characters(type = "generic", wait_interval = 0.5, check_mo
 	}
 }
 
-function is_swapping_required(check_model_name_func = undefined, check_archetype = true)
+function is_swapping_required(check_model_name_func = undefined, check_archetype_func = undefined)
 {
 	if ( self is_hero() )
 	{
 		return false;
 	}
-
-	if ( check_archetype )
-	{
-		if ( !( self character_util::is_human() || self character_util::is_civilian() ) )
-		{
-			return false;
-		}
-	}
 	
+	if ( IsFunctionPtr(check_archetype_func) && !self [[check_archetype_func]]() )
+	{
+		return false;
+	}
+
 	if ( IsFunctionPtr(check_model_name_func) && !self [[check_model_name_func]]() )
 	{
 		return false;
@@ -263,6 +245,21 @@ function is_civilian()
 	}
 
 	if (issubstr(self.archetype, "civilian"))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+function is_human_or_civilian()
+{
+	if (self is_human())
+	{
+		return true;
+	}
+
+	if (self is_civilian())
 	{
 		return true;
 	}

@@ -42,6 +42,7 @@ function init_character_table()
 	level.charactertable["zm"]["m4a1"] = &swap_to_m4a1;
 	level.charactertable["zm"]["mp7_casual_tights"] = &swap_to_mp7_casual_tights;
 	level.charactertable["zm"]["tac50"] = &swap_to_tac50;
+	level.charactertable["zm"]["dima"] = &swap_to_dima;
 
 	level.charactertable["zm_moon"] = [];
 	level.charactertable["zm_moon"]["m16a1"] = &swap_to_m16a1_moon;
@@ -53,6 +54,7 @@ function init_character_table()
 	level.charactertable["zm_moon"]["vepley_backpack"] = &swap_to_vepley_backpack;
 	level.charactertable["zm_moon"]["mp7_tights"] = &swap_to_mp7_tights;
 
+	// lookup table of model name substr to its bodystyle index
 	level.additional_bodystyle_table = [];
 	level.additional_bodystyle_table["c_zom_der_dempsey_mpc_fb"] = 1;
 	level.additional_bodystyle_table["c_zom_dlc3_dempsey_mpc_fb"] = 1;
@@ -65,6 +67,16 @@ function init_character_table()
 	level.additional_bodystyle_table["t7_gfl_tac50_v2_fb"] = 2;
 	level.additional_bodystyle_table["t7_gfl_vepley_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_mp7_casual_tights_fb"] = 1;
+	level.additional_bodystyle_table["t7_gfl_dima_fb"] = 1;
+
+	level.model_to_character_table = [];
+	level.model_to_character_table["t7_gfl_m4a1_v2_fb"] = "m4a1";
+	level.model_to_character_table["t7_gfl_ro635_fb"] = "ro635";
+	level.model_to_character_table["t7_gfl_st_ar15_v2_fb"] = "st_ar15";
+	level.model_to_character_table["t7_gfl_g36c_fb"] = "g36c";
+	level.model_to_character_table["t7_gfl_rfb_fb"] = "rfb";
+	level.model_to_character_table["t7_gfl_tac50_v2_fb"] = "tac50";
+	level.model_to_character_table["t7_gfl_dima_fb"] = "dima";
 }
 
 function swap_to_m16a1_moon()
@@ -239,5 +251,12 @@ function swap_to_g11()
 {
 	self.cc_bodytype = 15;
 	self.cc_bodystyle = 0;
+	self character_util::swap_to_cc();
+}
+
+function swap_to_dima()
+{
+	self.cc_bodytype = 15;
+	self.cc_bodystyle = 1;
 	self character_util::swap_to_cc();
 }

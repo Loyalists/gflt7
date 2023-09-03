@@ -24,6 +24,7 @@ function init_character_icon_table()
 	level.character_icon_table["st_ar15"] = "uie_t7_zm_hud_score_st_ar15";
 	level.character_icon_table["m4a1"] = "uie_t7_zm_hud_score_m4a1";
 	level.character_icon_table["tac50"] = "uie_t7_zm_hud_score_tac50";
+	level.character_icon_table["dima"] = "uie_t7_zm_hud_score_dima";
 }
 
 function init_playerlist_icon_uimodel( n_local_client )

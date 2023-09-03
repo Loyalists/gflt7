@@ -7,40 +7,56 @@
 
 function reset_friendly_character_for_spawner(type = "generic", check_model_name_func = undefined)
 {
-	if ( !self character_util::is_human() )
-	{
-		return;
-	}
-
 	team = "allies";
-	self reset_character_for_spawner(team, type, check_model_name_func);
-}
-
-function reset_friendly_civilian_character_for_spawner(type = "generic", check_model_name_func = undefined)
-{
-	if ( !self character_util::is_civilian() )
-	{
-		return;
-	}
-
-	team = "allies";
-	self reset_character_for_spawner(team, type, check_model_name_func);
-}
-
-function reset_enemy_character_for_spawner(type = "generic", check_model_name_func = undefined)
-{
-	team = "axis";
-	self reset_character_for_spawner(team, type, check_model_name_func);
-}
-
-function reset_character_for_spawner(team, type = "generic", check_model_name_func = undefined)
-{
 	if ( self.team != team )
 	{
 		return;
 	}
 
-	if ( !self character_util::is_swapping_required(check_model_name_func) )
+	if ( !self character_util::is_human() )
+	{
+		return;
+	}
+
+	self reset_character_for_spawner(type, check_model_name_func);
+}
+
+function reset_friendly_civilian_character_for_spawner(type = "generic", check_model_name_func = undefined)
+{
+	team = "allies";
+	if ( self.team != team )
+	{
+		return;
+	}
+
+	if ( !self character_util::is_civilian() )
+	{
+		return;
+	}
+
+	self reset_character_for_spawner(type, check_model_name_func);
+}
+
+function reset_enemy_character_for_spawner(type = "generic", check_model_name_func = undefined)
+{
+	team = "axis";
+	if ( self.team != team )
+	{
+		return;
+	}
+
+	if ( !self character_util::is_human_or_civilian() )
+	{
+		return;
+	}
+	
+
+	self reset_character_for_spawner(type, check_model_name_func);
+}
+
+function reset_character_for_spawner(type = "generic", check_model_name_func = undefined, check_archetype_func = undefined)
+{
+	if ( !self character_util::is_swapping_required(check_model_name_func, check_archetype_func) )
 	{
 		return;
 	}

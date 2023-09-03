@@ -21,8 +21,8 @@ function main()
 
 function reset_safehouse_characters()
 {
-	array::run_all(GetSpawnerArray(), &spawner::add_spawn_function, &spawner_util::reset_friendly_character_for_spawner, "generic");
-	array::run_all(GetSpawnerArray(), &spawner::add_spawn_function, &spawner_util::reset_friendly_civilian_character_for_spawner, "generic");
+	array::run_all(GetSpawnerArray(), &spawner::add_spawn_function, &spawner_util::reset_friendly_character_for_spawner, "generic_safehouse");
+	array::run_all(GetSpawnerArray(), &spawner::add_spawn_function, &spawner_util::reset_friendly_civilian_character_for_spawner, "generic_safehouse");
 	// level thread character_util::reset_friendly_characters();
 	// level thread character_util::reset_friendly_civilian_characters();
 }

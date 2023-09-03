@@ -55,10 +55,16 @@ function init_character_table()
 	// level.charactertable["training_sim"] = arraycombine(level.charactertable["training_sim"], level.charactertable["hero"], true, true);
 	level.charactertable["training_sim"]["m16a1_prime"] = &swap_to_m16a1_prime;
 	level.charactertable["training_sim"]["rpk16"] = &swap_to_rpk16;
+	level.charactertable["training_sim"]["dima"] = &swap_to_dima;
 
 	level.charactertable["generic_infection"] = [];
 	level.charactertable["generic_infection"] = arraycombine(level.charactertable["generic_infection"], level.charactertable["generic"], true, true);
 	level.charactertable["generic_infection"]["m16a1_prime"] = &swap_to_m16a1_prime;
+	level.charactertable["generic_infection"]["dima"] = &swap_to_dima;
+
+	level.charactertable["generic_safehouse"] = [];
+	level.charactertable["generic_safehouse"] = arraycombine(level.charactertable["generic_safehouse"], level.charactertable["generic"], true, true);
+	level.charactertable["generic_safehouse"]["dima"] = &swap_to_dima;
 }
 
 // generic
@@ -199,6 +205,13 @@ function swap_to_vepley_backpack()
 {
 	self detachall();
 	self setmodel("t7_gfl_vepley_backpack_fb");
+	self thread character_util::set_character_name();
+}
+
+function swap_to_dima()
+{
+	self detachall();
+	self setmodel("t7_gfl_dima_fb");
 	self thread character_util::set_character_name();
 }
 
