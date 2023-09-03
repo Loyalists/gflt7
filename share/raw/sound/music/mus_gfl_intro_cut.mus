@@ -1,0 +1,218 @@
+{
+    "Name": "mus_gfl_intro_cut",
+    "StateArray": [
+        {
+            "Name": "gfl_brain",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_brain_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 0,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_room",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_room_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 1,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_hope",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_hope_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 2,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_21winter_battle_3",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_21winter_battle_3_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 3,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_frontline",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_frontline_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 4,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_sf_recap_intermission",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_sf_recap_intermission_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 5,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_the_hunt",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_the_hunt_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 6,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        }
+    ],
+    "StateNames": [
+        "gfl_brain",
+        "gfl_room",
+        "gfl_hope",
+        "gfl_21winter_battle_3",
+        "gfl_frontline",
+        "gfl_sf_recap_intermission",
+        "gfl_the_hunt"
+    ],
+    "LoopIndex": 7
+}

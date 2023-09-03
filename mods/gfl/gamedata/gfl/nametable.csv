@@ -26,7 +26,6 @@ type97,Type 97
 mp40,MP40
 mp7,MP7
 suomi,Suomi
-salim,Suomi
 9a91,9A-91
 super_sass,Super SASS
 negev,Negev
@@ -35,6 +34,8 @@ rpk16,RPK-16
 krueger,RPK-16
 tololo,AK-Alfa
 vepley,Vepley
+dima,Dima
+salim,Dima
 dreamer,Dreamer
 ouroboros,Ouroboros
 vespid,Vespid

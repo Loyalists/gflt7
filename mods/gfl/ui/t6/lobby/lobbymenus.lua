@@ -506,6 +506,10 @@ CoD.LobbyMenus.MPButtonsLAN = function(f32_arg0, f32_arg1, f32_arg2)
     if Engine.DvarBool(nil, "inventory_test_button_visible") then
         f0_local5(f32_arg0, f32_arg1, CoD.LobbyButtons.MP_INVENTORY_TEST)
     end
+    if not DisableBlackMarket() then
+        f0_local7(f32_arg1)
+        f0_local6(f32_arg0, f32_arg1, CoD.LobbyButtons.BLACK_MARKET)
+    end
 end
 
 CoD.LobbyMenus.ZMButtonsOnline = function(f33_arg0, f33_arg1, f33_arg2)

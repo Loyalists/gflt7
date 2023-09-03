@@ -153,15 +153,15 @@ DataSources.TFOptionsP2 = DataSourceHelpers.ListSetup("PC.TFOptionsP2", function
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
-    -- table.insert(f26_local0, {
-    --     models = {
-    --         label = "Disable Intro Movie",
-    --         description = "Disables the video in loading screen. \nNote: Intro movie is always disabled in co-op.",
-    --         profileVarName = "disable_intro_movie",
-    --         widgetType = "tfcheckbox"
-    --     },
-    --     properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
-    -- })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_DISABLE_INTRO_MOVIE",
+            description = "TF_DISABLE_INTRO_MOVIE_DESC",
+            profileVarName = "disable_intro_movie",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
     return f26_local0
 end, true)
 

@@ -1,12 +1,12 @@
 {
-    "Name": "mus_gfl",
+    "Name": "mus_gfl_intro",
     "StateArray": [
         {
-            "Name": "gfl_brain_loop",
+            "Name": "gfl_brain",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_brain_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_brain_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -31,11 +31,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_elecwar_h_loop",
+            "Name": "gfl_elecwar_h",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_elecwar_h_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_elecwar_h_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -60,11 +60,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_departure_loop",
+            "Name": "gfl_departure",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_departure_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_departure_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -89,11 +89,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_autonome_loop",
+            "Name": "gfl_autonome",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_autonome_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_autonome_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -118,11 +118,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_room_loop",
+            "Name": "gfl_room",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_room_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_room_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -147,11 +147,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_barbarous_funera_loop",
+            "Name": "gfl_barbarous_funera",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_barbarous_funera_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_barbarous_funera_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -176,11 +176,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_ev5_intermission_loop",
+            "Name": "gfl_ev5_intermission",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_ev5_intermission_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_ev5_intermission_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -205,11 +205,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_greenlight_loop",
+            "Name": "gfl_greenlight",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_greenlight_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_greenlight_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -234,11 +234,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_nihilism_loop",
+            "Name": "gfl_nihilism",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_nihilism_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_nihilism_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -263,11 +263,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_safety_first_loop",
+            "Name": "gfl_safety_first",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_safety_first_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_safety_first_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -292,11 +292,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_synthesis_catalyst_loop",
+            "Name": "gfl_synthesis_catalyst",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_synthesis_catalyst_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_synthesis_catalyst_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -321,11 +321,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_all_systems_go_loop",
+            "Name": "gfl_all_systems_go",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_all_systems_go_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_all_systems_go_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -350,11 +350,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_fixed_point_lobby_loop",
+            "Name": "gfl_fixed_point_lobby",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_fixed_point_lobby_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_fixed_point_lobby_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -379,11 +379,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_move_on_loop",
+            "Name": "gfl_move_on",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_move_on_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_move_on_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -408,11 +408,11 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_hope_loop",
+            "Name": "gfl_hope",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_hope_loop",
-                    "Looping": true,
+                    "AliasName": "mus_gfl_hope_intro",
+                    "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
                     "PlayAsFirstRandom": false,
@@ -435,144 +435,24 @@
             "IsRandom": false,
             "IsSequential": true,
             "SkipPreviousExit": false
-        },
-        {
-            "Name": "gfl_21winter_battle_3_loop",
-            "LoopAssets": [
-                {
-                    "AliasName": "mus_gfl_21winter_battle_3_loop",
-                    "Looping": true,
-                    "CompleteLoop": false,
-                    "RemoveAfterPlay": false,
-                    "PlayAsFirstRandom": false,
-                    "StartSync": false,
-                    "StopSync": false,
-                    "CompleteOnStop": true,
-                    "LoopStartOffset": 0,
-                    "BPM": 120,
-                    "AssetType": 1,
-                    "LoopNumber": 1,
-                    "Order": 0,
-                    "StartDelayBeats": 0,
-                    "StartFadeBeats": 4,
-                    "StopDelayBeats": 0,
-                    "StopFadeBeats": 16,
-                    "Meter": 4
-                }
-            ],
-            "Order": 15,
-            "IsRandom": false,
-            "IsSequential": true,
-            "SkipPreviousExit": false
-        },
-        {
-            "Name": "gfl_frontline_loop",
-            "LoopAssets": [
-                {
-                    "AliasName": "mus_gfl_frontline_loop",
-                    "Looping": true,
-                    "CompleteLoop": false,
-                    "RemoveAfterPlay": false,
-                    "PlayAsFirstRandom": false,
-                    "StartSync": false,
-                    "StopSync": false,
-                    "CompleteOnStop": true,
-                    "LoopStartOffset": 0,
-                    "BPM": 120,
-                    "AssetType": 1,
-                    "LoopNumber": 1,
-                    "Order": 0,
-                    "StartDelayBeats": 0,
-                    "StartFadeBeats": 4,
-                    "StopDelayBeats": 0,
-                    "StopFadeBeats": 16,
-                    "Meter": 4
-                }
-            ],
-            "Order": 16,
-            "IsRandom": false,
-            "IsSequential": true,
-            "SkipPreviousExit": false
-        },
-        {
-            "Name": "gfl_sf_recap_intermission_loop",
-            "LoopAssets": [
-                {
-                    "AliasName": "mus_gfl_sf_recap_intermission_loop",
-                    "Looping": true,
-                    "CompleteLoop": false,
-                    "RemoveAfterPlay": false,
-                    "PlayAsFirstRandom": false,
-                    "StartSync": false,
-                    "StopSync": false,
-                    "CompleteOnStop": true,
-                    "LoopStartOffset": 0,
-                    "BPM": 120,
-                    "AssetType": 1,
-                    "LoopNumber": 1,
-                    "Order": 0,
-                    "StartDelayBeats": 0,
-                    "StartFadeBeats": 4,
-                    "StopDelayBeats": 0,
-                    "StopFadeBeats": 16,
-                    "Meter": 4
-                }
-            ],
-            "Order": 17,
-            "IsRandom": false,
-            "IsSequential": true,
-            "SkipPreviousExit": false
-        },
-        {
-            "Name": "gfl_the_hunt_loop",
-            "LoopAssets": [
-                {
-                    "AliasName": "mus_gfl_the_hunt_loop",
-                    "Looping": true,
-                    "CompleteLoop": false,
-                    "RemoveAfterPlay": false,
-                    "PlayAsFirstRandom": false,
-                    "StartSync": false,
-                    "StopSync": false,
-                    "CompleteOnStop": true,
-                    "LoopStartOffset": 0,
-                    "BPM": 120,
-                    "AssetType": 1,
-                    "LoopNumber": 1,
-                    "Order": 0,
-                    "StartDelayBeats": 0,
-                    "StartFadeBeats": 4,
-                    "StopDelayBeats": 0,
-                    "StopFadeBeats": 16,
-                    "Meter": 4
-                }
-            ],
-            "Order": 18,
-            "IsRandom": false,
-            "IsSequential": true,
-            "SkipPreviousExit": false
         }
     ],
     "StateNames": [
-        "gfl_brain_loop",
-        "gfl_elecwar_h_loop",
-        "gfl_departure_loop",
-        "gfl_autonome_loop",
-        "gfl_room_loop",
-        "gfl_barbarous_funera_loop",
-        "gfl_ev5_intermission_loop",
-        "gfl_greenlight_loop",
-        "gfl_nihilism_loop",
-        "gfl_safety_first_loop",
-        "gfl_synthesis_catalyst_loop",
-        "gfl_all_systems_go_loop",
-        "gfl_fixed_point_lobby_loop",
-        "gfl_move_on_loop",
-        "gfl_hope_loop",
-        "gfl_21winter_battle_3_loop",
-        "gfl_frontline_loop",
-        "gfl_sf_recap_intermission_loop",
-        "gfl_the_hunt_loop"
+        "gfl_brain",
+        "gfl_elecwar_h",
+        "gfl_departure",
+        "gfl_autonome",
+        "gfl_room",
+        "gfl_barbarous_funera",
+        "gfl_ev5_intermission",
+        "gfl_greenlight",
+        "gfl_nihilism",
+        "gfl_safety_first",
+        "gfl_synthesis_catalyst",
+        "gfl_all_systems_go",
+        "gfl_fixed_point_lobby",
+        "gfl_move_on",
+        "gfl_hope"
     ],
-    "LoopIndex": 19
+    "LoopIndex": 15
 }

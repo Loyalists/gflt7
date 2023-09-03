@@ -8,7 +8,7 @@
     "MapFile" : "", 
     "Standalone" : true, 
     "Builds" : [ "T7" ], 
-    "MusicFiles" : [ "mus_gfl" ],
+    "MusicFiles" : [ "mus_gfl", "mus_gfl_intro_cut" ],
     "Sources" : [ 
         { "Type" : "ALIAS", 
         "Name" : "core_mod",
