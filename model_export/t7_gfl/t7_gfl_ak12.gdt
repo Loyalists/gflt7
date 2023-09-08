@@ -20028,9 +20028,6 @@
 	"c_zom_der_nikolai_mpc_fb" [ "t7_gfl_ak12_fb_nomask_mp" ]
 	{
 	}
-	"c_zom_dlc3_nikolai_mpc_fb" [ "t7_gfl_ak12_fb_nomask_mp" ]
-	{
-	}
 	"c_zom_dlc3_nikolai_mpc_fb_nohat" [ "t7_gfl_ak12_fb_nomask_mp" ]
 	{
 	}
@@ -20065,6 +20062,9 @@
 		"materialType" "lit_emissive_transparent_plus"
 	}
 	"c_t7_zm_dlchd_moon_pressuresuit_nikolai_mpc" [ "t7_gfl_ak12_fb_nomask_mp" ]
+	{
+	}
+	"c_zom_dlc3_nikolai_mpc_fb" [ "t7_gfl_ak12_fb_mp" ]
 	{
 	}
 }

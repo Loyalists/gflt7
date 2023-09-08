@@ -56,17 +56,26 @@ function init_character_table()
 
 	// lookup table of model name substr to its bodystyle index
 	level.additional_bodystyle_table = [];
+	// m16a1
 	level.additional_bodystyle_table["c_zom_der_dempsey_mpc_fb"] = 1;
 	level.additional_bodystyle_table["c_zom_dlc3_dempsey_mpc_fb"] = 1;
 	level.additional_bodystyle_table["c_t7_zm_dlchd_waw_dempsey_mpc_fb"] = 2;
 	level.additional_bodystyle_table["t7_gfl_m4a1_v2_fb"] = 3;
+	// ak12
+	level.additional_bodystyle_table["c_zom_dlc3_nikolai_mpc_fb"] = 1;
+	// m4 sopmod ii
 	level.additional_bodystyle_table["t7_gfl_ro635_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_st_ar15_v2_fb"] = 2;
+	// p90
 	level.additional_bodystyle_table["t7_gfl_g36c_fb"] = 1;
+	// super sass
 	level.additional_bodystyle_table["t7_gfl_rfb_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_tac50_v2_fb"] = 2;
+	// vepley
 	level.additional_bodystyle_table["t7_gfl_vepley_fb"] = 1;
+	// mp7
 	level.additional_bodystyle_table["t7_gfl_mp7_casual_tights_fb"] = 1;
+	// g11
 	level.additional_bodystyle_table["t7_gfl_dima_fb"] = 1;
 
 	level.model_to_character_table = [];

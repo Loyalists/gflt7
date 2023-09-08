@@ -44,7 +44,7 @@ index,type,name,resident,streamed,parentStack
 43,xmodelmesh,t7_gfl_st_ar15_v2_fb_lod16106f468,4480,723376,|t7_gfl_st_ar15_v2_fb_mp|xmodel|pbt_gfl_body_st_ar15|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 44,xmodelmesh,t7_gfl_dima_fb_lod1eeec3293,4592,598992,|t7_gfl_dima_fb_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 45,xmodelmesh,t7_gfl_ro635_fb_lod1ba920a26,4960,708032,|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-46,xmodelmesh,t7_gfl_ak12_fb_lod1351c943c,3808,726320,|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
+46,xmodelmesh,t7_gfl_ak12_fb_lod1351c943c,3808,726320,|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
 47,xmodelmesh,t7_gfl_guard_fb_lod14e27ba2a,1056,323776,|c_t7_mp_reaper_mpc_body2_skin5|xmodel|zone_source/core_mod.zone|csv
 48,xmodelmesh,t7_gfl_vespid_fb_lod1665d91e,800,160992,|c_t7_mp_reaper_mpc_body1_skin2|xmodel|zone_source/core_mod.zone|csv
 49,xmodelmesh,t7_gfl_dreamer_fb_lod1a5aa6f71,2384,428880,|c_t7_mp_reaper_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
@@ -93,7 +93,7 @@ index,type,name,resident,streamed,parentStack
 92,xmodelmesh,t7_gfl_st_ar15_v2_fb_lod1e06135d3,4480,873200,|t7_gfl_st_ar15_v2_fb_mp|xmodel|pbt_gfl_body_st_ar15|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 93,xmodelmesh,t7_gfl_dima_fb_lod153ee9110,4592,751264,|t7_gfl_dima_fb_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 94,xmodelmesh,t7_gfl_ro635_fb_lod16ce5d24c,4960,1149392,|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-95,xmodelmesh,t7_gfl_ak12_fb_lod1f2aae03d,3808,1148032,|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
+95,xmodelmesh,t7_gfl_ak12_fb_lod1f2aae03d,3808,1148032,|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
 96,xmodelmesh,t7_gfl_guard_fb_lod1f55f7b83,1056,376992,|c_t7_mp_reaper_mpc_body2_skin5|xmodel|zone_source/core_mod.zone|csv
 97,xmodelmesh,t7_gfl_vespid_fb_lod1ed9fe7a3,976,259168,|c_t7_mp_reaper_mpc_body1_skin2|xmodel|zone_source/core_mod.zone|csv
 98,xmodelmesh,t7_gfl_dreamer_fb_lod11415d4e9,2384,654912,|c_t7_mp_reaper_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
@@ -142,7 +142,7 @@ index,type,name,resident,streamed,parentStack
 141,xmodelmesh,t7_gfl_st_ar15_v2_fb_lod12504fc02,4576,1646064,|t7_gfl_st_ar15_v2_fb_mp|xmodel|pbt_gfl_body_st_ar15|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 142,xmodelmesh,t7_gfl_dima_fb_lod15783ced9,4816,1584736,|t7_gfl_dima_fb_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 143,xmodelmesh,t7_gfl_ro635_fb_lod162aca1cc,5152,2051488,|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-144,xmodelmesh,t7_gfl_ak12_fb_lod1fbdfc796,3936,1982160,|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
+144,xmodelmesh,t7_gfl_ak12_fb_lod1fbdfc796,3936,1982160,|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
 145,xmodelmesh,t7_gfl_guard_fb_lod163e0449f,1184,679568,|c_t7_mp_reaper_mpc_body2_skin5|xmodel|zone_source/core_mod.zone|csv
 146,xmodelmesh,t7_gfl_vespid_fb_lod16dc0b772,1024,472848,|c_t7_mp_reaper_mpc_body1_skin2|xmodel|zone_source/core_mod.zone|csv
 147,xmodelmesh,t7_gfl_dreamer_fb_lod19216a6b6,2608,1114256,|c_t7_mp_reaper_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
@@ -663,10 +663,10 @@ index,type,name,resident,streamed,parentStack
 662,material,mc/mtl_gfl_ak12_cf_m_hair_f_11_00_i,879,0,|c_t7_zm_dlchd_moon_pressuresuit_nikolai_mpc|xmodel|zone_source/core_mod.zone|csv
 663,image,i_gfl_ak12_cf_m_hair_s_05_00_c,287,1441792,|mc/mtl_gfl_ak12_cf_m_hair_s_05_00|material|c_t7_zm_dlchd_moon_pressuresuit_nikolai_mpc|xmodel|zone_source/core_mod.zone|csv
 664,material,mc/mtl_gfl_ak12_cf_m_hair_s_05_00,881,0,|c_t7_zm_dlchd_moon_pressuresuit_nikolai_mpc|xmodel|zone_source/core_mod.zone|csv
-665,image,i_gfl_ak12_m_meka_2_g_c,280,393216,|mc/mtl_gfl_ak12_m_meka_2_g|material|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
-666,image,i_gfl_ak12_m_meka_2_g_n,280,393216,|mc/mtl_gfl_ak12_m_meka_2_g|material|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
-667,image,i_gfl_ak12_m_meka_2_g_s,272,218440,|mc/mtl_gfl_ak12_m_meka_2_g|material|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
-668,material,mc/mtl_gfl_ak12_m_meka_2_g,888,0,|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
+665,image,i_gfl_ak12_m_meka_2_g_c,280,393216,|mc/mtl_gfl_ak12_m_meka_2_g|material|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
+666,image,i_gfl_ak12_m_meka_2_g_n,280,393216,|mc/mtl_gfl_ak12_m_meka_2_g|material|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
+667,image,i_gfl_ak12_m_meka_2_g_s,272,218440,|mc/mtl_gfl_ak12_m_meka_2_g|material|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
+668,material,mc/mtl_gfl_ak12_m_meka_2_g,888,0,|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
 669,xmodelmesh,t7_gfl_ak12_fb_lod183fe66bf,4048,3303240,|c_zsf_supp_body1|xmodel|zone_source/core_mod.zone|csv
 670,xmodelmesh,t7_gfl_ak12_fb8bbd04a0,4512,6670816,|c_zsf_supp_body1|xmodel|zone_source/core_mod.zone|csv
 671,xmodel,t7_gfl_ak12_fb,9224,0,|zone_source/core_mod.zone|csv
@@ -2841,8 +2841,8 @@ index,type,name,resident,streamed,parentStack
 2840,xmodel,c_t7_mp_nomad_viewarms2_skin3,3148,0,|zone_source/core_mod.zone|csv
 2841,xmodel,c_t7_mp_nomad_viewarms2_skin4,3140,0,|zone_source/core_mod.zone|csv
 2842,xmodel,c_t7_mp_nomad_viewarms2_skin5,3208,0,|zone_source/core_mod.zone|csv
-2843,xmodelmesh,t7_gfl_ak12_fb_lod1c17910c6,4056,3303264,|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
-2844,xmodelmesh,t7_gfl_ak12_fbf882cc08,4504,6670816,|c_t7_mp_firebreak_mpc_body1_skin4|xmodel|zone_source/core_mod.zone|csv
+2843,xmodelmesh,t7_gfl_ak12_fb_lod1c17910c6,4056,3303264,|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
+2844,xmodelmesh,t7_gfl_ak12_fbf882cc08,4504,6670816,|c_zom_dlc3_nikolai_mpc_fb|xmodel|zone_source/core_mod.zone|csv
 2845,xmodel,c_t7_mp_firebreak_mpc_fb1_skin1,9632,0,|zone_source/core_mod.zone|csv
 2846,xmodel,c_t7_mp_firebreak_mpc_head1_skin1,140,0,|zone_source/core_mod.zone|csv
 2847,xmodel,c_t7_mp_firebreak_mpc_head1_skin2,136,0,|zone_source/core_mod.zone|csv
@@ -3112,8 +3112,8 @@ index,type,name,resident,streamed,parentStack
 3111,xmodel,c_zom_der_nikolai_viewlegs,1252,0,|zone_source/core_mod.zone|csv
 3112,xmodelmesh,t7_gfl_ak12_bodybde6fcf3,1968,3178080,|c_zom_der_nikolai_viewbody|xmodel|zone_source/core_mod.zone|csv
 3113,xmodel,c_zom_der_nikolai_viewbody,10112,0,|zone_source/core_mod.zone|csv
-3114,xmodel,c_zom_dlc3_nikolai_mpc_fb,4672,0,|zone_source/core_mod.zone|csv
-3115,xmodel,c_zom_dlc3_nikolai_mpc_fb_nohat,4680,0,|zone_source/core_mod.zone|csv
+3114,xmodel,c_zom_dlc3_nikolai_mpc_fb,6548,0,|zone_source/core_mod.zone|csv
+3115,xmodel,c_zom_dlc3_nikolai_mpc_fb_nohat,4676,0,|zone_source/core_mod.zone|csv
 3116,xmodel,c_zom_der_richtofen_mpc_fb,4320,0,|zone_source/core_mod.zone|csv
 3117,xmodel,c_zom_der_richtofen_viewhands,3080,0,|zone_source/core_mod.zone|csv
 3118,xmodel,c_zom_der_richtofen_viewlegs,1508,0,|zone_source/core_mod.zone|csv
@@ -3223,7 +3223,7 @@ index,type,name,resident,streamed,parentStack
 3222,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521488,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3223,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3224,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3225,image,t7_menu_mp_chars_enforcer_body_custom01€¯ ,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3225,image,t7_menu_mp_chars_enforcer_body_custom01€þê,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3226,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3227,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3228,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
@@ -3240,7 +3240,7 @@ index,type,name,resident,streamed,parentStack
 3239,image,uie_t7_zm_hud_score_super_sass,16415,0,|pbt_gfl_super_sass|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3240,image,uie_t7_zm_hud_score_negev,16410,0,|pbt_gfl_negev|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3241,image,uie_t7_zm_hud_score_g11,16408,0,|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3242,customizationtable,zm_character_customization,25052,0,|zone_source/core_mod.zone|csv
+3242,customizationtable,zm_character_customization,25068,0,|zone_source/core_mod.zone|csv
 3243,customizationtable,zm_character_customization_zmhd,21696,0,|zone_source/core_mod.zone|csv
 3244,xmodel,c_zom_der_richtofen_cin_fb,4100,0,|zone_source/core_mod.zone|csv
 3245,xmodel,c_zom_der_dempsey_cin_fb,4424,0,|zone_source/core_mod.zone|csv

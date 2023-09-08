@@ -794,11 +794,6 @@ function bot_got_damage()
 		return;
 	}
 
-	if( self bot_combat::has_threat() )
-	{
-		return;
-	}
-
 	self botpressbutton(0);
 	self botlookatpoint(self.bot.damage.entity getcentroid());
 	self bot_combat::set_threat(self.bot.damage.entity);

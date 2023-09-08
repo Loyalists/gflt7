@@ -18,7 +18,6 @@
 
 function init()
 {
-	// clientfield::register("toplayer", "gfl_character_icon", VERSION_SHIP, 4, "int");
 	util::registerClientSys( "gfl_character_icon" );
 	callback::on_connect(&on_player_connect);
 
@@ -265,7 +264,6 @@ function set_icon(func_index)
 		icon_index = func_index;
 	}
 	// works for the current client only
-	// self clientfield::set_to_player("gfl_character_icon", icon_index);
 	util::setClientSysState( "gfl_character_icon", icon_index, self );
 }
 

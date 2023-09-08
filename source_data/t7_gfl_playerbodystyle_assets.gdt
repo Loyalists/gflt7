@@ -805,6 +805,7 @@
 	}
 	"pbt_zm_body_nikolai_dlc2" [ "pbt_zm_body_nikolai" ]
 	{
+		"displayName" "AK-12 (Mask)"
 		"xmodel" "c_zom_dlc3_nikolai_mpc_fb"
 	}
 	"pbt_zm_body_nikolai_nohat" [ "pbt_zm_body_nikolai" ]
