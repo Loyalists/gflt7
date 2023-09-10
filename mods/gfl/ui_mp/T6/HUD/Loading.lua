@@ -27,10 +27,43 @@ local f0_local2 = function ( f4_arg0, f4_arg1 )
 	end
 end
 
+local CustomMapImageTable = {
+	["zm_town_hd"] = "t7_menu_zm_loadscreen_bus_depot"
+}
+
+local IntroMovieDisabledMaps = {
+	["zm_town_hd"] = true
+}
+
+local function GetCustomMapImage( mapName )
+    if CustomMapImageTable == nil or mapName == nil then
+	    return nil
+    end
+
+    local mapImage = CustomMapImageTable[mapName]
+    if mapImage == nil then
+        return nil
+    end
+
+	return mapImage
+end
+
 local function IsIntroMovieDisabled()
-	if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) <= 1 and Dvar.tfoption_disable_intro_movie:exists() and Dvar.tfoption_disable_intro_movie:get() == "0" then
+	if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) > 1 then
 		return true
 	end
+
+	if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) <= 1 and Dvar.tfoption_disable_intro_movie:exists() and Dvar.tfoption_disable_intro_movie:get() ~= "0" then
+		return true
+	end
+
+	local mapName = Engine.GetCurrentMap()
+    if IntroMovieDisabledMaps ~= nil and mapName ~= nil then
+		local check = IntroMovieDisabledMaps[mapName]
+		if check ~= nil and check == true then
+			return true
+		end
+    end
 
 	return false
 end
@@ -67,7 +100,7 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 			f5_local1 = false
 		elseif Engine.IsDemoPlaying() or Engine.IsSplitscreen() then
 			f5_local1 = false
-		elseif IsIntroMovieDisabled() then
+		elseif not IsIntroMovieDisabled() then
 			f5_local1 = true
 			local f5_local5 = CoD.GetMapValue( f5_local2, "introMovie" )
 			if f5_local5 == nil and Mods_IsUsingUsermap() then
@@ -134,9 +167,14 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 		end
 		
 	end
-	if Mods_IsUsingUsermap() and Dvar.custom_loading_image:exists() and IsIntroMovieDisabled() then
-		f5_local4 = Dvar.custom_loading_image:get()
+
+	if IsIntroMovieDisabled() then
+		local customMapImage = GetCustomMapImage( f5_local2 )
+		if customMapImage ~= nil then
+			f5_local4 = customMapImage
+		end
 	end
+
 	f5_local0.mapImage = LUI.UIStreamedImage.new()
 	f5_local0.mapImage.id = "mapImage"
 	f5_local0.mapImage:setLeftRight( false, false, -640, 640 )
@@ -352,9 +390,9 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 		local ModsLists = Engine.Mods_Lists_GetInfoEntries( "usermaps", 0, Engine.Mods_Lists_GetInfoEntriesCount( "usermaps" ) )
 		if ModsLists then
 			for int = 0 , #ModsLists, 1 do
-				local Maps = ModsLists[int] 
-				if Maps.ugcName == Dvar.ui_mapname:get() and LUI.startswith( Maps.internalName, "zm_" ) then
-					mapDescription = Maps.description
+				local map = ModsLists[int] 
+				if map.ugcName == Dvar.ui_mapname:get() and LUI.startswith( map.internalName, "zm_" ) then
+					mapDescription = map.description
 				end
 			end
 		end

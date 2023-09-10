@@ -102,4 +102,6 @@ index,type,name,resident,streamed,parentStack
 101,image,t7_menu_zm_loadscreen_sumpf,2073628,0,|zone_source/zm_mod.zone|csv
 102,image,t7_menu_zm_loadscreen_theater,2073630,0,|zone_source/zm_mod.zone|csv
 103,image,t7_menu_zm_loadscreen_cosmodrome,2073633,0,|zone_source/zm_mod.zone|csv
-104,assetlist,,1633,0,
+104,image,t7_menu_zm_loadscreen_moon,2073627,0,|zone_source/zm_mod.zone|csv
+105,image,t7_menu_zm_loadscreen_bus_depot,2073632,0,|zone_source/zm_mod.zone|csv
+106,assetlist,,1665,0,

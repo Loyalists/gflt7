@@ -4502,9 +4502,19 @@
 		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_theater.png"
 		"coreSemantic" "Linear4ch"
 	}
-	"t7_menu_zm_loadscreen_asylum" [ "t7_menu_zm_loadscreen_sumpf" ]
+	"t7_menu_zm_loadscreen_moon" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_theater.png"
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_moon.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_mp_loadingportrait_ability_battery" [ "t7_mp_loadingportrait_weapon_battery" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_battery.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_zm_loadscreen_bus_depot" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_bus_depot.png"
 		"coreSemantic" "Linear4ch"
 	}
 }

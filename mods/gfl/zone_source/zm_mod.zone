@@ -13,6 +13,8 @@ image,img_loadscreen_zm_factory
 image,t7_menu_zm_loadscreen_sumpf
 image,t7_menu_zm_loadscreen_theater
 image,t7_menu_zm_loadscreen_cosmodrome
+image,t7_menu_zm_loadscreen_moon
+image,t7_menu_zm_loadscreen_bus_depot
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_zm.gsc

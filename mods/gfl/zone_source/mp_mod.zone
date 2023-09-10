@@ -13,6 +13,7 @@ scriptparsetree,scripts/mp/bots/_bot_loadout.gsc
 scriptparsetree,scripts/mp/_load.gsc
 scriptparsetree,scripts/mp/_load.csc
 
+image,t7_mp_loadingportrait_ability_battery
 image,t7_mp_loadingportrait_ability_blackmarket
 image,t7_mp_loadingportrait_ability_firebreak
 image,t7_mp_loadingportrait_ability_nomad
@@ -22,6 +23,7 @@ image,t7_mp_loadingportrait_ability_reaper
 image,t7_mp_loadingportrait_ability_ruin
 image,t7_mp_loadingportrait_ability_seraph
 image,t7_mp_loadingportrait_ability_spectre
+image,t7_mp_loadingportrait_weapon_battery
 image,t7_mp_loadingportrait_weapon_blackmarket
 image,t7_mp_loadingportrait_weapon_firebreak
 image,t7_mp_loadingportrait_weapon_nomad
