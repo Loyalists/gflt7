@@ -111,7 +111,7 @@ function on_player_spawned()
 function leviathan_character_fix()
 {
 	self endon("disconnect");
-	self endon("death");
+	self endon("bled_out");
 
     if ( GetDvarInt("tfoption_player_determined_character") )
     {

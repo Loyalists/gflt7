@@ -53,6 +53,35 @@ DataSources.TFOptionsBGBCost = DataSourceHelpers.ListSetup("PC.TFOptionsBGBCost"
     return f15_local0
 end, true)
 
+DataSources.TFOptionsBGBUses = DataSourceHelpers.ListSetup("PC.TFOptionsBGBUses", function(f15_arg0)
+    local f15_local0 = {}
+    table.insert(f15_local0, {
+        models = {
+            value = 0,
+            valueDisplay = "MENU_DEFAULT"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 1,
+            valueDisplay = "5"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 2,
+            valueDisplay = "10"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 3,
+            valueDisplay = "MENU_UNLIMITED"
+        }
+    })
+    return f15_local0
+end, true)
+
 DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
@@ -79,6 +108,16 @@ DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", functi
             description = "TF_BGB_COST_DESC",
             profileVarName = "bgb_cost",
             datasource = "TFOptionsBGBCost",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_BGB_LIMIT",
+            description = "TF_BGB_LIMIT_DESC",
+            profileVarName = "bgb_uses",
+            datasource = "TFOptionsBGBUses",
             widgetType = "dropdown"
         },
         properties = CoD.TFPCUtil.OptionsGenericDropdownProperties

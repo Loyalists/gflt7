@@ -42,15 +42,15 @@ DataSources.TFOptionsBot = DataSourceHelpers.ListSetup("PC.TFOptionsBot", functi
         },
         properties = CoD.TFPCUtil.OptionsGenericSliderProperties
     })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_BOT_COMMAND",
-            description = "TF_BOT_COMMAND_DESC",
-            profileVarName = "bot_command",
-            widgetType = "tfcheckbox"
-        },
-        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
-    })
+    -- table.insert(f26_local0, {
+    --     models = {
+    --         label = "TF_BOT_COMMAND",
+    --         description = "TF_BOT_COMMAND_DESC",
+    --         profileVarName = "bot_command",
+    --         widgetType = "tfcheckbox"
+    --     },
+    --     properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    -- })
     return f26_local0
 end, true)
 

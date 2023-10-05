@@ -83,6 +83,29 @@ function private __main__()
 	{
 		level.bgb_machine_max_uses_per_round = 3;
 	}
+
+	bgb_uses = GetDvarInt("tfoption_bgb_uses", 0);
+	if( bgb_uses != 0 )
+	{
+		switch( bgb_uses ) 
+		{
+			case 1:
+				level.bgb_machine_max_uses_per_round = 5;
+				break;
+		
+			case 2:
+				level.bgb_machine_max_uses_per_round = 10;
+				break;
+	
+			case 3:
+				level.bgb_machine_max_uses_per_round = 1000;
+				break;
+	
+			default:
+				break;
+		}
+	}
+
 	if(!isdefined(level.var_f02c5598))
 	{
 		level.var_f02c5598 = 1000;

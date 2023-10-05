@@ -69,7 +69,7 @@ function on_player_connect()
 
 function zombie_model_fix()
 {
-	self endon( "death" );
+	self endon("death");
 	level endon("game_ended");
 	level endon("end_game");
 
@@ -147,7 +147,7 @@ function swap_character(function_index)
 function altbody_cc_fix()
 {
 	self endon("disconnect");
-	self endon("death");
+	self endon("bled_out");
 
 	while (true)
 	{

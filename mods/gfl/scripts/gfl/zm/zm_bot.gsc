@@ -46,15 +46,8 @@ function main()
 	level.botsettings.yawsensitivity = 5000;
 	
 	thread wait_for_downed();
-	if(GetDvarInt("tfoption_bot_command"))
-	{
-		thread bot_cmd();
-	}
-	if(GetDvarInt("tfoption_bot"))
-	{
-		// thread auto_bot_spawn();
-		thread server_auto_bot_spawn();
-	}
+	thread bot_cmd();
+	thread server_auto_bot_spawn();
 
     while(1)
     {
@@ -499,7 +492,7 @@ function bot_health()
 {	
 	level endon( "game_ended" );
 	self endon("disconnect");
-	self endon("death");
+	self endon("bled_out");
 
 	self thread health_regen();
 	self thread health_boost();
@@ -509,7 +502,7 @@ function health_regen()
 {	
 	level endon( "game_ended" );
 	self endon("disconnect");
-	self endon("death");
+	self endon("bled_out");
 
 	while(true) 
 	{
@@ -522,7 +515,7 @@ function regain_full_health()
 {	
 	level endon( "game_ended" );
 	self endon("disconnect");
-	self endon("death");
+	self endon("bled_out");
 	self endon("damage");
 
 	wait(3); 
@@ -537,7 +530,7 @@ function health_boost()
 {	
 	level endon( "game_ended" );
 	self endon("disconnect");
-	self endon("death");
+	self endon("bled_out");
 
 	while(true) 
 	{

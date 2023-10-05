@@ -43,6 +43,8 @@ function set_character_icon(clientnum, state, oldstate)
 	self notify("character_icon_reset");
 	self endon("character_icon_reset");
 	self endon("entityshutdown");
+    self endon("death");
+    self endon("bled_out");
 	self endon("death_or_disconnect");
 
     if ( !isdefined(self.playerlist_icon_uimodel) )
@@ -67,7 +69,6 @@ function set_character_icon(clientnum, state, oldstate)
 
 function set_character_icon_for_uimodel( target, index )
 {
-	self endon("death_or_disconnect");
     model = get_icon_uimodel(target);
     if ( !isdefined(model) )
     {

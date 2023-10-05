@@ -1554,13 +1554,13 @@ LUI.createMenu.BlackMarket = function ( controller )
 			return false
 		end
 	end, false )
-	f105_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "S", function ( f128_arg0, f128_arg1, f128_arg2, f128_arg3 )
-		OpenOutfitStore( self, f128_arg0, f128_arg2, "BlackMarket", f128_arg1 )
-		return true
-	end, function ( f129_arg0, f129_arg1, f129_arg2 )
-		CoD.Menu.SetButtonLabel( f129_arg1, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "MENU_VIEW_STORE_OUTFITS" )
-		return true
-	end, false )
+	-- f105_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "S", function ( f128_arg0, f128_arg1, f128_arg2, f128_arg3 )
+	-- 	OpenOutfitStore( self, f128_arg0, f128_arg2, "BlackMarket", f128_arg1 )
+	-- 	return true
+	-- end, function ( f129_arg0, f129_arg1, f129_arg2 )
+	-- 	CoD.Menu.SetButtonLabel( f129_arg1, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "MENU_VIEW_STORE_OUTFITS" )
+	-- 	return true
+	-- end, false )
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		SendFrontendControllerZeroMenuResponse( controller, "BlackMarket", "closed" )
 		CommitProfileChanges( controller )

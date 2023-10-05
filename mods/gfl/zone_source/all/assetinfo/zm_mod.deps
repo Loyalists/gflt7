@@ -41,8 +41,8 @@ image,t7_menu_zm_loadscreen_moon
 	gdt,image,t7_menu_zm_loadscreen_moon,EB-BD-E5-98-FB-4B-A6-2D-88-D2-F4-E8-00-89-18-CA
 	gdt,light,t7_menu_zm_loadscreen_moon,
 	gdt,emblem,t7_menu_zm_loadscreen_moon,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\loadscreen\t7_menu_zm_loadscreen_moon.png,1694191596,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_zm_loadscreen_moon_C46THJCQOVPQE427MA7D5PKNK5.iwi,1694191850,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\loadscreen\t7_menu_zm_loadscreen_moon.png,1696355208,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_zm_loadscreen_moon_HUGVBJRWRNRUM45QOULN76LS7D.iwi,1696355317,
 image,t7_menu_zm_loadscreen_bus_depot
 	gdt,image,t7_menu_zm_loadscreen_bus_depot,A5-44-80-0B-2B-8D-53-EF-29-C2-2E-3E-24-42-C5-F4
 	gdt,light,t7_menu_zm_loadscreen_bus_depot,
@@ -54,15 +54,15 @@ scriptparsetree,scripts/gfl/zm/character_zm.gsc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\version.gsh,1638881342,
 scriptparsetree,scripts/gfl/zm/character_randomizer.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\character_randomizer.gsc,1694164261,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\character_randomizer.gsc,1694854487,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\version.gsh,1638881342,
 scriptparsetree,scripts/gfl/zm/character_randomizer.csc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\character_randomizer.csc,1693634218,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\character_randomizer.csc,1694855112,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\version.gsh,1638881342,
 scriptparsetree,scripts/gfl/zm/gameplay.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\gameplay.gsc,1692937951,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\gameplay.gsc,1694854552,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\zm\_zm_utility.gsh,1638881132,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\zm\_zm_perks.gsh,1638881084,
@@ -95,7 +95,7 @@ scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\zm\_zm_utility.gsh,1638881132,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\zm\_zm_perks.gsh,1638881084,
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\zm_bot.gsc,1694163930,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\zm_bot.gsc,1696395291,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\zm\_zm_ffotd.gsc,1690606200,
@@ -418,7 +418,7 @@ scriptparsetree,scripts/zm/_zm_bgb.gsc
 scriptparsetree,scripts/zm/_zm_bgb_machine.csc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\zm\_zm_bgb_machine.csc,1690102142,
 scriptparsetree,scripts/zm/_zm_bgb_machine.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\zm\_zm_bgb_machine.gsc,1691757708,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\zm\_zm_bgb_machine.gsc,1696395756,
 image,uie_t7_zm_hud_score_char1
 	gdt,image,uie_t7_zm_hud_score_char1,50-19-49-12-3B-BA-60-C8-B2-9B-D8-CB-86-89-0D-C7
 	gdt,light,uie_t7_zm_hud_score_char1,
@@ -659,6 +659,48 @@ image,uie_t7_zm_hud_score_char8_mask
 	gdt,emblem,uie_t7_zm_hud_score_char8_mask,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_tololo.tif,1690204352,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_char8_mask_5UN4LRHPL754Y3VI4RVBE6O7OL.iwi,1691909794,
+image,uie_t7_zm_hud_score_ro635
+	gdt,image,uie_t7_zm_hud_score_ro635,80-2A-09-6B-33-24-F4-51-D6-00-CC-91-E5-BF-FE-E8
+	gdt,light,uie_t7_zm_hud_score_ro635,
+	gdt,emblem,uie_t7_zm_hud_score_ro635,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_ro635.tif,1690295290,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_ro635_FPEKB3VHIKUU22NAWABFC2NM5V.iwi,1690295480,
+image,uie_t7_zm_hud_score_rfb
+	gdt,image,uie_t7_zm_hud_score_rfb,31-CF-CE-1F-95-A4-E0-A1-C6-34-4F-25-82-18-40-D4
+	gdt,light,uie_t7_zm_hud_score_rfb,
+	gdt,emblem,uie_t7_zm_hud_score_rfb,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_rfb.tif,1622341203,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_rfb_EWAIZWW6NYJBDSIB6ZVWMZMEMG.iwi,1690863524,
+image,uie_t7_zm_hud_score_g36c
+	gdt,image,uie_t7_zm_hud_score_g36c,98-CF-D8-0F-1D-03-D2-59-CE-2F-5C-79-32-09-A6-1E
+	gdt,light,uie_t7_zm_hud_score_g36c,
+	gdt,emblem,uie_t7_zm_hud_score_g36c,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_g36c.tif,1690295432,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_g36c_ASMAL5SJ2OGXK4MCC4EVDYDD7L.iwi,1690295481,
+image,uie_t7_zm_hud_score_st_ar15
+	gdt,image,uie_t7_zm_hud_score_st_ar15,F2-F3-CF-30-98-BC-BE-12-89-DC-32-E4-1D-55-19-16
+	gdt,light,uie_t7_zm_hud_score_st_ar15,
+	gdt,emblem,uie_t7_zm_hud_score_st_ar15,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_st_ar15.tif,1691909236,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_st_ar15_I5C45RHSNR4A24S4FQ3NORQA4B.iwi,1691909694,
+image,uie_t7_zm_hud_score_m4a1
+	gdt,image,uie_t7_zm_hud_score_m4a1,A6-E8-70-FF-76-2C-9F-61-58-69-98-4A-03-33-E7-FB
+	gdt,light,uie_t7_zm_hud_score_m4a1,
+	gdt,emblem,uie_t7_zm_hud_score_m4a1,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_m4a1.tif,1691909410,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_m4a1_NT7O7R6C3A7XPEXZDRB7UAOV6V.iwi,1691909695,
+image,uie_t7_zm_hud_score_tac50
+	gdt,image,uie_t7_zm_hud_score_tac50,E4-E7-1E-32-F6-3A-71-4B-A9-44-E6-4E-8C-B1-58-51
+	gdt,light,uie_t7_zm_hud_score_tac50,
+	gdt,emblem,uie_t7_zm_hud_score_tac50,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_tac50.tif,1692852957,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_tac50_KFHO7LOMG7KSEBVI2ZBW6WDUXU.iwi,1692854222,
+image,uie_t7_zm_hud_score_dima
+	gdt,image,uie_t7_zm_hud_score_dima,F1-92-53-20-FD-CB-1F-1B-BE-ED-0A-6D-0F-1A-CB-17
+	gdt,light,uie_t7_zm_hud_score_dima,
+	gdt,emblem,uie_t7_zm_hud_score_dima,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\uie_t7_zm_hud_score_dima.tif,1693634793,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\uie_t7_zm_hud_score_dima_GJ2X3YM4QIA3KAHLSZPFHRWDW2.iwi,1693723678,
 techset,2d_blend#da7372ff
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\preshader\pc\v7\techsetdef_2d.hlsl_vs_J3F5XELQPC2TQ5QQU2N2Q7BZNS,1638880795,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\shaders\pc\v7\techsetdef_2d.hlsl_vs_main_FOZLO2FWTG6BEPGOBD6XIS2W2Y,1638880913,
@@ -703,7 +745,7 @@ material,specialty_ads_zombies
 texturecombo,zm_mod
 assetlist,zm_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\zm_mod.zone,1694326512,569da1f6,83bd3aed,04b8ff1d,641d51fb
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\zm_mod.zone,1696354980,c4de8625,6f766cbd,a02c640b,9741afba
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\zm_mod.class,1638881105,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\mod_default.class,1638881174,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\default.class,1638881104,
@@ -742,12 +784,12 @@ assetlist,zm_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.alias.sz,1694326688,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.reverb.sz,1694326688,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ducklist.sz,1694326688,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.musiclist.sz,1694326688,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.scriptid.sz,1694326688,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ambient.sz,1694326688,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.alias.sz,1696396411,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.reverb.sz,1696396411,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ducklist.sz,1696396411,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.musiclist.sz,1696396411,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.scriptid.sz,1696396411,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ambient.sz,1696396411,
 	spawn,expect,core_all
 	spawn,expect,zm_common_all
 errorcount,0
