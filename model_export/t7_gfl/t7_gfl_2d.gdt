@@ -3917,6 +3917,51 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
+	"t7_menu_gfl_loadscreen_command_room" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_command_room.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "0"
+		"semantic" "2d"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
 	"t7_menu_mp_hero_background_with_blackmarket" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
@@ -4515,6 +4560,71 @@
 	"t7_menu_zm_loadscreen_bus_depot" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_bus_depot.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_zm_loadscreen_dlc3" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_dlc3.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_desert" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_desert.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_city" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_city.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_city2" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_city2.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_berlinstreet_dream" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_berlinstreet_dream.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_2019summer_4_1" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_2019summer_4_1.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_snowmountain" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_snowmountain.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_metro" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_metro.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_city_burning" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_city_burning.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_m4a1" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_m4a1.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_tower" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_tower.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_indoorfight" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_indoorfight.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_gfl_loadscreen_base" [ "t7_menu_gfl_loadscreen_command_room" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_base.png"
 		"coreSemantic" "Linear4ch"
 	}
 }

@@ -360,8 +360,8 @@ index,type,name,resident,streamed,parentStack
 359,rawfile,ui/t7/utility/ccutility_og.lua,69301,0,|ui/t7/utility/ccutility_og.luac|rawfile|zone_source/core_mod.zone|csv
 360,rawfile,ui/t6/codbase.lua,3381,0,|zone_source/core_mod.zone|csv
 361,rawfile,ui/t6/codbase_og.lua,184644,0,|ui/t6/codbase_og.luac|rawfile|zone_source/core_mod.zone|csv
-362,rawfile,ui_mp/t6/hud/loading.lua,19589,0,|zone_source/core_mod.zone|csv
-363,rawfile,ui_mp/t6/hud/loading_og.lua,31706,0,|ui_mp/t6/hud/loading_og.luac|rawfile|zone_source/core_mod.zone|csv
+362,rawfile,ui_mp/t6/hud/loading.lua,21745,0,|zone_source/core_mod.zone|csv
+363,rawfile,ui_mp/t6/hud/loading_og.lua,31710,0,|ui_mp/t6/hud/loading_og.luac|rawfile|zone_source/core_mod.zone|csv
 364,rawfile,ui/uieditor/menus/charactercustomization/personalizecharacter.lua,40908,0,|zone_source/core_mod.zone|csv
 365,rawfile,ui/uieditor/menus/blackmarket.lua,79396,0,|zone_source/core_mod.zone|csv
 366,rawfile,ui/uieditor/menus/cac/chooseclass_ingame.lua,30717,0,|zone_source/core_mod.zone|csv
@@ -1493,7 +1493,7 @@ index,type,name,resident,streamed,parentStack
 1492,material,mc/mtl_gfl_m16a1_prime_cf_m_glove_theif,875,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1493,image,i_gfl_m16a1_prime_cf_m_glove_theif_metal_s,291,742728,|mc/mtl_gfl_m16a1_prime_cf_m_glove_theif_metal|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1494,material,mc/mtl_gfl_m16a1_prime_cf_m_glove_theif_metal,949,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
-1495,image,i_gfl_m16a1_prime_volleyball_mat_c,299,5614264,|mc/mtl_gfl_m16a1_prime_volleyball_mat|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
+1495,image,i_gfl_m16a1_prime_volleyball_mat_c,299,1419960,|mc/mtl_gfl_m16a1_prime_volleyball_mat|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1496,material,mc/mtl_gfl_m16a1_prime_volleyball_mat,877,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1497,image,i_gfl_m16a1_prime_cf_m_socks_knee01_c,310,742752,|mc/mtl_gfl_m16a1_prime_cf_m_socks_knee01|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1498,material,mc/mtl_gfl_m16a1_prime_cf_m_socks_knee01,874,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
@@ -1507,7 +1507,7 @@ index,type,name,resident,streamed,parentStack
 1506,material,mc/mtl_gfl_m16a1_prime_acs_m_shoulder_iotv,872,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1507,image,$normal,360,0,|mc/mtl_p7_zm_der_magic_box_fake_metal|material|p7_zm_der_magic_box_fake_trunk|xmodel|p7_zm_der_magic_box_fake|xmodel|zone_source/core_mod.zone|csv
 1508,material,mc/mtl_gfl_hk416_acs_m_military_gear,872,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
-1509,image,i_gfl_m16a1_prime_pl4000_equipment_018_c,201,5636096,|mc/mtl_gfl_m16a1_prime_pl4000_equipment_018|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
+1509,image,i_gfl_m16a1_prime_pl4000_equipment_018_c,201,1441792,|mc/mtl_gfl_m16a1_prime_pl4000_equipment_018|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1510,material,mc/mtl_gfl_m16a1_prime_pl4000_equipment_018,887,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1511,material,mc/mtl_gfl_m16a1_prime_cf_m_top_inner01_trans,1072,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1512,image,i_gfl_m16a1_cf_m_face_00_c,283,1441792,|mc/mtl_gfl_m16a1_cf_m_face_00|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
@@ -1538,7 +1538,7 @@ index,type,name,resident,streamed,parentStack
 1537,material,mc/mtl_gfl_m16a1_prime_cf_m_hair_f_02_00,874,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1538,image,i_gfl_m16a1_prime_cf_m_hair_f_33_00_i_c,296,1441792,|mc/mtl_gfl_m16a1_prime_cf_m_hair_f_33_00_i|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1539,material,mc/mtl_gfl_m16a1_prime_cf_m_hair_f_33_00_i,872,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
-1540,image,i_gfl_m16a1_prime_cf_m_hair_f_25_00_c,294,5636096,|mc/mtl_gfl_m16a1_prime_cf_m_hair_f_25_00|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
+1540,image,i_gfl_m16a1_prime_cf_m_hair_f_25_00_c,294,1441792,|mc/mtl_gfl_m16a1_prime_cf_m_hair_f_25_00|material|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1541,material,mc/mtl_gfl_m16a1_prime_cf_m_hair_f_25_00,874,0,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1542,xmodelmesh,t7_gfl_m16a1_prime_fbdee218e4,4232,5696928,|c_zom_dlc3_dempsey_cin_fb|xmodel|zone_source/core_mod.zone|csv
 1543,xmodel,t7_gfl_m16a1_prime_fb,13436,0,|zone_source/core_mod.zone|csv
@@ -2046,7 +2046,7 @@ index,type,name,resident,streamed,parentStack
 2045,material,mc/mtl_gfl_ro635_mf_m_primmaterial,880,0,|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2046,image,i_gfl_ro635_acs_m_gasmask_c,284,393216,|mc/mtl_gfl_ro635_acs_m_gasmask|material|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2047,material,mc/mtl_gfl_ro635_acs_m_gasmask,868,0,|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-2048,image,i_gfl_ro635_acs_m_gear_pistol_c,288,5636096,|mc/mtl_gfl_ro635_acs_m_gear_pistol|material|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
+2048,image,i_gfl_ro635_acs_m_gear_pistol_c,288,1441792,|mc/mtl_gfl_ro635_acs_m_gear_pistol|material|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2049,material,mc/mtl_gfl_ro635_acs_m_gear_pistol,880,0,|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2050,image,i_gfl_ro635_acs_m_beruto_c,395,218528,|mc/mtl_gfl_ro635_acs_m_beruto|material|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2051,material,mc/mtl_gfl_ro635_acs_m_beruto,869,0,|t7_gfl_ro635_body_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
@@ -2099,7 +2099,7 @@ index,type,name,resident,streamed,parentStack
 2098,material,mc/mtl_gfl_ro635_cf_m_hair_b_24_00_i,880,0,|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2099,image,i_gfl_ro635_cf_m_hair_f_113_00_c,289,1441792,|mc/mtl_gfl_ro635_cf_m_hair_f_113_00|material|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2100,material,mc/mtl_gfl_ro635_cf_m_hair_f_113_00,879,0,|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-2101,image,i_gfl_ro635_cf_m_hair_f_31_00_c,288,5636096,|mc/mtl_gfl_ro635_cf_m_hair_f_31_00|material|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
+2101,image,i_gfl_ro635_cf_m_hair_f_31_00_c,288,1441792,|mc/mtl_gfl_ro635_cf_m_hair_f_31_00|material|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2102,material,mc/mtl_gfl_ro635_cf_m_hair_f_31_00,880,0,|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2103,image,i_gfl_ro635_cf_m_hair_f_116_00_c,289,1441792,|mc/mtl_gfl_ro635_cf_m_hair_f_116_00_i|material|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 2104,material,mc/mtl_gfl_ro635_cf_m_hair_f_116_00,879,0,|t7_gfl_ro635_fb_mp|xmodel|pbt_gfl_body_ro635|playerbodystyle|pbt_gfl_m4_sopmod_ii|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
@@ -3223,7 +3223,7 @@ index,type,name,resident,streamed,parentStack
 3222,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521488,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3223,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3224,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3225,image,t7_menu_mp_chars_enforcer_body_custom01°!7—,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3225,image,t7_menu_mp_chars_enforcer_body_custom01 >¨Ë,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3226,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3227,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3228,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv

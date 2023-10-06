@@ -21,7 +21,7 @@ rawfile,dummy.cfg
 
 // weapon,iw8_pkm_cp
 
-// sound,cp_mod
+sound,cp_mod
 
 image,i_t7_graphic_display_mugshot_02_c
 image,t7_cp_hud_commswidget_diaz
@@ -35,6 +35,20 @@ image,t7_cp_hud_commswidget_khalil
 image,t7_cp_hud_commswidget_gohxiulan
 image,t7_cp_hud_commswidget_vtolpilot
 image,t7_cp_hud_commswidget_egypt
+
+image,t7_menu_gfl_loadscreen_2019summer_4_1
+image,t7_menu_gfl_loadscreen_base
+image,t7_menu_gfl_loadscreen_berlinstreet_dream
+image,t7_menu_gfl_loadscreen_city
+image,t7_menu_gfl_loadscreen_city2
+image,t7_menu_gfl_loadscreen_city_burning
+image,t7_menu_gfl_loadscreen_desert
+image,t7_menu_gfl_loadscreen_indoorfight
+image,t7_menu_gfl_loadscreen_m4a1
+image,t7_menu_gfl_loadscreen_metro
+image,t7_menu_gfl_loadscreen_snowmountain
+image,t7_menu_gfl_loadscreen_tower
+image,t7_menu_gfl_loadscreen_command_room
 
 material,mc/mtl_power_armor
 

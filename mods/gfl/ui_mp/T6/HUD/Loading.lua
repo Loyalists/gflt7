@@ -1,5 +1,92 @@
 require( "ui_mp.T6.HUD.Loading_og" )
 
+local CustomMapImageTable = {
+	["cp_sh_cairo"] = "t7_menu_gfl_loadscreen_command_room",
+	["cp_sh_mobile"] = "t7_menu_gfl_loadscreen_command_room",
+	["cp_sh_singapore"] = "t7_menu_gfl_loadscreen_command_room",
+	["cp_mi_eth_prologue"] = "t7_menu_gfl_loadscreen_indoorfight",
+	["cp_mi_zurich_newworld"] = "t7_menu_gfl_loadscreen_city",
+	["cp_mi_sing_blackstation"] = "t7_menu_gfl_loadscreen_berlinstreet_dream",
+	["cp_mi_sing_biodomes"] = "t7_menu_gfl_loadscreen_city2",
+	-- ["cp_mi_sing_biodomes2"] = "t7_menu_gfl_loadscreen_city2",
+	["cp_mi_sing_sgen"] = "t7_menu_gfl_loadscreen_metro",
+	["cp_mi_sing_vengeance"] = "t7_menu_gfl_loadscreen_city_burning",
+	["cp_mi_cairo_ramses"] = "t7_menu_gfl_loadscreen_base",
+	-- ["cp_mi_cairo_ramses2"] = "t7_menu_gfl_loadscreen_base",
+	["cp_mi_cairo_infection"] = "t7_menu_gfl_loadscreen_m4a1",
+	["cp_mi_cairo_infection2"] = "t7_menu_gfl_loadscreen_snowmountain",
+	["cp_mi_cairo_infection3"] = "t7_menu_gfl_loadscreen_m4a1",
+	["cp_mi_cairo_aquifer"] = "t7_menu_gfl_loadscreen_desert",
+	["cp_mi_cairo_lotus"] = "t7_menu_gfl_loadscreen_tower",
+	["cp_mi_cairo_lotus2"] = "t7_menu_gfl_loadscreen_tower",
+	["cp_mi_cairo_lotus3"] = "t7_menu_gfl_loadscreen_tower",
+	["cp_mi_zurich_coalescence"] = "t7_menu_gfl_loadscreen_2019summer_4_1",
+	["zm_town_hd"] = "t7_menu_zm_loadscreen_bus_depot",
+	["zm_town"] = "t7_menu_zm_loadscreen_bus_depot",
+	["zm_farm_hd"] = "t7_menu_zm_loadscreen_bus_depot",
+}
+
+local IntroMovieDisabledMaps = {
+	["cp_sh_cairo"] = true,
+	["cp_sh_mobile"] = true,
+	["cp_sh_singapore"] = true,
+	["cp_mi_eth_prologue"] = true,
+	["cp_mi_zurich_newworld"] = true,
+	["cp_mi_sing_blackstation"] = true,
+	["cp_mi_sing_biodomes"] = true,
+	-- ["cp_mi_sing_biodomes2"] = true,
+	["cp_mi_sing_sgen"] = true,
+	["cp_mi_sing_vengeance"] = true,
+	["cp_mi_cairo_ramses"] = true,
+	-- ["cp_mi_cairo_ramses2"] = true,
+	["cp_mi_cairo_infection"] = true,
+	["cp_mi_cairo_infection2"] = true,
+	["cp_mi_cairo_infection3"] = true,
+	["cp_mi_cairo_aquifer"] = true,
+	["cp_mi_cairo_lotus"] = true,
+	["cp_mi_cairo_lotus2"] = true,
+	["cp_mi_cairo_lotus3"] = true,
+	["cp_mi_zurich_coalescence"] = true,
+	["zm_town_hd"] = true,
+	["zm_town"] = true,
+	["zm_farm_hd"] = true,
+}
+
+local function GetCustomMapImage( mapName )
+    if CustomMapImageTable == nil or mapName == nil then
+	    return nil
+    end
+
+    local mapImage = CustomMapImageTable[mapName]
+    if mapImage == nil then
+        return nil
+    end
+
+	return mapImage
+end
+
+local function IsIntroMovieDisabled()
+	if CoD.isZombie then
+		if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) > 1 then
+			return true
+		end
+
+		if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) <= 1 and Dvar.tfoption_disable_intro_movie:exists() and Dvar.tfoption_disable_intro_movie:get() ~= "0" then
+			return true
+		end
+	end
+
+	local mapName = Engine.GetCurrentMap()
+    if IntroMovieDisabledMaps ~= nil and mapName ~= nil then
+		local check = IntroMovieDisabledMaps[mapName]
+		if check ~= nil and check == true then
+			return true
+		end
+    end
+
+	return false
+end
+
 local f0_local0 = function ( f1_arg0, f1_arg1 )
 	if Engine.IsCinematicMp4() then
 		if not f1_arg0.ismp4 then
@@ -27,45 +114,44 @@ local f0_local2 = function ( f4_arg0, f4_arg1 )
 	end
 end
 
-local CustomMapImageTable = {
-	["zm_town_hd"] = "t7_menu_zm_loadscreen_bus_depot"
-}
-
-local IntroMovieDisabledMaps = {
-	["zm_town_hd"] = true
-}
-
-local function GetCustomMapImage( mapName )
-    if CustomMapImageTable == nil or mapName == nil then
-	    return nil
-    end
-
-    local mapImage = CustomMapImageTable[mapName]
-    if mapImage == nil then
-        return nil
-    end
-
-	return mapImage
-end
-
-local function IsIntroMovieDisabled()
-	if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) > 1 then
-		return true
+local function AddContinueButton( f5_local0, f5_arg0 )
+	local f5_local36 = 15
+	local f5_local37 = 15
+	local f5_local38, f5_local39 = Engine.GetUserSafeArea()
+	f5_local0.buttonModel = Engine.CreateModel( Engine.GetModelForController( f5_arg0 ), "Loading.buttonPrompts" )
+	LUI.OverrideFunction_CallOriginalSecond( f5_local0, "close", function ( element )
+		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( f5_arg0 ), "LoadingScreenOverlayForTeamGames.buttonPrompts" ) )
+	end )
+	f5_local0.continueButton = LUI.UIButton.new()
+	f5_local0.continueButton:setLeftRight( false, false, -f5_local38, f5_local38 / 2 - f5_local36 )
+	f5_local0.continueButton:setTopBottom( false, false, f5_local39 / 2 - CoD.textSize.Condensed - f5_local37, f5_local39 / 2 - f5_local37 )
+	f5_local0.continueButton:setAlignment( LUI.Alignment.Right )
+	f5_local0.continueButton:setAlpha( 0 )
+	f5_local0.continueButton:setActionSFX( "uin_mov_skip" )
+	f5_local0:addElement( f5_local0.continueButton )
+	f5_local0.continueButton:setActionEventNameNewStyle( f5_local0, f5_arg0, "loading_startplay" )
+	f5_local0.continueButton:addElement( CoD.ButtonPrompt.new( "start", "", f5_local0, "loading_startplay", true ) )
+	f5_local0.continueButton.label = LUI.UIText.new()
+	f5_local0.continueButton.label:setLeftRight( true, true, 0, 0 )
+	f5_local0.continueButton.label:setTopBottom( true, true, 0, 0 )
+	f5_local0.continueButton.label:setFont( CoD.fonts.Condensed )
+	f5_local0.continueButton.label:setAlignment( LUI.Alignment.Right )
+	f5_local0.continueButton:addElement( f5_local0.continueButton.label )
+	f5_local0.continueButton.label:setText( Engine.Localize( "PLATFORM_SKIP" ) )
+	f5_local0.continueButton:setHandleMouse( false )
+	if CoD.isPC then
+		f5_local0:setForceMouseEventDispatch( true )
+		f5_local0.continueButtonContainer = LUI.UIElement.new()
+		f5_local0.continueButtonContainer:setLeftRight( true, true, 0, 0 )
+		f5_local0.continueButtonContainer:setTopBottom( true, true, 0, 0 )
+		f5_local0.continueButtonContainer:setAlpha( 1 )
+		f5_local0.continueButtonContainer.id = "continueButtonContainer"
+		f5_local0.continueButtonContainer:setHandleMouse( true )
+		f5_local0:addElement( f5_local0.continueButtonContainer )
+		f5_local0.continueButtonContainer:registerEventHandler( "button_action", function ( element, event )
+			SendButtonPressToMenuEx( f5_local0, event.controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		end )
 	end
-
-	if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) <= 1 and Dvar.tfoption_disable_intro_movie:exists() and Dvar.tfoption_disable_intro_movie:get() ~= "0" then
-		return true
-	end
-
-	local mapName = Engine.GetCurrentMap()
-    if IntroMovieDisabledMaps ~= nil and mapName ~= nil then
-		local check = IntroMovieDisabledMaps[mapName]
-		if check ~= nil and check == true then
-			return true
-		end
-    end
-
-	return false
 end
 
 LUI.createMenu.Loading = function ( f5_arg0 )
@@ -93,6 +179,7 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	if Engine.IsMultiplayerGame() then
 		Engine.PlayMenuMusic( "load_" .. f5_local2 )
 	end
+
 	if CoD.isZombie then
 		if f5_local2 ~= nil and f5_local2 == "zm_island" and IsJapaneseSku() and CoD.LANGUAGE_JAPANESE == Dvar.loc_language:get() then
 			f5_local1 = false
@@ -134,14 +221,18 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 			if f5_local2 ~= nil and f5_local2 == "cp_sh_singapore" and Dvar.cp_queued_level:get() == "cp_mi_sing_blackstation" then
 				f5_local6 = "CP_safehouse_load_loadingmovie"
 			end
-			if f5_local6 ~= nil and not Engine.IsCinematicPlaying() then
-				Engine.StartLoadingCinematic( f5_local6 )
+			if not IsIntroMovieDisabled() then
+				if f5_local6 ~= nil and not Engine.IsCinematicPlaying() then
+					Engine.StartLoadingCinematic( f5_local6 )
+				end
 			end
 			Engine.SetDvar( "ui_useloadingmovie", 0 )
 		end
 		f5_local1 = false
-		if Dvar.art_review:get() ~= "1" and (CoD.isCampaign or CoD.isZombie) and Engine.IsCinematicStarted() then
-			f5_local1 = true
+		if not IsIntroMovieDisabled() then
+			if Dvar.art_review:get() ~= "1" and (CoD.isCampaign or CoD.isZombie) and Engine.IsCinematicStarted() then
+				f5_local1 = true
+			end
 		end
 	end
 	if f5_local1 then
@@ -158,7 +249,9 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	end
 	if Engine.IsLevelPreloaded( f5_local2 ) then
 		f5_local0.addLoadingElement = function ( f6_arg0, f6_arg1 )
-			
+			if CoD.isCampaign then
+				f6_arg0:addElement( f6_arg1 )
+			end
 		end
 		
 	else
@@ -168,8 +261,8 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 		
 	end
 
-	if IsIntroMovieDisabled() then
-		local customMapImage = GetCustomMapImage( f5_local2 )
+	local customMapImage = GetCustomMapImage( Engine.GetCurrentMap() )
+	if CoD.isCampaign or not f5_local1 then
 		if customMapImage ~= nil then
 			f5_local4 = customMapImage
 		end
@@ -233,6 +326,7 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	local f6_local18_1, f6_local18_2, f6_local18_3, f6_local18_4 = GetTextDimensions(DemoAuthor, f5_local12, f5_local13)
 	local f5_local20 = math.max(f6_local14_3, f6_local16_3, f6_local18_3) + 10
 	local f5_local21 = 0
+
 	if not Engine.IsLevelPreloaded( f5_local2 ) then
 		f5_local0.demoInfoContainer = LUI.UIElement.new()
 		f5_local0.demoInfoContainer:setLeftRight( true, false, f5_local5, 600 )
@@ -293,6 +387,7 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 		SetupAutoHorizontalAlignArabicText( f5_local0.demoAuthorLabel )
 		f5_local0.demoInfoContainer:addElement( f5_local0.demoAuthorLabel )
 	end
+	
 	local f5_local22 = 3
 	local f5_local23 = CoD.Loading.DYKFontHeight + f5_local22 * 2
 	local f5_local24 = 2
@@ -378,14 +473,7 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	f5_local0.statusLabel:setupLoadingStatusText()
 	f5_local0.loadingBarContainer:addElement( f5_local0.statusLabel )
 
-	f5_local0.didYouKnow = LUI.UIText.new()
-	f5_local0.didYouKnow:setLeftRight( true, true, f5_local22 + f5_local31, 0 )
-	f5_local0.didYouKnow:setTopBottom( true, false, f5_local28, f5_local28 + CoD.Loading.DYKFontHeight )
-	--f5_local0.didYouKnow:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
-	f5_local0.didYouKnow:setFont( CoD.Loading.DYKFont )
-	f5_local0.didYouKnow:setAlignment( LUI.Alignment.Left )
 	local mapDescription = CoD.GetMapValue( Engine.GetCurrentMap(), "mapDescription", "" )
-
 	if Mods_IsUsingUsermap() then
 		local ModsLists = Engine.Mods_Lists_GetInfoEntries( "usermaps", 0, Engine.Mods_Lists_GetInfoEntriesCount( "usermaps" ) )
 		if ModsLists then
@@ -398,6 +486,12 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 		end
 	end
 
+	f5_local0.didYouKnow = LUI.UIText.new()
+	f5_local0.didYouKnow:setLeftRight( true, true, f5_local22 + f5_local31, 0 )
+	f5_local0.didYouKnow:setTopBottom( true, false, f5_local28, f5_local28 + CoD.Loading.DYKFontHeight )
+	--f5_local0.didYouKnow:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
+	f5_local0.didYouKnow:setFont( CoD.Loading.DYKFont )
+	f5_local0.didYouKnow:setAlignment( LUI.Alignment.Left )
 	f5_local0.didYouKnow:setText( Engine.Localize( mapDescription ) )
 	--f5_local0.didYouKnow:setPriority( 0 )
 	f5_local0.didYouKnow:setAlpha( 1 )
@@ -414,43 +508,7 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 		f5_local0.mapImage.id = "loadingMenu.mapImage"
 		f5_local0:addElement( LUI.UITimer.new( 16, "loading_updateimage", false, f5_local0.mapImage ) )
 		Engine.SetDvar( "ui_useloadingmovie", 1 )
-		local f5_local36 = 15
-		local f5_local37 = 15
-		local f5_local38, f5_local39 = Engine.GetUserSafeArea()
-		f5_local0.buttonModel = Engine.CreateModel( Engine.GetModelForController( f5_arg0 ), "Loading.buttonPrompts" )
-		LUI.OverrideFunction_CallOriginalSecond( f5_local0, "close", function ( element )
-			Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( f5_arg0 ), "LoadingScreenOverlayForTeamGames.buttonPrompts" ) )
-		end )
-		f5_local0.continueButton = LUI.UIButton.new()
-		f5_local0.continueButton:setLeftRight( false, false, -f5_local38, f5_local38 / 2 - f5_local36 )
-		f5_local0.continueButton:setTopBottom( false, false, f5_local39 / 2 - CoD.textSize.Condensed - f5_local37, f5_local39 / 2 - f5_local37 )
-		f5_local0.continueButton:setAlignment( LUI.Alignment.Right )
-		f5_local0.continueButton:setAlpha( 0 )
-		f5_local0.continueButton:setActionSFX( "uin_mov_skip" )
-		f5_local0:addElement( f5_local0.continueButton )
-		f5_local0.continueButton:setActionEventNameNewStyle( f5_local0, f5_arg0, "loading_startplay" )
-		f5_local0.continueButton:addElement( CoD.ButtonPrompt.new( "start", "", f5_local0, "loading_startplay", true ) )
-		f5_local0.continueButton.label = LUI.UIText.new()
-		f5_local0.continueButton.label:setLeftRight( true, true, 0, 0 )
-		f5_local0.continueButton.label:setTopBottom( true, true, 0, 0 )
-		f5_local0.continueButton.label:setFont( CoD.fonts.Condensed )
-		f5_local0.continueButton.label:setAlignment( LUI.Alignment.Right )
-		f5_local0.continueButton:addElement( f5_local0.continueButton.label )
-		f5_local0.continueButton.label:setText( Engine.Localize( "PLATFORM_SKIP" ) )
-		f5_local0.continueButton:setHandleMouse( false )
-		if CoD.isPC then
-			f5_local0:setForceMouseEventDispatch( true )
-			f5_local0.continueButtonContainer = LUI.UIElement.new()
-			f5_local0.continueButtonContainer:setLeftRight( true, true, 0, 0 )
-			f5_local0.continueButtonContainer:setTopBottom( true, true, 0, 0 )
-			f5_local0.continueButtonContainer:setAlpha( 1 )
-			f5_local0.continueButtonContainer.id = "continueButtonContainer"
-			f5_local0.continueButtonContainer:setHandleMouse( true )
-			f5_local0:addElement( f5_local0.continueButtonContainer )
-			f5_local0.continueButtonContainer:registerEventHandler( "button_action", function ( element, event )
-				SendButtonPressToMenuEx( f5_local0, event.controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
-			end )
-		end
+		AddContinueButton( f5_local0, f5_arg0 )
 		f5_local0:registerEventHandler( "loading_displaycontinue", f0_local1 )
 		f5_local0:registerEventHandler( "loading_startplay", f0_local2 )
 		if Engine.GetCurrentMap() == "zm_theater" then
@@ -459,8 +517,17 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 			f5_local0:registerEventHandler( "fade_in_map_image", nil )
 		end
 	else
-		CoD.Loading.StartLoading( f5_local0 )
-		f5_local0:addElement( LUI.UITimer.new( CoD.Loading.SpinnerDelayTime, "start_spinner", true, f5_local0 ) )
+		if CoD.isCampaign then
+			CoD.Loading.StartLoading( f5_local0 )
+			CoD.Loading.FadeInMapImage( f5_local0 )
+			Engine.SetDvar( "ui_useloadingmovie", 1 )
+			AddContinueButton( f5_local0, f5_arg0 )
+			f5_local0:registerEventHandler( "loading_displaycontinue", f0_local1 )
+			f5_local0:registerEventHandler( "loading_startplay", f0_local2 )
+		else
+			CoD.Loading.StartLoading( f5_local0 )
+			f5_local0:addElement( LUI.UITimer.new( CoD.Loading.SpinnerDelayTime, "start_spinner", true, f5_local0 ) )
+		end
 	end
 	return f5_local0
 end

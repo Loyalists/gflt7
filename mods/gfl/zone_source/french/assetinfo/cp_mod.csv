@@ -1,4 +1,5 @@
 index,type,name,resident,streamed,parentStack
 1,string,,0,0,||assetlist
-2,keyvaluepairs,fr_cp_mod,1130,0,||assetlist
-3,assetlist,,16,0,
+2,sound,cp_mod.fr,27,0,||assetlist
+3,keyvaluepairs,fr_cp_mod,1120,0,||assetlist
+4,assetlist,,32,0,

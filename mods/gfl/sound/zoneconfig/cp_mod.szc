@@ -9,10 +9,11 @@
     "Standalone" : true, 
     "Builds" : [ "T7" ], 
     "Sources" : [ 
-        { "Type" : "ALIAS", 
-        "Name" : "cp_mod",
-        "Filename" : "cp_mod.csv", 
-        "Specs" : [ ] 
+        { 
+            "Type" : "ALIAS", 
+            "Name" : "cp_mod",
+            "Filename" : "cp_mod.csv", 
+            "Specs" : [ ] 
         }
     ] 
 }

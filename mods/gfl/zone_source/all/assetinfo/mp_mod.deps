@@ -10,7 +10,7 @@ ignore_missing_shipped,mp_patch
 rawfile,dummy.cfg
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\dummy.cfg,1638882746,
 scriptparsetree,scripts/mp/bots/_bot_loadout.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\bots\_bot_loadout.gsc,1690944160,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\bots\_bot_loadout.gsc,1696497318,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\statstable_shared.gsh,1638881081,
 scriptparsetree,scripts/mp/_load.gsc

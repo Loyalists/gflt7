@@ -15,6 +15,7 @@ image,t7_menu_zm_loadscreen_theater
 image,t7_menu_zm_loadscreen_cosmodrome
 image,t7_menu_zm_loadscreen_moon
 image,t7_menu_zm_loadscreen_bus_depot
+image,t7_menu_zm_loadscreen_dlc3
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_zm.gsc
