@@ -112,4 +112,8 @@ index,type,name,resident,streamed,parentStack
 111,image,t7_menu_zm_loadscreen_moon,2073627,0,|zone_source/zm_mod.zone|csv
 112,image,t7_menu_zm_loadscreen_bus_depot,2073632,0,|zone_source/zm_mod.zone|csv
 113,image,t7_menu_zm_loadscreen_dlc3,2073627,0,|zone_source/zm_mod.zone|csv
-114,assetlist,,1793,0,
+114,image,t7_menu_zm_loadscreen_castle,2073629,0,|zone_source/zm_mod.zone|csv
+115,image,t7_menu_zm_loadscreen_zod,2073626,0,|zone_source/zm_mod.zone|csv
+116,image,t7_menu_zm_loadscreen_giant,2073628,0,|zone_source/zm_mod.zone|csv
+117,image,t7_menu_zm_loadscreen_cotd,2073627,0,|zone_source/zm_mod.zone|csv
+118,assetlist,,1857,0,

@@ -21,9 +21,13 @@ local CustomMapImageTable = {
 	["cp_mi_cairo_lotus2"] = "t7_menu_gfl_loadscreen_tower",
 	["cp_mi_cairo_lotus3"] = "t7_menu_gfl_loadscreen_tower",
 	["cp_mi_zurich_coalescence"] = "t7_menu_gfl_loadscreen_2019summer_4_1",
+
 	["zm_town_hd"] = "t7_menu_zm_loadscreen_bus_depot",
 	["zm_town"] = "t7_menu_zm_loadscreen_bus_depot",
 	["zm_farm_hd"] = "t7_menu_zm_loadscreen_bus_depot",
+	["zm_der_riese"] = "t7_menu_zm_loadscreen_giant",
+	["zm_irondragon"] = "t7_menu_zm_loadscreen_castle",
+	["zm_coast"] = "t7_menu_zm_loadscreen_cotd",
 }
 
 local IntroMovieDisabledMaps = {
@@ -47,9 +51,13 @@ local IntroMovieDisabledMaps = {
 	["cp_mi_cairo_lotus2"] = true,
 	["cp_mi_cairo_lotus3"] = true,
 	["cp_mi_zurich_coalescence"] = true,
+
 	["zm_town_hd"] = true,
 	["zm_town"] = true,
 	["zm_farm_hd"] = true,
+	["zm_der_riese"] = true,
+	["zm_irondragon"] = true,
+	["zm_coast"] = true,
 }
 
 local function GetCustomMapImage( mapName )
