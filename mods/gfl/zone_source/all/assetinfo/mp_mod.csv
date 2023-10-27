@@ -1,8 +1,8 @@
 index,type,name,resident,streamed,parentStack
 1,string,,0,0,||assetlist
 2,rawfile,dummy.cfg,17,0,|zone_source/mp_mod.zone|csv
-3,scriptparsetree,scripts/mp/bots/_bot_loadout.gsc,18248,0,|zone_source/mp_mod.zone|csv
-4,scriptparsetree,scripts/mp/_load.gsc,6188,0,|zone_source/mp_mod.zone|csv
+3,scriptparsetree,scripts/mp/bots/_bot_loadout.gsc,18128,0,|zone_source/mp_mod.zone|csv
+4,scriptparsetree,scripts/mp/_load.gsc,6212,0,|zone_source/mp_mod.zone|csv
 5,scriptparsetree,scripts/mp/_load.csc,3848,0,|zone_source/mp_mod.zone|csv
 6,keyvaluepairs,mp_mod,1118,0,||assetlist
 7,image,t7_mp_loadingportrait_ability_battery,97238,0,|zone_source/mp_mod.zone|csv

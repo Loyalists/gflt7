@@ -29,6 +29,7 @@ function init_character_table()
 	level.charactertable["generic"]["tololo"] = &swap_to_tololo;
 	// level.charactertable["generic"]["vepley"] = &swap_to_vepley;
 	level.charactertable["generic"]["vepley_backpack"] = &swap_to_vepley_backpack;
+	level.charactertable["generic"]["an94"] = &swap_to_an94;
 
 	level.charactertable["sf"] = [];
 	level.charactertable["sf"]["vespid"] = &swap_to_vespid;
@@ -212,6 +213,13 @@ function swap_to_dima()
 {
 	self detachall();
 	self setmodel("t7_gfl_dima_fb");
+	self thread character_util::set_character_name();
+}
+
+function swap_to_an94()
+{
+	self detachall();
+	self setmodel("t7_gfl_an94_fb");
 	self thread character_util::set_character_name();
 }
 

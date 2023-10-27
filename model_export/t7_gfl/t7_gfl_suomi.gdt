@@ -15856,4 +15856,10 @@
 	"c_civ_sing_female_wife_body" [ "t7_gfl_suomi_fb" ]
 	{
 	}
+	"c_cia_blackstation_victim_2_fb" [ "t7_gfl_suomi_fb" ]
+	{
+	}
+	"c_cia_blackstation_victim_2_fb_corpse" [ "t7_gfl_suomi_fb" ]
+	{
+	}
 }

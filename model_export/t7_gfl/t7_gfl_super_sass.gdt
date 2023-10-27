@@ -11265,15 +11265,6 @@
 	"c_hro_player_male_sgen_viewhands" [ "t7_gfl_super_sass_viewhands" ]
 	{
 	}
-	"c_t7_mp_hunter_mpc_body1_skin5" [ "t7_gfl_super_sass_fb_mp" ]
-	{
-	}
-	"c_t7_mp_hunter_viewarms1_skin5" [ "t7_gfl_super_sass_viewhands" ]
-	{
-	}
-	"c_t7_mp_hunter_viewlegs1_skin5" [ "t7_gfl_super_sass_viewlegs" ]
-	{
-	}
 	"c_civ_sing_police_body" [ "t7_gfl_super_sass_fb" ]
 	{
 	}

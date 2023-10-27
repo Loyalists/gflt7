@@ -19731,9 +19731,6 @@
 	"c_t7_mp_gunslinger_mpc_body2_skin4" [ "t7_gfl_type89_fb_mp" ]
 	{
 	}
-	"c_t7_mp_gunslinger_mpc_body1_skin4" [ "t7_gfl_type89_fb_mp" ]
-	{
-	}
 	"c_t7_mp_gunslinger_mpc_body1_skin6" [ "t7_gfl_type89_fb_mp" ]
 	{
 	}
@@ -19848,9 +19845,6 @@
 	"c_t7_mp_gunslinger_viewarms2_skin4" [ "t7_gfl_type89_viewhands" ]
 	{
 	}
-	"c_t7_mp_gunslinger_viewarms1_skin4" [ "t7_gfl_type89_viewhands" ]
-	{
-	}
 	"c_t7_mp_gunslinger_viewarms1_skin6" [ "t7_gfl_type89_viewhands" ]
 	{
 	}
@@ -19909,9 +19903,6 @@
 	{
 	}
 	"c_t7_mp_gunslinger_viewlegs2_skin4" [ "t7_gfl_type89_viewlegs" ]
-	{
-	}
-	"c_t7_mp_gunslinger_viewlegs1_skin4" [ "t7_gfl_type89_viewlegs" ]
 	{
 	}
 	"c_t7_mp_gunslinger_viewlegs1_skin6" [ "t7_gfl_type89_viewlegs" ]

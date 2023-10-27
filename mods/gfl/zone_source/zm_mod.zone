@@ -20,6 +20,10 @@ image,t7_menu_zm_loadscreen_castle
 image,t7_menu_zm_loadscreen_zod
 image,t7_menu_zm_loadscreen_giant
 image,t7_menu_zm_loadscreen_cotd
+image,t7_menu_zm_loadscreen_tomb
+image,t7_menu_zm_loadscreen_island
+image,t7_menu_zm_loadscreen_genesis
+image,t7_menu_zm_loadscreen_prototype
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_zm.gsc
@@ -130,6 +134,7 @@ image,uie_t7_zm_hud_score_st_ar15
 image,uie_t7_zm_hud_score_m4a1
 image,uie_t7_zm_hud_score_tac50
 image,uie_t7_zm_hud_score_dima
+image,uie_t7_zm_hud_score_an94
 
 material,specialty_three_guns_zombies
 material,specialty_ads_zombies

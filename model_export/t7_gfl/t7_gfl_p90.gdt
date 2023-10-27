@@ -26423,12 +26423,6 @@
 	"c_ega_soldier_3_pincushion_armoff_fb" [ "t7_gfl_p90_fb" ]
 	{
 	}
-	"c_cia_blackstation_victim_2_fb" [ "t7_gfl_p90_fb" ]
-	{
-	}
-	"c_cia_blackstation_victim_2_fb_corpse" [ "t7_gfl_p90_fb" ]
-	{
-	}
 	"t7_gfl_p90_viewhands" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"

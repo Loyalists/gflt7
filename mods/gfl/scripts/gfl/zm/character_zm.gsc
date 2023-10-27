@@ -43,6 +43,7 @@ function init_character_table()
 	level.charactertable["zm"]["mp7_casual_tights"] = &swap_to_mp7_casual_tights;
 	level.charactertable["zm"]["tac50"] = &swap_to_tac50;
 	level.charactertable["zm"]["dima"] = &swap_to_dima;
+	level.charactertable["zm"]["an94"] = &swap_to_an94;
 
 	level.charactertable["zm_moon"] = [];
 	level.charactertable["zm_moon"]["m16a1"] = &swap_to_m16a1_moon;
@@ -63,6 +64,7 @@ function init_character_table()
 	level.additional_bodystyle_table["t7_gfl_m4a1_v2_fb"] = 3;
 	// ak12
 	level.additional_bodystyle_table["c_zom_dlc3_nikolai_mpc_fb"] = 1;
+	level.additional_bodystyle_table["t7_gfl_an94_fb"] = 3;
 	// m4 sopmod ii
 	level.additional_bodystyle_table["t7_gfl_ro635_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_st_ar15_v2_fb"] = 2;
@@ -86,6 +88,7 @@ function init_character_table()
 	level.model_to_character_table["t7_gfl_rfb_fb"] = "rfb";
 	level.model_to_character_table["t7_gfl_tac50_v2_fb"] = "tac50";
 	level.model_to_character_table["t7_gfl_dima_fb"] = "dima";
+	level.model_to_character_table["t7_gfl_an94_fb"] = "an94";
 }
 
 function swap_to_m16a1_moon()
@@ -120,6 +123,13 @@ function swap_to_ak12()
 {
 	self.cc_bodytype = 1;
 	self.cc_bodystyle = 0;
+	self character_util::swap_to_cc();
+}
+
+function swap_to_an94()
+{
+	self.cc_bodytype = 1;
+	self.cc_bodystyle = 3;
 	self character_util::swap_to_cc();
 }
 
