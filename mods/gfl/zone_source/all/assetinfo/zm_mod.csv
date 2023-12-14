@@ -2,7 +2,7 @@ index,type,name,resident,streamed,parentStack
 1,string,,55,0,||assetlist
 2,rawfile,dummy.cfg,25,0,|zone_source/zm_mod.zone|csv
 3,sound,zm_mod.all,37003,0,||assetlist
-4,scriptparsetree,scripts/gfl/zm/character_zm.gsc,6777,0,|zone_source/zm_mod.zone|csv
+4,scriptparsetree,scripts/gfl/zm/character_zm.gsc,6761,0,|zone_source/zm_mod.zone|csv
 5,scriptparsetree,scripts/gfl/zm/character_randomizer.gsc,5568,0,|zone_source/zm_mod.zone|csv
 6,scriptparsetree,scripts/gfl/zm/character_randomizer.csc,2056,0,|zone_source/zm_mod.zone|csv
 7,scriptparsetree,scripts/gfl/zm/gameplay.gsc,4208,0,|zone_source/zm_mod.zone|csv
@@ -121,4 +121,5 @@ index,type,name,resident,streamed,parentStack
 120,image,t7_menu_zm_loadscreen_island,2073629,0,|zone_source/zm_mod.zone|csv
 121,image,t7_menu_zm_loadscreen_genesis,2073630,0,|zone_source/zm_mod.zone|csv
 122,image,t7_menu_zm_loadscreen_prototype,2073632,0,|zone_source/zm_mod.zone|csv
-123,assetlist,,1937,0,
+123,image,t7_menu_zm_loadscreen_classified,2073633,0,|zone_source/zm_mod.zone|csv
+124,assetlist,,1953,0,

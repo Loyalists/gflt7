@@ -25,9 +25,12 @@ local CustomMapImageTable = {
 	["zm_town_hd"] = "t7_menu_zm_loadscreen_bus_depot",
 	["zm_town"] = "t7_menu_zm_loadscreen_bus_depot",
 	["zm_farm_hd"] = "t7_menu_zm_loadscreen_bus_depot",
+	["zm_depot"] = "t7_menu_zm_loadscreen_bus_depot",
 	["zm_der_riese"] = "t7_menu_zm_loadscreen_giant",
 	["zm_irondragon"] = "t7_menu_zm_loadscreen_castle",
 	["zm_coast"] = "t7_menu_zm_loadscreen_cotd",
+	["zm_pentagon"] = "t7_menu_zm_loadscreen_classified",
+	["zm_classifive"] = "t7_menu_zm_loadscreen_classified",
 }
 
 local IntroMovieDisabledMaps = {
@@ -55,9 +58,12 @@ local IntroMovieDisabledMaps = {
 	["zm_town_hd"] = true,
 	["zm_town"] = true,
 	["zm_farm_hd"] = true,
+	["zm_depot"] = true,
 	["zm_der_riese"] = true,
 	["zm_irondragon"] = true,
 	["zm_coast"] = true,
+	["zm_pentagon"] = true,
+	["zm_classifive"] = true,
 }
 
 local function GetCustomMapImage( mapName )
@@ -180,6 +186,10 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	f5_local0:registerEventHandler( "fade_in_map_location", CoD.Loading.FadeInMapLocation )
 	f5_local0:registerEventHandler( "fade_in_gametype", CoD.Loading.FadeInGametype )
 	f5_local0:registerEventHandler( "fade_in_map_image", CoD.Loading.FadeInMapImage )
+	if Dvar.fs_game:get() == Dvar.fs_game_saved:get() and Dvar.fs_game_saved:exists() and Dvar.sv_hostname:exists() and Dvar.sv_hostname:get() ~= "BlackOpsPublic" and Dvar.sv_hostname:get() ~= "Dedicated - dedicatedpc" and Dvar.sv_hostname:get() ~= "" then
+	    Engine.SetDvar( "fs_game", "usermaps" )
+    end
+
 	local f5_local1 = false
 	local f5_local2 = Engine.GetCurrentMap()
 	local f5_local3 = Engine.GetCurrentGameType()

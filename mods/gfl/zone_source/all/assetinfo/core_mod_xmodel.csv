@@ -148,7 +148,7 @@ c_hro_player_female_vengance_viewhands,1,53.02,68426.66,1,33724,56108
 c_hro_playerfemale_ramses_mpc_body,1,109.52,141354.52,5,5467,4599,8989,7886,16904,16431,27661,34874,51661,65722
 c_hro_player_female_ramses_viewbody,1,94.14,121508.92,1,34184,42732
 c_hro_player_female_ramses_viewlegs,1,86.91,112173.82,1,25839,30105
-c_hro_player_female_ramses_viewhands,1,52.95,68339.76,1,58114,84872
+c_hro_player_female_ramses_viewhands,1,52.95,68339.76,1,41698,69588
 c_hro_playerfemale_egypt_mpc_body,1,108.77,140380.30,5,15418,15939,18253,19130,33772,39855,59560,87765,112086,159400
 c_hro_player_female_infection_viewhands,1,53.00,68404.63,1,47736,82424
 c_hro_player_female_egypt_viewlegs,1,87.33,112717.38,1,27886,43879
@@ -209,7 +209,7 @@ c_hro_player_male_vengance_viewhands,1,53.02,68426.66,1,33724,56108
 c_hro_playermale_ramses_mpc_body,1,109.52,141354.52,5,5467,4599,8989,7886,16904,16431,27661,34874,51661,65722
 c_hro_player_male_ramses_viewbody,1,94.14,121508.92,1,34184,42732
 c_hro_player_male_ramses_viewlegs,1,86.91,112173.82,1,25839,30105
-c_hro_player_male_ramses_viewhands,1,52.95,68339.76,1,58114,84872
+c_hro_player_male_ramses_viewhands,1,52.95,68339.76,1,41698,69588
 c_hro_playermale_egypt_mpc_body,1,108.77,140380.30,5,15418,15939,18253,19130,33772,39855,59560,87765,112086,159400
 c_hro_player_male_egypt_viewbody,1,97.36,125656.73,1,39994,62798
 c_hro_player_male_egypt_viewlegs,1,87.33,112717.38,1,27886,43879
@@ -329,7 +329,7 @@ c_t7_mp_warrior_viewarms1_skin2,1,52.99,68390.80,1,21674,39076
 c_t7_mp_warrior_viewarms1_skin3,1,52.95,68340.42,1,75366,97520
 c_t7_mp_warrior_viewarms1_skin4,1,53.29,68774.45,1,35366,60152
 c_t7_mp_warrior_viewarms1_skin5,1,52.95,68339.76,1,25520,46324
-c_t7_mp_warrior_viewarms2_skin1,1,52.95,68339.76,1,58114,84872
+c_t7_mp_warrior_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_warrior_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_warrior_viewarms2_skin3,1,53.00,68404.63,1,47736,82424
 c_t7_mp_warrior_viewarms2_skin4,1,53.29,68774.45,1,35366,60152
@@ -411,7 +411,7 @@ c_t7_mp_technomancer_viewarms1_skin2,1,52.95,68339.76,1,28920,50624
 c_t7_mp_technomancer_viewarms1_skin3,1,53.01,68412.84,1,26736,48304
 c_t7_mp_technomancer_viewarms1_skin4,1,52.95,68339.76,1,25520,46324
 c_t7_mp_technomancer_viewarms1_skin5,1,53.01,68412.85,1,41187,64144
-c_t7_mp_technomancer_viewarms2_skin1,1,52.95,68339.76,1,58114,84872
+c_t7_mp_technomancer_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_technomancer_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_technomancer_viewarms2_skin3,1,53.00,68404.63,1,47736,82424
 c_t7_mp_technomancer_viewarms2_skin4,1,53.00,68404.63,1,32793,57404
@@ -452,7 +452,7 @@ c_t7_mp_assassin_viewarms1_skin2,1,53.00,68404.63,1,51414,78240
 c_t7_mp_assassin_viewarms1_skin3,1,52.95,68340.73,1,42684,67472
 c_t7_mp_assassin_viewarms1_skin4,1,53.04,68457.51,1,33487,59336
 c_t7_mp_assassin_viewarms1_skin5,1,52.95,68339.76,1,25520,46324
-c_t7_mp_assassin_viewarms2_skin1,1,52.95,68339.76,1,58114,84872
+c_t7_mp_assassin_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_assassin_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_assassin_viewarms2_skin3,1,53.00,68404.63,1,47736,82424
 c_t7_mp_assassin_viewarms2_skin4,1,53.04,68457.51,1,33487,59336
@@ -493,7 +493,7 @@ c_t7_mp_hunter_viewarms1_skin2,1,53.01,68412.84,1,29547,52988
 c_t7_mp_hunter_viewarms1_skin3,1,53.01,68412.84,1,26736,48304
 c_t7_mp_hunter_viewarms1_skin4,1,52.95,68339.76,1,25520,46324
 c_t7_mp_hunter_viewarms1_skin5,1,52.99,68390.80,1,31197,56648
-c_t7_mp_hunter_viewarms2_skin1,1,52.95,68339.76,1,58114,84872
+c_t7_mp_hunter_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_hunter_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_hunter_viewarms2_skin3,1,53.00,68404.63,1,47736,82424
 c_t7_mp_hunter_viewarms2_skin4,1,52.95,68340.73,1,42684,67472
@@ -534,7 +534,7 @@ c_t7_mp_nomad_viewarms1_skin2,1,52.99,68390.80,1,25459,44864
 c_t7_mp_nomad_viewarms1_skin3,1,53.00,68404.63,1,51414,78240
 c_t7_mp_nomad_viewarms1_skin4,1,52.95,68340.73,1,36412,57312
 c_t7_mp_nomad_viewarms1_skin5,1,52.95,68339.76,1,25520,46324
-c_t7_mp_nomad_viewarms2_skin1,1,52.95,68339.76,1,58114,84872
+c_t7_mp_nomad_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_nomad_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_nomad_viewarms2_skin3,1,53.00,68404.63,1,47736,82424
 c_t7_mp_nomad_viewarms2_skin4,1,53.00,68404.63,1,32793,57404
@@ -565,7 +565,7 @@ c_t7_mp_firebreak_viewarms1_skin2,1,52.99,68390.80,1,21674,39076
 c_t7_mp_firebreak_viewarms1_skin3,1,52.95,68340.42,1,75366,97520
 c_t7_mp_firebreak_viewarms1_skin4,1,53.00,68404.63,1,54104,89012
 c_t7_mp_firebreak_viewarms1_skin5,1,52.95,68339.76,1,25520,46324
-c_t7_mp_firebreak_viewarms2_skin1,1,52.95,68339.76,1,58114,84872
+c_t7_mp_firebreak_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_firebreak_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_firebreak_viewarms2_skin3,1,53.00,68404.63,1,47736,82424
 c_t7_mp_firebreak_viewarms2_skin4,1,53.00,68404.63,1,54104,89012
@@ -616,7 +616,7 @@ c_t7_mp_battery_viewarms1_skin2,1,52.95,68340.73,1,39563,62392
 c_t7_mp_battery_viewarms1_skin3,1,52.95,68339.76,1,33830,59208
 c_t7_mp_battery_viewarms1_skin4,1,53.01,68412.84,1,29547,52988
 c_t7_mp_battery_viewarms1_skin5,1,52.95,68339.76,1,25520,46324
-c_t7_mp_battery_viewarms2_skin1,1,52.95,68339.76,1,58114,84872
+c_t7_mp_battery_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_battery_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_battery_viewarms2_skin3,1,53.00,68404.63,1,47736,82424
 c_t7_mp_battery_viewarms2_skin4,1,53.01,68412.85,1,41187,64144
@@ -704,7 +704,7 @@ c_zom_zod_detective_viewhands,1,53.00,68404.63,1,47736,82424
 c_zom_zod_detective_viewlegs,1,87.33,112717.38,1,27886,43879
 c_zom_zod_detective_viewbody,1,97.36,125656.73,1,39994,62798
 c_zom_zod_femme_mpc_fb,1,109.52,141354.52,5,6908,5227,10969,8963,18945,18673,29698,37584,59052,74690
-c_zom_zod_femme_viewhands,1,52.95,68339.76,1,58114,84872
+c_zom_zod_femme_viewhands,1,52.95,68339.76,1,41698,69588
 c_zom_zod_femme_viewlegs,1,86.91,112173.82,1,25839,30105
 c_zom_zod_femme_viewbody,1,94.14,121508.92,1,34184,42732
 t7_gfl_vepley_fb_mp,1,109.52,141354.52,5,5467,4599,8989,7886,16904,16431,27661,34874,51661,65722

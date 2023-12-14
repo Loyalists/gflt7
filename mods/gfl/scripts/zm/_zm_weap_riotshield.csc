@@ -22,7 +22,6 @@ function __init__()
 	
 	clientfield::register( "clientuimodel", 	RIOTSHIELD_HEALTH_CLIENTFIELD, VERSION_TU11, 4,	"float",  undefined, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
 	
-	
 }
 
 function player_on_spawned( localClientNum )

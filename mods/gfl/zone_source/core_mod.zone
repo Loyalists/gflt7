@@ -71,6 +71,9 @@ scriptparsetree,scripts/shared/lui_shared.csc
 scriptparsetree,scripts/shared/load_shared.gsc
 scriptparsetree,scripts/shared/load_shared.csc
 
+// global settings
+scriptparsetree,scripts/core/core_frontend_fx.gsc
+
 // https://github.com/Scobalula/Bo3Bloodsplatter
 // scriptparsetree,scripts/zm/_zm_bloodsplatter.gsc
 // scriptparsetree,scripts/zm/_zm_bloodsplatter.csc
@@ -92,8 +95,8 @@ rawfile,ui/t7/utility/BlackMarketUtility.lua
 rawfile,ui/t7/utility/BlackMarketUtility_og.luac
 rawfile,ui/t7/utility/CCUtility.lua
 rawfile,ui/t7/utility/CCUtility_og.luac
-// rawfile,ui/t7/utility/LobbyUtility.lua
-// rawfile,ui/t7/utility/LobbyUtility_og.luac
+rawfile,ui/t7/utility/LobbyUtility.lua
+rawfile,ui/t7/utility/LobbyUtility_og.luac
 
 // random music tracks in lobby
 rawfile,ui/t6/CoDBase.lua

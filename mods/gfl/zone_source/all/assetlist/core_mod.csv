@@ -1181,7 +1181,7 @@ xmodelmesh,t7_gfl_vepley_fb_lod1c9424194
 xmodelmesh,t7_gfl_vepley_fb_lod1d87fc987
 xmodelmesh,t7_gfl_vepley_fbccafacd2
 xmodelmesh,t7_gfl_vepley_fbda58d79d
-xmodelmesh,t7_gfl_vepley_viewhandsb5c01c36
+xmodelmesh,t7_gfl_vepley_viewhands810325b2
 xmodelmesh,t7_gfl_vepley_viewlegs37218714
 xmodelmesh,t7_gfl_vespid_fb8edbe113
 xmodelmesh,t7_gfl_vespid_fb_lod112896ca0
@@ -3296,6 +3296,8 @@ rawfile,ui/t7/utility/blackmarketutility_og.luac
 rawfile,ui/t7/utility/ccutility.lua
 rawfile,ui/t7/utility/ccutility_og.luac
 rawfile,ui/t7/utility/codutilityrequire.lua
+rawfile,ui/t7/utility/lobbyutility.lua
+rawfile,ui/t7/utility/lobbyutility_og.luac
 rawfile,ui/t7/utility/savingdatautility.lua
 rawfile,ui/t7/utility/tfpcutility.lua
 rawfile,ui/uieditor/actions.lua
@@ -3354,6 +3356,7 @@ stringtable,gamedata/tables/common/music_player.csv
 stringtable,gamedata/weapons/common/attachmenttable.csv
 stringtable,gamedata/weapons/cp/cp_gunlevels.csv
 stringtable,gamedata/weapons/zm/zm_gunlevels.csv
+scriptparsetree,scripts/core/core_frontend_fx.gsc
 scriptparsetree,scripts/core/frontend_cam_override.csc
 scriptparsetree,scripts/gfl/_utility.gsc
 scriptparsetree,scripts/gfl/character.gsc
