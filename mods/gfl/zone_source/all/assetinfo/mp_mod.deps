@@ -14,7 +14,7 @@ scriptparsetree,scripts/mp/bots/_bot_loadout.gsc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\statstable_shared.gsh,1638881081,
 scriptparsetree,scripts/mp/_load.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\_load.gsc,1690943532,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\_load.gsc,1708600325,
 scriptparsetree,scripts/mp/_load.csc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\_load.csc,1687508763,
 image,t7_mp_loadingportrait_ability_battery

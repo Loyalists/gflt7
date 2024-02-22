@@ -3312,6 +3312,7 @@ rawfile,ui/uieditor/menus/charactercustomization/choosezmcharacterloadout.lua
 rawfile,ui/uieditor/menus/charactercustomization/personalizecharacter.lua
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
+rawfile,ui/uieditor/menus/lobby/common/popups/bonusmodesflyout.lua
 rawfile,ui/uieditor/menus/pc/tfoptions.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_bgb.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_bot.lua
@@ -3322,6 +3323,7 @@ rawfile,ui/uieditor/menus/pc/tfoptions_powerups.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_roamer.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_weapons.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_zombies.lua
+rawfile,ui/uieditor/menus/zm/zmmapselection.lua
 rawfile,ui/uieditor/widgets/lobby/common/fe_3dtitleinternal.lua
 rawfile,ui/uieditor/widgets/pc/startmenu/dropdown/tfoptiondropdown.lua
 rawfile,ui/uieditor/widgets/pc/startmenu/dropdown/tfoptiondropdownitem.lua

@@ -46,7 +46,7 @@ player_character,8,0
 aitype,96,0
 character,150,8
 xmodelalias,48,1
-rawfile,5000,65
+rawfile,5000,67
 stringtable,200,13
 structuredtable,96,0
 leaderboarddef,256,0

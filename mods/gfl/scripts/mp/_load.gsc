@@ -117,6 +117,10 @@ function main()
 	{
 		SetDvar("sv_cheats", 1);
 	}
+	else
+	{
+		SetDvar("sv_cheats", 0);
+	}
 	
 	system::wait_till("all");
 	level flagsys::set("load_main_complete");

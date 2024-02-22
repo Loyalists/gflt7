@@ -770,18 +770,18 @@ CoD.LobbyBase.OpenServerSettings = function(arg0, arg1)
     end)
 end
 
+CoD.LobbyButtons.OPEN_WORKSHOP = {
+    stringRef = "GFL_MENU_WORKSHOP",
+    action = OpenWorkshop,
+    customId = "btnOpenWorkshop"
+}
+
 CoD.LobbyButtons.ZM_TFOPTIONS = {
     stringRef = "GFL_MENU_TFOPTIONS",
     action = OpenServerSettings,
     param = "ZMLobbyOnlineCustomGame",
     customId = "btnTFOptions",
     starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
-}
-
-CoD.LobbyButtons.OPEN_WORKSHOP = {
-    stringRef = "GFL_MENU_WORKSHOP",
-    action = OpenWorkshop,
-    customId = "btnOpenWorkshop"
 }
 
 CoD.LobbyButtons.ZM_CHARACTERS = {

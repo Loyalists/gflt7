@@ -79,6 +79,9 @@ scriptparsetree,scripts/core/core_frontend_fx.gsc
 // scriptparsetree,scripts/zm/_zm_bloodsplatter.csc
 // material,mc/mtl_bloodsplatter_scripted
 
+rawfile,ui/uieditor/menus/zm/zmmapselection.lua
+rawfile,ui/uieditor/menus/Lobby/Common/Popups/BonusModesFlyout.lua
+
 // gfl logo in main menu
 rawfile,ui/uieditor/widgets/lobby/common/FE_3dTitleInternal.lua
 

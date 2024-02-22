@@ -4,6 +4,10 @@ function OpenWorkshop(arg0, arg1, arg2)
     Engine.OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=3019676071")
 end
 
+function OpenIOPWiki(arg0, arg1, arg2)
+    Engine.OpenURL("https://iopwiki.com")
+end
+
 function NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)
     if f355_arg1 == "ZMLobbyOnlineCustomGame" or f355_arg1 == "ZMLobbyOnline" or f355_arg1 == "ZMLobbyLANGame" then
         CoD.TFPCUtil.CheckForRecentUpdate()

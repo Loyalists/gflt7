@@ -73,6 +73,10 @@ function init()
 	{
 		thread enable_cheats();
 	}
+    else
+    {
+        thread disable_cheats();
+    }
 
     mule_kick_indicator::init();
 
@@ -176,6 +180,12 @@ function enable_cheats()
 {
 	level waittill( "initial_blackscreen_passed" ); 
     SetDvar("sv_cheats", 1);
+}
+
+function disable_cheats()
+{
+	level waittill( "initial_blackscreen_passed" ); 
+    SetDvar("sv_cheats", 0);
 }
 
 function revive_at_end_of_round()
