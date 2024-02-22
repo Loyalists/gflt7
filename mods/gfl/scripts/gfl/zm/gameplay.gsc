@@ -42,40 +42,45 @@
 
 function init()
 {
-	if( GetDvarInt("tfoption_bot") )
+	if( GetDvarInt("tfoption_bot", 0) )
 	{
     	thread zm_bot::main();
 	}
 
     character_randomizer::init();
 
-    if( GetDvarInt("tfoption_perk_lose") )
+    if( GetDvarInt("tfoption_perk_lose", 0) )
     {
         t8_perkloss::init();
     }
 
-    if( GetDvarInt("tfoption_perkplus") )
+    if( GetDvarInt("tfoption_perkplus", 0) )
     {
         perkplus::init();
     }
 
-    if( GetDvarInt("tfoption_perkplus") || GetDvarInt("tfoption_perk_lose") )
+    if( GetDvarInt("tfoption_perkplus", 0) || GetDvarInt("tfoption_perk_lose", 0) )
     {
         mule_kick_return::init();
     }
 
-    if( GetDvarInt("tfoption_boxshare") )
+    if( GetDvarInt("tfoption_boxshare", 0) )
     {
         thread magicboxshare::main();
     }
 
-	if ( GetDvarInt("tfoption_cheats") )
+	if ( GetDvarInt("tfoption_cheats", 0) )
 	{
 		thread enable_cheats();
 	}
     else
     {
         thread disable_cheats();
+    }
+
+    if( GetDvarInt("tfoption_friendlyfire", 0) )
+    {
+        zm::register_player_friendly_fire_callback(&friendlyfire_damage);
     }
 
     mule_kick_indicator::init();
@@ -230,4 +235,63 @@ function gasmask_change_player_headmodel(entity_num, gasmask_active)
 {
     self setcharacterbodystyle(0);
     self setcharacterhelmetstyle(0);
+}
+
+function friendlyfire_damage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, weapon, vPoint, vDir, sHitLoc, psOffsetTime, boneIndex )
+{	
+    if(self != eAttacker)
+    {
+        self thread friendlyfire_logic( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, weapon, vPoint, vDir, sHitLoc, psOffsetTime, boneIndex );
+    }
+    return;
+}
+
+function friendlyfire_logic( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, weapon, vPoint, vDir, sHitLoc, psOffsetTime, boneIndex )
+{    
+    switch(GetDvarInt("tfoption_friendlyfire", 0)) 
+    {
+        case 1:
+            //normal ff
+            self DoDamage(int(100/4), vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            break;
+    
+        case 2:
+            //share both
+            eAttacker DoDamage(int(100/2), eAttacker GetEye(), undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            self DoDamage(int(100/2), vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+    
+        case 3:
+            //revert to me
+            eAttacker DoDamage(int(100/4), eAttacker GetEye(), undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            break;
+    
+        case 4:
+            //knock back
+            if(sMeansOfDeath != "MOD_BURNED")
+            {
+                self ApplyKnockBack( 20, vDir );
+            }
+            break;
+    
+        case 5:
+            //ff but cant kill
+            if(self.health != 0 || self.health != 1)
+            {
+                if( int(100/4) >= self.health)
+                { 
+                    self DoDamage(self.health - 1, vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+                }
+                else
+                {
+                    self DoDamage(int(100/4), vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+                }
+            }
+            else
+            {
+                self DoDamage(0, vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            }
+            break;
+    
+        default:
+    }
 }

@@ -18,6 +18,47 @@ local f0_local3 = function(f30_arg0, f30_arg1)
     f30_arg0.categoryFrame:setForceMouseEventDispatch(true)
 end
 
+DataSources.TFOptionsFriendlyFire = DataSourceHelpers.ListSetup("PC.TFOptionsFriendlyFire", function(f15_arg0)
+    local f15_local0 = {}
+    table.insert(f15_local0, {
+        models = {
+            value = 0,
+            valueDisplay = Engine.Localize("MENU_DISABLED")
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 1,
+            valueDisplay = Engine.Localize("MENU_ENABLED")
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 2,
+            valueDisplay = Engine.Localize("MENU_SHARED")
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 3,
+            valueDisplay = Engine.Localize("MPUI_REFLECT")
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 4,
+            valueDisplay = "TF_KNOCK_BACK"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 5,
+            valueDisplay = "TF_WARNING"
+        }
+    })
+    return f15_local0
+end, true)
+
 DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
@@ -104,6 +145,16 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
+    table.insert(f26_local0, {
+        models = {
+            label = Engine.Localize("MENU_FRIENDLYFIRE"),
+            description = "TF_FRIENDLYFIRE_DESC",
+            profileVarName = "friendlyfire",
+            datasource = "TFOptionsFriendlyFire",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+    })
     return f26_local0
 end, true)
 
@@ -133,8 +184,7 @@ LUI.createMenu.TFOptionsGamePage = function(InstanceRef)
     self:setLeftRight(true, true, 0, 0)
     self:setTopBottom(true, true, 0, 0)
     self:playSound("menu_open", InstanceRef)
-    self.buttonModel =
-        Engine.CreateModel(Engine.GetModelForController(InstanceRef), "TFOptionsGamePage.buttonPrompts")
+    self.buttonModel = Engine.CreateModel(Engine.GetModelForController(InstanceRef), "TFOptionsGamePage.buttonPrompts")
     local f31_local1 = self
     self.anyChildUsesUpdateState = true
 
@@ -193,8 +243,7 @@ LUI.createMenu.TFOptionsGamePage = function(InstanceRef)
         function(f40_arg0, f40_arg1, f40_arg2, f40_arg3)
             GoBack(self, f40_arg2)
             return true
-        end, 
-        function(f41_arg0, f41_arg1, f41_arg2)
+        end, function(f41_arg0, f41_arg1, f41_arg2)
             CoD.Menu.SetButtonLabel(f41_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK")
             return true
         end, false)
@@ -203,8 +252,7 @@ LUI.createMenu.TFOptionsGamePage = function(InstanceRef)
         function(f42_arg0, f42_arg1, f42_arg2, f42_arg3)
             CloseStartMenu(f42_arg1, f42_arg2)
             return true
-        end, 
-        function(f43_arg0, f43_arg1, f43_arg2)
+        end, function(f43_arg0, f43_arg1, f43_arg2)
             CoD.Menu.SetButtonLabel(f43_arg1, Enum.LUIButton.LUI_KEY_START, "MENU_DISMISS_MENU")
             return true
         end, false)
@@ -214,8 +262,7 @@ LUI.createMenu.TFOptionsGamePage = function(InstanceRef)
             CoD.TFPCUtil.ResetToDefault()
             GoBack(self, f46_arg2)
             return true
-        end, 
-        function(f47_arg0, f47_arg1, f47_arg2)
+        end, function(f47_arg0, f47_arg1, f47_arg2)
             CoD.Menu.SetButtonLabel(f47_arg1, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "PLATFORM_RESET_TO_DEFAULT")
             return true
         end, false)
@@ -223,8 +270,7 @@ LUI.createMenu.TFOptionsGamePage = function(InstanceRef)
     f31_local1:AddButtonCallbackFunction(self, InstanceRef, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, nil,
         function(f48_arg0, f48_arg1, f48_arg2, f48_arg3)
             return true
-        end, 
-        function(f49_arg0, f49_arg1, f49_arg2)
+        end, function(f49_arg0, f49_arg1, f49_arg2)
             CoD.Menu.SetButtonLabel(f49_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT")
             return true
         end, false)
