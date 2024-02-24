@@ -19,12 +19,18 @@
 function init()
 {
 	util::registerClientSys( "gfl_character_icon" );
-	callback::on_connect(&on_player_connect);
+	callback::on_connect( &on_player_connect );
+	callback::on_spawned( &on_player_spawned );
 
 	character::init_character_table();
 	character_zm::init_character_table();
 	init_randomized_character_table();
 	spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
+
+	if( GetDvarInt("tfoption_tdoll_zombie", 0) )
+	{
+		spawner::add_archetype_spawn_function("zombie", &zombie_model_override);
+	}
 
 	if( !( GetDvarInt("tfoption_player_determined_character") || GetDvarInt("tfoption_randomize_character") ) )
 	{
@@ -67,38 +73,8 @@ function on_player_connect()
     util::setClientSysState( "gfl_character_icon", "none", self );
 }
 
-function zombie_model_fix()
+function on_player_spawned()
 {
-	self endon("death");
-	level endon("game_ended");
-	level endon("end_game");
-
-	if (isvehicle(self) || isplayer(self))
-	{
-		return;
-	}
-
-	if ( !self character_util::is_force_reset_required() && self character_util::is_character_swapped() )
-	{
-		return;
-	}
-
-	if ( !( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") || issubstr(self.model, "c_zsf_") ) )
-	{
-		return;
-	}
-
-	type = "generic";
-	if ( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") )
-	{
-		type = "sf";
-	}
-	
-	characters = character_util::get_characters(type);
-	character = array::random(characters);
-	self character_util::swap_character(type, character);
-	self character_util::set_force_reset_flag();
-	self character_util::disable_gib();
 }
 
 function init_moon()
@@ -138,12 +114,8 @@ function randomize_character_function_index(characterindex = 0)
     return index;
 }
 
-function swap_character(function_index)
-{
-	key = get_character_table_key();
-	self character_util::swap_character(key, function_index);
-}
 
+// model fix related
 function altbody_cc_fix()
 {
 	self endon("disconnect");
@@ -163,6 +135,95 @@ function altbody_cc_fix()
 		}
 		wait 1;
 	}
+}
+
+function zombie_model_fix()
+{
+	self endon("death");
+	level endon("game_ended");
+	level endon("end_game");
+
+	if (isvehicle(self) || isplayer(self))
+	{
+		return;
+	}
+
+	if ( !self character_util::is_force_reset_required() && self character_util::is_character_swapped() )
+	{
+		return;
+	}
+
+	if ( !( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") || issubstr(self.model, "c_zsf_") ) )
+	{
+		return;
+	}
+
+	type = "generic";
+	if ( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") )
+	{
+		type = "sf";
+	}
+	
+	self character_util::randomize_character(type);
+	self character_util::set_force_reset_flag();
+	self character_util::disable_gib();
+}
+
+function zombie_model_override()
+{
+	self endon("death");
+	level endon("game_ended");
+	level endon("end_game");
+
+	// modded zombie skeleton are not compatible with the default one used by gfl assets
+	if ( level.script == "zm_aliens_acheron" )
+	{
+		return;
+	}
+
+	if (isvehicle(self) || isplayer(self))
+	{
+		return;
+	}
+
+	if ( !self character_util::is_force_reset_required() && self character_util::is_character_swapped() )
+	{
+		return;
+	}
+
+	if ( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") || issubstr(self.model, "c_zsf_") )
+	{
+		return;
+	}
+
+	type = "generic";
+	switch( GetDvarInt("tfoption_tdoll_zombie", 0) )
+	{
+		case 1:
+		{
+			type = "generic";
+			break;
+		}
+		case 2:
+		{
+			type = "sf";
+			break;
+		}
+		case 3:
+		{
+			type = "generic_sf";
+			break;
+		}
+		default:
+		{
+			type = "generic";
+			break;
+		}
+	}
+	
+	self character_util::randomize_character(type);
+	self character_util::set_force_reset_flag();
+	self character_util::disable_gib();
 }
 
 function save_character_customization_func()
@@ -252,7 +313,8 @@ function set_custom_character()
 	}
 
     func_index = randomize_character_function_index(characterindex);
-	self swap_character(func_index);
+	key = get_character_table_key();
+	self character_util::swap_character(key, func_index);
 	self set_icon(func_index);
 }
 
@@ -267,6 +329,7 @@ function set_icon(func_index)
 	util::setClientSysState( "gfl_character_icon", icon_index, self );
 }
 
+// test func
 function revolve_character_test()
 {
 	self endon("disconnect");
@@ -284,7 +347,7 @@ function revolve_character_test()
 
 		func_index = characters[index];
 		characterindex = self.characterindex;
-		self swap_character(func_index);
+		self character_util::swap_character(key, func_index);
 		self set_icon(func_index);
 		index += 1;
 		wait 2;

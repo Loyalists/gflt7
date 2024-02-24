@@ -53,7 +53,7 @@ leaderboarddef,256,0
 ddl,64,0
 glasses,2,0
 texturelist,8,0
-scriptparsetree,1024,37
+scriptparsetree,1024,39
 keyvaluepairs,64,1
 vehicle,64,0
 addon_map_ents,1,0

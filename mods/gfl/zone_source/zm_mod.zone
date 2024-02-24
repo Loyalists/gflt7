@@ -86,6 +86,10 @@ scriptparsetree,scripts/zm/_zm_bgb.gsc
 scriptparsetree,scripts/zm/_zm_bgb_machine.csc
 scriptparsetree,scripts/zm/_zm_bgb_machine.gsc
 
+// force attachments removal
+scriptparsetree,scripts/zm/_zm_weapons.gsc
+scriptparsetree,scripts/zm/_zm_weapons.csc
+
 // gfl icons
 image,uie_t7_zm_hud_score_char1
 image,uie_t7_zm_hud_score_char1_helmet

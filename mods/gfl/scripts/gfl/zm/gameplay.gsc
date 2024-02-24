@@ -83,6 +83,11 @@ function init()
         zm::register_player_friendly_fire_callback(&friendlyfire_damage);
     }
 
+    if( GetDvarInt("tfoption_bgb_off", 0) )
+    {
+        thread disable_bgb();
+    }
+
     mule_kick_indicator::init();
 
 	callback::on_connect( &on_player_connect );
@@ -101,7 +106,7 @@ function on_player_connect()
 {
 	self endon("disconnect");
 
-    if( GetDvarInt("tfoption_roundrevive") )
+    if( GetDvarInt("tfoption_roundrevive", 0) )
     {
         self thread revive_at_end_of_round();
     }
@@ -111,7 +116,7 @@ function on_player_spawned()
 {
 	self endon("disconnect");
 
-    if( level.script == "zm_leviathan" && !GetDvarInt("tfoption_randomize_character") )
+    if( level.script == "zm_leviathan" && !GetDvarInt("tfoption_randomize_character", 0) )
     {
         self thread leviathan_character_fix();
     }
@@ -122,7 +127,7 @@ function leviathan_character_fix()
 	self endon("disconnect");
 	self endon("bled_out");
 
-    if ( GetDvarInt("tfoption_player_determined_character") )
+    if ( GetDvarInt("tfoption_player_determined_character", 0) )
     {
         // apply the fix for bots only if player has a preferred playermodel
         if ( !self IsTestClient() )
@@ -215,6 +220,26 @@ function revive_at_end_of_round()
             self.health = self.maxhealth;
         }
 		wait 3;
+    }
+}
+
+function disable_bgb()
+{
+    level waittill( "initial_blackscreen_passed" ); 
+
+    bgbs = GetEntArray("bgb_machine_use", "targetname");
+    foreach(bgb in bgbs)
+    {
+        if(isdefined(bgb.unitrigger_stub))
+        {
+            bgb.unitrigger_stub.og_origin = bgb.unitrigger_stub.origin;
+            bgb.unitrigger_stub.temp_trig = Spawn( "trigger_radius_use", bgb.unitrigger_stub.og_origin, 0, 16, 16);
+            bgb.unitrigger_stub.temp_trig SetTeamForTrigger("allies");
+            bgb.unitrigger_stub.temp_trig SetCursorHint( "HINT_NOICON" );
+            bgb.unitrigger_stub.temp_trig SetHintString(&"ZOMBIE_BGB_MACHINE_DISABLED");
+            bgb.unitrigger_stub.origin = bgb.unitrigger_stub.og_origin - (1000,1000,1000);
+            bgb SetZBarrierPieceState(3, "closed");
+        }
     }
 }
 

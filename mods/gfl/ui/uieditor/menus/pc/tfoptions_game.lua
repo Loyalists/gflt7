@@ -23,25 +23,25 @@ DataSources.TFOptionsFriendlyFire = DataSourceHelpers.ListSetup("PC.TFOptionsFri
     table.insert(f15_local0, {
         models = {
             value = 0,
-            valueDisplay = Engine.Localize("MENU_DISABLED")
+            valueDisplay = "MENU_DISABLED"
         }
     })
     table.insert(f15_local0, {
         models = {
             value = 1,
-            valueDisplay = Engine.Localize("MENU_ENABLED")
+            valueDisplay = "MENU_ENABLED"
         }
     })
     table.insert(f15_local0, {
         models = {
             value = 2,
-            valueDisplay = Engine.Localize("MENU_SHARED")
+            valueDisplay = "MENU_SHARED"
         }
     })
     table.insert(f15_local0, {
         models = {
             value = 3,
-            valueDisplay = Engine.Localize("MPUI_REFLECT")
+            valueDisplay = "MPUI_REFLECT"
         }
     })
     table.insert(f15_local0, {
@@ -53,7 +53,7 @@ DataSources.TFOptionsFriendlyFire = DataSourceHelpers.ListSetup("PC.TFOptionsFri
     table.insert(f15_local0, {
         models = {
             value = 5,
-            valueDisplay = "TF_WARNING"
+            valueDisplay = "TF_NON_LETHAL"
         }
     })
     return f15_local0
@@ -147,7 +147,7 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = Engine.Localize("MENU_FRIENDLYFIRE"),
+            label = "MENU_FRIENDLYFIRE",
             description = "TF_FRIENDLYFIRE_DESC",
             profileVarName = "friendlyfire",
             datasource = "TFOptionsFriendlyFire",

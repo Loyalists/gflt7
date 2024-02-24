@@ -20,6 +20,18 @@ function IsCybercoreMenuDisabled(f243_arg0)
     return false
 end
 
+function IsAttachmentLockedInWeaponBuildKits( f677_arg0, f677_arg1 )
+	return false
+end
+
+function IsAttachmentSlotLocked( f678_arg0, f678_arg1, f678_arg2 )
+	return false
+end
+
+function IsItemAttachmentLocked( f9_arg0, f9_arg1, f9_arg2, f9_arg3, f9_arg4 )
+	return false
+end
+
 function CharacterHasAnyWeaponUnlocked( f952_arg0, f952_arg1 )
     if CoD.CCUtility.customizationMode == Enum.eModes.MODE_ZOMBIES then
         return true

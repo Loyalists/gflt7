@@ -89,6 +89,34 @@ DataSources.TFOptionsExtraPoints = DataSourceHelpers.ListSetup("PC.TFOptionsExtr
     return f15_local0
 end, true)
 
+DataSources.TFOptionsTDollZombie = DataSourceHelpers.ListSetup("PC.TFOptionsTDollZombie", function(f15_arg0)
+    local f15_local0 = {}
+    table.insert(f15_local0, {
+        models = {
+            value = 0,
+            valueDisplay = "MENU_DISABLED"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 1,
+            valueDisplay = "TF_TDOLL"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 2,
+            valueDisplay = "TF_SF"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 3,
+            valueDisplay = "TF_TDOLL_AND_SF"
+        }
+    })
+    return f15_local0
+end, true)
 
 DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombiesP1", function(f26_arg0)
     local f26_local0 = {}
@@ -166,6 +194,16 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_TDOLL_ZOMBIE",
+            description = "TF_TDOLL_ZOMBIE_DESC",
+            profileVarName = "tdoll_zombie",
+            datasource = "TFOptionsTDollZombie",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
     })
     return f26_local0
 end, true)

@@ -86,6 +86,15 @@ DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", functi
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
+            label = "TF_BGB_OFF",
+            description = "TF_BGB_OFF_DESC",
+            profileVarName = "bgb_off",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
             label = "TF_BGB_LOADOUT",
             description = "TF_BGB_LOADOUT_DESC",
             profileVarName = "bgb_loadout",

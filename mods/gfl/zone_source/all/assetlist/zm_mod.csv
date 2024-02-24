@@ -110,6 +110,8 @@ scriptparsetree,scripts/zm/_zm_powerup_free_perk.csc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.gsc
 scriptparsetree,scripts/zm/_zm_weap_riotshield.csc
 scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
+scriptparsetree,scripts/zm/_zm_weapons.csc
+scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc
 scriptparsetree,scripts/zm/bo4_carpenter.gsc
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc

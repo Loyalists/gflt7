@@ -66,6 +66,10 @@ function init_character_table()
 	level.charactertable["generic_safehouse"] = [];
 	level.charactertable["generic_safehouse"] = arraycombine(level.charactertable["generic_safehouse"], level.charactertable["generic"], true, true);
 	level.charactertable["generic_safehouse"]["dima"] = &swap_to_dima;
+
+	level.charactertable["generic_sf"] = [];
+	level.charactertable["generic_sf"] = arraycombine(level.charactertable["generic_sf"], level.charactertable["generic"], true, true);
+	level.charactertable["generic_sf"] = arraycombine(level.charactertable["generic_sf"], level.charactertable["sf"], true, true);
 }
 
 // generic
