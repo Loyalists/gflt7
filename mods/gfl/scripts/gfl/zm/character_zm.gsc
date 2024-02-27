@@ -44,6 +44,7 @@ function init_character_table()
 	level.charactertable["zm"]["tac50"] = &swap_to_tac50;
 	level.charactertable["zm"]["dima"] = &swap_to_dima;
 	level.charactertable["zm"]["an94"] = &swap_to_an94;
+	level.charactertable["zm"]["lenna"] = &swap_to_lenna;
 
 	level.charactertable["zm_moon"] = [];
 	level.charactertable["zm_moon"]["m16a1"] = &swap_to_m16a1_moon;
@@ -79,6 +80,8 @@ function init_character_table()
 	level.additional_bodystyle_table["t7_gfl_mp7_casual_tights_fb"] = 1;
 	// g11
 	level.additional_bodystyle_table["t7_gfl_dima_fb"] = 1;
+	// ump45
+	level.additional_bodystyle_table["t7_gfl_lenna_fb"] = 1;
 
 	level.model_to_character_table = [];
 	level.model_to_character_table["t7_gfl_m4a1_v2_fb"] = "m4a1";
@@ -89,6 +92,7 @@ function init_character_table()
 	level.model_to_character_table["t7_gfl_tac50_v2_fb"] = "tac50";
 	level.model_to_character_table["t7_gfl_dima_fb"] = "dima";
 	level.model_to_character_table["t7_gfl_an94_fb"] = "an94";
+	level.model_to_character_table["t7_gfl_lenna_fb"] = "lenna";
 }
 
 function swap_to_m16a1_moon()
@@ -235,6 +239,13 @@ function swap_to_ump45()
 {
 	self.cc_bodytype = 12;
 	self.cc_bodystyle = 0;
+	self character_util::swap_to_cc();
+}
+
+function swap_to_lenna()
+{
+	self.cc_bodytype = 12;
+	self.cc_bodystyle = 1;
 	self character_util::swap_to_cc();
 }
 

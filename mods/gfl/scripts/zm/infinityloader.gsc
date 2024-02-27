@@ -1253,7 +1253,6 @@ function setup_clientMenu()
             self addMenuPar_withDef("main_clients_"+getNameNotClan(player), "Give Menu", &verificationOptions, player, "changeVerification", "admin" );
             self addMenuPar_withDef("main_clients_"+getNameNotClan(player), "Teleport to Player", &cli_teleportto, player);
             self addMenuPar_withDef("main_clients_"+getNameNotClan(player), "Teleport Player to you", &cli_teleporttoyou, player);
-            self addMenuPar_withDef("main_clients_"+getNameNotClan(player), "Damage Player", &cli_damage_player, player);
             self addMenuPar_withDef("main_clients_"+getNameNotClan(player), "Kill Player", &cli_kill_player, player);
 
             self addmenu("main_clients_score"+getNameNotClan(player), "Give "+getNameNotClan(player)+" Score", "main_clients_"+getNameNotClan(player));
@@ -2072,14 +2071,10 @@ function cli_teleporttoyou(i)
     i SetOrigin(self GetOrigin());
 }
 
-function cli_damage_player(player)
-{
-    player DoDamage(player.health, player.origin);
-}
-
 function cli_kill_player(player)
 {
-    player Kill();
+    // player Kill();
+    player DoDamage(player.health, player.origin);
 }
 
 function updateMenu_color_system_Map(menu,i)

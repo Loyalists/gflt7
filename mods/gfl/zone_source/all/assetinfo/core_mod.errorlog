@@ -1,4 +1,7 @@
 return 1000
-^313696 warnings encountered while processing xmodel 't7_gfl_vepley_viewhands'. Log can be found here: D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\\xmesh\v6\t7_gfl_vepley_viewhands_f0_s1.000000_geo_JIZSKYHFOUYQJAJDYAGDHDPWPZ.log
-  xmodel:c_hro_player_female_ramses_viewhands
-    csv:zone_source/core_mod.zone
+^3DROPPED VERTS. 1 warnings encountered while processing xmodel 't7_gfl_lenna_body'. Log can be found here: D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\\xmesh\v6\t7_gfl_lenna_body_f0_s1.000000_geo_D4TNYO4BFECQNEABPZ6Y7FNM5E.log
+  xmodel:t7_gfl_lenna_body_mp
+    playerbodystyle:pbt_gfl_body_lenna
+      playerbodytype:pbt_gfl_ump45
+        customizationtable:zm_character_customization
+          csv:zone_source/core_mod.zone

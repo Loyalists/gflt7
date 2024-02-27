@@ -5574,9 +5574,6 @@
 	"c_t7_mp_assassin_mpc_body2_skin4" [ "t7_gfl_ump45_v2_fb_mp" ]
 	{
 	}
-	"c_t7_mp_assassin_mpc_body1_skin4" [ "t7_gfl_ump45_v2_fb_mp" ]
-	{
-	}
 	"c_t7_mp_assassin_mpc_body1_skin6" [ "t7_gfl_ump45_v2_fb_mp" ]
 	{
 	}
@@ -5652,16 +5649,10 @@
 	"c_hro_playerfemale_prologue_mpc_body" [ "t7_gfl_ump45_v2_fb_mp" ]
 	{
 	}
-	"c_hro_playerfemale_undercover_mpc_body" [ "t7_gfl_ump45_v2_fb_mp" ]
-	{
-	}
 	"c_hro_playermale_new_world_mpc_body" [ "t7_gfl_ump45_v2_fb_mp" ]
 	{
 	}
 	"c_hro_playermale_prologue_mpc_body" [ "t7_gfl_ump45_v2_fb_mp" ]
-	{
-	}
-	"c_hro_playermale_undercover_mpc_body" [ "t7_gfl_ump45_v2_fb_mp" ]
 	{
 	}
 	"t7_gfl_ump45_v2_viewlegs" ( "xmodel.gdf" )
@@ -5880,16 +5871,10 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_hro_player_female_armsdealer_viewlegs" [ "t7_gfl_ump45_v2_viewlegs" ]
-	{
-	}
 	"c_hro_player_female_newworld_viewlegs" [ "t7_gfl_ump45_v2_viewlegs" ]
 	{
 	}
 	"c_hro_player_female_prologue_viewlegs" [ "t7_gfl_ump45_v2_viewlegs" ]
-	{
-	}
-	"c_hro_player_male_armsdealer_viewlegs" [ "t7_gfl_ump45_v2_viewlegs" ]
 	{
 	}
 	"c_hro_player_male_newworld_viewlegs" [ "t7_gfl_ump45_v2_viewlegs" ]
@@ -5920,9 +5905,6 @@
 	{
 	}
 	"c_t7_mp_assassin_viewlegs2_skin4" [ "t7_gfl_ump45_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_assassin_viewlegs1_skin4" [ "t7_gfl_ump45_v2_viewlegs" ]
 	{
 	}
 	"c_t7_mp_assassin_viewlegs1_skin6" [ "t7_gfl_ump45_v2_viewlegs" ]
@@ -6209,16 +6191,10 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_hro_player_female_armsdealer_viewhands" [ "t7_gfl_ump45_v2_viewhands" ]
-	{
-	}
 	"c_hro_player_female_egypt_viewhands" [ "t7_gfl_ump45_v2_viewhands" ]
 	{
 	}
 	"c_hro_player_female_newworld_viewhands" [ "t7_gfl_ump45_v2_viewhands" ]
-	{
-	}
-	"c_hro_player_male_armsdealer_viewhands" [ "t7_gfl_ump45_v2_viewhands" ]
 	{
 	}
 	"c_hro_player_male_infection_viewhands" [ "t7_gfl_ump45_v2_viewhands" ]
@@ -6255,9 +6231,6 @@
 	{
 	}
 	"c_t7_mp_assassin_viewarms2_skin4" [ "t7_gfl_ump45_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_assassin_viewarms1_skin4" [ "t7_gfl_ump45_v2_viewhands" ]
 	{
 	}
 	"c_t7_mp_assassin_viewarms1_skin6" [ "t7_gfl_ump45_v2_viewhands" ]
@@ -6569,9 +6542,6 @@
 	"c_nrc_assault_prologue_viewbody_g_larmoff" [ "t7_gfl_ump45_v2_body_mp_g_larmoff" ]
 	{
 	}
-	"c_hro_player_female_armsdealer_viewbody" [ "t7_gfl_ump45_v2_body" ]
-	{
-	}
 	"c_hro_player_female_infection_viewbody" [ "t7_gfl_ump45_v2_body" ]
 	{
 	}
@@ -6581,12 +6551,6 @@
 	"c_hro_player_female_prologue_viewbody" [ "t7_gfl_ump45_v2_body" ]
 	{
 	}
-	"c_hro_player_female_undercover_viewbody" [ "t7_gfl_ump45_v2_body" ]
-	{
-	}
-	"c_hro_player_male_armsdealer_viewbody" [ "t7_gfl_ump45_v2_body" ]
-	{
-	}
 	"c_hro_player_male_infection_viewbody" [ "t7_gfl_ump45_v2_body" ]
 	{
 	}
@@ -6594,9 +6558,6 @@
 	{
 	}
 	"c_hro_player_male_prologue_viewbody" [ "t7_gfl_ump45_v2_body" ]
-	{
-	}
-	"c_hro_player_male_undercover_viewbody" [ "t7_gfl_ump45_v2_body" ]
 	{
 	}
 	"c_nrc_assault_female_prologue_viewbody" [ "t7_gfl_ump45_v2_body" ]

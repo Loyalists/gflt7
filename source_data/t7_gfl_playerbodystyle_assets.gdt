@@ -144,6 +144,35 @@
 		"viewArmsModel" "t7_gfl_g36c_viewhands"
 		"xmodel" "t7_gfl_g36c_fb_mp"
 	}
+	"pbt_gfl_body_lenna" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "UMP9"
+		"firstPersonCinematicModel" "t7_gfl_lenna_body_mp"
+		"firstPersonLegsModel" "t7_gfl_lenna_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "t7_gfl_lenna_viewhands"
+		"xmodel" "t7_gfl_lenna_fb_mp"
+	}
 	"pbt_gfl_body_m4_sopmod_ii" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"
