@@ -6083,6 +6083,33 @@
 	"c_54i_supp_head1_preckill" [ "t7_gfl_placeholder" ]
 	{
 	}
+	"c_zur_terrorist_1_headgear_head1" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_1_headgear_head2" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_1_headgear_head3" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_2_headgear_head1" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_2_headgear_head2" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_2_headgear_head3" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_3_headgear_head1" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_3_headgear_head2" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_zur_terrorist_3_headgear_head3" [ "t7_gfl_placeholder" ]
+	{
+	}
 	"mtl_outline_cp" [ "mtl_outline" ]
 	{
 	}
