@@ -550,14 +550,9 @@ function find_closet_zombie()
 
 	foreach( ai_actor in GetAITeamArray("axis"))
 	{
-		// cotd fix
-		// hopefully the bots won't piss off george
-		if ( ai_actor.archetype == "zombie_george" )
+		if ( should_ignore_target(ai_actor) )
 		{
-			if ( !(ai_actor flag::exists("george_is_enraged") && ai_actor flag::get("george_is_enraged")) )
-			{
-				continue;
-			}
+			continue;
 		}
 
 		if(isalive(ai_actor))
@@ -584,6 +579,35 @@ function find_closet_zombie()
 	{
 		return undefined;
 	}
+}
+
+function should_ignore_target( target )
+{
+	if ( !isdefined(target) )
+	{
+		return true;
+	}
+
+	if ( !isalive(target) )
+	{
+		return true;
+	}
+	
+	// cotd fix
+	// hopefully the bots won't piss off george
+	if ( target.archetype == "zombie_george" )
+	{
+		if ( target flag::exists("george_is_enraged") && target flag::get("george_is_enraged") )
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 function wait_for_downed()
@@ -783,6 +807,11 @@ function bot_setup()
 function bot_got_damage()
 {
 	if ( !isdefined(self.bot.damage) || !isdefined(self.bot.damage.entity) )
+	{
+		return;
+	}
+
+	if ( should_ignore_target( self.bot.damage.entity ) )
 	{
 		return;
 	}

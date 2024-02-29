@@ -10,6 +10,284 @@
 
 #namespace frontend_cam_override;
 
+function init_lobby_rooms()
+{
+	if ( !isdefined(level.current_zm_lobby_room) )
+	{
+		level.current_zm_lobby_room = 0;
+	}
+
+	level.zm_lobby_rooms = [];
+	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_read;
+	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_work;
+	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_idle;
+	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_type;
+	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_cpzm;
+}
+
+function zm_lobby_room_base( localclientnum )
+{
+	level endon("new_lobby");
+	while (true)
+	{
+		[[ level.zm_lobby_rooms[level.current_zm_lobby_room] ]]( localclientnum );
+		level waittill("lobby_room_changed");
+		wait 0.05;
+		lobby = (level.current_zm_lobby_room + 1) % level.zm_lobby_rooms.size;
+		level.current_zm_lobby_room = lobby;
+	}
+}
+
+function zm_lobby_room_idle(localclientnum)
+{
+	zm_lobby_room_cp_core(localclientnum, 0);
+}
+
+function zm_lobby_room_read(localclientnum)
+{
+	zm_lobby_room_cp_core(localclientnum, 1);
+}
+
+function zm_lobby_room_work(localclientnum)
+{
+	zm_lobby_room_cp_core(localclientnum, 2);
+}
+
+function zm_lobby_room_type(localclientnum)
+{
+	zm_lobby_room_cp_core(localclientnum, 3);
+}
+
+function zm_lobby_room_cpzm(localclientnum)
+{
+	str_safehouse = "cairo";
+	level.a_str_bunk_scenes = [];
+	level.active_str_cpzm_scene = ("zm_cp_" + str_safehouse) + "_lobby_idle";
+	if(!isdefined(level.a_str_bunk_scenes))
+	{
+		level.a_str_bunk_scenes = [];
+	}
+	else if(!isarray(level.a_str_bunk_scenes))
+	{
+		level.a_str_bunk_scenes = array(level.a_str_bunk_scenes);
+	}
+	level.a_str_bunk_scenes[level.a_str_bunk_scenes.size] = level.active_str_cpzm_scene;
+	if(isdefined(level.a_str_bunk_scene_exploders))
+	{
+		for(i = 0; i < level.a_str_bunk_scene_exploders.size; i++)
+		{
+			killradiantexploder(0, level.a_str_bunk_scene_exploders[i]);
+		}
+	}
+	level.a_str_bunk_scene_exploders = [];
+	if(str_safehouse == "cairo")
+	{
+		if(!isdefined(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = [];
+		}
+		else if(!isarray(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+		}
+		level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_cairo";
+		if(!isdefined(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = [];
+		}
+		else if(!isarray(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+		}
+		level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_cairo";
+		if(!isdefined(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = [];
+		}
+		else if(!isarray(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+		}
+		level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_cairo";
+		if(!isdefined(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = [];
+		}
+		else if(!isarray(level.a_str_bunk_scene_exploders))
+		{
+			level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+		}
+		level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_cairo";
+	}
+	else
+	{
+		if(str_safehouse == "mobile")
+		{
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_mobile";
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_mobile";
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_mobile";
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_mobile";
+		}
+		else
+		{
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_singapore";
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_singapore";
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_singapore";
+			if(!isdefined(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = [];
+			}
+			else if(!isarray(level.a_str_bunk_scene_exploders))
+			{
+				level.a_str_bunk_scene_exploders = array(level.a_str_bunk_scene_exploders);
+			}
+			level.a_str_bunk_scene_exploders[level.a_str_bunk_scene_exploders.size] = "fx_frontend_zombie_fog_singapore";
+		}
+	}
+	level.a_str_bunk_scene_hints = [];
+	if(!isdefined(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = [];
+	}
+	else if(!isarray(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = array(level.a_str_bunk_scene_hints);
+	}
+	level.a_str_bunk_scene_hints[level.a_str_bunk_scene_hints.size] = "cpzm_frontend";
+	if(!isdefined(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = [];
+	}
+	else if(!isarray(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = array(level.a_str_bunk_scene_hints);
+	}
+	level.a_str_bunk_scene_hints[level.a_str_bunk_scene_hints.size] = "cpzm_frontend";
+	if(!isdefined(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = [];
+	}
+	else if(!isarray(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = array(level.a_str_bunk_scene_hints);
+	}
+	level.a_str_bunk_scene_hints[level.a_str_bunk_scene_hints.size] = "cpzm_frontend";
+	if(!isdefined(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = [];
+	}
+	else if(!isarray(level.a_str_bunk_scene_hints))
+	{
+		level.a_str_bunk_scene_hints = array(level.a_str_bunk_scene_hints);
+	}
+	level.a_str_bunk_scene_hints[level.a_str_bunk_scene_hints.size] = "cpzm_frontend";
+	level.n_cp_index = 0;
+	setpbgactivebank(localclientnum, 2);
+	s_scene = struct::get_script_bundle("scene", level.a_str_bunk_scenes[level.n_cp_index]);
+	str_gender = "female";
+	if(str_gender === "female" && isdefined(s_scene.femalebundle))
+	{
+		s_scene = struct::get_script_bundle("scene", s_scene.femalebundle);
+	}
+
+	s_align = struct::get(s_scene.aligntarget, "targetname");
+	playmaincamxcam(localclientnum, s_scene.cameraswitcher, 0, "", "", s_align.origin, s_align.angles);
+	for(i = 0; i < level.a_str_bunk_scenes.size; i++)
+	{
+		if(i == level.n_cp_index)
+		{
+			if(getdvarint("tu6_ffotd_zombieSpecialDayEffectsClient"))
+			{
+				switch(level.a_str_bunk_scene_exploders[i])
+				{
+					case "fx_frontend_zombie_fog_mobile":
+					case "zm_bonus_idle":
+					{
+						position = (-1269, 1178, 562);
+						break;
+					}
+					case "fx_frontend_zombie_fog_singapore":
+					{
+						position = (-1273, 1180, 320);
+						break;
+					}
+					case "fx_frontend_zombie_fog_cairo":
+					{
+						position = (-1256, 1235, 61);
+						break;
+					}
+				}
+				level.frontendspecialfx = playfx(localclientnum, level._effect["frontend_special_day"], position);
+			}
+			playradiantexploder(0, level.a_str_bunk_scene_exploders[i]);
+			continue;
+		}
+		killradiantexploder(0, level.a_str_bunk_scene_exploders[i]);
+	}
+	s_params = spawnstruct();
+	s_params.scene = s_scene.name;
+	s_params.sessionmode = 0;
+
+	load_equipped_character(localclientnum, level.cp_lobby_data_struct, s_params);
+	streamer_change(level.a_str_bunk_scene_hints[level.n_cp_index], level.cp_lobby_data_struct);
+}
+
 function first_time_flow(localclientnum, oldval, newval, bnewent, binitialsnap, fieldname, bwastimejump)
 {
 }
@@ -229,7 +507,6 @@ function cp_lobby_room(localclientnum)
 		// s_params.sessionmode = 2;
 		// character_customization::loadequippedcharacteronmodel(localclientnum, level.cp_lobby_data_struct, undefined, s_params);
 		load_random_char_model_cp(localclientnum, s_scene);
-
 		streamer_change(level.a_str_bunk_scene_hints[level.n_cp_index], level.cp_lobby_data_struct);
 		setpbgactivebank(localclientnum, 1);
 		
@@ -580,13 +857,12 @@ function doa_lobby_room(localclientnum)
 	level.n_cp_index = 0;
 }
 
-function zm_lobby_room_cpzm(localclientnum)
+function zm_lobby_room_cp_core(localclientnum, lobby_index = 0, str_safehouse = "cairo")
 {
-	str_safehouse = "cairo";
 	// level.active_str_cpzm_scene = "cp_cac_cp_lobby_idle_" + str_safehouse;
 	load_lobby_room(str_safehouse);
 
-	level.n_cp_index = 1;
+	level.n_cp_index = lobby_index;
 	setpbgactivebank(localclientnum, 1);
 	s_scene = struct::get_script_bundle("scene", level.a_str_bunk_scenes[level.n_cp_index]);
 	s_align = struct::get(s_scene.aligntarget, "targetname");
@@ -604,13 +880,9 @@ function zm_lobby_room_cpzm(localclientnum)
 	s_params = spawnstruct();
 	s_params.scene = s_scene.name;
 	s_params.sessionmode = 0;
-	//characterindex = getequippedheroindex(localclientnum, s_params.sessionmode);
-	//female = 0;
-	//loadcpzmcharacteronmodel(localclientnum, level.cp_lobby_data_struct, get_random_zm_char() , s_params);
-	bodytype = GetEquippedHeroIndex(localclientnum, s_params.sessionmode);
-	bodystyle = GetEquippedBodyIndexForHero(localclientnum, s_params.sessionmode, bodytype);
-	loadcpzmcharacteronmodel(localclientnum, level.cp_lobby_data_struct, bodytype, s_params, bodystyle);
+
 	// load_random_char_model(localclientnum,s_scene);
+	load_equipped_character(localclientnum, level.cp_lobby_data_struct, s_params);
 	streamer_change(level.a_str_bunk_scene_hints[level.n_cp_index], level.cp_lobby_data_struct);
 	level.n_cp_index = 0;
 }
@@ -623,44 +895,12 @@ function load_random_char_model(localclientnum, s_scene)
 	loadcpzmcharacteronmodel_randomized(localclientnum, level.cp_lobby_data_struct, s_params);
 }
 
-function get_random_zm_char()
-{
-	switch (RandomInt(8)) 
-	{
-	case 0:
-		return 0;
-		break;
-	case 1://Nikolai
-		return 1;
-		break;
-	case 2://Richtofen
-		return 2;
-		break;
-	case 3://Takeo
-		return 3;
-		break;
-	case 4:
-		return 5;
-		break;
-	case 5:
-		return 6;
-		break;
-	case 6:
-		return 7;
-		break;
-	case 7://Nero
-		return 8;
-		break;
-	}
-}
-
 function loadcpcharacteronmodel(localclientnum, data_struct, characterindex, params, body = 0)
 {
 	// character_customization::loadequippedcharacteronmodel(localclientnum, data_struct, characterindex, params);
 	character_customization::set_character(data_struct, characterindex);
 	charactermode = params.sessionmode;
 	character_customization::set_character_mode(data_struct, charactermode);
-	// body = 0;
 	bodycolors = character_customization::get_character_body_colors(localclientnum, charactermode, characterindex, body, params.extracam_data);
 	character_customization::set_body(data_struct, charactermode, characterindex, body, bodycolors);
 	head = 9;
@@ -681,7 +921,6 @@ function loadcpzmcharacteronmodel(localclientnum, data_struct, characterindex, p
 	character_customization::set_character(data_struct, characterindex);
 	charactermode = params.sessionmode;
 	character_customization::set_character_mode(data_struct, charactermode);
-	// bodystyle = 0;
 	bodycolors = character_customization::get_character_body_colors(localclientnum, charactermode, characterindex, bodystyle, params.extracam_data);
 	character_customization::set_body(data_struct, charactermode, characterindex, bodystyle, bodycolors);
 	head = 9;
@@ -690,6 +929,14 @@ function loadcpzmcharacteronmodel(localclientnum, data_struct, characterindex, p
 	helmetcolors = character_customization::get_character_helmet_colors(localclientnum, charactermode, data_struct.characterindex, helmet, params.extracam_data);
 	character_customization::set_helmet(data_struct, charactermode, characterindex, helmet, helmetcolors);
 	return character_customization::update(localclientnum, data_struct, params);
+}
+
+function load_equipped_character(localclientnum, data_struct, params)
+{
+	bodytype = GetEquippedHeroIndex(localclientnum, params.sessionmode);
+	bodystyle = GetEquippedBodyIndexForHero(localclientnum, params.sessionmode, bodytype);
+	result = loadcpzmcharacteronmodel(localclientnum, data_struct, bodytype, params, bodystyle);
+	return result;
 }
 
 function revolve_zm_character(localclientnum, data_struct, params)
@@ -835,6 +1082,7 @@ function mp_lobby_room(localclientnum, state)
 function lobby_main(localclientnum, menu_name, state)
 {
 	level notify("new_lobby");
+	init_lobby_rooms();
 	setpbgactivebank(localclientnum, 1);
 	if(isdefined(state) && !strstartswith(state, "cpzm") && !strstartswith(state, "doa"))
 	{
@@ -923,7 +1171,7 @@ function lobby_main(localclientnum, menu_name, state)
 								{
 									if(strstartswith(state, "zm"))
 									{
-                                        zm_lobby_room_cpzm(localclientnum);
+                                        zm_lobby_room_base(localclientnum);
 									}
 									else
 									{

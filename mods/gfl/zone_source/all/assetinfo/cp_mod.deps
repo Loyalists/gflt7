@@ -1044,10 +1044,64 @@ xmodel,c_54i_supp_body_g_rlegoff
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_54i_supp_body_g_rlegoff_f98e6451dfbbbdcb,1690626031,
+xmodel,c_zur_terrorist_1_headgear_head1
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_1_headgear_head1,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_1_headgear_head2
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_1_headgear_head2,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_1_headgear_head3
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_1_headgear_head3,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_2_headgear_head1
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_2_headgear_head1,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_2_headgear_head2
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_2_headgear_head2,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_2_headgear_head3
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_2_headgear_head3,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_3_headgear_head1
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_3_headgear_head1,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_3_headgear_head2
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_3_headgear_head2,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+xmodel,c_zur_terrorist_3_headgear_head3
+	asset,xmodelmesh,tag_origin_animatec354447e
+	asset,material,mc/global_invisible
+	gdt,xmodel,c_zur_terrorist_3_headgear_head3,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
 texturecombo,cp_mod
 assetlist,cp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\cp_mod.zone,1696584296,b52f2953,cdfce605,dd0f063a,02ac8e47
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\cp_mod.zone,1709145526,57b8e2f7,ef0169f5,2c6463a8,d4598f7c
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\cp_mod.class,1638881105,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\mod_default.class,1638881174,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\default.class,1638881104,
@@ -1086,12 +1140,12 @@ assetlist,cp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1708587488,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1708587488,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1708587488,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1708587488,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1708587488,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1708587488,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1709145562,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1709145562,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1709145562,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1709145562,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1709145562,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1709145562,
 	spawn,expect,core_all
 	spawn,expect,cp_common_all
 errorcount,0

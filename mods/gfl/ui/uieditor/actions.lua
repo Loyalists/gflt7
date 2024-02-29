@@ -8,6 +8,10 @@ function OpenIOPWiki(arg0, arg1, arg2)
     Engine.OpenURL("https://iopwiki.com")
 end
 
+function OpenZMChangeLobby(arg0, arg1, arg2)
+    Engine.SendClientScriptNotify( arg0, "lobby_room_changed", "" )
+end
+
 function NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)
     if f355_arg1 == "ZMLobbyOnlineCustomGame" or f355_arg1 == "ZMLobbyOnline" or f355_arg1 == "ZMLobbyLANGame" then
         CoD.TFPCUtil.CheckForRecentUpdate()

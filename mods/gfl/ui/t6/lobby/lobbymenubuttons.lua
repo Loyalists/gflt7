@@ -790,3 +790,9 @@ CoD.LobbyButtons.ZM_CHARACTERS = {
     param = LuaEnums.CHOOSE_CHARACTER_OPENED_FROM.LOBBY,
     customId = "btnZMCharacters"
 }
+
+CoD.LobbyButtons.ZM_CHANGE_LOBBY = {
+    stringRef = "GFL_MENU_CHANGE_LOBBY",
+    action = OpenZMChangeLobby,
+    customId = "btnZMChangeLobby"
+}
