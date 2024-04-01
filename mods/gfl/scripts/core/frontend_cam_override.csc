@@ -19,6 +19,7 @@ function init_lobby_rooms()
 
 	level.zm_lobby_rooms = [];
 	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_read;
+	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room;
 	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_work;
 	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_idle;
 	level.zm_lobby_rooms[level.zm_lobby_rooms.size] = &zm_lobby_room_type;
@@ -30,9 +31,14 @@ function zm_lobby_room_base( localclientnum )
 	level endon("new_lobby");
 	while (true)
 	{
+		if ( !isdefined(level.zm_lobby_rooms) || level.zm_lobby_rooms.size == 0 )
+		{
+			break;
+		}
+
 		[[ level.zm_lobby_rooms[level.current_zm_lobby_room] ]]( localclientnum );
-		level waittill("lobby_room_changed");
 		wait 0.05;
+		level waittill("lobby_room_changed");
 		lobby = (level.current_zm_lobby_room + 1) % level.zm_lobby_rooms.size;
 		level.current_zm_lobby_room = lobby;
 	}
@@ -238,10 +244,10 @@ function zm_lobby_room_cpzm(localclientnum)
 	}
 	level.a_str_bunk_scene_hints[level.a_str_bunk_scene_hints.size] = "cpzm_frontend";
 	level.n_cp_index = 0;
-	setpbgactivebank(localclientnum, 2);
+	setpbgactivebank(localclientnum, 1);
 	s_scene = struct::get_script_bundle("scene", level.a_str_bunk_scenes[level.n_cp_index]);
-	str_gender = "female";
-	if(str_gender === "female" && isdefined(s_scene.femalebundle))
+
+	if(isdefined(s_scene.femalebundle))
 	{
 		s_scene = struct::get_script_bundle("scene", s_scene.femalebundle);
 	}
@@ -252,29 +258,6 @@ function zm_lobby_room_cpzm(localclientnum)
 	{
 		if(i == level.n_cp_index)
 		{
-			if(getdvarint("tu6_ffotd_zombieSpecialDayEffectsClient"))
-			{
-				switch(level.a_str_bunk_scene_exploders[i])
-				{
-					case "fx_frontend_zombie_fog_mobile":
-					case "zm_bonus_idle":
-					{
-						position = (-1269, 1178, 562);
-						break;
-					}
-					case "fx_frontend_zombie_fog_singapore":
-					{
-						position = (-1273, 1180, 320);
-						break;
-					}
-					case "fx_frontend_zombie_fog_cairo":
-					{
-						position = (-1256, 1235, 61);
-						break;
-					}
-				}
-				level.frontendspecialfx = playfx(localclientnum, level._effect["frontend_special_day"], position);
-			}
 			playradiantexploder(0, level.a_str_bunk_scene_exploders[i]);
 			continue;
 		}
@@ -519,13 +502,19 @@ function cp_lobby_room(localclientnum)
 	}
 }
 
+function get_cp_bodystyle_count()
+{
+	bodystyle_count = 12;
+	return bodystyle_count;
+}
+
 function load_random_char_model_cp(localclientnum, s_scene)
 {
 	s_params = spawnstruct();
 	s_params.scene = s_scene.name;
 	s_params.sessionmode = 2;
 	characterindex = getequippedheroindex(localclientnum, s_params.sessionmode);
-	body = randomint(12);
+	body = randomint(get_cp_bodystyle_count());
 	loadcpzmcharacteronmodel(localclientnum, level.cp_lobby_data_struct, characterindex, s_params, body);
 }
 
@@ -756,69 +745,11 @@ function cpzm_lobby_room(localclientnum)
 	s_params = spawnstruct();
 	s_params.scene = s_scene.name;
 	s_params.sessionmode = 2;
-	female = 1;
-	// loadcpzmcharacteronmodel(localclientnum, level.cp_lobby_data_struct, female, s_params);
-	// characterindex = getequippedheroindex(localclientnum, s_params.sessionmode);
-	characterindex = female;
-	
-	body = randomint(12);
+
+	characterindex = 1;
+	body = randomint(get_cp_bodystyle_count());
 	loadcpzmcharacteronmodel(localclientnum, level.cp_lobby_data_struct, characterindex, s_params, body);
 	streamer_change(level.a_str_bunk_scene_hints[level.n_cp_index], level.cp_lobby_data_struct);
-}
-
-function doa_lobby_room_effects_cigar_inhale(localclientnum, cigar)
-{
-	if(self != cigar)
-	{
-		return;
-	}
-	cigar.fx_inhale_id = playfxontag(localclientnum, level._effect["doa_frontend_cigar_lit"], self, "tag_fx_smoke");
-}
-
-function doa_lobby_room_effects_cigar_puff(localclientnum, cigar)
-{
-	if(self != cigar)
-	{
-		return;
-	}
-	cigar.fx__puff_id = playfxontag(localclientnum, level._effect["doa_frontend_cigar_puff"], self, "tag_fx_smoke");
-}
-
-function doa_lobby_room_effects_cigar_flick(localclientnum, cigar)
-{
-	if(self != cigar)
-	{
-		return;
-	}
-	cigar.fx__flick_id = playfxontag(localclientnum, level._effect["doa_frontend_cigar_ash"], self, "tag_fx_smoke");
-}
-
-function doa_lobby_room_effects_ape_exhale(localclientnum, ape)
-{
-	if(self != ape)
-	{
-		return;
-	}
-	playfxontag(localclientnum, level._effect["doa_frontend_cigar_exhale"], self, "tag_inhand");
-}
-
-function doa_lobby_room_effects(a_ents, localclientnum)
-{
-	level._animnotetrackhandlers["inhale"] = undefined;
-	level._animnotetrackhandlers["puff"] = undefined;
-	level._animnotetrackhandlers["flick"] = undefined;
-	level._animnotetrackhandlers["exhale"] = undefined;
-	cigar = a_ents["cigar"];
-	if(isdefined(cigar.fx_ambient_id))
-	{
-		stopfx(localclientnum, cigar.fx_ambient_id);
-	}
-	cigar.fx_ambient_id = playfxontag(localclientnum, level._effect["doa_frontend_cigar_ambient"], cigar, "tag_fx_smoke");
-	animation::add_global_notetrack_handler("inhale", &doa_lobby_room_effects_cigar_inhale, localclientnum, cigar);
-	animation::add_global_notetrack_handler("puff", &doa_lobby_room_effects_cigar_puff, localclientnum, cigar);
-	animation::add_global_notetrack_handler("flick", &doa_lobby_room_effects_cigar_flick, localclientnum, cigar);
-	ape = a_ents["zombie"];
-	animation::add_global_notetrack_handler("exhale", &doa_lobby_room_effects_ape_exhale, localclientnum, ape);
 }
 
 function doa_lobby_room(localclientnum)
@@ -851,8 +782,6 @@ function doa_lobby_room(localclientnum)
 	level.cp_lobby_data_struct.show_helmets = 0;
 	level.cp_lobby_data_struct.charactermodel setmodel("t7_gfl_rfb_fb_mp");
 
-	// body = 6;
-	// loadcpzmcharacteronmodel(localclientnum, level.cp_lobby_data_struct, female, s_params, body);
 	streamer_change(level.a_str_bunk_scene_hints[level.n_cp_index], level.cp_lobby_data_struct);
 	level.n_cp_index = 0;
 }
@@ -881,34 +810,9 @@ function zm_lobby_room_cp_core(localclientnum, lobby_index = 0, str_safehouse = 
 	s_params.scene = s_scene.name;
 	s_params.sessionmode = 0;
 
-	// load_random_char_model(localclientnum,s_scene);
 	load_equipped_character(localclientnum, level.cp_lobby_data_struct, s_params);
 	streamer_change(level.a_str_bunk_scene_hints[level.n_cp_index], level.cp_lobby_data_struct);
 	level.n_cp_index = 0;
-}
-
-function load_random_char_model(localclientnum, s_scene)
-{
-	s_params = spawnstruct();
-	s_params.scene = s_scene.name;
-	s_params.sessionmode = 0;
-	loadcpzmcharacteronmodel_randomized(localclientnum, level.cp_lobby_data_struct, s_params);
-}
-
-function loadcpcharacteronmodel(localclientnum, data_struct, characterindex, params, body = 0)
-{
-	// character_customization::loadequippedcharacteronmodel(localclientnum, data_struct, characterindex, params);
-	character_customization::set_character(data_struct, characterindex);
-	charactermode = params.sessionmode;
-	character_customization::set_character_mode(data_struct, charactermode);
-	bodycolors = character_customization::get_character_body_colors(localclientnum, charactermode, characterindex, body, params.extracam_data);
-	character_customization::set_body(data_struct, charactermode, characterindex, body, bodycolors);
-	head = 9;
-	character_customization::set_head(data_struct, charactermode, head);
-	helmet = 0;
-	helmetcolors = character_customization::get_character_helmet_colors(localclientnum, charactermode, data_struct.characterindex, helmet, params.extracam_data);
-	character_customization::set_helmet(data_struct, charactermode, characterindex, helmet, helmetcolors);
-	return character_customization::update(localclientnum, data_struct, params);
 }
 
 function loadcpzmcharacteronmodel(localclientnum, data_struct, characterindex, params, bodystyle = 0)
@@ -923,7 +827,7 @@ function loadcpzmcharacteronmodel(localclientnum, data_struct, characterindex, p
 	character_customization::set_character_mode(data_struct, charactermode);
 	bodycolors = character_customization::get_character_body_colors(localclientnum, charactermode, characterindex, bodystyle, params.extracam_data);
 	character_customization::set_body(data_struct, charactermode, characterindex, bodystyle, bodycolors);
-	head = 9;
+	head = 0;
 	character_customization::set_head(data_struct, charactermode, head);
 	helmet = 0;
 	helmetcolors = character_customization::get_character_helmet_colors(localclientnum, charactermode, data_struct.characterindex, helmet, params.extracam_data);
@@ -963,53 +867,21 @@ function revolve_zm_character(localclientnum, data_struct, params)
     }
 }
 
-function loadcpzmcharacteronmodel_randomized(localclientnum, data_struct, params)
-{
-	character_total = 19;
-    characterindex = randomint(character_total);
-	bodytype = characterindex;
-	bodystyle = 0;
-	// character_zm.gsc
-	switch (characterindex)
-	{
-		case 4:
-		bodytype = 0;
-		bodystyle = 2;
-		break;
-
-		case 16:
-		bodytype = 9;
-		bodystyle = 1;
-		break;
-
-		case 17:
-		bodytype = 11;
-		bodystyle = 1;
-		break;
-
-		case 18:
-		bodytype = 10;
-		bodystyle = 1;
-		break;
-		
-		default:
-		bodytype = characterindex;
-		bodystyle = 0;
-		break;
-	}
-
-	loadcpzmcharacteronmodel(localclientnum, data_struct, bodytype, params, bodystyle);
-	// thread revolve_zm_character(localclientnum, data_struct, params);
-}
-
 function zm_lobby_room(localclientnum)
 {
+	streamer_change("core_frontend_zm_lobby");
+	camera_ent = struct::get("zm_frontend_camera");
+	if(isdefined(camera_ent))
+	{
+		playmaincamxcam(localclientnum, "zm_lobby_cam", 0, "default", "", camera_ent.origin, camera_ent.angles);
+	}
+
 	s_scene = struct::get_script_bundle("scene", "cin_fe_zm_forest_vign_sitting");
 	s_params = spawnstruct();
 	s_params.scene = s_scene.name;
 	s_params.sessionmode = 0;
 	changed = character_customization::loadequippedcharacteronmodel(localclientnum, level.zm_lobby_data_struct, level.zm_debug_index, s_params);
-	plaympherovignettecam(localclientnum, level.zm_lobby_data_struct, changed);
+	// plaympherovignettecam(localclientnum, level.zm_lobby_data_struct, changed);
 }
 
 function mp_lobby_room(localclientnum, state)
