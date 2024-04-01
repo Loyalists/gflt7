@@ -11163,4 +11163,7 @@
 	"c_hro_player_male_vengance_viewhands" [ "t7_gfl_mp7_viewhands" ]
 	{
 	}
+	"c_ega_soldier_3_body" [ "t7_gfl_mp7_tights_fb" ]
+	{
+	}
 }

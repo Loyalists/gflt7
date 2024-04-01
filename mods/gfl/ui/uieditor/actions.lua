@@ -1,15 +1,16 @@
 require("ui.uieditor.actions_og")
 
-function OpenWorkshop(arg0, arg1, arg2)
+function OpenWorkshop(InstanceRef, arg1, arg2)
     Engine.OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=3019676071")
 end
 
-function OpenIOPWiki(arg0, arg1, arg2)
+function OpenIOPWiki(InstanceRef, arg1, arg2)
     Engine.OpenURL("https://iopwiki.com")
 end
 
-function OpenZMChangeLobby(arg0, arg1, arg2)
-    Engine.SendClientScriptNotify( arg0, "lobby_room_changed", "" )
+function OpenZMChangeLobby(InstanceRef, arg1, arg2)
+    Engine.SendClientScriptNotify( InstanceRef, "lobby_room_changed", "" )
+    PlaySoundSetSound( InstanceRef, "action" )
 end
 
 function NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)

@@ -196,12 +196,12 @@ function zombie_model_override()
 		return;
 	}
 
-	type = "generic";
+	type = "generic_tdoll";
 	switch( GetDvarInt("tfoption_tdoll_zombie", 0) )
 	{
 		case 1:
 		{
-			type = "generic";
+			type = "generic_tdoll";
 			break;
 		}
 		case 2:
@@ -216,7 +216,7 @@ function zombie_model_override()
 		}
 		default:
 		{
-			type = "generic";
+			type = "generic_tdoll";
 			break;
 		}
 	}

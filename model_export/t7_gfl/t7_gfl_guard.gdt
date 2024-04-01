@@ -4434,4 +4434,7 @@
 	"c_54i_supp_body_g_upclean" [ "t7_gfl_guard_fb" ]
 	{
 	}
+	"c_nrc_security_zomcampaign_fb2" [ "t7_gfl_guard_fb" ]
+	{
+	}
 }

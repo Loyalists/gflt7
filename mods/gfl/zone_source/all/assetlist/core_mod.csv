@@ -34,7 +34,10 @@ xmodel,c_civ_sing_male_husband_body
 xmodel,c_civ_sing_police_body
 xmodel,c_civ_sing_police_head
 xmodel,c_civ_zur_informant_fb
+xmodel,c_ega_soldier_1_body
 xmodel,c_ega_soldier_1_chokeout_fb
+xmodel,c_ega_soldier_2_body
+xmodel,c_ega_soldier_3_body
 xmodel,c_ega_soldier_3_pincushion_armoff_fb
 xmodel,c_ega_soldier_3_pincushion_fb
 xmodel,c_ega_vitol_pilot_1_fb
@@ -239,6 +242,7 @@ xmodel,c_nrc_security_body2
 xmodel,c_nrc_security_body2_bloody
 xmodel,c_nrc_security_fb1
 xmodel,c_nrc_security_head1
+xmodel,c_nrc_security_zomcampaign_fb2
 xmodel,c_nrc_sniper_body
 xmodel,c_nrc_suppressor_body
 xmodel,c_t7_dlchd_dempsey_waw_viewhands

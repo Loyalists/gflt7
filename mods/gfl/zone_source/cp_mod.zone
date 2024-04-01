@@ -64,7 +64,15 @@ xmodel,p7_hro_hendricks_mic_fb
 xmodel,p7_cia_blackstation_victim_3_pinky
 xmodel,p7_cia_blackstation_victim_3_ring
 xmodel,p7_fxanim_cp_zurich_tree_krueger_split_torso_mod
+
 // xmodel,c_ega_military_casual_head1
+xmodel,c_ega_soldier_1_head1
+xmodel,c_ega_soldier_1_head2
+xmodel,c_ega_soldier_1_head3
+xmodel,c_ega_soldier_1_head4
+xmodel,c_ega_soldier_1_head5
+xmodel,c_ega_soldier_2_head
+xmodel,c_ega_soldier_3_head
 
 xmodel,c_civ_sing_female_wife_behead
 xmodel,c_civ_sing_female_wife_head

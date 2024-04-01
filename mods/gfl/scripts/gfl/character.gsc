@@ -49,6 +49,7 @@ function init_character_table()
 	level.charactertable["hero"]["m4_sopmod_ii"] = &swap_to_m4_sopmod_ii_cp;
 	level.charactertable["hero"]["st_ar15"] = &swap_to_st_ar15_cp;
 	level.charactertable["hero"]["ro635"] = &swap_to_ro635_cp;
+	level.charactertable["hero"]["ump45"] = &swap_to_ump45_cp;
 
 	level.charactertable["training_sim"] = [];
 	level.charactertable["training_sim"] = arraycombine(level.charactertable["training_sim"], level.charactertable["generic"], true, true);
@@ -68,8 +69,15 @@ function init_character_table()
 	level.charactertable["generic_safehouse"] = arraycombine(level.charactertable["generic_safehouse"], level.charactertable["generic"], true, true);
 	level.charactertable["generic_safehouse"]["dima"] = &swap_to_dima;
 
+	level.charactertable["generic_tdoll"] = [];
+	level.charactertable["generic_tdoll"] = arraycombine(level.charactertable["generic_tdoll"], level.charactertable["generic"], true, true);
+	// level.charactertable["generic_tdoll"] = arraycombine(level.charactertable["generic_tdoll"], level.charactertable["hero"], true, true);
+	level.charactertable["generic_tdoll"]["m16a1_prime"] = &swap_to_m16a1_prime;
+	// level.charactertable["generic_tdoll"]["rpk16"] = &swap_to_rpk16;
+	level.charactertable["generic_tdoll"]["dima"] = &swap_to_dima;
+
 	level.charactertable["generic_sf"] = [];
-	level.charactertable["generic_sf"] = arraycombine(level.charactertable["generic_sf"], level.charactertable["generic"], true, true);
+	level.charactertable["generic_sf"] = arraycombine(level.charactertable["generic_sf"], level.charactertable["generic_tdoll"], true, true);
 	level.charactertable["generic_sf"] = arraycombine(level.charactertable["generic_sf"], level.charactertable["sf"], true, true);
 }
 
@@ -235,6 +243,13 @@ function swap_to_lenna()
 	self thread character_util::set_character_name();
 }
 
+function swap_to_m16a1_prime()
+{
+	self detachall();
+	self setmodel("t7_gfl_m16a1_prime_fb");
+	self thread character_util::set_character_name();
+}
+
 // sf
 function swap_to_vespid()
 {
@@ -278,14 +293,7 @@ function swap_to_ouroboros()
 	self thread character_util::set_character_name();
 }
 
-// hero
-function swap_to_m16a1_prime()
-{
-	self detachall();
-	self setmodel("t7_gfl_m16a1_prime_fb");
-	self thread character_util::set_character_name();
-}
-
+// campaign hero
 function swap_to_hk416_cp()
 {
 	self detachall();
@@ -325,5 +333,12 @@ function swap_to_ro635_cp()
 {
 	self detachall();
 	self setmodel("c_hro_rachel_egypt_fb");
+	self thread character_util::set_character_name();
+}
+
+function swap_to_ump45_cp()
+{
+	self detachall();
+	self setmodel("c_hro_playerfemale_prologue_fb");
 	self thread character_util::set_character_name();
 }

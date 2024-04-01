@@ -215,9 +215,9 @@ character,c_zsf_supp_1
 // character,c_ega_military_medic_1
 // character,c_ega_military_medic_2
 // character,c_ega_military_medic_3
-character,c_ega_soldier_1
-character,c_ega_soldier_2
-character,c_ega_soldier_3
+// character,c_ega_soldier_1
+// character,c_ega_soldier_2
+// character,c_ega_soldier_3
 // character,c_ega_soldier_1_cin_llegoff
 // character,c_ega_soldier_2_cin_larmoff
 // character,c_ega_soldier_3_cin_rarmrlegoff
@@ -260,6 +260,7 @@ xmodel,c_nrc_security_body2
 xmodel,c_nrc_security_body2_bloody
 xmodel,c_nrc_security_fb1
 xmodel,c_nrc_security_head1
+xmodel,c_nrc_security_zomcampaign_fb2
 
 // xmodel,c_nrc_suppressor_body_g_larmoff
 // xmodel,c_nrc_suppressor_body_g_upclean
@@ -313,6 +314,9 @@ xmodel,c_ega_vitol_pilot_1_fb
 xmodel,c_ega_soldier_1_chokeout_fb
 xmodel,c_ega_soldier_3_pincushion_fb
 xmodel,c_ega_soldier_3_pincushion_armoff_fb
+xmodel,c_ega_soldier_1_body
+xmodel,c_ega_soldier_2_body
+xmodel,c_ega_soldier_3_body
 
 xmodel,c_zsf_supp_fb1
 xmodel,c_zsf_supp_body1

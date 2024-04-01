@@ -137,6 +137,15 @@ DataSources.TFOptionsP2 = DataSourceHelpers.ListSetup("PC.TFOptionsP2", function
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
+            label = "TF_ENABLED",
+            description = "TF_ENABLED_DESC",
+            profileVarName = "tf_enabled",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
             label = "TF_CHEATS",
             description = "TF_CHEATS_DESC",
             profileVarName = "cheats",
@@ -222,7 +231,7 @@ DataSources.TFOptionCategories = DataSourceHelpers.ListSetup("PC.TFOptionCategor
     })
     table.insert(f28_local0, {
         models = {
-            tabName = "GAME",
+            tabName = "GAMEPLAY",
             tabWidget = "CoD.TFOptions_P1"
         }
     })

@@ -1623,4 +1623,32 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
+REFERENCE            ENABLED
+LANG_ENGLISH         "Enable Options"
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
+REFERENCE            ENABLED_DESC
+LANG_ENGLISH         "Enables TF's Zombie Options. By disabling this no option will take effect in game."
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
 ENDMARKER

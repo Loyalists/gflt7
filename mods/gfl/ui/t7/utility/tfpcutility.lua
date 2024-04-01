@@ -62,6 +62,7 @@ CoD.TFOptionIndexes["bgb_uses"] = 61
 CoD.TFOptionIndexes["friendlyfire"] = 62
 CoD.TFOptionIndexes["tdoll_zombie"] = 63
 CoD.TFOptionIndexes["bgb_off"] = 64
+CoD.TFOptionIndexes["version"] = 65
 
 if not CoD.TFPCUtil then
     CoD.TFPCUtil = {}
@@ -113,7 +114,7 @@ CoD.TFPCUtil.TokenizeString = function(f4_arg0, f4_arg1)
 end
 
 CoD.TFPCUtil.GetVersion = function()
-    local version = 1
+    local version = 0
     return version
 end
 
@@ -171,7 +172,7 @@ CoD.TFPCUtil.SetToSaveData = function(varName, value, InstanceRef)
 end
 
 CoD.TFPCUtil.CheckForRecentUpdate = function()
-    local index = CoD.TFOptionIndexes["tf_enabled"]
+    local index = CoD.TFOptionIndexes["version"]
     index = (index * 2) + 50
     local multiple = CoD.SavingDataUtility.GetData(InstanceRef, index)
     local remainder = CoD.SavingDataUtility.GetData(InstanceRef, index + 1)
@@ -220,7 +221,7 @@ CoD.TFPCUtil.ResetToDefault = function()
     CoD.TFPCUtil.SetToSaveData("zblood_powerup", 0, 0)
     CoD.TFPCUtil.SetToSaveData("timed_gameplay", 0, 0)
     CoD.TFPCUtil.SetToSaveData("move_speed", 100, 0)
-    CoD.TFPCUtil.SetToSaveData("tf_enabled", CoD.TFPCUtil.GetVersion(), 0)
+    CoD.TFPCUtil.SetToSaveData("tf_enabled", 1, 0)
     CoD.TFPCUtil.SetToSaveData("open_all_doors", 0, 0)
     CoD.TFPCUtil.SetToSaveData("every_box", 0, 0)
     CoD.TFPCUtil.SetToSaveData("random_weapon", 0, 0)
@@ -245,6 +246,7 @@ CoD.TFPCUtil.ResetToDefault = function()
     CoD.TFPCUtil.SetToSaveData("friendlyfire", 0, 0)
     CoD.TFPCUtil.SetToSaveData("tdoll_zombie", 0, 0)
     CoD.TFPCUtil.SetToSaveData("bgb_off", 0, 0)
+    CoD.TFPCUtil.SetToSaveData("version", CoD.TFPCUtil.GetVersion(), 0)
 end
 
 CoD.TFPCUtil.LoadTFOptions = function()
@@ -307,6 +309,7 @@ CoD.TFPCUtil.LoadTFOptions = function()
     CoD.TFPCUtil.LoadFromSaveData("friendlyfire")
     CoD.TFPCUtil.LoadFromSaveData("tdoll_zombie")
     CoD.TFPCUtil.LoadFromSaveData("bgb_off")
+    CoD.TFPCUtil.LoadFromSaveData("version")
 end
 
 CoD.TFPCUtil.CheckBoxOptionChecked = function(itemRef, updateTable)

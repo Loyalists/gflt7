@@ -23350,4 +23350,7 @@
 	"c_hro_player_male_zurich_viewbody" [ "t7_gfl_9a91_body" ]
 	{
 	}
+	"c_ega_soldier_2_body" [ "t7_gfl_9a91_fb" ]
+	{
+	}
 }

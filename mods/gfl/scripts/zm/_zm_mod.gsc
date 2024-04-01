@@ -68,7 +68,7 @@
 
 function init() {
     level.TFOptions = [];
-    if(GetDvarString("tfoption_tf_enabled") != "1" )
+    if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         create_tf_options_defaults();
     }
@@ -180,10 +180,6 @@ function load_tf_options(){
     level endon("game_ended");
     level waittill("initial_blackscreen_passed");
 
-    foreach(player in level.players) {
-        player FreezeControls(true);
-    }
-
     if ( GetDvarInt("developer") ) {
         IPrintLnBold("Loading TF Options! Please Wait...");
     }
@@ -199,11 +195,7 @@ function load_tf_options(){
         IPrintLnBold("Options Loaded!");
     }
     
-    foreach(player in level.players) {
-        player FreezeControls(false);
-    }
     level notify("menu_closed");
-    
 }
 
 function apply_choices() {
@@ -234,11 +226,13 @@ function apply_choices() {
 
     //higher health
     higher_health = GetDvarInt("tfoption_higher_health");
-    foreach(player in level.players){
-        player zombie_utility::set_zombie_var( "player_base_health", higher_health, false);
-        player.maxhealth = higher_health;
-        player.health = higher_health; 
-    }  
+    if ( higher_health != 100) {
+        foreach(player in level.players){
+            player zombie_utility::set_zombie_var( "player_base_health", higher_health, false);
+            player.maxhealth = higher_health;
+            player.health = higher_health; 
+        }  
+    }
      
     //no perk limit
     no_perk_lim = GetDvarInt("tfoption_no_perk_lim");

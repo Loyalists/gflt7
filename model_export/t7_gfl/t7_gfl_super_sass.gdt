@@ -11280,4 +11280,7 @@
 	"c_t7_mp_assassin_viewlegs1_skin3" [ "t7_gfl_super_sass_viewlegs" ]
 	{
 	}
+	"c_ega_soldier_1_body" [ "t7_gfl_super_sass_fb" ]
+	{
+	}
 }

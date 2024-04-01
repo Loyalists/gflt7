@@ -8318,4 +8318,25 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
+	"c_ega_soldier_1_head1" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_ega_soldier_2_head" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_ega_soldier_3_head" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_ega_soldier_1_head2" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_ega_soldier_1_head3" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_ega_soldier_1_head4" [ "t7_gfl_placeholder" ]
+	{
+	}
+	"c_ega_soldier_1_head5" [ "t7_gfl_placeholder" ]
+	{
+	}
 }

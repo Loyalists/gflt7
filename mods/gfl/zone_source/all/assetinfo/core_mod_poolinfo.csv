@@ -3,7 +3,7 @@ physpreset,276,0
 physconstraints,128,0
 destructibledef,128,0
 xanim,25000,3
-xmodel,10240,816
+xmodel,10240,820
 xmodelmesh,34816,407
 material,20480,1041
 computeshaderset,256,0
@@ -44,7 +44,7 @@ impactsfxtable,256,0
 impactsoundstable,64,0
 player_character,8,0
 aitype,96,0
-character,150,8
+character,150,5
 xmodelalias,48,1
 rawfile,5000,67
 stringtable,200,13
