@@ -21,6 +21,7 @@
 
 function init() {
     gameplay::init();
+    thread main();
 }
 
 function main() {
