@@ -44,27 +44,17 @@ function init()
 		return;
 	}
 
-	if( GetDvarInt("tfoption_player_determined_character") )
+	if( GetDvarInt("tfoption_player_determined_character", 0) )
 	{
 		level.save_character_customization_func = &save_character_customization_func;
-		callback::on_spawned( &set_character_customization );
-
-		if( GetDvarInt("tfoption_randomize_character") )
-		{
-			callback::on_spawned( &set_custom_character_for_bot );
-		}
 	}
-	else
-	{
-		if( GetDvarInt("tfoption_randomize_character") )
-		{
-			callback::on_spawned( &set_custom_character );
-		}
-	}
+}
 
-	if ( level.script == "zm_zod" )
+function init_moon()
+{
+	if( GetDvarInt("tfoption_player_determined_character", 0) )
 	{
-		callback::on_spawned( &altbody_cc_fix );
+		level.save_character_customization_func = &save_character_customization_func_moon;
 	}
 }
 
@@ -75,15 +65,38 @@ function on_player_connect()
 
 function on_player_spawned()
 {
-}
+	self endon("disconnect");
+	self endon("bled_out");
 
-function init_moon()
-{
-	if( GetDvarInt("tfoption_player_determined_character") )
+	if( GetDvarInt("tfoption_player_determined_character", 0) )
 	{
-		level.save_character_customization_func = &save_character_customization_func_moon;
-		callback::on_spawned( &set_character_customization );
+		self thread set_character_customization();
+
+		if( GetDvarInt("tfoption_randomize_character", 0) )
+		{
+			self thread set_random_character_for_bot();
+		}
 	}
+	else
+	{
+		if( GetDvarInt("tfoption_randomize_character", 0) )
+		{
+			self thread set_random_character();
+		}
+	}
+
+	if ( level.script == "zm_zod" )
+	{
+		self thread altbody_cc_fix();
+	}
+
+    if ( level.script == "zm_leviathan" )
+    {
+		self save_cc_fix();
+        self thread cc_watcher_think();
+    }
+
+	self thread lock_cc_think();
 }
 
 function get_character_table_key()
@@ -135,6 +148,87 @@ function altbody_cc_fix()
 		}
 		wait 1;
 	}
+}
+
+function save_cc_fix()
+{
+	if ( isdefined(self.cc_bodytype) && isdefined(self.cc_bodystyle) )
+	{
+		return;
+	}
+
+	characterindex = self.characterindex;
+	if ( !isdefined(characterindex) )
+	{
+		characterindex = 0;
+	}
+
+	bodytype = 0;
+	bodystyle = 0;
+	switch(characterindex)
+	{
+		case 0:
+		{
+			bodytype = 0;
+			bodystyle = 2;
+			break;
+		}
+		case 1:
+		{
+			bodytype = 1;
+			bodystyle = 0;
+			break;
+		}
+		case 2:
+		{
+			bodytype = 2;
+			bodystyle = 0;
+			break;
+		}
+		case 3:
+		{
+			bodytype = 3;
+			bodystyle = 0;
+			break;
+		}
+		default:
+		{
+			break;
+		}
+	}
+
+	self.cc_bodytype = bodytype;
+	self.cc_bodystyle = bodystyle;
+}
+
+function cc_watcher_think()
+{
+	self endon("disconnect");
+	self endon("bled_out");
+
+    while (true)
+    {
+		bodytype = self GetCharacterBodyType();
+		if ( isdefined(self.cc_bodytype) && bodytype != self.cc_bodytype )
+		{
+			self notify("unwanted_cc_changes_detected");
+		}
+
+        WAIT_SERVER_FRAME;
+    }
+}
+
+function lock_cc_think()
+{
+	self endon("disconnect");
+	self endon("bled_out");
+
+    while (true)
+    {
+		self waittill("unwanted_cc_changes_detected");
+		self set_character_customization();
+        WAIT_SERVER_FRAME;
+    }
 }
 
 function zombie_model_fix()
@@ -293,17 +387,17 @@ function set_character_customization()
 	self set_icon(func_index);
 }
 
-function set_custom_character_for_bot()
+function set_random_character_for_bot()
 {
 	if ( !self IsTestClient() )
 	{
 		return;
 	}
 
-	self set_custom_character();
+	self set_random_character();
 }
 
-function set_custom_character()
+function set_random_character()
 {
 	level flag::wait_till("all_players_spawned");
 	characterindex = self.characterindex;
@@ -327,6 +421,30 @@ function set_icon(func_index)
 	}
 	// works for the current client only
 	util::setClientSysState( "gfl_character_icon", icon_index, self );
+}
+
+function get_character_name_by_model(fallback_name = undefined)
+{
+	result = "Unknown";
+	if ( isdefined(fallback_name) )
+	{
+		result = fallback_name;
+	}
+
+	model = self GetCharacterBodyModel();
+	modelsubstrs = GetArrayKeys(level.model_to_character_name_table);
+
+	foreach( modelsubstr in modelsubstrs )
+	{
+		if( isdefined(model) && issubstr(model, modelsubstr) )
+		{
+			name = level.model_to_character_name_table[modelsubstr];
+			result = name;
+			break;
+		}
+	}
+
+	return result;
 }
 
 // test func
@@ -359,7 +477,7 @@ function random_character_test()
 	self endon("disconnect");
 	while(true)
 	{
-		self set_custom_character();
+		self set_random_character();
 		wait 2;
 	}
 }

@@ -71,27 +71,45 @@ function mulekick_return_watcher()
 	{
 		foreach(player in GetPlayers())
 		{
-			if (player.sessionstate != "spectator" && isAlive(player) && player isOnGround() && !player laststand::player_is_in_laststand() )
+			if ( !isAlive(player) || player.sessionstate == "spectator" )
 			{
-				xuid = player getXuid(true);
-				if ( player hasPerk("specialty_additionalprimaryweapon") && player GetWeaponsListPrimaries().size >= 3 )
-				{
-					weapon = player GetWeaponsListPrimaries()[2];
-					if (isweapon(weapon) && isdefined(weapon) && self hasweapon(weapon) 
-						&& weapon != self.laststandpistol && weapon != level.zombie_powerup_weapon[ "minigun" ] && zm_weapons::is_weapon_or_base_included( weapon ) 
-						&& !is_special_weapon(weapon))
-					{
-						level.mulekick_weapon[xuid] = weapon;
-						level.mulekick_clip[xuid] = player getWeaponAmmoClip(weapon);
-						level.mulekick_stock[xuid] = player getWeaponAmmostock(weapon);
-					}
-					else
-					{
-						level.mulekick_weapon[xuid] = undefined;
-						level.mulekick_clip[xuid] = undefined;
-						level.mulekick_stock[xuid] = undefined;
-					}
-				}
+				continue;
+			}
+
+			if ( !player isOnGround() )
+			{
+				continue;
+			}
+
+			if ( player laststand::player_is_in_laststand() )
+			{
+				continue;
+			}
+
+			if ( !player hasPerk("specialty_additionalprimaryweapon") || player GetWeaponsListPrimaries().size < 3 )
+			{
+				continue;
+			}
+
+			xuid = player getXuid(true);
+			weapon = player GetWeaponsListPrimaries()[2];
+			if (isdefined(weapon) 
+				&& isweapon(weapon) 
+				&& self hasweapon(weapon)
+				&& ( !isdefined(self.laststandpistol) || weapon != self.laststandpistol )
+				&& ( !isdefined(level.zombie_powerup_weapon[ "minigun" ]) || weapon != level.zombie_powerup_weapon[ "minigun" ] )
+				&& zm_weapons::is_weapon_or_base_included( weapon ) 
+				&& !is_special_weapon(weapon))
+			{
+				level.mulekick_weapon[xuid] = weapon;
+				level.mulekick_clip[xuid] = player getWeaponAmmoClip(weapon);
+				level.mulekick_stock[xuid] = player getWeaponAmmostock(weapon);
+			}
+			else
+			{
+				level.mulekick_weapon[xuid] = undefined;
+				level.mulekick_clip[xuid] = undefined;
+				level.mulekick_stock[xuid] = undefined;
 			}
 		}
 		WAIT_SERVER_FRAME;
@@ -198,19 +216,19 @@ function return_mulekick_weapon(switch_to_weapon = false)
 	{
 		self zm_weapons::give_build_kit_weapon( weapon );
 		scoreevents::processScoreEvent( "getbackmulekick" , self );
-		if(isDefined(level.mulekick_stock[xuid]))
+		if (isDefined(level.mulekick_stock[xuid]))
 		{
 			stock_ammo = level.mulekick_stock[xuid];
 		}
-		if(isDefined(level.mulekick_clip[xuid]))
+		if (isDefined(level.mulekick_clip[xuid]))
 		{
 			clip_ammo = level.mulekick_clip[xuid];
 		}
-		if(isDefined(stock_ammo))
+		if (isDefined(stock_ammo))
 		{
 			self SetWeaponAmmoStock(weapon, stock_ammo);
 		}
-		if(isDefined(clip_ammo))
+		if (isDefined(clip_ammo))
 		{
 			self SetWeaponAmmoClip(weapon, clip_ammo);
 		}
@@ -219,7 +237,7 @@ function return_mulekick_weapon(switch_to_weapon = false)
 			self SetWeaponAmmoClip(weapon, weapon.clipsize);
 		}
 
-		if (isdefined(switch_to_weapon) && switch_to_weapon)
+		if ( IS_TRUE(switch_to_weapon) )
 		{
 			self SetSpawnWeapon(weapon);
 		}

@@ -99,3 +99,5 @@ ignore_missing_shipped,zm_patch
 >level.xpak_read,base_patch_tu31
 >level.xpak_read,base_patch_tu32
 sound,zm_mod
+localize,gfl_zm
+localize,subevent

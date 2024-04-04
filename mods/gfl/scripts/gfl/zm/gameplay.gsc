@@ -26,6 +26,8 @@
 #using scripts\zm\_zm_hero_weapon;
 #using scripts\zm\_zm_pack_a_punch_util;
 
+#using scripts\zm\_zm_sub;
+
 #using scripts\gfl\zm\character_randomizer;
 #using scripts\gfl\zm\perkplus;
 #using scripts\gfl\zm\t8_perkloss;
@@ -33,6 +35,7 @@
 #using scripts\gfl\zm\mule_kick_indicator;
 #using scripts\gfl\zm\mule_kick_return;
 #using scripts\gfl\zm\zm_bot;
+#using scripts\gfl\zm\zm_counter;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\zm\_zm_utility.gsh;
@@ -88,8 +91,13 @@ function init()
         thread disable_bgb();
     }
 
+    if( GetDvarInt("tfoption_zcounter_enabled", 0) ) {
+        zm_counter::init();
+    }
+
     mule_kick_indicator::init();
 
+    callback::on_connecting( &on_player_connecting );
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
 
@@ -102,6 +110,11 @@ function init()
 	}
 }
 
+function on_player_connecting()
+{
+    // thread zm_sub::sub_logic(undefined, 2, self.name, "…SUBEVENT_LOADINGMAP…");
+}
+
 function on_player_connect()
 {
 	self endon("disconnect");
@@ -110,80 +123,20 @@ function on_player_connect()
     {
         self thread revive_at_end_of_round();
     }
+
+    self thread special_event_sub_think();
+    self thread weapon_sub_think();
+    self thread pap_sub_think();
+    self thread bgb_sub_think();
+    self thread magicboxshare_sub_think();
+
+    // thread zm_sub::sub_logic(undefined, 2, self.name, "…SUBEVENT_READY…");
 }
 
 function on_player_spawned()
 {
 	self endon("disconnect");
-
-    if( level.script == "zm_leviathan" && !GetDvarInt("tfoption_randomize_character", 0) )
-    {
-        self thread leviathan_character_fix();
-    }
-}
-
-function leviathan_character_fix()
-{
-	self endon("disconnect");
 	self endon("bled_out");
-
-    if ( GetDvarInt("tfoption_player_determined_character", 0) )
-    {
-        // apply the fix for bots only if player has a preferred playermodel
-        if ( !self IsTestClient() )
-        {
-            return;
-        }
-    }
-
-    while(true)
-    {
-        characterindex = self.characterindex;
-        if ( !isdefined(characterindex) )
-        {
-            characterindex = 0;
-        }
-
-        bodytype = 0;
-        bodystyle = 0;
-        switch(characterindex)
-        {
-            case 0:
-            {
-                bodytype = 0;
-                bodystyle = 2;
-                break;
-            }
-            case 1:
-            {
-                bodytype = 1;
-                bodystyle = 0;
-                break;
-            }
-            case 2:
-            {
-                bodytype = 2;
-                bodystyle = 0;
-                break;
-            }
-            case 3:
-            {
-                bodytype = 3;
-                bodystyle = 0;
-                break;
-            }
-            default:
-            {
-                bodytype = 0;
-                bodystyle = 0;
-                break;
-            }
-        }
-        self setcharacterbodytype(bodytype);
-        self setcharacterbodystyle(bodystyle);
-        self setcharacterhelmetstyle(0);
-        wait(0.5);
-    }
 }
 
 function enable_cheats()
@@ -319,4 +272,99 @@ function friendlyfire_logic( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDe
     
         default:
     }
+}
+
+function special_event_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (true)
+	{
+		event = self util::waittill_any_return( "nuke_triggered", "player_downed", "perk_bought" );
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+
+		if (event == "nuke_triggered")
+		{
+			thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_NUKE…");
+		}
+
+		if (event == "player_downed")
+		{
+			thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_PLAYER_DOWNED…");
+		}
+
+		if (event == "perk_bought")
+		{
+		    thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_GOTPERK…");
+		}
+
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function pap_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("pap_taken");
+		self waittill("weapon_change");
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_pap_subtitle(character_name);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function weapon_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("start_weapon_sub", weapon);
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_weapon_subtitle(character_name, weapon);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function bgb_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("start_bgb_sub", bgb_string);
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_bgb_subtitle(character_name, bgb_string);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function magicboxshare_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("start_magicboxshare_sub", weapon_name);
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_magicboxshare_subtitle(character_name, weapon_name);
+        WAIT_SERVER_FRAME;
+	}
 }

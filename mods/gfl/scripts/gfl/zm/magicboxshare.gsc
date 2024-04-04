@@ -105,6 +105,7 @@ function chest_checker()
 						name = readytoshare.name;
 					}
 
+					self.chest_user notify("start_magicboxshare_sub", name);
 					self thread spawnshareweapon(readytoshare,self.chest_user,self);
 					self notify( "trigger", self ); 
 					self.grab_weapon_hint = false;

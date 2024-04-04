@@ -915,13 +915,13 @@ function bot_do_area_revive(e_revivee)
 }
 
 function pesSuit()
-{	
+{
 	self notify("pesSuit");
 	self endon("pesSuit");
 	level endon("game_ended");
 	self endon("disconnect");
 
-	if ( !( level.script == "zm_moon" || level.script == "zm_newfound" ) )
+	if ( !does_level_support_pes() )
 	{
 		return;
 	}
@@ -955,6 +955,16 @@ function pesSuit()
 		}
 		wait 2;
 	}
+}
+
+function does_level_support_pes()
+{
+	if ( level.script == "zm_moon" || level.script == "zm_newfound" )
+	{
+		return true;
+	}
+
+	return false;
 }
 
 function bot_likes_weapon(weapon)
@@ -1005,11 +1015,6 @@ function bot_likes_weapon(weapon)
 	if ( target_weapon_cost >= current_weapon_cost )
 	{
 		return true;
-	}
-	else
-	{
-		// IPrintLnBold("bot doesn't like the weapon");
-		return false;
 	}
 
 	if(
@@ -1187,7 +1192,7 @@ function magicbox()
 			}
 			wait 1;
 			self BotSetGoal(finalbox.unitrigger_stub.origin);
-			self thread bot_is_used_box(finalbox);					
+			self thread bot_used_box(finalbox);					
 			while(self IsSwitchingWeapons() && self IsFiring())
 			{
 				wait 0.05;
@@ -1237,7 +1242,7 @@ function magicbox()
 	return true;
 }
 
-function bot_is_used_box(box)
+function bot_used_box(box)
 {
 	if(!isDefined(self.bot_box_used))
 	{
@@ -1655,7 +1660,7 @@ function bot_firing()
 	self endon("bot_firing");
 	self endon("disconnect");
 
-	while(self.bot.threat.inrange && self bot_combat::threat_is_alive() && self bot_combat::has_threat())
+	while( self bot_combat::has_threat() && self bot_combat::threat_is_alive() && self.bot.threat.inrange )
 	{
 		weapon = self getcurrentweapon();
 		if(weapon == level.weaponnone || !self getweaponammoclip(weapon) )

@@ -20,7 +20,6 @@
 #using scripts\zm\_zm_perks;
 #using scripts\zm\_zm_powerups;
 #using scripts\zm\_zm_weapons;
-#using scripts\zm\_zm_counter;
 #using scripts\zm\_zm_score;
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_melee_weapon;
@@ -58,11 +57,12 @@
 #using scripts\zm\ugxmods_timedgp;
 
 #using scripts\zm\infinityloader;
+#using scripts\zm\_zm_sub;
+
 #using scripts\gfl\zm\gameplay;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
-
 
 #namespace zm_mod;
 
@@ -409,11 +409,6 @@ function apply_choices() {
     } else {
 
         level.round_end_custom_logic = undefined;
-    }
-
-    //ZOMBIE COUNTER
-    if( GetDvarInt("tfoption_zcounter_enabled") ) {
-        zm_counter::_INIT_ZCOUNTER();
     }
 
     //Timed Gameplay

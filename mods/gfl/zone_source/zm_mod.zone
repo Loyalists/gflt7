@@ -9,6 +9,9 @@ rawfile,dummy.cfg
 
 sound,zm_mod
 
+localize,gfl_zm
+localize,subevent
+
 image,img_loadscreen_zm_factory
 image,t7_menu_zm_loadscreen_sumpf
 image,t7_menu_zm_loadscreen_theater
@@ -38,15 +41,17 @@ scriptparsetree,scripts/gfl/zm/magicboxshare.gsc
 scriptparsetree,scripts/gfl/zm/mule_kick_indicator.gsc
 scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
+scriptparsetree,scripts/gfl/zm/zm_counter.gsc
 
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
 
 scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
-scriptparsetree,scripts/zm/_zm_counter.gsc
 scriptparsetree,scripts/zm/_zm_mod.csc
 scriptparsetree,scripts/zm/_zm_mod.gsc
 scriptparsetree,scripts/zm/infinityloader.gsc
+scriptparsetree,scripts/zm/_zm_sub.gsc
+scriptparsetree,scripts/zm/_zm_sub.csc
 
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc

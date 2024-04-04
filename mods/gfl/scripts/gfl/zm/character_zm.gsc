@@ -93,6 +93,63 @@ function init_character_table()
 	level.model_to_character_table["t7_gfl_dima_fb"] = "dima";
 	level.model_to_character_table["t7_gfl_an94_fb"] = "an94";
 	level.model_to_character_table["t7_gfl_lenna_fb"] = "lenna";
+
+	level.model_to_character_name_table = [];
+	level.model_to_character_name_table["_dempsey_"] = "M16A1";
+	level.model_to_character_name_table["m16a1"] = "M16A1";
+	level.model_to_character_name_table["m4a1"] = "M4A1";
+
+	level.model_to_character_name_table["_nikolai_"] = "AK-12";
+	level.model_to_character_name_table["ak12"] = "AK-12";
+	level.model_to_character_name_table["an94"] = "AN-94";
+
+	level.model_to_character_name_table["_richtofen_"] = "HK416";
+	level.model_to_character_name_table["hk416"] = "HK416";
+
+	level.model_to_character_name_table["_takeo_"] = "Howa Type 89";
+	level.model_to_character_name_table["type89"] = "Howa Type 89";
+
+	level.model_to_character_name_table["_boxer_"] = "AK-Alfa";
+	level.model_to_character_name_table["tololo"] = "AK-Alfa";
+
+	level.model_to_character_name_table["_detective_"] = "Suomi";
+	level.model_to_character_name_table["suomi"] = "Suomi";
+
+	level.model_to_character_name_table["_femme_"] = "Vepley";
+	level.model_to_character_name_table["vepley"] = "Vepley";
+
+	level.model_to_character_name_table["_magician_"] = "MP7";
+	level.model_to_character_name_table["mp7"] = "MP7";
+
+	level.model_to_character_name_table["super_sass"] = "Super SASS";
+	level.model_to_character_name_table["rfb"] = "RFB";
+	level.model_to_character_name_table["tac50"] = "TAC-50";
+
+	level.model_to_character_name_table["p90"] = "P90";
+	level.model_to_character_name_table["g36c"] = "G36C";
+
+	level.model_to_character_name_table["ump45"] = "UMP45";
+	level.model_to_character_name_table["lenna"] = "UMP9";
+
+	level.model_to_character_name_table["g11"] = "G11";
+	level.model_to_character_name_table["dima"] = "Dima";
+
+	level.model_to_character_name_table["m4_sopmod_ii"] = "M4 SOPMOD II";
+	level.model_to_character_name_table["st_ar15"] = "ST AR-15";
+	level.model_to_character_name_table["ro635"] = "RO635";
+
+	level.model_to_character_name_table["_beast_"] = "Beast";
+	level.model_to_character_name_table["9a91"] = "9A-91";
+	level.model_to_character_name_table["negev"] = "Negev";
+	level.model_to_character_name_table["rpk16"] = "RPK-16";
+
+	level.model_to_character_name_table["dreamer"] = "Dreamer";
+	level.model_to_character_name_table["ouroboros"] = "Ouroboros";
+	level.model_to_character_name_table["vespid"] = "Vespid";
+	level.model_to_character_name_table["ripper"] = "Ripper";
+	level.model_to_character_name_table["guard"] = "Guard";
+	level.model_to_character_name_table["jaeger"] = "Jaeger";
+	level.model_to_character_name_table["c_t7_zm_dlchd_origins_player_body_mpc"] = "Jaeger";
 }
 
 function swap_to_m16a1_moon()

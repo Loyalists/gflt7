@@ -1580,6 +1580,12 @@ function give(name)
 	}
 	self thread bgb_limit_monitor();
 	self thread bgb_bled_out_monitor();
+	if(isDefined(level.bgb[name]))
+	{
+		statstablename = util::getstatstablename();
+		bgb_string = tablelookup(statstablename, 0, level.bgb[name].item_index, 3);
+		self notify("start_bgb_sub", bgb_string);
+	}
 }
 
 /*

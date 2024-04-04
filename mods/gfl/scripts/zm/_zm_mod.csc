@@ -7,10 +7,12 @@
 #using scripts\shared\util_shared;
 #using scripts\shared\vehicle_shared;
 
-#using scripts\gfl\zm\gameplay;
-
 //bo4 carpenter
 #using scripts\zm\_zm_weap_riotshield;
+
+#using scripts\zm\_zm_sub;
+
+#using scripts\gfl\zm\gameplay;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;

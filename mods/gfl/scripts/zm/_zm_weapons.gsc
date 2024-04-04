@@ -2709,6 +2709,11 @@ function weapon_give( weapon, is_upgrade = false, magic_box = false, nosound = f
 		}
 
 		self zm_utility::set_player_lethal_grenade( weapon );
+
+		if ( !IS_TRUE( nosound ) )
+		{
+			self notify("start_weapon_sub", weapon);
+		}
 	}
 	else if ( zm_utility::is_tactical_grenade( weapon ) )
 	{
@@ -2719,6 +2724,10 @@ function weapon_give( weapon, is_upgrade = false, magic_box = false, nosound = f
 		}
 
 		self zm_utility::set_player_tactical_grenade( weapon );
+		if ( !IS_TRUE( nosound ) )
+		{
+			self notify("start_weapon_sub", weapon);
+		}
 	} 
 	else if ( zm_utility::is_placeable_mine( weapon ) )
 	{
@@ -2729,6 +2738,10 @@ function weapon_give( weapon, is_upgrade = false, magic_box = false, nosound = f
 		}
 
 		self zm_utility::set_player_placeable_mine( weapon );
+		if ( !IS_TRUE( nosound ) )
+		{
+			self notify("start_weapon_sub", weapon);
+		}
 	} 
 
 	if ( !zm_utility::is_offhand_weapon( weapon ) )
@@ -2799,6 +2812,11 @@ function weapon_give( weapon, is_upgrade = false, magic_box = false, nosound = f
 	if ( !IS_TRUE( nosound ) )
 	{
 		self zm_utility::play_sound_on_ent( "purchase" );
+	}
+
+	if ( !IS_TRUE( nosound ) )
+	{
+		self notify("start_weapon_sub", weapon);
 	}
 
 	weapon = self give_build_kit_weapon( weapon );
