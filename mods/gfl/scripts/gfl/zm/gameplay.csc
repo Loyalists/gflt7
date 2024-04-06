@@ -9,6 +9,7 @@
 #using scripts\zm\_zm_utility;
 
 #using scripts\gfl\zm\character_randomizer;
+#using scripts\gfl\zm\zm_sub;
 
 #insert scripts\shared\shared.gsh;
 

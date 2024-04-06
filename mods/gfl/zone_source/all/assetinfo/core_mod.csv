@@ -398,7 +398,7 @@ index,type,name,resident,streamed,parentStack
 397,rawfile,ui/uieditor/widgets/startmenu/tfoptions_navbutton.lua,8435,0,|zone_source/core_mod.zone|csv
 398,rawfile,ui/uieditor/widgets/pc/startmenu/dropdown/tfoptiondropdown.lua,15632,0,|zone_source/core_mod.zone|csv
 399,rawfile,ui/uieditor/widgets/pc/startmenu/dropdown/tfoptiondropdownitem.lua,5382,0,|zone_source/core_mod.zone|csv
-400,rawfile,ui/t7/utility/tfpcutility.lua,30420,0,|zone_source/core_mod.zone|csv
+400,rawfile,ui/t7/utility/tfpcutility.lua,30580,0,|zone_source/core_mod.zone|csv
 401,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_p1.lua,3663,0,|zone_source/core_mod.zone|csv
 402,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_p3.lua,3596,0,|zone_source/core_mod.zone|csv
 403,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_p2.lua,3600,0,|zone_source/core_mod.zone|csv
@@ -416,8 +416,8 @@ index,type,name,resident,streamed,parentStack
 415,rawfile,ui/uieditor/menus/pc/tfoptions_game.lua,10476,0,|zone_source/core_mod.zone|csv
 416,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_game_p1.lua,3676,0,|zone_source/core_mod.zone|csv
 417,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_game_p2.lua,3680,0,|zone_source/core_mod.zone|csv
-418,rawfile,ui/uieditor/menus/pc/tfoptions_player.lua,11330,0,|zone_source/core_mod.zone|csv
-419,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_player_p1.lua,3682,0,|zone_source/core_mod.zone|csv
+418,rawfile,ui/uieditor/menus/pc/tfoptions_player.lua,11486,0,|zone_source/core_mod.zone|csv
+419,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_player_p1.lua,3686,0,|zone_source/core_mod.zone|csv
 420,rawfile,ui/uieditor/menus/pc/tfoptions_bot.lua,8367,0,|zone_source/core_mod.zone|csv
 421,rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_bot_p1.lua,3669,0,|zone_source/core_mod.zone|csv
 422,rawfile,ui/uieditor/menus/pc/tfoptions_bgb.lua,9883,0,|zone_source/core_mod.zone|csv
@@ -3368,7 +3368,7 @@ index,type,name,resident,streamed,parentStack
 3367,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521488,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3368,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3369,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3370,image,t7_menu_mp_chars_enforcer_body_custom01ê£≤,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3370,image,t7_menu_mp_chars_enforcer_body_custom01–§¢hﬂ,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3371,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3372,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3373,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv

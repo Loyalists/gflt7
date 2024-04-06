@@ -57,7 +57,6 @@
 #using scripts\zm\ugxmods_timedgp;
 
 #using scripts\zm\infinityloader;
-#using scripts\zm\_zm_sub;
 
 #using scripts\gfl\zm\gameplay;
 
@@ -136,6 +135,7 @@ function create_tf_options_defaults() {
     SetDvar("tfoption_friendlyfire", 0);
     SetDvar("tfoption_tdoll_zombie", 0);
     SetDvar("tfoption_bgb_off", 0);
+    SetDvar("tfoption_subtitles", 0);
 }
 
 function pre_load()

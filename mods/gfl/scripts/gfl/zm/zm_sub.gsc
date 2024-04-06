@@ -37,6 +37,9 @@
 #using scripts\zm\_zm_hero_weapon;
 #using scripts\zm\_zm_pack_a_punch_util;
 
+#using scripts\gfl\zm\character_randomizer;
+#using scripts\gfl\zm\zm_sub;
+
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
@@ -47,11 +50,27 @@ REGISTER_SYSTEM( "zm_sub", &__init__, undefined )
 function __init__()
 {
     util::registerClientSys( "sendsub" );
-    callback::on_connect(&on_player_connect);
+    callback::on_connect(&on_player_connect_sys);
 }
 
-function on_player_connect(){
+function on_player_connect_sys(){
     self util::setClientSysState( "sendsub", "" );
+}
+
+function init(){
+    callback::on_connect( &on_player_connect );
+}
+
+function on_player_connect()
+{
+	self endon("disconnect");
+
+    self thread special_event_sub_think();
+    self thread powerup_sub_think();
+    self thread weapon_sub_think();
+    self thread pap_sub_think();
+    self thread bgb_sub_think();
+    self thread magicboxshare_sub_think();
 }
 
 function sub_logic(player, type, character, message)
@@ -211,7 +230,117 @@ function sub_logic2(player, type, character, message)
     }    
 }
 
-function show_weapon_subtitle(character_name, weapon)
+function special_event_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (true)
+	{
+		event = self util::waittill_any_return( "player_downed", "perk_bought" );
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+
+		if (event == "player_downed")
+		{
+			thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_PLAYER_DOWNED…");
+		}
+
+		if (event == "perk_bought")
+		{
+		    thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_GOTPERK…");
+		}
+
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function powerup_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (true)
+	{
+		event = self util::waittill_any_return( "nuke_triggered" );
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+
+		if (event == "nuke_triggered")
+		{
+			thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_NUKE…");
+		}
+
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function pap_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("pap_taken");
+		self waittill("weapon_change");
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_pap_sub(character_name);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function weapon_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("start_weapon_sub", weapon);
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_weapon_sub(character_name, weapon);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function bgb_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("start_bgb_sub", bgb_string);
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_bgb_sub(character_name, bgb_string);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function magicboxshare_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("start_magicboxshare_sub", weapon_name);
+
+        character_name = self character_randomizer::get_character_name_by_model(self.name);
+		self zm_sub::show_magicboxshare_sub(character_name, weapon_name);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function show_weapon_sub(character_name, weapon)
 {
 	wpname = weapon.displayname;
 	if(!isdefined(weapon.displayname))
@@ -229,17 +358,17 @@ function show_weapon_subtitle(character_name, weapon)
     }
 }
 
-function show_magicboxshare_subtitle(character_name, weapon_name)
+function show_magicboxshare_sub(character_name, weapon_name)
 {
     thread sub_logic(undefined, 2, character_name, "…SUBEVENT_SHAREWP… …" + weapon_name + "… …SUBEVENT_SHAREWPHERE……SUBEVENT_DOT…");
 }
 
-function show_bgb_subtitle(character_name, bgb_string)
+function show_bgb_sub(character_name, bgb_string)
 {
     thread sub_logic(undefined, 2, character_name, "…" + "…SUBEVENT_GOTWP… …" + bgb_string + "……SUBEVENT_DOT…");
 }
 
-function show_pap_subtitle(character_name)
+function show_pap_sub(character_name)
 {
     upgradedweapon = self GetCurrentWeapon();
     if ( !zm_weapons::is_weapon_upgraded( upgradedweapon ) )

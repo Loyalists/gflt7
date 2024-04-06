@@ -239,6 +239,15 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
+    table.insert(f26_local0, {
+        models = {
+            label = "MENU_SUBTITLES",
+            description = "MENU_SUBTITLES_DESC",
+            profileVarName = "subtitles",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
     return f26_local0
 end, true)
 

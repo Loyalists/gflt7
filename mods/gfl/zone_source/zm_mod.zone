@@ -42,6 +42,8 @@ scriptparsetree,scripts/gfl/zm/mule_kick_indicator.gsc
 scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
 scriptparsetree,scripts/gfl/zm/zm_counter.gsc
+scriptparsetree,scripts/gfl/zm/zm_sub.gsc
+scriptparsetree,scripts/gfl/zm/zm_sub.csc
 
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
@@ -50,8 +52,6 @@ scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
 scriptparsetree,scripts/zm/_zm_mod.csc
 scriptparsetree,scripts/zm/_zm_mod.gsc
 scriptparsetree,scripts/zm/infinityloader.gsc
-scriptparsetree,scripts/zm/_zm_sub.gsc
-scriptparsetree,scripts/zm/_zm_sub.csc
 
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc
