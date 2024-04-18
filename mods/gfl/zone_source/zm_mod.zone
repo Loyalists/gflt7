@@ -28,6 +28,7 @@ image,t7_menu_zm_loadscreen_island
 image,t7_menu_zm_loadscreen_genesis
 image,t7_menu_zm_loadscreen_prototype
 image,t7_menu_zm_loadscreen_classified
+image,t7_menu_zm_loadscreen_tuvong
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_zm.gsc

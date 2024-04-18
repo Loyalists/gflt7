@@ -986,7 +986,7 @@ function bot_likes_weapon(weapon)
         weaponNone = level.weaponNone;
 	}
 
-	if ( current_weapon.name == weaponNone.name )
+	if ( current_weapon.name == "defaultweapon" || current_weapon.name == "none" || current_weapon.name == weaponNone.name )
 	{
 		return true;
 	}
@@ -1002,7 +1002,7 @@ function bot_likes_weapon(weapon)
 	}
 
 	// dislikes if bot got an upgraded weapon in hand
-	if ( zm_weapons::is_weapon_upgraded( current_weapon.rootweapon ) && !zm_weapons::is_weapon_upgraded( weapon.rootweapon ) && !zm_weapons::is_wonder_weapon( weapon.rootweapon ) )
+	if ( zm_weapons::is_weapon_upgraded( current_weapon ) && !zm_weapons::is_weapon_upgraded( weapon ) && !zm_weapons::is_wonder_weapon( weapon ) )
 	{
 		return false;
 	}
@@ -1023,7 +1023,7 @@ function bot_likes_weapon(weapon)
 		weapon.rootweapon.inventorytype != "primary" ||
 		weapon.rootweapon.weapClass == "wonder" ||
 		weapon.rootweapon.weapClass == "spread" ||
-		zm_weapons::is_wonder_weapon( weapon.rootweapon )
+		zm_weapons::is_wonder_weapon( weapon )
 	)
 	{
 		return true;

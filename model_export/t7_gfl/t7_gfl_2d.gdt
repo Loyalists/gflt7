@@ -4672,4 +4672,9 @@
 		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_classified.png"
 		"coreSemantic" "Linear4ch"
 	}
+	"t7_menu_zm_loadscreen_tuvong" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_tuvong.png"
+		"coreSemantic" "Linear4ch"
+	}
 }

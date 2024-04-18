@@ -109,7 +109,7 @@ function create_tf_options_defaults() {
     SetDvar("tfoption_bottomless_clip_powerup", 0);
     SetDvar("tfoption_zblood_powerup", 0);
     SetDvar("tfoption_timed_gameplay", 0);
-    SetDvar("tfoption_move_speed", 1);
+    SetDvar("tfoption_move_speed", 100);
     SetDvar("tfoption_tf_enabled", 1);
     SetDvar("tfoption_open_all_doors", 0);
     SetDvar("tfoption_every_box", 0);
@@ -203,15 +203,15 @@ function apply_choices() {
     level.temp_upgraded_time = 30;
 
     //move speed
-    move_speed = GetDvarInt("tfoption_move_speed");
-    if(move_speed != 1) 
+    move_speed = GetDvarInt("tfoption_move_speed", 100);
+    if ( move_speed != 0 && move_speed != 100 ) 
     {
         g_speed = int(190 * (move_speed / 100));
         SetDvar("g_speed", g_speed);
     }
     
     //starting points
-    startpoints = GetDvarInt("tfoption_starting_points");
+    startpoints = GetDvarInt("tfoption_starting_points", 500);
     foreach(player in level.players){
         player zm_score::add_to_player_score(startpoints - 500, false);
     }
@@ -225,7 +225,7 @@ function apply_choices() {
     }
 
     //higher health
-    higher_health = GetDvarInt("tfoption_higher_health");
+    higher_health = GetDvarInt("tfoption_higher_health", 100);
     if ( higher_health != 100) {
         foreach(player in level.players){
             player zombie_utility::set_zombie_var( "player_base_health", higher_health, false);
