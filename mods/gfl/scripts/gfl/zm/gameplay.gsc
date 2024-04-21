@@ -35,6 +35,7 @@
 #using scripts\gfl\zm\zm_bot;
 #using scripts\gfl\zm\zm_counter;
 #using scripts\gfl\zm\zm_sub;
+#using scripts\gfl\zm\coldwar_scoreevent;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\zm\_zm_utility.gsh;
@@ -58,7 +59,7 @@ function init()
 
 	if( GetDvarInt("tfoption_bot", 0) )
 	{
-    	thread zm_bot::main();
+    	zm_bot::init();
 	}
 
     if( GetDvarInt("tfoption_perk_lose", 0) )
@@ -78,7 +79,7 @@ function init()
 
     if( GetDvarInt("tfoption_boxshare", 0) )
     {
-        thread magicboxshare::main();
+        magicboxshare::init();
     }
 
 	if ( GetDvarInt("tfoption_cheats", 0) )
@@ -102,6 +103,11 @@ function init()
 
     if( GetDvarInt("tfoption_zcounter_enabled", 0) ) {
         zm_counter::init();
+    }
+
+    if( GetDvarInt("tfoption_cw_scoreevent", 0) )
+    {
+        coldwar_scoreevent::init();
     }
 
 	if ( level.script == "zm_moon" )

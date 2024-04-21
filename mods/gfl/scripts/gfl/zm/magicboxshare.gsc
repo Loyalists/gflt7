@@ -33,6 +33,11 @@
 
 #namespace magicboxshare;
 
+function init()
+{
+	thread main();
+}
+
 function main()
 {
     level waittill( "initial_blackscreen_passed" );
@@ -70,53 +75,57 @@ function chest_checker()
 	}
 	else
 	{
-		if( !IS_TRUE( self.unbearable_respin ) )
+		if( IS_TRUE( self.unbearable_respin ) )
 		{
-			if(self.grab_weapon_hint && isDefined(self.zbarrier.weapon) && isDefined(self.chest_user) && self.zbarrier.weapon != level.weaponnone && self.zbarrier.weapon.name != "")
+			return;
+		}
+
+		if(self.grab_weapon_hint && isDefined(self.zbarrier.weapon) && isDefined(self.chest_user) && self.zbarrier.weapon != level.weaponnone && self.zbarrier.weapon.name != "")
+		{
+			if( IS_TRUE( self.chest_user HasHacker() ))
 			{
-				readytoshare = self.zbarrier.weapon;
-				if( !IS_TRUE( self.chest_user HasHacker() ))
-				{
-					if(!isDefined(self.chest_user.shareweaponhint))
-					{
-						if(self.chest_user issplitscreen())
-						{
-							self.chest_user thread zm_equipment::show_hint_text("Press ^3[{+melee}]^7 to share the weapon", 8, 1, 150);
-						}
-						else
-						{
-							self.chest_user thread zm_equipment::show_hint_text("Press ^3[{+melee}]^7 to share the weapon", 8);
-						}
-						self.chest_user.shareweaponhint = 1;
-					}
-
-					while (!self.chest_user meleeButtonPressed()) 
-					{
-						WAIT_SERVER_FRAME;
-					}
-					self thread magicweaponsharetimeout();
-
-					if(isdefined(readytoshare.displayname) && readytoshare.displayname != "")
-					{
-						name = readytoshare.displayname;
-					}
-					else
-					{
-						name = readytoshare.name;
-					}
-
-					self.chest_user notify("start_magicboxshare_sub", name);
-					self thread spawnshareweapon(readytoshare,self.chest_user,self);
-					self notify( "trigger", self ); 
-					self.grab_weapon_hint = false;
-					self.zbarrier notify( "weapon_grabbed" );
-					self notify( "user_grabbed_weapon" );
-					self.zbarrier thread closebox();
-					self.closed_by_emp = true;
-					WAIT_SERVER_FRAME;
-					self.closed_by_emp = false;
-				}
+				return;
 			}
+
+			readytoshare = self.zbarrier.weapon;
+			if(!isDefined(self.chest_user.shareweaponhint))
+			{
+				if(self.chest_user issplitscreen())
+				{
+					self.chest_user thread zm_equipment::show_hint_text("Press ^3[{+melee}]^7 to share the weapon", 8, 1, 150);
+				}
+				else
+				{
+					self.chest_user thread zm_equipment::show_hint_text("Press ^3[{+melee}]^7 to share the weapon", 8);
+				}
+				self.chest_user.shareweaponhint = 1;
+			}
+
+			while (!self.chest_user meleeButtonPressed()) 
+			{
+				WAIT_SERVER_FRAME;
+			}
+			self thread magicweaponsharetimeout();
+
+			if(isdefined(readytoshare.displayname) && readytoshare.displayname != "")
+			{
+				name = readytoshare.displayname;
+			}
+			else
+			{
+				name = readytoshare.name;
+			}
+
+			self.chest_user notify("start_magicboxshare_sub", name);
+			self thread spawnshareweapon(readytoshare,self.chest_user,self);
+			self notify( "trigger", self ); 
+			self.grab_weapon_hint = false;
+			self.zbarrier notify( "weapon_grabbed" );
+			self notify( "user_grabbed_weapon" );
+			self.zbarrier thread closebox();
+			self.closed_by_emp = true;
+			WAIT_SERVER_FRAME;
+			self.closed_by_emp = false;
 		}
 	}
 }

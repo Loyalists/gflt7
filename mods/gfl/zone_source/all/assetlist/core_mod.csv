@@ -721,6 +721,7 @@ xmodel,p7_zm_sta_figure_samantha_01
 xmodel,p7_zm_teddybear
 xmodel,p7_zm_teddybear_shanks
 xmodel,p7_zm_teddybear_sitting
+xmodel,p7_zm_zod_magic_box_tentacle_teddy
 xmodel,t7_gfl_9a91_body_mp
 xmodel,t7_gfl_9a91_fb
 xmodel,t7_gfl_9a91_fb_mp
@@ -3394,6 +3395,8 @@ rawfile,ui/uieditor/menus/pc/tfoptions_weapons.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_zombies.lua
 rawfile,ui/uieditor/menus/zm/zmmapselection.lua
 rawfile,ui/uieditor/widgets/lobby/common/fe_3dtitleinternal.lua
+rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscr.lua
+rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscrfeeditem.lua
 rawfile,ui/uieditor/widgets/pc/startmenu/dropdown/tfoptiondropdown.lua
 rawfile,ui/uieditor/widgets/pc/startmenu/dropdown/tfoptiondropdownitem.lua
 rawfile,ui/uieditor/widgets/pc/tfoptions/tfoptions_bgb_p1.lua
@@ -3424,6 +3427,7 @@ stringtable,gamedata/stats/mp/statsmilestones3.csv
 stringtable,gamedata/stats/zm/statsmilestones3.csv
 stringtable,gamedata/stats/zm/zm_statstable.csv
 stringtable,gamedata/tables/common/music_player.csv
+stringtable,gamedata/tables/zm/scoreinfo.csv
 stringtable,gamedata/weapons/common/attachmenttable.csv
 stringtable,gamedata/weapons/cp/cp_gunlevels.csv
 stringtable,gamedata/weapons/zm/zm_gunlevels.csv

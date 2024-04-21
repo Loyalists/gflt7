@@ -31,7 +31,6 @@ localize,menu
 
 stringtable,credits_pc.csv
 stringtable,gamedata/gfl/nametable.csv
-stringtable,gamedata/tables/common/music_player.csv
 stringtable,gamedata/stats/cp/cp_statstable.csv
 stringtable,gamedata/stats/mp/mp_statstable.csv
 stringtable,gamedata/stats/zm/zm_statstable.csv
@@ -43,6 +42,8 @@ stringtable,gamedata/weapons/cp/cp_gunlevels.csv
 stringtable,gamedata/weapons/zm/zm_gunlevels.csv
 stringtable,gamedata/loot/mplootitems.csv
 //stringtable,gamedata/loot/zmlootitems.csv
+stringtable,gamedata/tables/common/music_player.csv
+stringtable,gamedata/tables/zm/scoreinfo.csv
 
 rawfile,gamedata/configs/common/ragdoll.cfg
 rawfile,gamedata/configs/cp/ragdoll.cfg
@@ -105,6 +106,7 @@ rawfile,ui/t7/utility/LobbyUtility_og.luac
 rawfile,ui/t6/CoDBase.lua
 rawfile,ui/t6/CoDBase_og.luac
 
+// loading screen
 rawfile,ui_mp/T6/HUD/Loading.lua
 rawfile,ui_mp/T6/HUD/Loading_og.luac
 
@@ -112,8 +114,10 @@ rawfile,ui_mp/T6/HUD/Loading_og.luac
 rawfile,ui/uieditor/menus/CharacterCustomization/PersonalizeCharacter.lua
 rawfile,ui/uieditor/menus/BlackMarket.lua
 
-rawfile,ui/uieditor/menus/CAC/ChooseClass_InGame.lua
 rawfile,ui/uieditor/menus/CharacterCustomization/ChooseZMCharacterLoadout.lua
+
+// cp cac fix
+rawfile,ui/uieditor/menus/CAC/ChooseClass_InGame.lua
 
 rawfile,ui/HUDInject/HUDInject.lua
 rawfile,ui/t7/utility/SavingDataUtility.lua
@@ -163,6 +167,10 @@ rawfile,ui/uieditor/widgets/pc/tfoptions/TFOptions_bgb_p1.lua
 
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
+
+// score event
+rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscr.lua
+rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscrfeeditem.lua
 
 // character,c_zur_terrorist_1
 // character,c_zur_terrorist_2
@@ -1205,3 +1213,4 @@ xmodel,p7_zm_der_magic_box_fake
 xmodel,p7_zm_der2_teddybear
 xmodel,p7_zm_sh18_teddybear
 xmodel,p7_zm_asc_teddybear_shanks
+xmodel,p7_zm_zod_magic_box_tentacle_teddy

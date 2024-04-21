@@ -3,15 +3,17 @@
 //CREATED BY FROST ICEFORGE
 //ADDITIONAL CREDIT TO MADGAZ FOR CRUSADER ALE SCRIPTS WHICH I MODIFIED
 //
+#using scripts\shared\system_shared;
+#using scripts\shared\util_shared;
+#using scripts\shared\array_shared;
+#using scripts\shared\callbacks_shared;
+#using scripts\shared\scoreevents_shared;
+
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_powerups;
 #using scripts\zm\_zm_utility;
 #using scripts\zm\_zm_weapons;
-#using scripts\shared\system_shared;
-#using scripts\shared\util_shared;
 #using scripts\zm\_zm_powerup_carpenter;
-#using scripts\shared\array_shared;
-#using scripts\shared\callbacks_shared;
 #using scripts\zm\_zm_weap_riotshield; 
 
 function __init__() {}
@@ -44,6 +46,11 @@ function carpenter_upgrade()
 					player riotshield::player_damage_shield( -1500 );
 					player giveMaxAmmo( shield_name + "_upgraded" );
 				} 
+
+				if ( weap.isRiotshield )
+				{
+					scoreevents::processScoreEvent( "shield_fix", self );
+				}
 			}
 		}
 		

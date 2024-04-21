@@ -2817,6 +2817,7 @@ function weapon_give( weapon, is_upgrade = false, magic_box = false, nosound = f
 	if ( !IS_TRUE( nosound ) )
 	{
 		self notify("start_weapon_sub", weapon);
+		self notify("start_scoreevent_weapon");
 	}
 
 	weapon = self give_build_kit_weapon( weapon );

@@ -20,14 +20,18 @@
 
 #insert scripts\shared\shared.gsh;
 
+function init()
+{
+	SetDvar("bot_mode", "me");
+	SetDvar("bot_difficulty","3");
+
+	thread main();
+}
+
 function main()
 {
 	wait 0.1;
-    Modvar("sb","");
-	SetDvar("bot_mode", "me");
-	SetDvar("bot_difficulty","3");
 	level.getBotSettings = &get_bot_settings;
-    level.botsettings.headshotweight = 90;
 	level.onbotspawned = &bot_spawn;
 	level.botthreatengage = &engage_threat;
 	level.onbotdamage = &bot_got_damage;
@@ -35,6 +39,7 @@ function main()
 	level.botthreatlost = &bot_idle;
 	level.botprecombat = &bot_idle;
 	level.botgetthreats = &find_closet_zombie;
+    level.botsettings.headshotweight = 90;
 	level.botsettings.allowmelee = false;
 	level.botsettings.meleerange = 0;
 	level.botsettings.meleerangesq = 0;
@@ -44,20 +49,10 @@ function main()
 	level.botsettings.yawspeed = 1000;
 	level.botsettings.pitchsensitivity = 5000;
 	level.botsettings.yawsensitivity = 5000;
-	
+
 	thread wait_for_downed();
 	thread bot_cmd();
 	thread server_auto_bot_spawn();
-
-    while(1)
-    {
-        if(GetDvarString("sb") != "")
-        {
-            bot = AddTestClient();
-        }
-        SetDvar("sb", "");
-        wait 0.1;
-    }
 }
 
 function get_bot_settings()
@@ -85,153 +80,179 @@ function get_bot_settings()
 
 function bot_cmd()
 {
+	level endon("end_game");
+
 	Modvar("botc", "");
 	while(1)
     {
-        if(GetDvarString("botc") != "")
+        if(GetDvarString("botc") == "")
         {
-            name_state = GetDvarString("botc");
-            tokenized = StrTok(name_state, " ");
-            gname = ToLower(tokenized[1]);
-            playername = ToLower(tokenized[0]);
-            if (ToLower(name_state) == "tp")
+			wait 0.05;
+			continue;
+		}
+
+		name_state = GetDvarString("botc");
+		tokenized = StrTok(name_state, " ");
+		gname = ToLower(tokenized[1]);
+		playername = ToLower(tokenized[0]);
+
+		if (ToLower(name_state) == "tp")
+		{
+			realplayer = get_closest_alive_player();
+			foreach(player in GetPlayers())
 			{
-				realplayer = mplayer();
-				foreach(player in GetPlayers())
+				if(player IsTestClient())
 				{
-					if(player IsTestClient())
-					{
-						player SetOrigin(realplayer.origin);
-					}
+					player SetOrigin(realplayer.origin);
 				}
-				iPrintLnBold("Bot Teleporter");
-            }
-            if (ToLower(name_state) == "me")
+			}
+			iPrintLnBold("Bot Teleporter");
+		}
+
+		if (ToLower(name_state) == "me")
+		{
+			SetDvar("bot_mode", "me");
+			iPrintLnBold("Bot On Me");
+		}
+
+		if (ToLower(name_state) == "score")
+		{
+			foreach(player in GetPlayers())
 			{
-				SetDvar("bot_mode", "me");
-				iPrintLnBold("Bot On Me");
-            }
-            if (ToLower(name_state) == "score")
-			{
-				foreach(player in GetPlayers())
+				if(player IsTestClient())
 				{
-					if(player IsTestClient())
-					{
-						player.score = 100000;
-					}
+					player.score = 100000;
 				}
-				iPrintLnBold("Bot Score");
 			}
-            if (ToLower(name_state) == "ungod")
+			iPrintLnBold("Bot Score");
+		}
+
+		if (ToLower(name_state) == "ungod")
+		{
+			foreach(player in GetPlayers())
 			{
-				foreach(player in GetPlayers())
+				if(player IsTestClient())
 				{
-					if(player IsTestClient())
-					{
-						player DisableInvulnerability();
-					}
+					player DisableInvulnerability();
 				}
-				iPrintLnBold("Bot unGod");
 			}
-            if (ToLower(name_state) == "god")
+			iPrintLnBold("Bot unGod");
+		}
+
+		if (ToLower(name_state) == "god")
+		{
+			foreach(player in GetPlayers())
 			{
-				foreach(player in GetPlayers())
+				if(player IsTestClient())
 				{
-					if(player IsTestClient())
-					{
-						player EnableInvulnerability();
-					}
+					player EnableInvulnerability();
 				}
-				iPrintLnBold("Bot God");
 			}
-            if (playername == "gun")
+			iPrintLnBold("Bot God");
+		}
+
+		if (playername == "gun")
+		{
+			if(gname != "")
 			{
-				if(gname != "")
-				{
-					thread bot_give_weapon(GetWeapon(gname));
-				}
-				else
-				{
-					thread bot_give_weapon(GetWeapon("lmg_cqb_upgraded"));
-				}
-				iPrintLnBold("Bot GiveWeapon");
+				thread bot_give_weapon(GetWeapon(gname));
 			}
-            if (ToLower(name_state) == "look")
+			else
 			{
-				thread bot_look();
-				iPrintLnBold("Bot LookAt");
+				thread bot_give_weapon(GetWeapon("lmg_cqb_upgraded"));
 			}
-            if (ToLower(name_state) == "tap")
+			iPrintLnBold("Bot GiveWeapon");
+		}
+
+		if (ToLower(name_state) == "look")
+		{
+			thread bot_look();
+			iPrintLnBold("Bot LookAt");
+		}
+
+		if (ToLower(name_state) == "tap")
+		{
+			foreach(player in GetPlayers())
 			{
-				foreach(player in GetPlayers())
+				if(player IsTestClient())
 				{
-					if(player IsTestClient())
-					{
-						player bottapbutton(3);
-					}
+					player bottapbutton(3);
 				}
-				iPrintLnBold("Bot Press F");
 			}
-            if (ToLower(name_state) == "stop")
+			iPrintLnBold("Bot Press F");
+		}
+
+		if (ToLower(name_state) == "stop")
+		{
+			thread stop_bots();
+			iPrintLnBold("Bot Stoped");
+		}
+
+		if (ToLower(name_state) == "melee")
+		{
+			foreach(player in GetPlayers())
 			{
-				thread stop_bots();
-				iPrintLnBold("Bot Stoped");
+				if(player IsTestClient())
+				{
+					player bottapbutton(2);
+				}
 			}
-            if (ToLower(name_state) == "melee")
+			iPrintLnBold("Bot Press Melee");
+		}
+
+		if (ToLower(name_state) == "fire")
+		{	
+			foreach(bot in getPlayers()) 
 			{
-				foreach(player in GetPlayers())
+				if(bot IsTestClient())
 				{
-					if(player IsTestClient())
-					{
-						player bottapbutton(2);
-					}
+					bot bottapbutton(0);
 				}
-				iPrintLnBold("Bot Press Melee");
 			}
-            if (ToLower(name_state) == "fire")
-			{	
-				foreach(bot in getPlayers()) 
-				{
-					if(bot IsTestClient())
-					{
-						bot bottapbutton(0);
-					}
-				}
-				iPrintLnBold("Bot Fire Once");
-			}
-            if (ToLower(name_state) == "firel")
-			{				
-				foreach(bot in getPlayers()) 
-				{
-					if(bot IsTestClient())
-					{
-						bot botpressbutton(0);
-					}
-				}
-				iPrintLnBold("Bot Fire loop");
-			}
-            if (ToLower(name_state) == "kill")
+			iPrintLnBold("Bot Fire Once");
+		}
+
+		if (ToLower(name_state) == "firel")
+		{				
+			foreach(bot in getPlayers()) 
 			{
-				SetDvar("bot_mode", "self");
-				level notify("bots_fire");
-				foreach(player in GetPlayers())
+				if(bot IsTestClient())
 				{
-					if(player IsTestClient())
-					{
-						player bot_combat::update_threat( true );
-						player bot_combat::update_threat();
-						player setMoveSpeedScale(1);
-					}
+					bot botpressbutton(0);
 				}
-				iPrintLnBold("Bot Killing");
 			}
-            if (ToLower(name_state) == "kick")
+			iPrintLnBold("Bot Fire loop");
+		}
+
+		if (ToLower(name_state) == "kill")
+		{
+			SetDvar("bot_mode", "self");
+			level notify("bots_fire");
+			foreach(player in GetPlayers())
 			{
-				thread throwEm();
-				iPrintLnBold("Bot kicked");
+				if(player IsTestClient())
+				{
+					player bot_combat::update_threat( true );
+					player bot_combat::update_threat();
+					player setMoveSpeedScale(1);
+				}
 			}
-            SetDvar("botc", "");
-        } 
+			iPrintLnBold("Bot Killing");
+		}
+
+		if (ToLower(name_state) == "kick")
+		{
+			thread throwEm();
+			iPrintLnBold("Bot kicked");
+		}
+
+		if (ToLower(name_state) == "add")
+		{
+			AddTestClient();
+			iPrintLnBold("Bot added");
+		}
+
+		SetDvar("botc", "");
 		wait 0.05;
     }
 }
@@ -268,7 +289,7 @@ function bot_look()
 	{
 		if(bot IsTestClient())
 		{
-			player = mplayer();
+			player = get_closest_alive_player();
 			bot BotLookAtPoint( player.origin + AnglesToForward(player.angles) * 500000 );
 		}
 	}
@@ -310,7 +331,7 @@ function server_auto_bot_spawn()
 	players = get_real_players();
 	while(1)
 	{
-		bots = GetBotPlayers();
+		bots = get_bot_players();
 		if( server_bot == bots.size )
 		{
 			break;
@@ -337,7 +358,7 @@ function server_auto_bot_spawn()
 	}
 }
 
-function GetBotPlayers()
+function get_bot_players()
 {
 	bots = [];
 	foreach( player in GetPlayers())
@@ -467,14 +488,14 @@ function set_bot_goal()
 
 function follow_closest_player()
 {
-	player = self mplayer();
+	player = self get_closest_alive_player();
 	self BotSetGoal(player.origin, 120);
 }
 
 function is_close_to_any_player()
 {
 	dist = self.follow_player_distance;
-	player = self mplayer();
+	player = self get_closest_alive_player();
 	if ( !isdefined(player) || player == self )
 	{
 		return false;
@@ -691,7 +712,7 @@ function bot_going_to_reviving(downed)
 	}
 }
 
-function mplayer()
+function get_closest_alive_player()
 {	
 	level endon( "game_ended" );
     players = get_alive_players();
@@ -704,15 +725,6 @@ function mplayer()
 	{
 		return self;
 	}
-}
-
-function mplayer_origin()
-{
-	player = self mplayer();
-	// startpos = player.origin;
-	// endpos = player.origin - (0,0,10000);
-	// return BulletTrace(startpos,endpos,true,false,false,false)["position"];
-	return player.origin;
 }
 
 function bot_spawn()
@@ -929,7 +941,7 @@ function pesSuit()
 	wait(3);
 	while(true) 
 	{
-		player = self mplayer();
+		player = self get_closest_alive_player();
 		clothes = self zm_equipment::get_player_equipment();
 		suit = player zm_equipment::get_player_equipment();
 		if(clothes != suit && player.sessionstate == "playing") 
@@ -945,7 +957,7 @@ function pesSuit()
 	dont_have_hero_weapon = 1;
 	while(dont_have_hero_weapon)
 	{
-		player = self mplayer();
+		player = self get_closest_alive_player();
 		if(zm_utility::is_hero_weapon( player zm_utility::get_player_hero_weapon() ) && player gadgetpowerget(0) == 100)
 		{
 			self zm_weapons::weapon_give(player zm_utility::get_player_hero_weapon(),undefined,undefined,true);
@@ -1002,9 +1014,12 @@ function bot_likes_weapon(weapon)
 	}
 
 	// dislikes if bot got an upgraded weapon in hand
-	if ( zm_weapons::is_weapon_upgraded( current_weapon ) && !zm_weapons::is_weapon_upgraded( weapon ) && !zm_weapons::is_wonder_weapon( weapon ) )
+	if ( zm_weapons::is_weapon_upgraded( current_weapon ) || zm_weapons::is_wonder_weapon( current_weapon ) )
 	{
-		return false;
+		if ( !zm_weapons::is_weapon_upgraded( weapon ) && !zm_weapons::is_wonder_weapon( weapon ) )
+		{
+			return false;
+		}
 	}
 
 	target_weapon_cost = int(zm_weapons::get_weapon_cost( weapon.rootweapon ));
@@ -1017,13 +1032,16 @@ function bot_likes_weapon(weapon)
 		return true;
 	}
 
+	if ( zm_weapons::is_wonder_weapon( weapon ) || weapon.rootweapon.weapClass == "wonder" )
+	{
+		return true;
+	}
+
 	if(
 		weapon.rootweapon.weapClass == "rocketlauncher" ||
 		weapon.rootweapon.weapClass == "mg" ||
 		weapon.rootweapon.inventorytype != "primary" ||
-		weapon.rootweapon.weapClass == "wonder" ||
-		weapon.rootweapon.weapClass == "spread" ||
-		zm_weapons::is_wonder_weapon( weapon )
+		weapon.rootweapon.weapClass == "spread"
 	)
 	{
 		return true;

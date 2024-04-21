@@ -75,18 +75,19 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_ZCOUNTER",
-            description = "TF_ZCOUNTER_DESC",
-            profileVarName = "zcounter_enabled",
-            widgetType = "tfcheckbox"
+            label = "MENU_FRIENDLYFIRE",
+            description = "TF_FRIENDLYFIRE_DESC",
+            profileVarName = "friendlyfire",
+            datasource = "TFOptionsFriendlyFire",
+            widgetType = "dropdown"
         },
-        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_NO_ROUND_DELAY",
-            description = "TF_NO_ROUND_DELAY_DESC",
-            profileVarName = "no_round_delay",
+            label = "TF_ZCOUNTER",
+            description = "TF_ZCOUNTER_DESC",
+            profileVarName = "zcounter_enabled",
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
@@ -102,6 +103,15 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
+            label = "TF_NO_ROUND_DELAY",
+            description = "TF_NO_ROUND_DELAY_DESC",
+            profileVarName = "no_round_delay",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
             label = "TF_TIMED_GAMEPLAY",
             description = "TF_TIMED_GAMEPLAY_DESC",
             profileVarName = "timed_gameplay",
@@ -111,18 +121,18 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_OPEN_ALL_DOORS",
-            description = "TF_OPEN_ALL_DOORS_DESC",
-            profileVarName = "open_all_doors",
+            label = "TF_EVERY_BOX",
+            description = "TF_EVERY_BOX_DESC",
+            profileVarName = "every_box",
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_EVERY_BOX",
-            description = "TF_EVERY_BOX_DESC",
-            profileVarName = "every_box",
+            label = "TF_OPEN_ALL_DOORS",
+            description = "TF_OPEN_ALL_DOORS_DESC",
+            profileVarName = "open_all_doors",
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
@@ -147,13 +157,12 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "MENU_FRIENDLYFIRE",
-            description = "TF_FRIENDLYFIRE_DESC",
-            profileVarName = "friendlyfire",
-            datasource = "TFOptionsFriendlyFire",
-            widgetType = "dropdown"
+            label = "TF_CW_SCOREEVENT",
+            description = "TF_CW_SCOREEVENT_DESC",
+            profileVarName = "cw_scoreevent",
+            widgetType = "tfcheckbox"
         },
-        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
     return f26_local0
 end, true)

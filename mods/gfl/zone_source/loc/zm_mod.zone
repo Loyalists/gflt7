@@ -101,3 +101,4 @@ ignore_missing_shipped,zm_patch
 sound,zm_mod
 localize,gfl_zm
 localize,subevent
+localize,scoreevent

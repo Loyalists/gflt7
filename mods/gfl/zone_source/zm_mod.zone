@@ -11,6 +11,7 @@ sound,zm_mod
 
 localize,gfl_zm
 localize,subevent
+localize,scoreevent
 
 image,img_loadscreen_zm_factory
 image,t7_menu_zm_loadscreen_sumpf
@@ -45,6 +46,7 @@ scriptparsetree,scripts/gfl/zm/zm_bot.gsc
 scriptparsetree,scripts/gfl/zm/zm_counter.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.csc
+scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_ffotd.csc

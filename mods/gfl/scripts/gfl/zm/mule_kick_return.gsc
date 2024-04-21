@@ -215,7 +215,7 @@ function return_mulekick_weapon(switch_to_weapon = false)
 	if(isDefined(weapon) && self GetWeaponsListPrimaries().size <= 2 && zm_weapons::is_weapon_or_base_included( weapon ))
 	{
 		self zm_weapons::give_build_kit_weapon( weapon );
-		scoreevents::processScoreEvent( "getbackmulekick" , self );
+		scoreevents::processScoreEvent( "getbackmulekick", self );
 		if (isDefined(level.mulekick_stock[xuid]))
 		{
 			stock_ammo = level.mulekick_stock[xuid];

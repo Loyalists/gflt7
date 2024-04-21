@@ -136,6 +136,7 @@ function create_tf_options_defaults() {
     SetDvar("tfoption_tdoll_zombie", 0);
     SetDvar("tfoption_bgb_off", 0);
     SetDvar("tfoption_subtitles", 0);
+    SetDvar("tfoption_cw_scoreevent", 0);
 }
 
 function pre_load()

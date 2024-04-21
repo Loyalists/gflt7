@@ -86,6 +86,26 @@ DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", functi
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
+            label = "TF_BGB_COST",
+            description = "TF_BGB_COST_DESC",
+            profileVarName = "bgb_cost",
+            datasource = "TFOptionsBGBCost",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_BGB_LIMIT",
+            description = "TF_BGB_LIMIT_DESC",
+            profileVarName = "bgb_uses",
+            datasource = "TFOptionsBGBUses",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+    })
+    table.insert(f26_local0, {
+        models = {
             label = "TF_BGB_OFF",
             description = "TF_BGB_OFF_DESC",
             profileVarName = "bgb_off",
@@ -110,26 +130,6 @@ DataSources.TFOptionsBGB = DataSourceHelpers.ListSetup("PC.TFOptionsBGB", functi
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_BGB_COST",
-            description = "TF_BGB_COST_DESC",
-            profileVarName = "bgb_cost",
-            datasource = "TFOptionsBGBCost",
-            widgetType = "dropdown"
-        },
-        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_BGB_LIMIT",
-            description = "TF_BGB_LIMIT_DESC",
-            profileVarName = "bgb_uses",
-            datasource = "TFOptionsBGBUses",
-            widgetType = "dropdown"
-        },
-        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
     })
     return f26_local0
 end, true)

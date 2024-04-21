@@ -90,6 +90,7 @@ scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.gsc
 scriptparsetree,scripts/gfl/zm/character_randomizer.csc
 scriptparsetree,scripts/gfl/zm/character_randomizer.gsc
 scriptparsetree,scripts/gfl/zm/character_zm.gsc
+scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 scriptparsetree,scripts/gfl/zm/gameplay.csc
 scriptparsetree,scripts/gfl/zm/gameplay.gsc
 scriptparsetree,scripts/gfl/zm/magicboxshare.gsc
