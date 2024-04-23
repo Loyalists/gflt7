@@ -82,23 +82,9 @@ function init()
         magicboxshare::init();
     }
 
-	if ( GetDvarInt("tfoption_cheats", 0) )
-	{
-		thread enable_cheats();
-	}
-    else
-    {
-        thread disable_cheats();
-    }
-
     if( GetDvarInt("tfoption_friendlyfire", 0) )
     {
         zm::register_player_friendly_fire_callback(&friendlyfire_damage);
-    }
-
-    if( GetDvarInt("tfoption_bgb_off", 0) )
-    {
-        thread disable_bgb();
     }
 
     if( GetDvarInt("tfoption_zcounter_enabled", 0) ) {
@@ -110,13 +96,11 @@ function init()
         coldwar_scoreevent::init();
     }
 
-	if ( level.script == "zm_moon" )
-	{
-        level.zombiemode_gasmask_reset_player_model = &gasmask_reset_player_model;
-        level.zombiemode_gasmask_reset_player_viewmodel = &gasmask_reset_player_set_viewmodel;
-        level.zombiemode_gasmask_change_player_headmodel = &gasmask_change_player_headmodel;
-        level.zombiemode_gasmask_set_player_model = &gasmask_reset_player_model;
-	}
+    thread map_fixes();
+    thread after_blackscreen_setup();
+
+    level.player_too_many_weapons_monitor_func = &player_too_many_weapons_monitor;
+    level.player_intersection_tracker_override = &player_intersection_tracker_override;
 }
 
 function on_player_connecting()
@@ -140,15 +124,57 @@ function on_player_spawned()
 	self endon("bled_out");
 }
 
+function map_fixes()
+{
+	if ( level.script == "zm_moon" )
+	{
+        level.zombiemode_gasmask_reset_player_model = &gasmask_reset_player_model;
+        level.zombiemode_gasmask_reset_player_viewmodel = &gasmask_reset_player_set_viewmodel;
+        level.zombiemode_gasmask_change_player_headmodel = &gasmask_change_player_headmodel;
+        level.zombiemode_gasmask_set_player_model = &gasmask_reset_player_model;
+	}
+}
+
+function after_blackscreen_setup()
+{
+	level endon("game_ended");
+	level endon("end_game");
+	level waittill( "initial_blackscreen_passed" ); 
+
+    level.player_too_many_weapons_monitor_func = &player_too_many_weapons_monitor;
+    level.player_intersection_tracker_override = &player_intersection_tracker_override;
+
+    if( GetDvarInt("tfoption_bgb_off", 0) )
+    {
+        thread disable_bgb();
+    }
+
+	if ( GetDvarInt("tfoption_cheats", 0) )
+	{
+		thread enable_cheats();
+	}
+    else
+    {
+        thread disable_cheats();
+    }
+}
+
+function void()
+{
+}
+
+function player_intersection_tracker_override(other_player)
+{
+    return true;
+}
+
 function enable_cheats()
 {
-	level waittill( "initial_blackscreen_passed" ); 
     SetDvar("sv_cheats", 1);
 }
 
 function disable_cheats()
 {
-	level waittill( "initial_blackscreen_passed" ); 
     SetDvar("sv_cheats", 0);
 }
 
@@ -179,8 +205,6 @@ function revive_at_end_of_round()
 
 function disable_bgb()
 {
-    level waittill( "initial_blackscreen_passed" ); 
-
     bgbs = GetEntArray("bgb_machine_use", "targetname");
     foreach(bgb in bgbs)
     {
@@ -275,3 +299,90 @@ function friendlyfire_logic( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDe
     }
 }
 
+function player_too_many_weapons_monitor()
+{
+	self notify( "stop_player_too_many_weapons_monitor" );
+	self endon( "stop_player_too_many_weapons_monitor" );
+	self endon( "disconnect" );
+	level endon("game_ended");
+	level endon( "end_game" );
+
+	// load balancing
+	scalar = self.characterindex;
+	
+	if ( !isdefined( scalar ) )
+	{
+		scalar = self GetEntityNumber();
+	}
+	
+	wait( (0.15 * scalar) );
+
+    too_many_weapons_monitor_wait_time = 3;
+	while ( isdefined(self) )
+	{
+		if ( self zm_utility::has_powerup_weapon() || self laststand::player_is_in_laststand() || self.sessionstate == "spectator" || isdefined( self.laststandpistol ))
+		{
+			wait( too_many_weapons_monitor_wait_time );
+			continue;
+		}
+		weapon_limit = zm_utility::get_player_weapon_limit( self );
+
+		primaryWeapons = self GetWeaponsListPrimaries();
+
+		if ( primaryWeapons.size > weapon_limit )
+		{
+			self zm_weapons::take_fallback_weapon();
+			primaryWeapons = self GetWeaponsListPrimaries();
+		}
+
+		primary_weapons_to_take = [];
+		for ( i = 0; i < primaryWeapons.size; i++ )
+		{
+			if ( zm_weapons::is_weapon_included( primaryWeapons[i] ) || zm_weapons::is_weapon_upgraded( primaryWeapons[i] ) )
+			{
+				primary_weapons_to_take[primary_weapons_to_take.size] = primaryWeapons[i];
+			}
+		}
+
+		if ( primary_weapons_to_take.size > weapon_limit )
+		{
+			if ( !isdefined( level.player_too_many_weapons_monitor_callback ) || self [[level.player_too_many_weapons_monitor_callback]]( primary_weapons_to_take ) )
+			{
+				//track the cheaters
+				//self zm_stats::increment_map_cheat_stat( "cheat_too_many_weapons" );
+				//self zm_stats::increment_client_stat( "cheat_too_many_weapons",false );
+				//self zm_stats::increment_client_stat( "cheat_total",false );
+				
+				
+				//self thread player_too_many_weapons_monitor_takeaway_sequence( primary_weapons_to_take );
+				self playlocalsound( level.zmb_laugh_alias );
+				foreach(weapon in primaryWeapons) 
+				{
+					if(weapon.name == "defaultweapon")
+					{
+						self takeWeapon(weapon);
+					}
+				}
+				if(isinarray(primary_weapons_to_take, self.currentweapon))
+				{
+					self takeweapon(self.currentweapon);
+				}
+				else
+				{
+					self takeweapon(primary_weapons_to_take[0]);
+				}
+				self SwitchToWeaponImmediate(self GetWeaponsListPrimaries()[0]);
+				wait(1);
+				if(!self getweaponslistprimaries().size)
+				{
+					self zm_utility::give_start_weapon( true );
+				}
+
+				//self waittill( "player_too_many_weapons_monitor_takeaway_sequence_done" );
+			}
+		}
+
+		//self waittill("weapon_change_complete");
+		wait( too_many_weapons_monitor_wait_time );
+	}
+}

@@ -98,14 +98,20 @@ function bot_cmd()
 
 		if (ToLower(name_state) == "tp")
 		{
-			realplayer = get_closest_alive_player();
-			foreach(player in GetPlayers())
+			realplayer = get_teleport_target();
+			if ( isdefined(realplayer) )
 			{
-				if(player IsTestClient())
+				foreach(player in GetPlayers())
 				{
+					if(!player IsTestClient())
+					{
+						continue;
+					}
+
 					player SetOrigin(realplayer.origin);
 				}
 			}
+
 			iPrintLnBold("Bot Teleporter");
 		}
 
@@ -409,6 +415,24 @@ function get_alive_players()
 	return players;
 }
 
+function get_teleport_target()
+{
+	alive_players = get_alive_players();
+	foreach( player in alive_players)
+	{
+		if( player IsHost() )
+		{
+			return player;
+		}
+	}
+
+	if ( alive_players.size > 0 ) {
+		return alive_players[0];
+	}
+
+	return undefined;
+}
+
 function auto_bot_spawn()
 {
 	level endon("end_game");
@@ -509,16 +533,6 @@ function is_close_to_any_player()
 	return true;
 }
 
-function bot_health()
-{	
-	level endon( "game_ended" );
-	self endon("disconnect");
-	self endon("bled_out");
-
-	self thread health_regen();
-	self thread health_boost();
-}
-
 function health_regen()
 {	
 	level endon( "game_ended" );
@@ -540,10 +554,11 @@ function regain_full_health()
 	self endon("damage");
 
 	wait(3); 
-	if (!isalive(self))
+	if (!isdefined(self) || !isalive(self))
 	{
 		return;
 	}
+	
 	self.health = self.maxhealth;
 }
 
@@ -741,7 +756,9 @@ function area_revive()
 {
 	self notify("area_revive");
 	self endon("area_revive");
+	level endon("game_ended");
 	self endon("disconnect");
+	self endon("bled_out");
 
 	while(1)
 	{	
@@ -779,30 +796,35 @@ function bot_setup()
 	self endon("bot_setup");
 	level endon("game_ended");
 	self endon("disconnect");
+	self endon("bled_out");
 
 	self.box_share_distance = 512;
 	self.follow_player_distance = 240;
 	self.magic_box_distance = 3000;
 	self.wallbuy_distance = 300;
 	self.open_door_distance = 1500;
+
 	self thread pesSuit();
-	self thread bot_health();
+	self thread health_regen();
+	self thread health_boost();
+
 	self zm_perks::give_perk( "specialty_quickrevive", false );
 	self zm_perks::give_perk( "specialty_fastreload", false );
 	self zm_perks::give_perk( "specialty_armorvest", false );
 	self zm_perks::give_perk( "specialty_staminup", false );
 	self zm_perks::give_perk( "specialty_doubletap2", false );
 	self zm_perks::give_perk( "specialty_deadshot", false );
-	//foreach(weapon in self GetWeaponsListPrimaries())
-	//{
-	//	//self takeweapon(weapon);
-	//}
-    //self giveweapon(Getweapon("bowie_knife"));
-    //self GiveWeapon(GetWeapon("lmg_light","fastreload","grip","reddot","ir","stalker","steadyaim","quickdraw","extclip"));
-	//self SetSpawnWeapon(self GetWeaponsListPrimaries()[0]);
-    //self EnableInvulnerability();
 
-    while(1)
+	self thread bot_perk_think();
+}
+
+function bot_perk_think()
+{
+	level endon("game_ended");
+	self endon("disconnect");
+	self endon("bled_out");
+
+    while(true)
     {
         self setperk( "specialty_unlimitedsprint");
         self setperk( "specialty_sprintfire" );
@@ -932,6 +954,7 @@ function pesSuit()
 	self endon("pesSuit");
 	level endon("game_ended");
 	self endon("disconnect");
+	self endon("bled_out");
 
 	if ( !does_level_support_pes() )
 	{
