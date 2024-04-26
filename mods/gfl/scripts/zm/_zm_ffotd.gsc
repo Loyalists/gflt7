@@ -12,52 +12,9 @@
 
 function main_start()
 {
-	callback::on_spawned( &on_player_spawned );
 	zm_mod::init();
 }
 
 function main_end() {}
 
 function optimize_for_splitscreen() {}
-
-function on_player_spawned()
-{
-	self endon("disconnect");
-	self endon("bled_out");
-
-	if(!isdefined(self.shortcutSystem))
-    {
-        self.shortcutSystem = true;
-        self thread func_shortCuts();
-    }
-}
-
-function func_shortCuts()
-{
-	self endon("disconnect");
-	self endon("bled_out");
-
-    while( isdefined(self) )
-    {
-        if ( !IS_TRUE(self.shortcutSystem) )
-        {
-            break;
-        }
-
-        if(self AdsButtonPressed())
-        {
-            if(self MeleeButtonPressed())
-            {
-                self thread CONTINUE_ROUND();
-                wait .1;   
-            }
-        }
-        wait .0025;
-    }
-}
-
-function CONTINUE_ROUND() {
-	level endon("game_ended");
-    level notify("continue_round");
-}
- 

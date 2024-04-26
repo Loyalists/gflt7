@@ -171,8 +171,15 @@ function on_player_spawned()
     }
     
     //start with bowie knife
-    if( GetDvarInt("tfoption_start_bowie", 0) ) {
+    if( GetDvarInt("tfoption_start_bowie", 0) )
+    {
         self thread give_bowie_knife();
+    }
+
+    if( GetDvarInt("tfoption_roamer_enabled", 0) )
+    {
+        self.shortcutSystem = true;
+        self thread roamer_shortcuts();
     }
 }
 
@@ -409,9 +416,6 @@ function apply_choices() {
         createRoamerHud();
         level.round_end_custom_logic = &roamer;
         zombie_utility::set_zombie_var( "zombie_between_round_time", 0);
-    } else {
-
-        level.round_end_custom_logic = undefined;
     }
 
     //Timed Gameplay
@@ -642,7 +646,7 @@ function roamer() {
     
 }
 
-function roamer_wait_time () {
+function roamer_wait_time() {
     self endon("continue_round");
     oldRound = level.round_number;
     
@@ -655,9 +659,37 @@ function roamer_wait_time () {
         level.TFOptions["roamer_counter"] SetValue(timeLeft);
     }
     level notify("continue_round");
-        
 }
 
+function roamer_shortcuts()
+{
+	self endon("disconnect");
+	self endon("bled_out");
+
+    while( isdefined(self) )
+    {
+        if ( !IS_TRUE(self.shortcutSystem) )
+        {
+            break;
+        }
+
+        if(self AdsButtonPressed())
+        {
+            if(self MeleeButtonPressed())
+            {
+                self thread roamer_continue_round();
+                wait 0.1;
+            }
+        }
+        wait 0.1;
+    }
+}
+
+function roamer_continue_round() {
+	level endon("game_ended");
+    level notify("continue_round");
+}
+ 
 
 //HUD STUFF
 function createRoamerHud(){
@@ -667,8 +699,6 @@ function createRoamerHud(){
     level.TFOptions["roamer_counter"] = createNewHudElement("right", "top", -5, 15, 1, 1);
     level.TFOptions["roamer_counter"]  hudRGBA((1,1,1), 0);
     level.TFOptions["roamer_counter"]  SetValue(0); 
-	
-
 }
 
 function createNewHudElement(xAlign, yAlign, posX, posY, foreground, fontScale)

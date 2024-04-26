@@ -163,6 +163,96 @@ image,t7_menu_gfl_loadscreen_command_room
 	gdt,emblem,t7_menu_gfl_loadscreen_command_room,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\loadscreen\t7_menu_gfl_loadscreen_command_room.png,1696565086,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_gfl_loadscreen_command_room_CTLKMR7K4SIG6S5CPEVMZISM65.iwi,1696568226,
+image,t7_menu_cp_front_end_mapvote_cairo_aquifer
+	gdt,image,t7_menu_cp_front_end_mapvote_cairo_aquifer,67-B3-9D-9B-29-87-65-BE-55-86-E0-DA-39-32-3C-FE
+	gdt,light,t7_menu_cp_front_end_mapvote_cairo_aquifer,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_cairo_aquifer,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_desert.png,1714025518,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_cairo_aquifer_KRQZDWNFSUEYWGDFCWFVDISJ26.iwi,1714025941,
+image,t7_menu_cp_front_end_mapvote_cairo_infection
+	gdt,image,t7_menu_cp_front_end_mapvote_cairo_infection,35-20-AE-22-3B-89-83-8F-DB-33-75-F2-23-EE-81-CE
+	gdt,light,t7_menu_cp_front_end_mapvote_cairo_infection,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_cairo_infection,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_snowmountain.png,1714025561,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_cairo_infection_OHJ5YBWTVSJDHIGLTMHQXUCP6H.iwi,1714025942,
+image,t7_menu_cp_front_end_mapvote_cairo_lotus
+	gdt,image,t7_menu_cp_front_end_mapvote_cairo_lotus,5E-0D-58-16-33-70-AA-71-D3-6D-4E-0D-87-EB-F4-90
+	gdt,light,t7_menu_cp_front_end_mapvote_cairo_lotus,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_cairo_lotus,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_tower.png,1714025568,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_cairo_lotus_INK3EPK5FAGTWYQGRMVAIMUY4B.iwi,1714025942,
+image,t7_menu_cp_front_end_mapvote_cairo_ramses
+	gdt,image,t7_menu_cp_front_end_mapvote_cairo_ramses,7C-56-04-02-C4-58-72-73-4F-1F-70-A8-D6-81-9D-F1
+	gdt,light,t7_menu_cp_front_end_mapvote_cairo_ramses,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_cairo_ramses,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_base.png,1714025462,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_cairo_ramses_K5C5LPKFDLCPQNZHM2MA6NFTFX.iwi,1714025942,
+image,t7_menu_cp_front_end_mapvote_cairo_ramses2
+	gdt,image,t7_menu_cp_front_end_mapvote_cairo_ramses2,7C-56-04-02-C4-58-72-73-4F-1F-70-A8-D6-81-9D-F1
+	gdt,light,t7_menu_cp_front_end_mapvote_cairo_ramses2,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_cairo_ramses2,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_base.png,1714025462,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_cairo_ramses2_K5C5LPKFDLCPQNZHM2MA6NFTFX.iwi,1714025942,
+image,t7_menu_cp_front_end_mapvote_sh_cairo
+	gdt,image,t7_menu_cp_front_end_mapvote_sh_cairo,E3-7B-D3-D5-4F-2D-E1-3E-9C-03-6B-75-9D-9F-F7-97
+	gdt,light,t7_menu_cp_front_end_mapvote_sh_cairo,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_sh_cairo,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_command_room.png,1714025509,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_sh_cairo_HU7JQ7YJEFDQHXNCLKRFA2GWWP.iwi,1714025943,
+image,t7_menu_cp_front_end_mapvote_sh_mobile
+	gdt,image,t7_menu_cp_front_end_mapvote_sh_mobile,E3-7B-D3-D5-4F-2D-E1-3E-9C-03-6B-75-9D-9F-F7-97
+	gdt,light,t7_menu_cp_front_end_mapvote_sh_mobile,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_sh_mobile,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_command_room.png,1714025509,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_sh_mobile_HU7JQ7YJEFDQHXNCLKRFA2GWWP.iwi,1714025943,
+image,t7_menu_cp_front_end_mapvote_sh_singapore
+	gdt,image,t7_menu_cp_front_end_mapvote_sh_singapore,E3-7B-D3-D5-4F-2D-E1-3E-9C-03-6B-75-9D-9F-F7-97
+	gdt,light,t7_menu_cp_front_end_mapvote_sh_singapore,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_sh_singapore,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_command_room.png,1714025509,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_sh_singapore_HU7JQ7YJEFDQHXNCLKRFA2GWWP.iwi,1714025943,
+image,t7_menu_cp_front_end_mapvote_sing_biodomes
+	gdt,image,t7_menu_cp_front_end_mapvote_sing_biodomes,6E-EE-F0-D7-69-CD-A1-C2-D3-74-1E-14-C5-FA-A9-3C
+	gdt,light,t7_menu_cp_front_end_mapvote_sing_biodomes,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_sing_biodomes,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_city2.png,1714025501,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_sing_biodomes_5PRNVZRAS4DJJOG5D7M2LIHJXU.iwi,1714025943,
+image,t7_menu_cp_front_end_mapvote_sing_blackstation
+	gdt,image,t7_menu_cp_front_end_mapvote_sing_blackstation,7D-F5-99-65-BE-E4-62-1A-40-16-60-5E-57-08-63-41
+	gdt,light,t7_menu_cp_front_end_mapvote_sing_blackstation,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_sing_blackstation,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_berlinstreet_dream.png,1714025474,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_sing_blackstation_EDEMJZGMJFQAEIRTT624KCM74O.iwi,1714025944,
+image,t7_menu_cp_front_end_mapvote_sing_sgen
+	gdt,image,t7_menu_cp_front_end_mapvote_sing_sgen,4A-E0-D2-86-6A-1C-68-4F-C5-BE-DF-48-EE-AE-CC-73
+	gdt,light,t7_menu_cp_front_end_mapvote_sing_sgen,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_sing_sgen,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_metro.png,1714025553,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_sing_sgen_HZ4LW6AYOHJB5SKOTJ4GGDBVZL.iwi,1714025944,
+image,t7_menu_cp_front_end_mapvote_sing_vengeance
+	gdt,image,t7_menu_cp_front_end_mapvote_sing_vengeance,B1-6A-33-4E-0B-51-41-10-09-42-18-4B-4C-5E-7C-22
+	gdt,light,t7_menu_cp_front_end_mapvote_sing_vengeance,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_sing_vengeance,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_city_burning.png,1714025492,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_sing_vengeance_FNS56FCSJOFELG4EGQUQGSRVZY.iwi,1714025944,
+image,t7_menu_cp_front_end_mapvote_zurich_coalescence
+	gdt,image,t7_menu_cp_front_end_mapvote_zurich_coalescence,00-C0-D1-67-02-DE-B3-22-AF-3A-65-F9-5F-1A-E2-8D
+	gdt,light,t7_menu_cp_front_end_mapvote_zurich_coalescence,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_zurich_coalescence,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_2019summer_4_1.png,1714025450,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_zurich_coalescence_VC4HI7VI5HBOFPIXBICDCEJSNR.iwi,1714025944,
+image,t7_menu_cp_front_end_mapvote_zurich_newworld
+	gdt,image,t7_menu_cp_front_end_mapvote_zurich_newworld,FB-66-F5-DC-D6-2A-5D-E8-00-34-EF-11-EC-6F-A2-BC
+	gdt,light,t7_menu_cp_front_end_mapvote_zurich_newworld,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_zurich_newworld,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_city.png,1714025484,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_zurich_newworld_FNPZFBA5GPRDY7ES44VCN26A6C.iwi,1714025945,
+image,t7_menu_cp_front_end_mapvote_eth_prologue
+	gdt,image,t7_menu_cp_front_end_mapvote_eth_prologue,6C-D1-34-C1-1D-96-9A-D9-D0-6C-06-23-5C-18-04-D2
+	gdt,light,t7_menu_cp_front_end_mapvote_eth_prologue,
+	gdt,emblem,t7_menu_cp_front_end_mapvote_eth_prologue,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\t7_gfl\global\mapvote\t7_menu_gfl_loadscreen_indoorfight.png,1714025533,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\image\v29\t7_menu_cp_front_end_mapvote_eth_prologue_YIGGLTKR77U6ONQPH6OOEE6N6Z.iwi,1714025945,
 techset,mc/lit_transparent#e6142445
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\preshader\pc\v7\techsetdef_unlit_simple.hlsl_vs_H7BRNA45WWIWWTFBQ7HNJHEI47,1638880839,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\shaders\pc\v7\techsetdef_unlit_simple.hlsl_vs_main_AOWOP7C3TTLVZ3BJ67PRKIS5W2,1638880877,
@@ -420,42 +510,49 @@ xmodel,c_ega_soldier_1_head1
 	gdt,xmodel,c_ega_soldier_1_head1,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_ega_soldier_1_head1_f98e6451dfbbbdcb,1709439994,
 xmodel,c_ega_soldier_1_head2
 	asset,xmodelmesh,tag_origin_animatec354447e
 	asset,material,mc/global_invisible
 	gdt,xmodel,c_ega_soldier_1_head2,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_ega_soldier_1_head2_f98e6451dfbbbdcb,1709439994,
 xmodel,c_ega_soldier_1_head3
 	asset,xmodelmesh,tag_origin_animatec354447e
 	asset,material,mc/global_invisible
 	gdt,xmodel,c_ega_soldier_1_head3,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_ega_soldier_1_head3_f98e6451dfbbbdcb,1709439994,
 xmodel,c_ega_soldier_1_head4
 	asset,xmodelmesh,tag_origin_animatec354447e
 	asset,material,mc/global_invisible
 	gdt,xmodel,c_ega_soldier_1_head4,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_ega_soldier_1_head4_f98e6451dfbbbdcb,1709439994,
 xmodel,c_ega_soldier_1_head5
 	asset,xmodelmesh,tag_origin_animatec354447e
 	asset,material,mc/global_invisible
 	gdt,xmodel,c_ega_soldier_1_head5,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_ega_soldier_1_head5_f98e6451dfbbbdcb,1709439994,
 xmodel,c_ega_soldier_2_head
 	asset,xmodelmesh,tag_origin_animatec354447e
 	asset,material,mc/global_invisible
 	gdt,xmodel,c_ega_soldier_2_head,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_ega_soldier_2_head_f98e6451dfbbbdcb,1709439994,
 xmodel,c_ega_soldier_3_head
 	asset,xmodelmesh,tag_origin_animatec354447e
 	asset,material,mc/global_invisible
 	gdt,xmodel,c_ega_soldier_3_head,AB-99-C0-37-91-02-27-5E-DD-28-85-FB-65-D6-02-EE
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\model_export\code\tag_origin_animate.xmodel_bin,1638878140,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmesh\v6\tag_origin_animate_f0_s1.000000_geo_TTK5OBZH55CWY2VTVVGL25UZUW,1687419469,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\assetconvert\xmodelmipvol\v1\c_ega_soldier_3_head_f98e6451dfbbbdcb,1709439994,
 xmodel,c_civ_sing_female_wife_behead
 	asset,xmodelmesh,tag_origin_animatec354447e
 	asset,material,mc/global_invisible
@@ -1152,7 +1249,7 @@ xmodel,c_zur_terrorist_3_headgear_head3
 texturecombo,cp_mod
 assetlist,cp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\cp_mod.zone,1709439929,671f58b4,1077379d,6b20e971,9522cbc4
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\cp_mod.zone,1714025921,248b351a,2ca40258,41e38b94,43ebab08
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\cp_mod.class,1638881105,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\mod_default.class,1638881174,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\default.class,1638881104,
@@ -1191,12 +1288,12 @@ assetlist,cp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1709439989,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1709439989,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1709439989,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1709439989,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1709439989,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1709439989,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1714025940,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1714025940,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1714025940,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1714025940,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1714025940,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1714025940,
 	spawn,expect,core_all
 	spawn,expect,cp_common_all
 errorcount,0

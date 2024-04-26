@@ -46,7 +46,7 @@ function init()
 
 	if( GetDvarInt("tfoption_player_determined_character", 0) )
 	{
-		level.save_character_customization_func = &save_character_customization_func;
+		level.save_character_customization_func = &save_character_customization;
 	}
 }
 
@@ -54,7 +54,7 @@ function init_moon()
 {
 	if( GetDvarInt("tfoption_player_determined_character", 0) )
 	{
-		level.save_character_customization_func = &save_character_customization_func_moon;
+		level.save_character_customization_func = &save_character_customization_moon;
 	}
 }
 
@@ -320,7 +320,7 @@ function zombie_model_override()
 	self character_util::disable_gib();
 }
 
-function save_character_customization_func()
+function save_character_customization()
 {
 	if ( self IsTestClient() )
 	{
@@ -352,7 +352,7 @@ function save_character_customization_func()
 	self.cc_bodystyle_name = bodystyle_name;
 }
 
-function save_character_customization_func_moon()
+function save_character_customization_moon()
 {
 	if ( self IsTestClient() )
 	{

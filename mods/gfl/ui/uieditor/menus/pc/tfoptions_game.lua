@@ -155,15 +155,6 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_CW_SCOREEVENT",
-            description = "TF_CW_SCOREEVENT_DESC",
-            profileVarName = "cw_scoreevent",
-            widgetType = "tfcheckbox"
-        },
-        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
-    })
     return f26_local0
 end, true)
 

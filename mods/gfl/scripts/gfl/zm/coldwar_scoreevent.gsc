@@ -97,39 +97,28 @@ function coldwar_scoreevent_logic( death, inflictor, player, damage, flags, mod,
 {
 	if( IS_TRUE( death ) && !isDefined(self.disable_scoreevent) && IsPlayer(player) && self.team === level.zombie_team)
 	{
-        ckill = "";
-        aitype = self get_ai_type() + "_" ;
-        if(aitype == "_")
-        {
-            aitype = "z_";
-        }
+        ckill = "_c";
+		cause = "kill";
+		has_cause = self should_display_cause_on_scoreevent();
+		has_name = true;
+		has_ckill = false;
+		has_prefix = true;
+
+        aitype = self get_ai_type() + "_";
 
         if( self.maxhealth < damage )
         {
-            ckill = "_c";
-        }
-
-        if(IsSubStr( player getCurrentWeapon().name, "thundergun") )
-        {
-            ckill = "_c";
-        }
-
-        if(mod != "MOD_MELEE" && (IsSubStr( player getCurrentWeapon().name, "ray_gun") || IsSubStr( player getCurrentWeapon().name, "raygun")) )
-        {
-            scoreevents::processScoreEvent( aitype + "kill" + ckill, player);
-            break;
+            has_ckill = true;
         }
         
         if( mod == "MOD_MELEE" )
         {
-            scoreevents::processScoreEvent( aitype + "melee_kill" + ckill, player);
-            break;
+			cause = "melee_kill";
         }
 
         if( mod == "MOD_GRENADE_SPLASH" || mod == "MOD_PROJECTILE_SPLASH" || mod == "MOD_PROJECTILE" )
         {
-            scoreevents::processScoreEvent( aitype  + "exp_kill" + ckill, player);
-            break;
+			cause = "exp_kill";
         }
 
         if( mod != "MOD_MELEE" )
@@ -138,19 +127,77 @@ function coldwar_scoreevent_logic( death, inflictor, player, damage, flags, mod,
             {
                 if(player is_using_sniper_weapon())
                 {
-                    scoreevents::processScoreEvent( "sniper_kill" + ckill, player);
+					cause = "sniper_kill";
+					has_prefix = false;
                 }
                 else
                 {
-                    scoreevents::processScoreEvent( aitype + "headshot" + ckill, player);
+					cause = "headshot";
                 }
             }
-            else			
-            {
-                scoreevents::processScoreEvent( aitype + "kill" + ckill, player);
-            }
+
+			current_weapon = player GetCurrentWeapon();
+
+			if( IsSubStr( current_weapon.name, "thundergun") )
+			{
+				cause = "thunder_kill";
+				has_prefix = false;
+			}
+
+			if( IsSubStr( current_weapon.name, "ray_gun") || IsSubStr( current_weapon.name, "raygun") )
+			{
+				cause = "rg_kill";
+				has_prefix = false;
+			}
+
+			if( IsSubStr( current_weapon.name, "raygun_mark2") )
+			{
+				cause = "rg2_kill";
+				has_prefix = false;
+			}
+
+			if( IsSubStr( current_weapon.name, "raygun_mark3") )
+			{
+				cause = "rg3_kill";
+				has_prefix = false;
+			}
+
+			if( IsSubStr( current_weapon.name, "tesla_gun") )
+			{
+				cause = "teslagun_kill";
+				has_prefix = false;
+			}
+
+			if( IS_TRUE( current_weapon.isriotshield ) )
+			{
+				cause = "shield_kill";
+				has_prefix = false;
+			}
         }
-        
+
+		if (!has_cause)
+		{
+			cause = "kill";
+		}
+
+		if (has_prefix) 
+		{
+			if (!has_name)
+			{
+				aitype = "z_";
+			}
+		}
+		else 
+		{
+			aitype = "";
+		}
+
+		if (!has_ckill)
+		{
+			ckill = "";
+		}
+
+		scoreevents::processScoreEvent( aitype + cause + ckill, player );
         self.disable_scoreevent = true;
 	}
 }
@@ -162,118 +209,136 @@ function coldwar_scoreevent_logic_vehicle(einflictor, eattacker, idamage, idflag
     return idamage;
 }
 
+function should_display_cause_on_scoreevent()
+{
+	type = self get_ai_type();
+	switch ( type )
+	{
+		case "z":
+			return true;
+			break;
+		default:
+			return false;
+			break;
+	}
+}
+
 function get_ai_type()
 {
+	default_type = "z";
+
 	if(isDefined(self.model) && IsSubStr(self.model,"keeper"))
 	{
-		return "Keeper";
+		return "keeper";
 	}
+
 	if(isDefined(self.animname))
 	{
 		switch (self.animname) 
 		{
 		case "napalm_zombie":
-			return "Napalm_Zombie" ;
+			return "napalm_zombie" ;
 			break;
 		case "sonic_zombie":
-			return "Shrieker" ;
+			return "shrieker" ;
 			break;
 		}
 	}
+
 	if ( isDefined( self.str_name ) )
 	{
 		str_ai_name = self.str_name;
 		return str_ai_name;
-	}	
-	else
+	}
+
+	if (isDefined(self.archetype))
 	{
-		if(isDefined(self.archetype))
+		switch ( self.archetype )
 		{
-			switch ( self.archetype )
+			case "zombie_dog":
 			{
-				case "zombie_dog":
-				{
-					return "Hellhound" ;
-					break;
-				}
-				case "zombie_napalm":
-				{
-					return "Napalm_Zombie" ;
-					break;
-				}
-				case "zombie_sonic":
-				{
-					return "Shrieker" ;
-					break;
-				}
-				case "thrasher":
-				{
-					return "Thrasher";
-					break;
-				}
-				case "zombie_quad":
-				{
-					return "Nova_Crawler" ;
-					break;
-				}
-				case "apothicon_fury":
-				{
-					return "Apothicon_Fury" ;
-					break;
-				}
-				case "mechz":
-				{
-					return "Panzer_Soldat" ;
-					break;
-				}
-				case "margwa":
-				{
-					return "Margwa" ;
-					break;
-				}
-				case "raz":
-				{
-					return "Mangler";
-					break;
-				}
-				case "cellbreaker":
-				{
-					return "Brutus";
-					break;
-				}
-				case "spider":
-				{
-					return "Spider";
-					break;
-				}
-				case "parasite":
-				{
-					return "parasite";
-					break;
-				}
-				case "raps":
-				{
-					return "Meatball";
-					break;
-				}
-				case "keeper":
-				{
-					return "Keeper";
-					break;
-				}
-				case "sentinel_drone":
-				{
-					return "Drone";
-					break;
-				}
-				default:
-				{
-					return "";
-					break;
-				}
+				return "hellhound" ;
+				break;
+			}
+			case "zombie_napalm":
+			{
+				return "napalm_zombie" ;
+				break;
+			}
+			case "zombie_sonic":
+			{
+				return "shrieker" ;
+				break;
+			}
+			case "thrasher":
+			{
+				return "thrasher";
+				break;
+			}
+			case "zombie_quad":
+			{
+				return "nova_crawler" ;
+				break;
+			}
+			case "apothicon_fury":
+			{
+				return "apothicon_fury" ;
+				break;
+			}
+			case "mechz":
+			{
+				return "panzer_soldat" ;
+				break;
+			}
+			case "margwa":
+			{
+				return "margwa" ;
+				break;
+			}
+			case "raz":
+			{
+				return "mangler";
+				break;
+			}
+			case "cellbreaker":
+			{
+				return "brutus";
+				break;
+			}
+			case "spider":
+			{
+				return "spider";
+				break;
+			}
+			case "parasite":
+			{
+				return "parasite";
+				break;
+			}
+			case "raps":
+			{
+				return "meatball";
+				break;
+			}
+			case "keeper":
+			{
+				return "keeper";
+				break;
+			}
+			case "sentinel_drone":
+			{
+				return "drone";
+				break;
+			}
+			default:
+			{
+				return default_type;
+				break;
 			}
 		}
 	}
+
+	return default_type;
 }
 
 function is_using_sniper_weapon()
