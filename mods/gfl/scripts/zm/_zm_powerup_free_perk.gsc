@@ -44,7 +44,10 @@ function __init__()
 }
 
 function grab_free_perk( player )
-{	
+{
+	player notify( "free_perk_grabbed" );
+	level notify( "free_perk_grabbed_level" );
+
 	level thread free_perk_powerup( self );
 	player PlayLocalSound( "random_perk_vox" ); 
 }

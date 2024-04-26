@@ -66,7 +66,7 @@
 #namespace zm_mod;
 
 function init() {
-    level.TFOptions = [];
+    level.roamer_data = [];
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         create_tf_options_defaults();
@@ -637,12 +637,12 @@ function roamer() {
         level thread roamer_wait_time();
     }
 
-    level.TFOptions["roamer_hud"]  thread hudRGBA((1,1,1), 1.0, 1.5); 
+    level.roamer_data["hud"]  thread hudRGBA((1,1,1), 1.0, 1.5); 
 
     level waittill("continue_round");
     
-    level.TFOptions["roamer_hud"]  thread hudRGBA((1,1,1), 0, 1.5);
-    level.TFOptions["roamer_counter"]  thread hudRGBA((1,1,1), 0, 1.5); 
+    level.roamer_data["hud"]  thread hudRGBA((1,1,1), 0, 1.5);
+    level.roamer_data["counter"]  thread hudRGBA((1,1,1), 0, 1.5); 
     
 }
 
@@ -651,12 +651,12 @@ function roamer_wait_time() {
     oldRound = level.round_number;
     
     timeLeft = GetDvarInt("tfoption_roamer_time");
-    level.TFOptions["roamer_counter"]  thread hudRGBA((1,1,1), 1.0, 1.5); 
-    level.TFOptions["roamer_counter"] SetValue(timeLeft);
+    level.roamer_data["counter"]  thread hudRGBA((1,1,1), 1.0, 1.5); 
+    level.roamer_data["counter"] SetValue(timeLeft);
     while(timeLeft > 0) {
         wait 1;
         timeLeft --;
-        level.TFOptions["roamer_counter"] SetValue(timeLeft);
+        level.roamer_data["counter"] SetValue(timeLeft);
     }
     level notify("continue_round");
 }
@@ -693,12 +693,12 @@ function roamer_continue_round() {
 
 //HUD STUFF
 function createRoamerHud(){
-    level.TFOptions["roamer_hud"] = createNewHudElement("right", "top", -5, 5, 1, 1);
-	level.TFOptions["roamer_hud"]  hudRGBA((1,1,1), 0);
-	level.TFOptions["roamer_hud"]  SetText("Press ADS + Melee To Start Next Round"); 
-    level.TFOptions["roamer_counter"] = createNewHudElement("right", "top", -5, 15, 1, 1);
-    level.TFOptions["roamer_counter"]  hudRGBA((1,1,1), 0);
-    level.TFOptions["roamer_counter"]  SetValue(0); 
+    level.roamer_data["hud"] = createNewHudElement("right", "top", -5, 5, 1, 1);
+	level.roamer_data["hud"]  hudRGBA((1,1,1), 0);
+	level.roamer_data["hud"]  SetText("Press ADS + Melee To Start Next Round"); 
+    level.roamer_data["counter"] = createNewHudElement("right", "top", -5, 15, 1, 1);
+    level.roamer_data["counter"]  hudRGBA((1,1,1), 0);
+    level.roamer_data["counter"]  SetValue(0); 
 }
 
 function createNewHudElement(xAlign, yAlign, posX, posY, foreground, fontScale)

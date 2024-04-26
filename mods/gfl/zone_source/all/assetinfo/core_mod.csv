@@ -343,8 +343,8 @@ index,type,name,resident,streamed,parentStack
 342,stringtable,gamedata/weapons/zm/zm_gunlevels.csv,51020,0,|zone_source/core_mod.zone|csv
 343,stringtable,gamedata/loot/mplootitems.csv,504584,0,|zone_source/core_mod.zone|csv
 344,stringtable,gamedata/tables/common/music_player.csv,17890,0,|zone_source/core_mod.zone|csv
-345,stringtable,gamedata/tables/zm/scoreinfo.csv,52426,0,|zone_source/core_mod.zone|csv
-346,rawfile,gamedata/configs/common/ragdoll.cfg,9311,0,|zone_source/core_mod.zone|csv
+345,stringtable,gamedata/tables/zm/scoreinfo.csv,54030,0,|zone_source/core_mod.zone|csv
+346,rawfile,gamedata/configs/common/ragdoll.cfg,9307,0,|zone_source/core_mod.zone|csv
 347,rawfile,gamedata/configs/cp/ragdoll.cfg,9312,0,|zone_source/core_mod.zone|csv
 348,rawfile,gamedata/configs/mp/ragdoll.cfg,9312,0,|zone_source/core_mod.zone|csv
 349,rawfile,gamedata/configs/zm/ragdoll.cfg,9312,0,|zone_source/core_mod.zone|csv
@@ -3371,7 +3371,7 @@ index,type,name,resident,streamed,parentStack
 3370,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521488,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3371,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3372,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3373,image,t7_menu_mp_chars_enforcer_body_custom01€Ð@"ü,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3373,image,t7_menu_mp_chars_enforcer_body_custom01 Öõ©s,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3374,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3375,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3376,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv

@@ -85,11 +85,16 @@ specialty_moonshine,SCOREEVENT_Madgaz_Moonshine,,,,,,,,,,,,,0,2500
 specialty_banana,SCOREEVENT_Banana_Colada,,,,,,,,,,,,,0,3000
 specialty_alot,SCOREEVENT_Perk_A_Lot,,,,,,,,,,,,,0,10000
 get_weapon,SCOREEVENT_Got_a_Weapon,,,,,,,,,,,,,100,950
+weapon_shared,SCOREEVENT_WEAPON_SHARED,,,,,,,,,,,,,100,950
 weapon_trade,SCOREEVENT_Trade_Weapon,,,,,,,,,,,,,100,10
 repair_window,SCOREEVENT_Repaired,,,,,,,,,,,,,100,10
 carpenter,SCOREEVENT_Barrier_rebuilded,,,,,,,,,,,,,100,100
 shield_fix,SCOREEVENT_Shield_Repaired,,,,,,,,,,,,,100,100
 nuke,EM_BACK_LOOT_RETROATVI_KABOOM,,,,,,,,,,,,,100,400
+max_ammo,SCOREEVENT_MAX_AMMO,,,,,,,,,,,,,100,100
+free_perk,SCOREEVENT_FREE_PERK,,,,,,,,,,,,,100,100
+free_pap,SCOREEVENT_FREE_PAP,,,,,,,,,,,,,100,100
+zombie_money,SCOREEVENT_ZOMBIE_MONEY,,,,,,,,,,,,,100,250
 hit,SCOREEVENT_Hit,,,,,,,,,,,,,100,10
 change,Spare Change,,,,,,,,,,,,,100,100
 stun_hit,SCOREEVENT_STUN,,,,,,,,,,,,,100,10

@@ -332,21 +332,21 @@ function magicboxshare_sub_think()
 
 	while (isdefined(self))
 	{
-		self waittill("start_magicboxshare_sub", weapon_name);
+		self waittill("magicbox_weapon_shared", weapon);
 
         character_name = self character_randomizer::get_character_name_by_model(self.name);
-		self zm_sub::show_magicboxshare_sub(character_name, weapon_name);
+		self zm_sub::show_magicboxshare_sub(character_name, weapon);
         WAIT_SERVER_FRAME;
 	}
 }
 
 function show_weapon_sub(character_name, weapon)
 {
-	wpname = weapon.displayname;
-	if(!isdefined(weapon.displayname))
-	{
-		wpname = weapon.name;
-	}
+    wpname = weapon.name;
+    if(isdefined(weapon.displayname) && weapon.displayname != "")
+    {
+        wpname = weapon.displayname;
+    }
 
     if ( zm_weapons::is_wonder_weapon(weapon) )
     {
@@ -358,8 +358,14 @@ function show_weapon_sub(character_name, weapon)
     }
 }
 
-function show_magicboxshare_sub(character_name, weapon_name)
+function show_magicboxshare_sub(character_name, weapon)
 {
+    weapon_name = weapon.name;
+    if(isdefined(weapon.displayname) && weapon.displayname != "")
+    {
+        weapon_name = weapon.displayname;
+    }
+
     thread sub_logic(undefined, 2, character_name, "…SUBEVENT_SHAREWP… …" + weapon_name + "… …SUBEVENT_SHAREWPHERE……SUBEVENT_DOT…");
 }
 

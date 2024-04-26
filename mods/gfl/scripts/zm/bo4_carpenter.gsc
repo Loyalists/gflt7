@@ -49,7 +49,7 @@ function carpenter_upgrade()
 
 				if ( weap.isRiotshield )
 				{
-					scoreevents::processScoreEvent( "shield_fix", self );
+					scoreevents::processScoreEvent( "shield_fix", player );
 				}
 			}
 		}

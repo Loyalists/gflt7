@@ -47,6 +47,8 @@ function func_should_drop_money()
 
 function grab_money( player )
 {
+	player notify( "zombie_money_grabbed" );
+
 	player PlayLocalSound( "zombie_money_vox" );
 	chance = RandomIntRange( 0, 5 ); 
 	switch( chance )

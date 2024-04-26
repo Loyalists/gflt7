@@ -105,19 +105,10 @@ function chest_checker()
 			{
 				WAIT_SERVER_FRAME;
 			}
+
 			self thread magicweaponsharetimeout();
-
-			if(isdefined(readytoshare.displayname) && readytoshare.displayname != "")
-			{
-				name = readytoshare.displayname;
-			}
-			else
-			{
-				name = readytoshare.name;
-			}
-
-			self.chest_user notify("start_magicboxshare_sub", name);
 			self thread spawnshareweapon(readytoshare,self.chest_user,self);
+			self.chest_user notify("magicbox_weapon_shared", readytoshare);
 			self notify( "trigger", self ); 
 			self.grab_weapon_hint = false;
 			self.zbarrier notify( "weapon_grabbed" );

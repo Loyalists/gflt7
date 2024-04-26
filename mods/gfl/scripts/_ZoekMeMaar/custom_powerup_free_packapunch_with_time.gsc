@@ -47,6 +47,8 @@ function init_packapunch_powerup()
 
 function grab_free_pap( player )
 {
+	player notify( "free_packapunch_grabbed" );
+
 	current_weapon = player GetCurrentWeapon();
 	weaponsize = player GetWeaponsListPrimaries();
 

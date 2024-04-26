@@ -46,6 +46,8 @@ function on_player_connect()
 
     self thread pap_scoreevent_think();
     self thread special_event_scoreevent_think();
+	self thread powerup_scoreevent_think();
+	self thread powerup_level_scoreevent_think();
 }
 
 function pap_scoreevent_think()
@@ -72,12 +74,7 @@ function special_event_scoreevent_think()
 
 	while (true)
 	{
-		event = self util::waittill_any_return( "nuke_triggered", "perk_bought", "start_scoreevent_weapon" );
-
-		if (event == "nuke_triggered")
-		{
-		    scoreevents::processScoreEvent( "nuke", self );
-		}
+		event = self util::waittill_any_return( "perk_bought", "start_scoreevent_weapon", "magicbox_weapon_shared" );
 
 		if (event == "perk_bought")
 		{
@@ -87,6 +84,69 @@ function special_event_scoreevent_think()
 		if (event == "start_scoreevent_weapon")
 		{
 		    scoreevents::processScoreEvent( "get_weapon", self );
+		}
+
+		if (event == "magicbox_weapon_shared")
+		{
+		    scoreevents::processScoreEvent( "weapon_shared", self );
+		}
+
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function powerup_scoreevent_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (true)
+	{
+		event = self util::waittill_any_return( "nuke_triggered", "free_packapunch_grabbed", "zombie_money_grabbed" );
+
+		if (event == "nuke_triggered")
+		{
+		    scoreevents::processScoreEvent( "nuke", self );
+		}
+
+		if (event == "free_packapunch_grabbed")
+		{
+		    scoreevents::processScoreEvent( "free_pap", self );
+		}
+
+		if (event == "zombie_money_grabbed")
+		{
+		    scoreevents::processScoreEvent( "zombie_money", self );
+		}
+
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function powerup_level_scoreevent_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (true)
+	{
+		event = level util::waittill_any_return( "carpenter_started", "zmb_max_ammo_level", "free_perk_grabbed_level" );
+
+		if (event == "carpenter_started")
+		{
+		    scoreevents::processScoreEvent( "carpenter", self );
+		}
+
+		if (event == "zmb_max_ammo_level")
+		{
+		    scoreevents::processScoreEvent( "max_ammo", self );
+		}
+
+		if (event == "free_perk_grabbed_level")
+		{
+		    scoreevents::processScoreEvent( "free_perk", self );
 		}
 
         WAIT_SERVER_FRAME;
