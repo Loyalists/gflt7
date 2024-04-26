@@ -3917,6 +3917,51 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
+	"t7_menu_cp_front_end_mapvote_eth_prologue" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_indoorfight.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "0"
+		"semantic" "2d"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
 	"t7_menu_gfl_loadscreen_command_room" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
@@ -4675,6 +4720,76 @@
 	"t7_menu_zm_loadscreen_tuvong" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_tuvong.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_sh_cairo" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_sh_mobile" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_sh_singapore" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_cairo_aquifer" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_desert.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_cairo_infection" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_snowmountain.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_cairo_lotus" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_tower.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_cairo_ramses" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_base.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_cairo_ramses2" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_base.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_sing_biodomes" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_city2.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_sing_blackstation" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_berlinstreet_dream.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_sing_sgen" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_metro.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_sing_vengeance" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_city_burning.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_zurich_coalescence" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_2019summer_4_1.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_cp_front_end_mapvote_zurich_newworld" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_city.png"
 		"coreSemantic" "Linear4ch"
 	}
 }
