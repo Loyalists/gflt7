@@ -87,8 +87,8 @@ scriptparsetree,scripts/_nsz/nsz_powerup_money.csc
 scriptparsetree,scripts/_nsz/nsz_powerup_money.gsc
 scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.csc
 scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.gsc
-scriptparsetree,scripts/gfl/zm/character_randomizer.csc
-scriptparsetree,scripts/gfl/zm/character_randomizer.gsc
+scriptparsetree,scripts/gfl/zm/character_mgr.csc
+scriptparsetree,scripts/gfl/zm/character_mgr.gsc
 scriptparsetree,scripts/gfl/zm/character_zm.gsc
 scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 scriptparsetree,scripts/gfl/zm/gameplay.csc
@@ -108,8 +108,6 @@ scriptparsetree,scripts/zm/_zm_bgb_machine.csc
 scriptparsetree,scripts/zm/_zm_bgb_machine.gsc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
-scriptparsetree,scripts/zm/_zm_mod.csc
-scriptparsetree,scripts/zm/_zm_mod.gsc
 scriptparsetree,scripts/zm/_zm_powerup_carpenter.gsc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.csc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.gsc
@@ -122,6 +120,8 @@ scriptparsetree,scripts/zm/bo4_carpenter.gsc
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc
 scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
 scriptparsetree,scripts/zm/infinityloader.gsc
+scriptparsetree,scripts/zm/tfoptions.csc
+scriptparsetree,scripts/zm/tfoptions.gsc
 scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
 scriptparsetree,scripts/zm/zm_damagefeedback.gsc
 scriptparsetree,scripts/zm/zmsavedata.gsc

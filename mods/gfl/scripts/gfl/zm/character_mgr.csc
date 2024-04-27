@@ -6,7 +6,7 @@
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
-#namespace character_randomizer;
+#namespace character_mgr;
 
 function init()
 {

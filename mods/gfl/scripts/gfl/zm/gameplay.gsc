@@ -26,7 +26,7 @@
 #using scripts\zm\_zm_hero_weapon;
 #using scripts\zm\_zm_pack_a_punch_util;
 
-#using scripts\gfl\zm\character_randomizer;
+#using scripts\gfl\zm\character_mgr;
 #using scripts\gfl\zm\perkplus;
 #using scripts\gfl\zm\t8_perkloss;
 #using scripts\gfl\zm\magicboxshare;
@@ -45,7 +45,7 @@
 
 function init()
 {
-    character_randomizer::init();
+    character_mgr::init();
     mule_kick_indicator::init();
 
     callback::on_connecting( &on_player_connecting );

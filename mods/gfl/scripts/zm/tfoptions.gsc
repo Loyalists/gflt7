@@ -63,7 +63,7 @@
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 
-#namespace zm_mod;
+#namespace tfoptions;
 
 function init() {
     level.roamer_data = [];

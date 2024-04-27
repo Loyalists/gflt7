@@ -8,7 +8,7 @@
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
 
-#using scripts\gfl\zm\character_randomizer;
+#using scripts\gfl\zm\character_mgr;
 #using scripts\gfl\zm\zm_sub;
 
 #insert scripts\shared\shared.gsh;
@@ -17,7 +17,7 @@
 
 function init()
 {
-	character_randomizer::init();
+	character_mgr::init();
 
 	// callback::on_connect( &on_player_connect );
 	// callback::on_spawned( &on_player_spawned );

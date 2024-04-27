@@ -4,7 +4,7 @@
 #using scripts\zm\_zm_magicbox;
 #using scripts\zm\_zm_powerups;
 
-#using scripts\zm\_zm_mod;
+#using scripts\zm\tfoptions;
 
 #insert scripts\shared\shared.gsh;
 
@@ -12,7 +12,7 @@
 
 function main_start()
 {
-	zm_mod::init();
+	tfoptions::init();
 }
 
 function main_end() {}

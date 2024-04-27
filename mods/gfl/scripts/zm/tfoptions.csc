@@ -15,7 +15,7 @@
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
-#namespace zm_mod;
+#namespace tfoptions;
 
 function init() {
     gameplay::init();
