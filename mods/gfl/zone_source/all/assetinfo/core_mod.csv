@@ -350,23 +350,23 @@ index,type,name,resident,streamed,parentStack
 349,rawfile,gamedata/configs/zm/ragdoll.cfg,9312,0,|zone_source/core_mod.zone|csv
 350,scriptparsetree,scripts/gfl/_utility.gsc,174,0,|zone_source/core_mod.zone|csv
 351,scriptparsetree,scripts/gfl/character.gsc,11300,0,|zone_source/core_mod.zone|csv
-352,scriptparsetree,scripts/gfl/character_util.gsc,5336,0,|zone_source/core_mod.zone|csv
-353,scriptparsetree,scripts/gfl/spawner_util.gsc,1260,0,|zone_source/core_mod.zone|csv
-354,scriptparsetree,scripts/gfl/cp/_load.gsc,1560,0,|zone_source/core_mod.zone|csv
-355,scriptparsetree,scripts/gfl/cp/_load.csc,129,0,|zone_source/core_mod.zone|csv
+352,scriptparsetree,scripts/gfl/character_util.gsc,5424,0,|zone_source/core_mod.zone|csv
+353,scriptparsetree,scripts/gfl/spawner_util.gsc,1268,0,|zone_source/core_mod.zone|csv
+354,scriptparsetree,scripts/gfl/cp/_load.gsc,1572,0,|zone_source/core_mod.zone|csv
+355,scriptparsetree,scripts/gfl/cp/_load.csc,149,0,|zone_source/core_mod.zone|csv
 356,scriptparsetree,scripts/gfl/cp/safehouse.gsc,1011,0,|zone_source/core_mod.zone|csv
 357,scriptparsetree,scripts/gfl/cp/cp_mi_eth_prologue.gsc,662,0,|zone_source/core_mod.zone|csv
-358,scriptparsetree,scripts/gfl/cp/cp_mi_sing_vengeance.gsc,908,0,|zone_source/core_mod.zone|csv
-359,scriptparsetree,scripts/gfl/cp/cp_mi_cairo_aquifer.gsc,446,0,|zone_source/core_mod.zone|csv
+358,scriptparsetree,scripts/gfl/cp/cp_mi_sing_vengeance.gsc,920,0,|zone_source/core_mod.zone|csv
+359,scriptparsetree,scripts/gfl/cp/cp_mi_cairo_aquifer.gsc,466,0,|zone_source/core_mod.zone|csv
 360,scriptparsetree,scripts/gfl/cp/cp_mi_cairo_ramses.gsc,500,0,|zone_source/core_mod.zone|csv
 361,scriptparsetree,scripts/gfl/cp/cp_mi_cairo_infection.gsc,1326,0,|zone_source/core_mod.zone|csv
 362,scriptparsetree,scripts/gfl/cp/cp_mi_cairo_lotus.gsc,542,0,|zone_source/core_mod.zone|csv
 363,scriptparsetree,scripts/core/frontend_cam_override.csc,21256,0,|zone_source/core_mod.zone|csv
 364,scriptparsetree,scripts/shared/lui_shared.csc,10764,0,|zone_source/core_mod.zone|csv
-365,scriptparsetree,scripts/shared/load_shared.gsc,17652,0,|zone_source/core_mod.zone|csv
-366,scriptparsetree,scripts/shared/load_shared.csc,760,0,|zone_source/core_mod.zone|csv
-367,scriptparsetree,scripts/core/core_frontend_fx.gsc,1568,0,|zone_source/core_mod.zone|csv
-368,rawfile,ui/uieditor/menus/zm/zmmapselection.lua,19597,0,|zone_source/core_mod.zone|csv
+365,scriptparsetree,scripts/shared/load_shared.gsc,17640,0,|zone_source/core_mod.zone|csv
+366,scriptparsetree,scripts/shared/load_shared.csc,772,0,|zone_source/core_mod.zone|csv
+367,scriptparsetree,scripts/core/core_frontend_fx.gsc,1556,0,|zone_source/core_mod.zone|csv
+368,rawfile,ui/uieditor/menus/zm/zmmapselection.lua,19609,0,|zone_source/core_mod.zone|csv
 369,rawfile,ui/uieditor/menus/lobby/common/popups/bonusmodesflyout.lua,13869,0,|zone_source/core_mod.zone|csv
 370,rawfile,ui/uieditor/widgets/lobby/common/fe_3dtitleinternal.lua,18050,0,|zone_source/core_mod.zone|csv
 371,rawfile,ui/uieditor/datasources.lua,7646,0,|zone_source/core_mod.zone|csv
@@ -3371,7 +3371,7 @@ index,type,name,resident,streamed,parentStack
 3370,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521488,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3371,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3372,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3373,image,t7_menu_mp_chars_enforcer_body_custom01 ÷ı©s,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3373,image,t7_menu_mp_chars_enforcer_body_custom01 ÷,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3374,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3375,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3376,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv

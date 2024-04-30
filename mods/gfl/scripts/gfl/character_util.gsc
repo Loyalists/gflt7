@@ -203,6 +203,11 @@ function set_character_name()
 {
     self endon("death");
 
+	if ( IS_TRUE( self.disable_character_name ) )
+	{
+		return;
+	}
+
 	if ( !isdefined( self.model ) )
 	{
 		return;
@@ -219,7 +224,13 @@ function set_character_name()
 
 		name = tablelookupcolumnforrow("gamedata/gfl/nametable.csv", row, 1);
 		self.propername = name;
+		break;
 	}
+}
+
+function set_disable_character_name_flag()
+{
+	self.disable_character_name = true;
 }
 
 function is_human()

@@ -71,6 +71,11 @@ function mulekick_return_watcher()
 	{
 		foreach(player in GetPlayers())
 		{
+			if ( player IsTestClient() )
+			{
+				continue;
+			}
+
 			if ( !isAlive(player) || player.sessionstate == "spectator" )
 			{
 				continue;
@@ -207,10 +212,16 @@ function return_mulekick_weapon(switch_to_weapon = false)
 {
 	self notify("elmg_mulekick_return");
 	self endon("elmg_mulekick_return");
+
+	if ( self IsTestClient() )
+	{
+		return;
+	}
+
 	WAIT_SERVER_FRAME;
 	wait 0.2;
+	
 	xuid = self getXuid(true);
-
 	weapon = level.mulekick_weapon[xuid];
 	if(isDefined(weapon) && self GetWeaponsListPrimaries().size <= 2 && zm_weapons::is_weapon_or_base_included( weapon ))
 	{

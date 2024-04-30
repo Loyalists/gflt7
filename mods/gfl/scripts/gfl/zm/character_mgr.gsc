@@ -25,11 +25,14 @@ function init()
 	character::init_character_table();
 	character_zm::init_character_table();
 	init_randomized_character_table();
-	spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
 
 	if( GetDvarInt("tfoption_tdoll_zombie", 0) )
 	{
 		spawner::add_archetype_spawn_function("zombie", &zombie_model_override);
+	}
+	else
+	{
+		spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
 	}
 
 	if( !( GetDvarInt("tfoption_player_determined_character") || GetDvarInt("tfoption_randomize_character") ) )
@@ -258,6 +261,7 @@ function zombie_model_fix()
 		type = "sf";
 	}
 	
+	self character_util::set_disable_character_name_flag();
 	self character_util::randomize_character(type);
 	self character_util::set_force_reset_flag();
 	self character_util::disable_gib();
@@ -285,11 +289,6 @@ function zombie_model_override()
 		return;
 	}
 
-	if ( issubstr(self.model, "c_54i_") || issubstr(self.model, "c_nrc_") || issubstr(self.model, "c_zsf_") )
-	{
-		return;
-	}
-
 	type = "generic_tdoll";
 	switch( GetDvarInt("tfoption_tdoll_zombie", 0) )
 	{
@@ -310,11 +309,11 @@ function zombie_model_override()
 		}
 		default:
 		{
-			type = "generic_tdoll";
 			break;
 		}
 	}
 	
+	self character_util::set_disable_character_name_flag();
 	self character_util::randomize_character(type);
 	self character_util::set_force_reset_flag();
 	self character_util::disable_gib();

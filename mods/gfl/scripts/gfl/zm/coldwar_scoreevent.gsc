@@ -196,43 +196,43 @@ function coldwar_scoreevent_logic( death, inflictor, player, damage, flags, mod,
                 }
             }
 
-			current_weapon = player GetCurrentWeapon();
+			// current_weapon = player GetCurrentWeapon();
 
-			if( IsSubStr( current_weapon.name, "thundergun") )
-			{
-				cause = "thunder_kill";
-				has_prefix = false;
-			}
+			// if( IsSubStr( current_weapon.name, "thundergun") )
+			// {
+			// 	cause = "thunder_kill";
+			// 	has_prefix = false;
+			// }
 
-			if( IsSubStr( current_weapon.name, "ray_gun") || IsSubStr( current_weapon.name, "raygun") )
-			{
-				cause = "rg_kill";
-				has_prefix = false;
-			}
+			// if( IsSubStr( current_weapon.name, "ray_gun") || IsSubStr( current_weapon.name, "raygun") )
+			// {
+			// 	cause = "rg_kill";
+			// 	has_prefix = false;
+			// }
 
-			if( IsSubStr( current_weapon.name, "raygun_mark2") )
-			{
-				cause = "rg2_kill";
-				has_prefix = false;
-			}
+			// if( IsSubStr( current_weapon.name, "raygun_mark2") )
+			// {
+			// 	cause = "rg2_kill";
+			// 	has_prefix = false;
+			// }
 
-			if( IsSubStr( current_weapon.name, "raygun_mark3") )
-			{
-				cause = "rg3_kill";
-				has_prefix = false;
-			}
+			// if( IsSubStr( current_weapon.name, "raygun_mark3") )
+			// {
+			// 	cause = "rg3_kill";
+			// 	has_prefix = false;
+			// }
 
-			if( IsSubStr( current_weapon.name, "tesla_gun") )
-			{
-				cause = "teslagun_kill";
-				has_prefix = false;
-			}
+			// if( IsSubStr( current_weapon.name, "tesla_gun") )
+			// {
+			// 	cause = "teslagun_kill";
+			// 	has_prefix = false;
+			// }
 
-			if( IS_TRUE( current_weapon.isriotshield ) )
-			{
-				cause = "shield_kill";
-				has_prefix = false;
-			}
+			// if( IS_TRUE( current_weapon.isriotshield ) )
+			// {
+			// 	cause = "shield_kill";
+			// 	has_prefix = false;
+			// }
         }
 
 		if (!has_cause)

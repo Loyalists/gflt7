@@ -181,6 +181,11 @@ function on_player_spawned()
         self.shortcutSystem = true;
         self thread roamer_shortcuts();
     }
+
+    // exo movement
+    if( GetDvarInt("tfoption_exo_movement", 0) ) {
+        self thread enable_exo_movement();
+    }
 }
 
 function load_tf_options(){
@@ -319,19 +324,6 @@ function apply_choices() {
         zm::set_round_number(starting_round);
         level.zombie_move_speed	= starting_round * level.zombie_vars["zombie_move_speed_multiplier"]; 
     } 
-
-    // exo movement
-    if( GetDvarInt("tfoption_exo_movement", 0) ) {
-        foreach(player in level.players) {
-            SetDvar( "doublejump_enabled", 1 );
-            SetDvar( "juke_enabled", 1 );
-            SetDvar( "playerEnergy_enabled", 1 );
-            SetDvar( "wallrun_enabled", 1 );
-            SetDvar( "sprintLeap_enabled", 1 );
-            SetDvar( "traverse_mode", 1 );
-            SetDvar( "weaponrest_enabled", 1 );
-        }
-    }
 
     //melee + headshot bonus
     if( GetDvarInt("tfoption_melee_bonus", 0) )
@@ -473,6 +465,22 @@ function give_quickrevive()
     //         self.lives = 1;
     //     }
     // }
+}
+
+function enable_exo_movement()
+{
+    level endon("end_game");
+    self endon("disconnect");
+    self endon("bled_out");
+    level flag::wait_till( "initial_blackscreen_passed" );
+
+    SetDvar( "doublejump_enabled", 1 );
+    SetDvar( "juke_enabled", 1 );
+    SetDvar( "playerEnergy_enabled", 1 );
+    SetDvar( "wallrun_enabled", 1 );
+    SetDvar( "sprintLeap_enabled", 1 );
+    SetDvar( "traverse_mode", 1 );
+    SetDvar( "weaponrest_enabled", 1 );
 }
 
 function open_all_doors() {

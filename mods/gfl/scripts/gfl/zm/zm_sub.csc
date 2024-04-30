@@ -28,11 +28,7 @@ function subtitlesMessage( n_local_client_num, message )
 
 function calculate_time(message)
 {
-    calc_time = 0;
-    for(i=0; i<message.size; i++)
-    {
-        calc_time += 75;
-    }
+    calc_time = 75 * message.size;
 
     return calc_time;
 
