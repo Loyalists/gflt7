@@ -132,17 +132,17 @@ function powerup_level_scoreevent_think()
 
 	while (true)
 	{
-		event = level util::waittill_any_return( "carpenter_started", "zmb_max_ammo_level", "free_perk_grabbed_level" );
+		event = level util::waittill_any_return( "carpenter_started", "free_perk_grabbed_level" );
 
 		if (event == "carpenter_started")
 		{
 		    scoreevents::processScoreEvent( "carpenter", self );
 		}
 
-		if (event == "zmb_max_ammo_level")
-		{
-		    scoreevents::processScoreEvent( "max_ammo", self );
-		}
+		// if (event == "zmb_max_ammo_level")
+		// {
+		//     scoreevents::processScoreEvent( "max_ammo", self );
+		// }
 
 		if (event == "free_perk_grabbed_level")
 		{

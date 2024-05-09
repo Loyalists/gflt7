@@ -166,6 +166,8 @@ function bot_cmd()
 			else
 			{
 				thread bot_give_weapon(GetWeapon("lmg_cqb_upgraded"));
+				// todo: why this doesn't work properly
+				// thread bot_give_random_weapon();
 			}
 			iPrintLnBold("Bot GiveWeapon");
 		}
@@ -263,6 +265,41 @@ function bot_cmd()
     }
 }
 
+function bot_give_random_weapon()
+{
+    keys = GetArrayKeys( level.zombie_weapons );
+
+	foreach(bot in getPlayers()) 
+	{
+		if(bot IsTestClient())
+		{
+			weapon = array::random(keys);
+			if ( !isdefined(weapon) )
+			{
+				continue;
+			}
+
+			bot zm_weapons::weapon_give(weapon);
+		}
+	}
+}
+
+function bot_give_weapon(weapon)
+{
+	if ( !isdefined(weapon) )
+	{
+		return;
+	}
+
+	foreach(bot in getPlayers()) 
+	{
+		if(bot IsTestClient())
+		{
+			bot zm_weapons::weapon_give(weapon);
+		}
+	}
+}
+
 function throwEm()
 {
 	num = 0;
@@ -274,17 +311,6 @@ function throwEm()
 		{ 
 			bot BotDropClient(); 
 			break; 
-		}
-	}
-}
-
-function bot_give_weapon(weapon)
-{
-	foreach(bot in getPlayers()) 
-	{
-		if(bot IsTestClient())
-		{
-			bot zm_weapons::weapon_give(weapon);
 		}
 	}
 }

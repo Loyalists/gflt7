@@ -68,9 +68,9 @@ function grab_money( player )
 		case 4: 
 			player zm_score::add_to_player_score( 1500 ); 
 			break;
-		// case 5: 
-		// 	player zm_score::minus_to_player_score( 1500 ); 
-		// 	break;
+		case 5: 
+			player zm_score::minus_to_player_score( 250 ); 
+			break;
 		default: 
 			player zm_score::add_to_player_score( 250 ); 
 			break;

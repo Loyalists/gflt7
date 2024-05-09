@@ -176,12 +176,6 @@ function on_player_spawned()
         self thread give_bowie_knife();
     }
 
-    if( GetDvarInt("tfoption_roamer_enabled", 0) )
-    {
-        self.shortcutSystem = true;
-        self thread roamer_shortcuts();
-    }
-
     // exo movement
     if( GetDvarInt("tfoption_exo_movement", 0) ) {
         self thread enable_exo_movement();
@@ -639,82 +633,105 @@ function sprintSetter() {
 
 
 function roamer() {
-
-    timer = GetDvarInt("tfoption_roamer_time");
+    timer = GetDvarInt("tfoption_roamer_time", 0);
     if(timer != 0) {
         level thread roamer_wait_time();
     }
 
-    level.roamer_data["hud"]  thread hudRGBA((1,1,1), 1.0, 1.5); 
-
+    level thread roamer_hud_think();
+    level thread wait_for_round_end_notify();
     level waittill("continue_round");
-    
-    level.roamer_data["hud"]  thread hudRGBA((1,1,1), 0, 1.5);
-    level.roamer_data["counter"]  thread hudRGBA((1,1,1), 0, 1.5); 
-    
+}
+
+function roamer_hud_think()
+{
+    level notify("roamer_hud_think");
+    level endon("roamer_hud_think");
+
+    level.roamer_hud thread show_roamer_hud(1.5);
+
+    timer = GetDvarInt("tfoption_roamer_time", 0);
+    if(timer != 0) {
+        level.roamer_counter thread show_roamer_hud(1.5); 
+    }
+
+    level util::waittill_any_return("continue_round", "end_game", "kill_round");
+    level.roamer_hud thread hide_roamer_hud(1.5);
+    level.roamer_counter thread hide_roamer_hud(1.5); 
 }
 
 function roamer_wait_time() {
-    self endon("continue_round");
+    level endon("continue_round");
     oldRound = level.round_number;
     
-    timeLeft = GetDvarInt("tfoption_roamer_time");
-    level.roamer_data["counter"]  thread hudRGBA((1,1,1), 1.0, 1.5); 
-    level.roamer_data["counter"] SetValue(timeLeft);
+    timeLeft = GetDvarInt("tfoption_roamer_time", 0);
+    level.roamer_counter SetValue(timeLeft);
     while(timeLeft > 0) {
         wait 1;
         timeLeft --;
-        level.roamer_data["counter"] SetValue(timeLeft);
+        level.roamer_counter SetValue(timeLeft);
     }
     level notify("continue_round");
 }
 
-function roamer_shortcuts()
+function wait_for_round_end_notify()
 {
-	self endon("disconnect");
-	self endon("bled_out");
+    level endon("end_game");
+    level endon("continue_round");
+	level endon("kill_round");
 
-    while( isdefined(self) )
-    {
-        if ( !IS_TRUE(self.shortcutSystem) )
+    while(1)
+    {        
+        foreach(player in GetPlayers())
         {
-            break;
-        }
-
-        if(self AdsButtonPressed())
-        {
-            if(self MeleeButtonPressed())
+            if(player MeleeButtonPressed() && player AdsButtonPressed())
             {
-                self thread roamer_continue_round();
-                wait 0.1;
+                level notify("continue_round");
             }
         }
-        wait 0.1;
+        WAIT_SERVER_FRAME;
     }
 }
 
-function roamer_continue_round() {
-	level endon("game_ended");
-    level notify("continue_round");
-}
- 
-
 //HUD STUFF
+function show_roamer_hud(fadeTime)
+{
+	if(isDefined(fadeTime))
+    {
+		self FadeOverTime(fadeTime);
+    }
+
+    self.alpha = 1.0;
+}
+
+function hide_roamer_hud(fadeTime)
+{
+	if(isDefined(fadeTime))
+    {
+		self FadeOverTime(fadeTime);
+    }
+
+    self.alpha = 0;
+}
+
 function createRoamerHud(){
-    level.roamer_data["hud"] = createNewHudElement("right", "top", -5, 5, 1, 1);
-	level.roamer_data["hud"]  hudRGBA((1,1,1), 0);
-	level.roamer_data["hud"]  SetText("Press ADS + Melee To Start Next Round"); 
-    level.roamer_data["counter"] = createNewHudElement("right", "top", -5, 15, 1, 1);
-    level.roamer_data["counter"]  hudRGBA((1,1,1), 0);
-    level.roamer_data["counter"]  SetValue(0); 
+    level.roamer_hud = createNewHudElement("right", "top", -25, 20, 1, 1);
+	level.roamer_hud hudRGBA((1,1,1), 0);
+	level.roamer_hud SetText("Press ADS + Melee to start next round"); 
+    level.roamer_counter = createNewHudElement("right", "top", -25, 35, 1, 1);
+    level.roamer_counter hudRGBA((1,1,1), 0);
+    level.roamer_counter SetValue(0); 
 }
 
 function createNewHudElement(xAlign, yAlign, posX, posY, foreground, fontScale)
 {
 	hud = newHudElem();
-	hud.horzAlign = xAlign; hud.alignX = xAlign;
-	hud.vertAlign = yAlign; hug.alignY = yAlign;
-	hud.x = posX; hud.y = posY;
+	hud.horzAlign = xAlign; 
+    hud.alignX = xAlign;
+	hud.vertAlign = yAlign; 
+    hug.alignY = yAlign;
+	hud.x = posX; 
+    hud.y = posY;
 	hud.foreground = foreground;
 	hud.fontscale = fontScale;
 	return hud;

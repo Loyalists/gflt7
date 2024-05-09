@@ -93,13 +93,28 @@ function on_player_spawned()
 		self thread altbody_cc_fix();
 	}
 
-    if ( level.script == "zm_leviathan" )
+    if ( is_cc_watcher_needed() )
     {
 		self save_cc_fix();
         self thread cc_watcher_think();
     }
 
 	self thread lock_cc_think();
+}
+
+function is_cc_watcher_needed()
+{
+	if ( level.script == "zm_leviathan" )
+	{
+		return true;
+	}
+
+	if ( level.script == "zm_destiny_tower_beta" )
+	{
+		return true;
+	}
+
+	return false;
 }
 
 function get_character_table_key()
@@ -153,7 +168,7 @@ function altbody_cc_fix()
 	}
 }
 
-function save_cc_fix()
+function save_cc_fix(use_ultimis_bodystyle = false)
 {
 	if ( isdefined(self.cc_bodytype) && isdefined(self.cc_bodystyle) )
 	{
@@ -173,7 +188,14 @@ function save_cc_fix()
 		case 0:
 		{
 			bodytype = 0;
-			bodystyle = 2;
+			if (use_ultimis_bodystyle) 
+			{
+				bodystyle = 2;
+			}
+			else 
+			{
+				bodystyle = 0;
+			}
 			break;
 		}
 		case 1:
