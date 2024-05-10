@@ -406,6 +406,64 @@
             "IsRandom": false,
             "IsSequential": true,
             "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_ab1m",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_ab1m_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 14,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_ab3m",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_ab3m_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 15,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
         }
     ],
     "StateNames": [
@@ -422,7 +480,8 @@
         "gfl_zombie_h",
         "gfl_satellitecitystreet_1",
         "gfl_satellitecitylab_1",
-        "gfl_satellitecityroof_1"
+        "gfl_ab1m",
+        "gfl_ab3m"
     ],
-    "LoopIndex": 14
+    "LoopIndex": 16
 }

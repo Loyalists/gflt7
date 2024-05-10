@@ -234,10 +234,10 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_nihilism_loop",
+            "Name": "gfl_ab1m_loop",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_nihilism_loop",
+                    "AliasName": "mus_gfl_ab1m_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -754,6 +754,35 @@
             "IsRandom": false,
             "IsSequential": true,
             "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_ab3m_loop",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_ab3m_loop",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 26,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
         }
     ],
     "StateNames": [
@@ -765,7 +794,7 @@
         "gfl_barbarous_funera_loop",
         "gfl_ev5_intermission_loop",
         "gfl_greenlight_loop",
-        "gfl_nihilism_loop",
+        "gfl_ab1m_loop",
         "gfl_safety_first_loop",
         "gfl_synthesis_catalyst_loop",
         "gfl_all_systems_go_loop",
@@ -782,7 +811,8 @@
         "gfl_zombie_h_loop",
         "gfl_satellitecitystreet_1_loop",
         "gfl_satellitecitylab_1_loop",
-        "gfl_satellitecityroof_1_loop"
+        "gfl_satellitecityroof_1_loop",
+        "gfl_ab3m_loop"
     ],
-    "LoopIndex": 26
+    "LoopIndex": 27
 }

@@ -116,7 +116,7 @@ CoD.TFPCUtil.TokenizeString = function(f4_arg0, f4_arg1)
 end
 
 CoD.TFPCUtil.GetVersion = function()
-    local version = 0
+    local version = 1
     return version
 end
 

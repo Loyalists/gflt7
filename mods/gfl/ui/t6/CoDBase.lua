@@ -26,6 +26,8 @@ CoD.randomMusicTracks["titlescreen"] = {
     "gfl_satellitecitystreet_1_loop",
     "gfl_satellitecitylab_1_loop",
     "gfl_satellitecityroof_1_loop",
+    "gfl_ab1m_loop",
+    "gfl_ab3m_loop",
 }
 
 CoD.randomMusicTracks["cp_frontend"] = {
@@ -50,6 +52,8 @@ CoD.randomMusicTracks["cp_frontend"] = {
     "gfl_satellitecitystreet_1_loop",
     "gfl_satellitecitylab_1_loop",
     "gfl_satellitecityroof_1_loop",
+    "gfl_ab1m_loop",
+    "gfl_ab3m_loop",
 }
 
 CoD.randomMusicTracks["load_usermaps"] = {
@@ -67,6 +71,8 @@ CoD.randomMusicTracks["load_usermaps"] = {
     "gfl_satellitecitystreet_1",
     "gfl_satellitecitylab_1",
     "gfl_satellitecityroof_1",
+    "gfl_ab1m",
+    "gfl_ab3m",
 }
 
 CoD.randomMusicTracks["zm_cp_frontend"] = CoD.randomMusicTracks["cp_frontend"]
