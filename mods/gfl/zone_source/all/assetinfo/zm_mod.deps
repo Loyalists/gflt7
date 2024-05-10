@@ -167,7 +167,7 @@ scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\zm\_zm_utility.gsh,1638881132,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\zm\_zm_perks.gsh,1638881084,
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\zm_bot.gsc,1715275359,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\zm_bot.gsc,1715353331,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 scriptparsetree,scripts/gfl/zm/zm_counter.gsc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\zm\zm_counter.gsc,1712070561,
@@ -198,7 +198,7 @@ scriptparsetree,scripts/zm/tfoptions.csc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\version.gsh,1638881342,
 scriptparsetree,scripts/zm/tfoptions.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\zm\tfoptions.gsc,1715322489,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\zm\tfoptions.gsc,1715351263,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\statstable_shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\version.gsh,1638881342,
@@ -874,12 +874,12 @@ assetlist,zm_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.alias.sz,1715322537,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.reverb.sz,1715322537,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ducklist.sz,1715322537,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.musiclist.sz,1715322537,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.scriptid.sz,1715322537,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ambient.sz,1715322537,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.alias.sz,1715359025,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.reverb.sz,1715359025,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ducklist.sz,1715359025,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.musiclist.sz,1715359025,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.scriptid.sz,1715359025,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\zm_mod.all.ambient.sz,1715359025,
 	spawn,expect,core_all
 	spawn,expect,zm_common_all
 errorcount,0

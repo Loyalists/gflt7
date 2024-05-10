@@ -464,13 +464,17 @@ function enable_exo_movement()
     self endon("bled_out");
     level flag::wait_till( "initial_blackscreen_passed" );
 
+    // SetDvar( "juke_enabled", 1 );
+    // SetDvar( "sprintLeap_enabled", 1 );
+    // SetDvar( "traverse_mode", 1 );
+    // SetDvar( "weaponrest_enabled", 1 );
+
+    self AllowWallRun(true);
+    self AllowDoubleJump(true);
     SetDvar( "doublejump_enabled", 1 );
-    SetDvar( "juke_enabled", 1 );
     SetDvar( "playerEnergy_enabled", 1 );
     SetDvar( "wallrun_enabled", 1 );
-    SetDvar( "sprintLeap_enabled", 1 );
-    SetDvar( "traverse_mode", 1 );
-    SetDvar( "weaponrest_enabled", 1 );
+    SetDvar( "slide_forceBaseSlide", 0 );
 }
 
 function open_all_doors() {
