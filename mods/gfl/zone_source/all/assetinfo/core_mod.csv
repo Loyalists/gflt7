@@ -184,14 +184,14 @@ index,type,name,resident,streamed,parentStack
 183,rawfile,cp_mod.cfg,16,0,|zone_source/core_mod.zone|csv
 184,rawfile,mp_mod.cfg,16,0,|zone_source/core_mod.zone|csv
 185,rawfile,zm_mod.cfg,16,0,|zone_source/core_mod.zone|csv
-186,sound,core_mod.all,37775,0,||assetlist
+186,sound,core_mod.all,40631,0,||assetlist
 187,techset,mc/lit_plus#e6142445,658360,0,|mc/mtl_gfl_hk416_acs_m_schandbag|material|t7_gfl_rfb_body_mp|xmodel|pbt_gfl_body_rfb|playerbodystyle|pbt_gfl_super_sass|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 188,image,$white_ao,130,0,|mc/mtl_gfl_m4_sopmod_ii_jr_choker|material|p7_zm_zod_magic_box_tentacle_teddy|xmodel|zone_source/core_mod.zone|csv
 189,image,$gray_32_one_channel,306,0,|mc/mtl_p7_zm_teddybear|material|p7_zm_der_magic_box_fake|xmodel|zone_source/core_mod.zone|csv
 190,image,$identitynormalmap,302,0,|mc/mtl_p7_zm_der_magic_box_fake_metal|material|p7_zm_der_magic_box_fake_trunk|xmodel|p7_zm_der_magic_box_fake|xmodel|zone_source/core_mod.zone|csv
 191,image,i_gfl_body_g,341,0,|mc/mtl_gfl_commander_cf_m_face_00|material|c_hro_khalil_egypt_body|xmodel|zone_source/core_mod.zone|csv
 192,image,i_gfl_hk416_v2_cf_m_body_c,115,5608592,|mc/mtl_gfl_hk416_v2_cf_m_body|material|c_t7_zm_dlchd_richtofen_waw_viewlegs|xmodel|zone_source/core_mod.zone|csv
-193,material,mc/mtl_gfl_hk416_v2_cf_m_body_fe,1758,0,|c_54i_cqb_mpc_fb_fe|xmodel|zone_source/core_mod.zone|csv
+193,material,mc/mtl_gfl_hk416_v2_cf_m_body_fe,1766,0,|c_54i_cqb_mpc_fb_fe|xmodel|zone_source/core_mod.zone|csv
 194,techset,mc/lit_nocull_plus#e6142445,239868,0,|mc/mtl_gfl_mp40_mf_m_primmaterial|material|c_hro_khalil_egypt_body|xmodel|zone_source/core_mod.zone|csv
 195,image,i_gfl_cloth_g,262,0,|mc/mtl_gfl_m4_sopmod_ii_jr_choker|material|p7_zm_zod_magic_box_tentacle_teddy|xmodel|zone_source/core_mod.zone|csv
 196,image,i_gfl_hk416_v2_cf_m_bot_mathteacher_d_c,128,5636096,|mc/mtl_gfl_hk416_v2_cf_m_bot_mathteacher_d_trans|material|c_t7_zm_dlchd_richtofen_waw_viewlegs|xmodel|zone_source/core_mod.zone|csv
@@ -342,13 +342,13 @@ index,type,name,resident,streamed,parentStack
 341,stringtable,gamedata/weapons/cp/cp_gunlevels.csv,42052,0,|zone_source/core_mod.zone|csv
 342,stringtable,gamedata/weapons/zm/zm_gunlevels.csv,51020,0,|zone_source/core_mod.zone|csv
 343,stringtable,gamedata/loot/mplootitems.csv,504584,0,|zone_source/core_mod.zone|csv
-344,stringtable,gamedata/tables/common/music_player.csv,17890,0,|zone_source/core_mod.zone|csv
-345,stringtable,gamedata/tables/zm/scoreinfo.csv,54030,0,|zone_source/core_mod.zone|csv
+344,stringtable,gamedata/tables/common/music_player.csv,18116,0,|zone_source/core_mod.zone|csv
+345,stringtable,gamedata/tables/zm/scoreinfo.csv,54028,0,|zone_source/core_mod.zone|csv
 346,rawfile,gamedata/configs/common/ragdoll.cfg,9307,0,|zone_source/core_mod.zone|csv
 347,rawfile,gamedata/configs/cp/ragdoll.cfg,9312,0,|zone_source/core_mod.zone|csv
 348,rawfile,gamedata/configs/mp/ragdoll.cfg,9312,0,|zone_source/core_mod.zone|csv
 349,rawfile,gamedata/configs/zm/ragdoll.cfg,9312,0,|zone_source/core_mod.zone|csv
-350,scriptparsetree,scripts/gfl/_utility.gsc,174,0,|zone_source/core_mod.zone|csv
+350,scriptparsetree,scripts/gfl/_utility.gsc,158,0,|zone_source/core_mod.zone|csv
 351,scriptparsetree,scripts/gfl/character.gsc,11300,0,|zone_source/core_mod.zone|csv
 352,scriptparsetree,scripts/gfl/character_util.gsc,5424,0,|zone_source/core_mod.zone|csv
 353,scriptparsetree,scripts/gfl/spawner_util.gsc,1268,0,|zone_source/core_mod.zone|csv
@@ -382,8 +382,8 @@ index,type,name,resident,streamed,parentStack
 381,rawfile,ui/t7/utility/ccutility_og.lua,69301,0,|ui/t7/utility/ccutility_og.luac|rawfile|zone_source/core_mod.zone|csv
 382,rawfile,ui/t7/utility/lobbyutility.lua,1332,0,|zone_source/core_mod.zone|csv
 383,rawfile,ui/t7/utility/lobbyutility_og.lua,16174,0,|ui/t7/utility/lobbyutility_og.luac|rawfile|zone_source/core_mod.zone|csv
-384,rawfile,ui/t6/codbase.lua,3771,0,|zone_source/core_mod.zone|csv
-385,rawfile,ui/t6/codbase_og.lua,184636,0,|ui/t6/codbase_og.luac|rawfile|zone_source/core_mod.zone|csv
+384,rawfile,ui/t6/codbase.lua,3875,0,|zone_source/core_mod.zone|csv
+385,rawfile,ui/t6/codbase_og.lua,184644,0,|ui/t6/codbase_og.luac|rawfile|zone_source/core_mod.zone|csv
 386,rawfile,ui_mp/t6/hud/loading.lua,22593,0,|zone_source/core_mod.zone|csv
 387,rawfile,ui_mp/t6/hud/loading_og.lua,31710,0,|ui_mp/t6/hud/loading_og.luac|rawfile|zone_source/core_mod.zone|csv
 388,rawfile,ui/uieditor/menus/charactercustomization/personalizecharacter.lua,40908,0,|zone_source/core_mod.zone|csv
@@ -3371,7 +3371,7 @@ index,type,name,resident,streamed,parentStack
 3370,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521488,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3371,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3372,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3373,image,t7_menu_mp_chars_enforcer_body_custom01 Ö,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3373,image,t7_menu_mp_chars_enforcer_body_custom01`×ì}K,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3374,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3375,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3376,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv

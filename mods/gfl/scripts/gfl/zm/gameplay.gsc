@@ -99,8 +99,7 @@ function init()
     thread map_fixes();
     thread after_blackscreen_setup();
 
-    level.player_too_many_weapons_monitor_func = &player_too_many_weapons_monitor;
-    level.player_intersection_tracker_override = &player_intersection_tracker_override;
+    repeated_setup();
 }
 
 function on_player_connecting()
@@ -135,14 +134,19 @@ function map_fixes()
 	}
 }
 
+function repeated_setup()
+{
+    level.player_too_many_weapons_monitor_func = &player_too_many_weapons_monitor;
+    level.player_intersection_tracker_override = &player_intersection_tracker_override;
+}
+
 function after_blackscreen_setup()
 {
 	level endon("game_ended");
 	level endon("end_game");
 	level waittill( "initial_blackscreen_passed" ); 
 
-    level.player_too_many_weapons_monitor_func = &player_too_many_weapons_monitor;
-    level.player_intersection_tracker_override = &player_intersection_tracker_override;
+    repeated_setup();
 
     if( GetDvarInt("tfoption_bgb_off", 0) )
     {

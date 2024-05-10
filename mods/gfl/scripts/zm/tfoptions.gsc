@@ -40,10 +40,6 @@
 //bo4 max ammo
 #using scripts\zm\bo4_full_ammo;
 
-//bo4 carpenter
-#using scripts\zm\_zm_weap_riotshield;
-#using scripts\zm\bo4_carpenter;
-
 //better nuke
 #using scripts\zm\better_nuke;
 
@@ -59,6 +55,7 @@
 #using scripts\zm\infinityloader;
 
 #using scripts\gfl\zm\gameplay;
+#using scripts\gfl\zm\bo4_carpenter;
 
 #insert scripts\zm\_zm_perks.gsh;
 #insert scripts\zm\_zm_utility.gsh;
@@ -66,7 +63,6 @@
 #namespace tfoptions;
 
 function init() {
-    level.roamer_data = [];
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         create_tf_options_defaults();
@@ -364,7 +360,7 @@ function apply_choices() {
 
     //bo4 carpenter
     if( GetDvarInt("tfoption_bo4_carpenter", 0) ) {
-        level thread bo4_carpenter::carpenter_upgrade();
+        bo4_carpenter::init();
     }
 
     if( GetDvarInt("tfoption_better_nuke", 0) )
@@ -640,6 +636,7 @@ function roamer() {
 
     level thread roamer_hud_think();
     level thread wait_for_round_end_notify();
+    level thread handle_deadlock();
     level waittill("continue_round");
 }
 
@@ -681,15 +678,48 @@ function wait_for_round_end_notify()
 	level endon("kill_round");
 
     while(1)
-    {        
+    {
         foreach(player in GetPlayers())
         {
-            if(player MeleeButtonPressed() && player AdsButtonPressed())
+            if (player MeleeButtonPressed() && player AdsButtonPressed())
             {
                 level notify("continue_round");
             }
         }
+
         WAIT_SERVER_FRAME;
+    }
+}
+
+function handle_deadlock()
+{
+    level endon("end_game");
+    level endon("continue_round");
+	level endon("kill_round");
+
+    while(1)
+    {
+        deadlock = true;
+        foreach(player in GetPlayers())
+        {
+            if (player IsTestClient())
+            {
+                continue;
+            }
+
+            if ( player.sessionstate != "spectator" && isalive(player) )
+            {
+                deadlock = false;
+                break;
+            }
+        }
+        
+        if (deadlock)
+        {
+            level notify("continue_round");
+        }
+
+        wait 2;
     }
 }
 

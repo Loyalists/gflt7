@@ -113,7 +113,7 @@ index,type,name,resident,streamed,parentStack
 112,localize,TF_PERK_POWERUP,41,0,||assetlist
 113,localize,TF_PERK_POWERUP_DESC,63,0,||assetlist
 114,localize,TF_ZCASH_POWERUP,44,0,||assetlist
-115,localize,TF_ZCASH_POWERUP_DESC,71,0,||assetlist
+115,localize,TF_ZCASH_POWERUP_DESC,86,0,||assetlist
 116,localize,TF_PAP_POWERUP,41,0,||assetlist
 117,localize,TF_PAP_POWERUP_DESC,109,0,||assetlist
 118,localize,TF_MAX_AMMO,32,0,||assetlist
@@ -177,5 +177,5 @@ index,type,name,resident,streamed,parentStack
 176,localize,TF_MENU_SERVER_OPTIONS,44,0,||assetlist
 177,localize,TF_MENU_SERVER_OPTIONS_DESC,59,0,||assetlist
 178,localize,MENU_GFL,26,0,||assetlist
-179,keyvaluepairs,bp_core_mod,1094,0,||assetlist
+179,keyvaluepairs,bp_core_mod,1095,0,||assetlist
 180,assetlist,,2848,0,

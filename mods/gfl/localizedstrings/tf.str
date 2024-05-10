@@ -1078,7 +1078,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            ZCASH_POWERUP_DESC
-LANG_ENGLISH         "Adds a zombie cash powerup that can give points."
+LANG_ENGLISH         "Adds a zombie cash powerup that can give (or take away) points."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"

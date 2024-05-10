@@ -657,15 +657,18 @@ function should_ignore_target( target )
 	
 	// cotd fix
 	// hopefully the bots won't piss off george
-	if ( target.archetype == "zombie_george" )
+	if ( isdefined(target.archetype) )
 	{
-		if ( target flag::exists("george_is_enraged") && target flag::get("george_is_enraged") )
+		if ( target.archetype == "zombie_george" )
 		{
-			return false;
-		}
-		else
-		{
-			return true;
+			if ( target flag::exists("george_is_enraged") && target flag::get("george_is_enraged") )
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
 		}
 	}
 

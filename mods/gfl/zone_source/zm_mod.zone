@@ -48,6 +48,9 @@ scriptparsetree,scripts/gfl/zm/zm_sub.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.csc
 scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 
+//Frost Iceforge's BO4 Carpenter
+scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc
+
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
 
@@ -79,12 +82,6 @@ xmodel,free_packapunch
 scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
 
 scriptparsetree,scripts/zm/zm_damagefeedback.gsc
-
-//Frost Iceforge's BO4 Carpenter
-scriptparsetree,scripts/zm/bo4_carpenter.gsc
-scriptparsetree,scripts/zm/_zm_powerup_carpenter.gsc
-scriptparsetree,scripts/zm/_zm_weap_riotshield.csc
-scriptparsetree,scripts/zm/_zm_weap_riotshield.gsc
 
 // unlimited and random bgbs
 // requires T7MTEnhancements to compile
