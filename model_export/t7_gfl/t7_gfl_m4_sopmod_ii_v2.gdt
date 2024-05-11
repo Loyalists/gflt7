@@ -18200,7 +18200,7 @@
 	"t7_gfl_m4_sopmod_ii_v2_fb" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"autogenLod4" "1"
+		"autogenLod4" "0"
 		"autogenLod4Percent" "7"
 		"autogenLod5" "0"
 		"autogenLod5Percent" "4"
@@ -18208,9 +18208,9 @@
 		"autogenLod6Percent" "2"
 		"autogenLod7" "0"
 		"autogenLod7Percent" "1"
-		"autogenLowestLod" "1"
+		"autogenLowestLod" "0"
 		"autogenLowestLodPercent" "12"
-		"autogenLowLod" "1"
+		"autogenLowLod" "0"
 		"autogenLowLodPercent" "25"
 		"autogenMediumLod" "0"
 		"autogenMediumLodPercent" "50"
@@ -18527,7 +18527,7 @@
 	"t7_gfl_m4_sopmod_ii_v2_fb_mp" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"autogenLod4" "1"
+		"autogenLod4" "0"
 		"autogenLod4Percent" "7"
 		"autogenLod5" "0"
 		"autogenLod5Percent" "4"
@@ -18535,9 +18535,9 @@
 		"autogenLod6Percent" "2"
 		"autogenLod7" "0"
 		"autogenLod7Percent" "1"
-		"autogenLowestLod" "1"
+		"autogenLowestLod" "0"
 		"autogenLowestLodPercent" "12"
-		"autogenLowLod" "1"
+		"autogenLowLod" "0"
 		"autogenLowLodPercent" "25"
 		"autogenMediumLod" "0"
 		"autogenMediumLodPercent" "50"
