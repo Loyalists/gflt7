@@ -1,17 +1,26 @@
+#using scripts\codescripts\struct;
 #using scripts\shared\array_shared;
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\clientfield_shared;
 #using scripts\shared\util_shared;
+#using scripts\shared\system_shared;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
 #namespace character_mgr;
 
-function init()
+REGISTER_SYSTEM_EX( "character_mgr", &__init__, &__main__, undefined )
+
+function private __init__()
 {
     util::register_system( "gfl_character_icon", &set_character_icon );
     init_character_icon_table();
+}
+
+function private __main__()
+{
+
 }
 
 function init_character_icon_table()

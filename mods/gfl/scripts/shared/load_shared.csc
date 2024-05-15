@@ -17,10 +17,7 @@
 
 #insert scripts\shared\shared.gsh;
 
-#using scripts\gfl\cp\_load;
-
-// Bloodsplatter
-// #using scripts\zm\_zm_bloodsplatter;
+#using scripts\gfl\_load;
 
 #namespace load;
 
@@ -28,6 +25,7 @@ REGISTER_SYSTEM( "load", &__init__, undefined )
 
 function __init__()
 {
+
 }
 
 function art_review()

@@ -15,6 +15,10 @@ rawfile,zm_mod.cfg
 // for some reason the game tends to freeze when switching from/to different modes (cp/mp/zm) so we just put everything in core_mod
 sound,core_mod
 
+// T7Overcharged
+rawfile,ui/util/T7Overcharged.lua
+rawfile,ui/util/T7OverchargedUtil.lua
+
 // GLOBAL
 xmodel,c_54i_cqb_mpc_fb_fe
 // xmodel,t7_gfl_rfb_fb_mp_fe
@@ -51,20 +55,17 @@ rawfile,gamedata/configs/mp/ragdoll.cfg
 rawfile,gamedata/configs/zm/ragdoll.cfg
 
 // core scripts
-scriptparsetree,scripts/gfl/_utility.gsc
+scriptparsetree,scripts/gfl/_load.gsc
+scriptparsetree,scripts/gfl/_load.csc
 scriptparsetree,scripts/gfl/character.gsc
 scriptparsetree,scripts/gfl/character_util.gsc
 scriptparsetree,scripts/gfl/spawner_util.gsc
+scriptparsetree,scripts/gfl/_clientdvar.gsc
+scriptparsetree,scripts/gfl/_clientdvar.csc
+scriptparsetree,scripts/gfl/_chat_notify.gsc
+scriptparsetree,scripts/gfl/thirdperson.csc
+scriptparsetree,scripts/gfl/thirdperson.gsc
 
-scriptparsetree,scripts/gfl/cp/_load.gsc
-scriptparsetree,scripts/gfl/cp/_load.csc
-scriptparsetree,scripts/gfl/cp/safehouse.gsc
-scriptparsetree,scripts/gfl/cp/cp_mi_eth_prologue.gsc
-scriptparsetree,scripts/gfl/cp/cp_mi_sing_vengeance.gsc
-scriptparsetree,scripts/gfl/cp/cp_mi_cairo_aquifer.gsc
-scriptparsetree,scripts/gfl/cp/cp_mi_cairo_ramses.gsc
-scriptparsetree,scripts/gfl/cp/cp_mi_cairo_infection.gsc
-scriptparsetree,scripts/gfl/cp/cp_mi_cairo_lotus.gsc
 // scriptparsetree,scripts/gfl/mp/_load.gsc
 
 scriptparsetree,scripts/core/frontend_cam_override.csc
@@ -105,6 +106,9 @@ rawfile,ui/t7/utility/LobbyUtility_og.luac
 // random music tracks in lobby
 rawfile,ui/t6/CoDBase.lua
 rawfile,ui/t6/CoDBase_og.luac
+
+rawfile,ui_mp/T6/hud.lua
+rawfile,ui_mp/T6/hud_og.luac
 
 // loading screen
 rawfile,ui_mp/T6/HUD/Loading.lua

@@ -1,5 +1,8 @@
 #using scripts\shared\array_shared;
 #using scripts\shared\spawner_shared;
+#using scripts\shared\util_shared;
+#using scripts\shared\callbacks_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\gfl\character;
 #using scripts\gfl\character_util;
@@ -11,22 +14,30 @@
 #using scripts\gfl\cp\cp_mi_cairo_infection;
 #using scripts\gfl\cp\cp_mi_cairo_lotus;
 
+#insert scripts\shared\shared.gsh;
+
 #namespace cp_load;
 
-function main() 
+REGISTER_SYSTEM_EX( "cp_load", &__init__, &__main__, undefined )
+
+function private __init__()
+{
+	setdvar("sv_cheats", 1);
+	character::init_character_table();
+	spawner::add_archetype_spawn_function("human", &character_util::disable_gib);
+	spawner::add_archetype_spawn_function("human_riotshield", &character_util::disable_gib);
+	spawner::add_archetype_spawn_function("civilian", &character_util::disable_gib);
+}
+
+function private __main__()
 {
 	if (level.game_mode_suffix != "_cp")
 	{
 		return;
 	}
 
-	setdvar("sv_cheats", 1);
-	character::init_character_table();
 	thread set_character_name_for_all_ais();
 	// thread character_util::reset_all_characters();
-	spawner::add_archetype_spawn_function("human", &character_util::disable_gib);
-	spawner::add_archetype_spawn_function("human_riotshield", &character_util::disable_gib);
-	spawner::add_archetype_spawn_function("civilian", &character_util::disable_gib);
 	
 	// map related patches
 	thread safehouse::main();

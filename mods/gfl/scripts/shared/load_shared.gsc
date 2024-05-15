@@ -24,11 +24,7 @@
 
 #insert scripts\shared\shared.gsh;
 
-#using scripts\gfl\cp\_load;
-// #using scripts\gfl\mp\_load;
-
-// Bloodsplatter
-// #using scripts\zm\_zm_bloodsplatter;
+#using scripts\gfl\_load;
 
 #namespace load;
 
@@ -97,16 +93,6 @@ function __init__()
 	weapon_ammo();
 	set_objective_text_colors();
 	link_ents();
-
-	if (level.game_mode_suffix == "_cp")
-	{
-		level cp_load::main();
-	}
-
-	// if (level.game_mode_suffix == "_mp")
-	// {
-	// 	level mp_load::main();
-	// }
 }
 
 function count_network_frames()

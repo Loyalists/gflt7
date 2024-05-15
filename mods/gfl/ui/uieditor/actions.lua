@@ -35,3 +35,14 @@ function OpenZMChooseCharacterLoadout_Override( f77_arg0, f77_arg1, f77_arg2 )
 	end )
 	return f77_local0
 end
+
+function splitString(inputstr, sep)
+    if sep == nil or inputstr == nil then
+        return nil
+    end
+    local t={}
+    for str in string.gmatch(tostring(inputstr,""), "([^"..sep.."]+)") do
+        table.insert(t, str)
+    end
+    return t
+end

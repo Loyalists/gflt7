@@ -71,6 +71,7 @@ function on_player_connect()
     self thread pap_sub_think();
     self thread bgb_sub_think();
     self thread magicboxshare_sub_think();
+    self thread chat_sub_think();
 }
 
 function sub_logic(player, type, character, message)
@@ -238,7 +239,7 @@ function special_event_sub_think()
 
 	while (true)
 	{
-		event = self util::waittill_any_return( "player_downed", "perk_bought" );
+		event = self util::waittill_any_return( "player_downed", "perk_bought", "start_chat_sub" );
         character_name = self character_mgr::get_character_name_by_model(self.name);
 
 		if (event == "player_downed")
@@ -336,6 +337,22 @@ function magicboxshare_sub_think()
 
         character_name = self character_mgr::get_character_name_by_model(self.name);
 		self zm_sub::show_magicboxshare_sub(character_name, weapon);
+        WAIT_SERVER_FRAME;
+	}
+}
+
+function chat_sub_think()
+{
+	self endon("disconnect");
+    self endon("death");
+    self endon("entityshutdown");
+
+	while (isdefined(self))
+	{
+		self waittill("start_chat_sub", text);
+
+        character_name = self character_mgr::get_character_name_by_model(self.name);
+		thread zm_sub::sub_logic(undefined, 2, character_name, text);
         WAIT_SERVER_FRAME;
 	}
 }

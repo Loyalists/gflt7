@@ -13,6 +13,9 @@ localize,gfl_zm
 localize,subevent
 localize,scoreevent
 
+// rawfile,ui_mp/T6/hud.lua
+// rawfile,ui_mp/T6/hud_og.luac
+
 image,img_loadscreen_zm_factory
 image,t7_menu_zm_loadscreen_sumpf
 image,t7_menu_zm_loadscreen_theater

@@ -19,6 +19,8 @@ image,t7_mp_loadingportrait_weapon_ruin
 image,t7_mp_loadingportrait_weapon_seraph
 image,t7_mp_loadingportrait_weapon_spectre
 rawfile,dummy.cfg
+scriptparsetree,scripts/gfl/mp/_load.csc
+scriptparsetree,scripts/gfl/mp/_load.gsc
 scriptparsetree,scripts/mp/_load.csc
 scriptparsetree,scripts/mp/_load.gsc
 scriptparsetree,scripts/mp/bots/_bot_loadout.gsc

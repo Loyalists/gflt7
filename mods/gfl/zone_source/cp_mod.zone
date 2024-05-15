@@ -23,6 +23,19 @@ rawfile,dummy.cfg
 
 sound,cp_mod
 
+scriptparsetree,scripts/cp/_bouncingbetty.gsc
+scriptparsetree,scripts/cp/_bouncingbetty.csc
+
+scriptparsetree,scripts/gfl/cp/_load.gsc
+scriptparsetree,scripts/gfl/cp/_load.csc
+scriptparsetree,scripts/gfl/cp/safehouse.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_eth_prologue.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_sing_vengeance.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_aquifer.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_ramses.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_infection.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_lotus.gsc
+
 image,i_t7_graphic_display_mugshot_02_c
 image,t7_cp_hud_commswidget_diaz
 image,t7_cp_hud_commswidget_hendricks

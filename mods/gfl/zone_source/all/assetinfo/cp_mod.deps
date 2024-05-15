@@ -10,6 +10,30 @@ ignore_missing_shipped,cp_patch
 rawfile,dummy.cfg
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\dummy.cfg,1638882746,
 sound,cp_mod,all
+scriptparsetree,scripts/cp/_bouncingbetty.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\cp\_bouncingbetty.gsc,1715710107,
+scriptparsetree,scripts/cp/_bouncingbetty.csc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\cp\_bouncingbetty.csc,1715710092,
+scriptparsetree,scripts/gfl/cp/_load.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\_load.gsc,1715753091,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
+scriptparsetree,scripts/gfl/cp/_load.csc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\_load.csc,1715708365,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
+scriptparsetree,scripts/gfl/cp/safehouse.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\safehouse.gsc,1693718497,
+scriptparsetree,scripts/gfl/cp/cp_mi_eth_prologue.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\cp_mi_eth_prologue.gsc,1691905812,
+scriptparsetree,scripts/gfl/cp/cp_mi_sing_vengeance.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\cp_mi_sing_vengeance.gsc,1688969949,
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_aquifer.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\cp_mi_cairo_aquifer.gsc,1688969828,
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_ramses.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\cp_mi_cairo_ramses.gsc,1688969726,
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_infection.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\cp_mi_cairo_infection.gsc,1691903988,
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_lotus.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\cp_mi_cairo_lotus.gsc,1688969780,
 image,i_t7_graphic_display_mugshot_02_c
 	gdt,image,i_t7_graphic_display_mugshot_02_c,04-6D-AE-6D-AF-B1-B9-27-9F-1E-79-AA-A6-4E-29-70
 	gdt,light,i_t7_graphic_display_mugshot_02_c,
@@ -1249,7 +1273,7 @@ xmodel,c_zur_terrorist_3_headgear_head3
 texturecombo,cp_mod
 assetlist,cp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\cp_mod.zone,1714025921,248b351a,2ca40258,41e38b94,43ebab08
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\cp_mod.zone,1715710127,b75a3e2e,7bc5361e,7eae19d7,1138f441
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\cp_mod.class,1638881105,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\mod_default.class,1638881174,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\default.class,1638881104,
@@ -1288,12 +1312,12 @@ assetlist,cp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1714452319,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1714452319,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1714452319,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1714452319,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1714452319,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1714452319,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1715753096,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1715753096,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1715753096,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1715753096,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1715753096,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1715753096,
 	spawn,expect,core_all
 	spawn,expect,cp_common_all
 errorcount,0

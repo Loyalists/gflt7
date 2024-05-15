@@ -7,6 +7,8 @@
 #using scripts\shared\laststand_shared;
 #using scripts\shared\flagsys_shared;
 #using scripts\shared\scoreevents_shared;
+#using scripts\shared\lui_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -45,7 +47,6 @@
 
 function init()
 {
-    character_mgr::init();
     mule_kick_indicator::init();
 
     callback::on_connecting( &on_player_connecting );
@@ -115,6 +116,8 @@ function on_player_connect()
     {
         self thread revive_at_end_of_round();
     }
+
+    self thread mw3_intro();
 }
 
 function on_player_spawned()
@@ -223,6 +226,69 @@ function disable_bgb()
             bgb SetZBarrierPieceState(3, "closed");
         }
     }
+}
+
+function mw3_intro()
+{
+    while (level clientfield::get( "sndZMBFadeIn") != 1 ) 
+    {
+        WAIT_SERVER_FRAME;
+    }
+
+    self DisableWeaponCycling();
+    self DisableOffhandWeapons();
+    self DisableWeapons(true);
+    self mw3_intro_cam();
+    self EnableWeapons();
+    foreach(weapon in self GetWeaponsListPrimaries())
+    {
+        self ShouldDoInitialWeaponRaise( weapon, true );
+        self SwitchToWeapon(weapon);
+        self waittill("weapon_change_complete");
+        self ShouldDoInitialWeaponRaise( weapon, false );
+    }
+    self EnableOffhandWeapons();
+    self EnableWeaponCycling();
+}
+
+function mw3_intro_cam()
+{
+    if ( self IsTestClient() )
+    {
+        return;
+    }
+
+    // if ( level.script == "zm_tomb" || level.script == "zm_theater" || level.script == "zm_asylum" )
+    // {
+    //     return;
+    // }
+
+    self freezecontrols( 1 );
+    cam_time = 1.2;
+    cam_height = 2000;
+    player_origin = self GetPlayerCameraPos() + AnglesToForward(self.angles) * 20;
+    //player_origin += ( 0,0,50 );
+    cam = spawn( "script_model", ( 69.0, 69.0, 69.0 ) );
+    cam setmodel( "tag_origin" );
+    cam.origin = player_origin + ( 0, 0, cam_height );
+    cam.angles = self.angles;
+    cam.angles = ( cam.angles[0] + 89, cam.angles[1], 0 );
+    self CameraSetPosition(cam);
+    self CameraSetLookAt();
+    self CameraActivate(true);
+    cam moveto( player_origin + ( 0.0, 0.0, 0.0 ), cam_time, 0, cam_time );
+    wait 0.05;
+    //self playsound( "survival_slamzoom_out" );
+    wait(cam_time - 0.55);
+    self thread lui::screen_fade( 0.25, 1, 0 , "white" , false);
+    //self visionsetnakedforplayer( "coup_sunblind", 0.25 );
+    cam rotateto( ( cam.angles[0] - 89, cam.angles[1], 0 ), 0.5, 0.3, 0.2 );
+    wait 0.2;
+    self thread lui::screen_fade( 1.1, 0, 1 , "white" , false);
+    wait 0.24;
+    self CameraActivate(false);
+    self freezecontrols( 0 );
+    cam delete();
 }
 
 function gasmask_reset_player_model(entity_num)

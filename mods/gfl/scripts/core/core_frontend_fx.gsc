@@ -10,6 +10,8 @@ function autoexec init()
 	thread apply_settings();
 	// thread dvar_tester();
 	// thread lua_iprintbold();
+    // chat_LastMs = GetDvarInt("chat_LastMs", 0);
+    // SetDvar("chat_LastMs", chat_LastMs + 1);
 }
 
 function main()

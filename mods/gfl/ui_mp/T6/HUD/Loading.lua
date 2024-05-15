@@ -1,5 +1,17 @@
 require( "ui_mp.T6.HUD.Loading_og" )
 
+require("ui.util.T7Overcharged")
+
+local options = {
+    modname = "gfl",
+    filespath = [[.\mods\gfl\]],
+    workshopid = "3019676071",
+    discordAppId = nil, -- "{{DISCORD_APP_ID}}" -- Not required, create your application at https://discord.com/developers/applications/
+    showExternalConsole = true
+}
+
+-- InitializeT7Overcharged(options)
+
 local CustomMapImageTable = {
 	["cp_sh_cairo"] = "t7_menu_gfl_loadscreen_command_room",
 	["cp_sh_mobile"] = "t7_menu_gfl_loadscreen_command_room",

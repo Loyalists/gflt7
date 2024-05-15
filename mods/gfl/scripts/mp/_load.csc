@@ -76,6 +76,8 @@
 #using scripts\shared\weapons\multilockapguidance;
 #using scripts\shared\weapons\spike_charge;
 
+#using scripts\gfl\mp\_load;
+
 #namespace load;
 
 /*

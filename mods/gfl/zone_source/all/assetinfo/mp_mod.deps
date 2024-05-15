@@ -14,9 +14,15 @@ scriptparsetree,scripts/mp/bots/_bot_loadout.gsc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\statstable_shared.gsh,1638881081,
 scriptparsetree,scripts/mp/_load.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\_load.gsc,1708600325,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\_load.gsc,1715756847,
 scriptparsetree,scripts/mp/_load.csc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\_load.csc,1687508763,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\mp\_load.csc,1715756852,
+scriptparsetree,scripts/gfl/mp/_load.gsc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\mp\_load.gsc,1715756774,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
+scriptparsetree,scripts/gfl/mp/_load.csc
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\mp\_load.csc,1715756787,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 image,t7_mp_loadingportrait_ability_battery
 	gdt,image,t7_mp_loadingportrait_ability_battery,EB-11-F5-4F-00-82-9A-6C-5C-11-E9-19-94-6F-41-73
 	gdt,light,t7_mp_loadingportrait_ability_battery,
@@ -143,7 +149,7 @@ image,t7_mp_loadingportrait_weapon_spectre
 texturecombo,mp_mod
 assetlist,mp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\mp_mod.zone,1694192000,85eced63,509be1df,8b55117b,e6c51947
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\mp_mod.zone,1715756805,48722e9f,538ffc8e,4bec4b64,d310462e
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\mp_mod.class,1638881105,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\mod_default.class,1638881174,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\zone_source\default.class,1638881104,

@@ -13,6 +13,9 @@ scriptparsetree,scripts/mp/bots/_bot_loadout.gsc
 scriptparsetree,scripts/mp/_load.gsc
 scriptparsetree,scripts/mp/_load.csc
 
+scriptparsetree,scripts/gfl/mp/_load.gsc
+scriptparsetree,scripts/gfl/mp/_load.csc
+
 image,t7_mp_loadingportrait_ability_battery
 image,t7_mp_loadingportrait_ability_blackmarket
 image,t7_mp_loadingportrait_ability_firebreak

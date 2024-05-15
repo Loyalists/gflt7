@@ -165,4 +165,15 @@ image,t7_menu_gfl_loadscreen_snowmountain
 image,t7_menu_gfl_loadscreen_tower
 sound,cp_mod
 rawfile,dummy.cfg
+scriptparsetree,scripts/cp/_bouncingbetty.csc
+scriptparsetree,scripts/cp/_bouncingbetty.gsc
+scriptparsetree,scripts/gfl/cp/_load.csc
+scriptparsetree,scripts/gfl/cp/_load.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_aquifer.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_infection.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_lotus.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_cairo_ramses.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_eth_prologue.gsc
+scriptparsetree,scripts/gfl/cp/cp_mi_sing_vengeance.gsc
+scriptparsetree,scripts/gfl/cp/safehouse.gsc
 keyvaluepairs,cp_mod

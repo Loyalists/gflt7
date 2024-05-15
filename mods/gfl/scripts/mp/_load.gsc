@@ -84,6 +84,8 @@
 #using scripts\shared\weapons\_weaponobjects;
 #using scripts\shared\weapons\multilockapguidance;
 
+#using scripts\gfl\mp\_load;
+
 #namespace load;
 
 /*
@@ -110,18 +112,6 @@ function main()
 	setup_traversals();
 	level.globallogic_audio_dialog_on_player_override = &globallogic_audio::leader_dialog_on_player;
 	level.growing_hitmarker = 1;
-
-	SetDvar( "bot_enableWallrun", true );
-
-	if ( GetDvarInt("tfoption_cheats", 0) )
-	{
-		SetDvar("sv_cheats", 1);
-	}
-	else
-	{
-		SetDvar("sv_cheats", 0);
-	}
-	
 	system::wait_till("all");
 	level flagsys::set("load_main_complete");
 }

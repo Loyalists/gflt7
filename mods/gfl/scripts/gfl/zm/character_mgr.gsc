@@ -1,14 +1,17 @@
+#using scripts\codescripts\struct;
 #using scripts\shared\array_shared;
 #using scripts\shared\clientfield_shared;
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\flag_shared;
 #using scripts\shared\util_shared;
 #using scripts\shared\spawner_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm_audio;
 
 #using scripts\gfl\character;
 #using scripts\gfl\character_util;
+#using scripts\gfl\_chat_notify;
 #using scripts\gfl\zm\character_zm;
 
 #insert scripts\shared\shared.gsh;
@@ -16,9 +19,12 @@
 
 #namespace character_mgr;
 
-function init()
+REGISTER_SYSTEM_EX( "character_mgr", &__init__, &__main__, undefined )
+
+function private __init__()
 {
 	util::registerClientSys( "gfl_character_icon" );
+	chat_notify::register_chat_notify_callback( &on_message_sent, "char" );
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
 
@@ -34,7 +40,10 @@ function init()
 	{
 		spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
 	}
+}
 
+function private __main__()
+{
 	if( !( GetDvarInt("tfoption_player_determined_character") || GetDvarInt("tfoption_randomize_character") ) )
 	{
 		return;
@@ -71,6 +80,11 @@ function on_player_spawned()
 	self endon("disconnect");
 	self endon("bled_out");
 
+	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
+	{
+		return;
+	}
+
 	if( GetDvarInt("tfoption_player_determined_character", 0) )
 	{
 		self thread set_character_customization();
@@ -100,6 +114,39 @@ function on_player_spawned()
     }
 
 	self thread lock_cc_think();
+}
+
+function on_message_sent(args)
+{
+	if ( !isdefined(args) )
+	{
+		return;
+	}
+
+	if ( args.size != 1 || args[0] == "" )
+	{
+		usage_text = "usage: /char/[character name]";
+		desc_text = "characters: ";
+		key = get_character_table_key();
+		characters = GetArrayKeys(level.charactertable[key]);
+		foreach (char in characters)
+		{
+			desc_text += char;
+			desc_text += " ";
+		}
+		self IPrintLnBold(usage_text);
+		self IPrintLnBold(desc_text);
+		return;
+	}
+    
+    if ( self.sessionstate == "spectator" )
+    {
+        return;
+    }
+
+	character = args[0];
+	self set_character(character);
+    self IPrintLnBold("character swapped");
 }
 
 function is_cc_watcher_needed()
@@ -392,6 +439,13 @@ function save_character_customization_moon()
 	self.cc_bodytype = bodytype;
 	self.cc_bodystyle = bodystyle;
 	self.cc_bodystyle_name = undefined;
+}
+
+function set_character(character)
+{
+	key = get_character_table_key();
+	self character_util::swap_character(key, character);
+	self set_icon(character);
 }
 
 function set_character_customization()

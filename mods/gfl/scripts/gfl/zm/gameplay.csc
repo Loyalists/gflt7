@@ -4,6 +4,7 @@
 #using scripts\shared\clientfield_shared;
 #using scripts\shared\array_shared;
 #using scripts\shared\util_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -17,8 +18,6 @@
 
 function init()
 {
-	character_mgr::init();
-
 	// callback::on_connect( &on_player_connect );
 	// callback::on_spawned( &on_player_spawned );
 }
