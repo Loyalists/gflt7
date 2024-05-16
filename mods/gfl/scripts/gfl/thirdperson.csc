@@ -2,13 +2,16 @@
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\system_shared;
 
+#using scripts\gfl\clientsystem;
+
 #insert scripts\shared\shared.gsh;
 
 REGISTER_SYSTEM( "thirdperson", &__init__, undefined )
 
 function private __init__()
 {
-    callback::on_spawned(&on_spawned);
+    callback::on_localplayer_spawned(&on_spawned);
+    clientsystem::register("tps", &on_state_changed);
 }
 
 function on_spawned(localClientNum)
@@ -18,36 +21,52 @@ function on_spawned(localClientNum)
         return;
     }
 
-    self thread watch_thirdperson_crosshair(localClientNum);
+    self thread update_thirdperson_crosshair(localClientNum);
+    self thread thirdperson_toggle_think(localClientNum);
 }
 
-function watch_thirdperson_crosshair(localClientNum)
+function on_state_changed(localClientNum, states)
 {
-    self notify("watch_thirdperson_crosshair");
-    self endon("watch_thirdperson_crosshair");
+    if (states.size == 0)
+    {
+        return;
+    }
+
+    state = states[0];
+    player = GetLocalPlayer(localClientNum);
+    switch (state)
+    {
+    case "off":
+        player notify("thirdperson_off_notified");
+        break;
+    case "on":
+        player notify("thirdperson_on_notified");
+        break;
+    default:
+        break;
+    }
+}
+
+function thirdperson_toggle_think(localClientNum)
+{
+    self notify("thirdperson_toggle_think");
+    self endon("thirdperson_toggle_think");
     self endon("entityshutdown");
     self endon("disconnect");
     self endon("death");
 
     while(1)
     {
-        // self waittill("thirdperson_notified");
-        // if (IsSpectating(localClientNum))
-        // {
-        //     break;
-        // }
+        event = self util::waittill_any_return("thirdperson_off_notified", "thirdperson_on_notified");
 
-        if (IsThirdPerson(localClientNum))
+        if (event == "thirdperson_on_notified")
         {
             set_back_camera();
             self thread update_thirdperson_crosshair(localClientNum);
-            while (IsThirdPerson(localClientNum))
-            {
-                wait 0.5;
-            }
         }
         else
         {
+            self stop_updating_thirdperson_crosshair();
             self hide_thirdperson_crosshair(localClientNum);
         }
         
@@ -100,15 +119,12 @@ function update_thirdperson_crosshair(localClientNum)
 
         if ( !IsThirdPerson(localClientNum) )
         {
-            break;
+            hide_thirdperson_crosshair(localClientNum);
+            wait 0.5;
+            continue;
         }
 
-        // if (IsSpectating(localClientNum))
-        // {
-        //     break;
-        // }
-
-        pos = self get_trace_pos();
+        pos = self get_trace_pos(localClientNum);
         if ( isdefined(pos) )
         {
             SetUIModelValue( crosshair_model, "" + pos[0] + "," + pos[1] + "," + pos[2] );
@@ -118,9 +134,16 @@ function update_thirdperson_crosshair(localClientNum)
             hide_thirdperson_crosshair(localClientNum);
         }
     }
+
+    hide_thirdperson_crosshair(localClientNum);
 }
 
-function hide_thirdperson_crosshair(localclientnum)
+function stop_updating_thirdperson_crosshair()
+{
+    self notify("update_thirdperson_crosshair");
+}
+
+function hide_thirdperson_crosshair(localClientNum)
 {
     controller_model = GetUIModelForController( localClientNum );
     crosshair_model = GetUIModel( controller_model, "hudItems.ThirdpersonCrosshair" );
@@ -131,7 +154,7 @@ function hide_thirdperson_crosshair(localclientnum)
     }
 }
 
-function get_trace_pos()
+function get_trace_pos(localClientNum)
 {
     if ( !isdefined(self) )
     {

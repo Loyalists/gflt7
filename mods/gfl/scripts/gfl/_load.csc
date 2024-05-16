@@ -6,7 +6,7 @@
 #using scripts\shared\util_shared;
 #using scripts\shared\system_shared;
 
-#using scripts\gfl\_clientdvar;
+#using scripts\gfl\clientsystem;
 #using scripts\gfl\thirdperson;
 
 #insert scripts\shared\shared.gsh;

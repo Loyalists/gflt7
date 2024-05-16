@@ -761,8 +761,10 @@ CoD.LobbyButtons.CP_DOA_LEADERBOARD = {
 CoD.LobbyBase.OpenServerSettings = function(arg0, arg1)
     CoD.LobbyBase.SetLeaderActivity(arg1, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
 
-    CoD.TFPCUtil.CheckForRecentUpdate()
-    CoD.TFPCUtil.LoadTFOptions()
+    if IsZombies() then
+        CoD.TFPCUtil.CheckForRecentUpdate()
+        CoD.TFPCUtil.LoadTFOptions()
+    end
 
     LUI.OverrideFunction_CallOriginalFirst(OpenOverlay(arg0, "TFOptions", arg1), "close", function()
 

@@ -6,6 +6,7 @@
 #using scripts\shared\array_shared;
 
 #using scripts\gfl\_chat_notify;
+#using scripts\gfl\clientsystem;
 
 #insert scripts\shared\shared.gsh;
 
@@ -14,7 +15,7 @@ REGISTER_SYSTEM_EX( "thirdperson", &__init__, &__main__, undefined )
 function private __init__()
 {
     callback::on_spawned( &on_player_spawned );
-    chat_notify::register_chat_notify_callback( &on_message_sent, "tps" );
+    chat_notify::register_chat_notify_callback( "tps", &on_message_sent );
 }
 
 function private __main__()
@@ -22,17 +23,12 @@ function private __main__()
 
 }
 
-function on_message_sent()
+function on_message_sent(args)
 {
     if (isDefined(self.no_skip) || isDefined(self.current_player_scene))
     {
         return;
     }
-    
-    // if ( !isalive(self) )
-    // {
-    //     return;
-    // }
 
     self IPrintLnBold("Third Person");
     self toggle_thirdperson();
@@ -60,13 +56,13 @@ function toggle_thirdperson()
     {
         self SetClientThirdPerson( 0 );
         self.spectatingThirdPerson = false;
-        self util::clientNotify("thirdperson_notified");
+        self set_thirdperson_state("off");
     }
     else
     {
         self SetClientThirdPerson( 1 );
         self.spectatingThirdPerson = true;
-        self util::clientNotify("thirdperson_notified");
+        self set_thirdperson_state("on");
     }
 }
 
@@ -81,12 +77,19 @@ function force_thirdperson()
     {
         self SetClientThirdPerson( 1 );
         self.spectatingThirdPerson = true;
-        self util::clientNotify("thirdperson_notified");
+        self set_thirdperson_state("on");
     }
     else
     {
         self SetClientThirdPerson( 0 );
         self.spectatingThirdPerson = false;
-        self util::clientNotify("thirdperson_notified");
+        self set_thirdperson_state("off");
     }
+}
+
+function set_thirdperson_state(state)
+{
+    states = [];
+    array::add( states, state );
+    self clientsystem::set_states("tps", states);
 }

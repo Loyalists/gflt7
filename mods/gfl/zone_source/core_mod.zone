@@ -60,11 +60,11 @@ scriptparsetree,scripts/gfl/_load.csc
 scriptparsetree,scripts/gfl/character.gsc
 scriptparsetree,scripts/gfl/character_util.gsc
 scriptparsetree,scripts/gfl/spawner_util.gsc
-scriptparsetree,scripts/gfl/_clientdvar.gsc
-scriptparsetree,scripts/gfl/_clientdvar.csc
 scriptparsetree,scripts/gfl/_chat_notify.gsc
 scriptparsetree,scripts/gfl/thirdperson.csc
 scriptparsetree,scripts/gfl/thirdperson.gsc
+scriptparsetree,scripts/gfl/clientsystem.csc
+scriptparsetree,scripts/gfl/clientsystem.gsc
 
 // scriptparsetree,scripts/gfl/mp/_load.gsc
 

@@ -63,6 +63,12 @@ function set_character_icon(clientnum, state, oldstate)
         init_playerlist_icon_uimodel(clientnum);
     }
 
+    // todo: add support for clientnum != 0
+    if ( clientnum != 0 )
+    {
+        return;
+    }
+
     if ( !isdefined(state) || state == "none" || !isdefined(level.character_icon_table[state]) )
     {
         return;
@@ -70,10 +76,7 @@ function set_character_icon(clientnum, state, oldstate)
 
     while(true)
     {
-        if (clientnum == 0)
-        {
-            set_character_icon_for_uimodel(clientnum, state);
-        }
+        set_character_icon_for_uimodel(clientnum, state);
         WAIT_CLIENT_FRAME;
     }
 }

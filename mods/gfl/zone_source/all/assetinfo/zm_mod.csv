@@ -4,8 +4,8 @@ index,type,name,resident,streamed,parentStack
 3,sound,zm_mod.all,37303,0,||assetlist
 4,scriptparsetree,scripts/gfl/zm/character_zm.gsc,9301,0,|zone_source/zm_mod.zone|csv
 5,scriptparsetree,scripts/gfl/zm/character_mgr.gsc,8968,0,|zone_source/zm_mod.zone|csv
-6,scriptparsetree,scripts/gfl/zm/character_mgr.csc,2404,0,|zone_source/zm_mod.zone|csv
-7,scriptparsetree,scripts/gfl/zm/gameplay.gsc,10526,0,|zone_source/zm_mod.zone|csv
+6,scriptparsetree,scripts/gfl/zm/character_mgr.csc,2412,0,|zone_source/zm_mod.zone|csv
+7,scriptparsetree,scripts/gfl/zm/gameplay.gsc,10518,0,|zone_source/zm_mod.zone|csv
 8,scriptparsetree,scripts/gfl/zm/gameplay.csc,620,0,|zone_source/zm_mod.zone|csv
 9,scriptparsetree,scripts/gfl/zm/perkplus.gsc,7988,0,|zone_source/zm_mod.zone|csv
 10,scriptparsetree,scripts/gfl/zm/t8_perkloss.gsc,5682,0,|zone_source/zm_mod.zone|csv
@@ -15,8 +15,8 @@ index,type,name,resident,streamed,parentStack
 14,scriptparsetree,scripts/gfl/zm/zm_bot.gsc,34266,0,|zone_source/zm_mod.zone|csv
 15,scriptparsetree,scripts/gfl/zm/zm_counter.gsc,2874,0,|zone_source/zm_mod.zone|csv
 16,scriptparsetree,scripts/gfl/zm/zm_sub.gsc,7876,0,|zone_source/zm_mod.zone|csv
-17,scriptparsetree,scripts/gfl/zm/zm_sub.csc,870,0,|zone_source/zm_mod.zone|csv
-18,scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc,7062,0,|zone_source/zm_mod.zone|csv
+17,scriptparsetree,scripts/gfl/zm/zm_sub.csc,942,0,|zone_source/zm_mod.zone|csv
+18,scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc,7054,0,|zone_source/zm_mod.zone|csv
 19,scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc,1642,0,|zone_source/zm_mod.zone|csv
 20,scriptparsetree,scripts/zm/_zm_ffotd.gsc,422,0,|zone_source/zm_mod.zone|csv
 21,scriptparsetree,scripts/zm/_zm_ffotd.csc,336,0,|zone_source/zm_mod.zone|csv

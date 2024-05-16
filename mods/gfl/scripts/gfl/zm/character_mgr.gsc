@@ -24,7 +24,7 @@ REGISTER_SYSTEM_EX( "character_mgr", &__init__, &__main__, undefined )
 function private __init__()
 {
 	util::registerClientSys( "gfl_character_icon" );
-	chat_notify::register_chat_notify_callback( &on_message_sent, "char" );
+	chat_notify::register_chat_notify_callback( "char", &on_message_sent );
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
 

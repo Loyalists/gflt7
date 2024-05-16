@@ -3324,12 +3324,12 @@ stringtable,gamedata/weapons/zm/zm_gunlevels.csv
 scriptparsetree,scripts/core/core_frontend_fx.gsc
 scriptparsetree,scripts/core/frontend_cam_override.csc
 scriptparsetree,scripts/gfl/_chat_notify.gsc
-scriptparsetree,scripts/gfl/_clientdvar.csc
-scriptparsetree,scripts/gfl/_clientdvar.gsc
 scriptparsetree,scripts/gfl/_load.csc
 scriptparsetree,scripts/gfl/_load.gsc
 scriptparsetree,scripts/gfl/character.gsc
 scriptparsetree,scripts/gfl/character_util.gsc
+scriptparsetree,scripts/gfl/clientsystem.csc
+scriptparsetree,scripts/gfl/clientsystem.gsc
 scriptparsetree,scripts/gfl/spawner_util.gsc
 scriptparsetree,scripts/gfl/thirdperson.csc
 scriptparsetree,scripts/gfl/thirdperson.gsc

@@ -12,7 +12,7 @@
 #using scripts\shared\hud_shared;
 #using scripts\shared\system_shared;
 
-#using scripts\gfl\_clientdvar;
+#using scripts\gfl\clientsystem;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
@@ -24,9 +24,15 @@ REGISTER_SYSTEM_EX( "chat_notify", &__init__, &__main__, undefined )
 function private __init__()
 {
 	callback::on_connect( &chat_notify );
-    chat_notify::register_chat_notify_callback( &down_yourself, "s" );
-    chat_notify::register_chat_notify_callback( &chathelp, "help" );
-    chat_notify::register_chat_notify_callback( &chathelp, "?" );
+    chat_notify::register_chat_notify_callback( "s", &down_yourself );
+    chat_notify::register_chat_notify_callback( "help", &chathelp );
+    chat_notify::register_chat_notify_callback( "?", &chathelp );
+
+    // dev commands
+    chat_notify::register_chat_notify_callback( "dvar", &print_dvar );
+    chat_notify::register_chat_notify_callback( "setdvar", &set_dvar );
+    chat_notify::register_chat_notify_callback( "cldvar", &print_clientdvar );
+    chat_notify::register_chat_notify_callback( "dev", &toggle_developer );
 
     chat_LastMs = GetDvarInt("chat_LastMs", 0);
     SetDvar("chat_LastMs", chat_LastMs + 1);
@@ -100,7 +106,7 @@ function chat_notify_test()
     }
 }
 
-function register_chat_notify_callback(callback, command)
+function register_chat_notify_callback(command, callback)
 {
 	if(!isdefined(level.chat_notify_callbacks))
 	{
@@ -159,14 +165,6 @@ function chathelp(args)
     self endon("death");
     self endon("entityshutdown");
 
-    // if(isDefined(self.chathelp))
-    // {
-    //     self CloseLUIMenu(self.chathelp);
-    //     wait 0.1;
-    // }
-    // self.chathelp = self hud::create_lui_text( &"EXT_HELP", 1, 200, 50, 720, (1,1,1) ,20 , "0,400,1");
-    // wait 20;
-    // self CloseLUIMenu(self.chathelp);
     usage_text = "usage: /[command]/[args]";
     desc_text = "commands: ";
     commands = GetArrayKeys(level.chat_notify_callbacks);
@@ -177,4 +175,80 @@ function chathelp(args)
     }
     self IPrintLnBold(usage_text);
     self IPrintLnBold(desc_text);
+}
+
+function print_dvar(args)
+{
+	if ( !isdefined(args) )
+	{
+		return;
+	}
+
+	if ( args.size != 1 || args[0] == "" )
+	{
+		usage_text = "usage: /dvar/[dvar]";
+		self IPrintLnBold(usage_text);
+		return;
+	}
+
+    dvar = args[0];
+    value = GetDvarString(dvar, "undefined");
+    self IPrintLnBold("dvar: " + dvar + ", " + "value: " + value);
+}
+
+function set_dvar(args)
+{
+	if ( !isdefined(args) )
+	{
+		return;
+	}
+
+	if ( args.size != 2 || args[0] == "" )
+	{
+		usage_text = "usage: /setdvar/[dvar]/[value]";
+		self IPrintLnBold(usage_text);
+		return;
+	}
+
+    dvar = args[0];
+    value = args[1];
+    SetDvar(dvar, value);
+
+    new_val = GetDvarString(dvar, "undefined");
+    self IPrintLnBold("dvar: " + dvar + ", " + "value: " + new_val);
+}
+
+function print_clientdvar(args)
+{
+	if ( !isdefined(args) )
+	{
+		return;
+	}
+
+	if ( args.size != 1 || args[0] == "" )
+	{
+		usage_text = "usage: /cldvar/[dvar]";
+		self IPrintLnBold(usage_text);
+		return;
+	}
+
+    dvar = args[0];
+    states = [];
+    array::add( states, dvar );
+    self clientsystem::set_states("cldvar", states);
+}
+
+function toggle_developer(args)
+{
+    dev = GetDvarInt("developer", 0);
+    if (dev == 0)
+    {
+        SetDvar("developer", 2);
+        self IPrintLnBold("developer mode ON");
+    }
+    else
+    {
+        SetDvar("developer", 0);
+        self IPrintLnBold("developer mode OFF");
+    }
 }
