@@ -36,12 +36,17 @@ function on_message_sent(args)
 
 function on_player_spawned()
 {
+	level endon("game_ended");
+	level endon("end_game");
     self endon("disconnect");
     self endon("death");
     self endon("bled_out");
-	level endon("game_ended");
-	level endon("end_game");
 
+    if (IS_TRUE(level.disable_force_thirdperson))
+    {
+        return;
+    }
+    
     self force_thirdperson();
 }
 
@@ -64,6 +69,8 @@ function toggle_thirdperson()
         self.spectatingThirdPerson = true;
         self set_thirdperson_state("on");
     }
+
+    self notify("toggle_thirdperson");
 }
 
 function force_thirdperson()
@@ -89,7 +96,5 @@ function force_thirdperson()
 
 function set_thirdperson_state(state)
 {
-    states = [];
-    array::add( states, state );
-    self clientsystem::set_states("tps", states);
+    self clientsystem::set_state("tps", state);
 }

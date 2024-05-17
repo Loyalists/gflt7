@@ -13,6 +13,7 @@
 #using scripts\shared\system_shared;
 
 #using scripts\gfl\clientsystem;
+#using scripts\gfl\core_util;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
@@ -27,12 +28,18 @@ function private __init__()
     chat_notify::register_chat_notify_callback( "s", &down_yourself );
     chat_notify::register_chat_notify_callback( "help", &chathelp );
     chat_notify::register_chat_notify_callback( "?", &chathelp );
+    chat_notify::register_chat_notify_callback( "mw3intro", &do_mw3_intro );
+    chat_notify::register_chat_notify_callback( "cheats", &toggle_cheats );
 
     // dev commands
-    chat_notify::register_chat_notify_callback( "dvar", &print_dvar );
-    chat_notify::register_chat_notify_callback( "setdvar", &set_dvar );
-    chat_notify::register_chat_notify_callback( "cldvar", &print_clientdvar );
-    chat_notify::register_chat_notify_callback( "dev", &toggle_developer );
+    if ( core_util::is_cheats_enabled() )
+    {
+        chat_notify::register_chat_notify_callback( "dvar", &print_dvar );
+        chat_notify::register_chat_notify_callback( "setdvar", &set_dvar );
+        chat_notify::register_chat_notify_callback( "cldvar", &print_clientdvar );
+        chat_notify::register_chat_notify_callback( "setcldvar", &set_clientdvar );
+        chat_notify::register_chat_notify_callback( "dev", &toggle_developer );
+    }
 
     chat_LastMs = GetDvarInt("chat_LastMs", 0);
     SetDvar("chat_LastMs", chat_LastMs + 1);
@@ -113,7 +120,7 @@ function register_chat_notify_callback(command, callback)
 		level.chat_notify_callbacks = [];
 	}
 
-	if(!isdefined(command))
+	if(!isdefined(command) || command == "")
 	{
 		return;
 	}
@@ -233,9 +240,26 @@ function print_clientdvar(args)
 	}
 
     dvar = args[0];
-    states = [];
-    array::add( states, dvar );
-    self clientsystem::set_states("cldvar", states);
+    self clientsystem::print_clientdvar(dvar);
+}
+
+function set_clientdvar(args)
+{
+	if ( !isdefined(args) )
+	{
+		return;
+	}
+
+	if ( args.size != 2 || args[0] == "" )
+	{
+		usage_text = "usage: /setcldvar/[dvar]/[value]";
+		self IPrintLnBold(usage_text);
+		return;
+	}
+
+    dvar = args[0];
+    value = args[1];
+    self clientsystem::set_clientdvar(dvar, value);
 }
 
 function toggle_developer(args)
@@ -251,4 +275,40 @@ function toggle_developer(args)
         SetDvar("developer", 0);
         self IPrintLnBold("developer mode OFF");
     }
+}
+
+function toggle_cheats(args)
+{
+    if (!self IsHost())
+    {
+        self IPrintLnBold("This command can only be used by the host.");
+        return;
+    }
+
+    cheats = GetDvarInt("sv_cheats", 0);
+    if (cheats == 0)
+    {
+        SetDvar("developer", 1);
+        self IPrintLnBold("cheats enabled");
+    }
+    else
+    {
+        SetDvar("developer", 0);
+        self IPrintLnBold("cheats disabled");
+    }
+}
+
+function do_mw3_intro(args)
+{
+	if ( !isdefined(self) )
+	{
+		return;
+	}
+
+	if ( !IsAlive(self) || self.sessionstate == "spectator" )
+	{
+		return;
+	}
+
+    self thread core_util::mw3_intro();
 }

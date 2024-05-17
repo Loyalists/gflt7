@@ -27,37 +27,38 @@ function on_player_connect()
     util::setClientSysState( "clientsystem", "", self );
 }
 
-function set_states(system, states)
+function set_state(system, ...)
 {
     if ( !isdefined(self) )
     {
         return;
     }
 
-    if ( !isdefined(system) || !isdefined(states) )
+    if ( !isdefined(system) )
     {
         return;
     }
 
     str = system;
-    foreach (state in states)
+    if ( isdefined(vararg) )
     {
-        str += ",";
-        str += state;
+        foreach (arg in vararg)
+        {
+            str += ",";
+            str += arg;
+        }
     }
+
     util::setClientSysState( "clientsystem", str, self );
     // self IPrintLnBold(str + " " + "sent to" + " " + system);
 }
 
-function set_clientdvar(key, value)
+function set_clientdvar(dvar, value)
 {
-    if ( !isdefined(self) )
-    {
-        return;
-    }
+    self clientsystem::set_state("setcldvar", dvar, value);
+}
 
-    states = [];
-    array::add( states, key );
-    array::add( states, value );
-    self clientsystem::set_states("cldvar", states);
+function print_clientdvar(dvar)
+{
+    self clientsystem::set_state("cldvar", dvar);
 }

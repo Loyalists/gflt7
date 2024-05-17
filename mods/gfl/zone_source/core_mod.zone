@@ -65,8 +65,7 @@ scriptparsetree,scripts/gfl/thirdperson.csc
 scriptparsetree,scripts/gfl/thirdperson.gsc
 scriptparsetree,scripts/gfl/clientsystem.csc
 scriptparsetree,scripts/gfl/clientsystem.gsc
-
-// scriptparsetree,scripts/gfl/mp/_load.gsc
+scriptparsetree,scripts/gfl/core_util.gsc
 
 scriptparsetree,scripts/core/frontend_cam_override.csc
 scriptparsetree,scripts/shared/lui_shared.csc

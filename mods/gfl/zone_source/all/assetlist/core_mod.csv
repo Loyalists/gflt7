@@ -3330,6 +3330,7 @@ scriptparsetree,scripts/gfl/character.gsc
 scriptparsetree,scripts/gfl/character_util.gsc
 scriptparsetree,scripts/gfl/clientsystem.csc
 scriptparsetree,scripts/gfl/clientsystem.gsc
+scriptparsetree,scripts/gfl/core_util.gsc
 scriptparsetree,scripts/gfl/spawner_util.gsc
 scriptparsetree,scripts/gfl/thirdperson.csc
 scriptparsetree,scripts/gfl/thirdperson.gsc

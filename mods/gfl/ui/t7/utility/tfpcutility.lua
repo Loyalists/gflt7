@@ -65,6 +65,7 @@ CoD.TFOptionIndexes["bgb_off"] = 64
 CoD.TFOptionIndexes["version"] = 65
 CoD.TFOptionIndexes["subtitles"] = 66
 CoD.TFOptionIndexes["cw_scoreevent"] = 67
+CoD.TFOptionIndexes["thirdperson"] = 68
 
 if not CoD.TFPCUtil then
     CoD.TFPCUtil = {}
@@ -251,6 +252,7 @@ CoD.TFPCUtil.ResetToDefault = function()
     CoD.TFPCUtil.SetToSaveData("version", CoD.TFPCUtil.GetVersion(), 0)
     CoD.TFPCUtil.SetToSaveData("subtitles", 1, 0)
     CoD.TFPCUtil.SetToSaveData("cw_scoreevent", 1, 0)
+    CoD.TFPCUtil.SetToSaveData("thirdperson", 0, 0)
 end
 
 CoD.TFPCUtil.LoadTFOptions = function()
@@ -316,6 +318,7 @@ CoD.TFPCUtil.LoadTFOptions = function()
     CoD.TFPCUtil.LoadFromSaveData("version")
     CoD.TFPCUtil.LoadFromSaveData("subtitles")
     CoD.TFPCUtil.LoadFromSaveData("cw_scoreevent")
+    CoD.TFPCUtil.LoadFromSaveData("thirdperson")
 end
 
 CoD.TFPCUtil.CheckBoxOptionChecked = function(itemRef, updateTable)

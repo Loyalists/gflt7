@@ -39,6 +39,9 @@
 #using scripts\gfl\zm\zm_sub;
 #using scripts\gfl\zm\coldwar_scoreevent;
 
+#using scripts\gfl\core_util;
+#using scripts\gfl\thirdperson;
+
 #insert scripts\shared\shared.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 #insert scripts\zm\_zm_perks.gsh;
@@ -117,13 +120,19 @@ function on_player_connect()
         self thread revive_at_end_of_round();
     }
 
-    self thread mw3_intro();
+    self thread mw3_intro_zm();
 }
 
 function on_player_spawned()
 {
 	self endon("disconnect");
 	self endon("bled_out");
+	self endon("death");
+
+    if( GetDvarInt("tfoption_thirdperson", 0) )
+    {
+        self thread set_thirdperson_on_spawned();
+    }
 }
 
 function map_fixes()
@@ -140,7 +149,8 @@ function map_fixes()
 function repeated_setup()
 {
     level.player_too_many_weapons_monitor_func = &player_too_many_weapons_monitor;
-    level.player_intersection_tracker_override = &player_intersection_tracker_override;
+    level.player_intersection_tracker_override = &core_util::always_true;
+    level.disable_force_thirdperson = true;
 }
 
 function after_blackscreen_setup()
@@ -158,31 +168,47 @@ function after_blackscreen_setup()
 
 	if ( GetDvarInt("tfoption_cheats", 0) )
 	{
-		thread enable_cheats();
+		thread core_util::enable_cheats();
 	}
     else
     {
-        thread disable_cheats();
+        thread core_util::disable_cheats();
     }
 }
 
-function void()
+function set_thirdperson_on_spawned()
 {
+	self endon("disconnect");
+	self endon("bled_out");
+	self endon("death");
+
+    if (self IsTestClient())
+    {
+        return;
+    }
+
+    self thread watch_for_mw3_intro();
+    self.spectatingThirdPerson = true;
+    self thirdperson::force_thirdperson();
+
+    // bruteforce for any unexpected situation
+    wait 0.2;
+    self.spectatingThirdPerson = true;
+    self thirdperson::force_thirdperson();
 }
 
-function player_intersection_tracker_override(other_player)
+function watch_for_mw3_intro()
 {
-    return true;
-}
+	self endon("disconnect");
+	self endon("bled_out");
+	self endon("death");
 
-function enable_cheats()
-{
-    SetDvar("sv_cheats", 1);
-}
-
-function disable_cheats()
-{
-    SetDvar("sv_cheats", 0);
+    while (isdefined(self))
+    {
+        self util::waittill_any_return("mw3_intro_cam_complete", "mw3_intro_complete");
+        self thirdperson::force_thirdperson();
+        WAIT_SERVER_FRAME;
+    }
 }
 
 function revive_at_end_of_round()
@@ -228,67 +254,14 @@ function disable_bgb()
     }
 }
 
-function mw3_intro()
+function mw3_intro_zm()
 {
     while (level clientfield::get( "sndZMBFadeIn") != 1 ) 
     {
         WAIT_SERVER_FRAME;
     }
 
-    self DisableWeaponCycling();
-    self DisableOffhandWeapons();
-    self DisableWeapons(true);
-    self mw3_intro_cam();
-    self EnableWeapons();
-    foreach(weapon in self GetWeaponsListPrimaries())
-    {
-        self ShouldDoInitialWeaponRaise( weapon, true );
-        self SwitchToWeapon(weapon);
-        self waittill("weapon_change_complete");
-        self ShouldDoInitialWeaponRaise( weapon, false );
-    }
-    self EnableOffhandWeapons();
-    self EnableWeaponCycling();
-}
-
-function mw3_intro_cam()
-{
-    if ( self IsTestClient() )
-    {
-        return;
-    }
-
-    // if ( level.script == "zm_tomb" || level.script == "zm_theater" || level.script == "zm_asylum" )
-    // {
-    //     return;
-    // }
-
-    self freezecontrols( 1 );
-    cam_time = 1.2;
-    cam_height = 2000;
-    player_origin = self GetPlayerCameraPos() + AnglesToForward(self.angles) * 20;
-    //player_origin += ( 0,0,50 );
-    cam = spawn( "script_model", ( 69.0, 69.0, 69.0 ) );
-    cam setmodel( "tag_origin" );
-    cam.origin = player_origin + ( 0, 0, cam_height );
-    cam.angles = self.angles;
-    cam.angles = ( cam.angles[0] + 89, cam.angles[1], 0 );
-    self CameraSetPosition(cam);
-    self CameraSetLookAt();
-    self CameraActivate(true);
-    cam moveto( player_origin + ( 0.0, 0.0, 0.0 ), cam_time, 0, cam_time );
-    wait 0.05;
-    //self playsound( "survival_slamzoom_out" );
-    wait(cam_time - 0.55);
-    self thread lui::screen_fade( 0.25, 1, 0 , "white" , false);
-    //self visionsetnakedforplayer( "coup_sunblind", 0.25 );
-    cam rotateto( ( cam.angles[0] - 89, cam.angles[1], 0 ), 0.5, 0.3, 0.2 );
-    wait 0.2;
-    self thread lui::screen_fade( 1.1, 0, 1 , "white" , false);
-    wait 0.24;
-    self CameraActivate(false);
-    self freezecontrols( 0 );
-    cam delete();
+    self thread core_util::mw3_intro();
 }
 
 function gasmask_reset_player_model(entity_num)
