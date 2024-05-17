@@ -31,6 +31,12 @@ function private __init__()
     chat_notify::register_chat_notify_callback( "mw3intro", &do_mw3_intro );
     chat_notify::register_chat_notify_callback( "cheats", &toggle_cheats );
 
+    chat_LastMs = GetDvarInt("chat_LastMs", 0);
+    SetDvar("chat_LastMs", chat_LastMs + 1);
+}
+
+function private __main__()
+{
     // dev commands
     if ( core_util::is_cheats_enabled() )
     {
@@ -40,14 +46,6 @@ function private __init__()
         chat_notify::register_chat_notify_callback( "setcldvar", &set_clientdvar );
         chat_notify::register_chat_notify_callback( "dev", &toggle_developer );
     }
-
-    chat_LastMs = GetDvarInt("chat_LastMs", 0);
-    SetDvar("chat_LastMs", chat_LastMs + 1);
-}
-
-function private __main__()
-{
-
 }
 
 function chat_notify()
@@ -288,12 +286,12 @@ function toggle_cheats(args)
     cheats = GetDvarInt("sv_cheats", 0);
     if (cheats == 0)
     {
-        SetDvar("developer", 1);
+        SetDvar("sv_cheats", 1);
         self IPrintLnBold("cheats enabled");
     }
     else
     {
-        SetDvar("developer", 0);
+        SetDvar("sv_cheats", 0);
         self IPrintLnBold("cheats disabled");
     }
 }
