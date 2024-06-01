@@ -24158,18 +24158,6 @@
 		"glossRangeMax" "4.0"
 		"glossRangeMin" "0.0"
 	}
-	"c_hro_sarah_base_body" [ "t7_gfl_m4a1_v2_fb" ]
-	{
-	}
-	"c_hro_sarah_base_fb" [ "t7_gfl_m4a1_v2_fb" ]
-	{
-	}
-	"c_hro_sarah_salvation_fb" [ "t7_gfl_m4a1_v2_fb" ]
-	{
-	}
-	"c_hro_sarah_salvation_fb_reveal" [ "t7_gfl_m4a1_v2_fb" ]
-	{
-	}
 	"t7_gfl_m4a1_v2_fb_mp" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
@@ -24393,9 +24381,6 @@
 		"glossRangeMax" "17.0"
 		"glossRangeMin" "0.0"
 		"specColorMap" "i_gfl_m4a1_v2_mf_m_primmaterial_2652_s"
-	}
-	"c_t7_mp_technomancer_mpc_body1_skin5" [ "t7_gfl_m4a1_v2_fb_mp" ]
-	{
 	}
 	"t7_gfl_m4a1_v2_viewhands" ( "xmodel.gdf" )
 	{
@@ -24828,20 +24813,5 @@
 		"usage_weapon" "0"
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
-	}
-	"c_t7_mp_technomancer_viewarms1_skin5" [ "t7_gfl_m4a1_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin5" [ "t7_gfl_m4a1_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin4" [ "t7_gfl_m4a1_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin4" [ "t7_gfl_m4a1_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin4" [ "t7_gfl_m4a1_v2_viewlegs" ]
-	{
 	}
 }

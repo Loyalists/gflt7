@@ -19514,9 +19514,6 @@
 	"c_t7_mp_firebreak_viewarms1_skin1" [ "t7_gfl_ak12_viewhands" ]
 	{
 	}
-	"c_t7_mp_firebreak_viewarms2_skin4" [ "t7_gfl_ak12_viewhands" ]
-	{
-	}
 	"c_t7_mp_firebreak_viewarms1_skin4" [ "t7_gfl_ak12_viewhands" ]
 	{
 	}
@@ -19743,9 +19740,6 @@
 	{
 	}
 	"c_t7_mp_firebreak_viewlegs1_skin1" [ "t7_gfl_ak12_viewlegs" ]
-	{
-	}
-	"c_t7_mp_firebreak_viewlegs2_skin4" [ "t7_gfl_ak12_viewlegs" ]
 	{
 	}
 	"c_t7_mp_firebreak_viewlegs1_skin4" [ "t7_gfl_ak12_viewlegs" ]

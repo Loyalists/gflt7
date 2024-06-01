@@ -1,8 +1,8 @@
 {
-	"i_gfl_tololo_cloth1_uber_c" ( "image.gdf" )
+	"i_gfl_macqiato_cloth1_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth1_da.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth1_d.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -44,10 +44,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth1_uber_g" ( "image.gdf" )
+	"i_gfl_macqiato_cloth1_g" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth1_g.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth1_g.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -89,10 +89,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth1_uber_n" ( "image.gdf" )
+	"i_gfl_macqiato_cloth1_n" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth1_n.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth1_n.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -134,10 +134,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth1_uber_o" ( "image.gdf" )
+	"i_gfl_macqiato_cloth1_o" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth1_o.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth1_o.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -179,10 +179,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth1_uber_s" ( "image.gdf" )
+	"i_gfl_macqiato_cloth1_s" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth1_s.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth1_s.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -224,10 +224,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth2_uber_c" ( "image.gdf" )
+	"i_gfl_macqiato_cloth2_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth2_da.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth2_d.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -269,10 +269,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth2_uber_g" ( "image.gdf" )
+	"i_gfl_macqiato_cloth2_g" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth2_g.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth2_g.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -314,10 +314,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth2_uber_n" ( "image.gdf" )
+	"i_gfl_macqiato_cloth2_n" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth2_n.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth2_n.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -359,10 +359,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth2_uber_o" ( "image.gdf" )
+	"i_gfl_macqiato_cloth2_o" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth2_o.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth2_o.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -404,10 +404,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_cloth2_uber_s" ( "image.gdf" )
+	"i_gfl_macqiato_cloth2_s" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_cloth2_s.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_cloth2_s.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -449,10 +449,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_eyenew_c" ( "image.gdf" )
+	"i_gfl_macqiato_eyes2_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_Tololo_slg_eye_d.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_Macqiato_eyeblend .png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -494,10 +494,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_eyenewadd_c" ( "image.gdf" )
+	"i_gfl_macqiato_eyes_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_Tololo_slg_eyeblend_d.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_Macqiato_eye_d.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -539,10 +539,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_faceuber_c" ( "image.gdf" )
+	"i_gfl_macqiato_face_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_Tololo_slg_face_d.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_Macqiato_face_d.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -584,10 +584,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_hairuber_c" ( "image.gdf" )
+	"i_gfl_macqiato_hair_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_Tololo_slg_hair_d.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_Macqiato_hair_d.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -629,10 +629,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_hairuber_g" ( "image.gdf" )
+	"i_gfl_macqiato_hair_g" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_Tololo_slg_hair_spc.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR0101_hair_spc.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -674,10 +674,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_hairuber_s" ( "image.gdf" )
+	"i_gfl_macqiato_hair_s" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_Tololo_slg_hair_spc.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR0101_hair_spc.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -719,10 +719,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_skinuber_c" ( "image.gdf" )
+	"i_gfl_macqiato_weapon_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_body_d.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_qiang_d.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -764,10 +764,10 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"i_gfl_tololo_skinuber_g" ( "image.gdf" )
+	"i_gfl_macqiato_weapon_g" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\tololo\\images\\c_TololoSSR01_slg_body_g.png"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_qiang_g.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -809,7 +809,142 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"mtl_gfl_tololo_cloth1_uber" ( "material.gdf" )
+	"i_gfl_macqiato_weapon_n" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_qiang_n.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Normal"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "0"
+		"noPicMip" "0"
+		"premulAlpha" "0"
+		"semantic" "normalMap"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"i_gfl_macqiato_weapon_o" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_qiang_o.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear1ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "0"
+		"noPicMip" "0"
+		"premulAlpha" "0"
+		"semantic" "occlusionMap"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"i_gfl_macqiato_weapon_s" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\macqiato\\textures\\c_MacqiatoSSR01_slg_qiang_s.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "sRGB3ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "0"
+		"noPicMip" "0"
+		"premulAlpha" "0"
+		"semantic" "specularMap"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"mtl_gfl_macqiato_cloth1" ( "material.gdf" )
 	{
 		"adsZscaleOn" "0"
 		"aiClip" "0"
@@ -994,8 +1129,8 @@
 		"colorDetailMap" ""
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
-		"colorMap" "i_gfl_tololo_cloth1_uber_c"
-		"colorMap00" "i_gfl_tololo_cloth1_uber_c"
+		"colorMap" "i_gfl_macqiato_cloth1_c"
+		"colorMap00" "i_gfl_macqiato_cloth1_c"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""
@@ -1026,7 +1161,7 @@
 		"colorWriteRed" "Enable"
 		"columnCount" "1"
 		"converterOnlyNormal" "0"
-		"cosinePowerMap" "i_gfl_tololo_cloth1_uber_g"
+		"cosinePowerMap" "i_gfl_macqiato_cloth1_g"
 		"customString" ""
 		"customTemplate" ""
 		"depthMultiplier" "3"
@@ -1354,13 +1489,13 @@
 		"noReceiveDynamicShadow" "0"
 		"normalFlattening" "1"
 		"normalHeightScale" "1"
-		"normalMap" "i_gfl_tololo_cloth1_uber_n"
+		"normalMap" "i_gfl_macqiato_cloth1_n"
 		"normalsFlowScaleMin" "0"
 		"normalVarianceScale" "1"
 		"noSteps" "0"
 		"notInBoats" "0"
 		"objectiveColorsEnabled" "0"
-		"occMap" "i_gfl_tololo_cloth1_uber_o"
+		"occMap" "i_gfl_macqiato_cloth1_o"
 		"oceanSunBrightness" "10"
 		"oceanSunSize" "0.0125"
 		"onlyCastShadow" "0"
@@ -1408,7 +1543,7 @@
 		"specColorIntensity1" "0"
 		"specColorIntensity2" "0"
 		"specColorIntensity3" "0"
-		"specColorMap" "i_gfl_tololo_cloth1_uber_s"
+		"specColorMap" "i_gfl_macqiato_cloth1_s"
 		"specColorStrength" "100"
 		"specColorTint" "0.760757 0.764664 0.764664 1"
 		"specColorTint1" "0.760757 0.764664 0.764664 1"
@@ -1721,7 +1856,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"mtl_gfl_tololo_cloth2_uber" ( "material.gdf" )
+	"mtl_gfl_macqiato_cloth2" ( "material.gdf" )
 	{
 		"adsZscaleOn" "0"
 		"aiClip" "0"
@@ -1906,8 +2041,8 @@
 		"colorDetailMap" ""
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
-		"colorMap" "i_gfl_tololo_cloth2_uber_c"
-		"colorMap00" "i_gfl_tololo_cloth2_uber_c"
+		"colorMap" "i_gfl_macqiato_cloth2_c"
+		"colorMap00" "i_gfl_macqiato_cloth2_c"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""
@@ -1938,7 +2073,7 @@
 		"colorWriteRed" "Enable"
 		"columnCount" "1"
 		"converterOnlyNormal" "0"
-		"cosinePowerMap" "i_gfl_tololo_cloth2_uber_g"
+		"cosinePowerMap" "i_gfl_macqiato_cloth2_g"
 		"customString" ""
 		"customTemplate" ""
 		"depthMultiplier" "3"
@@ -2266,13 +2401,13 @@
 		"noReceiveDynamicShadow" "0"
 		"normalFlattening" "1"
 		"normalHeightScale" "1"
-		"normalMap" "i_gfl_tololo_cloth2_uber_n"
+		"normalMap" "i_gfl_macqiato_cloth2_n"
 		"normalsFlowScaleMin" "0"
 		"normalVarianceScale" "1"
 		"noSteps" "0"
 		"notInBoats" "0"
 		"objectiveColorsEnabled" "0"
-		"occMap" "i_gfl_tololo_cloth2_uber_o"
+		"occMap" "i_gfl_macqiato_cloth2_o"
 		"oceanSunBrightness" "10"
 		"oceanSunSize" "0.0125"
 		"onlyCastShadow" "0"
@@ -2320,7 +2455,7 @@
 		"specColorIntensity1" "0"
 		"specColorIntensity2" "0"
 		"specColorIntensity3" "0"
-		"specColorMap" "i_gfl_tololo_cloth2_uber_s"
+		"specColorMap" "i_gfl_macqiato_cloth2_s"
 		"specColorStrength" "100"
 		"specColorTint" "0.760757 0.764664 0.764664 1"
 		"specColorTint1" "0.760757 0.764664 0.764664 1"
@@ -2633,7 +2768,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"mtl_gfl_tololo_eyenew" ( "material.gdf" )
+	"mtl_gfl_macqiato_eyes" ( "material.gdf" )
 	{
 		"adsZscaleOn" "0"
 		"aiClip" "0"
@@ -2818,8 +2953,8 @@
 		"colorDetailMap" ""
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
-		"colorMap" "i_gfl_tololo_eyenew_c"
-		"colorMap00" "i_gfl_tololo_eyenew_c"
+		"colorMap" "i_gfl_macqiato_eyes_c"
+		"colorMap00" "i_gfl_macqiato_eyes_c"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""
@@ -3545,7 +3680,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"mtl_gfl_tololo_faceuber" ( "material.gdf" )
+	"mtl_gfl_macqiato_face" ( "material.gdf" )
 	{
 		"adsZscaleOn" "0"
 		"aiClip" "0"
@@ -3730,8 +3865,8 @@
 		"colorDetailMap" ""
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
-		"colorMap" "i_gfl_tololo_faceuber_c"
-		"colorMap00" "i_gfl_tololo_faceuber_c"
+		"colorMap" "i_gfl_macqiato_face_c"
+		"colorMap00" "i_gfl_macqiato_face_c"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""
@@ -4457,7 +4592,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"mtl_gfl_tololo_hairuber" ( "material.gdf" )
+	"mtl_gfl_macqiato_hair" ( "material.gdf" )
 	{
 		"adsZscaleOn" "0"
 		"aiClip" "0"
@@ -4642,8 +4777,8 @@
 		"colorDetailMap" ""
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
-		"colorMap" "i_gfl_tololo_hairuber_c"
-		"colorMap00" "i_gfl_tololo_hairuber_c"
+		"colorMap" "i_gfl_macqiato_hair_c"
+		"colorMap00" "i_gfl_macqiato_hair_c"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""
@@ -4674,7 +4809,7 @@
 		"colorWriteRed" "Enable"
 		"columnCount" "1"
 		"converterOnlyNormal" "0"
-		"cosinePowerMap" "i_gfl_tololo_hairuber_g"
+		"cosinePowerMap" "i_gfl_macqiato_hair_g"
 		"customString" ""
 		"customTemplate" ""
 		"depthMultiplier" "3"
@@ -5056,7 +5191,7 @@
 		"specColorIntensity1" "0"
 		"specColorIntensity2" "0"
 		"specColorIntensity3" "0"
-		"specColorMap" "i_gfl_tololo_hairuber_s"
+		"specColorMap" "i_gfl_macqiato_hair_s"
 		"specColorStrength" "100"
 		"specColorTint" "0.760757 0.764664 0.764664 1"
 		"specColorTint1" "0.760757 0.764664 0.764664 1"
@@ -5369,7 +5504,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"mtl_gfl_tololo_skinuber" ( "material.gdf" )
+	"mtl_gfl_macqiato_weapon" ( "material.gdf" )
 	{
 		"adsZscaleOn" "0"
 		"aiClip" "0"
@@ -5554,8 +5689,8 @@
 		"colorDetailMap" ""
 		"colorDetailScaleX" "8"
 		"colorDetailScaleY" "8"
-		"colorMap" "i_gfl_tololo_skinuber_c"
-		"colorMap00" "i_gfl_tololo_skinuber_c"
+		"colorMap" "i_gfl_macqiato_weapon_c"
+		"colorMap00" "i_gfl_macqiato_weapon_c"
 		"colorMap01" ""
 		"colorMap02" ""
 		"colorMap03" ""
@@ -5586,7 +5721,7 @@
 		"colorWriteRed" "Enable"
 		"columnCount" "1"
 		"converterOnlyNormal" "0"
-		"cosinePowerMap" "i_gfl_tololo_skinuber_g"
+		"cosinePowerMap" "i_gfl_macqiato_weapon_g"
 		"customString" ""
 		"customTemplate" ""
 		"depthMultiplier" "3"
@@ -5771,15 +5906,15 @@
 		"gFoamUVScale2" "3142"
 		"gFoamUVScale3" "5497"
 		"gHorizonDistance" "10000"
-		"glossRangeMax" "10.0"
+		"glossRangeMax" "17.0"
 		"glossRangeMax1" "17"
 		"glossRangeMax2" "17"
 		"glossRangeMax3" "17"
-		"glossRangeMin" "2.0"
+		"glossRangeMin" "0.0"
 		"glossRangeMin1" "0"
 		"glossRangeMin2" "0"
 		"glossRangeMin3" "0"
-		"glossSurfaceType" "skin"
+		"glossSurfaceType" "metal"
 		"gNormalScale00" "1"
 		"gNormalScale01" "1"
 		"gNormalScale02" "1"
@@ -5894,8 +6029,8 @@
 		"locale_tools" "0"
 		"locale_yemen" "0"
 		"locale_zombie" "0"
-		"materialCategory" "Geometry Plus"
-		"materialType" "lit_emissive_plus"
+		"materialCategory" "Geometry Advanced"
+		"materialType" "lit_emissive_advanced_fullspec"
 		"matureContent" "0"
 		"maxRayDepth" "1000"
 		"missileClip" "0"
@@ -5914,13 +6049,13 @@
 		"noReceiveDynamicShadow" "0"
 		"normalFlattening" "1"
 		"normalHeightScale" "1"
-		"normalMap" ""
+		"normalMap" "i_gfl_macqiato_weapon_n"
 		"normalsFlowScaleMin" "0"
 		"normalVarianceScale" "1"
 		"noSteps" "0"
 		"notInBoats" "0"
 		"objectiveColorsEnabled" "0"
-		"occMap" ""
+		"occMap" "i_gfl_macqiato_weapon_o"
 		"oceanSunBrightness" "10"
 		"oceanSunSize" "0.0125"
 		"onlyCastShadow" "0"
@@ -5968,7 +6103,7 @@
 		"specColorIntensity1" "0"
 		"specColorIntensity2" "0"
 		"specColorIntensity3" "0"
-		"specColorMap" "$thickness"
+		"specColorMap" "i_gfl_macqiato_weapon_s"
 		"specColorStrength" "100"
 		"specColorTint" "0.760757 0.764664 0.764664 1"
 		"specColorTint1" "0.760757 0.764664 0.764664 1"
@@ -5998,7 +6133,7 @@
 		"stencilOpZFail2" "Keep"
 		"structural" "0"
 		"surfaceClimbType" "<none>"
-		"surfaceType" "flesh"
+		"surfaceType" "metal"
 		"sw_codetexture_00" ""
 		"sw_codetexture_01" ""
 		"sw_codetexture_02" ""
@@ -6281,7 +6416,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"t7_gfl_tololo_body" ( "xmodel.gdf" )
+	"t7_gfl_macqiato_body" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -6311,7 +6446,7 @@
 		"DetailShadows" "0"
 		"doNotUse" "0"
 		"dropLOD" "Auto"
-		"filename" "t7_gfl\\tololo\\t7_gfl_tololo_body.XMODEL_BIN"
+		"filename" "t7_gfl\\macqiato\\t7_gfl_macqiato_body.XMODEL_BIN"
 		"forceLod4Rigid" "0"
 		"forceLod5Rigid" "0"
 		"forceLod6Rigid" "0"
@@ -6360,7 +6495,7 @@
 		"scale" "1"
 		"scaleCollMap" "0"
 		"ShadowLOD" "Auto"
-		"skinOverride" "mtl_gfl_type97_cf_m_hair_f_13_00_i mtl_gfl_type97_cf_m_hair_f_13_00\r\nmtl_gfl_type97_cf_m_hair_f_20_00_i mtl_gfl_type97_cf_m_hair_f_20_00\r\nmtl_gfl_type97_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_type97_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_type97_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
+		"skinOverride" "mtl_gfl_hk416_cf_m_hitomi_01 mtl_gfl_hk416_cf_m_hitomi_00\r\nmtl_gfl_hk416_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_hk416_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_hk416_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
 		"submodel0_Name" ""
 		"submodel0_OffsetPitch" "0"
 		"submodel0_OffsetRoll" "0"
@@ -6497,7 +6632,7 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"t7_gfl_tololo_body_mp" ( "xmodel.gdf" )
+	"t7_gfl_macqiato_body_mp" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -6527,7 +6662,7 @@
 		"DetailShadows" "0"
 		"doNotUse" "0"
 		"dropLOD" "Auto"
-		"filename" "t7_gfl\\tololo\\t7_gfl_tololo_body.XMODEL_BIN"
+		"filename" "t7_gfl\\macqiato\\t7_gfl_macqiato_body.XMODEL_BIN"
 		"forceLod4Rigid" "0"
 		"forceLod5Rigid" "0"
 		"forceLod6Rigid" "0"
@@ -6576,7 +6711,7 @@
 		"scale" "1"
 		"scaleCollMap" "0"
 		"ShadowLOD" "Auto"
-		"skinOverride" "mtl_gfl_type97_cf_m_hair_f_13_00_i mtl_gfl_type97_cf_m_hair_f_13_00\r\nmtl_gfl_type97_cf_m_hair_f_20_00_i mtl_gfl_type97_cf_m_hair_f_20_00\r\nmtl_gfl_type97_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_type97_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_type97_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
+		"skinOverride" "mtl_gfl_hk416_cf_m_hitomi_01 mtl_gfl_hk416_cf_m_hitomi_00\r\nmtl_gfl_hk416_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_hk416_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_hk416_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
 		"submodel0_Name" ""
 		"submodel0_OffsetPitch" "0"
 		"submodel0_OffsetRoll" "0"
@@ -6713,10 +6848,10 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"t7_gfl_tololo_fb" ( "xmodel.gdf" )
+	"t7_gfl_macqiato_fb" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"autogenLod4" "1"
+		"autogenLod4" "0"
 		"autogenLod4Percent" "7"
 		"autogenLod5" "0"
 		"autogenLod5Percent" "4"
@@ -6724,9 +6859,9 @@
 		"autogenLod6Percent" "2"
 		"autogenLod7" "0"
 		"autogenLod7Percent" "1"
-		"autogenLowestLod" "1"
+		"autogenLowestLod" "0"
 		"autogenLowestLodPercent" "12"
-		"autogenLowLod" "1"
+		"autogenLowLod" "0"
 		"autogenLowLodPercent" "25"
 		"autogenMediumLod" "0"
 		"autogenMediumLodPercent" "50"
@@ -6743,7 +6878,7 @@
 		"DetailShadows" "0"
 		"doNotUse" "0"
 		"dropLOD" "Auto"
-		"filename" "t7_gfl\\tololo\\t7_gfl_tololo_fb.XMODEL_BIN"
+		"filename" "t7_gfl\\macqiato\\t7_gfl_macqiato_fb.XMODEL_BIN"
 		"forceLod4Rigid" "0"
 		"forceLod5Rigid" "0"
 		"forceLod6Rigid" "0"
@@ -6781,7 +6916,7 @@
 		"lowLod" ""
 		"lowLodDist" "0"
 		"materials" ""
-		"mediumLod" "t7_gfl\\tololo\\t7_gfl_tololo_fb_lod1.XMODEL_BIN"
+		"mediumLod" "t7_gfl\\macqiato\\t7_gfl_macqiato_fb_lod1.XMODEL_BIN"
 		"mediumLodDist" "0"
 		"noCastShadow" "0"
 		"noOutdoorOcclude" "0"
@@ -6792,7 +6927,7 @@
 		"scale" "1"
 		"scaleCollMap" "0"
 		"ShadowLOD" "Auto"
-		"skinOverride" "mtl_gfl_type97_cf_m_hair_f_13_00_i mtl_gfl_type97_cf_m_hair_f_13_00\r\nmtl_gfl_type97_cf_m_hair_f_20_00_i mtl_gfl_type97_cf_m_hair_f_20_00\r\nmtl_gfl_type97_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_type97_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_type97_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
+		"skinOverride" "mtl_gfl_hk416_cf_m_hitomi_01 mtl_gfl_hk416_cf_m_hitomi_00\r\nmtl_gfl_hk416_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_hk416_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_hk416_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
 		"submodel0_Name" ""
 		"submodel0_OffsetPitch" "0"
 		"submodel0_OffsetRoll" "0"
@@ -6929,275 +7064,246 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"mtl_gfl_tololo_cloth1_ubertrans" [ "mtl_gfl_tololo_cloth1_uber" ]
+	"t7_gfl_macqiato_fb_mp" ( "xmodel.gdf" )
 	{
-		"colorMap00" ""
-		"detailScaleX" "1.0"
-		"detailScaleY" "1.0"
-		"flickerMax" "1.0"
-		"flickerMin" "1.0"
-		"flickerSpeed" "1.0"
-		"glossRangeMax" "12.0"
-		"glossRangeMin" "0.0"
-		"materialType" "lit_transparent_advanced_fullspec"
+		"arabicUnsafe" "0"
+		"autogenLod4" "0"
+		"autogenLod4Percent" "7"
+		"autogenLod5" "0"
+		"autogenLod5Percent" "4"
+		"autogenLod6" "0"
+		"autogenLod6Percent" "2"
+		"autogenLod7" "0"
+		"autogenLod7Percent" "1"
+		"autogenLowestLod" "0"
+		"autogenLowestLodPercent" "12"
+		"autogenLowLod" "0"
+		"autogenLowLodPercent" "25"
+		"autogenMediumLod" "0"
+		"autogenMediumLodPercent" "50"
+		"boneControllers" ""
+		"boneStabilizers" ""
+		"BulletCollisionFile" ""
+		"BulletCollisionLOD" "None"
+		"BulletCollisionRigid" "0"
+		"CollisionMap" ""
+		"cullOutDiameter" "0"
+		"cullOutOffsetCP" "1"
+		"cullOutOffsetMP" "1"
+		"customAutogenParams" "0"
+		"DetailShadows" "0"
+		"doNotUse" "0"
+		"dropLOD" "Auto"
+		"filename" "t7_gfl\\macqiato\\t7_gfl_macqiato_fb.XMODEL_BIN"
+		"forceLod4Rigid" "0"
+		"forceLod5Rigid" "0"
+		"forceLod6Rigid" "0"
+		"forceLod7Rigid" "0"
+		"forceLowestLodRigid" "0"
+		"forceLowLodRigid" "0"
+		"forceMediumLodRigid" "0"
+		"forceResident" "0"
+		"fp32" "0"
+		"germanUnsafe" "0"
+		"heroAsset" "0"
+		"heroLighting" "0"
+		"highLodDist" "0"
+		"hitBoxModel" "xmodel_multiplayer\\multiplayer_hitboxmodelchar.xmodel_bin"
+		"isSiege" "0"
+		"japaneseUnsafe" "0"
+		"lod4Dist" "0"
+		"lod4File" ""
+		"lod5Dist" "0"
+		"lod5File" ""
+		"lod6Dist" "0"
+		"lod6File" ""
+		"lod7Dist" "0"
+		"lod7File" ""
+		"LODBiasOffsetCP" "0"
+		"LODBiasOffsetMP" "0"
+		"LODBiasPercent" "0"
+		"LodColorPriority" "0.008"
+		"lodNormalPriority" "1.54"
+		"lodPositionPriority" "12"
+		"lodPresets" "performance"
+		"LodUvPriority" "3.5"
+		"lowestLod" ""
+		"lowestLodDist" "0"
+		"lowLod" ""
+		"lowLodDist" "0"
+		"materials" ""
+		"mediumLod" "t7_gfl\\macqiato\\t7_gfl_macqiato_fb_lod1.XMODEL_BIN"
+		"mediumLodDist" "0"
+		"noCastShadow" "0"
+		"noOutdoorOcclude" "0"
+		"notInEditor" "0"
+		"physicsConstraints" ""
+		"physicsPreset" ""
+		"preserveOriginalUVs" "0"
+		"scale" "1"
+		"scaleCollMap" "0"
+		"ShadowLOD" "Auto"
+		"skinOverride" "mtl_gfl_hk416_cf_m_hitomi_01 mtl_gfl_hk416_cf_m_hitomi_00\r\nmtl_gfl_hk416_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_hk416_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_hk416_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
+		"submodel0_Name" ""
+		"submodel0_OffsetPitch" "0"
+		"submodel0_OffsetRoll" "0"
+		"submodel0_OffsetX" "0"
+		"submodel0_OffsetY" "0"
+		"submodel0_OffsetYaw" "0"
+		"submodel0_OffsetZ" "0"
+		"submodel0_ParentTag" ""
+		"submodel10_Name" ""
+		"submodel10_OffsetPitch" "0"
+		"submodel10_OffsetRoll" "0"
+		"submodel10_OffsetX" "0"
+		"submodel10_OffsetY" "0"
+		"submodel10_OffsetYaw" "0"
+		"submodel10_OffsetZ" "0"
+		"submodel10_ParentTag" ""
+		"submodel11_Name" ""
+		"submodel11_OffsetPitch" "0"
+		"submodel11_OffsetRoll" "0"
+		"submodel11_OffsetX" "0"
+		"submodel11_OffsetY" "0"
+		"submodel11_OffsetYaw" "0"
+		"submodel11_OffsetZ" "0"
+		"submodel11_ParentTag" ""
+		"submodel12_Name" ""
+		"submodel12_OffsetPitch" "0"
+		"submodel12_OffsetRoll" "0"
+		"submodel12_OffsetX" "0"
+		"submodel12_OffsetY" "0"
+		"submodel12_OffsetYaw" "0"
+		"submodel12_OffsetZ" "0"
+		"submodel12_ParentTag" ""
+		"submodel13_Name" ""
+		"submodel13_OffsetPitch" "0"
+		"submodel13_OffsetRoll" "0"
+		"submodel13_OffsetX" "0"
+		"submodel13_OffsetY" "0"
+		"submodel13_OffsetYaw" "0"
+		"submodel13_OffsetZ" "0"
+		"submodel13_ParentTag" ""
+		"submodel14_Name" ""
+		"submodel14_OffsetPitch" "0"
+		"submodel14_OffsetRoll" "0"
+		"submodel14_OffsetX" "0"
+		"submodel14_OffsetY" "0"
+		"submodel14_OffsetYaw" "0"
+		"submodel14_OffsetZ" "0"
+		"submodel14_ParentTag" ""
+		"submodel15_Name" ""
+		"submodel15_OffsetPitch" "0"
+		"submodel15_OffsetRoll" "0"
+		"submodel15_OffsetX" "0"
+		"submodel15_OffsetY" "0"
+		"submodel15_OffsetYaw" "0"
+		"submodel15_OffsetZ" "0"
+		"submodel15_ParentTag" ""
+		"submodel1_Name" ""
+		"submodel1_OffsetPitch" "0"
+		"submodel1_OffsetRoll" "0"
+		"submodel1_OffsetX" "0"
+		"submodel1_OffsetY" "0"
+		"submodel1_OffsetYaw" "0"
+		"submodel1_OffsetZ" "0"
+		"submodel1_ParentTag" ""
+		"submodel2_Name" ""
+		"submodel2_OffsetPitch" "0"
+		"submodel2_OffsetRoll" "0"
+		"submodel2_OffsetX" "0"
+		"submodel2_OffsetY" "0"
+		"submodel2_OffsetYaw" "0"
+		"submodel2_OffsetZ" "0"
+		"submodel2_ParentTag" ""
+		"submodel3_Name" ""
+		"submodel3_OffsetPitch" "0"
+		"submodel3_OffsetRoll" "0"
+		"submodel3_OffsetX" "0"
+		"submodel3_OffsetY" "0"
+		"submodel3_OffsetYaw" "0"
+		"submodel3_OffsetZ" "0"
+		"submodel3_ParentTag" ""
+		"submodel4_Name" ""
+		"submodel4_OffsetPitch" "0"
+		"submodel4_OffsetRoll" "0"
+		"submodel4_OffsetX" "0"
+		"submodel4_OffsetY" "0"
+		"submodel4_OffsetYaw" "0"
+		"submodel4_OffsetZ" "0"
+		"submodel4_ParentTag" ""
+		"submodel5_Name" ""
+		"submodel5_OffsetPitch" "0"
+		"submodel5_OffsetRoll" "0"
+		"submodel5_OffsetX" "0"
+		"submodel5_OffsetY" "0"
+		"submodel5_OffsetYaw" "0"
+		"submodel5_OffsetZ" "0"
+		"submodel5_ParentTag" ""
+		"submodel6_Name" ""
+		"submodel6_OffsetPitch" "0"
+		"submodel6_OffsetRoll" "0"
+		"submodel6_OffsetX" "0"
+		"submodel6_OffsetY" "0"
+		"submodel6_OffsetYaw" "0"
+		"submodel6_OffsetZ" "0"
+		"submodel6_ParentTag" ""
+		"submodel7_Name" ""
+		"submodel7_OffsetPitch" "0"
+		"submodel7_OffsetRoll" "0"
+		"submodel7_OffsetX" "0"
+		"submodel7_OffsetY" "0"
+		"submodel7_OffsetYaw" "0"
+		"submodel7_OffsetZ" "0"
+		"submodel7_ParentTag" ""
+		"submodel8_Name" ""
+		"submodel8_OffsetPitch" "0"
+		"submodel8_OffsetRoll" "0"
+		"submodel8_OffsetX" "0"
+		"submodel8_OffsetY" "0"
+		"submodel8_OffsetYaw" "0"
+		"submodel8_OffsetZ" "0"
+		"submodel8_ParentTag" ""
+		"submodel9_Name" ""
+		"submodel9_OffsetPitch" "0"
+		"submodel9_OffsetRoll" "0"
+		"submodel9_OffsetX" "0"
+		"submodel9_OffsetY" "0"
+		"submodel9_OffsetYaw" "0"
+		"submodel9_OffsetZ" "0"
+		"submodel9_ParentTag" ""
+		"type" "multiplayer body"
+		"usage_attachment" "0"
+		"usage_hero" "0"
+		"usage_view" "0"
+		"usage_weapon" "0"
+		"usage_zombie_body" "0"
+		"usage_zombie_world_prop" "0"
 	}
-	"mtl_gfl_tololo_fringeuber" [ "mtl_gfl_tololo_hairuber" ]
+	"mtl_gfl_macqiato_eyewhite" [ "mtl_gfl_macqiato_face" ]
 	{
-		"glossRangeMax" "4.0"
-		"glossRangeMin" "0.0"
-	}
-	"mtl_gfl_tololo_cloth2_ubertrans" [ "mtl_gfl_tololo_cloth2_uber" ]
-	{
-		"colorMap00" ""
-		"detailScaleX" "1.0"
-		"detailScaleY" "1.0"
-		"flickerMax" "1.0"
-		"flickerMin" "1.0"
-		"glossRangeMax" "12.0"
-		"glossRangeMin" "0.0"
-		"materialType" "lit_transparent_advanced_fullspec"
-	}
-	"mtl_gfl_tololo_silkstock_uber" [ "mtl_gfl_tololo_cloth2_uber" ]
-	{
-		"glossRangeMax" "4.0"
-		"glossRangeMin" "0.0"
-	}
-	"mtl_gfl_tololo_eyelashuber" [ "mtl_gfl_tololo_faceuber" ]
-	{
-		"glossRangeMax" "4.0"
-		"glossRangeMin" "0.0"
-		"glossSurfaceType" "cloth"
+		"glossRangeMax" "10.0"
+		"glossRangeMin" "2.0"
 		"noCastShadow" "1"
+		"scaleRGB" "1.0"
 	}
-	"mtl_gfl_tololo_eyenewadd" [ "mtl_gfl_tololo_eyenew" ]
+	"mtl_gfl_macqiato_eyes2" [ "mtl_gfl_macqiato_eyes" ]
 	{
-		"colorMap" "i_gfl_tololo_eyenewadd_c"
-		"colorMap00" "i_gfl_tololo_eyenewadd_c"
+		"colorMap" "i_gfl_macqiato_eyes2_c"
+		"colorMap00" "i_gfl_macqiato_eyes2_c"
 		"materialType" "lit_emissive_transparent_plus"
 	}
-	"t7_gfl_tololo_fb_mp" ( "xmodel.gdf" )
+	"mtl_gfl_macqiato_bodyskin" [ "mtl_gfl_macqiato_cloth2" ]
 	{
-		"arabicUnsafe" "0"
-		"autogenLod4" "1"
-		"autogenLod4Percent" "7"
-		"autogenLod5" "0"
-		"autogenLod5Percent" "4"
-		"autogenLod6" "0"
-		"autogenLod6Percent" "2"
-		"autogenLod7" "0"
-		"autogenLod7Percent" "1"
-		"autogenLowestLod" "1"
-		"autogenLowestLodPercent" "12"
-		"autogenLowLod" "1"
-		"autogenLowLodPercent" "25"
-		"autogenMediumLod" "0"
-		"autogenMediumLodPercent" "50"
-		"boneControllers" ""
-		"boneStabilizers" ""
-		"BulletCollisionFile" ""
-		"BulletCollisionLOD" "None"
-		"BulletCollisionRigid" "0"
-		"CollisionMap" ""
-		"cullOutDiameter" "0"
-		"cullOutOffsetCP" "1"
-		"cullOutOffsetMP" "1"
-		"customAutogenParams" "0"
-		"DetailShadows" "0"
-		"doNotUse" "0"
-		"dropLOD" "Auto"
-		"filename" "t7_gfl\\tololo\\t7_gfl_tololo_fb.XMODEL_BIN"
-		"forceLod4Rigid" "0"
-		"forceLod5Rigid" "0"
-		"forceLod6Rigid" "0"
-		"forceLod7Rigid" "0"
-		"forceLowestLodRigid" "0"
-		"forceLowLodRigid" "0"
-		"forceMediumLodRigid" "0"
-		"forceResident" "0"
-		"fp32" "0"
-		"germanUnsafe" "0"
-		"heroAsset" "0"
-		"heroLighting" "0"
-		"highLodDist" "0"
-		"hitBoxModel" "xmodel_multiplayer\\multiplayer_hitboxmodelchar.xmodel_bin"
-		"isSiege" "0"
-		"japaneseUnsafe" "0"
-		"lod4Dist" "0"
-		"lod4File" ""
-		"lod5Dist" "0"
-		"lod5File" ""
-		"lod6Dist" "0"
-		"lod6File" ""
-		"lod7Dist" "0"
-		"lod7File" ""
-		"LODBiasOffsetCP" "0"
-		"LODBiasOffsetMP" "0"
-		"LODBiasPercent" "0"
-		"LodColorPriority" "0.008"
-		"lodNormalPriority" "1.54"
-		"lodPositionPriority" "12"
-		"lodPresets" "performance"
-		"LodUvPriority" "3.5"
-		"lowestLod" ""
-		"lowestLodDist" "0"
-		"lowLod" ""
-		"lowLodDist" "0"
-		"materials" ""
-		"mediumLod" "t7_gfl\\tololo\\t7_gfl_tololo_fb_lod1.XMODEL_BIN"
-		"mediumLodDist" "0"
-		"noCastShadow" "0"
-		"noOutdoorOcclude" "0"
-		"notInEditor" "0"
-		"physicsConstraints" ""
-		"physicsPreset" ""
-		"preserveOriginalUVs" "0"
-		"scale" "1"
-		"scaleCollMap" "0"
-		"ShadowLOD" "Auto"
-		"skinOverride" "mtl_gfl_type97_cf_m_hair_f_13_00_i mtl_gfl_type97_cf_m_hair_f_13_00\r\nmtl_gfl_type97_cf_m_hair_f_20_00_i mtl_gfl_type97_cf_m_hair_f_20_00\r\nmtl_gfl_type97_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_type97_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_type97_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
-		"submodel0_Name" ""
-		"submodel0_OffsetPitch" "0"
-		"submodel0_OffsetRoll" "0"
-		"submodel0_OffsetX" "0"
-		"submodel0_OffsetY" "0"
-		"submodel0_OffsetYaw" "0"
-		"submodel0_OffsetZ" "0"
-		"submodel0_ParentTag" ""
-		"submodel10_Name" ""
-		"submodel10_OffsetPitch" "0"
-		"submodel10_OffsetRoll" "0"
-		"submodel10_OffsetX" "0"
-		"submodel10_OffsetY" "0"
-		"submodel10_OffsetYaw" "0"
-		"submodel10_OffsetZ" "0"
-		"submodel10_ParentTag" ""
-		"submodel11_Name" ""
-		"submodel11_OffsetPitch" "0"
-		"submodel11_OffsetRoll" "0"
-		"submodel11_OffsetX" "0"
-		"submodel11_OffsetY" "0"
-		"submodel11_OffsetYaw" "0"
-		"submodel11_OffsetZ" "0"
-		"submodel11_ParentTag" ""
-		"submodel12_Name" ""
-		"submodel12_OffsetPitch" "0"
-		"submodel12_OffsetRoll" "0"
-		"submodel12_OffsetX" "0"
-		"submodel12_OffsetY" "0"
-		"submodel12_OffsetYaw" "0"
-		"submodel12_OffsetZ" "0"
-		"submodel12_ParentTag" ""
-		"submodel13_Name" ""
-		"submodel13_OffsetPitch" "0"
-		"submodel13_OffsetRoll" "0"
-		"submodel13_OffsetX" "0"
-		"submodel13_OffsetY" "0"
-		"submodel13_OffsetYaw" "0"
-		"submodel13_OffsetZ" "0"
-		"submodel13_ParentTag" ""
-		"submodel14_Name" ""
-		"submodel14_OffsetPitch" "0"
-		"submodel14_OffsetRoll" "0"
-		"submodel14_OffsetX" "0"
-		"submodel14_OffsetY" "0"
-		"submodel14_OffsetYaw" "0"
-		"submodel14_OffsetZ" "0"
-		"submodel14_ParentTag" ""
-		"submodel15_Name" ""
-		"submodel15_OffsetPitch" "0"
-		"submodel15_OffsetRoll" "0"
-		"submodel15_OffsetX" "0"
-		"submodel15_OffsetY" "0"
-		"submodel15_OffsetYaw" "0"
-		"submodel15_OffsetZ" "0"
-		"submodel15_ParentTag" ""
-		"submodel1_Name" ""
-		"submodel1_OffsetPitch" "0"
-		"submodel1_OffsetRoll" "0"
-		"submodel1_OffsetX" "0"
-		"submodel1_OffsetY" "0"
-		"submodel1_OffsetYaw" "0"
-		"submodel1_OffsetZ" "0"
-		"submodel1_ParentTag" ""
-		"submodel2_Name" ""
-		"submodel2_OffsetPitch" "0"
-		"submodel2_OffsetRoll" "0"
-		"submodel2_OffsetX" "0"
-		"submodel2_OffsetY" "0"
-		"submodel2_OffsetYaw" "0"
-		"submodel2_OffsetZ" "0"
-		"submodel2_ParentTag" ""
-		"submodel3_Name" ""
-		"submodel3_OffsetPitch" "0"
-		"submodel3_OffsetRoll" "0"
-		"submodel3_OffsetX" "0"
-		"submodel3_OffsetY" "0"
-		"submodel3_OffsetYaw" "0"
-		"submodel3_OffsetZ" "0"
-		"submodel3_ParentTag" ""
-		"submodel4_Name" ""
-		"submodel4_OffsetPitch" "0"
-		"submodel4_OffsetRoll" "0"
-		"submodel4_OffsetX" "0"
-		"submodel4_OffsetY" "0"
-		"submodel4_OffsetYaw" "0"
-		"submodel4_OffsetZ" "0"
-		"submodel4_ParentTag" ""
-		"submodel5_Name" ""
-		"submodel5_OffsetPitch" "0"
-		"submodel5_OffsetRoll" "0"
-		"submodel5_OffsetX" "0"
-		"submodel5_OffsetY" "0"
-		"submodel5_OffsetYaw" "0"
-		"submodel5_OffsetZ" "0"
-		"submodel5_ParentTag" ""
-		"submodel6_Name" ""
-		"submodel6_OffsetPitch" "0"
-		"submodel6_OffsetRoll" "0"
-		"submodel6_OffsetX" "0"
-		"submodel6_OffsetY" "0"
-		"submodel6_OffsetYaw" "0"
-		"submodel6_OffsetZ" "0"
-		"submodel6_ParentTag" ""
-		"submodel7_Name" ""
-		"submodel7_OffsetPitch" "0"
-		"submodel7_OffsetRoll" "0"
-		"submodel7_OffsetX" "0"
-		"submodel7_OffsetY" "0"
-		"submodel7_OffsetYaw" "0"
-		"submodel7_OffsetZ" "0"
-		"submodel7_ParentTag" ""
-		"submodel8_Name" ""
-		"submodel8_OffsetPitch" "0"
-		"submodel8_OffsetRoll" "0"
-		"submodel8_OffsetX" "0"
-		"submodel8_OffsetY" "0"
-		"submodel8_OffsetYaw" "0"
-		"submodel8_OffsetZ" "0"
-		"submodel8_ParentTag" ""
-		"submodel9_Name" ""
-		"submodel9_OffsetPitch" "0"
-		"submodel9_OffsetRoll" "0"
-		"submodel9_OffsetX" "0"
-		"submodel9_OffsetY" "0"
-		"submodel9_OffsetYaw" "0"
-		"submodel9_OffsetZ" "0"
-		"submodel9_ParentTag" ""
-		"type" "multiplayer body"
-		"usage_attachment" "0"
-		"usage_hero" "0"
-		"usage_view" "0"
-		"usage_weapon" "0"
-		"usage_zombie_body" "0"
-		"usage_zombie_world_prop" "0"
+		"glossRangeMax" "10.0"
+		"glossRangeMin" "2.0"
+		"glossSurfaceType" "skin"
+		"surfaceType" "flesh"
 	}
-	"c_t7_mp_gunslinger_mpc_body1_skin2" [ "t7_gfl_tololo_fb_mp" ]
+	"mtl_gfl_macqiato_socks" [ "mtl_gfl_macqiato_cloth2" ]
 	{
 	}
-	"c_zom_zod_boxer_viewbody" [ "t7_gfl_tololo_body_mp" ]
-	{
-	}
-	"t7_gfl_tololo_viewhands" ( "xmodel.gdf" )
+	"t7_gfl_macqiato_viewhands" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -7227,7 +7333,7 @@
 		"DetailShadows" "0"
 		"doNotUse" "0"
 		"dropLOD" "Auto"
-		"filename" "t7_gfl\\type97\\t7_gfl_type97_viewhands.XMODEL_BIN"
+		"filename" "t7_gfl\\m4a1_v3\\t7_gfl_m4a1_v3_viewhands.XMODEL_BIN"
 		"forceLod4Rigid" "0"
 		"forceLod5Rigid" "0"
 		"forceLod6Rigid" "0"
@@ -7276,7 +7382,7 @@
 		"scale" "1"
 		"scaleCollMap" "0"
 		"ShadowLOD" "Auto"
-		"skinOverride" "mtl_gfl_type89_cf_m_glove_flg mtl_gfl_p90_cf_m_glove_short\r\nmtl_gfl_type97_cf_m_body mtl_gfl_p90_cf_m_body\r\n"
+		"skinOverride" "mtl_gk_ump45_atlas1 mtl_gfl_ump45_atlas1\r\nmtl_gk_ump45_clothing mtl_gfl_ump45_clothing\r\n"
 		"submodel0_Name" ""
 		"submodel0_OffsetPitch" "0"
 		"submodel0_OffsetRoll" "0"
@@ -7413,10 +7519,7 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_t7_mp_gunslinger_viewarms1_skin2" [ "t7_gfl_tololo_viewhands" ]
-	{
-	}
-	"t7_gfl_tololo_viewlegs" ( "xmodel.gdf" )
+	"t7_gfl_macqiato_viewlegs" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -7446,7 +7549,7 @@
 		"DetailShadows" "0"
 		"doNotUse" "0"
 		"dropLOD" "Auto"
-		"filename" "t7_gfl\\tololo\\t7_gfl_tololo_viewlegs.XMODEL_BIN"
+		"filename" "t7_gfl\\macqiato\\t7_gfl_macqiato_viewlegs.XMODEL_BIN"
 		"forceLod4Rigid" "0"
 		"forceLod5Rigid" "0"
 		"forceLod6Rigid" "0"
@@ -7495,7 +7598,7 @@
 		"scale" "1"
 		"scaleCollMap" "0"
 		"ShadowLOD" "Auto"
-		"skinOverride" "mtl_gfl_type97_cf_m_hair_f_13_00_i mtl_gfl_type97_cf_m_hair_f_13_00\r\nmtl_gfl_type97_cf_m_hair_f_20_00_i mtl_gfl_type97_cf_m_hair_f_20_00\r\nmtl_gfl_type97_cf_m_sirome_00 mtl_gfl_cf_m_sirome_00\r\nmtl_gfl_type97_cf_m_tang mtl_gfl_cf_m_tang\r\nmtl_gfl_type97_cf_m_tooth mtl_gfl_cf_m_tooth\r\n"
+		"skinOverride" "mtl_gfl_p90_cf_m_top_usa_ciras mtl_gfl_hk416_cf_m_top_usa_ciras\r\nmtl_gfl_p90_mf_m_primmaterial_001 mtl_gfl_p90_mf_m_primmaterial\r\n"
 		"submodel0_Name" ""
 		"submodel0_OffsetPitch" "0"
 		"submodel0_OffsetRoll" "0"
@@ -7632,252 +7735,46 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_t7_mp_gunslinger_viewlegs1_skin2" [ "t7_gfl_tololo_viewlegs" ]
+	"c_hro_player_female_aquifer_viewbody" [ "t7_gfl_macqiato_body" ]
 	{
 	}
-	"c_zom_zod_boxer_mpc_fb" [ "t7_gfl_tololo_fb_mp" ]
+	"c_hro_player_male_aquifer_viewbody" [ "t7_gfl_macqiato_body" ]
 	{
 	}
-	"c_zom_zod_boxer_viewhands" [ "t7_gfl_tololo_viewhands" ]
+	"c_hro_player_female_aquifer_viewhands" [ "t7_gfl_macqiato_viewhands" ]
 	{
 	}
-	"c_zom_zod_boxer_viewlegs" [ "t7_gfl_tololo_viewlegs" ]
+	"c_hro_player_female_aquifer_viewlegs" [ "t7_gfl_macqiato_viewlegs" ]
 	{
 	}
-	"mtl_gfl_tololo_eyewhite" [ "mtl_gfl_tololo_faceuber" ]
+	"c_hro_player_male_aquifer_viewhands" [ "t7_gfl_macqiato_viewhands" ]
 	{
-		"glossRangeMax" "4.0"
-		"glossRangeMin" "0.0"
-		"glossSurfaceType" "cloth"
-		"noCastShadow" "1"
-		"scaleRGB" "1.0"
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin1" [ "t7_gfl_tololo_fb_mp" ]
+	"c_hro_player_male_aquifer_viewlegs" [ "t7_gfl_macqiato_viewlegs" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin10" [ "t7_gfl_tololo_fb_mp" ]
+	"c_hro_playerfemale_aquifer_mpc_body" [ "t7_gfl_macqiato_fb_mp" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin11" [ "t7_gfl_tololo_fb_mp" ]
+	"c_hro_playermale_aquifer_mpc_body" [ "t7_gfl_macqiato_fb_mp" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin12" [ "t7_gfl_tololo_fb_mp" ]
+	"c_t7_mp_firebreak_mpc_body2_skin4" [ "t7_gfl_macqiato_fb_mp" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin13" [ "t7_gfl_tololo_fb_mp" ]
+	"c_t7_mp_firebreak_viewarms2_skin4" [ "t7_gfl_macqiato_viewhands" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin14" [ "t7_gfl_tololo_fb_mp" ]
+	"c_t7_mp_firebreak_viewlegs2_skin4" [ "t7_gfl_macqiato_viewlegs" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin15" [ "t7_gfl_tololo_fb_mp" ]
+	"c_t7_mp_hunter_mpc_body2_skin4" [ "t7_gfl_macqiato_fb_mp" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin6" [ "t7_gfl_tololo_fb_mp" ]
+	"c_t7_mp_hunter_viewarms2_skin4" [ "t7_gfl_macqiato_viewhands" ]
 	{
 	}
-	"c_t7_mp_technomancer_mpc_body1_skin7" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body1_skin8" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body1_skin9" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin10" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin11" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin12" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin13" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin14" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin15" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin6" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin7" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin8" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body2_skin9" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin1" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin10" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin11" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin12" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin13" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin14" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin15" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin2" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin3" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin4" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin5" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin6" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin7" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin8" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body3_skin9" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_fb1_skin1" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewarms1_skin1" [ "t7_gfl_tololo_viewhands" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin1" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin10" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin11" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin12" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin13" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin14" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin15" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin6" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin7" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin8" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin9" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin10" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin11" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin12" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin13" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin14" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin15" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin6" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin7" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin8" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs2_skin9" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin1" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin10" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin11" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin12" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin13" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin14" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin15" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin2" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin3" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin4" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin5" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin6" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin7" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin8" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs3_skin9" [ "t7_gfl_tololo_viewlegs" ]
-	{
-	}
-	"c_cia_blackstation_victim_1_fb" [ "t7_gfl_tololo_fb" ]
-	{
-	}
-	"c_cia_blackstation_victim_1_fb_corpse" [ "t7_gfl_tololo_fb" ]
+	"c_t7_mp_hunter_viewlegs2_skin4" [ "t7_gfl_macqiato_viewlegs" ]
 	{
 	}
 }

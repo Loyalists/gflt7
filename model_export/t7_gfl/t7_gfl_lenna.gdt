@@ -3564,7 +3564,7 @@
 		"revealScaleY" "1"
 		"rowCount" "1"
 		"scaleNormalsWithFlow" "0"
-		"scaleRGB" "0.2"
+		"scaleRGB" "0.5"
 		"scatterColorB" "0.145"
 		"scatterColorG" "0.195"
 		"scatterColorR" "0.145"
@@ -8237,7 +8237,7 @@
 		"glossRangeMin" "0.0"
 		"glossSurfaceType" "cloth"
 		"noCastShadow" "1"
-		"scaleRGB" "0.3"
+		"scaleRGB" "1.0"
 	}
 	"t7_gfl_lenna_fb_mp" ( "xmodel.gdf" )
 	{

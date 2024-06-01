@@ -10494,9 +10494,6 @@
 	"c_t7_mp_hunter_mpc_body1_skin15" [ "t7_gfl_super_sass_fb_mp" ]
 	{
 	}
-	"c_t7_mp_hunter_mpc_body2_skin4" [ "t7_gfl_super_sass_fb_mp" ]
-	{
-	}
 	"c_t7_mp_hunter_mpc_body1_skin6" [ "t7_gfl_super_sass_fb_mp" ]
 	{
 	}
@@ -11040,9 +11037,6 @@
 	"c_t7_mp_hunter_viewarms1_skin15" [ "t7_gfl_super_sass_viewhands" ]
 	{
 	}
-	"c_t7_mp_hunter_viewarms2_skin4" [ "t7_gfl_super_sass_viewhands" ]
-	{
-	}
 	"c_t7_mp_hunter_viewarms1_skin6" [ "t7_gfl_super_sass_viewhands" ]
 	{
 	}
@@ -11149,9 +11143,6 @@
 	{
 	}
 	"c_t7_mp_hunter_viewlegs1_skin15" [ "t7_gfl_super_sass_viewlegs" ]
-	{
-	}
-	"c_t7_mp_hunter_viewlegs2_skin4" [ "t7_gfl_super_sass_viewlegs" ]
 	{
 	}
 	"c_t7_mp_hunter_viewlegs1_skin6" [ "t7_gfl_super_sass_viewlegs" ]
