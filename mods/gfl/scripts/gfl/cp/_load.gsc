@@ -22,7 +22,8 @@ REGISTER_SYSTEM_EX( "cp_load", &__init__, &__main__, undefined )
 
 function private __init__()
 {
-	setdvar("sv_cheats", 1);
+	SetDvar( "sv_cheats", 1 );
+	SetDvar( "ui_allowDisplayContinue", true );
 	character::init_character_table();
 	spawner::add_archetype_spawn_function("human", &character_util::disable_gib);
 	spawner::add_archetype_spawn_function("human_riotshield", &character_util::disable_gib);

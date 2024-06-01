@@ -1,12 +1,13 @@
 #using scripts\codescripts\struct;
 
+#using scripts\shared\_oob;
 #using scripts\shared\array_shared;
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\clientfield_shared;
 #using scripts\shared\flag_shared;
 #using scripts\shared\hud_message_shared;
 #using scripts\shared\util_shared;
-#using scripts\shared\_oob;
+#using scripts\shared\system_shared;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\statstable_shared.gsh;
@@ -62,11 +63,22 @@
 
 #namespace tfoptions;
 
-function init() {
+REGISTER_SYSTEM_EX( "tfoptions", &__init__, &__main__, undefined )
+
+function private __init__()
+{
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         create_tf_options_defaults();
     }
+}
+
+function private __main__()
+{
+
+}
+
+function init() {
     pre_load();
     load_tf_options();
 }
@@ -140,7 +152,7 @@ function pre_load()
 {
     gameplay::init();
 
-	if ( GetDvarInt("tfoption_modmenu") )
+	if ( GetDvarInt("tfoption_modmenu", 0) )
 	{
 		infinityloader::init();
 	}

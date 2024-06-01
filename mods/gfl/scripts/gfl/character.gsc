@@ -31,6 +31,7 @@ function init_character_table()
 	level.charactertable["generic"]["vepley_backpack"] = &swap_to_vepley_backpack;
 	level.charactertable["generic"]["an94"] = &swap_to_an94;
 	level.charactertable["generic"]["lenna"] = &swap_to_lenna;
+	level.charactertable["generic"]["macqiato"] = &swap_to_macqiato;
 
 	level.charactertable["sf"] = [];
 	level.charactertable["sf"]["vespid"] = &swap_to_vespid;
@@ -247,6 +248,13 @@ function swap_to_m16a1_prime()
 {
 	self detachall();
 	self setmodel("t7_gfl_m16a1_prime_fb");
+	self thread character_util::set_character_name();
+}
+
+function swap_to_macqiato()
+{
+	self detachall();
+	self setmodel("t7_gfl_macqiato_fb");
 	self thread character_util::set_character_name();
 }
 

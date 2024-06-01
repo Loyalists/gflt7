@@ -36,6 +36,7 @@ function init_character_icon_table()
 	level.character_icon_table["dima"] = "uie_t7_zm_hud_score_dima";
 	level.character_icon_table["an94"] = "uie_t7_zm_hud_score_an94";
     level.character_icon_table["lenna"] = "uie_t7_zm_hud_score_lenna";
+    level.character_icon_table["macqiato"] = "uie_t7_zm_hud_score_macqiato";
 }
 
 function init_playerlist_icon_uimodel( n_local_client )

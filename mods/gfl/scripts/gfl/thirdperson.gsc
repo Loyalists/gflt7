@@ -16,6 +16,7 @@ function private __init__()
 {
     callback::on_spawned( &on_player_spawned );
     chat_notify::register_chat_notify_callback( "tps", &on_message_sent );
+    chat_notify::register_chat_notify_callback( "tpscam", &on_tpscam_message_sent );
 }
 
 function private __main__()
@@ -32,6 +33,42 @@ function on_message_sent(args)
 
     self IPrintLnBold("Third Person");
     self toggle_thirdperson();
+}
+
+function on_tpscam_message_sent(args)
+{
+	if ( !isdefined(args) )
+	{
+		return;
+	}
+
+	if ( args.size != 1 || args[0] == "" )
+	{
+		usage_text = "usage: /tpscam/[camera preset]";
+        desc_text = "example: /tpscam/front";
+		self IPrintLnBold(usage_text);
+        self IPrintLnBold(desc_text);
+		return;
+	}
+
+    preset = args[0];
+    switch (preset)
+    {
+    case "front":
+    case "back":
+    case "side":
+        break;
+    default:
+        preset = undefined;
+        break;
+    }
+
+    if (!isdefined(preset))
+    {
+        return;
+    }
+
+    self set_thirdperson_camera_state(preset);
 }
 
 function on_player_spawned()
@@ -97,4 +134,9 @@ function force_thirdperson()
 function set_thirdperson_state(state)
 {
     self clientsystem::set_state("tps", state);
+}
+
+function set_thirdperson_camera_state(state)
+{
+    self clientsystem::set_state("tpscam", state);
 }

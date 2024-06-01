@@ -30,4 +30,7 @@ function on_player_connect()
 function on_player_spawned()
 {
 	self endon("disconnect");
+	self endon("bled_out");
+	self endon("death");
+	self endon("entityshutdown");
 }

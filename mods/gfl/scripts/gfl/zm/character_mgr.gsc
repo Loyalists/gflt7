@@ -12,7 +12,7 @@
 #using scripts\gfl\character;
 #using scripts\gfl\character_util;
 #using scripts\gfl\_chat_notify;
-#using scripts\gfl\zm\character_zm;
+#using scripts\gfl\zm\zm_character;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
@@ -29,9 +29,12 @@ function private __init__()
 	callback::on_spawned( &on_player_spawned );
 
 	character::init_character_table();
-	character_zm::init_character_table();
+	zm_character::init_character_table();
 	init_randomized_character_table();
+}
 
+function private __main__()
+{
 	if( GetDvarInt("tfoption_tdoll_zombie", 0) )
 	{
 		spawner::add_archetype_spawn_function("zombie", &zombie_model_override);
@@ -40,10 +43,7 @@ function private __init__()
 	{
 		spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
 	}
-}
 
-function private __main__()
-{
 	if( !( GetDvarInt("tfoption_player_determined_character") || GetDvarInt("tfoption_randomize_character") ) )
 	{
 		return;

@@ -8,7 +8,7 @@
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
-#namespace character_zm;
+#namespace zm_character;
 
 function init_character_table()
 {
@@ -45,6 +45,7 @@ function init_character_table()
 	level.charactertable["zm"]["dima"] = &swap_to_dima;
 	level.charactertable["zm"]["an94"] = &swap_to_an94;
 	level.charactertable["zm"]["lenna"] = &swap_to_lenna;
+	level.charactertable["zm"]["macqiato"] = &swap_to_macqiato;
 
 	level.charactertable["zm_moon"] = [];
 	level.charactertable["zm_moon"]["m16a1"] = &swap_to_m16a1_moon;
@@ -62,17 +63,19 @@ function init_character_table()
 	level.additional_bodystyle_table["c_zom_der_dempsey_mpc_fb"] = 1;
 	level.additional_bodystyle_table["c_zom_dlc3_dempsey_mpc_fb"] = 1;
 	level.additional_bodystyle_table["c_t7_zm_dlchd_waw_dempsey_mpc_fb"] = 2;
-	level.additional_bodystyle_table["t7_gfl_m4a1_v2_fb"] = 3;
+	level.additional_bodystyle_table["t7_gfl_m4a1_v3_fb"] = 3;
 	// ak12
 	level.additional_bodystyle_table["c_zom_dlc3_nikolai_mpc_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_an94_fb"] = 3;
+	// suomi
+	level.additional_bodystyle_table["t7_gfl_rfb_fb"] = 1;
 	// m4 sopmod ii
 	level.additional_bodystyle_table["t7_gfl_ro635_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_st_ar15_v2_fb"] = 2;
 	// p90
 	level.additional_bodystyle_table["t7_gfl_g36c_fb"] = 1;
 	// super sass
-	level.additional_bodystyle_table["t7_gfl_rfb_fb"] = 1;
+	level.additional_bodystyle_table["t7_gfl_macqiato_fb"] = 1;
 	level.additional_bodystyle_table["t7_gfl_tac50_v2_fb"] = 2;
 	// vepley
 	level.additional_bodystyle_table["t7_gfl_vepley_fb"] = 1;
@@ -84,7 +87,7 @@ function init_character_table()
 	level.additional_bodystyle_table["t7_gfl_lenna_fb"] = 1;
 
 	level.model_to_character_table = [];
-	level.model_to_character_table["t7_gfl_m4a1_v2_fb"] = "m4a1";
+	level.model_to_character_table["t7_gfl_m4a1_v3_fb"] = "m4a1";
 	level.model_to_character_table["t7_gfl_ro635_fb"] = "ro635";
 	level.model_to_character_table["t7_gfl_st_ar15_v2_fb"] = "st_ar15";
 	level.model_to_character_table["t7_gfl_g36c_fb"] = "g36c";
@@ -93,6 +96,7 @@ function init_character_table()
 	level.model_to_character_table["t7_gfl_dima_fb"] = "dima";
 	level.model_to_character_table["t7_gfl_an94_fb"] = "an94";
 	level.model_to_character_table["t7_gfl_lenna_fb"] = "lenna";
+	level.model_to_character_table["t7_gfl_macqiato_fb"] = "macqiato";
 
 	level.model_to_character_name_table = [];
 	level.model_to_character_name_table["_dempsey_"] = "M16A1";
@@ -114,6 +118,7 @@ function init_character_table()
 
 	level.model_to_character_name_table["_detective_"] = "Suomi";
 	level.model_to_character_name_table["suomi"] = "Suomi";
+	level.model_to_character_name_table["rfb"] = "RFB";
 
 	level.model_to_character_name_table["_femme_"] = "Vepley";
 	level.model_to_character_name_table["vepley"] = "Vepley";
@@ -122,7 +127,7 @@ function init_character_table()
 	level.model_to_character_name_table["mp7"] = "MP7";
 
 	level.model_to_character_name_table["super_sass"] = "Super SASS";
-	level.model_to_character_name_table["rfb"] = "RFB";
+	level.model_to_character_name_table["macqiato"] = "WA2000";
 	level.model_to_character_name_table["tac50"] = "TAC-50";
 
 	level.model_to_character_name_table["p90"] = "P90";
@@ -222,6 +227,13 @@ function swap_to_suomi()
 	self character_util::swap_to_cc();
 }
 
+function swap_to_rfb()
+{
+	self.cc_bodytype = 6;
+	self.cc_bodystyle = 1;
+	self character_util::swap_to_cc();
+}
+
 function swap_to_vepley_backpack()
 {
 	self.cc_bodytype = 7;
@@ -313,7 +325,7 @@ function swap_to_super_sass()
 	self character_util::swap_to_cc();
 }
 
-function swap_to_rfb()
+function swap_to_macqiato()
 {
 	self.cc_bodytype = 13;
 	self.cc_bodystyle = 1;

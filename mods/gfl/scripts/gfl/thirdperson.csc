@@ -12,6 +12,7 @@ function private __init__()
 {
     callback::on_localplayer_spawned(&on_spawned);
     clientsystem::register("tps", &on_state_changed);
+    clientsystem::register("tpscam", &on_tpscam_changed);
 }
 
 function on_spawned(localClientNum)
@@ -41,6 +42,31 @@ function on_state_changed(localClientNum, states)
         break;
     case "on":
         player notify("thirdperson_on_notified");
+        break;
+    default:
+        break;
+    }
+}
+
+function on_tpscam_changed(localClientNum, states)
+{
+    if (states.size == 0)
+    {
+        return;
+    }
+
+    state = states[0];
+    player = GetLocalPlayer(localClientNum);
+    switch (state)
+    {
+    case "front":
+        player set_front_camera();
+        break;
+    case "back":
+        player set_back_camera();
+        break;
+    case "side":
+        player set_side_camera();
         break;
     default:
         break;
@@ -89,7 +115,16 @@ function set_front_camera()
     SetDvar("cg_thirdpersonangle", 90);
     SetDvar("cg_thirdpersonsideoffset", 0);
     SetDvar("cg_thirdpersoncamoffsetup", 0);
-    SetDvar("cg_thirdpersonupoffset", -30);
+    SetDvar("cg_thirdpersonupoffset", -20);
+}
+
+function set_side_camera()
+{
+    SetDvar("cg_thirdpersonrange", 90);
+    SetDvar("cg_thirdpersonangle", 45);
+    SetDvar("cg_thirdpersonsideoffset", 0);
+    SetDvar("cg_thirdpersoncamoffsetup", 0);
+    SetDvar("cg_thirdpersonupoffset", -20);
 }
 
 function update_thirdperson_crosshair(localClientNum)
