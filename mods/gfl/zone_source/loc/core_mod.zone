@@ -171,6 +171,7 @@ ignore_missing_shipped,core_common
 sound,core_mod
 localize,gfl_character
 localize,gfl_menu
+localize,gfl_modinfo
 localize,tf
 localize,tf_menu
 localize,menu

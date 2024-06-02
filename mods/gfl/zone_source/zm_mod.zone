@@ -32,9 +32,9 @@ image,t7_menu_zm_loadscreen_classified
 image,t7_menu_zm_loadscreen_tuvong
 
 // zm scripts
-scriptparsetree,scripts/gfl/zm/character_zm.gsc
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
 scriptparsetree,scripts/gfl/zm/character_mgr.csc
+scriptparsetree,scripts/gfl/zm/zm_character.gsc
 scriptparsetree,scripts/gfl/zm/gameplay.gsc
 scriptparsetree,scripts/gfl/zm/gameplay.csc
 scriptparsetree,scripts/gfl/zm/perkplus.gsc
@@ -146,6 +146,7 @@ image,uie_t7_zm_hud_score_tac50
 image,uie_t7_zm_hud_score_dima
 image,uie_t7_zm_hud_score_an94
 image,uie_t7_zm_hud_score_lenna
+image,uie_t7_zm_hud_score_macqiato
 
 material,specialty_three_guns_zombies
 material,specialty_ads_zombies

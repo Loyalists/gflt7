@@ -85,7 +85,9 @@ require("ui.uieditor.menus.PC.TFOptions_Player")
 require("ui.uieditor.menus.PC.TFOptions_Bot")
 require("ui.uieditor.menus.PC.TFOptions_BGB")
 
-require( "ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout" )
+require("ui.uieditor.menus.GFL.ModInfo")
+
+require("ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout")
 
 require("ui.uieditor.menus.Pregame.SystemOverlay_Pregame")
 require("ui.uieditor.menus.Prestige.Prestige_CustomizePrestigeIcon")

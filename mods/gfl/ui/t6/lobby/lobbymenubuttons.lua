@@ -758,7 +758,7 @@ CoD.LobbyButtons.CP_DOA_LEADERBOARD = {
     end
 }
 
-CoD.LobbyBase.OpenServerSettings = function(arg0, arg1)
+CoD.LobbyBase.OpenTFOptions = function(arg0, arg1)
     CoD.LobbyBase.SetLeaderActivity(arg1, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
 
     if IsZombies() then
@@ -772,16 +772,19 @@ CoD.LobbyBase.OpenServerSettings = function(arg0, arg1)
     end)
 end
 
+CoD.LobbyBase.OpenModInfo = function(arg0, arg1)
+    OpenOverlay(arg0, "ModInfo", arg1)
+end
+
 CoD.LobbyButtons.OPEN_WORKSHOP = {
-    stringRef = "GFL_MENU_WORKSHOP",
+    stringRef = "GFL_MENU_WORKSHOP_CAPS",
     action = OpenWorkshop,
     customId = "btnOpenWorkshop"
 }
 
 CoD.LobbyButtons.ZM_TFOPTIONS = {
     stringRef = "GFL_MENU_TFOPTIONS",
-    action = OpenServerSettings,
-    param = "ZMLobbyOnlineCustomGame",
+    action = OpenTFOptions,
     customId = "btnTFOptions",
     starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
@@ -797,4 +800,22 @@ CoD.LobbyButtons.ZM_CHANGE_LOBBY = {
     stringRef = "GFL_MENU_CHANGE_LOBBY",
     action = OpenZMChangeLobby,
     customId = "btnZMChangeLobby"
+}
+
+CoD.LobbyButtons.OPEN_MODINFO = {
+    stringRef = "GFL_MENU_MOD_INFO",
+    action = OpenModInfo,
+    customId = "btnOpenModInfo"
+}
+
+CoD.LobbyButtons.OPEN_ZM_INFO_POPUP = {
+    stringRef = "MENU_INTEL_CAPS",
+    action = OpenZMInfoPopup,
+    customId = "btnOpenZMInfoPopup"
+}
+
+CoD.LobbyButtons.OPEN_CP_INFO_POPUP = {
+    stringRef = "MENU_INTEL_CAPS",
+    action = OpenCPInfoPopup,
+    customId = "btnOpenCPInfoPopup"
 }

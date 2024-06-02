@@ -29,6 +29,7 @@ image,uie_img_t7_menu_frontend_asset_bo3logo
 
 localize,gfl_character
 localize,gfl_menu
+localize,gfl_modinfo
 localize,tf
 localize,tf_menu
 localize,menu
@@ -167,6 +168,11 @@ rawfile,ui/uieditor/widgets/pc/tfoptions/TFOptions_bot_p1.lua
 
 rawfile,ui/uieditor/menus/pc/tfoptions_bgb.lua
 rawfile,ui/uieditor/widgets/pc/tfoptions/TFOptions_bgb_p1.lua
+
+rawfile,ui/uieditor/menus/GFL/ModInfo.lua
+rawfile,ui/uieditor/widgets/GFL/ModInfoP1.lua
+rawfile,ui/uieditor/widgets/GFL/ModInfoFAQPage.lua
+rawfile,ui/uieditor/widgets/GFL/ModInfoUsefulLinksPage.lua
 
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
@@ -362,6 +368,7 @@ xmodel,t7_gfl_vepley_backpack_fb
 xmodel,t7_gfl_dima_fb
 xmodel,t7_gfl_an94_fb
 xmodel,t7_gfl_lenna_fb
+xmodel,t7_gfl_macqiato_fb
 
 xmodel,t7_gfl_ouroboros_fb
 xmodel,t7_gfl_dreamer_fb
@@ -1217,3 +1224,4 @@ xmodel,p7_zm_der2_teddybear
 xmodel,p7_zm_sh18_teddybear
 xmodel,p7_zm_asc_teddybear_shanks
 xmodel,p7_zm_zod_magic_box_tentacle_teddy
+xmodel,p7_nc_sin_bs_02

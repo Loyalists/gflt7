@@ -3,12 +3,12 @@ physpreset,276,0
 physconstraints,128,0
 destructibledef,128,0
 xanim,25000,3
-xmodel,10240,821
-xmodelmesh,34816,293
-material,20480,1041
+xmodel,10240,827
+xmodelmesh,34816,300
+material,20480,1015
 computeshaderset,256,0
 techset,1024,22
-image,49152,1044
+image,49152,1025
 sound,32,1
 sound_patch,16,0
 col_map,2,0
@@ -46,7 +46,7 @@ player_character,8,0
 aitype,96,0
 character,150,5
 xmodelalias,48,1
-rawfile,5000,73
+rawfile,5000,77
 stringtable,200,14
 structuredtable,96,0
 leaderboarddef,256,0

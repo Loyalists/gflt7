@@ -619,6 +619,33 @@ CoD.TFPCUtil.OptionsNavButtonProperties = {
     navAction = CoD.TFPCUtil.OptionsNavNuttonAction
 }
 
+CoD.TFPCUtil.OptionsUrlButtonAction = function(var, itemRef, varA, varB)
+    itemRef:playSound("list_action")
+    local itemModel = itemRef:getModel()
+    if itemModel then
+        local urlModel = Engine.GetModel(itemModel, "url")
+        if urlModel then
+            local urlString = Engine.GetModelValue(urlModel)
+            if urlString == "" then
+                return
+            end
+            Engine.OpenURL(urlString)
+        end
+    end
+end
+
+CoD.TFPCUtil.OptionsUrlButtonProperties = {
+    navAction = CoD.TFPCUtil.OptionsUrlButtonAction
+}
+
+CoD.TFPCUtil.OptionsEmptyButtonAction = function(var, itemRef, varA, varB)
+
+end
+
+CoD.TFPCUtil.OptionsEmptyButtonProperties = {
+    navAction = CoD.TFPCUtil.OptionsEmptyButtonAction
+}
+
 CoD.TFPCUtil.OptionsGenericCheckboxProperties = {
     checkboxAction = CoD.TFPCUtil.OptionsCheckboxAction
 }

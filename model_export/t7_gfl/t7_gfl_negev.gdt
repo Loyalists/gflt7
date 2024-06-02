@@ -19163,30 +19163,6 @@
 	"c_t7_mp_assassin_viewlegs1_skin2" [ "t7_gfl_negev_viewlegs" ]
 	{
 	}
-	"c_hro_playerfemale_lotus_tower_mpc_body" [ "t7_gfl_negev_fb_mp" ]
-	{
-	}
-	"c_hro_playermale_lotus_tower_mpc_body" [ "t7_gfl_negev_fb_mp" ]
-	{
-	}
-	"c_hro_player_female_lotustowers_viewbody" [ "t7_gfl_negev_body" ]
-	{
-	}
-	"c_hro_player_male_lotustowers_viewbody" [ "t7_gfl_negev_body" ]
-	{
-	}
-	"c_hro_player_female_lotustowers_viewhands" [ "t7_gfl_negev_viewhands" ]
-	{
-	}
-	"c_hro_player_male_lotustowers_viewhands" [ "t7_gfl_negev_viewhands" ]
-	{
-	}
-	"c_hro_player_female_lotustowers_viewlegs" [ "t7_gfl_negev_viewlegs" ]
-	{
-	}
-	"c_hro_player_male_lotustowers_viewlegs" [ "t7_gfl_negev_viewlegs" ]
-	{
-	}
 	"c_t7_mp_nomad_mpc_body1_skin3" [ "t7_gfl_negev_fb_mp" ]
 	{
 	}

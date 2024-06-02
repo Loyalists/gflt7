@@ -23858,4 +23858,28 @@
 	"c_t7_mp_battery_viewlegs1_skin3" [ "t7_gfl_g36c_viewlegs" ]
 	{
 	}
+	"c_hro_player_female_aquifer_viewbody" [ "t7_gfl_g36c_body" ]
+	{
+	}
+	"c_hro_player_male_aquifer_viewbody" [ "t7_gfl_g36c_body" ]
+	{
+	}
+	"c_hro_playerfemale_aquifer_mpc_body" [ "t7_gfl_g36c_fb_mp" ]
+	{
+	}
+	"c_hro_playermale_aquifer_mpc_body" [ "t7_gfl_g36c_fb_mp" ]
+	{
+	}
+	"c_hro_player_female_aquifer_viewhands" [ "t7_gfl_g36c_viewhands" ]
+	{
+	}
+	"c_hro_player_male_aquifer_viewhands" [ "t7_gfl_g36c_viewhands" ]
+	{
+	}
+	"c_hro_player_female_aquifer_viewlegs" [ "t7_gfl_g36c_viewlegs" ]
+	{
+	}
+	"c_hro_player_male_aquifer_viewlegs" [ "t7_gfl_g36c_viewlegs" ]
+	{
+	}
 }

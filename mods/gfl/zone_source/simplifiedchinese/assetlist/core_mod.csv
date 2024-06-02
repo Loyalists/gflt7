@@ -1,6 +1,7 @@
 sound,core_mod
 localize,gfl_character
 localize,gfl_menu
+localize,gfl_modinfo
 localize,menu
 localize,tf
 localize,tf_menu

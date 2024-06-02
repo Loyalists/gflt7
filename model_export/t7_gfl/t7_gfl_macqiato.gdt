@@ -7333,7 +7333,7 @@
 		"DetailShadows" "0"
 		"doNotUse" "0"
 		"dropLOD" "Auto"
-		"filename" "t7_gfl\\m4a1_v3\\t7_gfl_m4a1_v3_viewhands.XMODEL_BIN"
+		"filename" "t7_gfl\\macqiato\\t7_gfl_macqiato_viewhands.XMODEL_BIN"
 		"forceLod4Rigid" "0"
 		"forceLod5Rigid" "0"
 		"forceLod6Rigid" "0"
@@ -7735,30 +7735,6 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_hro_player_female_aquifer_viewbody" [ "t7_gfl_macqiato_body" ]
-	{
-	}
-	"c_hro_player_male_aquifer_viewbody" [ "t7_gfl_macqiato_body" ]
-	{
-	}
-	"c_hro_player_female_aquifer_viewhands" [ "t7_gfl_macqiato_viewhands" ]
-	{
-	}
-	"c_hro_player_female_aquifer_viewlegs" [ "t7_gfl_macqiato_viewlegs" ]
-	{
-	}
-	"c_hro_player_male_aquifer_viewhands" [ "t7_gfl_macqiato_viewhands" ]
-	{
-	}
-	"c_hro_player_male_aquifer_viewlegs" [ "t7_gfl_macqiato_viewlegs" ]
-	{
-	}
-	"c_hro_playerfemale_aquifer_mpc_body" [ "t7_gfl_macqiato_fb_mp" ]
-	{
-	}
-	"c_hro_playermale_aquifer_mpc_body" [ "t7_gfl_macqiato_fb_mp" ]
-	{
-	}
 	"c_t7_mp_firebreak_mpc_body2_skin4" [ "t7_gfl_macqiato_fb_mp" ]
 	{
 	}
@@ -7775,6 +7751,30 @@
 	{
 	}
 	"c_t7_mp_hunter_viewlegs2_skin4" [ "t7_gfl_macqiato_viewlegs" ]
+	{
+	}
+	"c_hro_player_female_lotustowers_viewbody" [ "t7_gfl_macqiato_body" ]
+	{
+	}
+	"c_hro_player_male_lotustowers_viewbody" [ "t7_gfl_macqiato_body" ]
+	{
+	}
+	"c_hro_playerfemale_lotus_tower_mpc_body" [ "t7_gfl_macqiato_fb_mp" ]
+	{
+	}
+	"c_hro_playermale_lotus_tower_mpc_body" [ "t7_gfl_macqiato_fb_mp" ]
+	{
+	}
+	"c_hro_player_female_lotustowers_viewhands" [ "t7_gfl_macqiato_viewhands" ]
+	{
+	}
+	"c_hro_player_male_lotustowers_viewhands" [ "t7_gfl_macqiato_viewhands" ]
+	{
+	}
+	"c_hro_player_female_lotustowers_viewlegs" [ "t7_gfl_macqiato_viewlegs" ]
+	{
+	}
+	"c_hro_player_male_lotustowers_viewlegs" [ "t7_gfl_macqiato_viewlegs" ]
 	{
 	}
 }

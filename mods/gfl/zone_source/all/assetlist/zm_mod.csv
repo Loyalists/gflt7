@@ -77,6 +77,7 @@ image,uie_t7_zm_hud_score_dima
 image,uie_t7_zm_hud_score_g36c
 image,uie_t7_zm_hud_score_lenna
 image,uie_t7_zm_hud_score_m4a1
+image,uie_t7_zm_hud_score_macqiato
 image,uie_t7_zm_hud_score_rfb
 image,uie_t7_zm_hud_score_ro635
 image,uie_t7_zm_hud_score_st_ar15
@@ -90,7 +91,6 @@ scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.gsc
 scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc
 scriptparsetree,scripts/gfl/zm/character_mgr.csc
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
-scriptparsetree,scripts/gfl/zm/character_zm.gsc
 scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 scriptparsetree,scripts/gfl/zm/gameplay.csc
 scriptparsetree,scripts/gfl/zm/gameplay.gsc
@@ -100,6 +100,7 @@ scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
 scriptparsetree,scripts/gfl/zm/perkplus.gsc
 scriptparsetree,scripts/gfl/zm/t8_perkloss.gsc
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
+scriptparsetree,scripts/gfl/zm/zm_character.gsc
 scriptparsetree,scripts/gfl/zm/zm_counter.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.csc
 scriptparsetree,scripts/gfl/zm/zm_sub.gsc

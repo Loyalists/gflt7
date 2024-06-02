@@ -93,11 +93,20 @@ DataSources.BonusModesFlyoutButtons = DataSourceHelpers.ListSetup( "BonusModesFl
 			selectedParam = Enum.eModes.MODE_CAMPAIGN,
 			starterPackUpgrade = true
 		},
+		-- {
+		-- 	optionDisplay = "GFL_MENU_IOP_WIKI",
+		-- 	customId = "btnIOPWIKI",
+		-- 	action = function ( f9_arg0, f9_arg1, f9_arg2, f9_arg3, f9_arg4 )
+		-- 		OpenIOPWiki()
+		-- 		Close( f9_arg4, f9_arg2 )
+		-- 	end,
+		-- 	starterPackUpgrade = false
+		-- },
 		{
-			optionDisplay = "GFL_MENU_IOP_WIKI",
-			customId = "btnIOPWIKI",
+			optionDisplay = "GFL_MENU_WORKSHOP_CAPS",
+			customId = "btnOpenWorkshopInBonus",
 			action = function ( f9_arg0, f9_arg1, f9_arg2, f9_arg3, f9_arg4 )
-				OpenIOPWiki()
+				OpenWorkshop()
 				Close( f9_arg4, f9_arg2 )
 			end,
 			starterPackUpgrade = false
@@ -149,11 +158,20 @@ DataSources.BonusModesFlyoutButtons = DataSourceHelpers.ListSetup( "BonusModesFl
 			selectedParam = Enum.eModes.MODE_CAMPAIGN,
 			starterPackUpgrade = true
 		},
+		-- {
+		-- 	optionDisplay = "GFL_MENU_IOP_WIKI",
+		-- 	customId = "btnIOPWIKI",
+		-- 	action = function ( f9_arg0, f9_arg1, f9_arg2, f9_arg3, f9_arg4 )
+		-- 		OpenIOPWiki()
+		-- 		Close( f9_arg4, f9_arg2 )
+		-- 	end,
+		-- 	starterPackUpgrade = false
+		-- },
 		{
-			optionDisplay = "GFL_MENU_IOP_WIKI",
-			customId = "btnIOPWIKI",
+			optionDisplay = "GFL_MENU_WORKSHOP_CAPS",
+			customId = "btnOpenWorkshopInBonus",
 			action = function ( f9_arg0, f9_arg1, f9_arg2, f9_arg3, f9_arg4 )
-				OpenIOPWiki()
+				OpenWorkshop()
 				Close( f9_arg4, f9_arg2 )
 			end,
 			starterPackUpgrade = false
@@ -206,7 +224,7 @@ LUI.createMenu.BonusModesFlyout = function ( controller )
 	Options:setXRot( -2 )
 	Options:setYRot( 25 )
 	Options:setWidgetType( CoD.FE_List1ButtonLarge_PH )
-	Options:setVerticalCount( 4 )
+	Options:setVerticalCount( 5 )
 	Options:setSpacing( -2 )
 	Options:setDataSource( "BonusModesFlyoutButtons" )
 	Options:registerEventHandler( "gain_focus", function ( element, event )

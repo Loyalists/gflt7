@@ -6413,4 +6413,7 @@
 	"p7_zm_zod_magic_box_tentacle_teddy" [ "t7_gfl_m4_sopmod_ii_jr_body" ]
 	{
 	}
+	"p7_nc_sin_bs_02" [ "t7_gfl_m4_sopmod_ii_jr_body_sitting" ]
+	{
+	}
 }

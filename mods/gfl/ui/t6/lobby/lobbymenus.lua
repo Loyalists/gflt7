@@ -203,7 +203,7 @@ CoD.LobbyMenus.ModeSelect = function(f12_arg0, f12_arg1, f12_arg2)
         -- end
     end
 
-    f0_local5(f12_arg0, f12_arg1, CoD.LobbyButtons.OPEN_WORKSHOP)
+    f0_local5(f12_arg0, f12_arg1, CoD.LobbyButtons.OPEN_MODINFO)
     if CoD.isPC then
         if Mods_Enabled() and f12_arg2 == 1 then
             f0_local5(f12_arg0, f12_arg1, CoD.LobbyButtons.MODS_LOAD)
@@ -305,6 +305,7 @@ CoD.LobbyMenus.CPButtonsOnline = function(f20_arg0, f20_arg1, f20_arg2)
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_GOTO_SAFEHOUSE)
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
     end
@@ -324,6 +325,7 @@ CoD.LobbyMenus.CPButtonsCustomGame = function(f22_arg0, f22_arg1, f22_arg2)
         f0_local6(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
         f0_local5(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f22_arg0, f22_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local6(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
     end
@@ -346,6 +348,7 @@ CoD.LobbyMenus.CPButtonsLAN = function(f23_arg0, f23_arg1, f23_arg2)
         f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_GOTO_SAFEHOUSE)
         f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local6(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
     end
@@ -361,6 +364,7 @@ CoD.LobbyMenus.CPButtonsLANCUSTOM = function(f24_arg0, f24_arg1, f24_arg2)
         f0_local6(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
         f0_local5(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f24_arg0, f24_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local6(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
     end
@@ -530,6 +534,7 @@ CoD.LobbyMenus.ZMButtonsOnline = function(f33_arg0, f33_arg1, f33_arg2)
     -- f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.ZM_MEGACHEW_FACTORY)
     -- f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.ZM_GOBBLEGUM_RECIPES)
     f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.ZM_BUILD_KITS)
+    f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
 end
 
 CoD.LobbyMenus.ZMButtonsPublicGame = function(f34_arg0, f34_arg1)
@@ -538,8 +543,11 @@ CoD.LobbyMenus.ZMButtonsPublicGame = function(f34_arg0, f34_arg1)
         return
     else
         f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_READY_UP)
+        f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_CHARACTERS)
+        f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_CHANGE_LOBBY)
         f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
         f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_BUILD_KITS)
+        f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
     end
 end
 
@@ -561,6 +569,7 @@ CoD.LobbyMenus.ZMButtonsCustomGame = function(f35_arg0, f35_arg1, f35_arg2)
     f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.ZM_CHANGE_LOBBY)
     f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
     f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.ZM_BUILD_KITS)
+    f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
 end
 
 CoD.LobbyMenus.ZMButtonsLAN = function(f36_arg0, f36_arg1, f36_arg2)
@@ -577,6 +586,7 @@ CoD.LobbyMenus.ZMButtonsLAN = function(f36_arg0, f36_arg1, f36_arg2)
     f0_local5(f36_arg0, f36_arg1, CoD.LobbyButtons.ZM_CHANGE_LOBBY)
     f0_local5(f36_arg0, f36_arg1, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
     f0_local5(f36_arg0, f36_arg1, CoD.LobbyButtons.ZM_BUILD_KITS)
+    f0_local5(f36_arg0, f36_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
 end
 
 CoD.LobbyMenus.FRButtonsOnlineGame = function(f37_arg0, f37_arg1, f37_arg2)

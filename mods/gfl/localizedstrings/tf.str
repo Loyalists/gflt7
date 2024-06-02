@@ -1694,7 +1694,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            THIRDPERSON_DESC
-LANG_ENGLISH         "Enables third person view by default.\n\nThird person can be toggled at any time by using "/tps" in the in-game chat whether this option is enabled or not. \n\nFor more information about chat commands, use "/help" in chat."
+LANG_ENGLISH         "Enables third person view by default.\n\nThird person can be toggled at any time by using "/tps" in the in-game chat whether this option is enabled or not."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"

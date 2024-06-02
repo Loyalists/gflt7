@@ -231,13 +231,13 @@ DataSources.TFOptionCategories = DataSourceHelpers.ListSetup("PC.TFOptionCategor
     })
     table.insert(f28_local0, {
         models = {
-            tabName = "GAMEPLAY",
+            tabName = "MPUI_STANDARD_CAPS",
             tabWidget = "CoD.TFOptions_P1"
         }
     })
     table.insert(f28_local0, { 
         models = { 
-            tabName = "ADVANCED", 
+            tabName = "MENU_ADVANCED_CAPS", 
             tabWidget = "CoD.TFOptions_P2" 
         } 
     })

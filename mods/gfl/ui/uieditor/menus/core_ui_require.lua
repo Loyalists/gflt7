@@ -55,8 +55,12 @@ require("ui.uieditor.widgets.pc.tfoptions.tfoptions_game_p1")
 require("ui.uieditor.widgets.pc.tfoptions.tfoptions_game_p2")
 require("ui.uieditor.widgets.pc.tfoptions.tfoptions_bot_p1")
 require("ui.uieditor.widgets.pc.tfoptions.tfoptions_bgb_p1")
-
 require("ui.uieditor.menus.pc.tfoptions")
+
+require("ui.uieditor.widgets.GFL.ModInfoP1")
+require("ui.uieditor.widgets.GFL.ModInfoFAQPage")
+require("ui.uieditor.widgets.GFL.ModInfoUsefulLinksPage")
+
 require("ui.uieditor.widgets.PC.StartMenu.VoiceOptions.StartMenu_Options_PC_Voice_Text")
 require("ui.uieditor.widgets.PC.StartMenu.VoiceOptions.StartMenu_Options_PC_Voice_Voice")
 require("ui.uieditor.widgets.Social.Social_Friends")
