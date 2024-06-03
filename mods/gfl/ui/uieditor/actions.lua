@@ -45,11 +45,15 @@ function OpenModInfo( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )
 end
 
 function OpenZMInfoPopup( InstanceRef, arg1, arg2 )
-    LuaUtils.UI_ShowInfoMessageDialog( InstanceRef, "GFL_MODINFO_ZM_INFO_DESC" )
+    LuaUtils.UI_ShowInfoMessageDialog( InstanceRef, "GFL_MODINFO_ZM_INFO_DESC", "GFL_MODINFO_ZM_INFO_TITLE" )
 end
 
 function OpenCPInfoPopup( InstanceRef, arg1, arg2 )
     LuaUtils.UI_ShowInfoMessageDialog( InstanceRef, "GFL_MODINFO_CP_INFO_DESC", "GFL_MODINFO_CP_INFO_TITLE" )
+end
+
+function OpenMPInfoPopup( InstanceRef, arg1, arg2 )
+    LuaUtils.UI_ShowInfoMessageDialog( InstanceRef, "GFL_MODINFO_MP_INFO_DESC", "GFL_MODINFO_MP_INFO_TITLE" )
 end
 
 function splitString(inputstr, sep)

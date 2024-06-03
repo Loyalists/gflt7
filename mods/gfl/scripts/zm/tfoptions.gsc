@@ -45,7 +45,8 @@
 #using scripts\zm\better_nuke;
 
 //hit markers
-#using scripts\zm\zm_damagefeedback;
+// #using scripts\zm\zm_damagefeedback;
+#using scripts\zm\_hb21_zm_hitmarkers;
 
 //Custom Powerups By ZoekMeMaar
 #using scripts\_ZoekMeMaar\custom_powerup_free_packapunch_with_time;
@@ -63,19 +64,12 @@
 
 #namespace tfoptions;
 
-REGISTER_SYSTEM_EX( "tfoptions", &__init__, &__main__, undefined )
-
-function private __init__()
+function autoexec auto_preload()
 {
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         create_tf_options_defaults();
     }
-}
-
-function private __main__()
-{
-
 }
 
 function init() {
@@ -356,9 +350,9 @@ function apply_choices() {
     }
 
     //hitmarkers
-    if( GetDvarInt("tfoption_hitmarkers", 0) ) {
-        zm_damagefeedback::init_hitmarkers();
-    }
+    // if( GetDvarInt("tfoption_hitmarkers", 0) ) {
+    //     zm_damagefeedback::init_hitmarkers();
+    // }
 
     //no round delay
     if( GetDvarInt("tfoption_no_round_delay", 0) ) {

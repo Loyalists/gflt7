@@ -3249,6 +3249,8 @@ rawfile,ui/uieditor/menus/pc/tfoptions_roamer.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_weapons.lua
 rawfile,ui/uieditor/menus/pc/tfoptions_zombies.lua
 rawfile,ui/uieditor/menus/zm/zmmapselection.lua
+rawfile,ui/uieditor/modifyfunctions.lua
+rawfile,ui/uieditor/modifyfunctions_og.luac
 rawfile,ui/uieditor/widgets/gfl/modinfofaqpage.lua
 rawfile,ui/uieditor/widgets/gfl/modinfop1.lua
 rawfile,ui/uieditor/widgets/gfl/modinfousefullinkspage.lua
@@ -3281,7 +3283,6 @@ rawfile,ui_mp/t6/hud_og.luac
 rawfile,zm_mod.cfg
 stringtable,credits_pc.csv
 stringtable,gamedata/gfl/nametable.csv
-stringtable,gamedata/loot/mplootitems.csv
 stringtable,gamedata/stats/cp/cp_statstable.csv
 stringtable,gamedata/stats/cp/statsmilestones3.csv
 stringtable,gamedata/stats/mp/mp_statstable.csv

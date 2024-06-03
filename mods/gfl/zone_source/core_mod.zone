@@ -45,7 +45,7 @@ stringtable,gamedata/stats/zm/statsmilestones3.csv
 stringtable,gamedata/weapons/common/attachmenttable.csv
 stringtable,gamedata/weapons/cp/cp_gunlevels.csv
 stringtable,gamedata/weapons/zm/zm_gunlevels.csv
-stringtable,gamedata/loot/mplootitems.csv
+//stringtable,gamedata/loot/mplootitems.csv
 //stringtable,gamedata/loot/zmlootitems.csv
 stringtable,gamedata/tables/common/music_player.csv
 stringtable,gamedata/tables/zm/scoreinfo.csv
@@ -94,6 +94,8 @@ rawfile,ui/uieditor/actions.lua
 rawfile,ui/uieditor/actions_og.luac
 rawfile,ui/uieditor/conditions.lua
 rawfile,ui/uieditor/conditions_og.luac
+rawfile,ui/uieditor/modifyfunctions.lua
+rawfile,ui/uieditor/modifyfunctions_og.luac
 
 rawfile,lua/Shared/CoDShared.lua
 rawfile,ui/t7/utility/BlackMarketUtility.lua

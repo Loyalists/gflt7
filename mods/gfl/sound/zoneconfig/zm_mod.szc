@@ -1,18 +1,33 @@
-{ 
-    "Name" : "zm_mod", 
-    "IsStandalone" : true, 
-    "IsProduction" : false, 
-    "IsShipped" : false, 
-    "DontDeploy" : false, 
-    "NoStreamBank" : false, 
-    "MapFile" : "", 
-    "Standalone" : true, 
-    "Builds" : [ "T7" ], 
-    "Sources" : [ 
-        { "Type" : "ALIAS", 
-        "Name" : "zm_mod",
-        "Filename" : "zm_mod.csv", 
-        "Specs" : [ ] 
+{
+    "Name": "zm_mod",
+    "IsStandalone": true,
+    "IsProduction": false,
+    "IsShipped": false,
+    "DontDeploy": false,
+    "NoStreamBank": false,
+    "MapFile": "",
+    "Standalone": true,
+    "Builds": [
+        "T7"
+    ],
+    "Sources": [
+        {
+            "Type": "ALIAS",
+            "Name": "zm_mod",
+            "Filename": "zm_mod.csv",
+            "Specs": []
+        },
+        {
+            "Type": "ALIAS",
+            "Name": "moon_ee",
+            "Filename": "moon_ee.csv",
+            "Specs": []
+        },
+        {
+            "Type": "ALIAS",
+            "Name": "hb21_hitmarkers",
+            "Filename": "hb21_hitmarkers.csv",
+            "Specs": []
         }
-    ] 
+    ]
 }

@@ -81,7 +81,9 @@ xmodel,free_packapunch
 //timed gameplay
 scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
 
-scriptparsetree,scripts/zm/zm_damagefeedback.gsc
+// hitmarkers
+// scriptparsetree,scripts/zm/zm_damagefeedback.gsc
+scriptparsetree,scripts/zm/_hb21_zm_hitmarkers.gsc
 
 // unlimited and random bgbs
 // requires T7MTEnhancements to compile

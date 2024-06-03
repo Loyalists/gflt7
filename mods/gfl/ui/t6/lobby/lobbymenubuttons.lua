@@ -819,3 +819,9 @@ CoD.LobbyButtons.OPEN_CP_INFO_POPUP = {
     action = OpenCPInfoPopup,
     customId = "btnOpenCPInfoPopup"
 }
+
+CoD.LobbyButtons.OPEN_MP_INFO_POPUP = {
+    stringRef = "MENU_INTEL_CAPS",
+    action = OpenMPInfoPopup,
+    customId = "btnOpenMPInfoPopup"
+}

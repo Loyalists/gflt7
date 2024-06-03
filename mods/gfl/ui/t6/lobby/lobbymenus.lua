@@ -376,6 +376,7 @@ CoD.LobbyMenus.MPButtonsMain = function(f25_arg0, f25_arg1, f25_arg2)
         -- f0_local5(f25_arg0, f25_arg1, CoD.LobbyButtons.MP_ARENA)
         f0_local5(f25_arg0, f25_arg1, CoD.LobbyButtons.MP_CUSTOM_GAMES)
         f0_local5(f25_arg0, f25_arg1, CoD.LobbyButtons.THEATER_MP)
+        f0_local5(f25_arg0, f25_arg1, CoD.LobbyButtons.OPEN_MP_INFO_POPUP)
     end
     f0_local7(f25_arg1)
     -- if CoD.isPC then
@@ -408,6 +409,7 @@ CoD.LobbyMenus.MPButtonsOnline = function(f26_arg0, f26_arg1, f26_arg2)
     if not DisableBlackMarket() then
         f0_local6(f26_arg0, f26_arg1, CoD.LobbyButtons.BLACK_MARKET)
     end
+    f0_local5(f26_arg0, f26_arg1, CoD.LobbyButtons.OPEN_MP_INFO_POPUP)
 end
 
 CoD.LobbyMenus.MPButtonsOnlinePublic = function(f27_arg0, f27_arg1, f27_arg2)
@@ -430,6 +432,7 @@ CoD.LobbyMenus.MPButtonsOnlinePublic = function(f27_arg0, f27_arg1, f27_arg2)
         f0_local7(f27_arg1)
         f0_local6(f27_arg0, f27_arg1, CoD.LobbyButtons.BLACK_MARKET)
     end
+    f0_local5(f27_arg0, f27_arg1, CoD.LobbyButtons.OPEN_MP_INFO_POPUP)
 end
 
 CoD.LobbyMenus.MPButtonsModGame = function(f28_arg0, f28_arg1, f28_arg2)
@@ -440,6 +443,7 @@ CoD.LobbyMenus.MPButtonsModGame = function(f28_arg0, f28_arg1, f28_arg2)
         f0_local5(f28_arg0, f28_arg1, CoD.LobbyButtons.MP_CAC)
         f0_local5(f28_arg0, f28_arg1, CoD.LobbyButtons.MP_SPECIALISTS)
         f0_local5(f28_arg0, f28_arg1, CoD.LobbyButtons.MP_SCORESTREAKS)
+        f0_local5(f28_arg0, f28_arg1, CoD.LobbyButtons.OPEN_MP_INFO_POPUP)
     end
 end
 
@@ -466,6 +470,7 @@ CoD.LobbyMenus.MPButtonsCustomGame = function(f29_arg0, f29_arg1, f29_arg2)
     if not DisableBlackMarket() then
         f0_local6(f29_arg0, f29_arg1, CoD.LobbyButtons.BLACK_MARKET)
     end
+    f0_local5(f29_arg0, f29_arg1, CoD.LobbyButtons.OPEN_MP_INFO_POPUP)
 end
 
 CoD.LobbyMenus.MPButtonsArena = function(f30_arg0, f30_arg1, f30_arg2)
@@ -514,6 +519,7 @@ CoD.LobbyMenus.MPButtonsLAN = function(f32_arg0, f32_arg1, f32_arg2)
         f0_local7(f32_arg1)
         f0_local6(f32_arg0, f32_arg1, CoD.LobbyButtons.BLACK_MARKET)
     end
+    f0_local5(f32_arg0, f32_arg1, CoD.LobbyButtons.OPEN_MP_INFO_POPUP)
 end
 
 CoD.LobbyMenus.ZMButtonsOnline = function(f33_arg0, f33_arg1, f33_arg2)

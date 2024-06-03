@@ -38,9 +38,25 @@ function init()
 	thread main();
 }
 
+function is_supported_by_map()
+{
+	// connection is always interrupted in this map if magicboxshare is enabled
+	if (level.script == "zm_sabotage")
+	{
+		return false;
+	}
+
+	return true;
+}
+
 function main()
 {
     level waittill( "initial_blackscreen_passed" );
+	if ( !is_supported_by_map() )
+	{
+		return;
+	}
+	
 	thread magicboxshare();
 }
 
