@@ -337,3 +337,28 @@ function set_force_reset_flag()
 {
 	self.force_reset = true;
 }
+
+function is_character_valid(key, character)
+{
+	if ( !isdefined(key) || !isdefined(character) )
+	{
+		return false;
+	}
+
+	if ( !isdefined(level.charactertable) )
+	{
+		return false;
+	}
+
+	if ( !isdefined(level.charactertable[key]) )
+	{
+		return false;
+	}
+
+	if ( !isdefined(level.charactertable[key][character]) )
+	{
+		return false;
+	}
+
+	return true;
+}

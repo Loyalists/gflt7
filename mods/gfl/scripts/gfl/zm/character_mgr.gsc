@@ -147,12 +147,21 @@ function on_message_sent(args)
 		desc_text = "characters: ";
 		key = get_character_table_key();
 		characters = GetArrayKeys(level.charactertable[key]);
+		self IPrintLnBold(usage_text);
+		count = 0;
 		foreach (char in characters)
 		{
+			if ( count >= 10 )
+			{
+				self IPrintLnBold(desc_text);
+				desc_text = "";
+				count = 0;
+			}
+
 			desc_text += char;
 			desc_text += " ";
+			count += 1;
 		}
-		self IPrintLnBold(usage_text);
 		self IPrintLnBold(desc_text);
 		return;
 	}
@@ -172,7 +181,8 @@ function on_message_sent(args)
 		self set_character(character);
 	}
 
-	if ( is_character_valid(character) )
+	key = get_character_table_key();
+	if ( character_util::is_character_valid(key, character) )
 	{
 		self thread show_character_popup();
 	}
@@ -215,7 +225,7 @@ function init_randomized_character_table()
 	}
 }
 
-function randomize_character_function_index(characterindex = 0)
+function get_random_character(characterindex = 0)
 {
 	index = array::random(level.randomized_character_table[characterindex]);
     return index;
@@ -525,15 +535,13 @@ function set_random_character()
 {
 	// level flag::wait_till("all_players_spawned");
 	characterindex = self.characterindex;
-	if(!isdefined(characterindex))
+	if ( !isdefined(characterindex) || characterindex >= level.randomized_character_table.size)
 	{
 		characterindex = randomint(level.randomized_character_table.size);
 	}
 
-    func_index = randomize_character_function_index(characterindex);
-	key = get_character_table_key();
-	self character_util::swap_character(key, func_index);
-	self set_icon(func_index);
+    char = get_random_character(characterindex);
+	self set_character(char);
 }
 
 function set_icon(func_index)
@@ -603,22 +611,6 @@ function get_simplified_character(name)
 	return name;
 }
 
-function is_character_valid(character)
-{
-	key = get_character_table_key();
-	if ( !isdefined(level.charactertable[key]) )
-	{
-		return false;
-	}
-
-	if ( !isdefined(level.charactertable[key][character]) )
-	{
-		return false;
-	}
-
-	return true;
-}
-
 // test func
 function revolve_character_test()
 {
@@ -635,10 +627,9 @@ function revolve_character_test()
 			index = 0;
 		}
 
-		func_index = characters[index];
+		char = characters[index];
 		characterindex = self.characterindex;
-		self character_util::swap_character(key, func_index);
-		self set_icon(func_index);
+		self set_character(char);
 		index += 1;
 		wait 2;
 	}
@@ -652,10 +643,4 @@ function random_character_test()
 		self set_random_character();
 		wait 2;
 	}
-}
-
-function test_if_overrided()
-{
-	level waittill("initial_blackscreen_passed");
-	iPrintLnBold("givecustomcharacters() is overrided!");
 }
