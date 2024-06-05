@@ -7,6 +7,9 @@
 #using scripts\shared\system_shared;
 #using scripts\shared\lui_shared;
 
+#insert scripts\shared\shared.gsh;
+#insert scripts\shared\version.gsh;
+
 #namespace core_util;
 
 function void( ... )
@@ -33,16 +36,19 @@ function disable_cheats()
     SetDvar("sv_cheats", 0);
 }
 
-function is_cheats_enabled()
+function is_cheats_enabled( check_tfoption = true )
 {
     if ( GetDvarInt("sv_cheats", 0) || GetDvarInt("developer", 0) )
     {
         return true;
     }
 
-    if ( GetDvarInt("tfoption_cheats", 0) )
+    if ( IS_TRUE(check_tfoption) )
     {
-        return true;
+        if ( GetDvarInt("tfoption_cheats", 0) )
+        {
+            return true;
+        }
     }
 
     return false;

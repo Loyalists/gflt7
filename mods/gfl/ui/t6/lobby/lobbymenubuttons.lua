@@ -786,7 +786,6 @@ CoD.LobbyButtons.ZM_TFOPTIONS = {
     stringRef = "GFL_MENU_TFOPTIONS",
     action = OpenTFOptions,
     customId = "btnTFOptions",
-    starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
 
 CoD.LobbyButtons.ZM_CHARACTERS = {
@@ -824,4 +823,10 @@ CoD.LobbyButtons.OPEN_MP_INFO_POPUP = {
     stringRef = "MENU_INTEL_CAPS",
     action = OpenMPInfoPopup,
     customId = "btnOpenMPInfoPopup"
+}
+
+CoD.LobbyButtons.CONFIGURE_CHEATS = {
+    stringRef = "GFL_MENU_CONFIGURE_CHEATS",
+    action = OpenConfigureCheatsPopup,
+    customId = "btnConfigureCheatsPopup",
 }

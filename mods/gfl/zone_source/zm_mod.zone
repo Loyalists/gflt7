@@ -31,6 +31,8 @@ image,t7_menu_zm_loadscreen_prototype
 image,t7_menu_zm_loadscreen_classified
 image,t7_menu_zm_loadscreen_tuvong
 
+rawfile,ui/uieditor/widgets/HUD/ZM_NotifFactory/ZMNotificationContainer.lua
+
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
 scriptparsetree,scripts/gfl/zm/character_mgr.csc
@@ -59,7 +61,7 @@ scriptparsetree,scripts/zm/tfoptions.csc
 scriptparsetree,scripts/zm/tfoptions.gsc
 scriptparsetree,scripts/zm/zmSaveData.gsc
 
-scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
+// scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
 scriptparsetree,scripts/zm/infinityloader.gsc
 
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc

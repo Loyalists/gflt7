@@ -86,17 +86,69 @@ function init_character_table()
 	// ump45
 	level.additional_bodystyle_table["t7_gfl_lenna_fb"] = 1;
 
+
 	level.model_to_character_table = [];
-	level.model_to_character_table["t7_gfl_m4a1_v3_fb"] = "m4a1";
-	level.model_to_character_table["t7_gfl_ro635_fb"] = "ro635";
-	level.model_to_character_table["t7_gfl_st_ar15_v2_fb"] = "st_ar15";
-	level.model_to_character_table["t7_gfl_g36c_fb"] = "g36c";
-	level.model_to_character_table["t7_gfl_rfb_fb"] = "rfb";
-	level.model_to_character_table["t7_gfl_tac50_v2_fb"] = "tac50";
-	level.model_to_character_table["t7_gfl_dima_fb"] = "dima";
-	level.model_to_character_table["t7_gfl_an94_fb"] = "an94";
-	level.model_to_character_table["t7_gfl_lenna_fb"] = "lenna";
-	level.model_to_character_table["t7_gfl_macqiato_fb"] = "macqiato";
+	level.model_to_character_table["der_dempsey"] = "m16a1_prime";
+	level.model_to_character_table["dlc3_dempsey"] = "m16a1_prime";
+	level.model_to_character_table["waw_dempsey"] = "m16a1";
+	level.model_to_character_table["m16a1_prime"] = "m16a1_prime";
+	level.model_to_character_table["m16a1_v2"] = "m16a1";
+	level.model_to_character_table["m4a1"] = "m4a1";
+	
+	level.model_to_character_table["_nikolai_"] = "ak12";
+	level.model_to_character_table["ak12"] = "ak12";
+	level.model_to_character_table["an94"] = "an94";
+
+	level.model_to_character_table["_richtofen_"] = "hk416";
+	level.model_to_character_table["hk416"] = "hk416";
+
+	level.model_to_character_table["_takeo_"] = "type89";
+	level.model_to_character_table["type89"] = "type89";
+
+	level.model_to_character_table["_boxer_"] = "tololo";
+	level.model_to_character_table["tololo"] = "tololo";
+
+	level.model_to_character_table["_detective_"] = "suomi";
+	level.model_to_character_table["suomi"] = "suomi";
+	level.model_to_character_table["rfb"] = "rfb";
+
+	level.model_to_character_table["_femme_"] = "vepley_backpack";
+	level.model_to_character_table["vepley_backpack"] = "vepley_backpack";
+	level.model_to_character_table["vepley_fb"] = "vepley";
+
+	level.model_to_character_table["_magician_"] = "mp7_tights";
+	level.model_to_character_table["mp7_tights"] = "mp7_tights";
+	level.model_to_character_table["mp7_casual"] = "mp7_casual_tights";
+
+	level.model_to_character_table["super_sass"] = "super_sass";
+	level.model_to_character_table["macqiato"] = "macqiato";
+	level.model_to_character_table["tac50"] = "tac50";
+
+	level.model_to_character_table["p90"] = "p90";
+	level.model_to_character_table["g36c"] = "g36c";
+
+	level.model_to_character_table["ump45"] = "ump45";
+	level.model_to_character_table["lenna"] = "lenna";
+
+	level.model_to_character_table["g11"] = "g11";
+	level.model_to_character_table["dima"] = "dima";
+
+	level.model_to_character_table["m4_sopmod_ii"] = "m4_sopmod_ii";
+	level.model_to_character_table["st_ar15"] = "st_ar15";
+	level.model_to_character_table["ro635"] = "ro635";
+
+	level.model_to_character_table["9a91"] = "9a91";
+	level.model_to_character_table["negev"] = "negev";
+	level.model_to_character_table["rpk16"] = "rpk16";
+
+	level.model_to_character_table["dreamer"] = "dreamer";
+	level.model_to_character_table["ouroboros"] = "ouroboros";
+	level.model_to_character_table["vespid"] = "vespid";
+	level.model_to_character_table["ripper"] = "ripper";
+	level.model_to_character_table["guard"] = "guard";
+	level.model_to_character_table["jaeger"] = "jaeger";
+	level.model_to_character_table["c_t7_zm_dlchd_origins_player_body_mpc"] = "jaeger";
+
 
 	level.model_to_character_name_table = [];
 	level.model_to_character_name_table["_dempsey_"] = "M16A1";

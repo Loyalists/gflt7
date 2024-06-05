@@ -248,6 +248,7 @@ CoD.LobbyMenus.CPZMButtonsOnline = function(f16_arg0, f16_arg1, f16_arg2)
         -- f0_local5(f16_arg0, f16_arg1, CoD.LobbyButtons.CP_JOIN_PUBLIC_GAME)
         f0_local5(f16_arg0, f16_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f16_arg0, f16_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f16_arg0, f16_arg1, CoD.LobbyButtons.CONFIGURE_CHEATS)
     else
         f0_local5(f16_arg0, f16_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
     end
@@ -269,6 +270,7 @@ CoD.LobbyMenus.CPZMButtonsLAN = function(f18_arg0, f18_arg1, f18_arg2)
         end
         f0_local5(f18_arg0, f18_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f18_arg0, f18_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f18_arg0, f18_arg1, CoD.LobbyButtons.CONFIGURE_CHEATS)
     end
 end
 
@@ -282,6 +284,7 @@ CoD.LobbyMenus.CP2ButtonsLANCUSTOM = function(f19_arg0, f19_arg1, f19_arg2)
         f0_local6(f19_arg0, f19_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
         f0_local5(f19_arg0, f19_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f19_arg0, f19_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f19_arg0, f19_arg1, CoD.LobbyButtons.CONFIGURE_CHEATS)
     else
         f0_local6(f19_arg0, f19_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
     end
@@ -305,6 +308,7 @@ CoD.LobbyMenus.CPButtonsOnline = function(f20_arg0, f20_arg1, f20_arg2)
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_GOTO_SAFEHOUSE)
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CONFIGURE_CHEATS)
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local5(f20_arg0, f20_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
@@ -325,6 +329,7 @@ CoD.LobbyMenus.CPButtonsCustomGame = function(f22_arg0, f22_arg1, f22_arg2)
         f0_local6(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
         f0_local5(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f22_arg0, f22_arg1, CoD.LobbyButtons.CONFIGURE_CHEATS)
         f0_local5(f22_arg0, f22_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local6(f22_arg0, f22_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
@@ -348,6 +353,7 @@ CoD.LobbyMenus.CPButtonsLAN = function(f23_arg0, f23_arg1, f23_arg2)
         f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_GOTO_SAFEHOUSE)
         f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.CONFIGURE_CHEATS)
         f0_local5(f23_arg0, f23_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local6(f23_arg0, f23_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
@@ -364,6 +370,7 @@ CoD.LobbyMenus.CPButtonsLANCUSTOM = function(f24_arg0, f24_arg1, f24_arg2)
         f0_local6(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)
         f0_local5(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_SELECT_MISSION)
         f0_local5(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY)
+        f0_local5(f24_arg0, f24_arg1, CoD.LobbyButtons.CONFIGURE_CHEATS)
         f0_local5(f24_arg0, f24_arg1, CoD.LobbyButtons.OPEN_CP_INFO_POPUP)
     else
         f0_local6(f24_arg0, f24_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW)

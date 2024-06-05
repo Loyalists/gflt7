@@ -46,14 +46,14 @@ player_character,8,0
 aitype,96,0
 character,150,0
 xmodelalias,48,0
-rawfile,5000,1
+rawfile,5000,2
 stringtable,200,0
 structuredtable,96,0
 leaderboarddef,256,0
 ddl,64,0
 glasses,2,0
 texturelist,8,0
-scriptparsetree,1024,39
+scriptparsetree,1024,38
 keyvaluepairs,64,1
 vehicle,64,0
 addon_map_ents,1,0

@@ -19,22 +19,22 @@
 
 #namespace character_mgr;
 
+#precache( "lui_menu_data", "hudItems.CharacterPopup" );
+
 REGISTER_SYSTEM_EX( "character_mgr", &__init__, &__main__, undefined )
 
 function private __init__()
 {
 	util::registerClientSys( "gfl_character_icon" );
 	chat_notify::register_chat_notify_callback( "char", &on_message_sent );
+	
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
 
 	character::init_character_table();
 	zm_character::init_character_table();
 	init_randomized_character_table();
-}
 
-function private __main__()
-{
 	if( GetDvarInt("tfoption_tdoll_zombie", 0) )
 	{
 		spawner::add_archetype_spawn_function("zombie", &zombie_model_override);
@@ -43,7 +43,10 @@ function private __main__()
 	{
 		spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
 	}
+}
 
+function private __main__()
+{
 	if( !( GetDvarInt("tfoption_player_determined_character") || GetDvarInt("tfoption_randomize_character") ) )
 	{
 		return;
@@ -52,21 +55,13 @@ function private __main__()
 	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
 	{
 		// prone to crash
-		// init_moon();
-		return;
+		// level.save_character_customization_func = &save_character_customization_moon;
 	}
-
-	if( GetDvarInt("tfoption_player_determined_character", 0) )
+	else
 	{
-		level.save_character_customization_func = &save_character_customization;
-	}
-}
-
-function init_moon()
-{
-	if( GetDvarInt("tfoption_player_determined_character", 0) )
-	{
-		level.save_character_customization_func = &save_character_customization_moon;
+		// level.save_character_customization_func = &save_character_customization;
+		level._givecustomcharacters_old = level.givecustomcharacters;
+		level.givecustomcharacters = &set_character_on_spawned;
 	}
 }
 
@@ -78,6 +73,7 @@ function on_player_connect()
 function on_player_spawned()
 {
 	self endon("disconnect");
+	self endon("death");
 	self endon("bled_out");
 
 	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
@@ -85,22 +81,7 @@ function on_player_spawned()
 		return;
 	}
 
-	if( GetDvarInt("tfoption_player_determined_character", 0) )
-	{
-		self thread set_character_customization();
-
-		if( GetDvarInt("tfoption_randomize_character", 0) )
-		{
-			self thread set_random_character_for_bot();
-		}
-	}
-	else
-	{
-		if( GetDvarInt("tfoption_randomize_character", 0) )
-		{
-			self thread set_random_character();
-		}
-	}
+	self thread set_character_customization();
 
 	if ( level.script == "zm_zod" )
 	{
@@ -114,6 +95,43 @@ function on_player_spawned()
     }
 
 	self thread lock_cc_think();
+}
+
+function set_character_on_spawned()
+{
+	self pre_give_custom_character();
+
+	if(isdefined(level._givecustomcharacters_old))
+	{
+		self [[level._givecustomcharacters_old]]();
+	}
+
+	self post_give_custom_character();
+}
+
+function pre_give_custom_character()
+{
+	if( GetDvarInt("tfoption_player_determined_character", 0) )
+	{
+		self save_character_customization();
+
+		if( GetDvarInt("tfoption_randomize_character", 0) )
+		{
+			self set_random_character_for_bot();
+		}
+	}
+	else
+	{
+		if( GetDvarInt("tfoption_randomize_character", 0) )
+		{
+			self set_random_character();
+		}
+	}
+}
+
+function post_give_custom_character()
+{
+	self set_character_customization();
 }
 
 function on_message_sent(args)
@@ -145,8 +163,19 @@ function on_message_sent(args)
     }
 
 	character = args[0];
-	self set_character(character);
-    self IPrintLnBold("character swapped");
+	if ( character == "random" )
+	{
+		self set_random_character();
+	}
+	else
+	{
+		self set_character(character);
+	}
+
+	if ( is_character_valid(character) )
+	{
+		self thread show_character_popup();
+	}
 }
 
 function is_cc_watcher_needed()
@@ -192,11 +221,21 @@ function randomize_character_function_index(characterindex = 0)
     return index;
 }
 
+function show_character_popup(args = undefined)
+{
+    name = self get_character_by_model();
+    simplified = get_simplified_character(name);
+
+    self SetControllerUIModelValue("hudItems.CharacterPopup", simplified);
+    wait 0.05;
+    self SetControllerUIModelValue("hudItems.CharacterPopup", "none");
+}
 
 // model fix related
 function altbody_cc_fix()
 {
 	self endon("disconnect");
+	self endon("death");
 	self endon("bled_out");
 
 	while (true)
@@ -276,6 +315,7 @@ function save_cc_fix(use_ultimis_bodystyle = false)
 function cc_watcher_think()
 {
 	self endon("disconnect");
+	self endon("death");
 	self endon("bled_out");
 
     while (true)
@@ -293,6 +333,7 @@ function cc_watcher_think()
 function lock_cc_think()
 {
 	self endon("disconnect");
+	self endon("death");
 	self endon("bled_out");
 
     while (true)
@@ -390,27 +431,32 @@ function zombie_model_override()
 
 function save_character_customization()
 {
+	// bots always use the first character (dempsey/m16a1)
 	if ( self IsTestClient() )
+	{
+		return;
+	}
+
+	if ( isdefined(self.cc_bodytype) && isdefined(self.cc_bodystyle) )
 	{
 		return;
 	}
 
 	bodytype = self GetCharacterBodyType();
 	bodystyle = 0;
-	bodystyle_name = undefined;
-	
-	model = self GetCharacterBodyModel();
-	modelsubstrs = GetArrayKeys(level.additional_bodystyle_table);
-	foreach( modelsubstr in modelsubstrs )
+	bodystyle_name = self get_character_by_model();
+	if (bodystyle_name == "none")
 	{
-		if( isdefined(model) && issubstr(model, modelsubstr) )
+		bodystyle_name = undefined;
+	}
+
+	model = self GetCharacterBodyModel();
+	substrs = GetArrayKeys(level.additional_bodystyle_table);
+	foreach( substr in substrs )
+	{
+		if( isdefined(model) && issubstr(model, substr) )
 		{
-			bodystyle = level.additional_bodystyle_table[modelsubstr];
-			character = level.model_to_character_table[modelsubstr];
-			if ( isdefined(character) )
-			{
-				bodystyle_name = character;
-			}
+			bodystyle = level.additional_bodystyle_table[substr];
 			break;
 		}
 	}
@@ -446,11 +492,14 @@ function set_character(character)
 	key = get_character_table_key();
 	self character_util::swap_character(key, character);
 	self set_icon(character);
+
+	// char = self get_character_by_model();
+	// self IPrintLnBold(char);
 }
 
 function set_character_customization()
 {
-	level flag::wait_till("all_players_spawned");
+	// level flag::wait_till("all_players_spawned");
 
 	self character_util::swap_to_cc();
 	func_index = undefined;
@@ -474,7 +523,7 @@ function set_random_character_for_bot()
 
 function set_random_character()
 {
-	level flag::wait_till("all_players_spawned");
+	// level flag::wait_till("all_players_spawned");
 	characterindex = self.characterindex;
 	if(!isdefined(characterindex))
 	{
@@ -507,19 +556,67 @@ function get_character_name_by_model(fallback_name = undefined)
 	}
 
 	model = self GetCharacterBodyModel();
-	modelsubstrs = GetArrayKeys(level.model_to_character_name_table);
+	substrs = GetArrayKeys(level.model_to_character_name_table);
 
-	foreach( modelsubstr in modelsubstrs )
+	foreach( substr in substrs )
 	{
-		if( isdefined(model) && issubstr(model, modelsubstr) )
+		if( isdefined(model) && issubstr(model, substr) )
 		{
-			name = level.model_to_character_name_table[modelsubstr];
+			name = level.model_to_character_name_table[substr];
 			result = name;
 			break;
 		}
 	}
 
 	return result;
+}
+
+function get_character_by_model()
+{
+	model = self GetCharacterBodyModel();
+	substrs = GetArrayKeys(level.model_to_character_table);
+	result = "none";
+	foreach( substr in substrs )
+	{
+		if( isdefined(model) && issubstr(model, substr) )
+		{
+			result = level.model_to_character_table[substr];
+			break;
+		}
+	}
+
+	return result;
+}
+
+function get_simplified_character(name)
+{
+    if ( issubstr(name, "mp7") )
+    {
+        return "mp7";
+    }
+
+    if ( issubstr(name, "vepley") )
+    {
+        return "vepley";
+    }
+
+	return name;
+}
+
+function is_character_valid(character)
+{
+	key = get_character_table_key();
+	if ( !isdefined(level.charactertable[key]) )
+	{
+		return false;
+	}
+
+	if ( !isdefined(level.charactertable[key][character]) )
+	{
+		return false;
+	}
+
+	return true;
 }
 
 // test func

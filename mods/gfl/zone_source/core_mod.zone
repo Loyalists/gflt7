@@ -27,6 +27,7 @@ material,gfl_logo
 // material,gfl_victory
 image,uie_img_t7_menu_frontend_asset_bo3logo
 
+localize,gfl
 localize,gfl_character
 localize,gfl_menu
 localize,gfl_modinfo
@@ -83,6 +84,7 @@ scriptparsetree,scripts/core/core_frontend_fx.gsc
 
 rawfile,ui/uieditor/menus/zm/zmmapselection.lua
 rawfile,ui/uieditor/menus/Lobby/Common/Popups/BonusModesFlyout.lua
+rawfile,ui/uieditor/menus/Lobby/Common/Popups/GameSettingsFlyoutMP.lua
 
 // gfl logo in main menu
 rawfile,ui/uieditor/widgets/lobby/common/FE_3dTitleInternal.lua
@@ -178,6 +180,8 @@ rawfile,ui/uieditor/widgets/GFL/ModInfoUsefulLinksPage.lua
 
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
+
+rawfile,ui/uieditor/widgets/GFL/HUD/ThirdpersonCrosshair.lua
 
 // score event
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscr.lua
@@ -1110,17 +1114,28 @@ image,t7_menu_mp_hero_background_with_vepley
 image,t7_menu_mp_hero_background_with_g11
 image,t7_menu_mp_hero_background_with_negev
 
-image,t7_gfl_chibi_m16a1
 image,t7_gfl_chibi_9a91
 image,t7_gfl_chibi_ak12
+image,t7_gfl_chibi_an94
+image,t7_gfl_chibi_dima
 image,t7_gfl_chibi_g11
+image,t7_gfl_chibi_g36c
 image,t7_gfl_chibi_hk416
+image,t7_gfl_chibi_lenna
+image,t7_gfl_chibi_m16a1
+image,t7_gfl_chibi_m16a1_prime
 image,t7_gfl_chibi_m4_sopmod_ii
+image,t7_gfl_chibi_m4a1
+image,t7_gfl_chibi_macqiato
 image,t7_gfl_chibi_mp7
 image,t7_gfl_chibi_negev
 image,t7_gfl_chibi_p90
+image,t7_gfl_chibi_rfb
+image,t7_gfl_chibi_ro635
+image,t7_gfl_chibi_st_ar15
 image,t7_gfl_chibi_suomi
 image,t7_gfl_chibi_super_sass
+image,t7_gfl_chibi_tac50
 image,t7_gfl_chibi_tololo
 image,t7_gfl_chibi_type89
 image,t7_gfl_chibi_ump45

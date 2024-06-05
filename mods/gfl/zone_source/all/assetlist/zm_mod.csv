@@ -84,6 +84,7 @@ image,uie_t7_zm_hud_score_st_ar15
 image,uie_t7_zm_hud_score_tac50
 sound,zm_mod
 rawfile,dummy.cfg
+rawfile,ui/uieditor/widgets/hud/zm_notiffactory/zmnotificationcontainer.lua
 scriptparsetree,scripts/_nsz/nsz_powerup_money.csc
 scriptparsetree,scripts/_nsz/nsz_powerup_money.gsc
 scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.csc
@@ -117,7 +118,6 @@ scriptparsetree,scripts/zm/_zm_weapons.csc
 scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc
-scriptparsetree,scripts/zm/gametypes/_globallogic_spawn.gsc
 scriptparsetree,scripts/zm/infinityloader.gsc
 scriptparsetree,scripts/zm/tfoptions.csc
 scriptparsetree,scripts/zm/tfoptions.gsc

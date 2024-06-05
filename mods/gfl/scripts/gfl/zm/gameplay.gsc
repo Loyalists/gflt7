@@ -39,6 +39,7 @@
 #using scripts\gfl\zm\zm_sub;
 #using scripts\gfl\zm\coldwar_scoreevent;
 
+#using scripts\gfl\_chat_notify;
 #using scripts\gfl\core_util;
 #using scripts\gfl\thirdperson;
 
@@ -48,9 +49,12 @@
 
 #namespace gameplay;
 
+#precache( "eventstring", "gfl_cheats_notification" );
+
 function init()
 {
     mule_kick_indicator::init();
+	chat_notify::register_chat_notify_callback( "popup", &on_popup_message_sent );
 
     callback::on_connecting( &on_player_connecting );
 	callback::on_connect( &on_player_connect );
@@ -133,6 +137,60 @@ function on_player_spawned()
     {
         self thread set_thirdperson_on_spawned();
     }
+
+    self thread character_popup_think();
+    self thread opening_notifications_think();
+}
+
+function on_popup_message_sent(args)
+{
+    if ( !isdefined(self) || !IsAlive(self) )
+    {
+        return;
+    }
+
+    if ( self.sessionstate == "spectator" )
+    {
+        return;
+    }
+
+    self.opening_notifications_shown = false;
+
+    self thread character_popup_think();
+    self thread opening_notifications_think();
+}
+
+function opening_notifications_think()
+{
+	self endon("disconnect");
+	self endon("bled_out");
+	self endon("death");
+
+    level flag::wait_till( "initial_blackscreen_passed" );
+
+    if ( IS_TRUE( self.opening_notifications_shown ) )
+    {
+        return;
+    }
+
+    self.opening_notifications_shown = true;
+    wait 6;
+    if ( core_util::is_cheats_enabled(false) )
+    {
+        self LUINotifyEvent( &"gfl_cheats_notification", 0 );
+    }
+}
+
+function character_popup_think()
+{
+	self endon("disconnect");
+	self endon("bled_out");
+	self endon("death");
+
+    level flag::wait_till( "initial_blackscreen_passed" );
+
+    wait 2;
+    self character_mgr::show_character_popup();
 }
 
 function map_fixes()

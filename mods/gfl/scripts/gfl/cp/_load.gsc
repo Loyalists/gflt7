@@ -22,7 +22,15 @@ REGISTER_SYSTEM_EX( "cp_load", &__init__, &__main__, undefined )
 
 function private __init__()
 {
-	SetDvar( "sv_cheats", 1 );
+	if ( GetDvarInt("tfoption_cheats", 0) || GetDvarInt("developer", 0) )
+	{
+		SetDvar("sv_cheats", 1);
+	}
+	else
+	{
+		SetDvar("sv_cheats", 0);
+	}
+	
 	SetDvar( "ui_allowDisplayContinue", true );
 	character::init_character_table();
 	spawner::add_archetype_spawn_function("human", &character_util::disable_gib);

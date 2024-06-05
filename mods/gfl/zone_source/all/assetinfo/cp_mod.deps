@@ -15,7 +15,7 @@ scriptparsetree,scripts/cp/_bouncingbetty.gsc
 scriptparsetree,scripts/cp/_bouncingbetty.csc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\cp\_bouncingbetty.csc,1715710092,
 scriptparsetree,scripts/gfl/cp/_load.gsc
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\_load.gsc,1716190650,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\_load.gsc,1717480697,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\scripts\shared\shared.gsh,1638881081,
 scriptparsetree,scripts/gfl/cp/_load.csc
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\scripts\gfl\cp\_load.csc,1715708365,
@@ -1312,12 +1312,12 @@ assetlist,cp_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1717318390,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1717318390,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1717318390,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1717318390,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1717318390,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1717318390,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.alias.sz,1717481223,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.reverb.sz,1717481223,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ducklist.sz,1717481223,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.musiclist.sz,1717481223,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.scriptid.sz,1717481223,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\sound\zone\cp_mod.all.ambient.sz,1717481223,
 	spawn,expect,core_all
 	spawn,expect,cp_common_all
 errorcount,0

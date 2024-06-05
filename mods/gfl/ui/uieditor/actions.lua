@@ -66,3 +66,84 @@ function splitString(inputstr, sep)
     end
     return t
 end
+
+function OpenConfigureCheatsPopup( f108_arg0, f108_arg1, f108_arg2, f108_arg3, f108_arg4 )
+	CoD.OverlayUtility.AddSystemOverlay( "ConfigureCheatsPopup", {
+		menuName = "SystemOverlay_Compact",
+		title = "GFL_MENU_CONFIGURE_CHEATS",
+		description = "TF_CHEATS_DESC",
+		listDatasource = function ()
+			DataSources.ConfigureCheatsPopup_List = DataSourceHelpers.ListSetup( "ConfigureCheatsPopup_List", function ( f110_arg0 )
+				return {
+					{
+						models = {
+							displayText = Engine.Localize( "GFL_MENU_DISABLE_CHEATS" )
+						},
+						properties = {
+							action = function ( f30_arg0, f30_arg1, f30_arg2, f30_arg3, f30_arg4 )
+                                Engine.SetDvar( "tfoption_cheats", 0 )
+								GoBack( f30_arg4, f30_arg2 )
+							end
+							
+						}
+					},
+					{
+						models = {
+							displayText = Engine.Localize( "GFL_MENU_ENABLE_CHEATS" )
+						},
+						properties = {
+							action = function ( f31_arg0, f31_arg1, f31_arg2, f31_arg3, f31_arg4 )
+                                Engine.SetDvar( "tfoption_cheats", 1 )
+                                GoBack( f31_arg4, f31_arg2 )
+							end
+							
+						}
+					}
+				}
+			end, true, nil )
+			return "ConfigureCheatsPopup_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack,
+		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage
+	} )
+	CoD.OverlayUtility.CreateOverlay( f108_arg2, f108_arg0, "ConfigureCheatsPopup" )
+end
+
+function GetCharacterImageName(character)
+	local prefix = "t7_gfl_chibi_"
+	local suffix = "m16a1"
+    if character ~= nil then
+        suffix = string.lower(character)
+    end
+
+	local fullname = prefix .. suffix
+	
+    return fullname
+end
+
+function ClearNotificationQueue( container )
+	container.notificationInProgress = false
+	Engine.SetModelValue( container.notificationQueueEmptyModel, true )
+end
+
+function AddCharacterNotification( controller, menu, container, character )
+	local ref = "GFL_CHARACTER_"
+    local title = Engine.Localize( Engine.ToUpper(ref .. character .. "_NAME") )
+    -- local description = Engine.Localize( Engine.ToUpper(ref .. character .. "_DESC") )
+    local description = ""
+    
+	container:appendNotification( {
+		clip = "TextandImageBGB",
+		title = title,
+        description = description,
+		bgbImage = RegisterImage( GetCharacterImageName( character ) )
+	} )
+end
+
+function AddCheatsNotification( controller, menu, container, model )
+	container:appendNotification( {
+		clip = "TextandImageBasic",
+		title = Engine.Localize( "GFL_ZM_CHEATS_ENABLED" ),
+		description = ""
+	} )
+end
