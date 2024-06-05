@@ -149,9 +149,10 @@ function on_message_sent(args)
 		characters = GetArrayKeys(level.charactertable[key]);
 		self IPrintLnBold(usage_text);
 		count = 0;
+		row_length = 15;
 		foreach (char in characters)
 		{
-			if ( count >= 10 )
+			if ( count >= row_length )
 			{
 				self IPrintLnBold(desc_text);
 				desc_text = "";
