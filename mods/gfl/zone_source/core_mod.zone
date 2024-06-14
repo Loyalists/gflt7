@@ -375,6 +375,7 @@ xmodel,t7_gfl_dima_fb
 xmodel,t7_gfl_an94_fb
 xmodel,t7_gfl_lenna_fb
 xmodel,t7_gfl_macqiato_fb
+xmodel,t7_gfl_centaureissi_fb
 
 xmodel,t7_gfl_ouroboros_fb
 xmodel,t7_gfl_dreamer_fb
@@ -1140,6 +1141,7 @@ image,t7_gfl_chibi_tololo
 image,t7_gfl_chibi_type89
 image,t7_gfl_chibi_ump45
 image,t7_gfl_chibi_vepley
+image,t7_gfl_chibi_centaureissi
 
 xmodel,c_zom_zod_boxer_mpc_fb
 xmodel,c_zom_zod_boxer_viewlegs

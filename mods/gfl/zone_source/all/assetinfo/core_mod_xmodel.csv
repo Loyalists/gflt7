@@ -19,6 +19,7 @@ t7_gfl_vepley_backpack_fb,1,109.52,141354.52,5,6902,5228,10952,8963,18946,18672,
 t7_gfl_an94_fb,1,114.84,148214.80,2,50888,72778,97268,136348
 t7_gfl_lenna_fb,1,114.00,147138.69,5,8117,6386,13761,10950,25403,22811,41438,47316,81222,91250
 t7_gfl_macqiato_fb,1,114.16,147347.31,2,33823,37158,66579,71656
+t7_gfl_centaureissi_fb,1,115.73,149365.13,2,38676,50818,68409,88968
 c_54i_warlord_body,1,123.08,158856.31,5,7363,4853,8550,5824,15166,12134,23156,24576,46174,48072
 c_54i_warlord_fullbody,1,123.08,158856.31,5,7363,4853,8550,5824,15166,12134,23156,24576,46174,48072
 c_54i_assault_body,1,121.40,156689.45,5,3671,2323,5878,3984,10570,8303,15824,16388,33465,33212
@@ -159,10 +160,10 @@ c_hro_playerfemale_egypt_mpc_body,1,108.77,140380.30,2,59560,87765,112086,159400
 c_hro_player_female_infection_viewhands,1,53.00,68404.63,1,45386,79864
 c_hro_player_female_egypt_viewlegs,1,87.33,112717.38,1,27886,43879
 c_hro_player_female_egypt_viewbody,1,97.36,125656.73,1,39994,62798
-c_hro_playerfemale_aquifer_mpc_body,1,117.49,151644.23,2,69660,100190,144312,193893
-c_hro_player_female_aquifer_viewbody,1,105.63,136334.84,1,86116,107633
-c_hro_player_female_aquifer_viewlegs,1,94.70,122229.02,1,76058,92544
-c_hro_player_female_aquifer_viewhands,1,52.95,68339.76,1,33830,59208
+c_hro_playerfemale_aquifer_mpc_body,1,115.73,149365.13,2,38676,50818,68409,88968
+c_hro_player_female_aquifer_viewbody,1,99.61,128567.98,1,47989,62876
+c_hro_player_female_aquifer_viewlegs,1,94.76,122299.81,1,39291,50515
+c_hro_player_female_aquifer_viewhands,1,53.00,68404.63,1,38266,65330
 c_hro_playerfemale_lotus_tower_mpc_body,1,114.16,147347.31,2,33823,37158,66579,71656
 c_hro_player_female_lotustowers_viewbody,1,99.67,128637.42,1,50070,51166
 c_hro_player_female_lotustowers_viewlegs,1,93.78,121043.45,1,43536,42538
@@ -220,10 +221,10 @@ c_hro_playermale_egypt_mpc_body,1,108.77,140380.30,2,59560,87765,112086,159400
 c_hro_player_male_egypt_viewbody,1,97.36,125656.73,1,39994,62798
 c_hro_player_male_egypt_viewlegs,1,87.33,112717.38,1,27886,43879
 c_hro_player_egypt_viewhands,1,53.00,68404.63,1,45386,79864
-c_hro_playermale_aquifer_mpc_body,1,117.49,151644.23,2,69660,100190,144312,193893
-c_hro_player_male_aquifer_viewbody,1,105.63,136334.84,1,86116,107633
-c_hro_player_male_aquifer_viewlegs,1,94.70,122229.02,1,76058,92544
-c_hro_player_male_aquifer_viewhands,1,52.95,68339.76,1,33830,59208
+c_hro_playermale_aquifer_mpc_body,1,115.73,149365.13,2,38676,50818,68409,88968
+c_hro_player_male_aquifer_viewbody,1,99.61,128567.98,1,47989,62876
+c_hro_player_male_aquifer_viewlegs,1,94.76,122299.81,1,39291,50515
+c_hro_player_male_aquifer_viewhands,1,53.00,68404.63,1,38266,65330
 c_hro_playermale_lotus_tower_mpc_body,1,114.16,147347.31,2,33823,37158,66579,71656
 c_hro_player_male_lotustowers_viewbody,1,99.67,128637.42,1,50070,51166
 c_hro_player_male_lotustowers_viewlegs,1,93.78,121043.45,1,43536,42538
@@ -396,7 +397,7 @@ c_t7_mp_technomancer_mpc_body1_skin1,1,114.71,148046.88,5,7480,5341,11752,9155,2
 c_t7_mp_technomancer_mpc_body1_skin2,1,110.31,142376.92,2,70347,108872,141098,212184
 c_t7_mp_technomancer_mpc_body1_skin3,1,112.81,145603.91,2,58801,84500,119888,160112
 c_t7_mp_technomancer_mpc_body1_skin4,1,105.64,136345.92,2,75815,102843,135314,184079
-c_t7_mp_technomancer_mpc_body1_skin5,1,112.33,144974.14,2,37685,51653,69250,93786
+c_t7_mp_technomancer_mpc_body1_skin5,1,115.73,149365.13,2,38676,50818,68409,88968
 c_t7_mp_technomancer_mpc_body2_skin1,1,109.52,141354.52,5,5467,4599,8989,7886,16904,16431,27661,34874,51661,65722
 c_t7_mp_technomancer_mpc_body2_skin2,1,117.10,151131.48,2,73471,99091,152861,187910
 c_t7_mp_technomancer_mpc_body2_skin3,1,108.77,140380.30,2,59560,87765,112086,159400
@@ -406,7 +407,7 @@ c_t7_mp_technomancer_viewlegs1_skin1,1,94.77,122311.06,1,29404,34095
 c_t7_mp_technomancer_viewlegs1_skin2,1,89.29,115246.02,1,90194,132520
 c_t7_mp_technomancer_viewlegs1_skin3,1,95.80,123640.18,1,35234,50180
 c_t7_mp_technomancer_viewlegs1_skin4,1,87.09,112398.71,1,38925,51657
-c_t7_mp_technomancer_viewlegs1_skin5,1,95.31,123013.09,1,17894,24322
+c_t7_mp_technomancer_viewlegs1_skin5,1,94.76,122299.81,1,39291,50515
 c_t7_mp_technomancer_viewlegs2_skin1,1,86.91,112173.82,1,25839,30105
 c_t7_mp_technomancer_viewlegs2_skin2,1,89.16,115070.29,1,60807,74356
 c_t7_mp_technomancer_viewlegs2_skin3,1,87.33,112717.38,1,27886,43879
@@ -416,7 +417,7 @@ c_t7_mp_technomancer_viewarms1_skin1,1,52.94,68326.05,1,29811,52096
 c_t7_mp_technomancer_viewarms1_skin2,1,52.95,68339.76,1,28920,50624
 c_t7_mp_technomancer_viewarms1_skin3,1,53.01,68412.84,1,26736,48304
 c_t7_mp_technomancer_viewarms1_skin4,1,52.95,68339.76,1,25520,46324
-c_t7_mp_technomancer_viewarms1_skin5,1,53.01,68412.85,1,34508,51476
+c_t7_mp_technomancer_viewarms1_skin5,1,53.00,68404.63,1,38266,65330
 c_t7_mp_technomancer_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_technomancer_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
 c_t7_mp_technomancer_viewarms2_skin3,1,53.00,68404.63,1,45386,79864
@@ -518,7 +519,7 @@ c_t7_mp_nomad_mpc_head4_skin2,1,0.00,0.00,1,3,1
 c_t7_mp_nomad_mpc_body1_skin1,1,112.89,145697.63,2,71106,101232,147586,200331
 c_t7_mp_nomad_mpc_body1_skin2,1,115.19,148675.83,2,53741,79224,107482,152527
 c_t7_mp_nomad_mpc_body1_skin3,1,110.32,142382.11,2,77964,110226,150953,212251
-c_t7_mp_nomad_mpc_body1_skin4,1,112.89,145697.63,2,71106,101232,147586,200331
+c_t7_mp_nomad_mpc_body1_skin4,1,115.73,149365.13,2,38676,50818,68409,88968
 c_t7_mp_nomad_mpc_body1_skin5,1,105.64,136345.92,2,75815,102843,135314,184079
 c_t7_mp_nomad_mpc_body2_skin1,1,109.52,141354.52,5,5467,4599,8989,7886,16904,16431,27661,34874,51661,65722
 c_t7_mp_nomad_mpc_body2_skin2,1,117.10,151131.48,2,73471,99091,152861,187910
@@ -528,7 +529,7 @@ c_t7_mp_nomad_mpc_body2_skin5,1,115.32,148841.19,2,72165,98521,137037,187299
 c_t7_mp_nomad_viewlegs1_skin1,1,89.70,115767.30,1,25473,38016
 c_t7_mp_nomad_viewlegs1_skin2,1,95.62,123417.02,1,32864,45968
 c_t7_mp_nomad_viewlegs1_skin3,1,89.76,115843.83,1,26634,38153
-c_t7_mp_nomad_viewlegs1_skin4,1,89.70,115767.30,1,25473,38016
+c_t7_mp_nomad_viewlegs1_skin4,1,94.76,122299.81,1,39291,50515
 c_t7_mp_nomad_viewlegs1_skin5,1,87.09,112398.71,1,38925,51657
 c_t7_mp_nomad_viewlegs2_skin1,1,86.91,112173.82,1,25839,30105
 c_t7_mp_nomad_viewlegs2_skin2,1,89.16,115070.29,1,60807,74356
@@ -538,7 +539,7 @@ c_t7_mp_nomad_viewlegs2_skin5,1,88.01,113593.85,1,40938,53658
 c_t7_mp_nomad_viewarms1_skin1,1,52.95,68340.73,1,36412,57312
 c_t7_mp_nomad_viewarms1_skin2,1,52.99,68390.80,1,25459,44864
 c_t7_mp_nomad_viewarms1_skin3,1,53.00,68404.63,1,51414,78240
-c_t7_mp_nomad_viewarms1_skin4,1,52.95,68340.73,1,36412,57312
+c_t7_mp_nomad_viewarms1_skin4,1,53.00,68404.63,1,38266,65330
 c_t7_mp_nomad_viewarms1_skin5,1,52.95,68339.76,1,25520,46324
 c_t7_mp_nomad_viewarms2_skin1,1,52.95,68339.76,1,41698,69588
 c_t7_mp_nomad_viewarms2_skin2,1,53.02,68426.66,1,33724,56108
@@ -615,7 +616,7 @@ c_t7_mp_battery_viewlegs1_skin5,1,87.09,112398.71,1,38925,51657
 c_t7_mp_battery_viewlegs2_skin1,1,86.91,112173.82,1,25839,30105
 c_t7_mp_battery_viewlegs2_skin2,1,89.16,115070.29,1,60807,74356
 c_t7_mp_battery_viewlegs2_skin3,1,87.33,112717.38,1,27886,43879
-c_t7_mp_battery_viewlegs2_skin4,1,95.31,123013.09,1,17894,24322
+c_t7_mp_battery_viewlegs2_skin4,1,95.42,123154.63,1,34401,46088
 c_t7_mp_battery_viewlegs2_skin5,1,88.01,113593.85,1,40938,53658
 c_t7_mp_battery_viewarms1_skin1,1,53.01,68412.84,1,29547,52988
 c_t7_mp_battery_viewarms1_skin2,1,52.95,68340.73,1,39563,62392
@@ -678,7 +679,7 @@ c_t7_dlchd_dempsey_waw_viewhands,1,52.99,68390.80,1,21674,39076
 c_t7_dlchd_dempsey_waw_viewlegs,1,97.06,125267.31,1,30017,44968
 t7_gfl_m4a1_v3_fb_mp,1,112.33,144974.14,2,37685,51653,69250,93786
 t7_gfl_m4a1_v3_viewhands,1,53.01,68412.85,1,34508,51476
-t7_gfl_m4a1_v3_viewlegs,1,95.31,123013.09,1,17894,24322
+t7_gfl_m4a1_v3_viewlegs,1,95.42,123154.63,1,34401,46088
 t7_gfl_m4a1_v3_body_mp,1,105.00,135518.34,1,53210,74358
 tag_origin,1,0.20,263.72,1,24,12
 c_zom_der_nikolai_mpc_fb,1,118.26,152640.45,1,135735,180174
@@ -745,6 +746,10 @@ t7_gfl_g36c_fb_mp,1,117.49,151644.23,2,69660,100190,144312,193893
 t7_gfl_g36c_viewhands,1,52.95,68339.76,1,33830,59208
 t7_gfl_g36c_viewlegs,1,94.70,122229.02,1,76058,92544
 t7_gfl_g36c_body_mp,1,105.63,136334.84,1,86116,107633
+t7_gfl_centaureissi_fb_mp,1,115.73,149365.13,2,38676,50818,68409,88968
+t7_gfl_centaureissi_viewhands,1,53.00,68404.63,1,38266,65330
+t7_gfl_centaureissi_viewlegs,1,94.76,122299.81,1,39291,50515
+t7_gfl_centaureissi_body_mp,1,99.61,128567.98,1,47989,62876
 t7_gfl_9a91_fb_mp,1,115.19,148675.83,2,53741,79224,107482,152527
 t7_gfl_9a91_viewhands,1,52.99,68390.80,1,25459,44864
 t7_gfl_9a91_viewlegs,1,95.62,123417.02,1,32864,45968

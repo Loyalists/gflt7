@@ -77,7 +77,7 @@ function OpenConfigureCheatsPopup( f108_arg0, f108_arg1, f108_arg2, f108_arg3, f
 				return {
 					{
 						models = {
-							displayText = Engine.Localize( "GFL_MENU_DISABLE_CHEATS" )
+							displayText = Engine.Localize( "MENU_DISABLE_CAPS" )
 						},
 						properties = {
 							action = function ( f30_arg0, f30_arg1, f30_arg2, f30_arg3, f30_arg4 )
@@ -89,7 +89,7 @@ function OpenConfigureCheatsPopup( f108_arg0, f108_arg1, f108_arg2, f108_arg3, f
 					},
 					{
 						models = {
-							displayText = Engine.Localize( "GFL_MENU_ENABLE_CHEATS" )
+							displayText = Engine.Localize( "MENU_ENABLE_CAPS" )
 						},
 						properties = {
 							action = function ( f31_arg0, f31_arg1, f31_arg2, f31_arg3, f31_arg4 )
@@ -126,7 +126,26 @@ function ClearNotificationQueue( container )
 	Engine.SetModelValue( container.notificationQueueEmptyModel, true )
 end
 
-function AddCharacterNotification( controller, menu, container, character )
+function AddSimpleNotification( controller, container, image, title, description )
+	local localizedTitle = ""
+	local localizedDescription = ""
+	if title then
+		localizedTitle = Engine.Localize( Engine.ToUpper(title) )
+	end
+
+	if description then
+		localizedDescription = Engine.Localize( Engine.ToUpper(description) )
+	end
+    
+	container:appendNotification( {
+		clip = "TextandImageBGB",
+		title = localizedTitle,
+        description = localizedDescription,
+		bgbImage = RegisterImage( image )
+	} )
+end
+
+function AddCharacterNotification( controller, container, character )
 	local ref = "GFL_CHARACTER_"
     local title = Engine.Localize( Engine.ToUpper(ref .. character .. "_NAME") )
     -- local description = Engine.Localize( Engine.ToUpper(ref .. character .. "_DESC") )
@@ -140,10 +159,10 @@ function AddCharacterNotification( controller, menu, container, character )
 	} )
 end
 
-function AddCheatsNotification( controller, menu, container, model )
+function AddCheatsNotification( controller, container, model )
 	container:appendNotification( {
 		clip = "TextandImageBasic",
-		title = Engine.Localize( "GFL_ZM_CHEATS_ENABLED" ),
+		title = Engine.Localize( "GFL_CHEATS_ENABLED" ),
 		description = ""
 	} )
 end

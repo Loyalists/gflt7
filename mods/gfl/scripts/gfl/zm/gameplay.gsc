@@ -50,6 +50,7 @@
 #namespace gameplay;
 
 #precache( "eventstring", "gfl_cheats_notification" );
+#precache( "eventstring", "gfl_tdoll_zombies_notification" );
 
 function init()
 {
@@ -154,7 +155,7 @@ function on_popup_message_sent(args)
         return;
     }
 
-    self.opening_notifications_shown = false;
+    self._opening_notifications_shown = false;
 
     self thread character_popup_think();
     self thread opening_notifications_think();
@@ -168,15 +169,26 @@ function opening_notifications_think()
 
     level flag::wait_till( "initial_blackscreen_passed" );
 
-    if ( IS_TRUE( self.opening_notifications_shown ) )
+    if ( IS_TRUE( self._opening_notifications_shown ) )
     {
         return;
     }
 
-    self.opening_notifications_shown = true;
-    wait 6;
+    self._opening_notifications_shown = true;
+    interval = 3;
+
+    wait 1;
+
+    if ( GetDvarInt("tfoption_tdoll_zombie", 0) )
+    {
+        wait(interval);
+        self LUINotifyEvent( &"gfl_tdoll_zombies_notification", 0 );
+    }
+
     if ( core_util::is_cheats_enabled(false) )
     {
+        // wait for character popup to fade away
+        wait(interval);
         self LUINotifyEvent( &"gfl_cheats_notification", 0 );
     }
 }
@@ -189,7 +201,7 @@ function character_popup_think()
 
     level flag::wait_till( "initial_blackscreen_passed" );
 
-    wait 2;
+    wait 1;
     self character_mgr::show_character_popup();
 }
 

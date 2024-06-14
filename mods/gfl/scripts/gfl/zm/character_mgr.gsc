@@ -85,7 +85,7 @@ function on_player_spawned()
 
 	if ( level.script == "zm_zod" )
 	{
-		self thread altbody_cc_fix();
+		// self thread altbody_cc_fix();
 	}
 
     if ( is_cc_watcher_needed() )
@@ -145,7 +145,7 @@ function on_message_sent(args)
 	{
 		usage_text = "usage: /char/[character name]";
 		desc_text = "characters: ";
-		key = get_character_table_key();
+		key = get_character_table_type();
 		characters = GetArrayKeys(level.charactertable[key]);
 		self IPrintLnBold(usage_text);
 		count = 0;
@@ -176,15 +176,14 @@ function on_message_sent(args)
 	if ( character == "random" )
 	{
 		self set_random_character();
-	}
-	else
-	{
-		self set_character(character);
+		self thread show_character_popup();
+		return;
 	}
 
-	key = get_character_table_key();
-	if ( character_util::is_character_valid(key, character) )
+	type = get_character_table_type();
+	if ( character_util::is_character_valid(type, character) )
 	{
+		self set_character(character);
 		self thread show_character_popup();
 	}
 }
@@ -204,7 +203,7 @@ function is_cc_watcher_needed()
 	return false;
 }
 
-function get_character_table_key()
+function get_character_table_type()
 {
 	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
 	{
@@ -217,7 +216,7 @@ function get_character_table_key()
 function init_randomized_character_table()
 {
 	level.randomized_character_table = [];
-	key = get_character_table_key();
+	key = get_character_table_type();
 
 	// 4 players in total
 	for (i = 0; i < 4; i++)
@@ -234,8 +233,13 @@ function get_random_character(characterindex = 0)
 
 function show_character_popup(args = undefined)
 {
-    name = self get_character_by_model();
-    simplified = get_simplified_character(name);
+	struct = self get_character_struct();
+	if (!isdefined(struct))
+	{
+		return;
+	}
+
+    simplified = get_simplified_character(struct.id);
 
     self SetControllerUIModelValue("hudItems.CharacterPopup", simplified);
     wait 0.05;
@@ -440,6 +444,60 @@ function zombie_model_override()
 	self character_util::disable_gib();
 }
 
+function get_character_struct()
+{
+	type = get_character_table_type();
+	struct = undefined;
+	if ( isdefined(self.cc_id) && character_util::is_character_valid(type, self.cc_id) )
+	{
+		struct = level.charactertable[type][self.cc_id];
+	}
+	else
+	{
+		struct = self get_character_struct_by_model();
+	}
+
+	return struct;
+}
+
+function get_character_struct_by_model()
+{
+	model = self GetCharacterBodyModel();
+	type = get_character_table_type();
+	structs = level.charactertable[type];
+
+	if ( !isdefined(model) )
+	{
+		return undefined;
+	}
+
+	foreach( struct in structs )
+	{
+		if ( isdefined(struct.keywords) )
+		{
+			foreach (keyword in struct.keywords)
+			{
+				if( !issubstr(model, keyword) )
+				{
+					continue;
+				}
+
+				return struct;
+			}
+		}
+
+		if ( isdefined(struct.id) )
+		{
+			if( issubstr(model, struct.id) )
+			{
+				return struct;
+			}
+		}
+	}
+
+	return undefined;
+}
+
 function save_character_customization()
 {
 	// bots always use the first character (dempsey/m16a1)
@@ -453,33 +511,25 @@ function save_character_customization()
 		return;
 	}
 
-	bodytype = self GetCharacterBodyType();
-	bodystyle = 0;
-	bodystyle_name = self get_character_by_model();
-	if (bodystyle_name == "none")
+	struct = self get_character_struct_by_model();
+	if ( !isdefined(struct) )
 	{
-		bodystyle_name = undefined;
+		return;
 	}
 
-	model = self GetCharacterBodyModel();
-	substrs = GetArrayKeys(level.additional_bodystyle_table);
-	foreach( substr in substrs )
-	{
-		if( isdefined(model) && issubstr(model, substr) )
-		{
-			bodystyle = level.additional_bodystyle_table[substr];
-			break;
-		}
-	}
-
-	self.cc_bodytype = bodytype;
-	self.cc_bodystyle = bodystyle;
-	self.cc_bodystyle_name = bodystyle_name;
+	self.cc_bodytype = struct.bodytype;
+	self.cc_bodystyle = struct.bodystyle;
+	self.cc_id = struct.id;
 }
 
 function save_character_customization_moon()
 {
 	if ( self IsTestClient() )
+	{
+		return;
+	}
+
+	if ( isdefined(self.cc_bodytype) && isdefined(self.cc_bodystyle) )
 	{
 		return;
 	}
@@ -495,17 +545,24 @@ function save_character_customization_moon()
 
 	self.cc_bodytype = bodytype;
 	self.cc_bodystyle = bodystyle;
-	self.cc_bodystyle_name = undefined;
+	self.cc_id = undefined;
 }
 
 function set_character(character)
 {
-	key = get_character_table_key();
-	self character_util::swap_character(key, character);
-	self set_icon(character);
+	type = get_character_table_type();
+	if ( !character_util::is_character_valid(type, character) )
+	{
+		return;
+	}
 
-	// char = self get_character_by_model();
-	// self IPrintLnBold(char);
+	struct = level.charactertable[type][character];
+	self.cc_bodytype = struct.bodytype;
+	self.cc_bodystyle = struct.bodystyle;
+	self.cc_id = struct.id;
+	self character_util::swap_to_cc();
+	self set_icon(struct.id);
+	// self IPrintLnBold(self.cc_id);
 }
 
 function set_character_customization()
@@ -514,9 +571,9 @@ function set_character_customization()
 
 	self character_util::swap_to_cc();
 	func_index = undefined;
-	if ( isdefined( self.cc_bodystyle_name ) )
+	if ( isdefined( self.cc_id ) )
 	{
-		func_index = self.cc_bodystyle_name;
+		func_index = self.cc_id;
 	}
 
 	self set_icon(func_index);
@@ -556,42 +613,23 @@ function set_icon(func_index)
 	util::setClientSysState( "gfl_character_icon", icon_index, self );
 }
 
-function get_character_name_by_model(fallback_name = undefined)
+function get_character_name(fallback_name = undefined)
 {
-	result = "Unknown";
-	if ( isdefined(fallback_name) )
+	result = "Unknown T-Doll";
+	if (isdefined(fallback_name))
 	{
 		result = fallback_name;
 	}
 
-	model = self GetCharacterBodyModel();
-	substrs = GetArrayKeys(level.model_to_character_name_table);
-
-	foreach( substr in substrs )
+	struct = self get_character_struct();
+	if ( !isdefined(struct) )
 	{
-		if( isdefined(model) && issubstr(model, substr) )
-		{
-			name = level.model_to_character_name_table[substr];
-			result = name;
-			break;
-		}
+		return result;
 	}
 
-	return result;
-}
-
-function get_character_by_model()
-{
-	model = self GetCharacterBodyModel();
-	substrs = GetArrayKeys(level.model_to_character_table);
-	result = "none";
-	foreach( substr in substrs )
+	if ( isdefined(struct.name) )
 	{
-		if( isdefined(model) && issubstr(model, substr) )
-		{
-			result = level.model_to_character_table[substr];
-			break;
-		}
+		result = struct.name;
 	}
 
 	return result;
@@ -618,7 +656,7 @@ function revolve_character_test()
 	self endon("disconnect");
 
 	index = 0;
-	key = get_character_table_key();
+	key = get_character_table_type();
 	characters = GetArrayKeys(level.charactertable[key]);
 
 	while(true)

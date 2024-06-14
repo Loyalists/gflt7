@@ -16,6 +16,7 @@ image,i_specialty_ads_zombies
 image,i_specialty_three_guns_zombies
 image,img_loadscreen_zm_factory
 image,metal_gold_g
+image,t7_gfl_notification_hk416_gloomy
 image,t7_menu_zm_loadscreen_bus_depot
 image,t7_menu_zm_loadscreen_castle
 image,t7_menu_zm_loadscreen_classified
@@ -33,6 +34,7 @@ image,t7_menu_zm_loadscreen_tomb
 image,t7_menu_zm_loadscreen_tuvong
 image,t7_menu_zm_loadscreen_zod
 image,uie_t7_zm_hud_score_an94
+image,uie_t7_zm_hud_score_centaureissi
 image,uie_t7_zm_hud_score_char1
 image,uie_t7_zm_hud_score_char1_gold_helmet
 image,uie_t7_zm_hud_score_char1_helmet

@@ -171,18 +171,17 @@ function get_characters(type)
 
 function swap_character(type, character)
 {
-	if ( !isdefined( level.charactertable[type] ) )
+	if ( !is_character_valid(type, character) )
 	{
 		return;
 	}
 
-	if ( !isdefined( level.charactertable[type][character] ) )
+	char = level.charactertable[type][character];
+	if (IsFunctionPtr(char))
 	{
-		return;
+		self [[char]]();
 	}
 
-	func = level.charactertable[type][character];
-	self [[func]]();
 	self.character_table_index = character;
 }
 
@@ -338,9 +337,9 @@ function set_force_reset_flag()
 	self.force_reset = true;
 }
 
-function is_character_valid(key, character)
+function is_character_valid(type, character)
 {
-	if ( !isdefined(key) || !isdefined(character) )
+	if ( !isdefined(type) || !isdefined(character) )
 	{
 		return false;
 	}
@@ -350,12 +349,12 @@ function is_character_valid(key, character)
 		return false;
 	}
 
-	if ( !isdefined(level.charactertable[key]) )
+	if ( !isdefined(level.charactertable[type]) )
 	{
 		return false;
 	}
 
-	if ( !isdefined(level.charactertable[key][character]) )
+	if ( !isdefined(level.charactertable[type][character]) )
 	{
 		return false;
 	}

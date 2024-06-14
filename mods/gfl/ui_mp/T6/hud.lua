@@ -34,18 +34,30 @@ local function AddCustomHUDElements_Zombie(menu, controller)
                     ClearNotificationQueue(container)
                 end
 
-                AddCharacterNotification(self, f6_local1, container, ModelValue)
+                AddCharacterNotification(f6_local1, container, ModelValue)
             end
         end)
 
     ZMNotificationContainer:subscribeToGlobalModel(controller, "PerController", "scriptNotify", function(model)
         local container = ZMNotificationContainer
+
+        if model and Engine.GetModelValue( model ) then
+            local param = Engine.GetModelValue( model )
+            if not string.match( param, "gfl_" ) then
+                return
+            end
+        else
+            return
+        end
+
         if container and container.id and container.id == "ZMNotificationContainer" then
             ClearNotificationQueue(container)
         end
 
         if IsParamModelEqualToString(model, "gfl_cheats_notification") then
-            AddCheatsNotification(self, f6_local1, container, model)
+            AddCheatsNotification(f6_local1, container, model)
+        elseif IsParamModelEqualToString(model, "gfl_tdoll_zombies_notification") then
+            AddSimpleNotification(f6_local1, container, "t7_gfl_notification_hk416_gloomy", "GFL_ZM_NOTIFICATION_TDOLL_ZOMBIES", "GFL_ZM_NOTIFICATION_TDOLL_ZOMBIES_DESC")
         end
     end)
 

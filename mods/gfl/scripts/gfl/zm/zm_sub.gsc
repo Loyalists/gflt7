@@ -240,7 +240,7 @@ function special_event_sub_think()
 	while (true)
 	{
 		event = self util::waittill_any_return( "player_downed", "perk_bought", "start_chat_sub" );
-        character_name = self character_mgr::get_character_name_by_model(self.name);
+        character_name = self character_mgr::get_character_name();
 
 		if (event == "player_downed")
 		{
@@ -265,7 +265,7 @@ function powerup_sub_think()
 	while (true)
 	{
 		event = self util::waittill_any_return( "nuke_triggered" );
-        character_name = self character_mgr::get_character_name_by_model(self.name);
+        character_name = self character_mgr::get_character_name();
 
 		if (event == "nuke_triggered")
 		{
@@ -287,7 +287,7 @@ function pap_sub_think()
 		self waittill("pap_taken");
 		self waittill("weapon_change");
 
-        character_name = self character_mgr::get_character_name_by_model(self.name);
+        character_name = self character_mgr::get_character_name();
 		self zm_sub::show_pap_sub(character_name);
         WAIT_SERVER_FRAME;
 	}
@@ -303,7 +303,7 @@ function weapon_sub_think()
 	{
 		self waittill("start_weapon_sub", weapon);
 
-        character_name = self character_mgr::get_character_name_by_model(self.name);
+        character_name = self character_mgr::get_character_name();
 		self zm_sub::show_weapon_sub(character_name, weapon);
         WAIT_SERVER_FRAME;
 	}
@@ -319,7 +319,7 @@ function bgb_sub_think()
 	{
 		self waittill("start_bgb_sub", bgb_string);
 
-        character_name = self character_mgr::get_character_name_by_model(self.name);
+        character_name = self character_mgr::get_character_name();
 		self zm_sub::show_bgb_sub(character_name, bgb_string);
         WAIT_SERVER_FRAME;
 	}
@@ -335,7 +335,7 @@ function magicboxshare_sub_think()
 	{
 		self waittill("magicbox_weapon_shared", weapon);
 
-        character_name = self character_mgr::get_character_name_by_model(self.name);
+        character_name = self character_mgr::get_character_name();
 		self zm_sub::show_magicboxshare_sub(character_name, weapon);
         WAIT_SERVER_FRAME;
 	}
@@ -351,7 +351,7 @@ function chat_sub_think()
 	{
 		self waittill("start_chat_sub", text);
 
-        character_name = self character_mgr::get_character_name_by_model(self.name);
+        character_name = self character_mgr::get_character_name();
 		thread zm_sub::sub_logic(undefined, 2, character_name, text);
         WAIT_SERVER_FRAME;
 	}

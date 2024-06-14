@@ -1294,6 +1294,7 @@ LUI.createMenu.BlackMarket = function ( controller )
 	LeftPanel0:setLeftRight( true, true, 53.5, -735.5 )
 	LeftPanel0:setTopBottom( true, true, 0, 46 )
 	LeftPanel0:setRGB( 0.5, 0.5, 0.5 )
+	LeftPanel0:setAlpha( 0 )
 	self:addElement( LeftPanel0 )
 	self.LeftPanel0 = LeftPanel0
 	
