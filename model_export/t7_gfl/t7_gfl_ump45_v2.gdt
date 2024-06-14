@@ -3646,7 +3646,7 @@
 		"noSteps" "0"
 		"notInBoats" "0"
 		"objectiveColorsEnabled" "0"
-		"occMap" "i_gfl_ump45_v2_soubi_o"
+		"occMap" ""
 		"oceanSunBrightness" "10"
 		"oceanSunSize" "0.0125"
 		"onlyCastShadow" "0"

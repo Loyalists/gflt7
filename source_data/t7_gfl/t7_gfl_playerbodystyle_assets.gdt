@@ -57,6 +57,35 @@
 		"viewArmsModel" "t7_gfl_an94_viewhands"
 		"xmodel" "t7_gfl_an94_fb_mp"
 	}
+	"pbt_gfl_body_centaureissi" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "G36"
+		"firstPersonCinematicModel" "t7_gfl_centaureissi_body_mp"
+		"firstPersonLegsModel" "t7_gfl_centaureissi_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "t7_gfl_centaureissi_viewhands"
+		"xmodel" "t7_gfl_centaureissi_fb_mp"
+	}
 	"pbt_gfl_body_dima" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"

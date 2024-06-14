@@ -3827,6 +3827,51 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
+	"t7_gfl_notification_hk416_gloomy" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\global\\notification\\hkGloomy.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
 	"t7_menu_choosespecialist_default_g11" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
@@ -4790,6 +4835,66 @@
 	"t7_menu_cp_front_end_mapvote_zurich_newworld" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_city.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_ro635" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ro635.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_st_ar15" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\st_ar15.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_tac50" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\tac50.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_rfb" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\rfb.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_an94" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\an94.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_dima" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\dima.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_lenna" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\lenna.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_macqiato" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\macqiato.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_m16a1_prime" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\m16a1_prime.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_m4a1" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\m4a1.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_g36c" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\g36c.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_centaureissi" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\centaureissi.png"
 		"coreSemantic" "Linear4ch"
 	}
 }

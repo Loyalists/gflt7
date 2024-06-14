@@ -10279,7 +10279,7 @@
 		"nonColliding" "0"
 		"nonSolid" "0"
 		"noPenetrate" "0"
-		"noReceiveDynamicShadow" "1"
+		"noReceiveDynamicShadow" "0"
 		"normalFlattening" "1"
 		"normalHeightScale" "1"
 		"normalMap" ""
