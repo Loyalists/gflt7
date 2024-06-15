@@ -7,7 +7,8 @@ local options = {
     filespath = [[.\mods\gfl\]],
     workshopid = "3019676071",
     discordAppId = nil, -- "{{DISCORD_APP_ID}}" -- Not required, create your application at https://discord.com/developers/applications/
-    showExternalConsole = true
+    showExternalConsole = false,
+	debug = false
 }
 
 -- InitializeT7Overcharged(options)

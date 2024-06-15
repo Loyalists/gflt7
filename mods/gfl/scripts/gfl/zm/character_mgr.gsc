@@ -91,7 +91,13 @@ function on_player_spawned()
     if ( is_cc_watcher_needed() )
     {
 		self save_cc_fix();
-        self thread cc_watcher_think();
+		wait_interval = 1;
+		if ( level.script == "zm_leviathan" )
+		{
+			wait_interval = 0.05;
+		}
+		
+        self thread cc_watcher_think(wait_interval);
     }
 
 	self thread lock_cc_think();
@@ -196,6 +202,11 @@ function is_cc_watcher_needed()
 	}
 
 	if ( level.script == "zm_destiny_tower_beta" )
+	{
+		return true;
+	}
+
+	if ( level.script == "zm_alcatraz_island" )
 	{
 		return true;
 	}
@@ -327,7 +338,7 @@ function save_cc_fix(use_ultimis_bodystyle = false)
 	self.cc_bodystyle = bodystyle;
 }
 
-function cc_watcher_think()
+function cc_watcher_think( wait_interval = 1 )
 {
 	self endon("disconnect");
 	self endon("death");
@@ -341,7 +352,7 @@ function cc_watcher_think()
 			self notify("unwanted_cc_changes_detected");
 		}
 
-        WAIT_SERVER_FRAME;
+        wait(wait_interval);
     }
 }
 

@@ -38,7 +38,7 @@ index,type,name,resident,streamed,parentStack
 37,localize,GFL_CHARACTER_M16A1_PRIME_NAME,31,0,||assetlist
 38,localize,GFL_CHARACTER_G36C_NAME,29,0,||assetlist
 39,localize,GFL_CHARACTER_LENNA_NAME,31,0,||assetlist
-40,localize,GFL_CHARACTER_M4A1_NAME,32,0,||assetlist
+40,localize,GFL_CHARACTER_M4A1_NAME,29,0,||assetlist
 41,localize,GFL_CHARACTER_MACQIATO_NAME,37,0,||assetlist
 42,localize,GFL_CHARACTER_RFB_NAME,27,0,||assetlist
 43,localize,GFL_CHARACTER_RO635_NAME,31,0,||assetlist
@@ -215,5 +215,5 @@ index,type,name,resident,streamed,parentStack
 214,localize,TF_MENU_SERVER_OPTIONS,44,0,||assetlist
 215,localize,TF_MENU_SERVER_OPTIONS_DESC,59,0,||assetlist
 216,localize,MENU_GFL,26,0,||assetlist
-217,keyvaluepairs,ja_core_mod,1095,0,||assetlist
+217,keyvaluepairs,ja_core_mod,1098,0,||assetlist
 218,assetlist,,3456,0,
