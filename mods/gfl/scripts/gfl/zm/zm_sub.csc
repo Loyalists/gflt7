@@ -2,11 +2,20 @@
 #using scripts\shared\system_shared;
 #using scripts\shared\callbacks_shared;
 
+#insert scripts\shared\shared.gsh;
+
 #namespace zm_sub;
 
-function autoexec init()
+REGISTER_SYSTEM_EX( "zm_sub", &__init__, &__main__, undefined )
+
+function private __init__()
 {
     util::register_system( "sendsub", &subtitlesMessage );
+}
+
+function private __main__()
+{
+
 }
 
 function subtitlesMessage( n_local_client_num, message ) 

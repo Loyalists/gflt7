@@ -170,6 +170,16 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
+            label = "TF_TDOLL_ZOMBIE",
+            description = "TF_TDOLL_ZOMBIE_DESC",
+            profileVarName = "tdoll_zombie",
+            datasource = "TFOptionsTDollZombie",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+    })
+    table.insert(f26_local0, {
+        models = {
             label = "TF_WEAKER_ZOMBIES",
             description = "TF_WEAKER_ZOMBIES_DESC",
             profileVarName = "weaker_zombs",
@@ -197,13 +207,12 @@ DataSources.TFOptionsZombiesP1 = DataSourceHelpers.ListSetup("PC.TFOptionsZombie
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_TDOLL_ZOMBIE",
-            description = "TF_TDOLL_ZOMBIE_DESC",
-            profileVarName = "tdoll_zombie",
-            datasource = "TFOptionsTDollZombie",
-            widgetType = "dropdown"
+            label = "TF_ZOMBIE_HEALTHBAR",
+            description = "TF_ZOMBIE_HEALTHBAR_DESC",
+            profileVarName = "zombie_healthbar",
+            widgetType = "tfcheckbox"
         },
-        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
     return f26_local0
 end, true)

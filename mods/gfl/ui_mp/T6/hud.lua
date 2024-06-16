@@ -5,6 +5,7 @@ local Preload = function()
     if CoD.isZombie then
         require("ui.uieditor.widgets.HUD.ZM_NotifFactory.ZMNotificationContainer")
         -- require("ui.uieditor.widgets.HUD.ZM_NotifFactory.ZmNotifBGB_ContainerFactory")
+        require( "ui.uieditor.widgets.hud.aae_t9_zombie_health_bar.aae_t9_zombie_health_bar_container" )
     end
 end
 
@@ -63,6 +64,35 @@ local function AddCustomHUDElements_Zombie(menu, controller)
 
     f6_local1:addElement(ZMNotificationContainer)
     f6_local1.ZMNotificationContainer = ZMNotificationContainer
+
+    local ZombieHealthBar = CoD.AAE_t9_zombie_health_bar_container.new( menu, controller )
+    f6_local1:addElement( ZombieHealthBar )
+    f6_local1.ZombieHealthBar = ZombieHealthBar
+
+    local function UpdateZombieHealthBarVisible( ModelRef )
+        local ModelValue = Engine.GetModelValue( ModelRef )
+        if ModelValue then
+            if ModelValue == 1 then
+                ZombieHealthBar:setScale(1)
+            else
+                ZombieHealthBar:setScale(0)
+            end
+        end
+    end
+    local function UpdateZombieHealthBarNotVisible( ModelRef )
+        local ModelValue = Engine.GetModelValue( ModelRef )
+        if ModelValue then
+            if ModelValue == 1 then
+                ZombieHealthBar:setScale(0)
+            else
+                ZombieHealthBar:setScale(1)
+            end
+        end
+    end
+    ZombieHealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_HUD_VISIBLE ), UpdateZombieHealthBarVisible )
+    ZombieHealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_WEAPON_HUD_VISIBLE ), UpdateZombieHealthBarVisible )
+    ZombieHealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_HUD_HARDCORE ), UpdateZombieHealthBarVisible )
+    ZombieHealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_UI_ACTIVE ), UpdateZombieHealthBarNotVisible )
 end
 
 local function AddCustomHUDElements_Common(menu, controller)

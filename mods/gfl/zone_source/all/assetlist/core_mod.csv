@@ -3294,6 +3294,10 @@ rawfile,ui/uieditor/widgets/gfl/hud/thirdpersoncrosshair.lua
 rawfile,ui/uieditor/widgets/gfl/modinfofaqpage.lua
 rawfile,ui/uieditor/widgets/gfl/modinfop1.lua
 rawfile,ui/uieditor/widgets/gfl/modinfousefullinkspage.lua
+rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar.lua
+rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_container.lua
+rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_the_bar.lua
+rawfile,ui/uieditor/widgets/hud/zm_notiffactory/zmnotificationcontainer.lua
 rawfile,ui/uieditor/widgets/lobby/common/fe_3dtitleinternal.lua
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscr.lua
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscrfeeditem.lua

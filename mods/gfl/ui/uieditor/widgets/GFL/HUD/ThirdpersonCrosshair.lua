@@ -57,8 +57,6 @@ CoD.ThirdpersonCrosshair.new = function(menu, controller)
         end
     end)
 
-    -- self:subscribeToModel(Engine.GetModel(Engine.GetModelForController(controller),
-    --     "forceScoreboard"), UpdateCrosshairVisiblility)
     self:subscribeToModel(Engine.GetModel(Engine.GetModelForController(controller),
         "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_HUD_VISIBLE), UpdateCrosshairVisiblility)
     self:subscribeToModel(Engine.GetModel(Engine.GetModelForController(controller),

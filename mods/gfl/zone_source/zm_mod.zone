@@ -31,8 +31,6 @@ image,t7_menu_zm_loadscreen_prototype
 image,t7_menu_zm_loadscreen_classified
 image,t7_menu_zm_loadscreen_tuvong
 
-rawfile,ui/uieditor/widgets/HUD/ZM_NotifFactory/ZMNotificationContainer.lua
-
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
 scriptparsetree,scripts/gfl/zm/character_mgr.csc
@@ -52,6 +50,10 @@ scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 
 //Frost Iceforge's BO4 Carpenter
 scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc
+
+// zombie health bar
+scriptparsetree,scripts/gfl/zm/_aae_zombie_health_bar.gsc
+scriptparsetree,scripts/gfl/zm/_aae_zombie_health_bar.csc
 
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_ffotd.csc
@@ -154,6 +156,11 @@ image,uie_t7_zm_hud_score_macqiato
 image,uie_t7_zm_hud_score_centaureissi
 
 image,t7_gfl_notification_hk416_gloomy
+
+image,uie_ui_icon_minimap_zm_ai_boss
+image,uie_ui_icon_minimap_zm_ai_elite
+image,uie_ui_icon_minimap_zm_ai_special
+image,uie_ui_icon_minimap_zm_ai_normal
 
 material,specialty_three_guns_zombies
 material,specialty_ads_zombies

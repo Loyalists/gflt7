@@ -1,10 +1,13 @@
 #using scripts\codescripts\struct;
 #using scripts\shared\callbacks_shared;
 #using scripts\shared\flag_shared;
+#using scripts\shared\flagsys_shared;
 #using scripts\shared\array_shared;
 #using scripts\shared\util_shared;
 #using scripts\shared\laststand_shared;
 #using scripts\shared\math_shared;
+#using scripts\shared\system_shared;
+
 #using scripts\shared\bots\_bot;
 #using scripts\shared\bots\_bot_combat;
 #using scripts\shared\bots\bot_buttons;
@@ -19,18 +22,28 @@
 #using scripts\zm\_zm_utility;
 
 #insert scripts\shared\shared.gsh;
+#insert scripts\shared\bots\_bot.gsh;
 
-function init()
+REGISTER_SYSTEM_EX( "zm_bot", &__init__, &__main__, undefined )
+
+function private __init__()
 {
+	if( !GetDvarInt("tfoption_bot", 0) )
+	{
+    	return;
+	}
+
 	SetDvar("bot_mode", "me");
 	SetDvar("bot_difficulty","3");
-
-	thread main();
 }
 
-function main()
+function private __main__()
 {
-	wait 0.1;
+	if( !GetDvarInt("tfoption_bot", 0) )
+	{
+    	return;
+	}
+
 	level.getBotSettings = &get_bot_settings;
 	level.onbotspawned = &bot_spawn;
 	level.botthreatengage = &engage_threat;
@@ -57,37 +70,20 @@ function main()
 
 function get_bot_settings()
 {
-	switch ( GetDvarInt( "bot_difficulty", 1 ) )
-	{
-		case 0:
-			bundleName = "bot_mp_easy";
-			break;
-			
-		case 1:
-			bundleName = "bot_mp_normal";
-			break;
-		case 2:
-			bundleName = "bot_mp_hard";
-			break;
-		case 3:
-		default:
-			bundleName = "bot_mp_veteran";
-			break;
-	}
-	
-	return struct::get_script_bundle( "botsettings", bundleName );
+	return struct::get_script_bundle( "botsettings", "bot_mp_veteran" );
 }
 
 function bot_cmd()
 {
 	level endon("end_game");
-
 	Modvar("botc", "");
+
+	level flag::wait_till( "all_players_connected" );
 	while(1)
     {
         if(GetDvarString("botc") == "")
         {
-			wait 0.05;
+			wait 0.1;
 			continue;
 		}
 
@@ -261,7 +257,7 @@ function bot_cmd()
 		}
 
 		SetDvar("botc", "");
-		wait 0.05;
+		wait 0.1;
     }
 }
 
@@ -351,9 +347,9 @@ function stop_bots()
 function server_auto_bot_spawn()
 {
 	level endon("end_game");
-	level waittill("initial_players_connected");
-	
-	server_bot = GetDvarInt("tfoption_bot_count");
+	level flag::wait_till( "all_players_connected" );
+
+	server_bot = GetDvarInt("tfoption_bot_count", 0);
 	if (server_bot == 0)
 	{
 		return;
@@ -678,7 +674,8 @@ function should_ignore_target( target )
 function wait_for_downed()
 {
 	level endon( "game_ended" );
-	
+	level flag::wait_till( "initial_blackscreen_passed" );
+
 	while(1)
 	{
 		if(get_downed_players().size != 0)

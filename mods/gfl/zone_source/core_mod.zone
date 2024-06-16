@@ -187,6 +187,13 @@ rawfile,ui/uieditor/widgets/GFL/HUD/ThirdpersonCrosshair.lua
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscr.lua
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscrfeeditem.lua
 
+rawfile,ui/uieditor/widgets/HUD/ZM_NotifFactory/ZMNotificationContainer.lua
+
+// zombie health bar
+rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_container.lua
+rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar.lua
+rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_the_bar.lua
+
 // character,c_zur_terrorist_1
 // character,c_zur_terrorist_2
 // character,c_zur_terrorist_3

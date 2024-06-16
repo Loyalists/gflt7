@@ -61,6 +61,8 @@ function on_player_connect()
 function set_perk()
 {
 	self endon("disconnect");
+	level endon("game_ended");
+	level endon("end_game");
 
 	while (isdefined(self)) 
 	{
@@ -255,7 +257,7 @@ function init_deadshot_dealer()
 function deadshot_icon()
 {
 	self endon("disconnect");
-	
+
 	self.deadshot_icon = newClientHudElem(self);
 	self.deadshot_icon.horzAlign = "right";
 	self.deadshot_icon.vertAlign = "bottom";

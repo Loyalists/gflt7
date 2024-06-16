@@ -38,6 +38,7 @@
 #using scripts\gfl\zm\zm_counter;
 #using scripts\gfl\zm\zm_sub;
 #using scripts\gfl\zm\coldwar_scoreevent;
+#using scripts\gfl\zm\_aae_zombie_health_bar;
 
 #using scripts\gfl\_chat_notify;
 #using scripts\gfl\core_util;
@@ -60,16 +61,6 @@ function init()
     callback::on_connecting( &on_player_connecting );
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
-
-	if( GetDvarInt("tfoption_subtitles", 0) )
-	{
-        zm_sub::init();
-	}
-
-	if( GetDvarInt("tfoption_bot", 0) )
-	{
-    	zm_bot::init();
-	}
 
     if( GetDvarInt("tfoption_perk_lose", 0) )
     {
@@ -103,6 +94,11 @@ function init()
     if( GetDvarInt("tfoption_cw_scoreevent", 0) )
     {
         coldwar_scoreevent::init();
+    }
+
+    if( GetDvarInt("tfoption_zombie_healthbar", 0) )
+    {
+        aae_zombie_health_bar::health_bar_init();
     }
 
     thread map_fixes();

@@ -413,4 +413,5 @@ for i = 0, Engine.GetMaxControllerCount() - 1, 1 do
 	local hudItems = Engine.CreateModel( Engine.GetModelForController( i ), "hudItems" )
 	Engine.CreateModel( hudItems, "ThirdpersonCrosshair" )
     Engine.CreateModel( hudItems, "CharacterPopup" )
+    Engine.CreateModel( hudItems, "spawn_actor_healthbar" )
 end

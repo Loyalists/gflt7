@@ -45,25 +45,29 @@
 
 #namespace zm_sub;
 
-REGISTER_SYSTEM( "zm_sub", &__init__, undefined )
+REGISTER_SYSTEM_EX( "zm_sub", &__init__, &__main__, undefined )
 
-function __init__()
+function private __init__()
 {
     util::registerClientSys( "sendsub" );
-    callback::on_connect(&on_player_connect_sys);
+    callback::on_connect(&on_player_connect);
 }
 
-function on_player_connect_sys(){
-    self util::setClientSysState( "sendsub", "" );
-}
+function private __main__()
+{
 
-function init(){
-    callback::on_connect( &on_player_connect );
 }
 
 function on_player_connect()
 {
 	self endon("disconnect");
+
+    self util::setClientSysState( "sendsub", "" );
+    
+	if( !GetDvarInt("tfoption_subtitles", 0) )
+	{
+        return;
+	}
 
     self thread special_event_sub_think();
     self thread powerup_sub_think();
