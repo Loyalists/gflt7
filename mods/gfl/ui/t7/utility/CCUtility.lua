@@ -44,6 +44,96 @@ CoD.CCUtility.IsMissionCompleted = function(f33_arg0, f33_arg1)
     return true
 end
 
+CoD.CCUtility.CreateCarouselItemLoadoutDatasource_InGame = function ( f7_arg0, f7_arg1, f7_arg2 )
+	local f7_local0 = "HeroCarouselItemLoadoutList_InGame" .. f7_arg0.properties.heroIndex
+	DataSources[f7_local0] = DataSourceHelpers.ListSetup( f7_local0, function ( f8_arg0 )
+		local f8_local0 = {}
+		table.insert( f8_local0, {
+			models = {
+				name = Engine.Localize( "MENU_SELECT_CAPS" ),
+				gameImageOff = f7_arg0.models.gameImageOff,
+				gameImageOn = f7_arg0.models.gameImageOn,
+				description = Engine.Localize( "GFL_CHARACTER_MENU_SELECT_DESC" ),
+				header = "HEROES_HERO_WEAPON_CAPS",
+				equippedSlot = 0,
+				itemIndex = 0,
+				disabled = false,
+				itemType = Enum.VoteItemType.VOTE_ITEM_TYPE_ITEM
+			},
+			properties = {
+				equippedSlot = 0,
+				hintText = "HEROES_HERO_WEAPON_HINT",
+				selectIndex = false,
+				heroIndex = f7_arg0.properties.heroIndex
+			}
+		} )
+		return f8_local0
+	end, true )
+	return f7_local0
+end
+
+CoD.CCUtility.GetHeroModels_InGame = function ( f75_arg0, f75_arg1, f75_arg2, f75_arg3 )
+	local f75_local4 = CoD.CCUtility.Heroes.HeroIndexForEdits
+	if not f75_local4 then
+		f75_local4 = 0
+	end
+	local f75_local6 = {
+		models = {
+			backgroundWithCharacter = f75_arg0.backgroundWithCharacter or "blacktransparent",
+			lockedBackgroundWithCharacter = f75_arg0.backgroundWithCharacter or "blacktransparent",
+			name = f75_arg0.displayName,
+			unlockDescription = "",
+			level = 1,
+			unlockedCharacterSliver = f75_arg0.frozenMomentRender or "blacktransparent",
+			lockedCharacterSliver = f75_arg0.frozenMomentRender or "blacktransparent",
+			disabled = f75_arg0.disabled or false,
+			equippedSlot = 0,
+			selectedHeadInfo = nil,
+			selectedBodyInfo = nil,
+			selectedShowcaseWeaponInfo = nil,
+			selectedTauntInfo = nil,
+			itemType = Enum.VoteItemType.VOTE_ITEM_TYPE_ITEM,
+			heroIndex = f75_arg0.bodyIndex,
+			breadcrumbCount = 0,
+			gameImageOff = f75_arg0.gameImageOff or "blacktransparent",
+			gameImageOn = f75_arg0.gameImageOn or "blacktransparent",
+		},
+		properties = {
+			heroIndex = f75_arg0.bodyIndex,
+			selectIndex = f75_arg0.bodyIndex == f75_local4
+		}
+	}
+	if not f75_local6.models.disabled then
+		f75_local6.models.loadoutDatasource = CoD.CCUtility.CreateCarouselItemLoadoutDatasource_InGame( f75_local6, CoD.CCUtility.customizationMode, f75_arg2 )
+	end
+	return f75_local6
+end
+
+CoD.CCUtility.HeroesListPrepare_InGame = function ( f77_arg0 )
+	local f77_local1 = GetHeroesList_InGame( CoD.CCUtility.customizationMode )
+	local f77_local2 = {}
+	local f77_local5 = 0
+	for f77_local11, f77_local12 in ipairs( f77_local1 ) do
+		local f77_local10 = CoD.CCUtility.GetHeroModels_InGame( f77_local12, f77_local11, f77_arg0, nil )
+		table.insert( f77_local2, f77_local10 )
+	end
+	if CoD.isPC then
+		for f77_local11, f77_local12 in ipairs( f77_local2 ) do
+			f77_local12.properties.carouselPos = f77_local11
+		end
+	end
+	local f77_local6 = 1
+	for f77_local12, f77_local9 in ipairs( f77_local2 ) do
+		if not f77_local9.shouldIgnoreWhenCounting then
+			f77_local9.models.count = Engine.Localize( "MENU_X_OF_Y", f77_local6, #f77_local2 - f77_local5 )
+			f77_local6 = f77_local6 + 1
+		end
+	end
+	return f77_local2
+end
+
+DataSources.HeroesList_InGame = DataSourceHelpers.ListSetup( "HeroesList_InGame", CoD.CCUtility.HeroesListPrepare_InGame, true )
+
 CoD.CCUtility.IsBodyOrHelmetAccessible = function(f34_arg0, f34_arg1, f34_arg2, f34_arg3)
     if CoD.CCUtility.customizationMode == Enum.eModes.MODE_CAMPAIGN or Engine.IsCampaignGame() then
         local f34_local0 = CoD.getStatsMilestoneTable(2, Enum.eModes.MODE_CAMPAIGN)

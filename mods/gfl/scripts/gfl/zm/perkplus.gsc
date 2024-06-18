@@ -8,6 +8,7 @@
 #using scripts\shared\flagsys_shared;
 #using scripts\shared\scoreevents_shared;
 #using scripts\shared\scene_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;

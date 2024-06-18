@@ -8,6 +8,7 @@
 #using scripts\shared\flagsys_shared;
 #using scripts\shared\scoreevents_shared;
 #using scripts\shared\aat_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -33,9 +34,16 @@
 
 #namespace magicboxshare;
 
-function init()
+REGISTER_SYSTEM_EX( "magicboxshare", &__init__, &__main__, undefined )
+
+function private __init__()
 {
-	thread main();
+
+}
+
+function private __main__()
+{
+    thread main();
 }
 
 function is_supported_by_map()
@@ -47,6 +55,16 @@ function is_supported_by_map()
 	}
 
 	return true;
+}
+
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_boxshare", 0) )
+    {
+        return true;
+    }
+
+	return false;
 }
 
 function main()
@@ -84,6 +102,11 @@ function chest_checker()
 {
 	self notify("elmg_try_share");
 	self endon("elmg_try_share");
+
+	if( !is_enabled() )
+	{
+		return;
+	}
 
 	if ( level flag::get( "moving_chest_now" ) && !level.zombie_vars[ "zombie_powerup_fire_sale_on" ] && !self._box_opened_by_fire_sale )
 	{
@@ -173,11 +196,17 @@ function closeshare2()
 	level endon("end_game");
 	while (1) 
 	{
+		if( !is_enabled() )
+		{
+			wait 3;
+			continue;
+		}
+
 		if( IS_TRUE( self.unbearable_respin ) )
 		{
 			self notify("elmg_try_share");
 		}
-		WAIT_SERVER_FRAME;
+		wait 0.1;
 	}
 }
 
@@ -188,6 +217,11 @@ function closeshare()
 	while (1) 
 	{	
 		self.zbarrier util::waittill_any( "closed", "box_hacked_respin" ); 
+		if( !is_enabled() )
+		{
+			continue;
+		}
+
 		self notify("elmg_try_share");
 	}
 }

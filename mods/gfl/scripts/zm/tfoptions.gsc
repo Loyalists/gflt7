@@ -66,81 +66,119 @@
 
 function autoexec auto_preload()
 {
+    level.tfoptions_default = [];
+    level.tfoptions_default["max_ammo"] = 0;
+    level.tfoptions_default["higher_health"] = 100; 
+    level.tfoptions_default["no_perk_lim"] = 0; 
+    level.tfoptions_default["more_powerups"] = 2;
+    level.tfoptions_default["bigger_mule"] = 0;
+    level.tfoptions_default["extra_cash"] = 0;
+    level.tfoptions_default["weaker_zombs"] = 0;
+    level.tfoptions_default["roamer_enabled"] = 0; 
+    level.tfoptions_default["roamer_time"] = 0;
+    level.tfoptions_default["zcounter_enabled"] = 0; 
+    level.tfoptions_default["starting_round"] = 1;
+    level.tfoptions_default["perkaholic"] = 0;
+    level.tfoptions_default["exo_movement"] = 0;
+    level.tfoptions_default["perk_powerup"] = 0;
+    level.tfoptions_default["melee_bonus"] = 0;
+    level.tfoptions_default["headshot_bonus"] = 0;
+    level.tfoptions_default["zombs_always_sprint"] = 0;
+    level.tfoptions_default["max_zombies"] = 24;
+    level.tfoptions_default["no_delay"] = 0;
+    level.tfoptions_default["start_rk5"] = 0;
+    level.tfoptions_default["hitmarkers"] = 0;
+    level.tfoptions_default["zcash_powerup"] = 0;
+    level.tfoptions_default["starting_points"] = 500;
+    level.tfoptions_default["no_round_delay"] = 0;
+    level.tfoptions_default["bo4_max_ammo"] = 0;
+    level.tfoptions_default["better_nuke"] = 0;
+    level.tfoptions_default["better_nuke_points"] = 0;
+    level.tfoptions_default["packapunch_powerup"] = 0;
+    level.tfoptions_default["spawn_with_quick_res"] = 0;
+    level.tfoptions_default["bo4_carpenter"] = 0;
+    level.tfoptions_default["bottomless_clip_powerup"] = 0;
+    level.tfoptions_default["zblood_powerup"] = 0;
+    level.tfoptions_default["timed_gameplay"] = 0;
+    level.tfoptions_default["move_speed"] = 100;
+    level.tfoptions_default["tf_enabled"] = 0;
+    level.tfoptions_default["open_all_doors"] = 0;
+    level.tfoptions_default["every_box"] = 0;
+    level.tfoptions_default["random_weapon"] = 0;
+    level.tfoptions_default["start_bowie"] = 0;
+    level.tfoptions_default["start_power"] = 0;
+    level.tfoptions_default["perkplus"] = 0;
+    level.tfoptions_default["bot"] = 0;
+    level.tfoptions_default["roundrevive"] = 0;
+    level.tfoptions_default["randomize_character"] = 0;
+    level.tfoptions_default["perk_lose"] = 0;
+    level.tfoptions_default["bot_count"] = 1;
+    level.tfoptions_default["boxshare"] = 0;
+    level.tfoptions_default["bot_command"] = 0;
+    level.tfoptions_default["bgb_loadout"] = 0;
+    level.tfoptions_default["cheats"] = 0;
+    level.tfoptions_default["fixed_cost"] = 0;
+    level.tfoptions_default["bgb_cost"] = 1;
+    level.tfoptions_default["modmenu"] = 0;
+    level.tfoptions_default["player_determined_character"] = 0;
+    level.tfoptions_default["disable_intro_movie"] = 0;
+    level.tfoptions_default["bgb_uses"] = 0;
+    level.tfoptions_default["friendlyfire"] = 0;
+    level.tfoptions_default["tdoll_zombie"] = 0;
+    level.tfoptions_default["bgb_off"] = 0;
+    level.tfoptions_default["subtitles"] = 0;
+    level.tfoptions_default["cw_scoreevent"] = 0;
+    level.tfoptions_default["thirdperson"] = 0;
+    level.tfoptions_default["zombie_healthbar"] = 0;
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
-        create_tf_options_defaults();
+        set_default_tfoptions();
     }
+    
+    level.tfoptions_old = [];
 }
 
-function init() {
+function init()
+{
+    set_old_tfoptions();
     pre_load();
     load_tf_options();
 }
 
-function create_tf_options_defaults() {
-    SetDvar("tfoption_max_ammo", 0);
-    SetDvar("tfoption_higher_health", 100); 
-    SetDvar("tfoption_no_perk_lim", 0); 
-    SetDvar("tfoption_more_powerups", 2);
-    SetDvar("tfoption_bigger_mule", 0);
-    SetDvar("tfoption_extra_cash", 0);
-    SetDvar("tfoption_weaker_zombs", 0);
-	SetDvar("tfoption_roamer_enabled", 0); 
-    SetDvar("tfoption_roamer_time", 0);
-    SetDvar("tfoption_zcounter_enabled", 0); 
-    SetDvar("tfoption_starting_round", 1);
-    SetDvar("tfoption_perkaholic", 0);
-    SetDvar("tfoption_exo_movement", 0);
-    SetDvar("tfoption_perk_powerup", 0);
-    SetDvar("tfoption_melee_bonus", 0);
-    SetDvar("tfoption_headshot_bonus", 0);
-    SetDvar("tfoption_zombs_always_sprint", 0);
-    SetDvar("tfoption_max_zombies", 24);
-    SetDvar("tfoption_no_delay", 0);
-    SetDvar("tfoption_start_rk5", 0);
-    SetDvar("tfoption_hitmarkers", 0);
-    SetDvar("tfoption_zcash_powerup", 0);
-    SetDvar("tfoption_starting_points", 500);
-    SetDvar("tfoption_no_round_delay", 0);
-    SetDvar("tfoption_bo4_max_ammo", 0);
-    SetDvar("tfoption_better_nuke", 0);
-    SetDvar("tfoption_better_nuke_points", 0);
-    SetDvar("tfoption_packapunch_powerup", 0);
-    SetDvar("tfoption_spawn_with_quick_res", 0);
-    SetDvar("tfoption_bo4_carpenter", 0);
-    SetDvar("tfoption_bottomless_clip_powerup", 0);
-    SetDvar("tfoption_zblood_powerup", 0);
-    SetDvar("tfoption_timed_gameplay", 0);
-    SetDvar("tfoption_move_speed", 100);
-    SetDvar("tfoption_tf_enabled", 1);
-    SetDvar("tfoption_open_all_doors", 0);
-    SetDvar("tfoption_every_box", 0);
-    SetDvar("tfoption_random_weapon", 0);
-    SetDvar("tfoption_start_bowie", 0);
-    SetDvar("tfoption_start_power", 0);
-    SetDvar("tfoption_perkplus", 0);
-    SetDvar("tfoption_bot", 0);
-    SetDvar("tfoption_roundrevive", 0);
-    SetDvar("tfoption_randomize_character", 0);
-    SetDvar("tfoption_perk_lose", 0);
-    SetDvar("tfoption_bot_count", 1);
-    SetDvar("tfoption_boxshare", 0);
-    SetDvar("tfoption_bot_command", 0);
-    SetDvar("tfoption_bgb_loadout", 0);
-    SetDvar("tfoption_cheats", 0);
-    SetDvar("tfoption_fixed_cost", 0);
-    SetDvar("tfoption_bgb_cost", 1);
-    SetDvar("tfoption_modmenu", 0);
-    SetDvar("tfoption_player_determined_character", 0);
-    SetDvar("tfoption_disable_intro_movie", 0);
-    SetDvar("tfoption_bgb_uses", 0);
-    SetDvar("tfoption_friendlyfire", 0);
-    SetDvar("tfoption_tdoll_zombie", 0);
-    SetDvar("tfoption_bgb_off", 0);
-    SetDvar("tfoption_subtitles", 0);
-    SetDvar("tfoption_cw_scoreevent", 0);
-    SetDvar("tfoption_thirdperson", 0);
-    SetDvar("tfoption_zombie_healthbar", 0);
+function set_default_tfoptions()
+{
+    options = GetArrayKeys(level.tfoptions_default);
+    foreach (option in options)
+    {
+        value = level.tfoptions_default[option];
+        set_tfoption_dvar(option, value);
+    }
+}
+
+function set_old_tfoptions()
+{
+    options = GetArrayKeys(level.tfoptions_default);
+    foreach (option in options)
+    {
+        default_value = level.tfoptions_default[option];
+        value = GetDvarInt("tfoption_" + option, default_value);
+        level.tfoptions_old[option] = value;
+    }
+}
+
+function set_tfoption_dvar(option, value)
+{
+    if (!isdefined(option))
+    {
+        return;
+    }
+
+    if (option == "")
+    {
+        return;
+    }
+
+    SetDvar("tfoption_" + option, value);
 }
 
 function pre_load()
@@ -159,6 +197,8 @@ function pre_load()
 function on_player_connect()
 {
 	self endon("disconnect");
+
+    self wait_for_tfoptions_changed();
 }
 
 function on_player_spawned()
@@ -183,6 +223,58 @@ function on_player_spawned()
     // exo movement
     if( GetDvarInt("tfoption_exo_movement", 0) ) {
         self thread enable_exo_movement();
+    }
+}
+
+function wait_for_tfoptions_changed()
+{
+	self endon("disconnect");
+
+    if (self IsTestClient())
+    {
+        return;
+    }
+
+    while (true)
+    {
+        WAIT_SERVER_FRAME;
+		self waittill("menuresponse", menu, response);
+        if ( !self IsHost() )
+        {
+            wait 5;
+            continue;
+        }
+
+        if ( !(menu == "popup_leavegame" && response == "TFOptionsChanged" ) )
+        {
+            continue;
+        }
+
+        if ( !GetDvarInt("tfoption_tf_enabled", 0) )
+        {
+            if (level.tfoptions_old["tf_enabled"] != 0)
+            {
+                set_default_tfoptions();
+                set_old_tfoptions();
+            }
+            continue;
+        }
+
+        options = GetArrayKeys(level.tfoptions_old);
+        foreach (option in options)
+        {
+            value = GetDvarInt("tfoption_" + option);
+            old_value = level.tfoptions_old[option];
+            if (value == old_value)
+            {
+                continue;
+            }
+
+            level.tfoptions_old[option] = value;
+            level notify("tfoption_" + option + "_changed", value, old_value);
+            // self IPrintLnBold("tfoption_" + option + "_changed");
+            WAIT_SERVER_FRAME;
+        }
     }
 }
 
@@ -367,9 +459,7 @@ function apply_choices() {
     }
 
     //bo4 carpenter
-    if( GetDvarInt("tfoption_bo4_carpenter", 0) ) {
-        bo4_carpenter::init();
-    }
+    bo4_carpenter::init();
 
     if( GetDvarInt("tfoption_better_nuke", 0) )
     {
@@ -402,11 +492,7 @@ function apply_choices() {
     // }
 
     //ROAMER MOD
-    if( GetDvarInt("tfoption_roamer_enabled", 0) ){
-        createRoamerHud();
-        level.round_end_custom_logic = &roamer;
-        zombie_utility::set_zombie_var( "zombie_between_round_time", 0);
-    }
+    roamer_init();
 
     //Timed Gameplay
     if( GetDvarInt("tfoption_timed_gameplay", 0) ) {
@@ -448,21 +534,6 @@ function give_quickrevive()
     self endon("disconnect");
     level flag::wait_till( "initial_blackscreen_passed" );
     self zm_perks::give_perk("specialty_quickrevive");
-    // if(level flag::get("solo_game"))
-    // {
-    //     if(!isDefined(level.solo_lives_given))
-	// 	{
-	// 		level.solo_lives_given = 1;
-	// 	}
-    //     else
-    //     {
-    //         level.solo_lives_given++;
-    //     }
-    //     if( level.solo_lives_given <= 3 )
-    //     {
-    //         self.lives = 1;
-    //     }
-    // }
 }
 
 function enable_exo_movement()
@@ -471,11 +542,6 @@ function enable_exo_movement()
     self endon("disconnect");
     self endon("bled_out");
     level flag::wait_till( "initial_blackscreen_passed" );
-
-    // SetDvar( "juke_enabled", 1 );
-    // SetDvar( "sprintLeap_enabled", 1 );
-    // SetDvar( "traverse_mode", 1 );
-    // SetDvar( "weaponrest_enabled", 1 );
 
     self AllowWallRun(true);
     self AllowDoubleJump(true);
@@ -639,8 +705,47 @@ function sprintSetter() {
     }
 }
 
+function roamer_init() {
+    if (isdefined(level.func_get_delay_between_rounds))
+    {
+        level._zombie_between_round_time_old = [[level.func_get_delay_between_rounds]]();
+    }
+
+    if ( !isdefined(level._zombie_between_round_time_old) )
+    {
+        if ( isdefined(level.zombie_vars) && isdefined(level.zombie_vars["zombie_between_round_time"]) )
+        {
+            level._zombie_between_round_time_old = level.zombie_vars["zombie_between_round_time"];
+        }
+    }
+
+    createRoamerHud();
+    level._round_end_custom_logic_old = level.round_end_custom_logic;
+    level.round_end_custom_logic = &roamer;
+
+    if( GetDvarInt("tfoption_roamer_enabled", 0) )
+    {
+        zombie_utility::set_zombie_var( "zombie_between_round_time", 0);
+    }
+}
 
 function roamer() {
+    if( !GetDvarInt("tfoption_roamer_enabled", 0) )
+    {
+        if ( isdefined( level._zombie_between_round_time_old ) )
+        {
+            zombie_utility::set_zombie_var( "zombie_between_round_time", level._zombie_between_round_time_old);
+        }
+
+        if ( isdefined( level._round_end_custom_logic_old ) )
+        {
+            [[level._round_end_custom_logic_old]]();
+        }
+        
+        return;
+    }
+    
+    zombie_utility::set_zombie_var( "zombie_between_round_time", 0);
     timer = GetDvarInt("tfoption_roamer_time", 0);
     if(timer != 0) {
         level thread roamer_wait_time();

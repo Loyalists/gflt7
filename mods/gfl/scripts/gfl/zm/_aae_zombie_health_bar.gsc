@@ -10,23 +10,33 @@
 
 #precache( "eventstring", "aae_zombie_health" );
 
-// REGISTER_SYSTEM_EX( "aae_zombie_health_bar", &__init__, &__main__, undefined )
+REGISTER_SYSTEM_EX( "aae_zombie_health_bar", &__init__, &__main__, undefined )
 
-// function private __init__()
-// {
+function private __init__()
+{
+    health_bar_init();
+}
 
-// }
+function private __main__()
+{
 
-// function private __main__()
-// {
-
-// }
+}
 
 function health_bar_init()
 {
     zm::register_zombie_damage_override_callback( &update_zombie_health );
 	zm::register_vehicle_damage_callback(&update_zombie_vehicle);
 	thread level_zombie_heath_notify();
+}
+
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_zombie_healthbar", 0) )
+    {
+        return true;
+    }
+
+	return false;
 }
 
 function level_zombie_heath_notify()
@@ -36,6 +46,12 @@ function level_zombie_heath_notify()
 	while(1)
 	{
 		level waittill( "aae_zombie_health_bar" , zombie , damage_func , entitynumber , boneindex , headshot);
+
+		if( !is_enabled() )
+		{
+			continue;
+		}
+
 		if(isDefined(zombie) && isDefined(damage_func) && isDefined(entitynumber) && isDefined(boneindex))
 		{
 			damage_value = zombie [[damage_func]](boneindex);
@@ -81,6 +97,11 @@ function zombie_health(boneindex)
 
 function update_zombie_health( death, inflictor, player, damage, flags, mod, weapon, vpoint, vdir, hit_location, psOffsetTime, boneIndex, surfaceType )
 {
+    if( !is_enabled() )
+    {
+        return;
+    }
+
     if(isDefined(death) && death)
     {
 		if( hit_location == "helmet" || hit_location == "head")
@@ -153,6 +174,11 @@ function margwaheadhit(entity, partname)
 
 function update_zombie_vehicle(einflictor, player, damage, idflags, smeansofdeath, weapon, vpoint, vdir, shitloc, vdamageorigin, psoffsettime, damagefromunderneath, modelindex, partname, vsurfacenormal)	
 {
+    if( !is_enabled() )
+    {
+        return;
+    }
+
     death = ( self.health - damage ) <= 0;
     
     if(isDefined(death) && death)

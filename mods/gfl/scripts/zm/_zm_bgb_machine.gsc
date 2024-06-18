@@ -461,7 +461,7 @@ function function_6c7a96b4(player, base_cost)
 		level.var_1485dcdc = 2;
 	}
 
-	if( GetDvarInt("tfoption_fixed_cost") )
+	if( GetDvarInt("tfoption_fixed_cost", 0) )
 	{
 		return get_bgb_cost();
 	}
@@ -490,7 +490,7 @@ function function_6c7a96b4(player, base_cost)
 function get_bgb_cost()
 {
 	cost = 500;
-	switch( GetDvarInt("tfoption_bgb_cost") ) 
+	switch( GetDvarInt("tfoption_bgb_cost", 0) ) 
 	{
 		case 0:
 			cost = 0;
@@ -678,7 +678,7 @@ function hide_bgb_machine(do_bgb_machine_leave)
 */
 function private bgb_machine_select_bgb(player)
 {
-	if( GetDvarInt("tfoption_bgb_loadout") && isdefined(level.bgb) && level.bgb.size > 0 )
+	if( GetDvarInt("tfoption_bgb_loadout", 0) && isdefined(level.bgb) && level.bgb.size > 0 )
 	{
 		keys = getarraykeys(level.bgb);
 		self.selected_bgb = array::random(keys);

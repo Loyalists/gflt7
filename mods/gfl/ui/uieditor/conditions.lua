@@ -74,6 +74,14 @@ function IsSOEBeast( f13_arg0 )
 	end
 end
 
+function UseOldSaveData()
+	if Engine.IsBOIII and Engine.IsBOIII == true then
+		return true
+	end
+
+	return false
+end
+
 Engine.IsItemLocked = function(f43_arg0, f43_local6, f43_local7)
 	return false
 end

@@ -11,6 +11,7 @@
 
 #using scripts\gfl\character;
 #using scripts\gfl\character_util;
+#using scripts\gfl\core_util;
 #using scripts\gfl\_chat_notify;
 #using scripts\gfl\zm\zm_character;
 
@@ -26,7 +27,10 @@ REGISTER_SYSTEM_EX( "character_mgr", &__init__, &__main__, undefined )
 function private __init__()
 {
 	util::registerClientSys( "gfl_character_icon" );
-	chat_notify::register_chat_notify_callback( "char", &on_message_sent );
+	if( is_enabled() )
+	{
+		chat_notify::register_chat_notify_callback( "char", &on_message_sent );
+	}
 	
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
@@ -35,23 +39,11 @@ function private __init__()
 	zm_character::init_character_table();
 	init_randomized_character_table();
 
-	if( GetDvarInt("tfoption_tdoll_zombie", 0) )
-	{
-		spawner::add_archetype_spawn_function("zombie", &zombie_model_override);
-	}
-	else
-	{
-		spawner::add_archetype_spawn_function("zombie", &zombie_model_fix);
-	}
+	spawner::add_archetype_spawn_function("zombie", &zombie_model_override);
 }
 
 function private __main__()
 {
-	if( !( GetDvarInt("tfoption_player_determined_character") || GetDvarInt("tfoption_randomize_character") ) )
-	{
-		return;
-	}
-
 	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
 	{
 		// prone to crash
@@ -68,6 +60,14 @@ function private __main__()
 function on_player_connect()
 {
     util::setClientSysState( "gfl_character_icon", "none", self );
+	
+	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
+	{
+		return;
+	}
+
+	self thread ingame_character_menu_think();
+	self thread lock_cc_think();
 }
 
 function on_player_spawned()
@@ -77,6 +77,11 @@ function on_player_spawned()
 	self endon("bled_out");
 
 	if ( level.script == "zm_moon" || level.script == "zm_tomb" )
+	{
+		return;
+	}
+
+	if( !is_enabled() )
 	{
 		return;
 	}
@@ -99,8 +104,16 @@ function on_player_spawned()
 		
         self thread cc_watcher_think(wait_interval);
     }
+}
 
-	self thread lock_cc_think();
+function is_enabled()
+{
+	if( GetDvarInt("tfoption_player_determined_character", 0) || GetDvarInt("tfoption_randomize_character", 0) )
+	{
+		return true;
+	}
+
+	return false;
 }
 
 function set_character_on_spawned()
@@ -172,11 +185,11 @@ function on_message_sent(args)
 		self IPrintLnBold(desc_text);
 		return;
 	}
-    
-    if ( self.sessionstate == "spectator" )
-    {
-        return;
-    }
+
+	if ( !self core_util::is_player_alive() )
+	{
+		return;
+	}
 
 	character = args[0];
 	if ( character == "random" )
@@ -359,14 +372,67 @@ function cc_watcher_think( wait_interval = 1 )
 function lock_cc_think()
 {
 	self endon("disconnect");
-	self endon("death");
-	self endon("bled_out");
 
     while (true)
     {
+		WAIT_SERVER_FRAME;
 		self waittill("unwanted_cc_changes_detected");
+
+		if ( !self core_util::is_player_alive() )
+		{
+			continue;
+		}
+
 		self set_character_customization();
-        WAIT_SERVER_FRAME;
+    }
+}
+
+function ingame_character_menu_think()
+{
+	self endon("disconnect");
+	
+	if ( self IsTestClient() )
+	{
+		return;
+	}
+
+    while (true)
+    {
+		WAIT_SERVER_FRAME;
+		self waittill("menuresponse", menu, response);
+		if ( !is_enabled() )
+		{
+			wait 1;
+			continue;
+		}
+
+        if ( !(menu == "popup_leavegame" && IsSubStr(response, "CharacterSystem") ) )
+        {
+            continue;
+        }
+
+		arr = StrTok(response, ",");
+		if ( arr.size != 2 )
+		{
+			continue;
+		}
+		// self IPrintLnBold(response);
+
+		char = arr[1];
+		if ( char == "random" )
+		{
+			self set_random_character();
+			self thread show_character_popup();
+		}
+		else
+		{
+			type = get_character_table_type();
+			if ( character_util::is_character_valid(type, char) )
+			{
+				self set_character(char);
+				self thread show_character_popup();
+			}
+		}
     }
 }
 
@@ -381,7 +447,7 @@ function zombie_model_fix()
 		return;
 	}
 
-	if ( !self character_util::is_force_reset_required() && self character_util::is_character_swapped() )
+	if ( !self character_util::is_force_reset_required() )
 	{
 		return;
 	}
@@ -408,6 +474,12 @@ function zombie_model_override()
 	self endon("death");
 	level endon("game_ended");
 	level endon("end_game");
+
+	if ( !GetDvarInt("tfoption_tdoll_zombie", 0) )
+	{
+		self zombie_model_fix();
+		return;
+	}
 
 	// modded zombie skeleton are not compatible with the default one used by gfl assets
 	if ( level.script == "zm_aliens_acheron" )

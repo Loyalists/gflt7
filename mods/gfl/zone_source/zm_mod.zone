@@ -164,3 +164,9 @@ image,uie_ui_icon_minimap_zm_ai_normal
 
 material,specialty_three_guns_zombies
 material,specialty_ads_zombies
+
+// rawfile,ui/uieditor/menus/CharacterCustomization/ChooseZMCharacterLoadout_InGame.lua
+// rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacterLoadoutCarouselItem_InGame.lua
+// rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacterLoadoutCarouselItem_Internal_InGame.lua
+// rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacterLoadoutCarouselItem_InfoArea_InGame.lua
+// rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacter_LoadoutListItem_InGame.lua

@@ -74,6 +74,15 @@ CoD.randomMusicTracks["zm_cp_frontend"] = CoD.randomMusicTracks["cp_frontend"]
 CoD.randomMusicTracks["mp_frontend"] = CoD.randomMusicTracks["titlescreen"]
 CoD.randomMusicTracks["zm_frontend"] = CoD.randomMusicTracks["titlescreen"]
 
+CoD.musicTracks.allowInLobbies = {
+    "titlescreen",
+	"mp_frontend",
+	"cp_frontend",
+	"zm_frontend",
+	"zm_cp_frontend",
+	"free_run"
+}
+
 CoD.GetRandomMusicTracks = function (menuMusic)
     if CoD.randomMusicTracks == nil or menuMusic == nil then
 	    return nil

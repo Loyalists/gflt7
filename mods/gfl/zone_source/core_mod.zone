@@ -15,10 +15,6 @@ rawfile,zm_mod.cfg
 // for some reason the game tends to freeze when switching from/to different modes (cp/mp/zm) so we just put everything in core_mod
 sound,core_mod
 
-// T7Overcharged
-rawfile,ui/util/T7Overcharged.lua
-rawfile,ui/util/T7OverchargedUtil.lua
-
 // GLOBAL
 xmodel,c_54i_cqb_mpc_fb_fe
 // xmodel,t7_gfl_rfb_fb_mp_fe
@@ -26,6 +22,7 @@ xmodel,c_54i_cqb_mpc_fb_fe
 material,gfl_logo
 // material,gfl_victory
 image,uie_img_t7_menu_frontend_asset_bo3logo
+image,uie_t7_menu_frontend_titlenumbrdrum
 
 localize,gfl
 localize,gfl_character
@@ -82,12 +79,20 @@ scriptparsetree,scripts/core/core_frontend_fx.gsc
 // scriptparsetree,scripts/zm/_zm_bloodsplatter.csc
 // material,mc/mtl_bloodsplatter_scripted
 
+// T7Overcharged
+rawfile,ui/util/T7Overcharged.lua
+rawfile,ui/util/T7OverchargedUtil.lua
+
+rawfile,ui/util/json.lua
+
 rawfile,ui/uieditor/menus/zm/zmmapselection.lua
 rawfile,ui/uieditor/menus/Lobby/Common/Popups/BonusModesFlyout.lua
 rawfile,ui/uieditor/menus/Lobby/Common/Popups/GameSettingsFlyoutMP.lua
 
 // gfl logo in main menu
 rawfile,ui/uieditor/widgets/lobby/common/FE_3dTitleInternal.lua
+rawfile,ui/uieditor/widgets/lobby/common/fe_talkerswidget.luac
+rawfile,ui/uieditor/widgets/lobby/common/fe_talkerwidgetbase.luac
 
 // restart level in zm, unlock loots and other stuff
 rawfile,ui/uieditor/datasources.lua
@@ -123,6 +128,27 @@ rawfile,ui/uieditor/menus/CharacterCustomization/PersonalizeCharacter.lua
 rawfile,ui/uieditor/menus/BlackMarket.lua
 
 rawfile,ui/uieditor/menus/CharacterCustomization/ChooseZMCharacterLoadout.lua
+rawfile,ui/uieditor/menus/CharacterCustomization/ChooseZMCharacterLoadout_InGame.lua
+rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacterLoadoutCarouselItem_InGame.lua
+rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacterLoadoutCarouselItem_Internal_InGame.lua
+rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacterLoadoutCarouselItem_InfoArea_InGame.lua
+rawfile,ui/uieditor/widgets/CharacterCustomization/ChooseCharacter_LoadoutListItem_InGame.lua
+
+rawfile,ui/uieditor/widgets/CharacterCustomization/choosecharacter_loadoutlistitem_mousehovericon.luac
+rawfile,ui/uieditor/widgets/CharacterCustomization/choosecharacter_tabbar.luac
+rawfile,ui/uieditor/widgets/CharacterCustomization/choosecharacterloadoutbumper.luac
+rawfile,ui/uieditor/widgets/CharacterCustomization/choosecharacterloadoutbumper_internal.luac
+rawfile,ui/uieditor/widgets/CharacterCustomization/choosecharacterloadoutcarouselitem_infoareaweapon.luac
+rawfile,ui/uieditor/widgets/CharacterCustomization/smallframewithbg.luac
+
+rawfile,ui/uieditor/widgets/pc/choosecharacter/CharacterMiniSelector_InGame.lua
+rawfile,ui/uieditor/widgets/pc/choosecharacter/characterminiselectoritem.luac
+rawfile,ui/uieditor/widgets/pc/choosecharacter/characterminiselectorleftbutton.luac
+rawfile,ui/uieditor/widgets/pc/choosecharacter/characterminiselectorrightbutton.luac
+rawfile,ui/uieditor/widgets/pc/choosecharacter/choosecharacter_cardclickbutton.luac
+rawfile,ui/uieditor/widgets/cac/menuselectscreen/weaponnamewidget.luac
+
+rawfile,ui/uieditor/widgets/startmenu/StartMenu_GameOptions_ZM.lua
 
 // cp cac fix
 rawfile,ui/uieditor/menus/CAC/ChooseClass_InGame.lua

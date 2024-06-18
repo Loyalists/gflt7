@@ -121,13 +121,13 @@ function wait_for_hide()
 		num = 0;
 		foreach(player in GetPlayers())
 		{
-			if( ( isDefined(player.gamevars) && isDefined(player.gamevars["hardcore"]) ) || isDefined(player.current_player_scene) || player flagsys::get("playing_movie_hide_hud") || player scene::is_igc_active() || (isdefined(player.dont_show_hud) && player.dont_show_hud))
+			if( isDefined(player.current_player_scene) || player flagsys::get("playing_movie_hide_hud") || player scene::is_igc_active() || (isdefined(player.dont_show_hud) && player.dont_show_hud))
 			{
 				num++;
 			}
 		}
 		
-		if ( GetPlayers().size == num || ( isDefined(player.gamevars) && isDefined(player.gamevars["hardcore"]) ) )
+		if ( GetPlayers().size == num )
 		{
 			self.fontscale = 0;
 		}
@@ -135,6 +135,6 @@ function wait_for_hide()
 		{
 			self.fontscale = 1.5;
 		}
-		wait 0.048;
+		wait 0.05;
 	}
 }

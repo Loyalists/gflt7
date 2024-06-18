@@ -101,15 +101,17 @@ DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function
         },
         properties = CoD.TFPCUtil.OptionsNavButtonProperties
     })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_SERVER_OPTIONS",
-            description = "TF_MENU_SERVER_OPTIONS_DESC",
-            page = "ServerSettings",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
+    if CoD.isFrontend then
+        table.insert(f26_local0, {
+            models = {
+                label = "TF_MENU_SERVER_OPTIONS",
+                description = "TF_MENU_SERVER_OPTIONS_DESC",
+                page = "ServerSettings",
+                widgetType = "navbutton"
+            },
+            properties = CoD.TFPCUtil.OptionsNavButtonProperties
+        })
+    end
     return f26_local0
 end, true)
 
@@ -339,6 +341,16 @@ LUI.createMenu.TFOptions = function(InstanceRef)
             f31_local8:changeFrameWidget(ModelValue)
         end
     end)
+
+    HudRef:registerEventHandler("menu_opened", function(element, event)
+        local f35_local0 = nil
+        CoD.TFPCUtil.UnsetDirtyFlag()
+        if not f35_local0 then
+            f35_local0 = element:dispatchEventToChildren(event)
+        end
+        return f35_local0
+    end)
+
     HudRef:registerEventHandler("menu_loaded", function(Sender, Event)
         local f39_local0 = nil
         ShowHeaderIconOnly(f31_local1)
@@ -347,8 +359,10 @@ LUI.createMenu.TFOptions = function(InstanceRef)
         end
         return f39_local0
     end)
+    
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil,
         function(f40_arg0, f40_arg1, f40_arg2, f40_arg3)
+            CoD.TFPCUtil.ApplyChangesInGame(f40_arg2)
             GoBack(HudRef, f40_arg2)
             return true
         end, function(f41_arg0, f41_arg1, f41_arg2)
@@ -357,22 +371,15 @@ LUI.createMenu.TFOptions = function(InstanceRef)
         end, false)
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_START, "M",
         function(f42_arg0, f42_arg1, f42_arg2, f42_arg3)
+            CoD.TFPCUtil.ApplyChangesInGame(f42_arg2)
             CloseStartMenu(f42_arg1, f42_arg2)
             return true
         end, function(f43_arg0, f43_arg1, f43_arg2)
             CoD.Menu.SetButtonLabel(f43_arg1, Enum.LUIButton.LUI_KEY_START, "MENU_DISMISS_MENU")
             return true
         end, false)
-    -- f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "F", function (f44_arg0, f44_arg1, f44_arg2, f44_arg3)
-    -- OpenPCApplyGraphicsPopup(HudRef, f44_arg0, f44_arg2)
-    --	return true
-    -- end, function (f45_arg0, f45_arg1, f45_arg2)
-    --	CoD.Menu.SetButtonLabel(f45_arg1, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "MENU_APPLY")
-    --	return true
-    -- end, false)
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "R",
         function(f46_arg0, f46_arg1, f46_arg2, f46_arg3)
-            -- OpenSystemOverlay(HudRef, f46_arg1, f46_arg2, "ResetPCGraphics", nil)
             CoD.TFPCUtil.ResetToDefault()
             GoBack(HudRef, f46_arg2)
             return true

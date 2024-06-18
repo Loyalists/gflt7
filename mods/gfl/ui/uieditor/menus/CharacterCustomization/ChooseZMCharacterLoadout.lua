@@ -526,7 +526,6 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	end )
 	self:registerEventHandler( "menu_opened", function ( element, event )
 		local f35_local0 = nil
-		ValidateBlackjackPurchase( controller )
 		if not f35_local0 then
 			f35_local0 = element:dispatchEventToChildren( event )
 		end

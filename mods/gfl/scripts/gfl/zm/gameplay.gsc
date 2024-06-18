@@ -62,43 +62,15 @@ function init()
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
 
-    if( GetDvarInt("tfoption_perk_lose", 0) )
-    {
-        t8_perkloss::init();
-    }
-
     if( GetDvarInt("tfoption_perkplus", 0) )
     {
         perkplus::init();
     }
 
-    if( GetDvarInt("tfoption_perkplus", 0) || GetDvarInt("tfoption_perk_lose", 0) )
-    {
-        mule_kick_return::init();
-    }
-
-    if( GetDvarInt("tfoption_boxshare", 0) )
-    {
-        magicboxshare::init();
-    }
-
-    if( GetDvarInt("tfoption_friendlyfire", 0) )
-    {
-        zm::register_player_friendly_fire_callback(&friendlyfire_damage);
-    }
+    zm::register_player_friendly_fire_callback(&friendlyfire_damage);
 
     if( GetDvarInt("tfoption_zcounter_enabled", 0) ) {
         zm_counter::init();
-    }
-
-    if( GetDvarInt("tfoption_cw_scoreevent", 0) )
-    {
-        coldwar_scoreevent::init();
-    }
-
-    if( GetDvarInt("tfoption_zombie_healthbar", 0) )
-    {
-        aae_zombie_health_bar::health_bar_init();
     }
 
     thread map_fixes();
@@ -116,11 +88,7 @@ function on_player_connect()
 {
 	self endon("disconnect");
 
-    if( GetDvarInt("tfoption_roundrevive", 0) )
-    {
-        self thread revive_at_end_of_round();
-    }
-
+    self thread revive_at_end_of_round();
     self thread mw3_intro_zm();
 }
 
@@ -285,6 +253,12 @@ function revive_at_end_of_round()
 	while (isdefined(self))
 	{
 		level waittill("end_of_round");
+        if( !GetDvarInt("tfoption_roundrevive", 0) )
+        {
+            wait 1;
+            continue;
+        }
+
         if( GetPlayers().size > 1 )
         {
             if ( self laststand::player_is_in_laststand() || isDefined(self.revivetrigger) || (self.sessionstate == "spectator"))
@@ -298,7 +272,7 @@ function revive_at_end_of_round()
         {
             self.health = self.maxhealth;
         }
-		wait 3;
+		wait 1;
     }
 }
 
@@ -353,6 +327,11 @@ function friendlyfire_damage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfD
 {	
     if(self != eAttacker)
     {
+        if( !GetDvarInt("tfoption_friendlyfire", 0) )
+        {
+            return;
+        }
+
         self thread friendlyfire_logic( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, weapon, vPoint, vDir, sHitLoc, psOffsetTime, boneIndex );
     }
     return;

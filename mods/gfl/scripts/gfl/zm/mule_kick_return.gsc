@@ -7,6 +7,7 @@
 #using scripts\shared\laststand_shared;
 #using scripts\shared\flagsys_shared;
 #using scripts\shared\scoreevents_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -32,11 +33,18 @@
 
 #namespace mule_kick_return;
 
-function init()
+REGISTER_SYSTEM_EX( "mule_kick_return", &__init__, &__main__, undefined )
+
+function private __init__()
 {
 	mulekick_return_init();
 	callback::on_connect( &on_player_connect );
 	thread main();
+}
+
+function private __main__()
+{
+
 }
 
 function on_player_connect()
@@ -44,6 +52,21 @@ function on_player_connect()
 	self endon("disconnect");
 	
 	self thread mulekick_return();
+}
+
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_perkplus", 0) || GetDvarInt("tfoption_perk_lose", 0) )
+    {
+        return true;
+    }
+
+	return false;
+}
+
+function wait_when_disabled()
+{
+    wait 5;
 }
 
 function main()
@@ -69,6 +92,12 @@ function mulekick_return_watcher()
 
 	while (1) 
 	{
+		if ( !is_enabled() )
+		{
+			wait_when_disabled();
+			continue;
+		}
+
 		foreach(player in GetPlayers())
 		{
 			if ( player IsTestClient() )

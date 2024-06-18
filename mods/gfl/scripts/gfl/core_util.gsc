@@ -26,6 +26,11 @@ function always_false( ... )
     return false;
 }
 
+function wait_when_disabled()
+{
+    wait 3;
+}
+
 function enable_cheats()
 {
     SetDvar("sv_cheats", 1);
@@ -34,6 +39,26 @@ function enable_cheats()
 function disable_cheats()
 {
     SetDvar("sv_cheats", 0);
+}
+
+function is_player_alive()
+{
+    if ( !isdefined(self) )
+    {
+        return false;
+    }
+
+    if ( !isalive(self) )
+    {
+        return false;
+    }
+
+    if ( isdefined(self.sessionstate) && self.sessionstate == "spectator" )
+    {
+        return false;
+    }
+
+    return true;
 }
 
 function is_cheats_enabled( check_tfoption = true )

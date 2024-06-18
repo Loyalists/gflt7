@@ -7,6 +7,7 @@
 #using scripts\shared\laststand_shared;
 #using scripts\shared\flagsys_shared;
 #using scripts\shared\scoreevents_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -32,22 +33,53 @@
 
 #namespace coldwar_scoreevent;
 
-function init()
+REGISTER_SYSTEM_EX( "coldwar_scoreevent", &__init__, &__main__, undefined )
+
+function private __init__()
 {
     callback::on_connect( &on_player_connect );
     zm::register_zombie_damage_override_callback( &coldwar_scoreevent_logic );
     zm::register_vehicle_damage_callback(&coldwar_scoreevent_logic_vehicle);
-	level.onlinegame = true;
+}
+
+function private __main__()
+{
+
 }
 
 function on_player_connect()
 {
 	self endon("disconnect");
 
-    self thread pap_scoreevent_think();
-    self thread special_event_scoreevent_think();
-	self thread powerup_scoreevent_think();
-	self thread powerup_level_scoreevent_think();
+    while (true)
+    {
+        self notify("coldwar_scoreevent_stop");
+        if ( is_enabled() )
+        {
+			level.onlinegame = true;
+			self thread pap_scoreevent_think();
+			self thread special_event_scoreevent_think();
+			self thread powerup_scoreevent_think();
+			self thread powerup_level_scoreevent_think();
+        }
+		else
+		{
+			level.onlinegame = false;
+		}
+
+        WAIT_SERVER_FRAME;
+        level waittill("tfoption_cw_scoreevent_changed");
+    }
+}
+
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_cw_scoreevent", 0) )
+    {
+        return true;
+    }
+
+	return false;
 }
 
 function pap_scoreevent_think()
@@ -55,6 +87,7 @@ function pap_scoreevent_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+	self endon("coldwar_scoreevent_stop");
 
 	while (isdefined(self))
 	{
@@ -71,6 +104,7 @@ function special_event_scoreevent_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+	self endon("coldwar_scoreevent_stop");
 
 	while (true)
 	{
@@ -100,6 +134,7 @@ function powerup_scoreevent_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+	self endon("coldwar_scoreevent_stop");
 
 	while (true)
 	{
@@ -129,6 +164,7 @@ function powerup_level_scoreevent_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+	self endon("coldwar_scoreevent_stop");
 
 	while (true)
 	{
@@ -155,7 +191,17 @@ function powerup_level_scoreevent_think()
 
 function coldwar_scoreevent_logic( death, inflictor, player, damage, flags, mod, weapon, vpoint, vdir, hit_location, psOffsetTime, boneIndex, surfaceType )
 {
-	if( IS_TRUE( death ) && !isDefined(self.disable_scoreevent) && IsPlayer(player) && self.team === level.zombie_team)
+	if ( !IS_TRUE( death ) )
+	{
+		return;
+	}
+
+	if ( !is_enabled() )
+	{
+		return;
+	}
+
+	if( !isDefined(self.disable_scoreevent) && IsPlayer(player) && self.team === level.zombie_team)
 	{
         ckill = "_c";
 		cause = "kill";

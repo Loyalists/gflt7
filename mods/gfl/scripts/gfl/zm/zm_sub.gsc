@@ -37,6 +37,8 @@
 #using scripts\zm\_zm_hero_weapon;
 #using scripts\zm\_zm_pack_a_punch_util;
 
+#using scripts\gfl\core_util;
+
 #using scripts\gfl\zm\character_mgr;
 #using scripts\gfl\zm\zm_sub;
 
@@ -63,19 +65,41 @@ function on_player_connect()
 	self endon("disconnect");
 
     self util::setClientSysState( "sendsub", "" );
-    
-	if( !GetDvarInt("tfoption_subtitles", 0) )
-	{
-        return;
-	}
 
-    self thread special_event_sub_think();
-    self thread powerup_sub_think();
-    self thread weapon_sub_think();
-    self thread pap_sub_think();
-    self thread bgb_sub_think();
-    self thread magicboxshare_sub_think();
-    self thread chat_sub_think();
+    self thread sub_main_think();
+}
+
+function sub_main_think()
+{
+	self endon("disconnect");
+
+    while (true)
+    {
+        self notify("zm_sub_stop");
+        if ( is_enabled() )
+        {
+            self thread special_event_sub_think();
+            self thread powerup_sub_think();
+            self thread weapon_sub_think();
+            self thread pap_sub_think();
+            self thread bgb_sub_think();
+            self thread magicboxshare_sub_think();
+            self thread chat_sub_think();
+        }
+
+        WAIT_SERVER_FRAME;
+        level waittill("tfoption_subtitles_changed");
+    }
+}
+
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_subtitles", 0) )
+    {
+        return true;
+    }
+
+	return false;
 }
 
 function sub_logic(player, type, character, message)
@@ -240,10 +264,13 @@ function special_event_sub_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+    self endon("zm_sub_stop");
 
 	while (true)
 	{
+        WAIT_SERVER_FRAME;
 		event = self util::waittill_any_return( "player_downed", "perk_bought", "start_chat_sub" );
+
         character_name = self character_mgr::get_character_name();
 
 		if (event == "player_downed")
@@ -255,8 +282,6 @@ function special_event_sub_think()
 		{
 		    thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_GOTPERK…");
 		}
-
-        WAIT_SERVER_FRAME;
 	}
 }
 
@@ -265,18 +290,19 @@ function powerup_sub_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+    self endon("zm_sub_stop");
 
 	while (true)
 	{
+        WAIT_SERVER_FRAME;
 		event = self util::waittill_any_return( "nuke_triggered" );
+
         character_name = self character_mgr::get_character_name();
 
 		if (event == "nuke_triggered")
 		{
 			thread zm_sub::sub_logic(undefined, 2, character_name, "…SUBEVENT_NUKE…");
 		}
-
-        WAIT_SERVER_FRAME;
 	}
 }
 
@@ -285,15 +311,16 @@ function pap_sub_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+    self endon("zm_sub_stop");
 
 	while (isdefined(self))
 	{
+        WAIT_SERVER_FRAME;
 		self waittill("pap_taken");
 		self waittill("weapon_change");
 
         character_name = self character_mgr::get_character_name();
 		self zm_sub::show_pap_sub(character_name);
-        WAIT_SERVER_FRAME;
 	}
 }
 
@@ -302,14 +329,15 @@ function weapon_sub_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+    self endon("zm_sub_stop");
 
 	while (isdefined(self))
 	{
+        WAIT_SERVER_FRAME;
 		self waittill("start_weapon_sub", weapon);
 
         character_name = self character_mgr::get_character_name();
 		self zm_sub::show_weapon_sub(character_name, weapon);
-        WAIT_SERVER_FRAME;
 	}
 }
 
@@ -318,14 +346,15 @@ function bgb_sub_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+    self endon("zm_sub_stop");
 
 	while (isdefined(self))
 	{
+        WAIT_SERVER_FRAME;
 		self waittill("start_bgb_sub", bgb_string);
 
         character_name = self character_mgr::get_character_name();
 		self zm_sub::show_bgb_sub(character_name, bgb_string);
-        WAIT_SERVER_FRAME;
 	}
 }
 
@@ -334,14 +363,15 @@ function magicboxshare_sub_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+    self endon("zm_sub_stop");
 
 	while (isdefined(self))
 	{
+        WAIT_SERVER_FRAME;
 		self waittill("magicbox_weapon_shared", weapon);
 
         character_name = self character_mgr::get_character_name();
 		self zm_sub::show_magicboxshare_sub(character_name, weapon);
-        WAIT_SERVER_FRAME;
 	}
 }
 
@@ -350,14 +380,15 @@ function chat_sub_think()
 	self endon("disconnect");
     self endon("death");
     self endon("entityshutdown");
+    self endon("zm_sub_stop");
 
 	while (isdefined(self))
 	{
+        WAIT_SERVER_FRAME;
 		self waittill("start_chat_sub", text);
 
         character_name = self character_mgr::get_character_name();
 		thread zm_sub::sub_logic(undefined, 2, character_name, text);
-        WAIT_SERVER_FRAME;
 	}
 }
 

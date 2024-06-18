@@ -7,6 +7,7 @@
 #using scripts\shared\laststand_shared;
 #using scripts\shared\flagsys_shared;
 #using scripts\shared\scoreevents_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -32,9 +33,15 @@
 
 #namespace t8_perkloss;
 
-function init()
+REGISTER_SYSTEM_EX( "t8_perkloss", &__init__, &__main__, undefined )
+
+function private __init__()
 {
 	callback::on_connect( &on_player_connect );
+}
+
+function private __main__()
+{
 	thread main();
 }
 
@@ -46,13 +53,29 @@ function on_player_connect()
 	self thread perkrestore();
 }
 
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_perk_lose", 0) )
+    {
+        return true;
+    }
+
+	return false;
+}
+
 function main()
 {
     level endon("end_game");
     level endon("game_ended");
     level waittill( "initial_blackscreen_passed" );
 	
+	level._callbackplayerlaststand_old = level.callbackplayerlaststand;
 	thread lockrevivefunc();
+}
+
+function wait_when_disabled()
+{
+    wait 3;
 }
 
 function lockrevivefunc()
@@ -62,7 +85,19 @@ function lockrevivefunc()
 
     while(1)
     {
+		if ( !is_enabled() )
+		{
+			if ( IS_TRUE(level.t8_perkloss_enabled) )
+			{
+				level.callbackplayerlaststand = level._callbackplayerlaststand_old;
+				level.t8_perkloss_enabled = false;
+			}
+			wait_when_disabled();
+			continue;
+		}
+
         level.callbackplayerlaststand = &ELMG_playerlaststand;
+		level.t8_perkloss_enabled = true;
         wait(1);
     }
 }

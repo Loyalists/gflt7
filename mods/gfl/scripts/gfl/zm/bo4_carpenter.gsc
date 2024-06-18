@@ -24,12 +24,26 @@ function init()
     level._custom_powerups[ "carpenter" ].grab_powerup = &grab_carpenter;
 }
 
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_bo4_carpenter", 0) )
+    {
+        return true;
+    }
+
+	return false;
+}
+
 function grab_carpenter( player )
 {
-	foreach(player in GetPlayers()) 
+	if ( is_enabled() )
 	{
-		player thread fixshield();
+		foreach(player in GetPlayers()) 
+		{
+			player thread fixshield();
+		}
 	}
+
 	if(isDefined(level._custom_powerups[ "carpenter" ].grab_powerup_old))
 	{
 		self thread [[ level._custom_powerups[ "carpenter" ].grab_powerup_old ]]( player );

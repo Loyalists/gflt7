@@ -265,7 +265,19 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                     action = RestartGame
                 }
             })
+            table.insert(f89_local0, {
+                models = {
+                    displayText = "GFL_MENU_TFOPTIONS",
+                    action = OpenTFOptions_InGame
+                }
+            })
         end
+        table.insert(f89_local0, {
+            models = {
+                displayText = "CPUI_CHOOSE_CHARACTER_CAPS",
+                action = OpenZMChooseCharacterLoadout_InGame
+            }
+        })
         if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) == true then
             table.insert(f89_local0, {
                 models = {
@@ -293,9 +305,9 @@ end, true)
 
 DataSources.ChatClientEntriesList = {
     prepare = function(controller, menu, f914_arg2)
-		local function BooleanToNumber(value)
-			return value and 1 or 0
-		end
+        local function BooleanToNumber(value)
+            return value and 1 or 0
+        end
 
         menu.numElementsInList = menu.vCount
         menu.controller = controller
@@ -342,9 +354,9 @@ DataSources.ChatClientEntriesList = {
                 if chat_LastMs == nil then
                     chat_LastMs = 0
                 end
-				-- if type(chat_LastMs) == "boolean" then
-				-- 	chat_LastMs = BooleanToNumber(chat_LastMs)
-				-- end
+                -- if type(chat_LastMs) == "boolean" then
+                -- 	chat_LastMs = BooleanToNumber(chat_LastMs)
+                -- end
 
                 for f915_local1 = 1, #f915_local0, 1 do
                     local f915_local4 = f915_local0[f915_local1]
@@ -370,8 +382,7 @@ DataSources.ChatClientEntriesList = {
                     end
                     if tostring(Engine.GetXUID64(controller)) == tostring(sending_User) then
                         if sending_timeMs > math.floor(chat_LastMs) then
-                            Engine.SendMenuResponse(controller, "popup_leavegame", "ChatNotify" .. "…" ..
-                                string.gsub(tostring(sending_Text), " ", "¨"))
+                            SendChatNotifyResponse(controller, sending_Text)
                             Engine.SetDvar("chat_LastMs", sending_timeMs)
                             -- Engine.SetDvar("chat_last_xuid", tostring(sending_User))
                             -- Engine.SetDvar("chat_last_fullname", sending_Name)
@@ -381,8 +392,7 @@ DataSources.ChatClientEntriesList = {
                     if Engine.IsBOIII == true and tostring(sending_Name) ==
                         tostring(Engine.GetPlayerNameForClientNum(Engine.GetClientNum(controller))) and sending_timeMs >
                         math.floor(chat_LastMs) then
-                        Engine.SendMenuResponse(controller, "popup_leavegame",
-                            "ChatNotify" .. "…" .. string.gsub(tostring(sending_Text), " ", "¨"))
+                        SendChatNotifyResponse(controller, sending_Text)
                         Engine.SetDvar("chat_LastMs", sending_timeMs)
                         -- Engine.SetDvar("chat_last_xuid", tostring(sending_User))
                         -- Engine.SetDvar("chat_last_fullname", sending_Name)
@@ -410,8 +420,8 @@ DataSources.ChatClientEntriesList = {
 }
 
 for i = 0, Engine.GetMaxControllerCount() - 1, 1 do
-	local hudItems = Engine.CreateModel( Engine.GetModelForController( i ), "hudItems" )
-	Engine.CreateModel( hudItems, "ThirdpersonCrosshair" )
-    Engine.CreateModel( hudItems, "CharacterPopup" )
-    Engine.CreateModel( hudItems, "spawn_actor_healthbar" )
+    local hudItems = Engine.CreateModel(Engine.GetModelForController(i), "hudItems")
+    Engine.CreateModel(hudItems, "ThirdpersonCrosshair")
+    Engine.CreateModel(hudItems, "CharacterPopup")
+    Engine.CreateModel(hudItems, "spawn_actor_healthbar")
 end

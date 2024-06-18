@@ -1,6 +1,8 @@
 require("lua.Shared.LuaUtils")
 require("ui.uieditor.modifyFunctions")
 
+local version = 1
+
 CoD.TFOptionIndexes = {}
 CoD.TFOptionIndexes["temp"] = 0
 CoD.TFOptionIndexes["max_ammo"] = 1
@@ -68,6 +70,74 @@ CoD.TFOptionIndexes["cw_scoreevent"] = 67
 CoD.TFOptionIndexes["thirdperson"] = 68
 CoD.TFOptionIndexes["zombie_healthbar"] = 69
 
+CoD.TFOptionsDefault = {}
+CoD.TFOptionsDefault["starting_points"] = 500
+CoD.TFOptionsDefault["max_ammo"] = 0
+CoD.TFOptionsDefault["higher_health"] = 100
+CoD.TFOptionsDefault["no_perk_lim"] = 1
+CoD.TFOptionsDefault["more_powerups"] = 2
+CoD.TFOptionsDefault["bigger_mule"] = 0
+CoD.TFOptionsDefault["extra_cash"] = 0
+CoD.TFOptionsDefault["weaker_zombs"] = 0
+CoD.TFOptionsDefault["roamer_enabled"] = 0
+CoD.TFOptionsDefault["roamer_time"] = 0
+CoD.TFOptionsDefault["zcounter_enabled"] = 1
+CoD.TFOptionsDefault["starting_round"] = 1
+CoD.TFOptionsDefault["perkaholic"] = 0
+CoD.TFOptionsDefault["exo_movement"] = 0
+CoD.TFOptionsDefault["perk_powerup"] = 0
+CoD.TFOptionsDefault["melee_bonus"] = 0
+CoD.TFOptionsDefault["headshot_bonus"] = 0
+CoD.TFOptionsDefault["zombs_always_sprint"] = 0
+CoD.TFOptionsDefault["max_zombies"] = 24
+CoD.TFOptionsDefault["no_delay"] = 0
+CoD.TFOptionsDefault["start_rk5"] = 0
+CoD.TFOptionsDefault["hitmarkers"] = 1
+CoD.TFOptionsDefault["zcash_powerup"] = 0
+CoD.TFOptionsDefault["no_round_delay"] = 0
+CoD.TFOptionsDefault["bo4_max_ammo"] = 1
+CoD.TFOptionsDefault["better_nuke"] = 1
+CoD.TFOptionsDefault["better_nuke_points"] = 100
+CoD.TFOptionsDefault["packapunch_powerup"] = 0
+CoD.TFOptionsDefault["spawn_with_quick_res"] = 0
+CoD.TFOptionsDefault["bo4_carpenter"] = 1
+CoD.TFOptionsDefault["bottomless_clip_powerup"] = 0
+CoD.TFOptionsDefault["zblood_powerup"] = 0
+CoD.TFOptionsDefault["timed_gameplay"] = 0
+CoD.TFOptionsDefault["move_speed"] = 100
+CoD.TFOptionsDefault["tf_enabled"] = 1
+CoD.TFOptionsDefault["open_all_doors"] = 0
+CoD.TFOptionsDefault["every_box"] = 0
+CoD.TFOptionsDefault["random_weapon"] = 0
+CoD.TFOptionsDefault["start_bowie"] = 0
+CoD.TFOptionsDefault["start_power"] = 0
+CoD.TFOptionsDefault["perkplus"] = 1
+CoD.TFOptionsDefault["bot"] = 0
+CoD.TFOptionsDefault["roundrevive"] = 1
+CoD.TFOptionsDefault["randomize_character"] = 1
+CoD.TFOptionsDefault["perk_lose"] = 1
+CoD.TFOptionsDefault["bot_count"] = 1
+CoD.TFOptionsDefault["boxshare"] = 1
+CoD.TFOptionsDefault["bot_command"] = 0
+CoD.TFOptionsDefault["bgb_loadout"] = 0
+CoD.TFOptionsDefault["cheats"] = 0
+CoD.TFOptionsDefault["fixed_cost"] = 0
+CoD.TFOptionsDefault["bgb_cost"] = 1
+CoD.TFOptionsDefault["modmenu"] = 0
+CoD.TFOptionsDefault["player_determined_character"] = 1
+CoD.TFOptionsDefault["disable_intro_movie"] = 1
+CoD.TFOptionsDefault["bgb_uses"] = 0
+CoD.TFOptionsDefault["friendlyfire"] = 0
+CoD.TFOptionsDefault["tdoll_zombie"] = 0
+CoD.TFOptionsDefault["bgb_off"] = 0
+CoD.TFOptionsDefault["version"] = version
+CoD.TFOptionsDefault["subtitles"] = 1
+CoD.TFOptionsDefault["cw_scoreevent"] = 1
+CoD.TFOptionsDefault["thirdperson"] = 0
+CoD.TFOptionsDefault["zombie_healthbar"] = 1
+
+CoD.TFOptionsDirtyFlag = false
+
 if not CoD.TFPCUtil then
     CoD.TFPCUtil = {}
 end
@@ -118,7 +188,6 @@ CoD.TFPCUtil.TokenizeString = function(f4_arg0, f4_arg1)
 end
 
 CoD.TFPCUtil.GetVersion = function()
-    local version = 1
     return version
 end
 
@@ -148,7 +217,6 @@ CoD.TFPCUtil.LoadFromSaveData = function(varName, InstanceRef)
     Engine.SetDvar("tfoption_" .. varName, result)
 end
 
-
 CoD.TFPCUtil.SetToSaveData = function(varName, value, InstanceRef)
     Engine.SetDvar("tfoption_" .. varName, value)
 
@@ -172,156 +240,106 @@ CoD.TFPCUtil.SetToSaveData = function(varName, value, InstanceRef)
         CoD.SavingDataUtility.SaveData(InstanceRef, index + 1, multof255)
         CoD.SavingDataUtility.SaveData(InstanceRef, index + 2, remainder)
     end
+end
 
+CoD.TFPCUtil.SetToJSON = function(varName, value)
+    if not CoD.TFPCUtil.IsOptionExisted(varName) then
+        return
+    end
+
+    local converted = tonumber(value)
+    if not converted then
+        converted = CoD.TFOptionsDefault[varName]
+    end
+    Engine.SetDvar("tfoption_" .. varName, converted)
+    CoD.SavingDataUtility.SaveJSONData(varName, converted)
+end
+
+CoD.TFPCUtil.GetFromJSON = function(varName)
+    local result = CoD.SavingDataUtility.GetJSONData(varName)
+    if varName ~= "version" then
+        if result == nil then
+            result = CoD.TFOptionsDefault[varName]
+        end
+    
+        if result == nil then
+            result = 0
+        end
+    end
+    
+    return result
+end
+
+CoD.TFPCUtil.LoadFromJSON = function(varName)
+    local result = CoD.TFPCUtil.GetFromJSON(varName)
+    Engine.SetDvar("tfoption_" .. varName, result)
 end
 
 CoD.TFPCUtil.CheckForRecentUpdate = function()
-    local index = CoD.TFOptionIndexes["version"]
-    index = (index * 2) + 50
-    local multiple = CoD.SavingDataUtility.GetData(InstanceRef, index)
-    local remainder = CoD.SavingDataUtility.GetData(InstanceRef, index + 1)
-    local result = (255 * multiple) + remainder
+    if UseOldSaveData() then
+        local index = CoD.TFOptionIndexes["version"]
+        index = (index * 2) + 50
+        local multiple = CoD.SavingDataUtility.GetData(InstanceRef, index)
+        local remainder = CoD.SavingDataUtility.GetData(InstanceRef, index + 1)
+        local result = (255 * multiple) + remainder
 
-    if result ~= CoD.TFPCUtil.GetVersion() then
+        if result ~= CoD.TFPCUtil.GetVersion() then
+            CoD.TFPCUtil.ResetToDefault()
+            return true
+        end
+        return false
+    end
+
+    local result = CoD.TFPCUtil.GetFromJSON("version")
+    if not result or result ~= CoD.TFPCUtil.GetVersion() then
         CoD.TFPCUtil.ResetToDefault()
-    else
+        return true
+    end
+    return false
+end
 
+CoD.TFPCUtil.ResetToDefault = function()
+    if UseOldSaveData() then
+        for varName, value in pairs(CoD.TFOptionsDefault) do
+            CoD.TFPCUtil.SetToSaveData(varName, value, 0)
+        end
+        return
+    end
+
+    CoD.SavingDataUtility.SaveJSON(CoD.TFOptionsDefault)
+    for varName, value in pairs(CoD.TFOptionsDefault) do
+        if value then
+            Engine.SetDvar("tfoption_" .. varName, value)
+        end
     end
 end
 
+CoD.TFPCUtil.LoadTFOptions = function()
+    if UseOldSaveData() then
+        for varName, value in pairs(CoD.TFOptionsDefault) do
+            CoD.TFPCUtil.LoadFromSaveData(varName)
+        end
+        return
+    end
 
-CoD.TFPCUtil.ResetToDefault = function()
-    CoD.TFPCUtil.SetToSaveData("starting_points", 500, 0)
-    CoD.TFPCUtil.SetToSaveData("max_ammo", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("higher_health", 100, 0)
-    CoD.TFPCUtil.SetToSaveData("no_perk_lim", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("more_powerups", 2, 0)
-    CoD.TFPCUtil.SetToSaveData("bigger_mule", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("extra_cash", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("weaker_zombs", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("roamer_enabled", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("roamer_time", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("zcounter_enabled", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("starting_round", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("perkaholic", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("exo_movement", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("perk_powerup", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("melee_bonus", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("headshot_bonus", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("zombs_always_sprint", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("max_zombies", 24, 0)
-    CoD.TFPCUtil.SetToSaveData("no_delay", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("start_rk5", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("hitmarkers", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("zcash_powerup", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("no_round_delay", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("bo4_max_ammo", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("better_nuke", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("better_nuke_points", 100, 0)
-    CoD.TFPCUtil.SetToSaveData("packapunch_powerup", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("spawn_with_quick_res", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("bo4_carpenter", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("bottomless_clip_powerup", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("zblood_powerup", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("timed_gameplay", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("move_speed", 100, 0)
-    CoD.TFPCUtil.SetToSaveData("tf_enabled", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("open_all_doors", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("every_box", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("random_weapon", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("start_bowie", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("start_power", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("perkplus", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("bot", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("roundrevive", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("randomize_character", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("perk_lose", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("bot_count", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("boxshare", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("bot_command", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("bgb_loadout", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("cheats", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("fixed_cost", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("bgb_cost", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("modmenu", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("player_determined_character", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("disable_intro_movie", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("bgb_uses", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("friendlyfire", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("tdoll_zombie", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("bgb_off", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("version", CoD.TFPCUtil.GetVersion(), 0)
-    CoD.TFPCUtil.SetToSaveData("subtitles", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("cw_scoreevent", 1, 0)
-    CoD.TFPCUtil.SetToSaveData("thirdperson", 0, 0)
-    CoD.TFPCUtil.SetToSaveData("zombie_healthbar", 1, 0)
+    local table = CoD.SavingDataUtility.LoadJSON()
+    for varName, _ in pairs(CoD.TFOptionsDefault) do
+        local value = table[varName]
+        if value then
+            local converted = tonumber(value)
+            if converted then
+                Engine.SetDvar("tfoption_" .. varName, converted)
+            end
+        end
+    end
 end
 
-CoD.TFPCUtil.LoadTFOptions = function()
-    CoD.TFPCUtil.LoadFromSaveData("max_ammo")
-    CoD.TFPCUtil.LoadFromSaveData("higher_health")
-    CoD.TFPCUtil.LoadFromSaveData("no_perk_lim")
-    CoD.TFPCUtil.LoadFromSaveData("more_powerups")
-    CoD.TFPCUtil.LoadFromSaveData("bigger_mule")
-    CoD.TFPCUtil.LoadFromSaveData("extra_cash")
-    CoD.TFPCUtil.LoadFromSaveData("weaker_zombs")
-    CoD.TFPCUtil.LoadFromSaveData("roamer_enabled")
-    CoD.TFPCUtil.LoadFromSaveData("roamer_time")
-    CoD.TFPCUtil.LoadFromSaveData("zcounter_enabled")
-    CoD.TFPCUtil.LoadFromSaveData("starting_round")
-    CoD.TFPCUtil.LoadFromSaveData("perkaholic")
-    CoD.TFPCUtil.LoadFromSaveData("exo_movement")
-    CoD.TFPCUtil.LoadFromSaveData("perk_powerup")
-    CoD.TFPCUtil.LoadFromSaveData("melee_bonus")
-    CoD.TFPCUtil.LoadFromSaveData("headshot_bonus")
-    CoD.TFPCUtil.LoadFromSaveData("zombs_always_sprint")
-    CoD.TFPCUtil.LoadFromSaveData("max_zombies")
-    CoD.TFPCUtil.LoadFromSaveData("no_delay")
-    CoD.TFPCUtil.LoadFromSaveData("start_rk5")
-    CoD.TFPCUtil.LoadFromSaveData("hitmarkers")
-    CoD.TFPCUtil.LoadFromSaveData("zcash_powerup")
-    CoD.TFPCUtil.LoadFromSaveData("starting_points")
-    CoD.TFPCUtil.LoadFromSaveData("no_round_delay")
-    CoD.TFPCUtil.LoadFromSaveData("bo4_max_ammo")
-    CoD.TFPCUtil.LoadFromSaveData("better_nuke")
-    CoD.TFPCUtil.LoadFromSaveData("better_nuke_points")
-    CoD.TFPCUtil.LoadFromSaveData("packapunch_powerup")
-    CoD.TFPCUtil.LoadFromSaveData("spawn_with_quick_res")
-    CoD.TFPCUtil.LoadFromSaveData("bo4_carpenter")
-    CoD.TFPCUtil.LoadFromSaveData("bottomless_clip_powerup")
-    CoD.TFPCUtil.LoadFromSaveData("zblood_powerup")
-    CoD.TFPCUtil.LoadFromSaveData("timed_gameplay")
-    CoD.TFPCUtil.LoadFromSaveData("move_speed")
-    CoD.TFPCUtil.LoadFromSaveData("tf_enabled")
-    CoD.TFPCUtil.LoadFromSaveData("open_all_doors")
-    CoD.TFPCUtil.LoadFromSaveData("every_box")
-    CoD.TFPCUtil.LoadFromSaveData("random_weapon")
-    CoD.TFPCUtil.LoadFromSaveData("start_bowie")
-    CoD.TFPCUtil.LoadFromSaveData("start_power")
-    CoD.TFPCUtil.LoadFromSaveData("perkplus")
-    CoD.TFPCUtil.LoadFromSaveData("bot")
-    CoD.TFPCUtil.LoadFromSaveData("roundrevive")
-    CoD.TFPCUtil.LoadFromSaveData("randomize_character")
-    CoD.TFPCUtil.LoadFromSaveData("perk_lose")
-    CoD.TFPCUtil.LoadFromSaveData("bot_count")
-    CoD.TFPCUtil.LoadFromSaveData("boxshare")
-    CoD.TFPCUtil.LoadFromSaveData("bot_command")
-    CoD.TFPCUtil.LoadFromSaveData("bgb_loadout")
-    CoD.TFPCUtil.LoadFromSaveData("cheats")
-    CoD.TFPCUtil.LoadFromSaveData("fixed_cost")
-    CoD.TFPCUtil.LoadFromSaveData("bgb_cost")
-    CoD.TFPCUtil.LoadFromSaveData("modmenu")
-    CoD.TFPCUtil.LoadFromSaveData("player_determined_character")
-    CoD.TFPCUtil.LoadFromSaveData("disable_intro_movie")
-    CoD.TFPCUtil.LoadFromSaveData("bgb_uses")
-    CoD.TFPCUtil.LoadFromSaveData("friendlyfire")
-    CoD.TFPCUtil.LoadFromSaveData("tdoll_zombie")
-    CoD.TFPCUtil.LoadFromSaveData("bgb_off")
-    CoD.TFPCUtil.LoadFromSaveData("version")
-    CoD.TFPCUtil.LoadFromSaveData("subtitles")
-    CoD.TFPCUtil.LoadFromSaveData("cw_scoreevent")
-    CoD.TFPCUtil.LoadFromSaveData("thirdperson")
-    CoD.TFPCUtil.LoadFromSaveData("zombie_healthbar")
+CoD.TFPCUtil.IsOptionExisted = function(varName)
+    if CoD.TFOptionsDefault and CoD.TFOptionsDefault[varName] then
+        return true
+    end
+
+    return false
 end
 
 CoD.TFPCUtil.CheckBoxOptionChecked = function(itemRef, updateTable)
@@ -381,8 +399,12 @@ CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
                 end
                 result.profileType = f6_local5
             else
-
-                result.currentValue = tonumber(CoD.TFPCUtil.GetFromSaveData(varNameString))
+                if UseOldSaveData() then
+                    result.currentValue = tonumber(CoD.TFPCUtil.GetFromSaveData(varNameString))
+                else
+                    local value = CoD.TFPCUtil.GetFromJSON(varNameString)
+                    result.currentValue = value
+                end
                 -- result.currentValue = 1
 
                 if not result.currentValue then
@@ -493,13 +515,43 @@ CoD.TFPCUtil.SetOptionValue = function(itemRef, f7_arg1, newValue)
                     Engine.SetHardwareProfileValue(varNameString, newValue)
                 end
             else
-
-                CoD.TFPCUtil.SetToSaveData(varNameString, newValue, 0)
-
+                if UseOldSaveData() then
+                    CoD.TFPCUtil.SetToSaveData(varNameString, newValue, 0)
+                else
+                    CoD.TFPCUtil.SetToJSON(varNameString, newValue)
+                end
             end
             CoD.TFPCUtil.DirtyOptions(f7_arg1)
         end
     end
+end
+
+CoD.TFPCUtil.GetDirtyFlag = function()
+    if CoD.TFOptionsDirtyFlag then
+        return true
+    end
+
+    return false
+end
+
+CoD.TFPCUtil.SetDirtyFlag = function()
+    CoD.TFOptionsDirtyFlag = true
+end
+
+CoD.TFPCUtil.UnsetDirtyFlag = function()
+    CoD.TFOptionsDirtyFlag = false
+end
+
+CoD.TFPCUtil.ApplyChangesInGame = function(controller)
+    if CoD.isFrontend then
+        return
+    end
+
+    if not CoD.TFPCUtil.GetDirtyFlag then
+        return
+    end
+
+    Engine.SendMenuResponse(controller, "popup_leavegame", "TFOptionsChanged")
 end
 
 CoD.TFPCUtil.GetOptionsDirtyModel = function(f8_arg0, f8_arg1)
@@ -519,6 +571,7 @@ end
 
 CoD.TFPCUtil.DirtyOptions = function(f10_arg0)
     Engine.SetModelValue(CoD.TFPCUtil.GetOptionsDirtyModel(f10_arg0, true), 1)
+    CoD.TFPCUtil.SetDirtyFlag()
 end
 
 CoD.TFPCUtil.IsOptionsDirty = function(f11_arg0)
