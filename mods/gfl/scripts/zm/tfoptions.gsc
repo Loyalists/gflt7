@@ -782,7 +782,7 @@ function should_skip_random_weapon(new_weap)
         return true;
     }
 
-    if ( isdefined(level.start_weapon) || new_weap.name == level.start_weapon.name )
+    if ( isdefined(level.start_weapon) && new_weap.name == level.start_weapon.name )
     {
         return true;
     }
