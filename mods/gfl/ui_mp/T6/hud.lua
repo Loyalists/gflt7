@@ -6,6 +6,8 @@ local Preload = function()
         require("ui.uieditor.widgets.HUD.ZM_NotifFactory.ZMNotificationContainer")
         -- require("ui.uieditor.widgets.HUD.ZM_NotifFactory.ZmNotifBGB_ContainerFactory")
         require( "ui.uieditor.widgets.hud.aae_t9_zombie_health_bar.aae_t9_zombie_health_bar_container" )
+        require( "ui.uieditor.widgets.StartMenu.StartMenu_GameOptions_ZM" )
+        require( "ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout_InGame" )
     end
 end
 

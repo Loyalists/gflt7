@@ -90,6 +90,8 @@ image,uie_ui_icon_minimap_zm_ai_normal
 image,uie_ui_icon_minimap_zm_ai_special
 sound,zm_mod
 rawfile,dummy.cfg
+rawfile,ui/uieditor/menus/startmenu/t6startmenu_gameoptions_zm.lua
+rawfile,ui/uieditor/widgets/startmenu/startmenu_gameoptions_kf2.lua
 scriptparsetree,scripts/_nsz/nsz_powerup_money.csc
 scriptparsetree,scripts/_nsz/nsz_powerup_money.gsc
 scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.csc
@@ -126,6 +128,7 @@ scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc
 scriptparsetree,scripts/zm/bo4_full_ammo.gsc
 scriptparsetree,scripts/zm/infinityloader.gsc
+scriptparsetree,scripts/zm/roamer.gsc
 scriptparsetree,scripts/zm/tfoptions.csc
 scriptparsetree,scripts/zm/tfoptions.gsc
 scriptparsetree,scripts/zm/ugxmods_timedgp.gsc

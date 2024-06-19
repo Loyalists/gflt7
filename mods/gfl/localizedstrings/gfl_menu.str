@@ -69,6 +69,20 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
+REFERENCE            TFOPTIONS_SHORT
+LANG_ENGLISH         "TF OPTIONS"
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
 REFERENCE            IOP_WIKI
 LANG_ENGLISH         "IOP WIKI"
 LANG_GERMAN         "#same"

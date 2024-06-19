@@ -13,6 +13,9 @@ localize,gfl_zm
 localize,subevent
 localize,scoreevent
 
+rawfile,ui/uieditor/menus/startmenu/t6startmenu_gameoptions_zm.lua
+rawfile,ui/uieditor/widgets/startmenu/StartMenu_GameOptions_KF2.lua
+
 image,img_loadscreen_zm_factory
 image,t7_menu_zm_loadscreen_sumpf
 image,t7_menu_zm_loadscreen_theater
@@ -71,6 +74,8 @@ scriptparsetree,scripts/zm/better_nuke.gsc
 
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.csc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.gsc
+
+scriptparsetree,scripts/zm/roamer.gsc
 
 // NSZ Zombie Money 
 scriptparsetree,scripts/_NSZ/nsz_powerup_money.gsc

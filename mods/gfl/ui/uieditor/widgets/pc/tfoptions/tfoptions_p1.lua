@@ -31,6 +31,7 @@ CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
 	Widget:makeFocusable()
 	Widget.onlyChildrenFocusable = true
 	Widget.anyChildUsesUpdateState = true
+
 	local f2_local1 = LUI.UIList.new(HudRef, InstanceRef, 0, 0, nil, false, false, 0, 0, false, false)
 	f2_local1:makeFocusable()
 	f2_local1:setLeftRight(true, false, 0, 500)
@@ -48,6 +49,18 @@ CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
 	Widget:addElement(f2_local2)
 	Widget.optionInfo = f2_local2
 	
+	local InGameNote = LUI.UIText.new()
+	InGameNote:setLeftRight( true, false, 550, 1050 )
+	InGameNote:setTopBottom( true, false, 400, 400 + CoD.textSize.Default )
+	InGameNote:setRGB( 0.74, 0.74, 0.74 )
+	InGameNote:setAlpha( 0 )
+	InGameNote:setText( Engine.Localize( "TF_MENU_INGAME_NOTE" ) )
+	InGameNote:setTTF( "fonts/default.ttf" )
+	InGameNote:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
+	InGameNote:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	Widget:addElement(InGameNote)
+	Widget.InGameNote = InGameNote
+	
 	f2_local2:linkToElementModel(f2_local1, "description", true, function (ModelRef)
 		local ModelValue = Engine.GetModelValue(ModelRef)
 		if ModelValue then
@@ -61,6 +74,41 @@ CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
 		end
 	end)
 	f2_local1.id = "gameOptionList"
+
+	Widget.clipsPerState = {
+		DefaultState = {
+			DefaultClip = function ()
+				Widget:setupElementClipCounter( 1 )
+
+				InGameNote:completeAnimation()
+				Widget.InGameNote:setAlpha( 0 )
+				Widget.clipFinished( InGameNote, {} )
+			end
+		},
+		InGame = {
+			DefaultClip = function ()
+				Widget:setupElementClipCounter( 1 )
+
+				InGameNote:completeAnimation()
+				Widget.InGameNote:setAlpha( 1 )
+				Widget.clipFinished( InGameNote, {} )
+			end
+		}
+	}
+
+	Widget:mergeStateConditions( {
+		{
+			stateName = "InGame",
+			condition = function ( menu, element, event )
+				if CoD.isFrontend then
+					return false
+				end
+
+				return true
+			end
+		}
+	} )
+
 	Widget:registerEventHandler("gain_focus", function (Sender, Event)
 		if Sender.m_focusable then
 			local f6_local0 = Sender.gameOptionList

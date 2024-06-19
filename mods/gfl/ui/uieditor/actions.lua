@@ -54,7 +54,11 @@ function OpenTFOptions_InGame( f427_arg0, f427_arg1, f427_arg2 )
 end
 
 function OpenModInfo( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )
-	CoD.LobbyBase.OpenModInfo( f206_arg0, f206_arg2 )
+	OpenOverlay(f206_arg0, "ModInfo", f206_arg2)
+end
+
+function OpenModInfo_InGame( f427_arg0, f427_arg1, f427_arg2 )
+	OpenOverlay(f427_arg0, "ModInfo", f427_arg2)
 end
 
 function OpenZMInfoPopup( InstanceRef, arg1, arg2 )
@@ -216,10 +220,19 @@ function GetHeroesList_InGame( customizationMode )
     table.insert(heroes, {
 		character = "m16a1",
         displayName = "M16A1 (SF)",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_m16a1",
-		frozenMomentRender = "t7_menu_choosespecialist_default_m16a1",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_m16a1_sf",
+		frozenMomentRender = "t7_menu_choosespecialist_default_m16a1_sf",
 		disabled = false,
 		gameImageOff = "t7_gfl_chibi_m16a1",
+    })
+
+    table.insert(heroes, {
+		character = "m4a1",
+        displayName = "M4A1",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_m4a1",
+		frozenMomentRender = "t7_menu_choosespecialist_default_m4a1",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_m4a1",
     })
 
     table.insert(heroes, {
@@ -414,8 +427,8 @@ function GetHeroesList_InGame( customizationMode )
     table.insert(heroes, {
 		character = "macqiato",
         displayName = "WA2000",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_macqiato",
-		frozenMomentRender = "t7_menu_choosespecialist_default_macqiato",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_wa2000",
+		frozenMomentRender = "t7_menu_choosespecialist_default_wa2000",
 		disabled = false,
 		gameImageOff = "t7_gfl_chibi_macqiato",
     })

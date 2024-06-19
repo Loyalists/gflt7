@@ -278,6 +278,12 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                 action = OpenZMChooseCharacterLoadout_InGame
             }
         })
+        table.insert(f89_local0, {
+            models = {
+                displayText = "GFL_MENU_MOD_INFO",
+                action = OpenModInfo_InGame
+            }
+        })
         if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) == true then
             table.insert(f89_local0, {
                 models = {

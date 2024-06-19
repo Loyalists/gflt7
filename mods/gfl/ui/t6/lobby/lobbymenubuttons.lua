@@ -770,10 +770,6 @@ CoD.LobbyBase.OpenTFOptions = function(arg0, arg1)
     end)
 end
 
-CoD.LobbyBase.OpenModInfo = function(arg0, arg1)
-    OpenOverlay(arg0, "ModInfo", arg1)
-end
-
 CoD.LobbyButtons.OPEN_WORKSHOP = {
     stringRef = "GFL_MENU_WORKSHOP_CAPS",
     action = OpenWorkshop,
@@ -787,7 +783,7 @@ CoD.LobbyButtons.ZM_TFOPTIONS = {
 }
 
 CoD.LobbyButtons.ZM_CHARACTERS = {
-    stringRef = "GFL_MENU_CHARACTERS",
+    stringRef = "CPUI_CHOOSE_CHARACTER_CAPS",
     action = OpenZMChooseCharacterLoadout,
     param = LuaEnums.CHOOSE_CHARACTER_OPENED_FROM.LOBBY,
     customId = "btnZMCharacters"

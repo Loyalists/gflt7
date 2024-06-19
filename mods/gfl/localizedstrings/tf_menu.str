@@ -293,4 +293,18 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
+REFERENCE            INGAME_NOTE
+LANG_ENGLISH         "You are accessing TF's Zombie Options mid-game. Not all features will make changes after tweaking the options. Restart the map to make sure all edits take effect."
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
 ENDMARKER

@@ -1,10 +1,6 @@
--- e1ccafa544f099b4cadf7cf661e433bb
--- This hash is used for caching, delete to decompile the file again
-
 require( "ui.uieditor.widgets.Lobby.Common.List1ButtonLarge_PH" )
 require( "ui.uieditor.widgets.Utilities.ProgressBar_Rank" )
 require( "ui.uieditor.widgets.ZMPromotional.ZM_PromoIconList" )
-require( "ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout_InGame" )
 
 DataSources.StartMenuGameOptions_ZM = ListHelper_SetupDataSource("StartMenuGameOptions_ZM", function(f89_arg0)
     local f89_local0 = {}
@@ -32,6 +28,12 @@ DataSources.StartMenuGameOptions_ZM = ListHelper_SetupDataSource("StartMenuGameO
 		models = {
 			displayText = "CPUI_CHOOSE_CHARACTER_CAPS",
 			action = OpenZMChooseCharacterLoadout_InGame
+		}
+	})
+	table.insert(f89_local0, {
+		models = {
+			displayText = "GFL_MENU_MOD_INFO",
+			action = OpenModInfo_InGame
 		}
 	})
 	if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) == true then
@@ -81,7 +83,7 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	buttonList:setLeftRight( true, false, 12, 292 )
 	buttonList:setTopBottom( true, false, 4.91, 172.91 )
 	buttonList:setWidgetType( CoD.List1ButtonLarge_PH )
-	buttonList:setVerticalCount( 7 )
+	buttonList:setVerticalCount( 10 )
 	buttonList:setDataSource( "StartMenuGameOptions_ZM" )
 	buttonList:registerEventHandler( "gain_focus", function ( element, event )
 		local f2_local0 = nil
