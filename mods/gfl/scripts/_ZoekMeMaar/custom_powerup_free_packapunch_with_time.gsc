@@ -41,8 +41,13 @@ function init_packapunch_powerup()
 	zm_powerups::register_powerup( "free_packapunch", &grab_free_pap );
 	if( ToLower( GetDvarString( "g_gametype" ) ) != "zcleansed" )
 	{
-		zm_powerups::add_zombie_powerup( "free_packapunch", "free_packapunch", "", &zm_powerups::func_should_always_drop, POWERUP_ONLY_AFFECTS_GRABBER, !POWERUP_ANY_TEAM, !POWERUP_ZOMBIE_GRABBABLE );
+		zm_powerups::add_zombie_powerup( "free_packapunch", "free_packapunch", "", &func_should_drop, POWERUP_ONLY_AFFECTS_GRABBER, !POWERUP_ANY_TEAM, !POWERUP_ZOMBIE_GRABBABLE );
 	}
+}
+
+function func_should_drop()
+{
+	return true;
 }
 
 function grab_free_pap( player )

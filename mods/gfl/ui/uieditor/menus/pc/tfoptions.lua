@@ -173,6 +173,15 @@ DataSources.TFOptionsP2 = DataSourceHelpers.ListSetup("PC.TFOptionsP2", function
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_HUD",
+            description = "TF_HUD_DESC",
+            profileVarName = "hud",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
     return f26_local0
 end, true)
 

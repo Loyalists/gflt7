@@ -131,12 +131,14 @@ function autoexec auto_preload()
     level.tfoptions_default["cw_scoreevent"] = 0;
     level.tfoptions_default["thirdperson"] = 0;
     level.tfoptions_default["zombie_healthbar"] = 0;
+    level.tfoptions_default["hud"] = 0;
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         set_default_tfoptions();
     }
     
     level.tfoptions_old = [];
+    level.tfoptions_old_zombie_vars = [];
 }
 
 function init()
@@ -299,65 +301,6 @@ function wait_for_tfoptions_changed()
     }
 }
 
-function wait_for_powerup_options_changed()
-{
-	level endon("game_ended");
-	level endon("end_game");
-
-    while (true)
-    {
-        //bo4 max ammo
-        if ( isdefined(level._custom_powerups["full_ammo"]) )
-        {
-            if( GetDvarInt("tfoption_bo4_max_ammo", 0) ) 
-            {
-                level._custom_powerups[ "full_ammo" ].grab_powerup = &bo4_full_ammo::grab_full_ammo;
-            }
-            else
-            {
-                if ( isdefined(level._custom_powerups[ "full_ammo" ]._grab_powerup_old) )
-                {
-                    level._custom_powerups[ "full_ammo" ].grab_powerup = level._custom_powerups[ "full_ammo" ]._grab_powerup_old;
-                }
-            }
-        }
-
-        if ( isdefined(level._custom_powerups["nuke"]) )
-        {
-            if( GetDvarInt("tfoption_better_nuke", 0) )
-            {
-                level._custom_powerups[ "nuke" ].grab_powerup = &better_nuke::grab_nuke;
-            }
-            else
-            {
-                if ( isdefined(level._custom_powerups[ "nuke" ]._grab_powerup_old) )
-                {
-                    level._custom_powerups[ "nuke" ].grab_powerup = level._custom_powerups[ "nuke" ]._grab_powerup_old;
-                }
-            }
-        }
-
-        //free perk
-        if ( isdefined(level.zombie_powerups["free_perk"]) )
-        {
-            if( GetDvarInt("tfoption_perk_powerup", 0) ) 
-            {
-                level.zombie_powerups["free_perk"].func_should_drop_with_regular_powerups = &zm_powerups::func_should_always_drop;
-            }
-            else
-            {
-                if ( isdefined(level.zombie_powerups["free_perk"]._func_should_drop_with_regular_powerups_old) )
-                {
-                    level.zombie_powerups["free_perk"].func_should_drop_with_regular_powerups = level.zombie_powerups["free_perk"]._func_should_drop_with_regular_powerups_old;
-                }
-            }
-        }
-
-        WAIT_SERVER_FRAME;
-        level util::waittill_any_return("tfoption_bo4_max_ammo_changed", "tfoption_better_nuke_changed", "tfoption_perk_powerup_changed");
-    }
-}
-
 function wait_for_player_options_changed()
 {
 	level endon("game_ended");
@@ -432,6 +375,124 @@ function wait_for_more_powerups_changed()
     }
 }
 
+function wait_for_perk_options_changed()
+{
+	level endon("game_ended");
+	level endon("end_game");
+
+    while (true)
+    {
+        //bigger mulekick (4gun)
+        if( GetDvarInt("tfoption_bigger_mule", 0) ) 
+        {
+            level.additionalprimaryweapon_limit = 4;
+        }
+        else
+        {
+            level.additionalprimaryweapon_limit = level._additionalprimaryweapon_limit_old;
+        }
+
+        no_perk_lim = GetDvarInt("tfoption_no_perk_lim", 0);
+        if ( no_perk_lim )
+        {
+            level.perk_purchase_limit = 50;
+        }
+        else
+        {
+            level.perk_purchase_limit = level._perk_purchase_limit_old;
+        }
+
+        WAIT_SERVER_FRAME;
+        level util::waittill_any_return("tfoption_no_perk_lim_changed", "tfoption_bigger_mule_changed");
+    }
+}
+
+function wait_for_zombie_bonus_options_changed()
+{
+	level endon("game_ended");
+	level endon("end_game");
+
+    while (true)
+    {
+        //extra cash
+        extra_cash = GetDvarInt("tfoption_extra_cash", 0);
+        if( extra_cash ) 
+        {
+            zombie_utility::set_zombie_var( "zombie_score_kill_4player", 		level.tfoptions_old_zombie_vars["zombie_score_kill_4player"] + extra_cash );
+            zombie_utility::set_zombie_var( "zombie_score_kill_3player",		level.tfoptions_old_zombie_vars["zombie_score_kill_3player"] + extra_cash );
+            zombie_utility::set_zombie_var( "zombie_score_kill_2player",		level.tfoptions_old_zombie_vars["zombie_score_kill_2player"] + extra_cash );
+            zombie_utility::set_zombie_var( "zombie_score_kill_1player",		level.tfoptions_old_zombie_vars["zombie_score_kill_1player"] + extra_cash );
+        }
+        else
+        {
+            zombie_utility::set_zombie_var( "zombie_score_kill_4player", 		level.tfoptions_old_zombie_vars["zombie_score_kill_4player"] );
+            zombie_utility::set_zombie_var( "zombie_score_kill_3player",		level.tfoptions_old_zombie_vars["zombie_score_kill_3player"] );
+            zombie_utility::set_zombie_var( "zombie_score_kill_2player",		level.tfoptions_old_zombie_vars["zombie_score_kill_2player"] );
+            zombie_utility::set_zombie_var( "zombie_score_kill_1player",		level.tfoptions_old_zombie_vars["zombie_score_kill_1player"] );
+        }
+
+        //melee + headshot bonus
+        melee_bonus = GetDvarInt("tfoption_melee_bonus", 0);
+        old_melee_bonus = level.tfoptions_old_zombie_vars["zombie_score_bonus_melee"];
+        if( melee_bonus )
+        {
+            zombie_utility::set_zombie_var( "zombie_score_bonus_melee", old_melee_bonus + melee_bonus );
+        }
+        else
+        {
+            zombie_utility::set_zombie_var( "zombie_score_bonus_melee", old_melee_bonus );
+        }
+
+        headshot_bonus = GetDvarInt("tfoption_headshot_bonus", 0);
+        old_headshot_bonus = level.tfoptions_old_zombie_vars["zombie_score_bonus_head"];
+        if( headshot_bonus )
+        {
+            zombie_utility::set_zombie_var( "zombie_score_bonus_head", old_headshot_bonus + headshot_bonus );
+        }
+        else
+        {
+            zombie_utility::set_zombie_var( "zombie_score_bonus_head", old_headshot_bonus );
+        }
+
+        WAIT_SERVER_FRAME;
+        level util::waittill_any_return("tfoption_extra_cash_changed", "tfoption_melee_bonus_changed", "tfoption_headshot_bonus_changed");
+    }
+}
+
+function wait_for_zombie_options_changed()
+{
+	level endon("game_ended");
+	level endon("end_game");
+
+    while (true)
+    {
+        //weaker zombs
+        if( GetDvarInt("tfoption_weaker_zombs", 0) ) 
+        {
+            zombie_utility::set_zombie_var( "zombie_health_increase_multiplier", 0.075, true);
+        }
+        else
+        {
+            old_multiplier = level.tfoptions_old_zombie_vars["zombie_health_increase_multiplier"];
+            zombie_utility::set_zombie_var( "zombie_health_increase_multiplier", old_multiplier, true);
+        }
+
+        //no spawn delay
+        if( GetDvarInt("tfoption_no_delay", 0) ) 
+        {
+            zombie_utility::set_zombie_var( "zombie_spawn_delay", 0, true);
+        }
+        else
+        {
+            old_spawn_delay = level.tfoptions_old_zombie_vars["zombie_spawn_delay"];
+            zombie_utility::set_zombie_var( "zombie_spawn_delay", old_spawn_delay, true);
+        }
+
+        WAIT_SERVER_FRAME;
+        level util::waittill_any_return("tfoption_weaker_zombs_changed", "tfoption_no_delay_changed");
+    }
+}
+
 function load_tf_options(){
     
     level endon("game_ended");
@@ -443,8 +504,10 @@ function load_tf_options(){
 
     apply_choices();
     thread wait_for_player_options_changed();
-    thread wait_for_powerup_options_changed();
+    thread wait_for_perk_options_changed();
     thread wait_for_more_powerups_changed();
+    thread wait_for_zombie_options_changed();
+    thread wait_for_zombie_bonus_options_changed();
 
     //notify csc for client side scripts
     foreach(player in level.players){
@@ -456,6 +519,23 @@ function load_tf_options(){
     }
     
     level notify("menu_closed");
+}
+
+function save_old_zombie_var(zvar, default_value)
+{
+    if ( !isdefined(level.tfoptions_old_zombie_vars) )
+    {
+        level.tfoptions_old_zombie_vars = [];
+    }
+
+    if ( isdefined(level.zombie_vars[zvar]) )
+    {
+        level.tfoptions_old_zombie_vars[zvar] = level.zombie_vars[zvar];
+    }
+    else
+    {
+        level.tfoptions_old_zombie_vars[zvar] = default_value;
+    }
 }
 
 function apply_choices() {
@@ -481,36 +561,15 @@ function apply_choices() {
      
     //no perk limit
     level._perk_purchase_limit_old = level.perk_purchase_limit;
-    no_perk_lim = GetDvarInt("tfoption_no_perk_lim", 0);
-    if ( no_perk_lim ) {
-        level.perk_purchase_limit = 50;
-    } 
-
-    //bigger mulekick (4gun)
-    if( GetDvarInt("tfoption_bigger_mule", 0) ) 
+    if ( !isdefined(level._perk_purchase_limit_old) )
     {
-        level.additionalprimaryweapon_limit = 4;
+        level._perk_purchase_limit_old = 4;
     }
 
-    //extra cash
-    if( GetDvarInt("tfoption_extra_cash", 0) ) 
+    level._additionalprimaryweapon_limit_old = level.additionalprimaryweapon_limit;
+    if ( !isdefined(level._additionalprimaryweapon_limit_old) )
     {
-        zombie_utility::set_zombie_var( "zombie_score_kill_4player", 		50 + GetDvarInt("tfoption_extra_cash") );		
-	    zombie_utility::set_zombie_var( "zombie_score_kill_3player",		50 + GetDvarInt("tfoption_extra_cash") );		
-	    zombie_utility::set_zombie_var( "zombie_score_kill_2player",		50 + GetDvarInt("tfoption_extra_cash") );		
-	    zombie_utility::set_zombie_var( "zombie_score_kill_1player",		50 + GetDvarInt("tfoption_extra_cash") );	
-    } 
-
-    //weaker zombs
-    if( GetDvarInt("tfoption_weaker_zombs", 0) ) {
-        zombie_utility::set_zombie_var( "zombie_health_increase_multiplier", 0.075);
-    }
-
-    //zombs always sprint
-    if( GetDvarInt("tfoption_zombs_always_sprint", 0)) {
-        zombie_utility::set_zombie_var( "zombie_move_speed_multiplier", 75,	false );
-	    level.zombie_move_speed	= 1090;
-        level thread sprintSetter();
+        level._additionalprimaryweapon_limit_old = 3;
     }
 
     //starting round
@@ -519,14 +578,25 @@ function apply_choices() {
     {
         zm::set_round_number(starting_round);
         level.zombie_move_speed	= starting_round * level.zombie_vars["zombie_move_speed_multiplier"]; 
-    } 
-
-    //melee + headshot bonus
-    if( GetDvarInt("tfoption_melee_bonus", 0) )
-    {
-        zombie_utility::set_zombie_var( "zombie_score_bonus_melee", (80 + GetDvarInt("tfoption_melee_bonus")) );
-        zombie_utility::set_zombie_var( "zombie_score_bonus_head", (50 + GetDvarInt("tfoption_melee_bonus")) );
     }
+
+    save_old_zombie_var("zombie_score_kill_4player", 50);
+    save_old_zombie_var("zombie_score_kill_3player", 50);
+    save_old_zombie_var("zombie_score_kill_2player", 50);
+    save_old_zombie_var("zombie_score_kill_1player", 50);
+
+    save_old_zombie_var("zombie_health_increase_multiplier", 0.1);
+
+    //zombs always sprint
+    if( GetDvarInt("tfoption_zombs_always_sprint", 0)) 
+    {
+        zombie_utility::set_zombie_var( "zombie_move_speed_multiplier", 75,	false );
+	    level.zombie_move_speed	= 1090;
+        level thread sprintSetter();
+    }
+
+    save_old_zombie_var("zombie_score_bonus_melee", 80);
+    save_old_zombie_var("zombie_score_bonus_head", 50);
 
     //max zombie count 
     zombielimit = GetDvarInt("tfoption_max_zombies", 0);
@@ -536,13 +606,11 @@ function apply_choices() {
         level.zombie_actor_limit = zombielimit;
     }
 
-    //no spawn delay
-    if( GetDvarInt("tfoption_no_delay", 0) ) {
-        zombie_utility::set_zombie_var( "zombie_spawn_delay", 0, true);
-    }
+    save_old_zombie_var("zombie_spawn_delay", 2.0);
 
     //no round delay
-    if( GetDvarInt("tfoption_no_round_delay", 0) ) {
+    if( GetDvarInt("tfoption_no_round_delay", 0) ) 
+    {
         zombie_utility::set_zombie_var( "zombie_between_round_time", 0);
     }
 
@@ -552,25 +620,30 @@ function apply_choices() {
     if ( isdefined(level._custom_powerups["full_ammo"]) )
     {
         level._custom_powerups[ "full_ammo" ]._grab_powerup_old = level._custom_powerups[ "full_ammo" ].grab_powerup;
+        level._custom_powerups[ "full_ammo" ].grab_powerup = &grab_full_ammo_wrapper;
     }
 
     if ( isdefined(level._custom_powerups["nuke"]) )
     {
         level._custom_powerups[ "nuke" ]._grab_powerup_old = level._custom_powerups[ "nuke" ].grab_powerup;
+        level._custom_powerups[ "nuke" ].grab_powerup = &grab_nuke_wrapper;
     }
 
     if ( isdefined(level.zombie_powerups["free_perk"]) )
     {
         level.zombie_powerups["free_perk"]._func_should_drop_with_regular_powerups_old = level.zombie_powerups["free_perk"].func_should_drop_with_regular_powerups;
+        level.zombie_powerups["free_perk"].func_should_drop_with_regular_powerups = &free_perk_wrapper;
     }
 
     //zombie cash powerup
-    if( GetDvarInt("tfoption_zcash_powerup", 0) ) {
+    if( GetDvarInt("tfoption_zcash_powerup", 0) ) 
+	{
         nsz_powerup_money::init_zcash_powerup();
     }
 
     //packapunch powerup
-    if( GetDvarInt("tfoption_packapunch_powerup", 0) ) {
+    if( GetDvarInt("tfoption_packapunch_powerup", 0) ) 
+    {
         custom_powerup_free_packapunch_with_time::init_packapunch_powerup();
     }
 
@@ -578,6 +651,7 @@ function apply_choices() {
     // if(GetDvarInt("tfoption_bottomless_clip_powerup") == 1) {
     //     nsz_powerup_bottomless_clip::init_bottomless_clip();
     // }
+    
     //zombie blood
     // if(GetDvarInt("tfoption_zblood_powerup") == 1) {
     //     nsz_powerup_zombie_blood::init_zblood();
@@ -606,6 +680,51 @@ function apply_choices() {
     //start with the power on
     if( GetDvarInt("tfoption_start_power", 0) ) {
         thread start_with_power();
+    }
+}
+
+function grab_full_ammo_wrapper( player )
+{	
+    if( GetDvarInt("tfoption_bo4_max_ammo", 0) ) 
+    {
+        self bo4_full_ammo::grab_full_ammo( player );
+    }
+    else
+    {
+        if ( isdefined(level._custom_powerups[ "full_ammo" ]._grab_powerup_old) )
+        {
+            self [[level._custom_powerups[ "full_ammo" ]._grab_powerup_old]]( player );
+        }
+    }
+}
+
+function grab_nuke_wrapper( player )
+{	
+    if( GetDvarInt("tfoption_better_nuke", 0) )
+    {
+        self better_nuke::grab_nuke( player );
+    }
+    else
+    {
+        if ( isdefined(level._custom_powerups[ "nuke" ]._grab_powerup_old) )
+        {
+            self [[level._custom_powerups[ "nuke" ]._grab_powerup_old]]( player );
+        }
+    }
+}
+
+function free_perk_wrapper()
+{	
+    if( GetDvarInt("tfoption_perk_powerup", 0) ) 
+    {
+        return zm_powerups::func_should_always_drop();
+    }
+    else
+    {
+        if ( isdefined(level.zombie_powerups["free_perk"]._func_should_drop_with_regular_powerups_old) )
+        {
+            return [[level.zombie_powerups["free_perk"]._func_should_drop_with_regular_powerups_old]]();
+        }
     }
 }
 

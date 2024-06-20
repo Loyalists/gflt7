@@ -13,7 +13,10 @@ localize,gfl_zm
 localize,subevent
 localize,scoreevent
 
-rawfile,ui/uieditor/menus/startmenu/t6startmenu_gameoptions_zm.lua
+rawfile,ui/uieditor/menus/startmenu/T6StartMenu_GameOptions_ZM.lua
+rawfile,ui/uieditor/menus/startmenu/H1StartMenu_GameOptions_ZM.lua
+rawfile,ui/uieditor/menus/startmenu/IW7StartMenu_GameOptions_ZM.lua
+rawfile,ui/uieditor/menus/startmenu/S4StartMenu_GameOptions_ZM.lua
 rawfile,ui/uieditor/widgets/startmenu/StartMenu_GameOptions_KF2.lua
 
 image,img_loadscreen_zm_factory

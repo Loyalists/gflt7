@@ -1,5 +1,4 @@
 require("ui.uieditor.widgets.Lobby.Common.T6ButtonListItem")
-require("ui.uieditor.widgets.StartMenu.StartMenu_GameOptions_ZM")
 
 DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOptions", function(f1_arg0)
     local f1_local0 = {}

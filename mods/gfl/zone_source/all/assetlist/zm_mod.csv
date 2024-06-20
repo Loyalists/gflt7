@@ -90,6 +90,9 @@ image,uie_ui_icon_minimap_zm_ai_normal
 image,uie_ui_icon_minimap_zm_ai_special
 sound,zm_mod
 rawfile,dummy.cfg
+rawfile,ui/uieditor/menus/startmenu/h1startmenu_gameoptions_zm.lua
+rawfile,ui/uieditor/menus/startmenu/iw7startmenu_gameoptions_zm.lua
+rawfile,ui/uieditor/menus/startmenu/s4startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/menus/startmenu/t6startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/widgets/startmenu/startmenu_gameoptions_kf2.lua
 scriptparsetree,scripts/_nsz/nsz_powerup_money.csc

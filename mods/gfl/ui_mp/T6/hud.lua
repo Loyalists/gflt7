@@ -13,6 +13,9 @@ end
 
 local function AddCustomHUDElements_Zombie(menu, controller)
     local f6_local1 = menu:getParent()
+	if Engine.DvarInt(nil, "tfoption_hud") ~= 0 then
+        menu:setupHUDShaker()
+	end
 
     local ZMNotificationContainer = CoD.ZMNotificationContainer.new(menu, controller)
     -- if Engine.GetCurrentMap() == "zm_log_kowloon" then

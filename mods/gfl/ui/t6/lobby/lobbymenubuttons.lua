@@ -783,7 +783,7 @@ CoD.LobbyButtons.ZM_TFOPTIONS = {
 }
 
 CoD.LobbyButtons.ZM_CHARACTERS = {
-    stringRef = "CPUI_CHOOSE_CHARACTER_CAPS",
+    stringRef = "GFL_MENU_CHARACTERS",
     action = OpenZMChooseCharacterLoadout,
     param = LuaEnums.CHOOSE_CHARACTER_OPENED_FROM.LOBBY,
     customId = "btnZMCharacters"

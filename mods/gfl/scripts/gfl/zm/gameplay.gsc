@@ -338,22 +338,24 @@ function friendlyfire_damage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfD
 }
 
 function friendlyfire_logic( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath, weapon, vPoint, vDir, sHitLoc, psOffsetTime, boneIndex )
-{    
+{
+    dmg = int(100/4);
+    dmg_shared = int(dmg / 2);
     switch(GetDvarInt("tfoption_friendlyfire", 0)) 
     {
         case 1:
             //normal ff
-            self DoDamage(int(100/4), vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            self DoDamage(dmg, vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
             break;
     
         case 2:
             //share both
-            eAttacker DoDamage(int(100/2), eAttacker GetEye(), undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
-            self DoDamage(int(100/2), vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            eAttacker DoDamage(dmg_shared, eAttacker GetEye(), undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            self DoDamage(dmg_shared, vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
     
         case 3:
             //revert to me
-            eAttacker DoDamage(int(100/4), eAttacker GetEye(), undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+            eAttacker DoDamage(dmg, eAttacker GetEye(), undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
             break;
     
         case 4:
@@ -368,13 +370,13 @@ function friendlyfire_logic( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDe
             //ff but cant kill
             if(self.health != 0 || self.health != 1)
             {
-                if( int(100/4) >= self.health)
+                if( dmg >= self.health)
                 { 
                     self DoDamage(self.health - 1, vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
                 }
                 else
                 {
-                    self DoDamage(int(100/4), vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
+                    self DoDamage(dmg, vPoint, undefined, undefined, sHitLoc, "MOD_PROJECTILE", iDFlags , GetWeapon("pistol_standard_upgraded"));
                 }
             }
             else

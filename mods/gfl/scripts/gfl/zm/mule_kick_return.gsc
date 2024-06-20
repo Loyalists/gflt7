@@ -98,7 +98,7 @@ function mulekick_return_watcher()
 			continue;
 		}
 
-		foreach(player in GetPlayers())
+		foreach(player in level.activeplayers)
 		{
 			if ( player IsTestClient() )
 			{
@@ -127,13 +127,7 @@ function mulekick_return_watcher()
 
 			xuid = player getXuid(true);
 			weapon = player GetWeaponsListPrimaries()[2];
-			if (isdefined(weapon) 
-				&& isweapon(weapon) 
-				&& self hasweapon(weapon)
-				&& ( !isdefined(self.laststandpistol) || weapon != self.laststandpistol )
-				&& ( !isdefined(level.zombie_powerup_weapon[ "minigun" ]) || weapon != level.zombie_powerup_weapon[ "minigun" ] )
-				&& zm_weapons::is_weapon_or_base_included( weapon ) 
-				&& !is_special_weapon(weapon))
+			if (player should_return_weapon(weapon))
 			{
 				level.mulekick_weapon[xuid] = weapon;
 				level.mulekick_clip[xuid] = player getWeaponAmmoClip(weapon);
@@ -149,6 +143,41 @@ function mulekick_return_watcher()
 		WAIT_SERVER_FRAME;
 		wait 2.0001;
 	}
+}
+
+function should_return_weapon(weapon)
+{
+	if ( !isdefined(weapon) || !isweapon(weapon) )
+	{
+		return false;
+	}
+
+	if ( !self hasweapon(weapon) )
+	{
+		return false;
+	}
+
+	if ( isdefined(self.laststandpistol) && weapon.name == self.laststandpistol.name )
+	{
+		return false;
+	}
+
+	if ( isdefined(level.zombie_powerup_weapon[ "minigun" ]) && weapon.name == level.zombie_powerup_weapon[ "minigun" ].name )
+	{
+		return false;
+	}
+
+	if ( !zm_weapons::is_weapon_or_base_included( weapon ) )
+	{
+		return false;
+	}
+
+	if ( is_special_weapon(weapon) )
+	{
+		return false;
+	}
+
+	return true;
 }
 
 function is_special_weapon(weapon)

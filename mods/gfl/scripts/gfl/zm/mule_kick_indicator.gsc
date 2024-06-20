@@ -46,62 +46,7 @@ function on_player_connect()
 {
 	self endon("disconnect");
 	
-	if(GetDvarInt("tfoption_bigger_mule") == 1) 
-	{
-		self thread quad_kick_indicator();
-	}
-	else
-	{
-		self thread mule_kick_indicator();
-	}
-}
-
-function quad_kick_indicator()
-{
-	self endon("disconnect");
-
-	if( !isDefined( self.mulekick_icon ) )
-	{
-		self.mulekick_icon = newClientHudElem(self);
-		self.mulekick_icon.horzAlign = "right";
-		self.mulekick_icon.vertAlign = "bottom";
-		self.mulekick_icon.x = -150;
-		self.mulekick_icon.y = -120;
-		self.mulekick_icon.alpha = 0;
-		self.mulekick_icon.archived = true;
-		self.mulekick_icon.hidewheninmenu = true;
-	}
-
-	self.mulekick_icon setShader( "specialty_three_guns_zombies", 24, 24 ); 
-	
-	while(1)
-	{
-		if ( self should_hide_indicator() )
-		{
-			wait 0.1;
-			continue;
-		}
-
-		if(
-			self GetWeaponsListPrimaries().size <= 4 
-			&& self GetWeaponsListPrimaries().size != 1 
-			&& self hasPerk("specialty_additionalprimaryweapon") 
-			&& ((isDefined(self GetWeaponsListPrimaries()[2]) && self GetCurrentWeapon() == self GetWeaponsListPrimaries()[2] )	|| (isDefined(self GetWeaponsListPrimaries()[3]) && self GetCurrentWeapon() == self GetWeaponsListPrimaries()[3] ) )
-		)
-		{
-			self.mulekick_icon FadeOverTime(0.1);
-			self.mulekick_icon.alpha = 1;
-			wait 1;
-			self.mulekick_icon FadeOverTime(0.1);
-			self.mulekick_icon.alpha = 0;
-		}
-		else
-		{
-			self.mulekick_icon FadeOverTime(0.1);
-			self.mulekick_icon.alpha = 0;
-		}
-		self util::waittill_any_return( "fake_death", "death", "player_downed", "weapon_change", "perk_abort_drinking", "weapon_give" ,"shield_update");//WAIT_SERVER_FRAME;
-	}
+	self thread mule_kick_indicator();
 }
 
 function mule_kick_indicator()
@@ -130,13 +75,7 @@ function mule_kick_indicator()
 			continue;
 		}
 
-		if(
-			self GetWeaponsListPrimaries().size <= 3 
-			&& self GetWeaponsListPrimaries().size != 1 
-			&& self hasPerk("specialty_additionalprimaryweapon") 
-			&& isDefined(self GetWeaponsListPrimaries()[2]) 
-			&& self GetCurrentWeapon() == self GetWeaponsListPrimaries()[2] 
-		)
+		if( self should_show_indicator() )
 		{
 			self.mulekick_icon FadeOverTime(0.1);
 			self.mulekick_icon.alpha = 1;
@@ -151,6 +90,37 @@ function mule_kick_indicator()
 		}
 		self util::waittill_any_return( "fake_death", "death", "player_downed", "weapon_change", "perk_abort_drinking", "weapon_give" ,"shield_update");//WAIT_SERVER_FRAME;
 	}
+}
+
+function should_show_indicator()
+{
+	if ( !isdefined(self) || !isalive(self) )
+	{
+		return false;
+	}
+
+	if ( !self HasPerk("specialty_additionalprimaryweapon") )
+	{
+		return false;
+	}
+
+	weapon_count = self GetWeaponsListPrimaries().size;
+	if ( weapon_count < 3 )
+	{
+		return false;
+	}
+
+	if ( isDefined(self GetWeaponsListPrimaries()[2]) && self GetCurrentWeapon() == self GetWeaponsListPrimaries()[2] )
+	{
+		return true;
+	}
+
+	if ( weapon_count >= 4 && isDefined(self GetWeaponsListPrimaries()[3]) && self GetCurrentWeapon() == self GetWeaponsListPrimaries()[3] )
+	{
+		return true;
+	}
+
+	return false;
 }
 
 function should_hide_indicator()

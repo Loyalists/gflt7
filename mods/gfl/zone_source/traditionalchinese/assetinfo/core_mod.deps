@@ -21,7 +21,7 @@ localize,gfl_menu
 localize,gfl_modinfo
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\gfl_modinfo.str,1717349308,
 localize,tf
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\tf.str,1718472404,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\tf.str,1718820345,
 localize,tf_menu
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\localizedstrings\tf_menu.str,1718787237,
 localize,menu
@@ -29,7 +29,7 @@ localize,menu
 texturecombo,core_mod
 assetlist,core_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\gamedata\playeranim\playeranimtypes.txt,1638880987,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\loc\core_mod.zone,1718796208,df94d7e7,ccb17bc9,4e46fe0b,18e7873d
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\zone_source\loc\core_mod.zone,1718820573,df94d7e7,ccb17bc9,4e46fe0b,18e7873d
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\traditionalchinese\assetlist\core_pre_gfx.csv,1638882744,4f38c8d2,54dbe0ad,a26fe6dd,7ce6fe27
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\traditionalchinese\assetlist\core_patch.csv,1638882651,38d4c92a,0186498f,35efb776,59863d59
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\zone_source\traditionalchinese\assetlist\core_gfx.csv,1638882743,4cd6243d,831296e2,f2d7c4d8,2e2c9159
@@ -62,5 +62,5 @@ assetlist,core_mod
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\contexts\water.ctx,1638881133,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\master.csv,1638881350,
 	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\share\raw\sound\globals\futz.csv,1638881090,
-	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\traditionalchinese\sound\zone\core_mod.traditionalchinese.alias.sz,1718796222,
+	file,D:\Steam\steamapps\common\Call of Duty Black Ops III\mods\gfl\traditionalchinese\sound\zone\core_mod.traditionalchinese.alias.sz,1718820586,
 errorcount,0

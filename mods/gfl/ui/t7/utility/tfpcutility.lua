@@ -69,6 +69,7 @@ CoD.TFOptionIndexes["subtitles"] = 66
 CoD.TFOptionIndexes["cw_scoreevent"] = 67
 CoD.TFOptionIndexes["thirdperson"] = 68
 CoD.TFOptionIndexes["zombie_healthbar"] = 69
+CoD.TFOptionIndexes["hud"] = 70
 
 CoD.TFOptionsDefault = {}
 CoD.TFOptionsDefault["starting_points"] = 500
@@ -135,6 +136,7 @@ CoD.TFOptionsDefault["subtitles"] = 1
 CoD.TFOptionsDefault["cw_scoreevent"] = 1
 CoD.TFOptionsDefault["thirdperson"] = 0
 CoD.TFOptionsDefault["zombie_healthbar"] = 1
+CoD.TFOptionsDefault["hud"] = 1
 
 CoD.TFOptionsDirtyFlag = false
 
