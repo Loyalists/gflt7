@@ -123,6 +123,8 @@ rawfile,ui_mp/T6/hud_og.luac
 rawfile,ui_mp/T6/HUD/Loading.lua
 rawfile,ui_mp/T6/HUD/Loading_og.luac
 
+rawfile,ui/uieditor/widgets/lobby/MapVote/MapVote.lua
+
 // prevent player from opening up the black market tab in character customization
 rawfile,ui/uieditor/menus/CharacterCustomization/PersonalizeCharacter.lua
 rawfile,ui/uieditor/menus/BlackMarket.lua
@@ -394,7 +396,7 @@ xmodel,t7_gfl_p90_fb
 xmodel,t7_gfl_rfb_fb
 xmodel,t7_gfl_suomi_fb
 xmodel,t7_gfl_super_sass_fb
-xmodel,t7_gfl_tac50_v2_fb
+//xmodel,t7_gfl_tac50_v2_fb
 xmodel,t7_gfl_type89_fb
 xmodel,t7_gfl_g36c_fb
 xmodel,t7_gfl_negev_fb
@@ -1148,6 +1150,8 @@ image,t7_menu_choosespecialist_default_suomi
 image,t7_menu_choosespecialist_default_vepley
 image,t7_menu_choosespecialist_default_wa2000
 image,t7_menu_choosespecialist_default_g11
+image,t7_menu_choosespecialist_default_g36c
+image,t7_menu_choosespecialist_default_dima
 image,t7_menu_mp_hero_background_with_9a91
 image,t7_menu_mp_hero_background_with_an94
 image,t7_menu_mp_hero_background_with_centaureissi
@@ -1163,6 +1167,8 @@ image,t7_menu_mp_hero_background_with_suomi
 image,t7_menu_mp_hero_background_with_vepley
 image,t7_menu_mp_hero_background_with_wa2000
 image,t7_menu_mp_hero_background_with_g11
+image,t7_menu_mp_hero_background_with_g36c
+image,t7_menu_mp_hero_background_with_dima
 
 image,t7_gfl_chibi_9a91
 image,t7_gfl_chibi_ak12

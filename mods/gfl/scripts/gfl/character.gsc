@@ -13,7 +13,7 @@ function init_character_table()
 	level.charactertable["generic"]["ak12"] = &swap_to_ak12;
 	level.charactertable["generic"]["p90"] = &swap_to_p90;
 	level.charactertable["generic"]["rfb"] = &swap_to_rfb;
-	level.charactertable["generic"]["tac50"] = &swap_to_tac50;
+	// level.charactertable["generic"]["tac50"] = &swap_to_tac50;
 	// level.charactertable["generic"]["tmp"] = &swap_to_tmp;
 	level.charactertable["generic"]["type89"] = &swap_to_type89;
 	// level.charactertable["generic"]["type97"] = &swap_to_type97;

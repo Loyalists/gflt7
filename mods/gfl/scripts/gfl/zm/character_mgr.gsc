@@ -191,6 +191,12 @@ function on_message_sent(args)
 		return;
 	}
 
+	if ( !is_enabled() )
+	{
+		self IPrintLnBold("Player-determined and randomized character are disabled by the host.");
+		return;
+	}
+
 	character = args[0];
 	if ( character == "random" )
 	{
@@ -400,16 +406,23 @@ function ingame_character_menu_think()
     {
 		WAIT_SERVER_FRAME;
 		self waittill("menuresponse", menu, response);
-		if ( !is_enabled() )
-		{
-			wait 1;
-			continue;
-		}
-
         if ( !(menu == "popup_leavegame" && IsSubStr(response, "CharacterSystem") ) )
         {
             continue;
         }
+
+		if ( !is_enabled() )
+		{
+			self IPrintLnBold("Player-determined and randomized character are disabled by the host.");
+			wait 1;
+			continue;
+		}
+
+		if ( !self core_util::is_player_alive() )
+		{
+			wait 1;
+			continue;
+		}
 
 		arr = StrTok(response, ",");
 		if ( arr.size != 2 )

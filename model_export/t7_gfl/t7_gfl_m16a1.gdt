@@ -9955,7 +9955,7 @@
 		"noReceiveDynamicShadow" "0"
 		"normalFlattening" "1"
 		"normalHeightScale" "1"
-		"normalMap" "i_gfl_type97_cf_m_body_n"
+		"normalMap" ""
 		"normalsFlowScaleMin" "0"
 		"normalVarianceScale" "1"
 		"noSteps" "0"

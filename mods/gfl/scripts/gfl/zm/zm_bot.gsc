@@ -770,6 +770,12 @@ function get_closest_alive_player()
 
 function bot_spawn()
 {
+	self.box_share_distance = 512;
+	self.follow_player_distance = 240;
+	self.magic_box_distance = 3000;
+	self.wallbuy_distance = 300;
+	self.open_door_distance = 1500;
+	
 	wait 1;
 	self zm::spectator_respawn_player();
     self thread bot_setup();
@@ -782,9 +788,9 @@ function area_revive()
 {
 	self notify("area_revive");
 	self endon("area_revive");
-	level endon("game_ended");
 	self endon("disconnect");
 	self endon("bled_out");
+	level endon("game_ended");
 
 	while(1)
 	{	
@@ -820,15 +826,9 @@ function bot_setup()
 {
 	self notify("bot_setup");
 	self endon("bot_setup");
-	level endon("game_ended");
 	self endon("disconnect");
 	self endon("bled_out");
-
-	self.box_share_distance = 512;
-	self.follow_player_distance = 240;
-	self.magic_box_distance = 3000;
-	self.wallbuy_distance = 300;
-	self.open_door_distance = 1500;
+	level endon("game_ended");
 
 	self thread pesSuit();
 	self thread health_regen();
@@ -841,15 +841,6 @@ function bot_setup()
 	self zm_perks::give_perk( "specialty_doubletap2", false );
 	self zm_perks::give_perk( "specialty_deadshot", false );
 
-	self thread bot_perk_think();
-}
-
-function bot_perk_think()
-{
-	level endon("game_ended");
-	self endon("disconnect");
-	self endon("bled_out");
-
     while(true)
     {
         self setperk( "specialty_unlimitedsprint");
@@ -859,7 +850,8 @@ function bot_perk_think()
 		self setperk( "specialty_sprintgrenadetactical" );
 		self setperk( "specialty_phdflopper" );
 		self._retain_perks = true;
-        self GiveMaxAmmo(self GetCurrentWeapon());
+		self GiveMaxAmmo(self GetCurrentWeapon());
+		WAIT_SERVER_FRAME;
 		self waittill("reload_start");
     }
 }

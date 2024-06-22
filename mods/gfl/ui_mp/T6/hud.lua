@@ -12,7 +12,8 @@ local Preload = function()
 end
 
 local function AddCustomHUDElements_Zombie(menu, controller)
-    local f6_local1 = menu:getParent()
+    -- local self = menu:getParent()
+    local self = menu
 	if Engine.DvarInt(nil, "tfoption_hud") ~= 0 then
         menu:setupHUDShaker()
 	end
@@ -40,7 +41,7 @@ local function AddCustomHUDElements_Zombie(menu, controller)
                     ClearNotificationQueue(container)
                 end
 
-                AddCharacterNotification(f6_local1, container, ModelValue)
+                AddCharacterNotification(self, container, ModelValue)
             end
         end)
 
@@ -61,18 +62,18 @@ local function AddCustomHUDElements_Zombie(menu, controller)
         end
 
         if IsParamModelEqualToString(model, "gfl_cheats_notification") then
-            AddCheatsNotification(f6_local1, container, model)
+            AddCheatsNotification(self, container, model)
         elseif IsParamModelEqualToString(model, "gfl_tdoll_zombies_notification") then
-            AddSimpleNotification(f6_local1, container, "t7_gfl_notification_hk416_gloomy", "GFL_ZM_NOTIFICATION_TDOLL_ZOMBIES", "GFL_ZM_NOTIFICATION_TDOLL_ZOMBIES_DESC")
+            AddSimpleNotification(self, container, "t7_gfl_notification_hk416_gloomy", "GFL_ZM_NOTIFICATION_TDOLL_ZOMBIES", "GFL_ZM_NOTIFICATION_TDOLL_ZOMBIES_DESC")
         end
     end)
 
-    f6_local1:addElement(ZMNotificationContainer)
-    f6_local1.ZMNotificationContainer = ZMNotificationContainer
+    self:addElement(ZMNotificationContainer)
+    self.ZMNotificationContainer = ZMNotificationContainer
 
     local ZombieHealthBar = CoD.AAE_t9_zombie_health_bar_container.new( menu, controller )
-    f6_local1:addElement( ZombieHealthBar )
-    f6_local1.ZombieHealthBar = ZombieHealthBar
+    self:addElement( ZombieHealthBar )
+    self.ZombieHealthBar = ZombieHealthBar
 
     local function UpdateZombieHealthBarVisible( ModelRef )
         local ModelValue = Engine.GetModelValue( ModelRef )
@@ -101,11 +102,11 @@ local function AddCustomHUDElements_Zombie(menu, controller)
 end
 
 local function AddCustomHUDElements_Common(menu, controller)
-    local f6_local1 = menu:getParent()
+    local self = menu:getParent()
 
     local ThirdpersonCrosshair = CoD.ThirdpersonCrosshair.new(menu, controller)
-    f6_local1.ThirdpersonCrosshair = ThirdpersonCrosshair
-    f6_local1:addElement(ThirdpersonCrosshair)
+    self.ThirdpersonCrosshair = ThirdpersonCrosshair
+    self:addElement(ThirdpersonCrosshair)
 end
 
 function HUD_FirstSnapshot_Common(f40_arg0, f40_arg1)

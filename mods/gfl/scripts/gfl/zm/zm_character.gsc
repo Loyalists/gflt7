@@ -41,7 +41,7 @@ function init_character_table()
 	level.charactertable["zm"]["vepley"] = create_vepley();
 	level.charactertable["zm"]["m4a1"] = create_m4a1();
 	level.charactertable["zm"]["mp7_casual_tights"] = create_mp7_casual_tights();
-	level.charactertable["zm"]["tac50"] = create_tac50();
+	// level.charactertable["zm"]["tac50"] = create_tac50();
 	level.charactertable["zm"]["dima"] = create_dima();
 	level.charactertable["zm"]["an94"] = create_an94();
 	level.charactertable["zm"]["lenna"] = create_lenna();

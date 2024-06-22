@@ -19,10 +19,6 @@ function InitializeT7Overcharged(options)
         debug = true
     end
 
-    if not options.debug then
-        debug = false
-    end
-
     -- The path that we copy the dll's from
     local dllPath =
         debug and options.filespath .. [[zone\]] or [[..\..\workshop\content\311210\]] .. options.workshopid .. "\\"
@@ -51,6 +47,6 @@ function InitializeT7Overcharged(options)
     end
 
     if debug then
-        HotReload.Start(options.filespath)
+        -- HotReload.Start(options.filespath)
     end
 end

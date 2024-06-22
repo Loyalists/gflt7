@@ -307,6 +307,16 @@ function deadshot_damage( eInflictor, eAttacker, iDamage, iDFlags, sMeansOfDeath
 
 function on_zombie_killed(player)
 {
+	if( !isdefined( player ) )
+	{
+		return;
+	}
+
+	if( !IsPlayer( player ) )
+	{
+		return;
+	}
+
 	if(player hasperk("specialty_deadshot") && player isprimaries(self.damageweapon) && isdefined(player.perks_active) && player.perks_active.size >= 4)
 	{
 		if(zm_utility::is_headshot(self.damageweapon, self.damagelocation, self.damagemod))

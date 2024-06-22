@@ -3,6 +3,9 @@
 #using scripts\shared\flag_shared;
 #using scripts\shared\util_shared;
 #using scripts\shared\system_shared;
+#using scripts\shared\callbacks_shared;
+
+#using scripts\gfl\clientsystem;
 
 #insert scripts\shared\shared.gsh;
 
@@ -19,14 +22,44 @@ function private __init__()
 
 function private __main__()
 {
-
+	thread level_zombie_heath_notify();
+	thread wait_for_option_changed();
 }
 
 function health_bar_init()
 {
     zm::register_zombie_damage_override_callback( &update_zombie_health );
 	zm::register_vehicle_damage_callback(&update_zombie_vehicle);
-	thread level_zombie_heath_notify();
+	callback::on_spawned( &on_player_spawned );
+}
+
+function on_player_spawned()
+{
+	self endon("disconnect");
+	self endon("bled_out");
+	self endon("death");
+
+	healthbar_dvar = GetDvarInt("tfoption_zombie_healthbar", 0);
+	self clientsystem::set_clientdvar("tfoption_zombie_healthbar", healthbar_dvar);
+}
+
+function wait_for_option_changed()
+{
+	level endon("game_ended");
+	level endon("end_game");
+	level flag::wait_till("initial_blackscreen_passed");
+	
+    while (true)
+    {
+		healthbar_dvar = GetDvarInt("tfoption_zombie_healthbar", 0);
+		foreach ( player in GetPlayers() )
+		{
+			player clientsystem::set_clientdvar("tfoption_zombie_healthbar", healthbar_dvar);
+		}
+
+        WAIT_SERVER_FRAME;
+        level util::waittill_any_return("tfoption_zombie_healthbar_changed");
+    }
 }
 
 function is_enabled()
@@ -42,7 +75,8 @@ function is_enabled()
 function level_zombie_heath_notify()
 {
 	level endon("end_game");
-
+	level flag::wait_till("initial_blackscreen_passed");
+	
 	while(1)
 	{
 		level waittill( "aae_zombie_health_bar" , zombie , damage_func , entitynumber , boneindex , headshot);

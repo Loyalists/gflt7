@@ -7880,4 +7880,13 @@
 	"c_cia_blackstation_victim_1_fb_corpse" [ "t7_gfl_tololo_fb" ]
 	{
 	}
+	"c_t7_mp_technomancer_mpc_body1_skin2" [ "t7_gfl_tololo_fb_mp" ]
+	{
+	}
+	"c_t7_mp_technomancer_viewarms1_skin2" [ "t7_gfl_tololo_viewhands" ]
+	{
+	}
+	"c_t7_mp_technomancer_viewlegs1_skin2" [ "t7_gfl_tololo_viewlegs" ]
+	{
+	}
 }

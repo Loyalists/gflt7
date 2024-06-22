@@ -39,12 +39,11 @@ function private __init__()
 {
 	mulekick_return_init();
 	callback::on_connect( &on_player_connect );
-	thread main();
 }
 
 function private __main__()
 {
-
+	thread main();
 }
 
 function on_player_connect()

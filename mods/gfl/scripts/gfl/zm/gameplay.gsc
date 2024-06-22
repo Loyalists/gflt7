@@ -41,6 +41,7 @@
 #using scripts\gfl\zm\_aae_zombie_health_bar;
 
 #using scripts\gfl\_chat_notify;
+#using scripts\gfl\clientsystem;
 #using scripts\gfl\core_util;
 #using scripts\gfl\thirdperson;
 
@@ -90,6 +91,10 @@ function on_player_connect()
 
     self thread revive_at_end_of_round();
     self thread mw3_intro_zm();
+    // self thread menuresponse_test();
+
+    hud_dvar = GetDvarInt("tfoption_hud", 0);
+    self clientsystem::set_clientdvar("tfoption_hud", hud_dvar);
 }
 
 function on_player_spawned()
@@ -105,6 +110,25 @@ function on_player_spawned()
 
     self thread character_popup_think();
     self thread opening_notifications_think();
+}
+
+function menuresponse_test()
+{
+    self endon("disconnect");
+	level endon("game_ended");
+	level endon("end_game");
+
+    level flag::wait_till("initial_blackscreen_passed");
+
+    while(1)
+    {
+        self waittill("menuresponse", menu, response);
+        if( menu == "popup_leavegame" )
+        {
+            self IPrintLnBold(response);
+        }
+        WAIT_SERVER_FRAME;
+    }
 }
 
 function on_popup_message_sent(args)
@@ -248,7 +272,7 @@ function watch_for_mw3_intro()
 function revive_at_end_of_round()
 {
 	self endon("disconnect");
-	level waittill( "initial_blackscreen_passed" ); 
+	level flag::wait_till("initial_blackscreen_passed");
 	
 	while (isdefined(self))
 	{

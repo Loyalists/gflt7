@@ -38,6 +38,10 @@ function init() {
         {
             level._zombie_between_round_time_old = level.zombie_vars["zombie_between_round_time"];
         }
+        else
+        {
+            level._zombie_between_round_time_old = 10;
+        }
     }
 
     createRoamerHud();
@@ -202,6 +206,7 @@ function createNewHudElement(xAlign, yAlign, posX, posY, foreground, fontScale)
     hud.y = posY;
 	hud.foreground = foreground;
 	hud.fontscale = fontScale;
+    hud.hidewheninmenu = true;
 	return hud;
 }
 

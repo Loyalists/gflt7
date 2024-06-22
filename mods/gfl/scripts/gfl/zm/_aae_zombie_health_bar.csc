@@ -50,11 +50,19 @@ function set_zombie_nearby()
 {
 	self notify("aae_zombie_nearby");
 	self endon("aae_zombie_nearby");
+	self endon("death");
+	self endon("disconnect");
     self endon("entityshutdown");
-    self endon("disconnect");
 
-	while(1)
+	while(isDefined(self) && isAlive(self))
 	{
+		if( !GetDvarInt("tfoption_zombie_healthbar", 0) )
+		{
+			self._nearby_zombie = undefined;
+			wait 1;
+			continue;
+		}
+
 		if(isDefined(level.elmg_enemies) && level.elmg_enemies.size)
 		{
 			zombie = self get_zombie_that_player_sees();
@@ -77,6 +85,11 @@ function set_zombie_nearby()
 
 function get_zombie_that_player_sees()
 {
+    if( !isDefined(self) || !isAlive(self))
+    {
+		return undefined;
+	}
+
     if(!isDefined(level.elmg_enemies))
     {
 		return undefined;
@@ -84,6 +97,11 @@ function get_zombie_that_player_sees()
 
 	player_cam = self GetCamPos();
 	player_angles = self GetCamAngles();
+	if ( !isdefined(player_cam) || !isdefined(player_angles) )
+	{
+		return undefined;
+	}
+	
 	new_zombies = [];
 	foreach(zombie in level.elmg_enemies)
 	{
@@ -116,10 +134,10 @@ function zombie_health_bar_spawn( localClientNum )
 		return;
 	}
 
-    if( !GetDvarInt("tfoption_zombie_healthbar", 0) )
-    {
-        return;
-    }
+	if( !GetDvarInt("tfoption_zombie_healthbar", 0) )
+	{
+		return;
+	}
 
 	if(self.team != "axis")
 	{
@@ -165,6 +183,13 @@ function zombie_health_bar_spawn( localClientNum )
 	while(isDefined(self) && isAlive(self)) 
 	{
 		WAIT_CLIENT_FRAME;
+		if( !GetDvarInt("tfoption_zombie_healthbar", 0) )
+		{
+			SetUIModelValue( zombie_health_bar_visibility_model, 0 );
+			wait 1;
+			continue;
+		}
+
 		if(isDefined(self.team))
 		{
 			if(self.team != "axis")
@@ -231,10 +256,16 @@ function bulletTracePassed( localClientNum )
         return 1;
     }
 	player = GetLocalPlayer(localClientNum);
+	if ( !isDefined(player) )
+	{
+		return 0;
+	}
+
 	if(isDefined(player._nearby_zombie) && player._nearby_zombie == self GetEntityNumber())
 	{
 		return 1;
 	}
+
 	camera_pos = GetLocalClientEyePos(localClientNum);
 	v_trace = bulletTrace( camera_pos, camera_pos + AnglesToForward(GetCamAnglesByLocalClientNum(localclientnum)) * 1000, true , player ,true);
     if(isdefined(v_trace["entity"]) && v_trace["entity"] GetEntityNumber() == self GetEntityNumber())

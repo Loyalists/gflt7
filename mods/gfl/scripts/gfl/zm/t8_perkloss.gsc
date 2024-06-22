@@ -85,19 +85,7 @@ function lockrevivefunc()
 
     while(1)
     {
-		if ( !is_enabled() )
-		{
-			if ( IS_TRUE(level.t8_perkloss_enabled) )
-			{
-				level.callbackplayerlaststand = level._callbackplayerlaststand_old;
-				level.t8_perkloss_enabled = false;
-			}
-			wait_when_disabled();
-			continue;
-		}
-
         level.callbackplayerlaststand = &ELMG_playerlaststand;
-		level.t8_perkloss_enabled = true;
         wait(1);
     }
 }
@@ -105,6 +93,15 @@ function lockrevivefunc()
 function ELMG_playerlaststand( eInflictor, eAttacker, iDamage, sMeansOfDeath, weapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration )
 {
 	self endon( "disconnect" );	
+
+	if ( !is_enabled() )
+	{
+		if ( isdefined(level._callbackplayerlaststand_old) )
+		{
+			[[level._callbackplayerlaststand_old]]( eInflictor, eAttacker, iDamage, sMeansOfDeath, weapon, vDir, sHitLoc, psOffsetTime, deathAnimDuration );
+		}
+		return;
+	}
 
     if(isdefined(self) && isplayer(self) && isdefined(self.perks_active) && self.perks_active.size > 0)
 	{

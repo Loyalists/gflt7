@@ -5002,4 +5002,104 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
+	"t7_menu_choosespecialist_default_m4a1" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_m4a1.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_an94" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_an94.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_centaureissi" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_centaureissi.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_st_ar15" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_st_ar15.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_rfb" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_rfb.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_st_ar15" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_st_ar15.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_rfb" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_rfb.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_m4a1" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_m4a1.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_centaureissi" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_centaureissi.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_an94" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_an94.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_m16a1_sf" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_m16a1_sf.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_m16a1_sf" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_m16a1_sf.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_wa2000" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_wa2000.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_wa2000" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_wa2000.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_lenna" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_lenna.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_lenna" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_lenna.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_g36c" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_g36c.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_g36c" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_g36c.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_dima" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_dima.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_dima" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_dima.png"
+		"coreSemantic" "Linear4ch"
+	}
 }
