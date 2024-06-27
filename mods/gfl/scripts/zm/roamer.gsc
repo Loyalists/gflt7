@@ -26,7 +26,8 @@
 
 #namespace roamer;
 
-function init() {
+function init() 
+{
     if (isdefined(level.func_get_delay_between_rounds))
     {
         level._zombie_between_round_time_old = [[level.func_get_delay_between_rounds]]();
@@ -54,7 +55,8 @@ function init() {
     }
 }
 
-function roamer() {
+function roamer() 
+{
     if( !GetDvarInt("tfoption_roamer_enabled", 0) )
     {
         if ( isdefined( level._zombie_between_round_time_old ) )
@@ -99,7 +101,8 @@ function roamer_hud_think()
     level.roamer_counter thread hide_roamer_hud(1.5); 
 }
 
-function roamer_wait_time() {
+function roamer_wait_time() 
+{
     level endon("continue_round");
     oldRound = level.round_number;
     
@@ -189,7 +192,7 @@ function hide_roamer_hud(fadeTime)
 function createRoamerHud(){
     level.roamer_hud = createNewHudElement("right", "top", -25, 20, 1, 1);
 	level.roamer_hud hudRGBA((1,1,1), 0);
-	level.roamer_hud SetText("Press ADS + Melee to start next round"); 
+	level.roamer_hud SetText("Press ^3[{+toggleads_throw}]^7 + ^3[{+melee}]^7 to start next round"); 
     level.roamer_counter = createNewHudElement("right", "top", -25, 35, 1, 1);
     level.roamer_counter hudRGBA((1,1,1), 0);
     level.roamer_counter SetValue(0); 

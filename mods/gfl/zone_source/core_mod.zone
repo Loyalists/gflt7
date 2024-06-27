@@ -91,6 +91,7 @@ rawfile,ui/uieditor/menus/Lobby/Common/Popups/GameSettingsFlyoutMP.lua
 
 // gfl logo in main menu
 rawfile,ui/uieditor/widgets/lobby/common/FE_3dTitleInternal.lua
+rawfile,ui/uieditor/widgets/lobby/common/FE_3dTitleContainer.lua
 rawfile,ui/uieditor/widgets/lobby/common/fe_talkerswidget.luac
 rawfile,ui/uieditor/widgets/lobby/common/fe_talkerwidgetbase.luac
 
@@ -1191,7 +1192,7 @@ image,t7_gfl_chibi_ro635
 image,t7_gfl_chibi_st_ar15
 image,t7_gfl_chibi_suomi
 image,t7_gfl_chibi_super_sass
-image,t7_gfl_chibi_tac50
+//image,t7_gfl_chibi_tac50
 image,t7_gfl_chibi_tololo
 image,t7_gfl_chibi_type89
 image,t7_gfl_chibi_ump45

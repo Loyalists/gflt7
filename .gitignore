@@ -2,6 +2,8 @@
 *.zip
 *.7z
 *.gdb
+*.deps
+*.partial
 dummy
 user_aliases.csv
 

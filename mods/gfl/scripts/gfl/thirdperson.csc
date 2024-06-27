@@ -22,8 +22,9 @@ function on_spawned(localClientNum)
         return;
     }
 
-    self thread update_thirdperson_crosshair(localClientNum);
-    self thread thirdperson_toggle_think(localClientNum);
+    self thread watch_for_command(localClientNum);
+    self thread update_tps_crosshair(localClientNum);
+    self thread tps_toggle_think(localClientNum);
 }
 
 function on_state_changed(localClientNum, states)
@@ -38,10 +39,10 @@ function on_state_changed(localClientNum, states)
     switch (state)
     {
     case "off":
-        player notify("thirdperson_off_notified");
+        player notify("tps_off_notified");
         break;
     case "on":
-        player notify("thirdperson_on_notified");
+        player notify("tps_on_notified");
         break;
     default:
         break;
@@ -68,32 +69,78 @@ function on_tpscam_changed(localClientNum, states)
     case "side":
         player set_side_camera();
         break;
+    case "side2":
+        player set_side2_camera();
+        break;
     default:
         break;
     }
 }
 
-function thirdperson_toggle_think(localClientNum)
+function watch_for_command(localClientNum)
 {
-    self notify("thirdperson_toggle_think");
-    self endon("thirdperson_toggle_think");
+    self notify("tps_watch_for_command");
+    self endon("tps_watch_for_command");
+    self endon("entityshutdown");
+    self endon("disconnect");
+    self endon("death");
+
+    old_dvar = GetDvarInt("gfl_thirdperson", 0);
+    while (true)
+    {
+        wait 0.2;
+        player = GetLocalPlayer(localClientNum);
+        if ( !isdefined(player) || !IsAlive(player) )
+        {
+            wait 1;
+            continue;
+        }
+
+        dvar = GetDvarInt("gfl_thirdperson", 0);
+        if (old_dvar == dvar)
+        {
+            continue;
+        }
+
+        switch (dvar)
+        {
+        case 1:
+            player notify("tps_on_notified");
+            break;
+        case 0:
+            player notify("tps_off_notified");
+            break;
+        default:
+            break;
+        }
+
+        old_dvar = dvar;
+    }
+}
+
+function tps_toggle_think(localClientNum)
+{
+    self notify("tps_toggle_think");
+    self endon("tps_toggle_think");
     self endon("entityshutdown");
     self endon("disconnect");
     self endon("death");
 
     while(1)
     {
-        event = self util::waittill_any_return("thirdperson_off_notified", "thirdperson_on_notified");
+        event = self util::waittill_any_return("tps_off_notified", "tps_on_notified");
 
-        if (event == "thirdperson_on_notified")
+        if (event == "tps_on_notified")
         {
+            setdvar("cg_thirdperson", 1);
             set_back_camera();
-            self thread update_thirdperson_crosshair(localClientNum);
+            self thread update_tps_crosshair(localClientNum);
         }
         else
         {
-            self stop_updating_thirdperson_crosshair();
-            self hide_thirdperson_crosshair(localClientNum);
+            setdvar("cg_thirdperson", 0);
+            self stop_updating_tps_crosshair();
+            self hide_tps_crosshair(localClientNum);
         }
         
         WAIT_CLIENT_FRAME;
@@ -127,10 +174,19 @@ function set_side_camera()
     SetDvar("cg_thirdpersonupoffset", -20);
 }
 
-function update_thirdperson_crosshair(localClientNum)
+function set_side2_camera()
 {
-    self notify("update_thirdperson_crosshair");
-    self endon("update_thirdperson_crosshair");
+    SetDvar("cg_thirdpersonrange", 90);
+    SetDvar("cg_thirdpersonangle", 135);
+    SetDvar("cg_thirdpersonsideoffset", 0);
+    SetDvar("cg_thirdpersoncamoffsetup", 0);
+    SetDvar("cg_thirdpersonupoffset", -20);
+}
+
+function update_tps_crosshair(localClientNum)
+{
+    self notify("update_tps_crosshair");
+    self endon("update_tps_crosshair");
     self endon("entityshutdown");
     self endon("disconnect");
     self endon("death");
@@ -154,7 +210,7 @@ function update_thirdperson_crosshair(localClientNum)
 
         if ( !IsThirdPerson(localClientNum) )
         {
-            hide_thirdperson_crosshair(localClientNum);
+            hide_tps_crosshair(localClientNum);
             wait 0.5;
             continue;
         }
@@ -166,19 +222,19 @@ function update_thirdperson_crosshair(localClientNum)
         }
         else
         {
-            hide_thirdperson_crosshair(localClientNum);
+            hide_tps_crosshair(localClientNum);
         }
     }
 
-    hide_thirdperson_crosshair(localClientNum);
+    hide_tps_crosshair(localClientNum);
 }
 
-function stop_updating_thirdperson_crosshair()
+function stop_updating_tps_crosshair()
 {
-    self notify("update_thirdperson_crosshair");
+    self notify("update_tps_crosshair");
 }
 
-function hide_thirdperson_crosshair(localClientNum)
+function hide_tps_crosshair(localClientNum)
 {
     controller_model = GetUIModelForController( localClientNum );
     crosshair_model = GetUIModel( controller_model, "hudItems.ThirdpersonCrosshair" );

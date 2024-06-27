@@ -56,21 +56,16 @@
 
 function init()
 {
-    mule_kick_indicator::init();
 	chat_notify::register_chat_notify_callback( "popup", &on_popup_message_sent );
 
     callback::on_connecting( &on_player_connecting );
 	callback::on_connect( &on_player_connect );
 	callback::on_spawned( &on_player_spawned );
 
-    if( GetDvarInt("tfoption_perkplus", 0) )
-    {
-        perkplus::init();
-    }
-
     zm::register_player_friendly_fire_callback(&friendlyfire_damage);
 
-    if( GetDvarInt("tfoption_zcounter_enabled", 0) ) {
+    if( GetDvarInt("tfoption_zcounter_enabled", 0) ) 
+    {
         zm_counter::init();
     }
 
@@ -219,11 +214,6 @@ function after_blackscreen_setup()
 
     repeated_setup();
 
-    if( GetDvarInt("tfoption_bgb_off", 0) )
-    {
-        thread disable_bgb();
-    }
-
 	if ( GetDvarInt("tfoption_cheats", 0) )
 	{
 		thread core_util::enable_cheats();
@@ -232,6 +222,8 @@ function after_blackscreen_setup()
     {
         thread core_util::disable_cheats();
     }
+
+    thread disable_bgb_think();
 }
 
 function set_thirdperson_on_spawned()
@@ -300,7 +292,7 @@ function revive_at_end_of_round()
     }
 }
 
-function disable_bgb()
+function disable_bgb_trigger_setup()
 {
     bgbs = GetEntArray("bgb_machine_use", "targetname");
     foreach(bgb in bgbs)
@@ -308,13 +300,54 @@ function disable_bgb()
         if(isdefined(bgb.unitrigger_stub))
         {
             bgb.unitrigger_stub.og_origin = bgb.unitrigger_stub.origin;
+            bgb.unitrigger_stub.bgb_off_origin = bgb.unitrigger_stub.origin - (1000,1000,1000);
             bgb.unitrigger_stub.temp_trig = Spawn( "trigger_radius_use", bgb.unitrigger_stub.og_origin, 0, 16, 16);
             bgb.unitrigger_stub.temp_trig SetTeamForTrigger("allies");
             bgb.unitrigger_stub.temp_trig SetCursorHint( "HINT_NOICON" );
             bgb.unitrigger_stub.temp_trig SetHintString(&"ZOMBIE_BGB_MACHINE_DISABLED");
-            bgb.unitrigger_stub.origin = bgb.unitrigger_stub.og_origin - (1000,1000,1000);
-            bgb SetZBarrierPieceState(3, "closed");
+            bgb.unitrigger_stub.temp_trig TriggerEnable(false);
         }
+    }
+}
+
+function disable_bgb_think()
+{
+	level endon("game_ended");
+	level endon("end_game");
+
+    disable_bgb_trigger_setup();
+
+    while (true)
+    {
+		dvar = GetDvarInt("tfoption_bgb_off", 0);
+        bgbs = GetEntArray("bgb_machine_use", "targetname");
+        if (dvar)
+        {
+            foreach(bgb in bgbs)
+            {
+                if( isdefined(bgb.unitrigger_stub) && isdefined(bgb.unitrigger_stub.temp_trig) )
+                {
+                    bgb.unitrigger_stub.origin = bgb.unitrigger_stub.bgb_off_origin;
+                    bgb.unitrigger_stub.temp_trig TriggerEnable(true);
+                    bgb SetZBarrierPieceState(3, "closed");
+                }
+            }
+        }
+        else
+        {
+            foreach(bgb in bgbs)
+            {
+                if( isdefined(bgb.unitrigger_stub) && isdefined(bgb.unitrigger_stub.temp_trig) )
+                {
+                    bgb.unitrigger_stub.origin = bgb.unitrigger_stub.og_origin;
+                    bgb.unitrigger_stub.temp_trig TriggerEnable(false);
+                    bgb SetZBarrierPieceState(3, "open");
+                }
+            }
+        }
+
+        WAIT_SERVER_FRAME;
+        level util::waittill_any_return("tfoption_bgb_off_changed");
     }
 }
 

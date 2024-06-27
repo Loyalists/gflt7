@@ -82,6 +82,10 @@ function UseOldSaveData()
 	return false
 end
 
+function IsModInBetaTest()
+	return false
+end
+
 Engine.IsItemLocked = function(f43_arg0, f43_local6, f43_local7)
 	return false
 end

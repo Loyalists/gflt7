@@ -10,6 +10,7 @@
 #using scripts\shared\scene_shared;
 #using scripts\shared\weapons_shared;
 #using scripts\shared\visionset_mgr_shared;
+#using scripts\shared\system_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -35,11 +36,20 @@
 
 #namespace mule_kick_indicator;
 
+#define MULEKICK_ICON_DURATION 1
+
 #precache( "material", "specialty_three_guns_zombies");
 
-function init()
+REGISTER_SYSTEM_EX( "mule_kick_indicator", &__init__, &__main__, undefined )
+
+function private __init__()
 {
 	callback::on_connect( &on_player_connect );
+}
+
+function private __main__()
+{
+
 }
 
 function on_player_connect()
@@ -71,7 +81,7 @@ function mule_kick_indicator()
 	{
 		if ( self should_hide_indicator() )
 		{
-			wait 0.1;
+			wait 1;
 			continue;
 		}
 
@@ -79,7 +89,7 @@ function mule_kick_indicator()
 		{
 			self.mulekick_icon FadeOverTime(0.1);
 			self.mulekick_icon.alpha = 1;
-			wait 1;
+			wait MULEKICK_ICON_DURATION;
 			self.mulekick_icon FadeOverTime(0.1);
 			self.mulekick_icon.alpha = 0;
 		}
@@ -88,7 +98,9 @@ function mule_kick_indicator()
 			self.mulekick_icon FadeOverTime(0.1);
 			self.mulekick_icon.alpha = 0;
 		}
-		self util::waittill_any_return( "fake_death", "death", "player_downed", "weapon_change", "perk_abort_drinking", "weapon_give" ,"shield_update");//WAIT_SERVER_FRAME;
+		
+		WAIT_SERVER_FRAME;
+		self util::waittill_any_return( "fake_death", "death", "player_downed", "weapon_change", "perk_abort_drinking", "weapon_give" ,"shield_update");
 	}
 }
 

@@ -79,10 +79,12 @@ function level_zombie_heath_notify()
 	
 	while(1)
 	{
+		wait 0.01;
 		level waittill( "aae_zombie_health_bar" , zombie , damage_func , entitynumber , boneindex , headshot);
 
 		if( !is_enabled() )
 		{
+			wait 1;
 			continue;
 		}
 
@@ -152,24 +154,24 @@ function update_zombie_health( death, inflictor, player, damage, flags, mod, wea
 		}
 		if(isDefined(self.archetype))
 		{
-		if(self.archetype == "mechz")
-		{
-			if(isDefined(level.mechz_health))
+			if(self.archetype == "mechz")
 			{
-				level notify( "aae_zombie_health_bar" , self , &mechz_health , self GetEntityNumber() , boneindex , headshot);
-			}
-		}
-		else
-		{
-			if(self.archetype == "margwa")
-			{
-				level notify( "aae_zombie_health_bar" , self , &margwa_health , self GetEntityNumber() , boneindex , headshot);
+				if(isDefined(level.mechz_health))
+				{
+					level notify( "aae_zombie_health_bar" , self , &mechz_health , self GetEntityNumber() , boneindex , headshot);
+				}
 			}
 			else
 			{
-				level notify( "aae_zombie_health_bar" , self , &zombie_health , self GetEntityNumber() , boneindex , headshot);
+				if(self.archetype == "margwa")
+				{
+					level notify( "aae_zombie_health_bar" , self , &margwa_health , self GetEntityNumber() , boneindex , headshot);
+				}
+				else
+				{
+					level notify( "aae_zombie_health_bar" , self , &zombie_health , self GetEntityNumber() , boneindex , headshot);
+				}
 			}
-		}
 		}
     }
 }
@@ -210,7 +212,7 @@ function update_zombie_vehicle(einflictor, player, damage, idflags, smeansofdeat
 {
     if( !is_enabled() )
     {
-        return;
+        return damage;
     }
 
     death = ( self.health - damage ) <= 0;

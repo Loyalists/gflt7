@@ -36,10 +36,26 @@
 
 #precache( "material", "specialty_ads_zombies");
 
-function init()
+REGISTER_SYSTEM_EX( "perkplus", &__init__, &__main__, undefined )
+
+function private __init__()
 {
+	if ( !is_enabled() )
+	{
+		return;
+	}
+	
 	callback::on_connect( &on_player_connect );
 	deadshot_dealer();
+}
+
+function private __main__()
+{
+	if ( !is_enabled() )
+	{
+		return;
+	}
+
 	thread main();
 }
 
@@ -47,7 +63,7 @@ function main()
 {
     level endon("end_game");
     level endon("game_ended");
-    level waittill( "initial_blackscreen_passed" );
+    level flag::wait_till("initial_blackscreen_passed");
 	
 	thread phdwine();
 }
@@ -57,6 +73,16 @@ function on_player_connect()
 	self endon("disconnect");
 	
 	self thread set_perk();
+}
+
+function is_enabled()
+{
+    if( GetDvarInt("tfoption_perkplus", 0) )
+    {
+        return true;
+    }
+
+	return false;
 }
 
 function set_perk()

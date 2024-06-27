@@ -27,4 +27,32 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
+REFERENCE           VERSION
+LANG_ENGLISH     "Version 2.14.0"
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
+REFERENCE           VERSION_BETA
+LANG_ENGLISH     "Beta"
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
 ENDMARKER

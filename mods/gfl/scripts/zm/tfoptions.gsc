@@ -132,6 +132,7 @@ function autoexec auto_preload()
     level.tfoptions_default["thirdperson"] = 0;
     level.tfoptions_default["zombie_healthbar"] = 0;
     level.tfoptions_default["hud"] = 0;
+    level.tfoptions_default["hitmarkers_sound"] = 0;
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         set_default_tfoptions();
@@ -139,11 +140,11 @@ function autoexec auto_preload()
     
     level.tfoptions_old = [];
     level.tfoptions_old_zombie_vars = [];
+    set_old_tfoptions();
 }
 
 function init()
 {
-    set_old_tfoptions();
     pre_load();
     load_tf_options();
 }

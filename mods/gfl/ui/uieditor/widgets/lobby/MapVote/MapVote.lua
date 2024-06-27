@@ -216,38 +216,17 @@ CoD.MapVote.new = function ( menu, controller )
 		local mapVoteMapNext = Engine.GetModelValue( model )
 		if mapVoteMapNext then
 			MapVoteItemVoteDecided.MapImage:setImage( RegisterImage( MapNameToMapImage( mapVoteMapNext ) ) )
-
-            Engine.UpdateModPreviewImage(Engine.DvarString(nil, "ui_mapname"))
 		end
 	end )
 	MapVoteItemVoteDecided:subscribeToGlobalModel( controller, "MapVote", "mapVoteMapNext", function ( model )
 		local mapVoteMapNext = Engine.GetModelValue( model )
 		local internalName = mapVoteMapNext
-		local isCustomMap = false
 
-		if not LUI.startswith( Dvar.ui_mapname:get(), "zm_" ) then
-			local ModsLists = Engine.Mods_Lists_GetInfoEntries( LuaEnums.USERMAP_BASE_PATH, 0, Engine.Mods_Lists_GetInfoEntriesCount( LuaEnums.USERMAP_BASE_PATH ) )
-			if ModsLists then
-				for int = 0 , #ModsLists, 1 do
-					local map = ModsLists[int] 
-					if map.ugcName == Dvar.ui_mapname:get() and map.internalName == mapVoteMapNext then
-						mapVoteMapNext = map.name
-						isCustomMap = true
-						break
-					end
-				end
-			end
-		end
-		
 		if mapVoteMapNext then
 			MapVoteItemVoteDecided.MapNameNew.btnDisplayTextStroke:setText( MapNameToLocalizedMapName( mapVoteMapNext ) )
 
 			if internalName and LUI.startswith( internalName, "zm_" ) then
-				if isCustomMap then
-					MapVoteItemVoteDecided.GameModeNew.SubTitle:setText( internalName )
-				else
-					MapVoteItemVoteDecided.GameModeNew.SubTitle:setText( MapNameToLocalizedMapLocation( internalName ) )
-				end
+				MapVoteItemVoteDecided.GameModeNew.SubTitle:setText( MapNameToLocalizedMapLocation( internalName ) )
 			end
 		end
 	end )
@@ -332,7 +311,6 @@ CoD.MapVote.new = function ( menu, controller )
 		local mapVoteMapPrevious = Engine.GetModelValue( model )
 		if mapVoteMapPrevious then
 			MapVoteItemPrevious.MapImage:setImage( RegisterImage( MapNameToMapImage( mapVoteMapPrevious ) ) )
-			Engine.UpdateModPreviewImage(Engine.DvarString(nil, "ui_mapname"))
 		end
 	end )
 	MapVoteItemPrevious:subscribeToGlobalModel( controller, "MapVote", "mapVoteCountPrevious", function ( model )
@@ -425,7 +403,6 @@ CoD.MapVote.new = function ( menu, controller )
 		local mapVoteMapNext = Engine.GetModelValue( model )
 		if mapVoteMapNext then
 			MapVoteItemNext.MapImage:setImage( RegisterImage( MapNameToMapImage( mapVoteMapNext ) ) )
-			Engine.UpdateModPreviewImage(Engine.DvarString(nil, "ui_mapname"))
 		end
 	end )
 	MapVoteItemNext:subscribeToGlobalModel( controller, "MapVote", "mapVoteCountNext", function ( model )
@@ -437,37 +414,16 @@ CoD.MapVote.new = function ( menu, controller )
 	MapVoteItemNext:subscribeToGlobalModel( controller, "MapVote", "mapVoteMapNext", function ( model )
 		local mapVoteMapNext = Engine.GetModelValue( model )
 		local internalName = mapVoteMapNext
-		local isCustomMap = false
-
-		if not LUI.startswith( Dvar.ui_mapname:get(), "zm_" ) then
-			local ModsLists = Engine.Mods_Lists_GetInfoEntries( LuaEnums.USERMAP_BASE_PATH, 0, Engine.Mods_Lists_GetInfoEntriesCount( LuaEnums.USERMAP_BASE_PATH ) )
-			if ModsLists then
-				for int = 0 , #ModsLists, 1 do
-					local map = ModsLists[int] 
-					if map.ugcName == Dvar.ui_mapname:get() and map.internalName == mapVoteMapNext then
-						mapVoteMapNext = map.name
-						isCustomMap = true
-						break
-					end
-				end
-			end
-		end
 
 		if mapVoteMapNext then
 			MapVoteItemNext.MapNameNew.btnDisplayTextStroke:setText( MapNameToLocalizedMapName( mapVoteMapNext ) )
 			
 			if internalName and LUI.startswith( internalName, "zm_" ) then
-				if isCustomMap then
-					MapVoteItemVoteDecided.GameModeNew.SubTitle:setText( internalName )
-				else
-					MapVoteItemVoteDecided.GameModeNew.SubTitle:setText( MapNameToLocalizedMapLocation( internalName ) )
-				end
+				MapVoteItemVoteDecided.GameModeNew.SubTitle:setText( MapNameToLocalizedMapLocation( internalName ) )
 			end
 		end
 	end )
 	MapVoteItemNext:subscribeToGlobalModel( controller, "MapVote", "mapVoteGameModeNext", function ( model )
-		Engine.UpdateModPreviewImage(Engine.DvarString(nil, "ui_mapname"))
-
 		local f11_local0 = Engine.GetModel( Engine.GetGlobalModel(), "MapVote" )
 		local mapVoteMapNextModel = Engine.GetModel( f11_local0, "mapVoteMapNext" )
 		if mapVoteMapNextModel then

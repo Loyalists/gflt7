@@ -59,6 +59,29 @@ DataSources.TFOptionsFriendlyFire = DataSourceHelpers.ListSetup("PC.TFOptionsFri
     return f15_local0
 end, true)
 
+DataSources.TFOptionsHitmarkersSound = DataSourceHelpers.ListSetup("PC.TFOptionsHitmarkersSound", function(f15_arg0)
+    local f15_local0 = {}
+    table.insert(f15_local0, {
+        models = {
+            value = 0,
+            valueDisplay = "Black Ops 3"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 1,
+            valueDisplay = "Classic"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 2,
+            valueDisplay = "Modern Warfare"
+        }
+    })
+    return f15_local0
+end, true)
+
 DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
@@ -100,6 +123,16 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_HITMARKERS_SOUND",
+            description = "TF_HITMARKERS_SOUND_DESC",
+            profileVarName = "hitmarkers_sound",
+            datasource = "TFOptionsHitmarkersSound",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
     })
     table.insert(f26_local0, {
         models = {

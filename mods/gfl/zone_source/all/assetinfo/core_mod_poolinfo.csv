@@ -8,7 +8,7 @@ xmodelmesh,34816,300
 material,20480,1013
 computeshaderset,256,0
 techset,1024,22
-image,49152,1044
+image,49152,1043
 sound,32,1
 sound_patch,16,0
 col_map,2,0
@@ -46,7 +46,7 @@ player_character,8,0
 aitype,96,0
 character,150,5
 xmodelalias,48,1
-rawfile,5000,107
+rawfile,5000,108
 stringtable,200,13
 structuredtable,96,0
 leaderboarddef,256,0

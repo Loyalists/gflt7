@@ -14,6 +14,7 @@ REGISTER_SYSTEM_EX( "thirdperson", &__init__, &__main__, undefined )
 
 function private __init__()
 {
+    modvar("gfl_thirdperson", 0);
     callback::on_spawned( &on_player_spawned );
     chat_notify::register_chat_notify_callback( "tps", &on_message_sent );
     chat_notify::register_chat_notify_callback( "tpscam", &on_tpscam_message_sent );
@@ -57,6 +58,7 @@ function on_tpscam_message_sent(args)
     case "front":
     case "back":
     case "side":
+    case "side2":
         break;
     default:
         preset = undefined;
@@ -96,13 +98,13 @@ function toggle_thirdperson()
 
     if (IS_TRUE(self.spectatingThirdPerson))
     {
-        self SetClientThirdPerson( 0 );
+        // self SetClientThirdPerson( 0 );
         self.spectatingThirdPerson = false;
         self set_thirdperson_state("off");
     }
     else
     {
-        self SetClientThirdPerson( 1 );
+        // self SetClientThirdPerson( 1 );
         self.spectatingThirdPerson = true;
         self set_thirdperson_state("on");
     }
@@ -119,13 +121,13 @@ function force_thirdperson()
 
     if (IS_TRUE(self.spectatingThirdPerson))
     {
-        self SetClientThirdPerson( 1 );
+        // self SetClientThirdPerson( 1 );
         self.spectatingThirdPerson = true;
         self set_thirdperson_state("on");
     }
     else
     {
-        self SetClientThirdPerson( 0 );
+        // self SetClientThirdPerson( 0 );
         self.spectatingThirdPerson = false;
         self set_thirdperson_state("off");
     }

@@ -170,6 +170,26 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	self:addElement( ZMPromoIconList )
 	self.ZMPromoIconList = ZMPromoIconList
 	
+	local Shortcuts = LUI.UIText.new()
+	Shortcuts:setLeftRight( true, false, 950, 1200 )
+	Shortcuts:setTopBottom( true, false, 350, 370 )
+	Shortcuts:setText( Engine.Localize( "GFL_ZM_SHORTCUTS_DESC" ) )
+	Shortcuts:setTTF( "fonts/default.ttf" )
+	Shortcuts:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
+	Shortcuts:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	self:addElement( Shortcuts )
+	self.Shortcuts = Shortcuts
+
+	local Shortcuts2 = LUI.UIText.new()
+	Shortcuts2:setLeftRight( true, false, 1100, 1280 )
+	Shortcuts2:setTopBottom( true, false, 350, 370 )
+	Shortcuts2:setText( Engine.Localize( "GFL_ZM_SHORTCUTS" ) )
+	Shortcuts2:setTTF( "fonts/default.ttf" )
+	Shortcuts2:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
+	Shortcuts2:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	self:addElement( Shortcuts2 )
+	self.Shortcuts2 = Shortcuts2
+
 	self.clipsPerState = {
 		DefaultState = {
 			DefaultClip = function ()
@@ -211,6 +231,8 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonList:close()
 		element.ZMPromoIconList:close()
+		element.Shortcuts:close()
+		element.Shortcuts2:close()
 	end )
 	
 	if PostLoadFunc then
