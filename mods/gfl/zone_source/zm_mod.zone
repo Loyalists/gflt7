@@ -37,6 +37,7 @@ image,t7_menu_zm_loadscreen_prototype
 image,t7_menu_zm_loadscreen_classified
 image,t7_menu_zm_loadscreen_tuvong
 image,t7_menu_zm_loadscreen_wing
+image,t7_menu_zm_loadscreen_sanctuary
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc

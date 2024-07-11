@@ -278,8 +278,8 @@ index,type,name,resident,streamed,parentStack
 277,rawfile,ui/t6/codbase_og.lua,184644,0,|ui/t6/codbase_og.luac|rawfile|zone_source/core_mod.zone|csv
 278,rawfile,ui_mp/t6/hud.lua,6573,0,|zone_source/core_mod.zone|csv
 279,rawfile,ui_mp/t6/hud_og.lua,66528,0,|ui_mp/t6/hud_og.luac|rawfile|zone_source/core_mod.zone|csv
-280,rawfile,ui_mp/t6/hud/loading.lua,22888,0,|zone_source/core_mod.zone|csv
-281,rawfile,ui_mp/t6/hud/loading_og.lua,31706,0,|ui_mp/t6/hud/loading_og.luac|rawfile|zone_source/core_mod.zone|csv
+280,rawfile,ui_mp/t6/hud/loading.lua,22960,0,|zone_source/core_mod.zone|csv
+281,rawfile,ui_mp/t6/hud/loading_og.lua,31698,0,|ui_mp/t6/hud/loading_og.luac|rawfile|zone_source/core_mod.zone|csv
 282,rawfile,ui/uieditor/widgets/lobby/mapvote/mapvote.lua,171052,0,|zone_source/core_mod.zone|csv
 283,rawfile,ui/uieditor/menus/charactercustomization/personalizecharacter.lua,40912,0,|zone_source/core_mod.zone|csv
 284,rawfile,ui/uieditor/menus/blackmarket.lua,79408,0,|zone_source/core_mod.zone|csv
@@ -3265,7 +3265,7 @@ index,type,name,resident,streamed,parentStack
 3264,xmodelmesh,t7_gfl_dima_bodyeb61818e,3296,3521488,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3265,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3266,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3267,image,t7_menu_mp_chars_enforcer_body_custom01àäy|Ê,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3267,image,t7_menu_mp_chars_enforcer_body_custom010å×»‘,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3268,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3269,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3270,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv

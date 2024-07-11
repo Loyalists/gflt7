@@ -47,6 +47,7 @@ local CustomMapImageTable = {
 	["zm_log_tuvong"] = "t7_menu_zm_loadscreen_tuvong",
 	["zm_lit"] = "t7_menu_zm_loadscreen_classified",
 	["zm_wing"] = "t7_menu_zm_loadscreen_wing",
+	["zm_sanctuary"] = "t7_menu_zm_loadscreen_sanctuary",
 }
 
 local IntroMovieDisabledMaps = {
@@ -84,6 +85,7 @@ local IntroMovieDisabledMaps = {
 	["zm_log_tuvong"] = true,
 	["zm_lit"] = true,
 	["zm_wing"] = true,
+	["zm_sanctuary"] = true,
 }
 
 local function GetCustomMapImage( mapName )

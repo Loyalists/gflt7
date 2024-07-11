@@ -7,7 +7,7 @@ index,type,name,resident,streamed,parentStack
 6,rawfile,ui/uieditor/menus/startmenu/iw7startmenu_gameoptions_zm.lua,5936,0,|zone_source/zm_mod.zone|csv
 7,rawfile,ui/uieditor/menus/startmenu/s4startmenu_gameoptions_zm.lua,5932,0,|zone_source/zm_mod.zone|csv
 8,rawfile,ui/uieditor/widgets/startmenu/startmenu_gameoptions_kf2.lua,446,0,|zone_source/zm_mod.zone|csv
-9,scriptparsetree,scripts/gfl/zm/character_mgr.gsc,11745,0,|zone_source/zm_mod.zone|csv
+9,scriptparsetree,scripts/gfl/zm/character_mgr.gsc,11729,0,|zone_source/zm_mod.zone|csv
 10,scriptparsetree,scripts/gfl/zm/character_mgr.csc,3034,0,|zone_source/zm_mod.zone|csv
 11,scriptparsetree,scripts/gfl/zm/zm_character.gsc,12332,0,|zone_source/zm_mod.zone|csv
 12,scriptparsetree,scripts/gfl/zm/gameplay.gsc,10962,0,|zone_source/zm_mod.zone|csv
@@ -146,4 +146,5 @@ index,type,name,resident,streamed,parentStack
 145,image,t7_menu_zm_loadscreen_classified,33,2097152,|zone_source/zm_mod.zone|csv
 146,image,t7_menu_zm_loadscreen_tuvong,29,2097152,|zone_source/zm_mod.zone|csv
 147,image,t7_menu_zm_loadscreen_wing,27,2097152,|zone_source/zm_mod.zone|csv
-148,assetlist,,2337,0,
+148,image,t7_menu_zm_loadscreen_sanctuary,32,2097152,|zone_source/zm_mod.zone|csv
+149,assetlist,,2353,0,
