@@ -32,6 +32,7 @@ image,t7_menu_zm_loadscreen_sumpf
 image,t7_menu_zm_loadscreen_theater
 image,t7_menu_zm_loadscreen_tomb
 image,t7_menu_zm_loadscreen_tuvong
+image,t7_menu_zm_loadscreen_wing
 image,t7_menu_zm_loadscreen_zod
 image,uie_t7_zm_hud_score_an94
 image,uie_t7_zm_hud_score_centaureissi
@@ -76,14 +77,19 @@ image,uie_t7_zm_hud_score_char8_gold_helmet
 image,uie_t7_zm_hud_score_char8_helmet
 image,uie_t7_zm_hud_score_char8_mask
 image,uie_t7_zm_hud_score_dima
+image,uie_t7_zm_hud_score_dreamer
 image,uie_t7_zm_hud_score_g36c
+image,uie_t7_zm_hud_score_guard
 image,uie_t7_zm_hud_score_lenna
 image,uie_t7_zm_hud_score_m4a1
 image,uie_t7_zm_hud_score_macqiato
+image,uie_t7_zm_hud_score_ouroboros
 image,uie_t7_zm_hud_score_rfb
+image,uie_t7_zm_hud_score_ripper
 image,uie_t7_zm_hud_score_ro635
 image,uie_t7_zm_hud_score_st_ar15
 image,uie_t7_zm_hud_score_tac50
+image,uie_t7_zm_hud_score_vespid
 image,uie_ui_icon_minimap_zm_ai_boss
 image,uie_ui_icon_minimap_zm_ai_elite
 image,uie_ui_icon_minimap_zm_ai_normal

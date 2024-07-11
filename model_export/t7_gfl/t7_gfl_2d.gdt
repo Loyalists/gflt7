@@ -5102,4 +5102,69 @@
 		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_dima.png"
 		"coreSemantic" "Linear4ch"
 	}
+	"t7_menu_mp_hero_background_with_sf" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_sf.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_jaeger" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_jaeger.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_jaeger" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\jaeger.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_ripper" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ripper.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_vespid" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\vespid.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_guard" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\guard.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_ouroboros" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ouroboros.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_dreamer" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\dreamer.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_zm_loadscreen_wing" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_wing.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_dreamer" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_dreamer.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_guard" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_guard.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_ripper" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_ripper.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_vespid" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_vespid.png"
+		"coreSemantic" "Linear4ch"
+	}
 }

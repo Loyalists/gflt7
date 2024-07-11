@@ -138,7 +138,7 @@ CoD.TFOptionsDefault["cw_scoreevent"] = 1
 CoD.TFOptionsDefault["thirdperson"] = 0
 CoD.TFOptionsDefault["zombie_healthbar"] = 1
 CoD.TFOptionsDefault["hud"] = 1
-CoD.TFOptionsDefault["hitmarkers_sound"] = 1
+CoD.TFOptionsDefault["hitmarkers_sound"] = 2
 
 CoD.TFOptionsDirtyFlag = false
 

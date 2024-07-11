@@ -152,7 +152,17 @@ CoD.CCUtility.IsBodyOrHelmetAccessible = function(f34_arg0, f34_arg1, f34_arg2, 
             end
         end
         return false
-    else
+    elseif CoD.CCUtility.customizationMode == Enum.eModes.MODE_ZOMBIES or Engine.IsZombiesGame() then
+		local heroIndex = CoD.CCUtility.Heroes.HeroIndexForEdits
+		if f34_arg1 == "bodystyle" then
+			-- soe beast
+			-- refer to zm_character_customization
+			if heroIndex == 4 and f34_arg2 == 5 then
+				return false
+			end
+		end
+		return true
+	else
         return true
     end
 end

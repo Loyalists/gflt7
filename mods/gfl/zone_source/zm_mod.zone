@@ -36,6 +36,7 @@ image,t7_menu_zm_loadscreen_genesis
 image,t7_menu_zm_loadscreen_prototype
 image,t7_menu_zm_loadscreen_classified
 image,t7_menu_zm_loadscreen_tuvong
+image,t7_menu_zm_loadscreen_wing
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
@@ -162,6 +163,11 @@ image,uie_t7_zm_hud_score_an94
 image,uie_t7_zm_hud_score_lenna
 image,uie_t7_zm_hud_score_macqiato
 image,uie_t7_zm_hud_score_centaureissi
+image,uie_t7_zm_hud_score_ripper
+image,uie_t7_zm_hud_score_vespid
+image,uie_t7_zm_hud_score_guard
+image,uie_t7_zm_hud_score_ouroboros
+image,uie_t7_zm_hud_score_dreamer
 
 image,t7_gfl_notification_hk416_gloomy
 

@@ -23,6 +23,12 @@ function init_character_table()
 	level.charactertable["zm"]["hk416"] = create_hk416();
 	level.charactertable["zm"]["type89"] = create_type89();
 	level.charactertable["zm"]["m16a1"] = create_m16a1();
+	level.charactertable["zm"]["jaeger"] = create_jaeger();
+	level.charactertable["zm"]["guard"] = create_guard();
+	level.charactertable["zm"]["ripper"] = create_ripper();
+	level.charactertable["zm"]["vespid"] = create_vespid();
+	level.charactertable["zm"]["ouroboros"] = create_ouroboros();
+	level.charactertable["zm"]["dreamer"] = create_dreamer();
 	level.charactertable["zm"]["tololo"] = create_tololo();
 	level.charactertable["zm"]["suomi"] = create_suomi();
 	level.charactertable["zm"]["vepley_backpack"] = create_vepley_backpack();
@@ -144,6 +150,72 @@ function create_type89()
 	obj.id = "type89";
 	obj.keywords = array("_takeo_");
 	obj.name = "Howa Type 89";
+	return obj;
+}
+
+function create_jaeger()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 4;
+	obj.bodystyle = 0;
+	obj.id = "jaeger";
+	obj.keywords = array();
+	obj.name = "Jaeger";
+	return obj;
+}
+
+function create_guard()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 4;
+	obj.bodystyle = 1;
+	obj.id = "guard";
+	obj.keywords = array();
+	obj.name = "Guard";
+	return obj;
+}
+
+function create_ripper()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 4;
+	obj.bodystyle = 2;
+	obj.id = "ripper";
+	obj.keywords = array();
+	obj.name = "Ripper";
+	return obj;
+}
+
+function create_vespid()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 4;
+	obj.bodystyle = 3;
+	obj.id = "vespid";
+	obj.keywords = array();
+	obj.name = "Vespid";
+	return obj;
+}
+
+function create_ouroboros()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 4;
+	obj.bodystyle = 5;
+	obj.id = "ouroboros";
+	obj.keywords = array();
+	obj.name = "Ouroboros";
+	return obj;
+}
+
+function create_dreamer()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 4;
+	obj.bodystyle = 6;
+	obj.id = "dreamer";
+	obj.keywords = array();
+	obj.name = "Dreamer";
 	return obj;
 }
 

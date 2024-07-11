@@ -169,52 +169,7 @@ function update( death, mod, inflictor, weapon, victim, psOffsetTime, sHitLoc )
 	
 	if ( damagefeedback::should_play_sound( mod ) )
 	{	
-		if ( isdefined( victim ) && isdefined( victim.victimSoundMod ) )
-		{
-			switch( victim.victimSoundMod )
-			{
-				default:
-					hitAlias = "mpl_hit_alert";
-					break;
-			}
-		}
-		else if ( isdefined( inflictor ) && isdefined( inflictor.soundMod ))
-		{
-			//Add sound stuff here for specific inflictor types	
-			switch ( inflictor.soundMod )
-			{
-				case "player":
-					if ( mod == "MOD_BURNED" )
-					{
-						hitAlias = "mpl_hit_alert_burn";
-					}
-					else
-					{
-						hitAlias = "mpl_hit_alert";
-					}
-					break;	
-					
-				case "heatwave":
-					hitAlias = "mpl_hit_alert_heatwave";
-					break;
-										
-				case "default_loud":
-					hitAlias = "mpl_hit_heli_gunner";
-					break;						
-				
-				default:
-					hitAlias = "mpl_hit_alert";
-					break;
-			}
-		}
-		else if ( mod == "MOD_BURNED" )
-		{
-			hitAlias = "mpl_hit_alert_burn";
-		}
-		else
-		{
-			hitAlias = "mpl_hit_alert";
-		}
+		hitAlias = "mpl_hit_alert";
 	}
 	
 	perkFeedback = undefined;

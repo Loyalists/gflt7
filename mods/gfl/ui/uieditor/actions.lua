@@ -460,6 +460,60 @@ function GetHeroesList_InGame( customizationMode )
 		gameImageOff = "t7_gfl_chibi_dima",
     })
 
+    table.insert(heroes, {
+		character = "jaeger",
+        displayName = "Jaeger",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_sf",
+		frozenMomentRender = "t7_menu_choosespecialist_default_jaeger",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_jaeger",
+    })
+
+    table.insert(heroes, {
+		character = "guard",
+        displayName = "Guard",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_sf",
+		frozenMomentRender = "t7_menu_choosespecialist_default_guard",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_guard",
+    })
+
+    table.insert(heroes, {
+		character = "ripper",
+        displayName = "Ripper",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_sf",
+		frozenMomentRender = "t7_menu_choosespecialist_default_ripper",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_ripper",
+    })
+
+    table.insert(heroes, {
+		character = "vespid",
+        displayName = "Vespid",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_sf",
+		frozenMomentRender = "t7_menu_choosespecialist_default_vespid",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_vespid",
+    })
+
+    table.insert(heroes, {
+		character = "ouroboros",
+        displayName = "Ouroboros",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_reaper",
+		frozenMomentRender = "t7_menu_choosespecialist_default_reaper",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_ouroboros",
+    })
+
+    table.insert(heroes, {
+		character = "dreamer",
+        displayName = "Dreamer",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_reaper",
+		frozenMomentRender = "t7_menu_choosespecialist_default_dreamer",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_dreamer",
+    })
+
 	for i, hero in ipairs( heroes ) do
 		local index = i - 1
 		hero.bodyIndex = index

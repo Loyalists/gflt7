@@ -38,6 +38,11 @@ function init_character_icon_table()
     level.character_icon_table["lenna"] = "uie_t7_zm_hud_score_lenna";
     level.character_icon_table["macqiato"] = "uie_t7_zm_hud_score_macqiato";
     level.character_icon_table["centaureissi"] = "uie_t7_zm_hud_score_centaureissi";
+    level.character_icon_table["vespid"] = "uie_t7_zm_hud_score_vespid";
+    level.character_icon_table["guard"] = "uie_t7_zm_hud_score_guard";
+    level.character_icon_table["ripper"] = "uie_t7_zm_hud_score_ripper";
+    level.character_icon_table["ouroboros"] = "uie_t7_zm_hud_score_ouroboros";
+    level.character_icon_table["dreamer"] = "uie_t7_zm_hud_score_dreamer";
 }
 
 function init_playerlist_icon_uimodel( n_local_client )

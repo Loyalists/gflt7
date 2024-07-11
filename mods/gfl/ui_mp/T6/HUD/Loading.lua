@@ -46,6 +46,7 @@ local CustomMapImageTable = {
 	["zm_tranzit_busdepot"] = "t7_menu_zm_loadscreen_bus_depot",
 	["zm_log_tuvong"] = "t7_menu_zm_loadscreen_tuvong",
 	["zm_lit"] = "t7_menu_zm_loadscreen_classified",
+	["zm_wing"] = "t7_menu_zm_loadscreen_wing",
 }
 
 local IntroMovieDisabledMaps = {
@@ -82,6 +83,7 @@ local IntroMovieDisabledMaps = {
 	["zm_tranzit_busdepot"] = true,
 	["zm_log_tuvong"] = true,
 	["zm_lit"] = true,
+	["zm_wing"] = true,
 }
 
 local function GetCustomMapImage( mapName )

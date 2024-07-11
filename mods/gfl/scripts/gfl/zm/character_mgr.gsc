@@ -20,6 +20,9 @@
 
 #namespace character_mgr;
 
+#define ALTBODY_BODYTYPE_INDEX 4
+#define ALTBODY_BODYSTYLE_INDEX 4
+
 #precache( "lui_menu_data", "hudItems.CharacterPopup" );
 
 REGISTER_SYSTEM_EX( "character_mgr", &__init__, &__main__, undefined )
@@ -90,7 +93,8 @@ function on_player_spawned()
 
 	if ( level.script == "zm_zod" )
 	{
-		// self thread altbody_cc_fix();
+		// self thread altbody_exit_cc_fix();
+		self thread altbody_enter_cc_fix();
 	}
 
     if ( is_cc_watcher_needed() )
@@ -277,7 +281,7 @@ function show_character_popup(args = undefined)
 }
 
 // model fix related
-function altbody_cc_fix()
+function altbody_exit_cc_fix()
 {
 	self endon("disconnect");
 	self endon("death");
@@ -296,6 +300,30 @@ function altbody_cc_fix()
 			wait 0.1;
 		}
 		wait 1;
+	}
+}
+
+function altbody_enter_cc_fix()
+{
+	self endon("disconnect");
+	self endon("death");
+	self endon("bled_out");
+
+	if ( !self flag::exists("in_beastmode") )
+	{
+		return;
+	}
+
+	while (true)
+	{
+		self flag::wait_till("in_beastmode");
+		wait 0.05;
+		bodytype = self GetCharacterBodyType();
+		if ( bodytype == ALTBODY_BODYTYPE_INDEX )
+		{
+			self setcharacterbodystyle(ALTBODY_BODYSTYLE_INDEX);
+		}
+		wait 0.05;
 	}
 }
 
