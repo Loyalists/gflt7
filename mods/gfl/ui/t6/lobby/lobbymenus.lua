@@ -547,7 +547,7 @@ CoD.LobbyMenus.ZMButtonsOnline = function(f33_arg0, f33_arg1, f33_arg2)
     -- f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.ZM_MEGACHEW_FACTORY)
     -- f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.ZM_GOBBLEGUM_RECIPES)
     f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.ZM_BUILD_KITS)
-    f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
+    -- f0_local5(f33_arg0, f33_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
 end
 
 CoD.LobbyMenus.ZMButtonsPublicGame = function(f34_arg0, f34_arg1)
@@ -560,7 +560,7 @@ CoD.LobbyMenus.ZMButtonsPublicGame = function(f34_arg0, f34_arg1)
         f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_CHANGE_LOBBY)
         f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
         f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.ZM_BUILD_KITS)
-        f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
+        -- f0_local5(f34_arg0, f34_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
     end
 end
 
@@ -582,7 +582,7 @@ CoD.LobbyMenus.ZMButtonsCustomGame = function(f35_arg0, f35_arg1, f35_arg2)
     f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.ZM_CHANGE_LOBBY)
     f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS)
     f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.ZM_BUILD_KITS)
-    f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
+    -- f0_local5(f35_arg0, f35_arg1, CoD.LobbyButtons.OPEN_ZM_INFO_POPUP)
 end
 
 CoD.LobbyMenus.ZMButtonsLAN = function(f36_arg0, f36_arg1, f36_arg2)

@@ -23,6 +23,10 @@ material,gfl_logo
 // material,gfl_victory
 image,uie_img_t7_menu_frontend_asset_bo3logo
 image,uie_t7_menu_frontend_titlenumbrdrum
+image,t7_crm_gfl_logo
+image,t7_crm_gfl_dday
+image,t7_crm_gfl_intel_room
+image,uie_t7_menu_gfl_welcome_characters
 
 localize,gfl
 localize,gfl_character
@@ -206,6 +210,9 @@ rawfile,ui/uieditor/menus/GFL/ModInfo.lua
 rawfile,ui/uieditor/widgets/GFL/ModInfoP1.lua
 rawfile,ui/uieditor/widgets/GFL/ModInfoFAQPage.lua
 rawfile,ui/uieditor/widgets/GFL/ModInfoUsefulLinksPage.lua
+
+rawfile,ui/uieditor/menus/GFL/GFLWelcomeMenu.lua
+rawfile,ui/uieditor/menus/GFL/Popups/GFLCRMBanner.lua
 
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua

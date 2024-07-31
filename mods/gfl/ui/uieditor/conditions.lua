@@ -1,7 +1,29 @@
 require("ui.uieditor.conditions_og")
 
-function FeaturedCards_IsEnabled(f1049_arg0, f1049_arg1)
-	return false
+function FeaturedCards_IsEnabled( element, controller )
+	local f1049_local0 = LobbyData.GetLobbyNav()
+	
+	if f1049_local0 ~= LobbyData.UITargets.UI_MODESELECT.id and f1049_local0 ~= LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
+		return false
+	else
+		local f1049_local1 = Engine.GetModelValue( Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "FeaturedCardsRoot", true ), "Enabled", true ) )
+		if HasLiveEvent( controller ) then
+			return true
+		elseif f1049_local0 == LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
+			return true
+		elseif Dvar.ui_enableZMHDFeaturedCard:get() == 1 or Dvar.ui_enableZMHDFeaturedCard:get() == "1" then
+			return true
+		else
+			local f1049_local2 = Engine.GetFeaturedCardsData()
+			if Dvar.live_featuredEnabled:get() == false or f1049_local2.enabled == false then
+				return false
+			elseif f1049_local2.validCardsCount == 0 then
+				return false
+			else
+				return true
+			end
+		end
+	end
 end
 
 function IsHeroLocked(f600_arg0, f600_arg1)

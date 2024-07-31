@@ -803,7 +803,7 @@ CoD.LobbyButtons.OPEN_MODINFO = {
 
 CoD.LobbyButtons.OPEN_ZM_INFO_POPUP = {
     stringRef = "MENU_INTEL_CAPS",
-    action = OpenZMInfoPopup,
+    action = OpenZMWelcomeMenu,
     customId = "btnOpenZMInfoPopup"
 }
 

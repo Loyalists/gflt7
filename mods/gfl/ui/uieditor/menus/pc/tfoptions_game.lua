@@ -79,6 +79,12 @@ DataSources.TFOptionsHitmarkersSound = DataSourceHelpers.ListSetup("PC.TFOptions
             valueDisplay = "Modern Warfare"
         }
     })
+    table.insert(f15_local0, {
+        models = {
+            value = 3,
+            valueDisplay = "Modern Warfare III"
+        }
+    })
     return f15_local0
 end, true)
 

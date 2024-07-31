@@ -117,6 +117,20 @@ function get_hitmarkers_sound( death, is_headshot )
 				}
 			}
 			break;
+		case 3:
+			hitAlias = "s5_hitmarkers";
+			if ( IS_TRUE(death) )
+			{
+				if ( IS_TRUE(is_headshot) )
+				{
+					hitAlias = "s5_hitmarkers_headshot_kill";
+				}
+				else
+				{
+					hitAlias = "s5_hitmarkers_kill";
+				}
+			}
+			break;
 		default:
 			break;
 	}

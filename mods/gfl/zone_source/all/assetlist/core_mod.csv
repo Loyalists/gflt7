@@ -3116,6 +3116,9 @@ image,i_p7_zm_teddybear_n
 image,i_t7_cloth_leather_black_n
 image,i_t7_cloth_leather_white_c
 image,i_t7_metal_worn_iron_dark_g
+image,t7_crm_gfl_dday
+image,t7_crm_gfl_intel_room
+image,t7_crm_gfl_logo
 image,t7_gfl_chibi_9a91
 image,t7_gfl_chibi_ak12
 image,t7_gfl_chibi_an94
@@ -3221,6 +3224,7 @@ image,t7_menu_mp_hero_background_with_vepley
 image,t7_menu_mp_hero_background_with_wa2000
 image,uie_img_t7_menu_frontend_asset_bo3logo
 image,uie_t7_menu_frontend_titlenumbrdrum
+image,uie_t7_menu_gfl_welcome_characters
 image,uie_t7_zm_hud_score_9a91
 image,uie_t7_zm_hud_score_char1
 image,uie_t7_zm_hud_score_char2
@@ -3287,7 +3291,9 @@ rawfile,ui/uieditor/menus/charactercustomization/choosezmcharacterloadout_ingame
 rawfile,ui/uieditor/menus/charactercustomization/personalizecharacter.lua
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
+rawfile,ui/uieditor/menus/gfl/gflwelcomemenu.lua
 rawfile,ui/uieditor/menus/gfl/modinfo.lua
+rawfile,ui/uieditor/menus/gfl/popups/gflcrmbanner.lua
 rawfile,ui/uieditor/menus/lobby/common/popups/bonusmodesflyout.lua
 rawfile,ui/uieditor/menus/lobby/common/popups/gamesettingsflyoutmp.lua
 rawfile,ui/uieditor/menus/pc/tfoptions.lua

@@ -69,6 +69,20 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
+REFERENCE           ZM_WELCOME_TITLE
+LANG_ENGLISH     "Welcome to Griffin Station"
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
 REFERENCE           CP_INFO_TITLE
 LANG_ENGLISH     "Welcome Commander!"
 LANG_GERMAN         "#same"
@@ -98,7 +112,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE           ZM_INFO_TITLE
-LANG_ENGLISH     "We have gotten request of handling ELID exterminations."
+LANG_ENGLISH     "We have gotten request of handling ELID exterminations"
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"

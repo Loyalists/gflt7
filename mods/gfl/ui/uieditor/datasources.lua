@@ -1,5 +1,124 @@
 require("ui.uieditor.datasources_og")
 
+DataSources.FeaturedCardHelper = function ( f196_arg0, f196_arg1 )
+	local f196_local0 = {}
+	local f196_local1 = 0
+
+	if 1 == Dvar.ui_enableZMHDFeaturedCard:get() or Dvar.ui_enableZMHDFeaturedCard:get() == "1" then
+		local f196_local2 = "t7_crm_zmhd_cosmic_featured_thermometerlocked"
+		if IsThermometerProgressEqualTo( 1 ) then
+			f196_local2 = "t7_crm_zmhd_cosmic_featured_thermometer"
+		end
+		table.insert( f196_local0, {
+			models = {
+				title = "",
+				actionTitle = "MENU_DETAILS",
+				action = "open_zmhd_thermometer",
+				background = f196_local2,
+				sequence = f196_local1
+			}
+		} )
+		f196_local1 = f196_local1 + 1
+	end
+
+	local f196_local2 = Engine.GetFeaturedCardsData()
+	if f196_local2 ~= nil then
+		local f196_local3 = f196_local2.cardsCountToShow
+		if f196_local2.enabled == true and 0 < f196_local3 then
+			for f196_local4 = 0, f196_local3 - 1, 1 do
+				local f196_local7 = Engine.GetFeaturedCard( f196_local4 )
+				if f196_local7.valid == true then
+					local f196_local8 = true
+					if f196_local7.subTitle == "zm" and not CoD.isZombie then
+						f196_local8 = false
+					end
+					if f196_local7.subTitle == "mp" and not CoD.isMultiplayer then
+						f196_local8 = false
+					end
+					if f196_local8 then
+						table.insert( f196_local0, {
+							models = {
+								index = f196_local4,
+								title = f196_local7.title,
+								subTitle = f196_local7.subTitle,
+								type = f196_local7.type,
+								actionTitle = f196_local7.actionTitle,
+								action = f196_local7.action,
+								background = f196_local7.bg,
+								sequence = f196_local1
+							}
+						} )
+						f196_local1 = f196_local1 + 1
+					end
+				end
+			end
+		end
+	end
+
+	if CoD.isZombie then
+		local f196_local3 = nil
+		table.insert( f196_local0, {
+			models = {
+                title = "MENU_INTEL_CAPS",
+				actionTitle = "MENU_DETAILS",
+				action = "gfl_open_welcomemenu",
+                background = "t7_crm_gfl_intel_room",
+				sequence = f196_local1
+			},
+		} )
+		f196_local1 = f196_local1 + 1
+
+		table.insert( f196_local0, {
+			models = {
+                title = "Latest Changelogs",
+				actionTitle = "MENU_DETAILS",
+				action = "gfl_open_changelogs",
+                background = "t7_crm_gfl_dday",
+				sequence = f196_local1
+			},
+		} )
+		f196_local1 = f196_local1 + 1
+	end
+
+	return f196_local0
+end
+
+DataSources.FeaturedCards = ListHelper_SetupDataSource( "FeaturedCards", function ( f201_arg0 )
+	return DataSources.FeaturedCardHelper( f201_arg0, true )
+end, nil, nil, DataSources.FeaturedCardPostCreationHelper )
+
+DataSources.FeaturedCardTicks = ListHelper_SetupDataSource( "FeaturedCardTicks", function ( f202_arg0 )
+	return DataSources.FeaturedCardHelper( f202_arg0, false )
+end, nil, nil, DataSources.FeaturedCardPostCreationHelper )
+
+DataSources.GFLCRMButtonList = {
+	prepare = function ( f651_arg0, f651_arg1, f651_arg2 )
+		f651_arg1.optionModels = {}
+		local f651_local0 = {
+			{
+				displayText = "MENU_OK",
+				displayImage = "",
+				displayDesc = "",
+				action = GoBack
+			}
+		}
+		local f651_local1 = Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "GFLCRMButtonList" ), "list" )
+		for f651_local5, f651_local6 in ipairs( f651_local0 ) do
+			f651_arg1.optionModels[f651_local5] = Engine.CreateModel( f651_local1, "buttonModel_" .. f651_local5 )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "displayText" ), Engine.Localize( f651_local6.displayText ) )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "displayImage" ), f651_local6.displayImage )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "hintText" ), Engine.Localize( f651_local6.displayDesc ) )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "action" ), f651_local6.action )
+		end
+	end,
+	getCount = function ( f652_arg0 )
+		return #f652_arg0.optionModels
+	end,
+	getItem = function ( f653_arg0, f653_arg1, f653_arg2 )
+		return f653_arg1.optionModels[f653_arg2]
+	end
+}
+
 DataSources.GalleryList = ListHelper_SetupDataSource("GalleryList", function(f777_arg0)
     local f777_local0 = {}
     local f777_local1 = {"cp_mi_eth_prologue", "cp_mi_zurich_newworld", "cp_mi_sing_blackstation",

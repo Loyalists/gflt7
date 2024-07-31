@@ -86,6 +86,8 @@ require("ui.uieditor.menus.PC.TFOptions_Bot")
 require("ui.uieditor.menus.PC.TFOptions_BGB")
 
 require("ui.uieditor.menus.GFL.ModInfo")
+require("ui.uieditor.menus.GFL.GFLWelcomeMenu")
+require("ui.uieditor.menus.GFL.Popups.GFLCRMBanner")
 
 require("ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout")
 
