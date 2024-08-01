@@ -147,10 +147,10 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_sf_recap_intermission",
+            "Name": "gfl_main_theme",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_sf_recap_intermission_intro",
+                    "AliasName": "mus_gfl_main_theme_intro",
                     "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -379,35 +379,6 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_satellitecityroof_1",
-            "LoopAssets": [
-                {
-                    "AliasName": "mus_gfl_satellitecityroof_1_intro",
-                    "Looping": false,
-                    "CompleteLoop": false,
-                    "RemoveAfterPlay": false,
-                    "PlayAsFirstRandom": false,
-                    "StartSync": false,
-                    "StopSync": false,
-                    "CompleteOnStop": true,
-                    "LoopStartOffset": 0,
-                    "BPM": 120,
-                    "AssetType": 1,
-                    "LoopNumber": 1,
-                    "Order": 0,
-                    "StartDelayBeats": 0,
-                    "StartFadeBeats": 4,
-                    "StopDelayBeats": 0,
-                    "StopFadeBeats": 16,
-                    "Meter": 4
-                }
-            ],
-            "Order": 13,
-            "IsRandom": false,
-            "IsSequential": true,
-            "SkipPreviousExit": false
-        },
-        {
             "Name": "gfl_ab1m",
             "LoopAssets": [
                 {
@@ -431,7 +402,7 @@
                     "Meter": 4
                 }
             ],
-            "Order": 14,
+            "Order": 13,
             "IsRandom": false,
             "IsSequential": true,
             "SkipPreviousExit": false
@@ -460,7 +431,181 @@
                     "Meter": 4
                 }
             ],
+            "Order": 14,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_antibody",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_antibody_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
             "Order": 15,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_schizophrenia",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_schizophrenia_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 16,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_receptor",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_receptor_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 17,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_retinol",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_retinol_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 18,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_tocopherol",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_tocopherol_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 19,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_paranoia",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_paranoia_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 20,
             "IsRandom": false,
             "IsSequential": true,
             "SkipPreviousExit": false
@@ -472,7 +617,7 @@
         "gfl_hope",
         "gfl_21winter_battle_3",
         "gfl_frontline",
-        "gfl_sf_recap_intermission",
+        "gfl_main_theme",
         "gfl_the_hunt",
         "gfl_casual",
         "gfl_sad",
@@ -481,7 +626,13 @@
         "gfl_satellitecitystreet_1",
         "gfl_satellitecitylab_1",
         "gfl_ab1m",
-        "gfl_ab3m"
+        "gfl_ab3m",
+        "gfl_antibody",
+        "gfl_schizophrenia",
+        "gfl_receptor",
+        "gfl_retinol",
+        "gfl_tocopherol",
+        "gfl_paranoia"
     ],
-    "LoopIndex": 16
+    "LoopIndex": 21
 }

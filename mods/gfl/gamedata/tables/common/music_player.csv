@@ -41,84 +41,88 @@
 40,mus_poison_mushroom_oneshot_intro,Poison Mushroom,James McCawley,,doa
 41,mus_115_riddle_oneshot_intro,115 Riddles,Brian Tuey,,doa
 42,mus_clockwork_squares_oneshot_intro,Clockwork Squared,James McCawley,,doa
-43,mus_vengeance_alerted_intro,Vengeance Battle,Jack Wall,,campaign
-44,mus_abra_macabre_intro,Abra Macabre,Kevin Sherwood,,doa
-45,mus_laughcorpse_intro,Laughing Corpses,James McCawley,,doa
-46,mus_apc_intro,APC ,Jack Wall,,campaign
-47,mus_dead_again_intro,Dead Again,Kevin Sherwood,,zombies
-48,mus_dead_flowers_intro,Dead Flowers,Kevin Sherwood,James McCawley,zombies
-49,mus_darkstar_intro,Darkstar,Shawn Jimmerson,,multiplayer
-50,mus_platform_of_dreams_intro,Platform of Dreams,Brian Tuey,,zombies
-51,mus_legendary_intro,Legendary,Brian Tuey,,zombies
-52,mus_skulls_of_the_damned_intro,Skulls of the Damned,Brian Tuey,,zombies
-53,mus_arachnophobia_intro,Arachnophobia,Brian Tuey,,zombies
-54,mus_betrayal_intro,Betrayal,Brian Tuey,,zombies
-55,mus_zetsubou_no_shima_intro,Zetsubou No Shima,Brian Tuey,,zombies
-56,mus_the_frozen_forest_intro,The Frozen Forest,Jack Wall,,campaign
-57,mus_from_the_brink_of_death_intro,From the Brink of Death,Jack Wall,,campaign
-58,mus_riding_the_tempest_intro,Riding the Tempest,Jack Wall,,campaign
-59,mus_into_the_q_zone_intro,Into the Q Zone,Jack Wall,,campaign
-60,mus_horrors_in_the_silo_intro,Horrors in the Silo,Jack Wall,,campaign
-61,mus_diaz_intro,Diaz,Jack Wall,,campaign
-62,mus_burn_rescue_intro,Burn Rescue,Jack Wall,,campaign
-63,mus_samanthas_lullaby_magicmix_intro,Samantha's Lullaby (Magic Mix),Brian Tuey,,zombies
-64,mus_dead_ended_intro,Dead Ended,Kevin Sherwood,,zombies
-65,mus_blood_of_stalingrad_intro,Blood of Stalingrad,Brian Tuey,,zombies
-66,mus_king_of_the_hill_intro,King of the Hill,Brian Tuey,,zombies
-67,mus_samanthas_sorrow_intro,Samantha's Sorrow,Brian Tuey,,zombies
-68,mus_damned_intro,Damned,Kevin Sherwood,,zombies
-69,mus_damned_2_intro,Damned 100AE,Kevin Sherwood,Brian Tuey,zombies
-70,mus_damned_25_intro,Damned 3 (Instrumental) ,Kevin Sherwood,Brian Tuey,zombies
-71,mus_the_gift_intro,The Gift,Kevin Sherwood,,zombies
-72,mus_archangel_theatrical_mix_intro,Archangel (Theatrical Mix),Brian Tuey,Kevin Sherwood,zombies
-73,mus_dead_again_theatrical_mix_intro,Dead Again (Theatrical Mix),Brian Tuey,Kevin Sherwood,zombies
-74,mus_the_gift_theatrical_intro,The Gift (Theatrical Mix),Brian Tuey,Kevin Sherwood,zombies
-75,mus_wtf_intro,WTF,Brian Tuey,Kevin Sherwood,zombies
-76,mus_aether_intro,Aether,Brian Tuey,,zombies
-77,mus_blood_red_moon_intro,Blood Red Moon,Brian Tuey,,zombies
-78,mus_death_bell_intro,Death Bell,Brian Tuey,,zombies
-79,mus_desolation_intro,Desolation,Brian Tuey,,zombies
-80,mus_high_noon_intro,High Noon,Brian Tuey,,zombies
-81,mus_maskwalk_intro,Mask Walk,Kevin Sherwood,,zombies
-82,mus_quest_noir_intro,Ouest Noir,Brian Tuey,,zombies
-83,mus_richtofans_delight_intro,Richtofen's Delight,Brian Tuey,,zombies
-84,mus_samanthas_desire_intro,Samantha's Desire,Brian Tuey,,zombies
-85,mus_short_arm_of_the_law_intro,Short Arm of the Law,Brian Tuey,,zombies
-86,mus_theme_from_buried_intro,Buried (Theme),Brian Tuey,,zombies
-87,mus_undone_intro,Undone,Kevin Sherwood,,zombies
-88,mus_revelations_intro,Revelations,James McCawley,,zombies
-89,mus_a_rising_power_intro,Zombies Chronicles: A Rising Power,Brian Tuey,,zombies
-90,mus_one_way_out_intro,Zombies Chronicles: One Way Out,Brian Tuey,,zombies
-91,mus_flesh_and_bone_intro,Zombies Chronicles: Flesh and Bone,Brian Tuey,,zombies
-92,mus_crypt_intro,Zombies Chronicles: Crypt,Brian Tuey,,zombies
-93,mus_sam_journey_intro,Zombies Chronicles: Samantha's Journey,Brian Tuey,,zombies
-94,mus_remember_forever_intro,Zombies Chronicles: Remember Forever,Jack Wall/Cindy Shapiro,Brian Tuey,zombies
-95,mus_the_end_is_near_intro,Zombies Chronicles: The End Is Near,Brian Tuey,Kevin Sherwood,zombies
-96,mus_nightmare_intro,Nightmare,Avenged Sevenfold,,zombies
-97,mus_not_ready_to_die_intro,Not Ready To Die,Avenged Sevenfold,,zombies
-98,mus_shepherd_of_fire_intro,Shepherd of Fire,Avenged Sevenfold,,zombies
-99,mus_gfl_brain_intro,Brain,Vanguard Sound,,gfl
-100,mus_gfl_elecwar_h_intro,ElecWar (Hard),Vanguard Sound,,gfl
-101,mus_gfl_departure_intro,Departure,Vanguard Sound,,gfl
-102,mus_gfl_autonome_intro,Autonome,Vanguard Sound,,gfl
-103,mus_gfl_room_intro,Room,Vanguard Sound,,gfl
-104,mus_gfl_barbarous_funera_intro,Barbarous Funera,Vanguard Sound,,gfl
-105,mus_gfl_greenlight_intro,Greenlight,Vanguard Sound,,gfl
-106,mus_gfl_safety_first_intro,Safety First,Vanguard Sound,,gfl
-107,mus_gfl_synthesis_catalyst_intro,Synthesis Catalyst,Vanguard Sound,,gfl
-108,mus_gfl_all_systems_go_intro,All Systems Go!,Garoad,,gfl
-109,mus_gfl_fixed_point_lobby_intro,Fixed Point Lobby,Vanguard Sound,,gfl
-110,mus_gfl_move_on_intro,Move On,Vanguard Sound,,gfl
-111,mus_gfl_hope_intro,Hope,Vanguard Sound,,gfl
-112,mus_gfl_21winter_battle_3_intro,Mirror Stage Battle3,Vanguard Sound,,gfl
-113,mus_gfl_frontline_intro,Frontline,Vanguard Sound,,gfl
-114,mus_gfl_the_hunt_intro,The Hunt,Vanguard Sound,,gfl
-115,mus_gfl_casual_intro,Casual,Vanguard Sound,,gfl
-116,mus_gfl_sad_intro,Sad,Vanguard Sound,,gfl
-117,mus_gfl_mainenemy_n_intro,Main Enemy (Normal),Vanguard Sound,,gfl
-118,mus_gfl_zombie_h_intro,Zombie (Hard),Vanguard Sound,,gfl
-119,mus_gfl_satellitecitystreet_1_intro,Satellite City Street 1,Vanguard Sound,,gfl
-120,mus_gfl_satellitecitylab_1_intro,Satellite City Lab 1,Vanguard Sound,,gfl
-121,mus_gfl_ab1m_intro,AB1M,Vanguard Sound,,gfl
-122,mus_gfl_ab3m_intro,AB3M,Vanguard Sound,,gfl
-123,mus_gfl_main_theme_intro,Main Theme,Vanguard Sound,,gfl
+43,mus_abra_macabre_intro,Abra Macabre,Kevin Sherwood,,doa
+44,mus_laughcorpse_intro,Laughing Corpses,James McCawley,,doa
+45,mus_apc_intro,APC ,Jack Wall,,campaign
+46,mus_dead_again_intro,Dead Again,Kevin Sherwood,,zombies
+47,mus_dead_flowers_intro,Dead Flowers,Kevin Sherwood,James McCawley,zombies
+48,mus_darkstar_intro,Darkstar,Shawn Jimmerson,,multiplayer
+49,mus_platform_of_dreams_intro,Platform of Dreams,Brian Tuey,,zombies
+50,mus_legendary_intro,Legendary,Brian Tuey,,zombies
+51,mus_skulls_of_the_damned_intro,Skulls of the Damned,Brian Tuey,,zombies
+52,mus_arachnophobia_intro,Arachnophobia,Brian Tuey,,zombies
+53,mus_betrayal_intro,Betrayal,Brian Tuey,,zombies
+54,mus_zetsubou_no_shima_intro,Zetsubou No Shima,Brian Tuey,,zombies
+55,mus_the_frozen_forest_intro,The Frozen Forest,Jack Wall,,campaign
+56,mus_from_the_brink_of_death_intro,From the Brink of Death,Jack Wall,,campaign
+57,mus_riding_the_tempest_intro,Riding the Tempest,Jack Wall,,campaign
+58,mus_into_the_q_zone_intro,Into the Q Zone,Jack Wall,,campaign
+59,mus_horrors_in_the_silo_intro,Horrors in the Silo,Jack Wall,,campaign
+60,mus_diaz_intro,Diaz,Jack Wall,,campaign
+61,mus_burn_rescue_intro,Burn Rescue,Jack Wall,,campaign
+62,mus_samanthas_lullaby_magicmix_intro,Samantha's Lullaby (Magic Mix),Brian Tuey,,zombies
+63,mus_dead_ended_intro,Dead Ended,Kevin Sherwood,,zombies
+64,mus_blood_of_stalingrad_intro,Blood of Stalingrad,Brian Tuey,,zombies
+65,mus_king_of_the_hill_intro,King of the Hill,Brian Tuey,,zombies
+66,mus_samanthas_sorrow_intro,Samantha's Sorrow,Brian Tuey,,zombies
+67,mus_damned_intro,Damned,Kevin Sherwood,,zombies
+68,mus_damned_2_intro,Damned 100AE,Kevin Sherwood,Brian Tuey,zombies
+69,mus_damned_25_intro,Damned 3 (Instrumental) ,Kevin Sherwood,Brian Tuey,zombies
+70,mus_the_gift_intro,The Gift,Kevin Sherwood,,zombies
+71,mus_archangel_theatrical_mix_intro,Archangel (Theatrical Mix),Brian Tuey,Kevin Sherwood,zombies
+72,mus_dead_again_theatrical_mix_intro,Dead Again (Theatrical Mix),Brian Tuey,Kevin Sherwood,zombies
+73,mus_the_gift_theatrical_intro,The Gift (Theatrical Mix),Brian Tuey,Kevin Sherwood,zombies
+74,mus_wtf_intro,WTF,Brian Tuey,Kevin Sherwood,zombies
+75,mus_aether_intro,Aether,Brian Tuey,,zombies
+76,mus_blood_red_moon_intro,Blood Red Moon,Brian Tuey,,zombies
+77,mus_death_bell_intro,Death Bell,Brian Tuey,,zombies
+78,mus_desolation_intro,Desolation,Brian Tuey,,zombies
+79,mus_high_noon_intro,High Noon,Brian Tuey,,zombies
+80,mus_maskwalk_intro,Mask Walk,Kevin Sherwood,,zombies
+81,mus_quest_noir_intro,Ouest Noir,Brian Tuey,,zombies
+82,mus_richtofans_delight_intro,Richtofen's Delight,Brian Tuey,,zombies
+83,mus_samanthas_desire_intro,Samantha's Desire,Brian Tuey,,zombies
+84,mus_short_arm_of_the_law_intro,Short Arm of the Law,Brian Tuey,,zombies
+85,mus_theme_from_buried_intro,Buried (Theme),Brian Tuey,,zombies
+86,mus_undone_intro,Undone,Kevin Sherwood,,zombies
+87,mus_revelations_intro,Revelations,James McCawley,,zombies
+88,mus_a_rising_power_intro,Zombies Chronicles: A Rising Power,Brian Tuey,,zombies
+89,mus_one_way_out_intro,Zombies Chronicles: One Way Out,Brian Tuey,,zombies
+90,mus_flesh_and_bone_intro,Zombies Chronicles: Flesh and Bone,Brian Tuey,,zombies
+91,mus_crypt_intro,Zombies Chronicles: Crypt,Brian Tuey,,zombies
+92,mus_sam_journey_intro,Zombies Chronicles: Samantha's Journey,Brian Tuey,,zombies
+93,mus_remember_forever_intro,Zombies Chronicles: Remember Forever,Jack Wall/Cindy Shapiro,Brian Tuey,zombies
+94,mus_the_end_is_near_intro,Zombies Chronicles: The End Is Near,Brian Tuey,Kevin Sherwood,zombies
+95,mus_nightmare_intro,Nightmare,Avenged Sevenfold,,zombies
+96,mus_not_ready_to_die_intro,Not Ready To Die,Avenged Sevenfold,,zombies
+97,mus_shepherd_of_fire_intro,Shepherd of Fire,Avenged Sevenfold,,zombies
+98,mus_gfl_brain_intro,Brain,Vanguard Sound,,gfl
+99,mus_gfl_elecwar_h_intro,ElecWar (Hard),Vanguard Sound,,gfl
+100,mus_gfl_departure_intro,Departure,Vanguard Sound,,gfl
+101,mus_gfl_autonome_intro,Autonome,Vanguard Sound,,gfl
+102,mus_gfl_room_intro,Room,Vanguard Sound,,gfl
+103,mus_gfl_barbarous_funera_intro,Barbarous Funera,Vanguard Sound,,gfl
+104,mus_gfl_greenlight_intro,Greenlight,Vanguard Sound,,gfl
+105,mus_gfl_safety_first_intro,Safety First,Vanguard Sound,,gfl
+106,mus_gfl_synthesis_catalyst_intro,Synthesis Catalyst,Vanguard Sound,,gfl
+107,mus_gfl_all_systems_go_intro,All Systems Go!,Garoad,,gfl
+108,mus_gfl_fixed_point_lobby_intro,Fixed Point Lobby,Vanguard Sound,,gfl
+109,mus_gfl_move_on_intro,Move On,Vanguard Sound,,gfl
+110,mus_gfl_hope_intro,Hope,Vanguard Sound,,gfl
+111,mus_gfl_21winter_battle_3_intro,Mirror Stage Battle3,Vanguard Sound,,gfl
+112,mus_gfl_frontline_intro,Frontline,Vanguard Sound,,gfl
+113,mus_gfl_the_hunt_intro,The Hunt,Vanguard Sound,,gfl
+114,mus_gfl_casual_intro,Casual,Vanguard Sound,,gfl
+115,mus_gfl_sad_intro,Sad,Vanguard Sound,,gfl
+116,mus_gfl_mainenemy_n_intro,Main Enemy (Normal),Vanguard Sound,,gfl
+117,mus_gfl_satellitecitystreet_1_intro,Satellite City Street 1,Vanguard Sound,,gfl
+118,mus_gfl_satellitecitylab_1_intro,Satellite City Lab 1,Vanguard Sound,,gfl
+119,mus_gfl_ab1m_intro,AB1M,Vanguard Sound,,gfl
+120,mus_gfl_ab3m_intro,AB3M,Vanguard Sound,,gfl
+121,mus_gfl_main_theme_intro,Main Theme,Vanguard Sound,,gfl
+122,mus_gfl_antibody_intro,Antibody,Vanguard Sound,,gfl
+123,mus_gfl_schizophrenia_intro,Schizophrenia,Vanguard Sound,,gfl
+124,mus_gfl_receptor_intro,Receptor,Vanguard Sound,,gfl
+125,mus_gfl_retinol_intro,Retinol,Vanguard Sound,,gfl
+126,mus_gfl_tocopherol_intro,Tocopherol,Vanguard Sound,,gfl
+127,mus_gfl_paranoia_intro,Paranoia,Vanguard Sound,,gfl

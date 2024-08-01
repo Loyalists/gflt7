@@ -727,10 +727,10 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_satellitecityroof_1_loop",
+            "Name": "gfl_main_theme_loop",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_satellitecityroof_1_loop",
+                    "AliasName": "mus_gfl_main_theme_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -783,6 +783,180 @@
             "IsRandom": false,
             "IsSequential": true,
             "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_antibody_loop",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_antibody_loop",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 27,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_schizophrenia_loop",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_schizophrenia_loop",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 28,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_receptor_loop",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_receptor_loop",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 29,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_retinol_loop",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_retinol_loop",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 30,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_tocopherol_loop",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_tocopherol_loop",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 31,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_paranoia_loop",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_paranoia_loop",
+                    "Looping": true,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 32,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
         }
     ],
     "StateNames": [
@@ -811,8 +985,14 @@
         "gfl_zombie_h_loop",
         "gfl_satellitecitystreet_1_loop",
         "gfl_satellitecitylab_1_loop",
-        "gfl_satellitecityroof_1_loop",
-        "gfl_ab3m_loop"
+        "gfl_main_theme_loop",
+        "gfl_ab3m_loop",
+        "gfl_antibody_loop",
+        "gfl_schizophrenia_loop",
+        "gfl_receptor_loop",
+        "gfl_retinol_loop",
+        "gfl_tocopherol_loop",
+        "gfl_paranoia_loop"
     ],
-    "LoopIndex": 27
+    "LoopIndex": 33
 }

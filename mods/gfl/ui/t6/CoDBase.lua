@@ -20,12 +20,17 @@ CoD.randomMusicTracks["titlescreen"] = {
     "gfl_casual_loop",
     "gfl_sad_loop",
     "gfl_mainenemy_n_loop",
-    "gfl_zombie_h_loop",
     "gfl_satellitecitystreet_1_loop",
     "gfl_satellitecitylab_1_loop",
     "gfl_ab1m_loop",
     "gfl_ab3m_loop",
     "gfl_main_theme_loop",
+    "gfl_antibody_loop",
+    "gfl_schizophrenia_loop",
+    "gfl_receptor_loop",
+    "gfl_retinol_loop",
+    "gfl_tocopherol_loop",
+    "gfl_paranoia_loop",
 }
 
 CoD.randomMusicTracks["cp_frontend"] = {
@@ -50,6 +55,12 @@ CoD.randomMusicTracks["cp_frontend"] = {
     "gfl_ab1m_loop",
     "gfl_ab3m_loop",
     "gfl_main_theme_loop",
+    "gfl_antibody_loop",
+    "gfl_schizophrenia_loop",
+    "gfl_receptor_loop",
+    "gfl_retinol_loop",
+    "gfl_tocopherol_loop",
+    "gfl_paranoia_loop",
 }
 
 CoD.randomMusicTracks["load_usermaps"] = {
@@ -62,12 +73,17 @@ CoD.randomMusicTracks["load_usermaps"] = {
     "gfl_casual",
     "gfl_sad",
     "gfl_mainenemy_n",
-    "gfl_zombie_h",
     "gfl_satellitecitystreet_1",
     "gfl_satellitecitylab_1",
     "gfl_ab1m",
     "gfl_ab3m",
     "gfl_main_theme",
+    "gfl_antibody",
+    "gfl_schizophrenia",
+    "gfl_receptor",
+    "gfl_retinol",
+    "gfl_tocopherol",
+    "gfl_paranoia",
 }
 
 CoD.randomMusicTracks["zm_cp_frontend"] = CoD.randomMusicTracks["cp_frontend"]
