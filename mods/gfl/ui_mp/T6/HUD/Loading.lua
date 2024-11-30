@@ -34,9 +34,9 @@ local CustomMapImageTable = {
 	["cp_mi_cairo_lotus3"] = "t7_menu_gfl_loadscreen_tower",
 	["cp_mi_zurich_coalescence"] = "t7_menu_gfl_loadscreen_2019summer_4_1",
 
-	["zm_town_hd"] = "t7_menu_zm_loadscreen_bus_depot",
-	["zm_town"] = "t7_menu_zm_loadscreen_bus_depot",
-	["zm_farm_hd"] = "t7_menu_zm_loadscreen_bus_depot",
+	["zm_town_hd"] = "t7_menu_zm_loadscreen_town",
+	["zm_town"] = "t7_menu_zm_loadscreen_town",
+	["zm_farm_hd"] = "t7_menu_zm_loadscreen_town",
 	["zm_depot"] = "t7_menu_zm_loadscreen_bus_depot",
 	["zm_der_riese"] = "t7_menu_zm_loadscreen_giant",
 	["zm_irondragon"] = "t7_menu_zm_loadscreen_castle",
@@ -49,6 +49,8 @@ local CustomMapImageTable = {
 	["zm_lit"] = "t7_menu_zm_loadscreen_classified",
 	["zm_wing"] = "t7_menu_zm_loadscreen_wing",
 	["zm_sanctuary"] = "t7_menu_zm_loadscreen_sanctuary",
+	["zm_rig"] = "t7_menu_zm_loadscreen_neptune",
+	["zm_prison"] = "t7_menu_zm_loadscreen_prison",
 }
 
 local IntroMovieDisabledMaps = {
@@ -88,6 +90,8 @@ local IntroMovieDisabledMaps = {
 	["zm_lit"] = true,
 	["zm_wing"] = true,
 	["zm_sanctuary"] = true,
+	["zm_rig"] = true,
+	["zm_prison"] = true,
 }
 
 local function GetCustomMapImage( mapName )

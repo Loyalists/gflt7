@@ -57,7 +57,8 @@ function init()
 
 function roamer() 
 {
-    if( !GetDvarInt("tfoption_roamer_enabled", 0) )
+    deadlock = get_deadlock();
+    if( !GetDvarInt("tfoption_roamer_enabled", 0) || deadlock )
     {
         if ( isdefined( level._zombie_between_round_time_old ) )
         {
@@ -136,6 +137,26 @@ function wait_for_round_end_notify()
     }
 }
 
+function get_deadlock()
+{
+    deadlock = true;
+    foreach(player in GetPlayers())
+    {
+        if (player IsTestClient())
+        {
+            continue;
+        }
+
+        if ( player.sessionstate != "spectator" && isalive(player) )
+        {
+            deadlock = false;
+            break;
+        }
+    }
+    
+    return deadlock;
+}
+
 function handle_deadlock()
 {
     level endon("end_game");
@@ -144,20 +165,7 @@ function handle_deadlock()
 
     while(1)
     {
-        deadlock = true;
-        foreach(player in GetPlayers())
-        {
-            if (player IsTestClient())
-            {
-                continue;
-            }
-
-            if ( player.sessionstate != "spectator" && isalive(player) )
-            {
-                deadlock = false;
-                break;
-            }
-        }
+        deadlock = get_deadlock();
         
         if (deadlock)
         {

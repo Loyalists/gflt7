@@ -27,11 +27,14 @@ image,t7_menu_zm_loadscreen_genesis
 image,t7_menu_zm_loadscreen_giant
 image,t7_menu_zm_loadscreen_island
 image,t7_menu_zm_loadscreen_moon
+image,t7_menu_zm_loadscreen_neptune
+image,t7_menu_zm_loadscreen_prison
 image,t7_menu_zm_loadscreen_prototype
 image,t7_menu_zm_loadscreen_sanctuary
 image,t7_menu_zm_loadscreen_sumpf
 image,t7_menu_zm_loadscreen_theater
 image,t7_menu_zm_loadscreen_tomb
+image,t7_menu_zm_loadscreen_town
 image,t7_menu_zm_loadscreen_tuvong
 image,t7_menu_zm_loadscreen_wing
 image,t7_menu_zm_loadscreen_zod

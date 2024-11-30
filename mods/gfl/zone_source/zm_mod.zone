@@ -38,6 +38,9 @@ image,t7_menu_zm_loadscreen_classified
 image,t7_menu_zm_loadscreen_tuvong
 image,t7_menu_zm_loadscreen_wing
 image,t7_menu_zm_loadscreen_sanctuary
+image,t7_menu_zm_loadscreen_prison
+image,t7_menu_zm_loadscreen_town
+image,t7_menu_zm_loadscreen_neptune
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc

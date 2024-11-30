@@ -101,9 +101,9 @@ function on_player_spawned()
     {
 		self save_cc_fix();
 		wait_interval = 1;
-		if ( level.script == "zm_leviathan" )
+		if ( level.script == "zm_leviathan" || level.script == "zm_prison" )
 		{
-			wait_interval = 0.05;
+			wait_interval = 0.1;
 		}
 		
         self thread cc_watcher_think(wait_interval);
@@ -230,6 +230,11 @@ function is_cc_watcher_needed()
 	}
 
 	if ( level.script == "zm_alcatraz_island" )
+	{
+		return true;
+	}
+
+	if ( level.script == "zm_prison" )
 	{
 		return true;
 	}
