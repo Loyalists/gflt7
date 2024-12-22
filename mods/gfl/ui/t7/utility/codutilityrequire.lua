@@ -27,9 +27,10 @@ require("ui.T7.Utility.TacticalModeUtility")
 require("ui.T7.Utility.SocialUtility")
 require("ui.T7.Utility.StoreUtility")
 require("ui_mp.T6.Menus.CACUtility")
+require("ui.T7.Utility.SavingDataUtility")
+require("ui.T7.Utility.DataUtil")
 if CoD.isPC then
 	require("ui.T7.Utility.PCUtility")
-	require("ui.T7.Utility.TFPCUtility")
-
 	require("ui.T7.Utility.ModsUtility")
+	require("ui.T7.Utility.TFPCUtility")
 end

@@ -1,6 +1,6 @@
 EnableGlobals()
-local io = require("io")
-local json = require("ui.util.json")
+
+require("ui.T7.Utility.DataUtil")
 
 if not CoD.SavingDataUtility then
     CoD.SavingDataUtility = {}
@@ -40,73 +40,4 @@ function CoD.SavingDataUtility.GetData(InstanceRef, SaveSpot)
         SaveSpot = SaveSpot - 50
         return Engine.GetClassItem(InstanceRef, math.floor(SaveSpot / #loadoutSlotNames), loadoutSlotNames[(SaveSpot % #loadoutSlotNames) + 1], false)
     end
-end
-
-function CoD.SavingDataUtility.SaveJSONData(SaveSpot, SaveValue)
-    local path = ".\\players\\" .. "gfl_tfoptions.json"
-    local table = CoD.SavingDataUtility.LoadJSON()
-    if not table then
-        return false
-    end
-
-    local file = io.open( path, "w" )
-    if file then
-        table[SaveSpot] = SaveValue
-        file:write( json.encode(table) )
-        io.close( file )
-    else
-        return false
-    end
-    
-    return true
-end
-
-function CoD.SavingDataUtility.GetJSONData(SaveSpot)
-    local path = ".\\players\\" .. "gfl_tfoptions.json"
-    local table = {}
-    local file = io.open( path, "r" )
-
-    if file then
-        -- read all contents of file into a string
-        local contents = file:read( "*a" )
-        io.close( file )
-        table = json.decode(contents)
-        local value = table[SaveSpot]
-        if value then
-            return value
-        end
-    end
-
-    return nil
-end
-
-function CoD.SavingDataUtility.SaveJSON(table)
-    local path = ".\\players\\" .. "gfl_tfoptions.json"
-    if not table then
-        return false
-    end
-
-    local file = io.open( path, "w" )
-    if file then
-        file:write( json.encode(table) )
-        io.close( file )
-    else
-        return false
-    end
-
-    return true
-end
-
-function CoD.SavingDataUtility.LoadJSON()
-    local path = ".\\players\\" .. "gfl_tfoptions.json"
-    local table = {}
-    local file = io.open( path, "r" )
-
-    if file then
-        local contents = file:read( "*a" )
-        io.close( file )
-        table = json.decode(contents)
-    end
-
-    return table
 end

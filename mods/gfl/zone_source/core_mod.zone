@@ -163,6 +163,7 @@ rawfile,ui/uieditor/menus/CAC/ChooseClass_InGame.lua
 
 rawfile,ui/HUDInject/HUDInject.lua
 rawfile,ui/t7/utility/SavingDataUtility.lua
+rawfile,ui/t7/utility/DataUtil.lua
 rawfile,ui/t7/utility/codutilityrequire.lua
 
 rawfile,ui/t6/lobby/lobbymenubuttons.lua

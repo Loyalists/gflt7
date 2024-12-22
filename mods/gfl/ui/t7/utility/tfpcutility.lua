@@ -3,142 +3,144 @@ require("ui.uieditor.modifyFunctions")
 
 local version = 1
 
-CoD.TFOptionIndexes = {}
-CoD.TFOptionIndexes["temp"] = 0
-CoD.TFOptionIndexes["max_ammo"] = 1
-CoD.TFOptionIndexes["higher_health"] = 2
-CoD.TFOptionIndexes["no_perk_lim"] = 3
-CoD.TFOptionIndexes["more_powerups"] = 4
-CoD.TFOptionIndexes["bigger_mule"] = 5
-CoD.TFOptionIndexes["extra_cash"] = 6
-CoD.TFOptionIndexes["weaker_zombs"] = 7
-CoD.TFOptionIndexes["roamer_enabled"] = 8
-CoD.TFOptionIndexes["roamer_time"] = 9
-CoD.TFOptionIndexes["zcounter_enabled"] = 10
-CoD.TFOptionIndexes["starting_round"] = 11
-CoD.TFOptionIndexes["perkaholic"] = 12
-CoD.TFOptionIndexes["exo_movement"] = 13
-CoD.TFOptionIndexes["perk_powerup"] = 14
-CoD.TFOptionIndexes["melee_bonus"] = 15
-CoD.TFOptionIndexes["headshot_bonus"] = 16
-CoD.TFOptionIndexes["zombs_always_sprint"] = 17
-CoD.TFOptionIndexes["max_zombies"] = 18
-CoD.TFOptionIndexes["no_delay"] = 19
-CoD.TFOptionIndexes["start_rk5"] = 20
-CoD.TFOptionIndexes["hitmarkers"] = 21
-CoD.TFOptionIndexes["zcash_powerup"] = 22
-CoD.TFOptionIndexes["starting_points"] = 300 -- unique case, needs to save to 3 values for values higher than 65k
-CoD.TFOptionIndexes["no_round_delay"] = 24
-CoD.TFOptionIndexes["bo4_max_ammo"] = 25
-CoD.TFOptionIndexes["better_nuke"] = 26
-CoD.TFOptionIndexes["better_nuke_points"] = 27
-CoD.TFOptionIndexes["packapunch_powerup"] = 28
-CoD.TFOptionIndexes["spawn_with_quick_res"] = 29
-CoD.TFOptionIndexes["bo4_carpenter"] = 30
-CoD.TFOptionIndexes["bottomless_clip_powerup"] = 31
-CoD.TFOptionIndexes["zblood_powerup"] = 32
-CoD.TFOptionIndexes["timed_gameplay"] = 33
-CoD.TFOptionIndexes["move_speed"] = 34
-CoD.TFOptionIndexes["tf_enabled"] = 35
-CoD.TFOptionIndexes["open_all_doors"] = 36
-CoD.TFOptionIndexes["every_box"] = 37
-CoD.TFOptionIndexes["random_weapon"] = 38
-CoD.TFOptionIndexes["start_bowie"] = 39
-CoD.TFOptionIndexes["start_power"] = 40
-CoD.TFOptionIndexes["perkplus"] = 41
-CoD.TFOptionIndexes["bot"] = 42
-CoD.TFOptionIndexes["roundrevive"] = 43
-CoD.TFOptionIndexes["randomize_character"] = 44
-CoD.TFOptionIndexes["perk_lose"] = 45
-CoD.TFOptionIndexes["bot_count"] = 46
-CoD.TFOptionIndexes["boxshare"] = 47
-CoD.TFOptionIndexes["bgb_loadout"] = 53
-CoD.TFOptionIndexes["cheats"] = 54
-CoD.TFOptionIndexes["fixed_cost"] = 55
-CoD.TFOptionIndexes["bgb_cost"] = 56
-CoD.TFOptionIndexes["bot_command"] = 57
-CoD.TFOptionIndexes["modmenu"] = 58
-CoD.TFOptionIndexes["player_determined_character"] = 59
-CoD.TFOptionIndexes["disable_intro_movie"] = 60
-CoD.TFOptionIndexes["bgb_uses"] = 61
-CoD.TFOptionIndexes["friendlyfire"] = 62
-CoD.TFOptionIndexes["tdoll_zombie"] = 63
-CoD.TFOptionIndexes["bgb_off"] = 64
-CoD.TFOptionIndexes["version"] = 65
-CoD.TFOptionIndexes["subtitles"] = 66
-CoD.TFOptionIndexes["cw_scoreevent"] = 67
-CoD.TFOptionIndexes["thirdperson"] = 68
-CoD.TFOptionIndexes["zombie_healthbar"] = 69
-CoD.TFOptionIndexes["hud"] = 70
-CoD.TFOptionIndexes["hitmarkers_sound"] = 71
+CoD.TFOptionIndexes = {
+    temp = 0,
+    max_ammo = 1,
+    higher_health = 2,
+    no_perk_lim = 3,
+    more_powerups = 4,
+    bigger_mule = 5,
+    extra_cash = 6,
+    weaker_zombs = 7,
+    roamer_enabled = 8,
+    roamer_time = 9,
+    zcounter_enabled = 10,
+    starting_round = 11,
+    perkaholic = 12,
+    exo_movement = 13,
+    perk_powerup = 14,
+    melee_bonus = 15,
+    headshot_bonus = 16,
+    zombs_always_sprint = 17,
+    max_zombies = 18,
+    no_delay = 19,
+    start_rk5 = 20,
+    hitmarkers = 21,
+    zcash_powerup = 22,
+    starting_points = 300,  -- unique case, needs to save to 3 values for values higher than 65k
+    no_round_delay = 24,
+    bo4_max_ammo = 25,
+    better_nuke = 26,
+    better_nuke_points = 27,
+    packapunch_powerup = 28,
+    spawn_with_quick_res = 29,
+    bo4_carpenter = 30,
+    bottomless_clip_powerup = 31,
+    zblood_powerup = 32,
+    timed_gameplay = 33,
+    move_speed = 34,
+    tf_enabled = 35,
+    open_all_doors = 36,
+    every_box = 37,
+    random_weapon = 38,
+    start_bowie = 39,
+    start_power = 40,
+    perkplus = 41,
+    bot = 42,
+    roundrevive = 43,
+    randomize_character = 44,
+    perk_lose = 45,
+    bot_count = 46,
+    boxshare = 47,
+    bgb_loadout = 53,
+    cheats = 54,
+    fixed_cost = 55,
+    bgb_cost = 56,
+    bot_command = 57,
+    modmenu = 58,
+    player_determined_character = 59,
+    disable_intro_movie = 60,
+    bgb_uses = 61,
+    friendlyfire = 62,
+    tdoll_zombie = 63,
+    bgb_off = 64,
+    version = 65,
+    subtitles = 66,
+    cw_scoreevent = 67,
+    thirdperson = 68,
+    zombie_healthbar = 69,
+    hud = 70,
+    hitmarkers_sound = 71,
+}
 
-CoD.TFOptionsDefault = {}
-CoD.TFOptionsDefault["starting_points"] = 500
-CoD.TFOptionsDefault["max_ammo"] = 0
-CoD.TFOptionsDefault["higher_health"] = 100
-CoD.TFOptionsDefault["no_perk_lim"] = 1
-CoD.TFOptionsDefault["more_powerups"] = 2
-CoD.TFOptionsDefault["bigger_mule"] = 0
-CoD.TFOptionsDefault["extra_cash"] = 0
-CoD.TFOptionsDefault["weaker_zombs"] = 0
-CoD.TFOptionsDefault["roamer_enabled"] = 0
-CoD.TFOptionsDefault["roamer_time"] = 0
-CoD.TFOptionsDefault["zcounter_enabled"] = 1
-CoD.TFOptionsDefault["starting_round"] = 1
-CoD.TFOptionsDefault["perkaholic"] = 0
-CoD.TFOptionsDefault["exo_movement"] = 0
-CoD.TFOptionsDefault["perk_powerup"] = 0
-CoD.TFOptionsDefault["melee_bonus"] = 0
-CoD.TFOptionsDefault["headshot_bonus"] = 0
-CoD.TFOptionsDefault["zombs_always_sprint"] = 0
-CoD.TFOptionsDefault["max_zombies"] = 24
-CoD.TFOptionsDefault["no_delay"] = 0
-CoD.TFOptionsDefault["start_rk5"] = 0
-CoD.TFOptionsDefault["hitmarkers"] = 1
-CoD.TFOptionsDefault["zcash_powerup"] = 0
-CoD.TFOptionsDefault["no_round_delay"] = 0
-CoD.TFOptionsDefault["bo4_max_ammo"] = 1
-CoD.TFOptionsDefault["better_nuke"] = 1
-CoD.TFOptionsDefault["better_nuke_points"] = 100
-CoD.TFOptionsDefault["packapunch_powerup"] = 0
-CoD.TFOptionsDefault["spawn_with_quick_res"] = 0
-CoD.TFOptionsDefault["bo4_carpenter"] = 1
-CoD.TFOptionsDefault["bottomless_clip_powerup"] = 0
-CoD.TFOptionsDefault["zblood_powerup"] = 0
-CoD.TFOptionsDefault["timed_gameplay"] = 0
-CoD.TFOptionsDefault["move_speed"] = 100
-CoD.TFOptionsDefault["tf_enabled"] = 1
-CoD.TFOptionsDefault["open_all_doors"] = 0
-CoD.TFOptionsDefault["every_box"] = 0
-CoD.TFOptionsDefault["random_weapon"] = 0
-CoD.TFOptionsDefault["start_bowie"] = 0
-CoD.TFOptionsDefault["start_power"] = 0
-CoD.TFOptionsDefault["perkplus"] = 1
-CoD.TFOptionsDefault["bot"] = 0
-CoD.TFOptionsDefault["roundrevive"] = 1
-CoD.TFOptionsDefault["randomize_character"] = 1
-CoD.TFOptionsDefault["perk_lose"] = 1
-CoD.TFOptionsDefault["bot_count"] = 1
-CoD.TFOptionsDefault["boxshare"] = 1
-CoD.TFOptionsDefault["bot_command"] = 0
-CoD.TFOptionsDefault["bgb_loadout"] = 0
-CoD.TFOptionsDefault["cheats"] = 0
-CoD.TFOptionsDefault["fixed_cost"] = 0
-CoD.TFOptionsDefault["bgb_cost"] = 1
-CoD.TFOptionsDefault["modmenu"] = 0
-CoD.TFOptionsDefault["player_determined_character"] = 1
-CoD.TFOptionsDefault["disable_intro_movie"] = 1
-CoD.TFOptionsDefault["bgb_uses"] = 0
-CoD.TFOptionsDefault["friendlyfire"] = 0
-CoD.TFOptionsDefault["tdoll_zombie"] = 0
-CoD.TFOptionsDefault["bgb_off"] = 0
-CoD.TFOptionsDefault["version"] = version
-CoD.TFOptionsDefault["subtitles"] = 1
-CoD.TFOptionsDefault["cw_scoreevent"] = 1
-CoD.TFOptionsDefault["thirdperson"] = 0
-CoD.TFOptionsDefault["zombie_healthbar"] = 1
-CoD.TFOptionsDefault["hud"] = 1
-CoD.TFOptionsDefault["hitmarkers_sound"] = 2
+CoD.TFOptionsDefault = {
+    starting_points = 500,
+    max_ammo = 0,
+    higher_health = 100,
+    no_perk_lim = 1,
+    more_powerups = 2,
+    bigger_mule = 0,
+    extra_cash = 0,
+    weaker_zombs = 0,
+    roamer_enabled = 0,
+    roamer_time = 0,
+    zcounter_enabled = 1,
+    starting_round = 1,
+    perkaholic = 0,
+    exo_movement = 0,
+    perk_powerup = 0,
+    melee_bonus = 0,
+    headshot_bonus = 0,
+    zombs_always_sprint = 0,
+    max_zombies = 24,
+    no_delay = 0,
+    start_rk5 = 0,
+    hitmarkers = 1,
+    zcash_powerup = 0,
+    no_round_delay = 0,
+    bo4_max_ammo = 1,
+    better_nuke = 1,
+    better_nuke_points = 100,
+    packapunch_powerup = 0,
+    spawn_with_quick_res = 0,
+    bo4_carpenter = 1,
+    bottomless_clip_powerup = 0,
+    zblood_powerup = 0,
+    timed_gameplay = 0,
+    move_speed = 100,
+    tf_enabled = 1,
+    open_all_doors = 0,
+    every_box = 0,
+    random_weapon = 0,
+    start_bowie = 0,
+    start_power = 0,
+    perkplus = 1,
+    bot = 0,
+    roundrevive = 1,
+    randomize_character = 1,
+    perk_lose = 1,
+    bot_count = 1,
+    boxshare = 1,
+    bot_command = 0,
+    bgb_loadout = 0,
+    cheats = 0,
+    fixed_cost = 0,
+    bgb_cost = 1,
+    modmenu = 0,
+    player_determined_character = 1,
+    disable_intro_movie = 1,
+    bgb_uses = 0,
+    friendlyfire = 0,
+    tdoll_zombie = 0,
+    bgb_off = 0,
+    version = version,
+    subtitles = 1,
+    cw_scoreevent = 1,
+    thirdperson = 0,
+    zombie_healthbar = 1,
+    hud = 1,
+    hitmarkers_sound = 2,
+}
 
 CoD.TFOptionsDirtyFlag = false
 
@@ -256,11 +258,11 @@ CoD.TFPCUtil.SetToJSON = function(varName, value)
         converted = CoD.TFOptionsDefault[varName]
     end
     Engine.SetDvar("tfoption_" .. varName, converted)
-    CoD.SavingDataUtility.SaveJSONData(varName, converted)
+    CoD.DataUtil.SaveItem(CoD.SavingDataModes.TFOptions, varName, converted)
 end
 
 CoD.TFPCUtil.GetFromJSON = function(varName)
-    local result = CoD.SavingDataUtility.GetJSONData(varName)
+    local result = CoD.DataUtil.GetItem(CoD.SavingDataModes.TFOptions, varName)
     if varName ~= "version" then
         if result == nil then
             result = CoD.TFOptionsDefault[varName]
@@ -310,7 +312,7 @@ CoD.TFPCUtil.ResetToDefault = function()
         return
     end
 
-    CoD.SavingDataUtility.SaveJSON(CoD.TFOptionsDefault)
+    CoD.DataUtil.SaveJSON(CoD.SavingDataModes.TFOptions, CoD.TFOptionsDefault)
     for varName, value in pairs(CoD.TFOptionsDefault) do
         if value then
             Engine.SetDvar("tfoption_" .. varName, value)
@@ -326,7 +328,7 @@ CoD.TFPCUtil.LoadTFOptions = function()
         return
     end
 
-    local table = CoD.SavingDataUtility.LoadJSON()
+    local table = CoD.DataUtil.LoadJSON(CoD.SavingDataModes.TFOptions)
     for varName, _ in pairs(CoD.TFOptionsDefault) do
         local value = table[varName]
         if value then
@@ -406,8 +408,7 @@ CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
                 if UseOldSaveData() then
                     result.currentValue = tonumber(CoD.TFPCUtil.GetFromSaveData(varNameString))
                 else
-                    local value = CoD.TFPCUtil.GetFromJSON(varNameString)
-                    result.currentValue = value
+                    result.currentValue = CoD.TFPCUtil.GetFromJSON(varNameString)
                 end
                 -- result.currentValue = 1
 

@@ -11,7 +11,6 @@ require("ui.uieditor.widgets.StartMenu.StartMenu_Options_CheckBoxOption")
 require("ui.uieditor.widgets.StartMenu.TFOptions_CheckBoxOption")
 require("ui.uieditor.widgets.StartMenu.StartMenu_Options_SliderBar")
 require("ui.uieditor.widgets.PC.Utility.VerticalListSpacer")
-require("ui.t7.utility.SavingDataUtility")
 require("ui.uieditor.widgets.Scrollbars.verticalCounter")
 
 local f0_local3 = function(f30_arg0, f30_arg1)
