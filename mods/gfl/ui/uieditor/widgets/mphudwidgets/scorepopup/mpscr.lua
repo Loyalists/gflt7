@@ -138,7 +138,7 @@ CoD.MPScr.new = function ( menu, controller )
 	self.soundSet = "HUD"
     self:setLeftRight(false, false, -50, 400)
 	self:setTopBottom(false, true, -330.000000, -280.000000)
-	self:setYRot(-40)
+	-- self:setYRot(-40)
 	self.anyChildUsesUpdateState = true
 	
 	local ScoreFeedGlow = LUI.UIImage.new()

@@ -445,7 +445,7 @@ function create_g11()
 	obj.bodytype = 15;
 	obj.bodystyle = 0;
 	obj.id = "g11";
-	obj.keywords = array();
+	obj.keywords = array("mishty");
 	obj.name = "G11";
 	return obj;
 }

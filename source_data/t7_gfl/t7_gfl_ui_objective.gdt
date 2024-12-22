@@ -1,0 +1,52 @@
+{
+	"gfl_objective_pap" ( "objective.gdf" )
+	{
+		"bool_isObjective" "0"
+		"bool_scale3d" "0"
+		"bool_show3dDirectionArrow" "0"
+		"campaignNotifyString" ""
+		"cullDistance" "600.0"
+		"enemyImage" ""
+		"enemyText" ""
+		"fadeUnderMinimap" "0"
+		"friendlyImage" ""
+		"friendlyText" ""
+		"hAlign" "1"
+		"hideArrow" "1"
+		"material_minimapMaterial" ""
+		"neutralAttackImage" ""
+		"neutralAttackText" ""
+		"neutralDefendImage" ""
+		"neutralDefendText" ""
+		"objectiveDesc" ""
+		"shouldCullDistance" "1"
+		"showDistance" "1"
+		"subObjectiveImage" ""
+		"subObjectiveString" ""
+		"type" "0"
+		"vAlign" "2"
+		"waypointClamp" "0"
+		"waypointFadeWhenInCombat" "1"
+		"waypointFadeWhenTargeted" "1"
+		"waypointForceOffscreenStyle" "0"
+		"waypointHideWhenNotVisible" "0"
+		"waypointImage" "t7_hud_waypoints_uplink_uplink"
+		"waypointShowDistanceWhenFar" "0"
+		"waypointText" "Pack-a-Punch"
+		"waypointXOffset" "0"
+		"waypointYOffset" "0"
+		"waypointZOffset" "32"
+		"woundedSoldierType" "0"
+		"xstring_waypointFarText" ""
+	}
+	"gfl_objective_power" [ "gfl_objective_pap" ]
+	{
+		"waypointImage" "t7_hud_waypoints_neutral_new"
+		"waypointText" "Power"
+	}
+	"gfl_objective_perk" [ "gfl_objective_pap" ]
+	{
+		"waypointImage" "t7_hud_waypoints_neutral_koth_mini"
+		"waypointText" "Perk"
+	}
+}

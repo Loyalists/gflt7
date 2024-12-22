@@ -156,8 +156,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "G11"
-		"firstPersonCinematicModel" "t7_gfl_g11_body_mp"
-		"firstPersonLegsModel" "t7_gfl_g11_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_mishty_body_mp"
+		"firstPersonLegsModel" "t7_gfl_mishty_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -170,8 +170,8 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "t7_gfl_g11_viewhands"
-		"xmodel" "t7_gfl_g11_fb_mp"
+		"viewArmsModel" "t7_gfl_mishty_viewhands"
+		"xmodel" "t7_gfl_mishty_fb_mp"
 	}
 	"pbt_gfl_body_g36c" ( "playerbodystyle.gdf" )
 	{

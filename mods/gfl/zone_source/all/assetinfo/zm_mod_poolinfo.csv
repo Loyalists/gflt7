@@ -8,7 +8,7 @@ xmodelmesh,34816,2
 material,20480,3
 computeshaderset,256,0
 techset,1024,2
-image,49152,91
+image,49152,94
 sound,32,1
 sound_patch,16,0
 col_map,2,0
@@ -46,14 +46,14 @@ player_character,8,0
 aitype,96,0
 character,150,0
 xmodelalias,48,0
-rawfile,5000,6
+rawfile,5000,7
 stringtable,200,0
 structuredtable,96,0
 leaderboarddef,256,0
 ddl,64,0
 glasses,2,0
 texturelist,8,0
-scriptparsetree,1024,41
+scriptparsetree,1024,42
 keyvaluepairs,64,1
 vehicle,64,0
 addon_map_ents,1,0
@@ -93,7 +93,7 @@ maptable,25,0
 maptableloadingimages,25,0
 medal,768,0
 medaltable,32,0
-objective,256,0
+objective,256,3
 objectivelist,64,0
 umbra_tome,0,0
 navmesh,2,0

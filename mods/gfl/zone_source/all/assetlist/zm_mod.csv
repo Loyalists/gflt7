@@ -105,6 +105,7 @@ rawfile,ui/uieditor/menus/startmenu/iw7startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/menus/startmenu/s4startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/menus/startmenu/t6startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/widgets/startmenu/startmenu_gameoptions_kf2.lua
+rawfile,ui/widgets/t6hud/t6pausemenu/t6startmenu_gameoptions_zm.lua
 scriptparsetree,scripts/_nsz/nsz_powerup_money.csc
 scriptparsetree,scripts/_nsz/nsz_powerup_money.gsc
 scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.csc
@@ -120,6 +121,7 @@ scriptparsetree,scripts/gfl/zm/gameplay.gsc
 scriptparsetree,scripts/gfl/zm/magicboxshare.gsc
 scriptparsetree,scripts/gfl/zm/mule_kick_indicator.gsc
 scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
+scriptparsetree,scripts/gfl/zm/objective.gsc
 scriptparsetree,scripts/gfl/zm/perkplus.gsc
 scriptparsetree,scripts/gfl/zm/t8_perkloss.gsc
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
@@ -147,3 +149,6 @@ scriptparsetree,scripts/zm/tfoptions.gsc
 scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
 scriptparsetree,scripts/zm/zmsavedata.gsc
 keyvaluepairs,zm_mod
+objective,gfl_objective_pap
+objective,gfl_objective_perk
+objective,gfl_objective_power

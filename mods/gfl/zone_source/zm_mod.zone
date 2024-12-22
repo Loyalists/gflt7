@@ -18,6 +18,11 @@ rawfile,ui/uieditor/menus/startmenu/H1StartMenu_GameOptions_ZM.lua
 rawfile,ui/uieditor/menus/startmenu/IW7StartMenu_GameOptions_ZM.lua
 rawfile,ui/uieditor/menus/startmenu/S4StartMenu_GameOptions_ZM.lua
 rawfile,ui/uieditor/widgets/startmenu/StartMenu_GameOptions_KF2.lua
+rawfile,ui/widgets/t6hud/t6pausemenu/T6StartMenu_GameOptions_ZM.lua
+
+objective,gfl_objective_power
+objective,gfl_objective_pap
+objective,gfl_objective_perk
 
 image,img_loadscreen_zm_factory
 image,t7_menu_zm_loadscreen_sumpf
@@ -58,6 +63,7 @@ scriptparsetree,scripts/gfl/zm/zm_counter.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.csc
 scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
+scriptparsetree,scripts/gfl/zm/objective.gsc
 
 //Frost Iceforge's BO4 Carpenter
 scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc

@@ -1,5 +1,94 @@
 require("ui.uieditor.datasources_og")
 
+function GetZMStartMenuGameOptions( short, withOptions )
+    local f1_local0 = {}
+    if CoD.isZombie then
+        table.insert(f1_local0, {
+            models = {
+                displayText = "MENU_RESUMEGAME_CAPS",
+                action = StartMenuGoBack_ListElement
+            }
+        })
+        if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
+            table.insert(f1_local0, {
+                models = {
+                    displayText = "MENU_RESTART_LEVEL_CAPS",
+                    action = RestartGame
+                }
+            })
+
+            local tfoptionsText = "GFL_MENU_TFOPTIONS"
+            if short then
+                tfoptionsText = "GFL_MENU_TFOPTIONS_SHORT"
+            end
+            table.insert(f1_local0, {
+                models = {
+                    displayText = tfoptionsText,
+                    action = OpenTFOptions_InGame
+                }
+            })
+        end
+
+        if withOptions then
+            table.insert(f1_local0, {
+                models = {
+                    displayText = "MENU_OPTIONS_CAPS",
+                    action = function(f2_arg0, f2_arg1, f2_arg2, f2_arg3, f2_arg4)
+                        NavigateToMenu(f2_arg4, "GenericStartMenu_Options", true, f2_arg2)
+                    end
+                }
+            })
+        end
+        
+        local charactersText = "CPUI_CHOOSE_CHARACTER_CAPS"
+        if short then
+            charactersText = "GFL_MENU_CHARACTERS"
+        end
+        table.insert(f1_local0, {
+            models = {
+                displayText = charactersText,
+                action = OpenZMChooseCharacterLoadout_InGame
+            }
+        })
+        table.insert(f1_local0, {
+            models = {
+                displayText = "GFL_MENU_MOD_INFO",
+                action = OpenModInfo_InGame
+            }
+        })
+        if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
+            table.insert(f1_local0, {
+                models = {
+                    displayText = "MENU_END_GAME_CAPS",
+                    action = QuitGame_MP
+                }
+            })
+        else
+            table.insert(f1_local0, {
+                models = {
+                    displayText = "MENU_QUIT_GAME_CAPS",
+                    action = QuitGame_MP
+                }
+            })
+        end
+        table.insert(f1_local0, {
+            models = {
+                displayText = "QUIT TO DESKTOP",
+                action = OpenPCQuit
+            }
+        })
+    end
+    return f1_local0
+end
+
+function LocalizeOptions(options)
+    for _, option in ipairs(options) do
+        if option.models and option.models.displayText then
+            option.models.displayText = Engine.Localize(option.models.displayText)
+        end
+    end
+end
+
 DataSources.FeaturedCardHelper = function ( f196_arg0, f196_arg1 )
 	local f196_local0 = {}
 	local f196_local1 = 0

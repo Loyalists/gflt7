@@ -8,6 +8,7 @@ local Preload = function()
         require( "ui.uieditor.widgets.hud.aae_t9_zombie_health_bar.aae_t9_zombie_health_bar_container" )
         require( "ui.uieditor.widgets.StartMenu.StartMenu_GameOptions_ZM" )
         require( "ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout_InGame" )
+        require( "ui.uieditor.widgets.HUD.KingslayerWaypointsWidget.KingslayerWaypointsContainer" )
     end
 end
 
@@ -99,6 +100,15 @@ local function AddCustomHUDElements_Zombie(menu, controller)
     ZombieHealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_WEAPON_HUD_VISIBLE ), UpdateZombieHealthBarVisible )
     ZombieHealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_HUD_HARDCORE ), UpdateZombieHealthBarVisible )
     ZombieHealthBar:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_UI_ACTIVE ), UpdateZombieHealthBarNotVisible )
+
+    self.KingslayerWaypointsContainer = CoD.KingslayerWaypointsContainer.new( self, controller )
+    self.KingslayerWaypointsContainer:setLeftRight( true, true, 0, 0 )
+    self.KingslayerWaypointsContainer:setTopBottom( true, true, 0, 0 )
+    self:addElement( self.KingslayerWaypointsContainer )
+
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+		element.KingslayerWaypointsContainer:close()
+	end )
 end
 
 local function AddCustomHUDElements_Common(menu, controller)

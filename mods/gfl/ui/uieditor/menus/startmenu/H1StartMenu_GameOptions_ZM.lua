@@ -1,70 +1,7 @@
 require( "ui.uieditor.widgets.Lobby.Common.H1ButtonListItem" )
 
 DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOptions", function(f1_arg0)
-    local f1_local0 = {}
-    if CoD.isZombie then
-        table.insert(f1_local0, {
-            models = {
-                displayText = "MENU_RESUMEGAME_CAPS",
-                action = StartMenuGoBack_ListElement
-            }
-        })
-        if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
-            table.insert(f1_local0, {
-                models = {
-                    displayText = "MENU_RESTART_LEVEL_CAPS",
-                    action = RestartGame
-                }
-            })
-            table.insert(f1_local0, {
-                models = {
-                    displayText = "GFL_MENU_TFOPTIONS",
-                    action = OpenTFOptions_InGame
-                }
-            })
-        end
-        table.insert(f1_local0, {
-            models = {
-                displayText = "MENU_OPTIONS_CAPS",
-                action = function(f2_arg0, f2_arg1, f2_arg2, f2_arg3, f2_arg4)
-                    NavigateToMenu(f2_arg4, "H1StartMenu_Options", true, f2_arg2)
-                end
-            }
-        })
-        table.insert(f1_local0, {
-            models = {
-                displayText = "CPUI_CHOOSE_CHARACTER_CAPS",
-                action = OpenZMChooseCharacterLoadout_InGame
-            }
-        })
-        table.insert(f1_local0, {
-            models = {
-                displayText = "GFL_MENU_MOD_INFO",
-                action = OpenModInfo_InGame
-            }
-        })
-        if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
-            table.insert(f1_local0, {
-                models = {
-                    displayText = "MENU_END_GAME_CAPS",
-                    action = QuitGame_MP
-                }
-            })
-        else
-            table.insert(f1_local0, {
-                models = {
-                    displayText = "MENU_QUIT_GAME_CAPS",
-                    action = QuitGame_MP
-                }
-            })
-        end
-        table.insert(f1_local0, {
-            models = {
-                displayText = "QUIT TO DESKTOP",
-                action = OpenPCQuit
-            }
-        })
-    end
+    local f1_local0 = GetZMStartMenuGameOptions(false, true)
     return f1_local0
 end, true)
 

@@ -156,6 +156,7 @@ rawfile,ui/uieditor/widgets/pc/choosecharacter/choosecharacter_cardclickbutton.l
 rawfile,ui/uieditor/widgets/cac/menuselectscreen/weaponnamewidget.luac
 
 rawfile,ui/uieditor/widgets/startmenu/StartMenu_GameOptions_ZM.lua
+rawfile,ui/uieditor/menus/startmenu/GenericStartMenu_Options.lua
 
 // cp cac fix
 rawfile,ui/uieditor/menus/CAC/ChooseClass_InGame.lua
@@ -229,6 +230,8 @@ rawfile,ui/uieditor/widgets/HUD/ZM_NotifFactory/ZMNotificationContainer.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_container.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_the_bar.lua
+
+rawfile,ui/uieditor/widgets/HUD/KingslayerWaypointsWidget/KingslayerWaypointsContainer.lua
 
 // character,c_zur_terrorist_1
 // character,c_zur_terrorist_2
@@ -408,7 +411,8 @@ xmodel,t7_gfl_super_sass_fb
 xmodel,t7_gfl_type89_fb
 xmodel,t7_gfl_g36c_fb
 xmodel,t7_gfl_negev_fb
-xmodel,t7_gfl_g11_fb
+//xmodel,t7_gfl_g11_fb
+xmodel,t7_gfl_mishty_fb
 xmodel,t7_gfl_m16a1_prime_fb
 xmodel,t7_gfl_rpk16_fb
 xmodel,t7_gfl_tololo_fb

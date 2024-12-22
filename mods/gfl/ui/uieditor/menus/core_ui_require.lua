@@ -71,6 +71,8 @@ require("ui.uieditor.widgets.GFL.ModInfoP1")
 require("ui.uieditor.widgets.GFL.ModInfoFAQPage")
 require("ui.uieditor.widgets.GFL.ModInfoUsefulLinksPage")
 
+require("ui.uieditor.menus.StartMenu.GenericStartMenu_Options")
+
 require("ui.uieditor.widgets.PC.StartMenu.VoiceOptions.StartMenu_Options_PC_Voice_Text")
 require("ui.uieditor.widgets.PC.StartMenu.VoiceOptions.StartMenu_Options_PC_Voice_Voice")
 require("ui.uieditor.widgets.Social.Social_Friends")

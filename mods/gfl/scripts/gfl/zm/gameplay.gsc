@@ -9,6 +9,7 @@
 #using scripts\shared\scoreevents_shared;
 #using scripts\shared\lui_shared;
 #using scripts\shared\system_shared;
+#using scripts\shared\gameobjects_shared;
 
 #using scripts\zm\_zm;
 #using scripts\zm\_zm_utility;
@@ -39,6 +40,7 @@
 #using scripts\gfl\zm\zm_sub;
 #using scripts\gfl\zm\coldwar_scoreevent;
 #using scripts\gfl\zm\_aae_zombie_health_bar;
+#using scripts\gfl\zm\objective;
 
 #using scripts\gfl\_chat_notify;
 #using scripts\gfl\clientsystem;
