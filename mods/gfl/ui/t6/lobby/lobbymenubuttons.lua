@@ -770,6 +770,12 @@ CoD.LobbyBase.OpenTFOptions = function(arg0, arg1)
     end)
 end
 
+CoD.LobbyBase.OpenPersonalizationOptions = function(arg0, arg1)
+	CoD.PersonalizationUtil.CheckForRecentUpdate()
+	CoD.PersonalizationUtil.LoadPersonalization()
+    OpenOverlay(arg0, "PersonalizationOptions", arg1)
+end
+
 CoD.LobbyButtons.OPEN_WORKSHOP = {
     stringRef = "GFL_MENU_WORKSHOP_CAPS",
     action = OpenWorkshop,
@@ -823,4 +829,10 @@ CoD.LobbyButtons.CONFIGURE_CHEATS = {
     stringRef = "GFL_MENU_CONFIGURE_CHEATS",
     action = OpenConfigureCheatsPopup,
     customId = "btnConfigureCheatsPopup",
+}
+
+CoD.LobbyButtons.OPEN_PERSONALIZATION_OPTIONS = {
+    stringRef = "GFL_MENU_PERSONALIZATION",
+    action = OpenPersonalizationOptions,
+    customId = "btnOpenPersonalizationOptions",
 }

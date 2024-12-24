@@ -196,7 +196,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            EXO_DESC
-LANG_ENGLISH         "Enable EXO movement. (Probably won't work on any maps that use EXO movement, such as SoE or Der Eisendrache)"
+LANG_ENGLISH         "Enable EXO movement."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -224,7 +224,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            PLAYER_DETERMINED_CHARACTER_DESC
-LANG_ENGLISH         "Uses the currently selected playermodel from Characters Menu. \nDoesn't work on Moon and Origins."
+LANG_ENGLISH         "Uses the currently selected playermodel from Characters Menu. \n\nDoesn't work on Moon and Origins."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -252,7 +252,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            RANDOMIZED_CHARACTER_DESC
-LANG_ENGLISH         "Randomizes the model of each player so that more GFL characters can be chosen, adding additional variety to the gameplay. \nIf both 'Player-Determined Playermodel' and 'Randomized Playermodel' are enabled the playermodel will only be randomized for Bots. \nDoesn't work on Moon and Origins."
+LANG_ENGLISH         "Randomizes the model of each player so that more GFL characters can be chosen, adding additional variety to the gameplay. \n\nIf both 'Player-Determined Playermodel' and 'Randomized Playermodel' are enabled the playermodel will only be randomized for Bots. \n\nDoesn't work on Moon and Origins."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -322,7 +322,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            HITMARKERS
-LANG_ENGLISH         "Zombie Hitmarkers"
+LANG_ENGLISH         "Hitmarkers"
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -826,7 +826,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            PERKPLUS_DESC
-LANG_ENGLISH         "Enable additional perk enhancements: \n\n^2Speed Cola^7: Speed up the purchase of perks and gobblegums, ADS, switching weapons, and melee speed, and removes the “first raise” animation\n^3Stamin-Up^7: Raise your weapon after sprinting much quicker, fire and throw grenades while running, and unlimited sprint\n^3Double Tap Root Beer^7: Special Weapon charges faster\n^1Widow's Wine^7: Gives PhD Flopper explosive resistance (only works when there is only one damage protection perk on the map)\nDeadshot Daiquiri: When you have 4 perks including Deadshot, kill 5 zombies with headshots in a row to activate a x1.25 multiplier to headshot damage. You will see the Deadshot icon next to the weapon's ammo count to know it is active. Disappears/resets when you get a non-headshot kill."
+LANG_ENGLISH         "Enables additional perk enhancements: \n\n^2Speed Cola^7: Speed up the purchase of perks and gobblegums, ADS, switching weapons, and melee speed, and removes the “first raise” animation\n^3Stamin-Up^7: Raise your weapon after sprinting much quicker, fire and throw grenades while running, and unlimited sprint\n^3Double Tap Root Beer^7: Special Weapon charges faster\n^1Widow's Wine^7: Gives PhD Flopper explosive resistance (only works when there is only one damage protection perk on the map)\nDeadshot Daiquiri: When you have 4 perks including Deadshot, kill 5 zombies with headshots in a row to activate a x1.25 multiplier to headshot damage. You will see the Deadshot icon next to the weapon's ammo count to know it is active. Disappears/resets when you get a non-headshot kill."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -854,7 +854,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            ROAMER_ENABLED_DESC
-LANG_ENGLISH         "Roamer allows you to wait at the end of every round, before the next round starts. No more crawlers! \nTo start the next round, press ADS + Melee."
+LANG_ENGLISH         "Roamer allows you to wait at the end of every round, before the next round starts. No more crawlers! \n\nTo start the next round, press ADS + Melee."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"

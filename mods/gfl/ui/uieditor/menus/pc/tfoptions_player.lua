@@ -177,6 +177,35 @@ DataSources.TFOptionsStartingPoints = DataSourceHelpers.ListSetup("PC.TFOptionsS
     return f15_local0
 end, true)
 
+DataSources.TFOptionsHitmarkersSound = DataSourceHelpers.ListSetup("PC.TFOptionsHitmarkersSound", function(f15_arg0)
+    local f15_local0 = {}
+    table.insert(f15_local0, {
+        models = {
+            value = 0,
+            valueDisplay = "Black Ops 3"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 1,
+            valueDisplay = "Classic"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 2,
+            valueDisplay = "Modern Warfare"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 3,
+            valueDisplay = "Modern Warfare III"
+        }
+    })
+    return f15_local0
+end, true)
+
 DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP1", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
@@ -207,6 +236,25 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
             description = "TF_HEALTH_DESC",
             profileVarName = "higher_health",
             datasource = "TFOptionsPlayerHealth",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_HITMARKERS",
+            description = "TF_HITMARKERS_DESC",
+            profileVarName = "hitmarkers",
+            widgetType = "tfcheckbox"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_HITMARKERS_SOUND",
+            description = "TF_HITMARKERS_SOUND_DESC",
+            profileVarName = "hitmarkers_sound",
+            datasource = "TFOptionsHitmarkersSound",
             widgetType = "dropdown"
         },
         properties = CoD.TFPCUtil.OptionsGenericDropdownProperties

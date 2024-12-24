@@ -43,7 +43,7 @@ CoD.TFOptions_Zombies_P1.new = function (HudRef, InstanceRef)
 	Widget.gameOptionList = f2_local1
 	
 	local f2_local2 = CoD.OptionInfoWidget.new(HudRef, InstanceRef)
-	f2_local2:setLeftRight(true, false, 550, 950)
+	f2_local2:setLeftRight(true, false, 550, 1050)
 	f2_local2:setTopBottom(true, false, 30, 330)
 	Widget:addElement(f2_local2)
 	Widget.optionInfo = f2_local2

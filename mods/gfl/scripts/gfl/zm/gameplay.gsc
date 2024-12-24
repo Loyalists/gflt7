@@ -89,9 +89,6 @@ function on_player_connect()
     self thread revive_at_end_of_round();
     self thread mw3_intro_zm();
     // self thread menuresponse_test();
-
-    hud_dvar = GetDvarInt("tfoption_hud", 0);
-    self clientsystem::set_clientdvar("tfoption_hud", hud_dvar);
 }
 
 function on_player_spawned()

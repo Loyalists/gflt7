@@ -1,7 +1,7 @@
 require("ui_mp.t6.hud_og")
 require("ui.uieditor.widgets.GFL.HUD.ThirdpersonCrosshair")
 
-local Preload = function()
+local PreLoadFunc = function( self, controller )
     if CoD.isZombie then
         require("ui.uieditor.widgets.HUD.ZM_NotifFactory.ZMNotificationContainer")
         -- require("ui.uieditor.widgets.HUD.ZM_NotifFactory.ZmNotifBGB_ContainerFactory")
@@ -15,8 +15,9 @@ end
 local function AddCustomHUDElements_Zombie(menu, controller)
     -- local self = menu:getParent()
     local self = menu
-	if Engine.DvarInt(nil, "tfoption_hud") ~= 0 then
-        menu:setupHUDShaker()
+    local parent = menu:getParent()
+	if Engine.DvarInt(nil, "personalization_hud") ~= 0 then
+        self:setupHUDShaker()
 	end
 
     local ZMNotificationContainer = CoD.ZMNotificationContainer.new(menu, controller)
@@ -107,6 +108,8 @@ local function AddCustomHUDElements_Zombie(menu, controller)
     self:addElement( self.KingslayerWaypointsContainer )
 
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+        element.ZMNotificationContainer:close()
+        element.ZombieHealthBar:close()
 		element.KingslayerWaypointsContainer:close()
 	end )
 end
@@ -117,10 +120,15 @@ local function AddCustomHUDElements_Common(menu, controller)
     local ThirdpersonCrosshair = CoD.ThirdpersonCrosshair.new(menu, controller)
     self.ThirdpersonCrosshair = ThirdpersonCrosshair
     self:addElement(ThirdpersonCrosshair)
+
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+	end )
 end
 
 function HUD_FirstSnapshot_Common(f40_arg0, f40_arg1)
-    Preload()
+	if PreLoadFunc then
+		PreLoadFunc( f40_arg0, f40_arg1 )
+	end
 
     CoD.CACUtility.ForceStreamAttachmentImages(f40_arg1.controller)
     if not CoD.isMultiplayer then

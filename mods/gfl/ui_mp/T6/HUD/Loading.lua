@@ -113,7 +113,7 @@ local function IsIntroMovieDisabled()
 			return true
 		end
 
-		if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) <= 1 and Dvar.tfoption_disable_intro_movie:exists() and Dvar.tfoption_disable_intro_movie:get() ~= "0" then
+		if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_GAME ) <= 1 and Dvar.personalization_disable_intro_movie:exists() and Dvar.personalization_disable_intro_movie:get() ~= "0" then
 			return true
 		end
 	end

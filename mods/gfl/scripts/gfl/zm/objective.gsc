@@ -30,6 +30,7 @@
 
 #precache( "objective", "gfl_objective_power" );
 #precache( "objective", "gfl_objective_pap" );
+#precache( "objective", "gfl_objective_perk" );
 
 REGISTER_SYSTEM_EX( "objective", &__init__, &__main__, undefined )
 
@@ -64,6 +65,7 @@ function objectives_setup()
     clear_all_objectives();
 
     level.gfl_objectives = [];
+    level.gfl_3dprompt_objectives = [];
 
     power_objectives_setup();
 	pap_objectives_setup();
@@ -90,6 +92,7 @@ function power_objectives_setup()
                 origin = ent.trigger.origin;
             }
 
+            origin = origin + vectorscale((0, 0, 1), 32);
             add_objective("power", "gfl_objective_power", origin, ent);
         }
     }
@@ -118,6 +121,8 @@ function pap_objectives_setup()
 	triggers = level.pack_a_punch.triggers;
     foreach(trig in triggers)
     {
+        origin = trig.origin;
+        origin = origin + vectorscale((0, 0, 1), 32);
 		add_objective("pap", "gfl_objective_pap", trig.origin, trig);
     }
 }
@@ -128,8 +133,32 @@ function perk_objectives_setup()
     vending_triggers = GetEntArray("zombie_vending", "targetname");
     foreach (perk in vending_triggers)
     {
-        add_objective("perk", "gfl_objective_perk", perk.origin, perk);
+        origin = perk.origin;
+        origin = origin + vectorscale((0, 0, 1), 32);
+        add_objective("perk", "gfl_objective_perk", origin, perk);
     }
+}
+
+function add_3dprompt_objective(type, name, origin, target)
+{
+    t_use = spawn("trigger_radius_use", origin + vectorscale((0, 0, 1), 30), 0, 64, 64);
+	t_use setvisibletoall();
+	t_use usetriggerrequirelookat();
+	t_use setteamfortrigger("none");
+	t_use setcursorhint("HINT_INTERACTIVE_PROMPT");
+    // t_use enablelinkto();
+    // t_use linkto(target);
+
+    visuals = [];
+    use_object = gameobjects::create_use_object("any", t_use, visuals, vectorscale((0, 0, 1), 32), istring( name ));
+	use_object gameobjects::allow_use("any");
+	use_object gameobjects::set_owner_team("allies");
+	use_object gameobjects::set_visible_team("any");
+    use_object gameobjects::set_use_time(0.5);
+    use_object.useweapon = undefined;
+    use_object.origin = origin;
+    target.gameobject = use_object;
+    return use_object;
 }
 
 function add_objective(type, name, origin, target = undefined)

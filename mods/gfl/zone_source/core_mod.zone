@@ -164,6 +164,7 @@ rawfile,ui/uieditor/menus/CAC/ChooseClass_InGame.lua
 rawfile,ui/HUDInject/HUDInject.lua
 rawfile,ui/t7/utility/SavingDataUtility.lua
 rawfile,ui/t7/utility/DataUtil.lua
+rawfile,ui/t7/utility/PersonalizationUtil.lua
 rawfile,ui/t7/utility/codutilityrequire.lua
 
 rawfile,ui/t6/lobby/lobbymenubuttons.lua
@@ -216,6 +217,9 @@ rawfile,ui/uieditor/widgets/GFL/ModInfoUsefulLinksPage.lua
 rawfile,ui/uieditor/menus/GFL/GFLWelcomeMenu.lua
 rawfile,ui/uieditor/menus/GFL/Popups/GFLCRMBanner.lua
 
+rawfile,ui/uieditor/menus/GFL/PersonalizationOptions.lua
+rawfile,ui/uieditor/widgets/GFL/PersonalizationOptions_P1.lua
+
 rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
 
@@ -225,13 +229,12 @@ rawfile,ui/uieditor/widgets/GFL/HUD/ThirdpersonCrosshair.lua
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscr.lua
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscrfeeditem.lua
 
-rawfile,ui/uieditor/widgets/HUD/ZM_NotifFactory/ZMNotificationContainer.lua
-
 // zombie health bar
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_container.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_the_bar.lua
 
+rawfile,ui/uieditor/widgets/HUD/ZM_NotifFactory/ZMNotificationContainer.lua
 rawfile,ui/uieditor/widgets/HUD/KingslayerWaypointsWidget/KingslayerWaypointsContainer.lua
 
 // character,c_zur_terrorist_1

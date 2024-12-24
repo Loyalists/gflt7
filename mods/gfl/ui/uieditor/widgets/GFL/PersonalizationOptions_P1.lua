@@ -1,7 +1,7 @@
 require("ui.uieditor.widgets.PC.StartMenu.Dropdown.OptionDropdown")
 require("ui.uieditor.widgets.PC.Utility.OptionInfoWidget")
 require("ui.uieditor.widgets.Scrollbars.verticalScrollbar")
-local f0_local0 = function (f1_arg0, f1_arg1)
+local PostLoadFunc = function (f1_arg0, f1_arg1)
     f1_arg0:dispatchEventToChildren({name = "options_refresh", controller = f1_arg1})
     f1_arg0.gameOptionList.m_managedItemPriority = true
     f1_arg0:registerEventHandler("dropdown_triggered", function (Sender, Event)
@@ -16,15 +16,15 @@ local f0_local0 = function (f1_arg0, f1_arg1)
     end)
 end
 
-CoD.TFOptions_P1 = InheritFrom(LUI.UIElement)
-CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
+CoD.PersonalizationOptions_P1 = InheritFrom(LUI.UIElement)
+CoD.PersonalizationOptions_P1.new = function (HudRef, InstanceRef)
 	local Widget = LUI.UIElement.new()
 	if PreLoadFunc then
 		PreLoadFunc(Widget, InstanceRef)
 	end
 	Widget:setUseStencil(false)
-	Widget:setClass(CoD.TFOptions_P1)
-	Widget.id = "TFOptions_P1"
+	Widget:setClass(CoD.PersonalizationOptions_P1)
+	Widget.id = "PersonalizationOptions_P1"
 	Widget.soundSet = "ChooseDecal"
 	Widget:setLeftRight(true, false, 0, 1100)
 	Widget:setTopBottom(true, false, 0, 600)
@@ -36,7 +36,7 @@ CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
 	f2_local1:makeFocusable()
 	f2_local1:setLeftRight(true, false, 0, 500)
 	f2_local1:setTopBottom(true, false, 30, 506)
-	f2_local1:setDataSource("TFOptionsP1")
+	f2_local1:setDataSource("PersonalizationOptionsP1")
 	f2_local1:setWidgetType(CoD.OptionDropdown)
     f2_local1:setVerticalCount(14)
 	f2_local1:setSpacing(0)
@@ -48,18 +48,6 @@ CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
 	f2_local2:setTopBottom(true, false, 30, 330)
 	Widget:addElement(f2_local2)
 	Widget.optionInfo = f2_local2
-	
-	local InGameNote = LUI.UIText.new()
-	InGameNote:setLeftRight( true, false, 550, 1050 )
-	InGameNote:setTopBottom( true, false, 400, 400 + CoD.textSize.Default )
-	InGameNote:setRGB( 0.74, 0.74, 0.74 )
-	InGameNote:setAlpha( 0 )
-	InGameNote:setText( Engine.Localize( "TF_MENU_INGAME_NOTE" ) )
-	InGameNote:setTTF( "fonts/default.ttf" )
-	InGameNote:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
-	InGameNote:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
-	Widget:addElement(InGameNote)
-	Widget.InGameNote = InGameNote
 	
 	f2_local2:linkToElementModel(f2_local1, "description", true, function (ModelRef)
 		local ModelValue = Engine.GetModelValue(ModelRef)
@@ -75,40 +63,6 @@ CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
 	end)
 	f2_local1.id = "gameOptionList"
 
-	Widget.clipsPerState = {
-		DefaultState = {
-			DefaultClip = function ()
-				Widget:setupElementClipCounter( 1 )
-
-				InGameNote:completeAnimation()
-				Widget.InGameNote:setAlpha( 0 )
-				Widget.clipFinished( InGameNote, {} )
-			end
-		},
-		InGame = {
-			DefaultClip = function ()
-				Widget:setupElementClipCounter( 1 )
-
-				InGameNote:completeAnimation()
-				Widget.InGameNote:setAlpha( 1 )
-				Widget.clipFinished( InGameNote, {} )
-			end
-		}
-	}
-
-	Widget:mergeStateConditions( {
-		{
-			stateName = "InGame",
-			condition = function ( menu, element, event )
-				if CoD.isFrontend then
-					return false
-				end
-
-				return true
-			end
-		}
-	} )
-
 	Widget:registerEventHandler("gain_focus", function (Sender, Event)
 		if Sender.m_focusable then
 			local f6_local0 = Sender.gameOptionList
@@ -122,8 +76,8 @@ CoD.TFOptions_P1.new = function (HudRef, InstanceRef)
 		Sender.gameOptionList:close()
 		Sender.optionInfo:close()
 	end)
-	if f0_local0 then
-		f0_local0(Widget, InstanceRef, HudRef)
+	if PostLoadFunc then
+		PostLoadFunc(Widget, InstanceRef, HudRef)
 	end
 	return Widget
 end

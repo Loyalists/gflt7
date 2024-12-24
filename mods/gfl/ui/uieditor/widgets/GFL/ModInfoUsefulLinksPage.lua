@@ -45,7 +45,7 @@ CoD.ModInfoUsefulLinksPage.new = function (HudRef, InstanceRef)
 	Widget.gameOptionList = gameOptionList
 	
 	local optionInfo = CoD.OptionInfoWidget.new(HudRef, InstanceRef)
-	optionInfo:setLeftRight(true, false, 550, 950)
+	optionInfo:setLeftRight(true, false, 550, 1050)
 	optionInfo:setTopBottom(true, false, 30, 330)
 	Widget:addElement(optionInfo)
 	Widget.optionInfo = optionInfo

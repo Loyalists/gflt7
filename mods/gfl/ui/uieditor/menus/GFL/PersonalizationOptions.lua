@@ -17,156 +17,34 @@ local f0_local3 = function(f30_arg0, f30_arg1)
     f30_arg0.categoryFrame:setForceMouseEventDispatch(true)
 end
 
-DataSources.TFOptionsP1 = DataSourceHelpers.ListSetup("PC.TFOptionsP1", function(f26_arg0)
+DataSources.PersonalizationOptionsP1 = DataSourceHelpers.ListSetup("PersonalizationOptionsP1", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
         models = {
-            label = "TF_MENU_PLAYER_OPTIONS",
-            description = "TF_MENU_PLAYER_OPTIONS_DESC",
-            page = "TFOptionsPlayerPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_GAME_OPTIONS",
-            description = "TF_MENU_GAME_OPTIONS_DESC",
-            page = "TFOptionsGamePage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_BOT_OPTIONS",
-            description = "TF_MENU_BOT_OPTIONS_DESC",
-            page = "TFOptionsBotPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_WEAPON_OPTIONS",
-            description = "TF_MENU_WEAPON_OPTIONS_DESC",
-            page = "TFOptionsWeaponsPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_POWERUP_OPTIONS",
-            description = "TF_MENU_POWERUP_OPTIONS_DESC",
-            page = "TFOptionsPowerupsPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_ZOMBIE_OPTIONS",
-            description = "TF_MENU_ZOMBIE_OPTIONS_DESC",
-            page = "TFOptionsZombiesPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_PERK_OPTIONS",
-            description = "TF_MENU_PERK_OPTIONS_DESC",
-            page = "TFOptionsPerksPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_BGB_OPTIONS",
-            description = "TF_MENU_BGB_OPTIONS_DESC",
-            page = "TFOptionsBGBPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MENU_ROAMER_OPTIONS",
-            description = "TF_MENU_ROAMER_OPTIONS_DESC",
-            page = "TFOptionsRoamerPage",
-            widgetType = "navbutton"
-        },
-        properties = CoD.TFPCUtil.OptionsNavButtonProperties
-    })
-    if CoD.isFrontend then
-        table.insert(f26_local0, {
-            models = {
-                label = "TF_MENU_SERVER_OPTIONS",
-                description = "TF_MENU_SERVER_OPTIONS_DESC",
-                page = "ServerSettings",
-                widgetType = "navbutton"
-            },
-            properties = CoD.TFPCUtil.OptionsNavButtonProperties
-        })
-    end
-    return f26_local0
-end, true)
-
-DataSources.TFOptionsP1.getWidgetTypeForItem = function(f27_arg0, f27_arg1, f27_arg2)
-    if f27_arg1 then
-        local f27_local0 = Engine.GetModelValue(Engine.GetModel(f27_arg1, "widgetType"))
-        if f27_local0 == "dropdown" then
-            return CoD.OptionDropdown -- CoD.TFOptions_Dropdown --
-        elseif f27_local0 == "checkbox" then
-            return CoD.StartMenu_Options_CheckBoxOption
-        elseif f27_local0 == "tfcheckbox" then
-            return CoD.TFOptions_CheckBoxOption
-        elseif f27_local0 == "slider" then
-            return CoD.StartMenu_Options_SliderBar
-        elseif f27_local0 == "spacer" then
-            return CoD.VerticalListSpacer
-        elseif f27_local0 == "navbutton" then
-            return CoD.TFOptions_NavButton
-        end
-    end
-    return nil
-end
-
-DataSources.TFOptionsP2 = DataSourceHelpers.ListSetup("PC.TFOptionsP2", function(f26_arg0)
-    local f26_local0 = {}
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_ENABLED",
-            description = "TF_ENABLED_DESC",
-            profileVarName = "tf_enabled",
-            widgetType = "tfcheckbox"
+            label = "TF_DISABLE_INTRO_MOVIE",
+            description = "TF_DISABLE_INTRO_MOVIE_DESC",
+            profileVarName = "disable_intro_movie",
+            widgetType = "tfcheckbox",
+            callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
+            callbackSetValueForOption = CoD.PersonalizationUtil.SetValueForOption,
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_CHEATS",
-            description = "TF_CHEATS_DESC",
-            profileVarName = "cheats",
-            widgetType = "tfcheckbox"
-        },
-        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_MODMENU",
-            description = "TF_MODMENU_DESC",
-            profileVarName = "modmenu",
-            widgetType = "tfcheckbox"
+            label = "TF_HUD",
+            description = "TF_HUD_DESC",
+            profileVarName = "hud",
+            widgetType = "tfcheckbox",
+            callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
+            callbackSetValueForOption = CoD.PersonalizationUtil.SetValueForOption,
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
     return f26_local0
 end, true)
 
-DataSources.TFOptionsP2.getWidgetTypeForItem = function(f27_arg0, f27_arg1, f27_arg2)
+DataSources.PersonalizationOptionsP1.getWidgetTypeForItem = function(f27_arg0, f27_arg1, f27_arg2)
     if f27_arg1 then
         local f27_local0 = Engine.GetModelValue(Engine.GetModel(f27_arg1, "widgetType"))
         if f27_local0 == "dropdown" then
@@ -186,32 +64,7 @@ DataSources.TFOptionsP2.getWidgetTypeForItem = function(f27_arg0, f27_arg1, f27_
     return nil
 end
 
-DataSources.TFOptionsP3 = DataSourceHelpers.ListSetup("PC.TFOptionsP3", function(f26_arg0)
-    local f26_local0 = {}
-    return f26_local0
-end, true)
-
-DataSources.TFOptionsP3.getWidgetTypeForItem = function(f27_arg0, f27_arg1, f27_arg2)
-    if f27_arg1 then
-        local f27_local0 = Engine.GetModelValue(Engine.GetModel(f27_arg1, "widgetType"))
-        if f27_local0 == "dropdown" then
-            return CoD.OptionDropdown
-        elseif f27_local0 == "checkbox" then
-            return CoD.StartMenu_Options_CheckBoxOption
-        elseif f27_local0 == "tfcheckbox" then
-            return CoD.TFOptions_CheckBoxOption
-        elseif f27_local0 == "slider" then
-            return CoD.StartMenu_Options_SliderBar
-        elseif f27_local0 == "spacer" then
-            return CoD.VerticalListSpacer
-        elseif f27_local0 == "navbutton" then
-            return CoD.TFOptions_NavButton
-        end
-    end
-    return nil
-end
-
-DataSources.TFOptionCategories = DataSourceHelpers.ListSetup("PC.TFOptionCategories", function(f28_arg0)
+DataSources.PersonalizationOptionCategories = DataSourceHelpers.ListSetup("PersonalizationOptionCategories", function(f28_arg0)
     local f28_local0 = {}
     table.insert(f28_local0, {
         models = {
@@ -224,22 +77,9 @@ DataSources.TFOptionCategories = DataSourceHelpers.ListSetup("PC.TFOptionCategor
     table.insert(f28_local0, {
         models = {
             tabName = "MPUI_STANDARD_CAPS",
-            tabWidget = "CoD.TFOptions_P1"
+            tabWidget = "CoD.PersonalizationOptions_P1"
         }
     })
-    table.insert(f28_local0, { 
-        models = { 
-            tabName = "MENU_ADVANCED_CAPS", 
-            tabWidget = "CoD.TFOptions_P2" 
-        } 
-    })
-    -- table.insert(f28_local0, {models = {tabName = "PAGE 3", tabWidget = "CoD.TFOptions_P3"}})
-    -- table.insert(f28_local0, {models = {tabName = "PAGE 4", tabWidget = "CoD.TFOptions_ZCounter"}})
-    -- table.insert(f28_local0, {models = {tabName = "PAGE 5", tabWidget = "CoD.TFOptions_ZCounter"}})
-    -- table.insert(f28_local0, {models = {tabName = "PAGE 6", tabWidget = "CoD.TFOptions_ZCounter"}})
-    -- table.insert(f28_local0, {models = {tabName = "PAGE 7", tabWidget = "CoD.TFOptions_ZCounter"}})
-    -- table.insert(f28_local0, {models = {tabName = "PAGE 8", tabWidget = "CoD.TFOptions_ZCounter"}})
-    -- table.insert(f28_local0, {models = {tabName = "PAGE 9", tabWidget = "CoD.TFOptions_ZCounter"}})
     table.insert(f28_local0, {
         models = {
             tabIcon = CoD.buttonStrings.shoulderr
@@ -251,15 +91,15 @@ DataSources.TFOptionCategories = DataSourceHelpers.ListSetup("PC.TFOptionCategor
     return f28_local0
 end, true)
 
-LUI.createMenu.TFOptions = function(InstanceRef)
-    local HudRef = CoD.Menu.NewForUIEditor("TFOptions")
+LUI.createMenu.PersonalizationOptions = function(InstanceRef)
+    local HudRef = CoD.Menu.NewForUIEditor("PersonalizationOptions")
 
     HudRef.soundSet = "ChooseDecal"
     HudRef:setOwner(InstanceRef)
     HudRef:setLeftRight(true, true, 0, 0)
     HudRef:setTopBottom(true, true, 0, 0)
     HudRef:playSound("menu_open", InstanceRef)
-    HudRef.buttonModel = Engine.CreateModel(Engine.GetModelForController(InstanceRef), "TFOptions.buttonPrompts")
+    HudRef.buttonModel = Engine.CreateModel(Engine.GetModelForController(InstanceRef), "PersonalizationOptions.buttonPrompts")
     local f31_local1 = HudRef
     HudRef.anyChildUsesUpdateState = true
     local f31_local2 = LUI.UIImage.new()
@@ -270,11 +110,12 @@ LUI.createMenu.TFOptions = function(InstanceRef)
     HudRef:addElement(f31_local2)
     HudRef.Background = f31_local2
 
+    local title = Engine.Localize("GFL_MENU_PERSONALIZATION")
     local f31_local3 = CoD.GenericMenuFrame.new(f31_local1, InstanceRef)
     f31_local3:setLeftRight(true, true, 0, 0)
     f31_local3:setTopBottom(true, true, 0, 0)
-    f31_local3.titleLabel:setText(" ")
-    f31_local3.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText("TF'S ZOMBIE OPTIONS")
+    f31_local3.titleLabel:setText(title)
+    f31_local3.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText(title)
     f31_local3.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.FeatureIcon:setImage(RegisterImage(
         "uie_t7_mp_icon_header_option"))
     HudRef:addElement(f31_local3)
@@ -305,7 +146,7 @@ LUI.createMenu.TFOptions = function(InstanceRef)
     local f31_local7 = CoD.basicTabList.new(f31_local1, InstanceRef)
     f31_local7:setLeftRight(true, false, 64, 1216)
     f31_local7:setTopBottom(true, false, 84, 124)
-    f31_local7.grid:setDataSource("TFOptionCategories")
+    f31_local7.grid:setDataSource("PersonalizationOptionCategories")
     f31_local7.grid:setWidgetType(CoD.paintshopTabWidget)
     f31_local7.grid:setHorizontalCount(11)
     HudRef:addElement(f31_local7)
@@ -334,7 +175,7 @@ LUI.createMenu.TFOptions = function(InstanceRef)
 
     HudRef:registerEventHandler("menu_opened", function(element, event)
         local f35_local0 = nil
-        CoD.TFPCUtil.UnsetDirtyFlag()
+        -- CoD.TFPCUtil.UnsetDirtyFlag()
         if not f35_local0 then
             f35_local0 = element:dispatchEventToChildren(event)
         end
@@ -352,7 +193,7 @@ LUI.createMenu.TFOptions = function(InstanceRef)
     
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil,
         function(f40_arg0, f40_arg1, f40_arg2, f40_arg3)
-            CoD.TFPCUtil.ApplyChangesInGame(f40_arg2)
+            -- CoD.TFPCUtil.ApplyChangesInGame(f40_arg2)
             GoBack(HudRef, f40_arg2)
             return true
         end, function(f41_arg0, f41_arg1, f41_arg2)
@@ -361,7 +202,7 @@ LUI.createMenu.TFOptions = function(InstanceRef)
         end, false)
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_START, "M",
         function(f42_arg0, f42_arg1, f42_arg2, f42_arg3)
-            CoD.TFPCUtil.ApplyChangesInGame(f42_arg2)
+            -- CoD.TFPCUtil.ApplyChangesInGame(f42_arg2)
             CloseStartMenu(f42_arg1, f42_arg2)
             return true
         end, function(f43_arg0, f43_arg1, f43_arg2)
@@ -370,7 +211,7 @@ LUI.createMenu.TFOptions = function(InstanceRef)
         end, false)
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "R",
         function(f46_arg0, f46_arg1, f46_arg2, f46_arg3)
-            CoD.TFPCUtil.ResetToDefault()
+            CoD.PersonalizationUtil.ResetToDefault()
             GoBack(HudRef, f46_arg2)
             return true
         end, function(f47_arg0, f47_arg1, f47_arg2)
@@ -406,7 +247,7 @@ LUI.createMenu.TFOptions = function(InstanceRef)
         Sender.Tabs:close()
         Sender.categoryFrame:close()
         Engine.UnsubscribeAndFreeModel(Engine.GetModel(Engine.GetModelForController(InstanceRef),
-            "TFOptions.buttonPrompts"))
+            "PersonalizationOptions.buttonPrompts"))
     end)
     if f0_local3 then
         f0_local3(HudRef, InstanceRef)

@@ -4,6 +4,9 @@ local json = require("ui.util.json")
 local TFOptionsFileName = "gfl_tfoptions.json"
 local TFOptionsFilePath = ".\\players\\" .. TFOptionsFileName
 
+local PersonalizationFileName = "gfl_personalization.json"
+local PersonalizationFilePath = ".\\players\\" .. PersonalizationFileName
+
 CoD.SavingDataModes = {
     TFOptions = 0,
     Personalization = 1,
@@ -20,7 +23,7 @@ CoD.DataUtil.GetFilePath = function(mode)
     
     local map = {
         [CoD.SavingDataModes.TFOptions] = TFOptionsFilePath,
-        [CoD.SavingDataModes.Personalization] = TFOptionsFilePath,
+        [CoD.SavingDataModes.Personalization] = PersonalizationFilePath,
     }
 
     local path = map[mode]

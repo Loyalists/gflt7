@@ -1,6 +1,7 @@
 require( "ui.uieditor.widgets.HUD.Waypoint.GenericWaypointContainer" )
 require( "ui.uieditor.widgets.MPHudWidgets.WaypointBase" )
 require( "ui.uieditor.widgets.MPHudWidgets.WaypointWidgetContainer" )
+require( "ui.uieditor.widgets.DynamicContainerWidget" )
 
 CoD.GetCachedObjective = function ( objectiveName )
 	if objectiveName == nil then
@@ -27,6 +28,64 @@ local SetupWaypoint = function ( element, event )
 
 	element.gameTypeContainer.objective = element.objective
 	element.gameTypeContainer:setupWaypointContainer( event )
+end
+
+local PostLoadFunc2 = function ( self, controller )
+	local ButtonPrompt = function ( interactPromptContainer, objective_properties )
+		local controller2 = objective_properties.controller or controller
+		local ObjectiveName = Engine.GetObjectiveName( controller2, objective_properties.objId )
+		local CachedObjective = CoD.GetCachedObjective( ObjectiveName )
+		if CachedObjective == nil then
+			return 
+		end
+		local objective_model = Engine.GetModel( Engine.GetModelForController( controller2 ), "objective" .. objective_properties.objId )
+		local objectivestate_model = objective_model and Engine.GetModel( objective_model, "state" )
+		local direction_model = objective_model and Engine.CreateModel( objective_model, "clamped" )
+		direction_model = objective_model and Engine.CreateModel( objective_model, "direction" )
+		local objectivestate = CoD.OBJECTIVESTATE_EMPTY
+		
+		local ButtonPrompt3d = self.interactPromptContainer["button" .. objective_properties.objId]
+		if ButtonPrompt3d ~= nil then
+			objectivestate = ButtonPrompt3d.state
+		end
+		local state_check = Engine.GetObjectiveState( controller2, objective_properties.objId )
+		if state_check == CoD.OBJECTIVESTATE_ACTIVE or state_check == CoD.OBJECTIVESTATE_INVISIBLE then
+	
+			if ButtonPrompt3d == nil then
+				if CoD.isCampaign or CoD.isZombie then
+					ButtonPrompt3d = CoD.ButtonPrompt3dCPZM.new( self, controller2 )
+				else
+					ButtonPrompt3d = CoD.ButtonPrompt3d.new( self, controller2 )
+				end
+				ButtonPrompt3d.objective = CachedObjective
+				ButtonPrompt3d:setupEntity( objective_properties )
+				ButtonPrompt3d:setModel( objective_model )
+				self.interactPromptContainer:addElement( ButtonPrompt3d )
+				self.interactPromptContainer["button" .. objective_properties.objId] = ButtonPrompt3d
+				ButtonPrompt3d:subscribeToModel( objectivestate_model, function ( model )
+					local modelValue = Engine.GetModelValue( model )
+					if modelValue ~= CoD.OBJECTIVESTATE_ACTIVE and modelValue ~= CoD.OBJECTIVESTATE_INVISIBLE then
+						ButtonPrompt3d:close()
+					elseif modelValue == CoD.OBJECTIVESTATE_ACTIVE then
+						ButtonPrompt3d:show()
+					else
+						ButtonPrompt3d:hide()
+					end
+				end )
+			else
+				ButtonPrompt3d.objective = CachedObjective
+				ButtonPrompt3d:setupEntity( objective_properties )
+			end
+			ButtonPrompt3d.state = state_check
+		end
+		return true
+	end
+	self:subscribeToModel( Engine.CreateModel( Engine.GetModelForController( controller ), "newObjectiveType" .. Enum.ObjectiveTypes.OBJECTIVE_TYPE_3DPROMPT ), function ( model )
+		local ModelValue = Engine.GetModelValue( model )
+		if ModelValue then
+			ButtonPrompt( self.interactPromptContainer, {controller = controller, objId = ModelValue , objType = Enum.ObjectiveTypes.OBJECTIVE_TYPE_3DPROMPT} )
+		end	
+	end, false )
 end
 
 local PostLoadFunc = function ( self, controller )
@@ -185,6 +244,8 @@ local PostLoadFunc = function ( self, controller )
 			objType = Enum.ObjectiveTypes.OBJECTIVE_TYPE_WAYPOINT
 		} )
 	end, false )
+
+	-- PostLoadFunc2(self, controller)
 end
 
 CoD.KingslayerWaypointsContainer = InheritFrom( LUI.UIElement )
@@ -218,8 +279,15 @@ CoD.KingslayerWaypointsContainer.new = function ( menu, controller )
 	end )
 	self:addElement( self.WaypointBase )
 
+    -- local interactPromptContainer = CoD.DynamicContainerWidget.new( menu, controller )
+    -- interactPromptContainer:setLeftRight( true, true, 0, 0 )
+    -- interactPromptContainer:setTopBottom( true, true, 0, 0 )
+    -- self:addElement( interactPromptContainer )
+    -- self.interactPromptContainer = interactPromptContainer
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WaypointBase:close()
+        -- element.interactPromptContainer:close()
 	end )
 	
 	if PostLoadFunc then

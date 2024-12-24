@@ -3213,6 +3213,7 @@ rawfile,ui/t7/utility/codutilityrequire.lua
 rawfile,ui/t7/utility/datautil.lua
 rawfile,ui/t7/utility/lobbyutility.lua
 rawfile,ui/t7/utility/lobbyutility_og.luac
+rawfile,ui/t7/utility/personalizationutil.lua
 rawfile,ui/t7/utility/savingdatautility.lua
 rawfile,ui/t7/utility/tfpcutility.lua
 rawfile,ui/uieditor/actions.lua
@@ -3230,6 +3231,7 @@ rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
 rawfile,ui/uieditor/menus/gfl/gflwelcomemenu.lua
 rawfile,ui/uieditor/menus/gfl/modinfo.lua
+rawfile,ui/uieditor/menus/gfl/personalizationoptions.lua
 rawfile,ui/uieditor/menus/gfl/popups/gflcrmbanner.lua
 rawfile,ui/uieditor/menus/lobby/common/popups/bonusmodesflyout.lua
 rawfile,ui/uieditor/menus/lobby/common/popups/gamesettingsflyoutmp.lua
@@ -3262,6 +3264,7 @@ rawfile,ui/uieditor/widgets/gfl/hud/thirdpersoncrosshair.lua
 rawfile,ui/uieditor/widgets/gfl/modinfofaqpage.lua
 rawfile,ui/uieditor/widgets/gfl/modinfop1.lua
 rawfile,ui/uieditor/widgets/gfl/modinfousefullinkspage.lua
+rawfile,ui/uieditor/widgets/gfl/personalizationoptions_p1.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_container.lua
 rawfile,ui/uieditor/widgets/hud/aae_t9_zombie_health_bar/aae_t9_zombie_health_bar_the_bar.lua

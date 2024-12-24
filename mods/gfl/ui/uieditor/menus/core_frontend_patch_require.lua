@@ -89,6 +89,8 @@ require("ui.uieditor.menus.GFL.ModInfo")
 require("ui.uieditor.menus.GFL.GFLWelcomeMenu")
 require("ui.uieditor.menus.GFL.Popups.GFLCRMBanner")
 
+require("ui.uieditor.menus.GFL.PersonalizationOptions")
+
 require("ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout")
 
 require("ui.uieditor.menus.Pregame.SystemOverlay_Pregame")

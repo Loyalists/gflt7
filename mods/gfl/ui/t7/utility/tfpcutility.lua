@@ -367,6 +367,17 @@ CoD.TFPCUtil.CheckBoxOptionChecked = function(itemRef, updateTable)
     return false
 end
 
+CoD.TFPCUtil.GetValueForOption = function(varNameString)
+    local curVal = 0
+    if UseOldSaveData() then
+        curVal = tonumber(CoD.TFPCUtil.GetFromSaveData(varNameString))
+    else
+        curVal = CoD.TFPCUtil.GetFromJSON(varNameString)
+    end
+
+    return curVal
+end
+
 CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
     if itemRef then
         local result = {}
@@ -405,15 +416,16 @@ CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
                 end
                 result.profileType = f6_local5
             else
-                if UseOldSaveData() then
-                    result.currentValue = tonumber(CoD.TFPCUtil.GetFromSaveData(varNameString))
-                else
-                    result.currentValue = CoD.TFPCUtil.GetFromJSON(varNameString)
+                local getValModel = Engine.GetModel(itemRef, "callbackGetValueForOption")
+                local callbackGetValue = CoD.TFPCUtil.GetValueForOption
+                if getValModel then
+                    callbackGetValue = Engine.GetModelValue(getValModel)
                 end
-                -- result.currentValue = 1
+                local curVal = callbackGetValue(varNameString)
+                result.currentValue = curVal
 
                 if not result.currentValue then
-                    result.currentValue = f6_local5
+                    result.currentValue = 0
                 end
             end
             result.profileVarName = varNameString
@@ -494,6 +506,14 @@ CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
     return nil
 end
 
+CoD.TFPCUtil.SetValueForOption = function(varNameString, newValue)
+    if UseOldSaveData() then
+        CoD.TFPCUtil.SetToSaveData(varNameString, newValue, 0)
+    else
+        CoD.TFPCUtil.SetToJSON(varNameString, newValue)
+    end
+end
+
 CoD.TFPCUtil.SetOptionValue = function(itemRef, f7_arg1, newValue)
     if itemRef then
 
@@ -520,11 +540,13 @@ CoD.TFPCUtil.SetOptionValue = function(itemRef, f7_arg1, newValue)
                     Engine.SetHardwareProfileValue(varNameString, newValue)
                 end
             else
-                if UseOldSaveData() then
-                    CoD.TFPCUtil.SetToSaveData(varNameString, newValue, 0)
-                else
-                    CoD.TFPCUtil.SetToJSON(varNameString, newValue)
+                local setValModel = Engine.GetModel(itemRef, "callbackSetValueForOption")
+                local callbackSetValue = CoD.TFPCUtil.SetValueForOption
+                if setValModel then
+                    callbackSetValue = Engine.GetModelValue(setValModel)
                 end
+
+                callbackSetValue(varNameString, newValue)
             end
             CoD.TFPCUtil.DirtyOptions(f7_arg1)
         end

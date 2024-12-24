@@ -23,6 +23,9 @@ function NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)
         CoD.TFPCUtil.LoadTFOptions()
     end
 
+	CoD.PersonalizationUtil.CheckForRecentUpdate()
+	CoD.PersonalizationUtil.LoadPersonalization()
+
     CoD.LobbyBase.NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)
 end
 
@@ -55,6 +58,10 @@ function OpenTFOptions_InGame( f427_arg0, f427_arg1, f427_arg2 )
 	end
 
 	OpenOverlay(f427_arg0, "TFOptions", f427_arg2)
+end
+
+function OpenPersonalizationOptions( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )
+	CoD.LobbyBase.OpenPersonalizationOptions( f206_arg0, f206_arg2 )
 end
 
 function OpenModInfo( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )

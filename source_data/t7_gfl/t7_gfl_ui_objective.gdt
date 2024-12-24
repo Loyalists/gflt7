@@ -35,18 +35,20 @@
 		"waypointText" "Pack-a-Punch"
 		"waypointXOffset" "0"
 		"waypointYOffset" "0"
-		"waypointZOffset" "32"
+		"waypointZOffset" "0.0"
 		"woundedSoldierType" "0"
-		"xstring_waypointFarText" ""
+		"xstring_waypointFarText" "Pack-a-Punch"
 	}
 	"gfl_objective_power" [ "gfl_objective_pap" ]
 	{
 		"waypointImage" "t7_hud_waypoints_neutral_new"
 		"waypointText" "Power"
+		"xstring_waypointFarText" "Power"
 	}
 	"gfl_objective_perk" [ "gfl_objective_pap" ]
 	{
 		"waypointImage" "t7_hud_waypoints_neutral_koth_mini"
 		"waypointText" "Perk"
+		"xstring_waypointFarText" "Perk"
 	}
 }
