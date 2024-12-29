@@ -180,7 +180,7 @@ end
 -- Powerup HUD can also be accessed this way: HudRef.powerupsArea
 CoD.DemoUtility.AddHUDWidgets = function(HudRef, InstanceRef)
     AddHUDWidgetsOriginal(HudRef, InstanceRef)
-
+    local controller = InstanceRef.controller
     
     local function CheckForSaveData(ModelRef)
         if IsParamModelEqualToString(ModelRef, "setSaveData") then
@@ -195,4 +195,30 @@ CoD.DemoUtility.AddHUDWidgets = function(HudRef, InstanceRef)
     HudRef:subscribeToGlobalModel(InstanceRef, "PerController", "scriptNotify", CheckForSaveData)
     --HudRef.T7HudMenuGameMode.HUDInject = CoD.HUDInject.new(HudRef, InstanceRef)
     --HudRef.T7HudMenuGameMode:addElement(HudRef.T7HudMenuGameMode.HUDInject)
+
+    if CoD.isZombie then
+        if HudRef.CustomHudMenu == nil then
+            HudRef.CustomHudMenu = LUI.createMenu.JUPHud_zm_factory( controller )
+        end
+        HudRef:addElement( HudRef.CustomHudMenu )
+    
+        local function ResetHUDVisibility()
+            if Engine.DvarInt(nil, "personalization_custom_hud") ~= 0 then
+                HudRef.CustomHudMenu:setAlpha( 1 )
+                HudRef.T7HudMenuGameMode:setAlpha( 0 )
+            else
+                HudRef.CustomHudMenu:setAlpha( 0 )
+                HudRef.T7HudMenuGameMode:setAlpha( 1 )
+            end
+        end
+    
+        HudRef:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "CustomHUD" ), function(model)
+            local ModelValue = Engine.GetModelValue(model)
+            if ModelValue then
+                ResetHUDVisibility()
+            end
+        end)
+    
+        ResetHUDVisibility()
+    end
 end

@@ -14,6 +14,8 @@
 #using scripts\gfl\zm\zm_sub;
 #using scripts\gfl\zm\_aae_zombie_health_bar;
 
+#using scripts\zm\_zm_s4_hud;
+
 #insert scripts\shared\shared.gsh;
 
 #namespace gameplay;

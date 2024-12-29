@@ -17,6 +17,17 @@ local f0_local3 = function(f30_arg0, f30_arg1)
     f30_arg0.categoryFrame:setForceMouseEventDispatch(true)
 end
 
+local setCustomHUD = function (varNameString, newValue)
+    CoD.PersonalizationUtil.SetValueForOption(varNameString, newValue)
+
+    if not Engine.IsInGame() then
+        return
+    end
+
+    local converted = tonumber(newValue)
+    SetGlobalModelValue("CustomHUD", newValue)
+end
+
 DataSources.PersonalizationOptionsP1 = DataSourceHelpers.ListSetup("PersonalizationOptionsP1", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
@@ -38,6 +49,17 @@ DataSources.PersonalizationOptionsP1 = DataSourceHelpers.ListSetup("Personalizat
             widgetType = "tfcheckbox",
             callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
             callbackSetValueForOption = CoD.PersonalizationUtil.SetValueForOption,
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_CUSTOM_HUD",
+            description = "TF_CUSTOM_HUD_DESC",
+            profileVarName = "custom_hud",
+            widgetType = "tfcheckbox",
+            callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
+            callbackSetValueForOption = setCustomHUD,
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })

@@ -47,7 +47,7 @@
 	}
 	"gfl_objective_perk" [ "gfl_objective_pap" ]
 	{
-		"waypointImage" "t7_hud_waypoints_neutral_koth_mini"
+		"waypointImage" "t7_hud_waypoints_neutral_koth"
 		"waypointText" "Perk"
 		"xstring_waypointFarText" "Perk"
 	}

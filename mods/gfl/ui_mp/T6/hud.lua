@@ -1,5 +1,8 @@
 require("ui_mp.t6.hud_og")
 require("ui.uieditor.widgets.GFL.HUD.ThirdpersonCrosshair")
+if CoD.isZombie then
+    require( "ui.uieditor.menus.hud.JUPHud_zm_factory" )
+end
 
 local PreLoadFunc = function( self, controller )
     if CoD.isZombie then
@@ -10,6 +13,86 @@ local PreLoadFunc = function( self, controller )
         require( "ui.uieditor.menus.CharacterCustomization.ChooseZMCharacterLoadout_InGame" )
         require( "ui.uieditor.widgets.HUD.KingslayerWaypointsWidget.KingslayerWaypointsContainer" )
     end
+end
+
+local f0_local10 = function ()
+    local f0_local9 = false
+	if f0_local9 then
+		return 
+	end
+	f0_local9 = true
+	require( "ui_mp.T6.HUD.InGameMenus" )
+	require( "ui.uieditor.menus.Core_UI_require" )
+	require( "ui.uieditor.menus.core_patch_require" )
+	if CoD.isPC then
+		require( "ui.uieditor.menus.core_patch_pc_require" )
+	end
+	if CoD.isCampaign then
+		require( "ui.uieditor.menus.hud.HUD_CP_require" )
+		require( "ui.uieditor.menus.hud.cp_patch_require" )
+		require( "ui.uieditor.widgets.Reticles.RocketLaunchers.rocketLauncherReticle" )
+		if Engine.GetCurrentMap() == "cp_mi_eth_prologue" then
+			require( "ui.uieditor.menus.CPLevels.Prologue.SecurityCamera" )
+			require( "ui.uieditor.menus.SpinnerFullscreenBlack" )
+		elseif Engine.GetCurrentMap() == "cp_mi_zurich_coalescence" then
+			require( "ui.uieditor.menus.SpinnerFullscreenBlack" )
+		end
+	elseif CoD.isZombie then
+		require( "ui.uieditor.menus.hud.HUD_ZM_require" )
+		require( "ui.uieditor.menus.hud.zm_patch_require" )
+		require( "ui.uieditor.widgets.Reticles.Magnifier.MagnifierReticle_UI3D" )
+		require( "ui.uieditor.widgets.Demo.Demo" )
+		if Mods_IsUsingMods() then
+			require( "ui.uieditor.widgets.HUD.Console.Console" )
+		end
+		if Engine.GetCurrentMap() == "zm_zod" then
+			require( "ui.uieditor.menus.hud.T7Hud_ZM" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+			require( "ui.uieditor.menus.ZMLevels.ZOD.JumpScare" )
+			require( "ui.uieditor.widgets.HUD.ZM_TimeBar.ZM_BeastmodeTimeBarWidget" )
+			require( "ui.uieditor.widgets.ZMInventory.FuseBox.FuseWidget" )
+			require( "ui.uieditor.widgets.ZMInventory.InventoryWidget" )
+			require( "ui.uieditor.widgets.ZMInventory.Ritual.RitualItem" )
+			require( "ui.uieditor.widgets.ZMInventory.Ritual.RitualWidget" )
+		elseif Engine.GetCurrentMap() == "zm_factory" then
+			require( "ui.uieditor.menus.hud.T7Hud_zm_factory" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+		elseif Engine.GetCurrentMap() == "zm_castle" then
+			require( "ui.uieditor.menus.hud.T7Hud_zm_castle" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+		elseif Engine.GetCurrentMap() == "zm_island" then
+			require( "ui.uieditor.menus.hud.T7Hud_zm_island" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+		elseif Engine.GetCurrentMap() == "zm_stalingrad" then
+			require( "ui.uieditor.menus.hud.T7Hud_zm_stalingrad" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+			require( "ui.uieditor.widgets.Reticles.LauncherMulti.LauncherMultiReticle" )
+		elseif Engine.GetCurrentMap() == "zm_genesis" then
+			require( "ui.uieditor.menus.hud.T7Hud_zm_genesis" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+		elseif Engine.GetCurrentMap() == "zm_tomb" then
+			require( "ui.uieditor.menus.hud.T7Hud_zm_tomb" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+			require( "ui.uieditor.menus.ZMLevels.TOMB.JumpScare-Tomb" )
+			require( "ui.uieditor.widgets.Reticles.LauncherMulti.LauncherMultiReticle" )
+		elseif Engine.GetCurrentMap() == "zm_cosmodrome" or Engine.GetCurrentMap() == "zm_moon" or Engine.GetCurrentMap() == "zm_temple" or Engine.GetCurrentMap() == "zm_theater" then
+			require( "ui.uieditor.menus.hud.T7Hud_zm_dlc5" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+			require( "ui.uieditor.widgets.Reticles.LauncherMulti.LauncherMultiReticle" )
+		else
+			require( "ui.uieditor.menus.hud.T7Hud_zm_factory" )
+			require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_DpadAmmoNumbers" )
+		end
+	else
+		require( "ui.uieditor.menus.hud.HUD_MP_require" )
+		require( "ui.uieditor.menus.hud.mp_patch_require" )
+		require( "ui.uieditor.widgets.MPHudWidgets.CodCaster.CodCaster" )
+		require( "ui.uieditor.widgets.Demo.Demo" )
+		require( "ui.uieditor.widgets.Reticles.RocketLaunchers.rocketLauncherReticle" )
+		if Engine.GetCurrentMap() == "mp_city" then
+			require( "ui.uieditor.menus.VehicleHUDs.Scorestreaks.VHUD_SiegeBot" )
+		end
+	end
 end
 
 local function AddCustomHUDElements_Zombie(menu, controller)
@@ -179,3 +262,100 @@ function HUD_FirstSnapshot_Common(f40_arg0, f40_arg1)
         AddCustomHUDElements_Zombie(f40_arg0, f40_arg1.controller)
     end
 end
+
+-- function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
+-- 	CoD.GameMessages.AddSubtitlesWindow( f52_arg0, {
+-- 		leftAnchor = true,
+-- 		rightAnchor = true,
+-- 		left = 0,
+-- 		right = 0,
+-- 		topAnchor = false,
+-- 		bottomAnchor = true,
+-- 		top = -100,
+-- 		bottom = -100 + CoD.textSize.Default
+-- 	} )
+-- 	local self = LUI.UIElement.new()
+-- 	self:setLeftRight( true, true, 0, 0 )
+-- 	self:setTopBottom( true, true, 0, 0 )
+-- 	self:sizeToSafeArea()
+-- 	f52_arg0:addForceClosedChild( self )
+-- 	if CoD.Zombie.IsDLCMap( CoD.Zombie.DLC3Maps ) then
+-- 		self:registerEventHandler( "time_bomb_hud_toggle", HUD_ToggleZombieHudContainer )
+-- 	end
+-- 	f0_local10()
+-- 	if f52_arg0.T7HudMenuGameMode == nil then
+-- 		local powerupsArea = Engine.GetCurrentMap()
+-- 		local hudName
+-- 		if powerupsArea == "zm_zod" then
+-- 			hudName = "T7Hud_ZM"
+--         else
+--             hudName = "T7Hud_" .. powerupsArea
+-- 		end
+
+--         local createHud = LUI.createMenu.T7Hud_zm_factory
+--         local hudFunc = LUI.createMenu[hudName]
+--         if hudFunc then
+--             createHud = hudFunc
+--         elseif powerupsArea == "zm_cosmodrome" or powerupsArea == "zm_moon" or powerupsArea == "zm_temple" or powerupsArea == "zm_theater" then
+--             createHud = LUI.createMenu.T7Hud_zm_dlc5
+--         end
+
+--         if Engine.DvarInt(nil, "personalization_custom_hud") ~= 0 then
+--             createHud = LUI.createMenu.JUPHud_zm_factory
+--         end
+
+--         f52_arg0.T7HudMenuGameMode = createHud( f52_arg1.controller )
+-- 	else
+-- 		f52_arg0.T7HudMenuGameMode:setAlpha( 1 )
+-- 		local powerupsArea = Engine.GetModelForController( f52_arg1.controller )
+-- 		if powerupsArea then
+-- 			powerupsArea = Engine.GetModel( powerupsArea, "hudItems.playerSpawned" )
+-- 		end
+-- 		if powerupsArea and Engine.GetModelValue( powerupsArea ) then
+-- 			Engine.SetModelValue( powerupsArea, true )
+-- 		end
+-- 	end
+-- 	f52_arg0:addElement( f52_arg0.T7HudMenuGameMode )
+	
+-- 	local powerupsArea = LUI.createMenu.PowerUpsArea( f52_arg1.controller )
+-- 	self:addElement( powerupsArea )
+-- 	self.powerupsArea = powerupsArea
+	
+-- 	if CoD.isZombie == true and Mods_IsUsingMods() then
+-- 		local f52_local2 = CoD.Console.new( f52_arg0, f52_arg1.controller )
+-- 		f52_local2:setLeftRight( true, false, 39, 809 )
+-- 		f52_local2:setTopBottom( false, true, -160, -20 )
+-- 		f52_local2:setAlpha( 1 )
+-- 		f52_arg0:addElement( f52_local2 )
+-- 		f52_arg0.Console = f52_local2
+-- 	end
+-- 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+-- 		element.powerupsArea:close()
+-- 	end )
+-- 	if not Engine.IsSplitscreen() then
+-- 		CoD.GameMessages.AddObituaryWindow( f52_arg0, {
+-- 			leftAnchor = true,
+-- 			rightAnchor = false,
+-- 			left = 13,
+-- 			right = 277,
+-- 			topAnchor = false,
+-- 			bottomAnchor = true,
+-- 			top = -220 - CoD.textSize.ExtraSmall,
+-- 			bottom = -220
+-- 		}, f52_arg1.controller )
+-- 		CoD.GameMessages.BoldGameMessagesWindow( f52_arg0, {
+-- 			leftAnchor = false,
+-- 			rightAnchor = false,
+-- 			left = 0,
+-- 			right = 0,
+-- 			topAnchor = true,
+-- 			bottomAnchor = false,
+-- 			top = 50,
+-- 			bottom = 50 + CoD.textSize.Default
+-- 		}, f52_arg1.controller )
+-- 	end
+-- 	CoD.DemoUtility.AddHUDWidgets( f52_arg0, f52_arg1 )
+-- 	if f52_arg0.occludedBy and CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f52_arg1.controller ) == "PLATFORM_PROFILE_CHANGE_MESSAGE" then
+-- 		LuaUtils.MessageDialogForceSubscriptionFire( true )
+-- 	end
+-- end

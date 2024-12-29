@@ -41,7 +41,7 @@ function private __init__()
 
 function private __main__()
 {
-	thread objectives_setup();
+	thread wait_for_option_changed();
 }
 
 function is_enabled()
@@ -51,7 +51,34 @@ function is_enabled()
         return true;
     }
 
+	return false;
+}
+
+function is_supported_by_map()
+{
 	return true;
+}
+
+function wait_for_option_changed()
+{
+	level endon("game_ended");
+	level endon("end_game");
+	level flag::wait_till("initial_blackscreen_passed");
+	
+    while (true)
+    {
+        level notify("objectives_setup");
+        if ( is_enabled() )
+        {
+			objectives_setup();
+        }
+        else
+        {
+            clear_all_objectives();
+        }
+        WAIT_SERVER_FRAME;
+        level waittill("tfoption_objectives_changed");
+    }
 }
 
 function objectives_setup()
@@ -60,7 +87,11 @@ function objectives_setup()
     level endon("objectives_setup");
 	level endon("game_ended");
 	level endon("end_game");
-	level waittill( "initial_blackscreen_passed" ); 
+
+	if ( !is_supported_by_map() )
+	{
+		return;
+	}
 
     clear_all_objectives();
 
@@ -209,6 +240,11 @@ function clear_all_objectives()
 
 function clear_objectives(type)
 {
+    if (!isdefined(level.gfl_objectives))
+    {
+        return;
+    }
+
     if (!isdefined(level.gfl_objectives[type]))
     {
         return;

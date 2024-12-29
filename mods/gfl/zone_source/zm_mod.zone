@@ -9,6 +9,8 @@ rawfile,dummy.cfg
 
 sound,zm_mod
 
+include,s4_hud
+
 localize,gfl_zm
 localize,subevent
 localize,scoreevent

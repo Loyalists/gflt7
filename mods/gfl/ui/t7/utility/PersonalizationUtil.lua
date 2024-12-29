@@ -6,7 +6,8 @@ local personalizationVersion = 0
 CoD.PersonalizationDefault = {
     version = personalizationVersion,
     disable_intro_movie = 1,
-    hud = 1,
+    hud = 0,
+    custom_hud = 1,
 }
 
 CoD.PersonalizationDirtyFlag = false

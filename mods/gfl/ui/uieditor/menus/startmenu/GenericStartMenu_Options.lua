@@ -52,6 +52,16 @@ DataSources.GenericStartMenuOptionsTabs = ListHelper_SetupDataSource( "GenericSt
 					tabId = "options"
 				}
 			} )
+			table.insert( tabList, {
+				models = {
+					tabName = "GFL_MENU_PERSONALIZATION",
+					tabWidget = "CoD.PersonalizationOptions_P1",
+					tabIcon = ""
+				},
+				properties = {
+					tabId = "personalization"
+				}
+			} )
         end
     end
     

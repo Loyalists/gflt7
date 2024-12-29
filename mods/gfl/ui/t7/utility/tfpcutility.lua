@@ -71,6 +71,7 @@ CoD.TFOptionIndexes = {
     zombie_healthbar = 69,
     hud = 70,
     hitmarkers_sound = 71,
+    objectives = 72,
 }
 
 CoD.TFOptionsDefault = {
@@ -140,6 +141,7 @@ CoD.TFOptionsDefault = {
     zombie_healthbar = 1,
     hud = 1,
     hitmarkers_sound = 2,
+    objectives = 1,
 }
 
 CoD.TFOptionsDirtyFlag = false

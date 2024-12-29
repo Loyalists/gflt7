@@ -133,6 +133,8 @@ function autoexec auto_preload()
     level.tfoptions_default["zombie_healthbar"] = 0;
     level.tfoptions_default["hud"] = 0;
     level.tfoptions_default["hitmarkers_sound"] = 0;
+    level.tfoptions_default["objectives"] = 0;
+    
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         set_default_tfoptions();

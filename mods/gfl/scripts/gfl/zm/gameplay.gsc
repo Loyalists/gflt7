@@ -47,6 +47,8 @@
 #using scripts\gfl\core_util;
 #using scripts\gfl\thirdperson;
 
+#using scripts\zm\_zm_s4_hud;
+
 #insert scripts\shared\shared.gsh;
 #insert scripts\zm\_zm_utility.gsh;
 #insert scripts\zm\_zm_perks.gsh;
