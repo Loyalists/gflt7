@@ -205,10 +205,10 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_greenlight_loop",
+            "Name": "gfl_the_year_2064_overture_loop",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_greenlight_loop",
+                    "AliasName": "mus_gfl_the_year_2064_overture_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -524,10 +524,10 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_the_hunt_loop",
+            "Name": "gfl_prince_igor_loop",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_the_hunt_loop",
+                    "AliasName": "mus_gfl_prince_igor_loop",
                     "Looping": true,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -967,7 +967,7 @@
         "gfl_room_loop",
         "gfl_barbarous_funera_loop",
         "gfl_ev5_intermission_loop",
-        "gfl_greenlight_loop",
+        "gfl_the_year_2064_overture_loop",
         "gfl_ab1m_loop",
         "gfl_safety_first_loop",
         "gfl_synthesis_catalyst_loop",
@@ -978,7 +978,7 @@
         "gfl_21winter_battle_3_loop",
         "gfl_frontline_loop",
         "gfl_sf_recap_intermission_loop",
-        "gfl_the_hunt_loop",
+        "gfl_prince_igor_loop",
         "gfl_casual_loop",
         "gfl_sad_loop",
         "gfl_mainenemy_n_loop",

@@ -176,10 +176,10 @@
             "SkipPreviousExit": false
         },
         {
-            "Name": "gfl_the_hunt",
+            "Name": "gfl_the_year_2064_overture",
             "LoopAssets": [
                 {
-                    "AliasName": "mus_gfl_the_hunt_intro",
+                    "AliasName": "mus_gfl_the_year_2064_overture_intro",
                     "Looping": false,
                     "CompleteLoop": false,
                     "RemoveAfterPlay": false,
@@ -609,6 +609,35 @@
             "IsRandom": false,
             "IsSequential": true,
             "SkipPreviousExit": false
+        },
+        {
+            "Name": "gfl_prince_igor",
+            "LoopAssets": [
+                {
+                    "AliasName": "mus_gfl_prince_igor_intro",
+                    "Looping": false,
+                    "CompleteLoop": false,
+                    "RemoveAfterPlay": false,
+                    "PlayAsFirstRandom": false,
+                    "StartSync": false,
+                    "StopSync": false,
+                    "CompleteOnStop": true,
+                    "LoopStartOffset": 0,
+                    "BPM": 120,
+                    "AssetType": 1,
+                    "LoopNumber": 1,
+                    "Order": 0,
+                    "StartDelayBeats": 0,
+                    "StartFadeBeats": 4,
+                    "StopDelayBeats": 0,
+                    "StopFadeBeats": 16,
+                    "Meter": 4
+                }
+            ],
+            "Order": 21,
+            "IsRandom": false,
+            "IsSequential": true,
+            "SkipPreviousExit": false
         }
     ],
     "StateNames": [
@@ -618,7 +647,7 @@
         "gfl_21winter_battle_3",
         "gfl_frontline",
         "gfl_main_theme",
-        "gfl_the_hunt",
+        "gfl_the_year_2064_overture",
         "gfl_casual",
         "gfl_sad",
         "gfl_mainenemy_n",
@@ -632,7 +661,8 @@
         "gfl_receptor",
         "gfl_retinol",
         "gfl_tocopherol",
-        "gfl_paranoia"
+        "gfl_paranoia",
+        "gfl_prince_igor"
     ],
-    "LoopIndex": 21
+    "LoopIndex": 22
 }
