@@ -17,9 +17,9 @@ local PostLoadFunc = function ( self, controller )
 		self.m_inputDisabled = not Engine.GetModelValue( model )
 	end )
 
-	if CoD.UsermapName then
-		self.Mapname:setText( Engine.Localize( string.upper( CoD.UsermapName ) ) )
-	end
+	-- if CoD.UsermapName then
+	-- 	self.Mapname:setText( Engine.Localize( string.upper( CoD.UsermapName ) ) )
+	-- end
 end
 
 local PreLoadFunc = function ( self, controller )
@@ -47,7 +47,8 @@ CoD.JUPScoreboard.new = function ( menu, controller )
 	self.Background = LUI.UIImage.new()
 	self.Background:setLeftRight( false, false, -296.5, 330 )
 	self.Background:setTopBottom( false, false, -54, 72 )
-	self.Background:setImage( RegisterImage( "v_ui_elements_zm_scoreboard_backgrid" ) )
+	self.Background:setImage( RegisterImage( "$black" ) )
+	self.Background:setAlpha( 0 )
 	self:addElement( self.Background )
 
 	self.ScoreColumn1 = LUI.UIText.new()
@@ -209,7 +210,7 @@ CoD.JUPScoreboard.new = function ( menu, controller )
 				self:setupElementClipCounter( 12 )
 
 				self.Background:completeAnimation()
-				self.Background:setAlpha( 1 )
+				self.Background:setAlpha( 0.2 )
 				self.clipFinished( self.Background, {} )
 
 				self.ScoreColumn1:completeAnimation()
@@ -262,7 +263,7 @@ CoD.JUPScoreboard.new = function ( menu, controller )
 				self:setupElementClipCounter( 12 )
 
 				self.Background:completeAnimation()
-				self.Background:setAlpha( 1 )
+				self.Background:setAlpha( 0.2 )
 				self.clipFinished( self.Background, {} )
 
 				self.ScoreColumn1:completeAnimation()

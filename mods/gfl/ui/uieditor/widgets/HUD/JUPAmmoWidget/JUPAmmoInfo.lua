@@ -93,24 +93,10 @@ CoD.JUPAmmoInfo.new = function ( menu, controller )
 			end,
 			AmmoPulse = function ()
 				self:setupElementClipCounter( 1 )
-			
-				local AmmoPulseTransition = function ( element, event )
-					if not event.interrupted then
-						element:beginAnimation( "keyframe", 75, false, false, CoD.TweenType.Linear )
-					end
-	
-					element:setTopBottom( false, true, -102 - 10, -102 + 85 + 10 )
-	
-					if event.interrupted then
-						self.clipFinished( element, event )
-					else
-						element:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
-					end
-				end
 
 				self.AmmoClip:completeAnimation()
-				self.AmmoClip:setTopBottom( false, true, -102, -102 + 85 )
-				AmmoPulseTransition( self.AmmoClip, {} )
+				self.AmmoClip:setAlpha( 1 )
+				self.clipFinished( self.AmmoClip, {} )
 			end
 		},
 		AmmoPulse = {
@@ -123,24 +109,10 @@ CoD.JUPAmmoInfo.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
-			
-				local AmmoPulseTransition = function ( element, event )
-					if not event.interrupted then
-						element:beginAnimation( "keyframe", 75, false, false, CoD.TweenType.Linear )
-					end
-	
-					element:setTopBottom( false, true, -102, -102 + 85 )
-	
-					if event.interrupted then
-						self.clipFinished( element, event )
-					else
-						element:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
-					end
-				end
 
 				self.AmmoClip:completeAnimation()
-				self.AmmoClip:setTopBottom( false, true, -102 - 10, -102 + 85 + 10 )
-				AmmoPulseTransition( self.AmmoClip, {} )
+				self.AmmoClip:setAlpha( 1 )
+				self.clipFinished( self.AmmoClip, {} )
 			end
 		},
 		Hidden = {

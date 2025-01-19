@@ -1,6 +1,6 @@
 // SCRIPTS
-scriptparsetree,scripts/zm/_zm_s4_hud.gsc
-scriptparsetree,scripts/zm/_zm_s4_hud.csc
+scriptparsetree,scripts/gfl/zm/_zm_jup_hud.gsc
+scriptparsetree,scripts/gfl/zm/_zm_jup_hud.csc
 
 // LUA
 rawfile,ui/uieditor/menus/hud/JUPHud_zm_factory.lua
@@ -21,11 +21,11 @@ rawfile,ui/uieditor/widgets/Lobby/Common/S4ButtonListItem.lua
 
 // IMAGES
 // image,ui_icons_zombie_essence
-image,v_ui_elements_zm_scoreboard_backgrid
-image,v_ui_elements_zm_scoreboard_playerhighlight
+// image,v_ui_elements_zm_scoreboard_backgrid
+// image,v_ui_elements_zm_scoreboard_playerhighlight
 image,v_ui_icon_pap_white
 image,v_ui_icon_zm_calling_tasks_specialweapon
-image,v_ui_icons_zombies_powerup_backer
+// image,v_ui_icons_zombies_powerup_backer
 
 image,classic_clean_banana
 image,classic_clean_cherry
@@ -46,3 +46,11 @@ image,classic_clean_vulture
 image,classic_clean_who
 image,classic_clean_widows
 image,classic_clean_deadshot
+
+image,classic_clean_powerup_blood
+image,classic_clean_powerup_infinite
+image,classic_clean_powerup_instakill
+image,classic_clean_powerup_sale_alt
+image,classic_clean_powerup_double
+image,classic_clean_powerup_deathmachine
+image,classic_clean_powerup_bonfire

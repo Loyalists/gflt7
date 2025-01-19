@@ -4,19 +4,27 @@ if not CoD.JUPClientFieldNames then
 	CoD.JUPClientFieldNames = {
 		{
 			clientFieldName = "powerup_instant_kill",
-			image = "v_ui_icons_zombies_powerup_instakill"
+			image = "classic_clean_powerup_instakill"
 		},
 		{
 			clientFieldName = "powerup_double_points",
-			image = "v_ui_icons_zombies_powerup_double_points"
+			image = "classic_clean_powerup_double"
 		},
 		{
 			clientFieldName = "powerup_fire_sale",
-			image = "v_ui_icons_zombies_powerup_firesale"
+			image = "classic_clean_powerup_sale_alt"
+		},
+		{
+			clientFieldName = "powerup_bon_fire",
+			image = "classic_clean_powerup_bonfire"
 		},
 		{
 			clientFieldName = "powerup_mini_gun",
-			image = "v_ui_icons_zombies_powerup_deathmachine"
+			image = "classic_clean_powerup_deathmachine"
+		},
+		{
+			clientFieldName = "powerup_zombie_blood",
+			image = "classic_clean_powerup_blood"
 		}
 	}
 end
@@ -101,7 +109,7 @@ CoD.JUPPowerupsContainer.new = function ( menu, controller )
 	self.PowerupList = LUI.UIList.new( menu, controller, 17, 0, nil, false, false, 0, 0, false, false )
 	self.PowerupList:makeFocusable()
 	self.PowerupList:setLeftRight( false, false, 0, 0 )
-	self.PowerupList:setTopBottom( false, true, 0, -177.5 )
+	self.PowerupList:setTopBottom( false, true, 0, -127.5 )
 	self.PowerupList:setWidgetType( CoD.KingslayerPowerupsListItem )
 	self.PowerupList:setHorizontalCount( 4 )
 	self.PowerupList:setDataSource( "JUPPowerups" )

@@ -19,7 +19,7 @@ CoD.JUPScoreboardListItem.new = function ( menu, controller )
 	self.FocusBar = LUI.UIImage.new()
 	self.FocusBar:setLeftRight( true, false, 343.5 - 10, 970 + 10 )
 	self.FocusBar:setTopBottom( true, false, 306 - 4, 336 + 4 )
-	self.FocusBar:setImage( RegisterImage( "v_ui_elements_zm_scoreboard_playerhighlight" ) )
+	self.FocusBar:setImage( RegisterImage( "$white" ) )
 	self.FocusBar:setAlpha( 0 )
 	self:addElement( self.FocusBar )
 	
@@ -140,14 +140,14 @@ CoD.JUPScoreboardListItem.new = function ( menu, controller )
 				self:setupElementClipCounter( 1 )
 
 				self.FocusBar:completeAnimation()
-				self.FocusBar:setAlpha( 0 )
+				-- self.FocusBar:setAlpha( 0 )
 				self.clipFinished( self.FocusBar, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
 
 				self.FocusBar:completeAnimation()
-				self.FocusBar:setAlpha( 1 )
+				-- self.FocusBar:setAlpha( 0.2 )
 				self.clipFinished( self.FocusBar, {} )
 			end
 		}

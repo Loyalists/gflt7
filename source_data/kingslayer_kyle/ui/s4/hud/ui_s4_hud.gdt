@@ -604,4 +604,14 @@
 		"baseImage" "source_data\\kingslayer_kyle\\ui\\s4\\hud\\perks\\classic_clean_who.png"
 		"coreSemantic" "Linear4ch"
 	}
+	"classic_clean_powerup_deathmachine" [ "classic_clean_powerup_double" ]
+	{
+		"baseImage" "source_data\\kingslayer_kyle\\ui\\s4\\hud\\powerups\\classic_clean_powerup_deathmachine.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"classic_clean_powerup_bonfire" [ "classic_clean_powerup_double" ]
+	{
+		"baseImage" "source_data\\kingslayer_kyle\\ui\\s4\\hud\\powerups\\classic_clean_powerup_bonfire.png"
+		"coreSemantic" "Linear4ch"
+	}
 }

@@ -10,8 +10,9 @@ CoD.JUPPerksListItem.new = function ( menu, controller )
 	self:setClass( CoD.JUPPerksListItem )
 	self.id = "JUPPerksListItem"
 	self.soundSet = "default"
-	self:setLeftRight( true, false, 0, 43 )
-	self:setTopBottom( true, false, 0, 43 )
+	self:setLeftRight( true, false, 0, 36 )
+	self:setTopBottom( true, false, 0, 36 )
+	self:setScale(0.75)
 	
 	self.GlowOblueOver = LUI.UIImage.new()
 	self.GlowOblueOver:setLeftRight( true, false, -7.51, 43.51 )

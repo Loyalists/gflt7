@@ -7,7 +7,7 @@ CoD.randomMusicTracks["titlescreen"] = {
     "gfl_elecwar_h_loop",
     "gfl_autonome_loop",
     "gfl_barbarous_funera_loop", 
-    "gfl_greenlight_loop",
+    -- "gfl_greenlight_loop",
     "gfl_safety_first_loop",
     "gfl_synthesis_catalyst_loop",
     "gfl_all_systems_go_loop",
@@ -16,7 +16,7 @@ CoD.randomMusicTracks["titlescreen"] = {
     "gfl_hope_loop",
     "gfl_21winter_battle_3_loop",
     "gfl_frontline_loop",
-    "gfl_the_hunt_loop",
+    -- "gfl_the_hunt_loop",
     "gfl_casual_loop",
     "gfl_sad_loop",
     "gfl_mainenemy_n_loop",
@@ -31,6 +31,8 @@ CoD.randomMusicTracks["titlescreen"] = {
     "gfl_retinol_loop",
     "gfl_tocopherol_loop",
     "gfl_paranoia_loop",
+    "gfl_the_year_2064_overture_loop",
+    "gfl_prince_igor_loop",
 }
 
 CoD.randomMusicTracks["cp_frontend"] = {
@@ -38,7 +40,7 @@ CoD.randomMusicTracks["cp_frontend"] = {
     "gfl_departure_loop", 
     "gfl_elecwar_h_loop",
     "gfl_autonome_loop",
-    "gfl_greenlight_loop",
+    -- "gfl_greenlight_loop",
     "gfl_safety_first_loop",
     "gfl_synthesis_catalyst_loop",
     "gfl_fixed_point_lobby_loop",
@@ -46,7 +48,7 @@ CoD.randomMusicTracks["cp_frontend"] = {
     "gfl_hope_loop",
     "gfl_21winter_battle_3_loop",
     "gfl_frontline_loop",
-    "gfl_the_hunt_loop",
+    -- "gfl_the_hunt_loop",
     "gfl_casual_loop",
     "gfl_sad_loop",
     "gfl_mainenemy_n_loop",
@@ -61,6 +63,8 @@ CoD.randomMusicTracks["cp_frontend"] = {
     "gfl_retinol_loop",
     "gfl_tocopherol_loop",
     "gfl_paranoia_loop",
+    "gfl_the_year_2064_overture_loop",
+    "gfl_prince_igor_loop",
 }
 
 CoD.randomMusicTracks["load_usermaps"] = {
@@ -69,7 +73,7 @@ CoD.randomMusicTracks["load_usermaps"] = {
     "gfl_hope",
     "gfl_21winter_battle_3",
     "gfl_frontline",
-    "gfl_the_hunt",
+    -- "gfl_the_hunt",
     "gfl_casual",
     "gfl_sad",
     "gfl_mainenemy_n",
@@ -84,6 +88,8 @@ CoD.randomMusicTracks["load_usermaps"] = {
     "gfl_retinol",
     "gfl_tocopherol",
     "gfl_paranoia",
+    "gfl_the_year_2064_overture",
+    "gfl_prince_igor",
 }
 
 CoD.randomMusicTracks["zm_cp_frontend"] = CoD.randomMusicTracks["cp_frontend"]

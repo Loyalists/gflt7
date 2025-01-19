@@ -22,6 +22,13 @@ image,classic_clean_flopper
 image,classic_clean_icu
 image,classic_clean_juggernog
 image,classic_clean_mulekick
+image,classic_clean_powerup_blood
+image,classic_clean_powerup_bonfire
+image,classic_clean_powerup_deathmachine
+image,classic_clean_powerup_double
+image,classic_clean_powerup_infinite
+image,classic_clean_powerup_instakill
+image,classic_clean_powerup_sale_alt
 image,classic_clean_revive
 image,classic_clean_speed
 image,classic_clean_staminup
@@ -31,8 +38,6 @@ image,classic_clean_vigor
 image,classic_clean_vulture
 image,classic_clean_who
 image,classic_clean_widows
-image,i_specialty_ads_zombies
-image,i_specialty_three_guns_zombies
 image,img_loadscreen_zm_factory
 image,metal_gold_g
 image,t7_gfl_notification_hk416_gloomy
@@ -117,11 +122,8 @@ image,uie_ui_icon_minimap_zm_ai_boss
 image,uie_ui_icon_minimap_zm_ai_elite
 image,uie_ui_icon_minimap_zm_ai_normal
 image,uie_ui_icon_minimap_zm_ai_special
-image,v_ui_elements_zm_scoreboard_backgrid
-image,v_ui_elements_zm_scoreboard_playerhighlight
 image,v_ui_icon_pap_white
 image,v_ui_icon_zm_calling_tasks_specialweapon
-image,v_ui_icons_zombies_powerup_backer
 sound,zm_mod
 rawfile,dummy.cfg
 rawfile,ui/uieditor/menus/hud/juphud_zm_factory.lua
@@ -151,6 +153,8 @@ scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.csc
 scriptparsetree,scripts/_zoekmemaar/custom_powerup_free_packapunch_with_time.gsc
 scriptparsetree,scripts/gfl/zm/_aae_zombie_health_bar.csc
 scriptparsetree,scripts/gfl/zm/_aae_zombie_health_bar.gsc
+scriptparsetree,scripts/gfl/zm/_zm_jup_hud.csc
+scriptparsetree,scripts/gfl/zm/_zm_jup_hud.gsc
 scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc
 scriptparsetree,scripts/gfl/zm/character_mgr.csc
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
@@ -177,8 +181,6 @@ scriptparsetree,scripts/zm/_zm_ffotd.csc
 scriptparsetree,scripts/zm/_zm_ffotd.gsc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.csc
 scriptparsetree,scripts/zm/_zm_powerup_free_perk.gsc
-scriptparsetree,scripts/zm/_zm_s4_hud.csc
-scriptparsetree,scripts/zm/_zm_s4_hud.gsc
 scriptparsetree,scripts/zm/_zm_weapons.csc
 scriptparsetree,scripts/zm/_zm_weapons.gsc
 scriptparsetree,scripts/zm/better_nuke.gsc

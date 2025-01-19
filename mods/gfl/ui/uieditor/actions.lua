@@ -551,8 +551,17 @@ function GetHeroesList_InGame( customizationMode )
     })
 
     table.insert(heroes, {
-		character = "lenna",
+		character = "lenna_base",
         displayName = "UMP9",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_lenna",
+		frozenMomentRender = "t7_menu_choosespecialist_default_lenna",
+		disabled = false,
+		gameImageOff = "t7_gfl_chibi_lenna",
+    })
+
+    table.insert(heroes, {
+		character = "lenna_ssr",
+        displayName = "UMP9 (Flying Phantom)",
         backgroundWithCharacter = "t7_menu_mp_hero_background_with_lenna",
 		frozenMomentRender = "t7_menu_choosespecialist_default_lenna",
 		disabled = false,

@@ -11,9 +11,9 @@ local PreLoadFunc = function ( self, controller )
 	for index = 0, Dvar.com_maxclients:get() - 1 do
 		local controllerModel = Engine.GetModelForController( controller )
 
-		local healthModel = Engine.CreateModel( controllerModel, "s4_health_" .. index )
-		local shieldModel = Engine.CreateModel( controllerModel, "s4_shield_" .. index )
-		local shieldHealthModel = Engine.CreateModel( controllerModel, "s4_shield_health_" .. index )
+		local healthModel = Engine.CreateModel( controllerModel, "jup_health_" .. index )
+		local shieldModel = Engine.CreateModel( controllerModel, "jup_shield_" .. index )
+		local shieldHealthModel = Engine.CreateModel( controllerModel, "jup_shield_health_" .. index )
 
 		local SetModelValue = function ( model )
 			if Engine.GetModelValue( model ) == nil then

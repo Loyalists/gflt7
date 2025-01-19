@@ -91,6 +91,54 @@ if not CoD.ZMPerks then
 			image = "classic_clean_cherry",
 			specialty = "specialty_electriccherry",
 			clientFieldName = "electric_cherry"
+		},
+		{
+			name = "PHD FLOPPER",
+			cost = 2000,
+			description = "",
+			image = "classic_clean_flopper",
+			specialty = "specialty_phdflopper",
+			clientFieldName = "phdflopper"
+		},
+		{
+			name = "PHD FLOPPER",
+			cost = 2000,
+			description = "",
+			image = "classic_clean_flopper",
+			specialty = "specialty_phdflopper",
+			clientFieldName = "phd_flopper"
+		},
+		{
+			name = "TOMBSTONE SODA",
+			cost = 2000,
+			description = "",
+			image = "classic_clean_tombstone",
+			specialty = "specialty_tombstone",
+			clientFieldName = "tombstone"
+		},
+		{
+			name = "WHO'S WHO",
+			cost = 2000,
+			description = "",
+			image = "classic_clean_who",
+			specialty = "specialty_whoswho",
+			clientFieldName = "whoswho"
+		},
+		{
+			name = "VULTURE AID",
+			cost = 3000,
+			description = "",
+			image = "classic_clean_vulture",
+			specialty = "specialty_vultureaid",
+			clientFieldName = "vultureaid"
+		},
+		{
+			name = "VIGOR RUSH",
+			cost = 3000,
+			description = "",
+			image = "classic_clean_vigor",
+			specialty = "specialty_directionalfire",
+			clientFieldName = "directionalfire"
 		}
 	}
 end
@@ -247,10 +295,10 @@ CoD.JUPPerksContainer.new = function ( menu, controller )
 	self:setTopBottom( true, false, 0, 720 )
 	self.anyChildUsesUpdateState = true
 	
-	self.PerkList = LUI.UIList.new( menu, controller, 10, 0, nil, false, false, 0, 0, false, false )
+	self.PerkList = LUI.UIList.new( menu, controller, 5, 0, nil, false, false, 0, 0, false, false )
 	self.PerkList:makeFocusable()
 	self.PerkList:setLeftRight( false, false, 0, 0 )
-	self.PerkList:setTopBottom( false, true, 0, -44 )
+	self.PerkList:setTopBottom( false, true, 0, -20 )
 	self.PerkList:setWidgetType( CoD.JUPPerksListItem )
 	self.PerkList:setHorizontalCount( 20 )
 	self.PerkList:setDataSource( "JUPPerksFactory" )

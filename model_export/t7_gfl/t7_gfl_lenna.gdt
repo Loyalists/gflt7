@@ -7553,7 +7553,7 @@
 		"zoomMin" "1"
 		"zoomRate" "0"
 	}
-	"t7_gfl_lenna_body" ( "xmodel.gdf" )
+	"t7_gfl_lenna_base_body" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -7769,7 +7769,7 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"t7_gfl_lenna_body_mp" ( "xmodel.gdf" )
+	"t7_gfl_lenna_base_body_mp" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -7985,7 +7985,7 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"t7_gfl_lenna_fb" ( "xmodel.gdf" )
+	"t7_gfl_lenna_base_fb" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "1"
@@ -8239,7 +8239,7 @@
 		"noCastShadow" "1"
 		"scaleRGB" "1.0"
 	}
-	"t7_gfl_lenna_fb_mp" ( "xmodel.gdf" )
+	"t7_gfl_lenna_base_fb_mp" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "1"
@@ -8455,7 +8455,7 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"t7_gfl_lenna_viewhands" ( "xmodel.gdf" )
+	"t7_gfl_lenna_base_viewhands" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -8671,7 +8671,7 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"t7_gfl_lenna_viewlegs" ( "xmodel.gdf" )
+	"t7_gfl_lenna_base_viewlegs" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"autogenLod4" "0"
@@ -8887,37 +8887,37 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_hro_playerfemale_undercover_mpc_body" [ "t7_gfl_lenna_fb_mp" ]
+	"c_hro_playerfemale_undercover_mpc_body" [ "t7_gfl_lenna_base_fb_mp" ]
 	{
 	}
-	"c_hro_playermale_undercover_mpc_body" [ "t7_gfl_lenna_fb_mp" ]
+	"c_hro_playermale_undercover_mpc_body" [ "t7_gfl_lenna_base_fb_mp" ]
 	{
 	}
-	"c_hro_player_female_armsdealer_viewbody" [ "t7_gfl_lenna_body" ]
+	"c_hro_player_female_armsdealer_viewbody" [ "t7_gfl_lenna_base_body" ]
 	{
 	}
-	"c_hro_player_male_armsdealer_viewbody" [ "t7_gfl_lenna_body" ]
+	"c_hro_player_male_armsdealer_viewbody" [ "t7_gfl_lenna_base_body" ]
 	{
 	}
-	"c_hro_player_female_armsdealer_viewhands" [ "t7_gfl_lenna_viewhands" ]
+	"c_hro_player_female_armsdealer_viewhands" [ "t7_gfl_lenna_base_viewhands" ]
 	{
 	}
-	"c_hro_player_male_armsdealer_viewhands" [ "t7_gfl_lenna_viewhands" ]
+	"c_hro_player_male_armsdealer_viewhands" [ "t7_gfl_lenna_base_viewhands" ]
 	{
 	}
-	"c_hro_player_female_armsdealer_viewlegs" [ "t7_gfl_lenna_viewlegs" ]
+	"c_hro_player_female_armsdealer_viewlegs" [ "t7_gfl_lenna_base_viewlegs" ]
 	{
 	}
-	"c_hro_player_male_armsdealer_viewlegs" [ "t7_gfl_lenna_viewlegs" ]
+	"c_hro_player_male_armsdealer_viewlegs" [ "t7_gfl_lenna_base_viewlegs" ]
 	{
 	}
-	"c_t7_mp_assassin_mpc_body1_skin4" [ "t7_gfl_lenna_fb_mp" ]
+	"c_t7_mp_assassin_mpc_body1_skin4" [ "t7_gfl_lenna_base_fb_mp" ]
 	{
 	}
-	"c_t7_mp_assassin_viewarms1_skin4" [ "t7_gfl_lenna_viewhands" ]
+	"c_t7_mp_assassin_viewarms1_skin4" [ "t7_gfl_lenna_base_viewhands" ]
 	{
 	}
-	"c_t7_mp_assassin_viewlegs1_skin4" [ "t7_gfl_lenna_viewlegs" ]
+	"c_t7_mp_assassin_viewlegs1_skin4" [ "t7_gfl_lenna_base_viewlegs" ]
 	{
 	}
 }

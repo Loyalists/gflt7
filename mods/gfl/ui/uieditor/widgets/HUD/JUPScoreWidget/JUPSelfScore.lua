@@ -7,7 +7,7 @@ local PostLoadFunc = function ( self, controller, menu )
 				self:removeSubscription( self.healthSubscription )
 			end
 
-			self.healthSubscription = self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "s4_health_" .. clientNum ), function ( model )
+			self.healthSubscription = self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "jup_health_" .. clientNum ), function ( model )
 				local health = Engine.GetModelValue( model )
 				
 				if health then
@@ -33,7 +33,7 @@ local PostLoadFunc = function ( self, controller, menu )
 				self:removeSubscription( self.shieldSubscription )
 			end
 
-			self.shieldSubscription = self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "s4_shield_" .. clientNum ), function ( model )
+			self.shieldSubscription = self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "jup_shield_" .. clientNum ), function ( model )
 				local shield = Engine.GetModelValue( model )
 				
 				if shield then
@@ -51,7 +51,7 @@ local PostLoadFunc = function ( self, controller, menu )
 				self:removeSubscription( self.shieldHealthSubscription )
 			end
 
-			self.shieldHealthSubscription = self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "s4_shield_health_" .. clientNum ), function ( model )
+			self.shieldHealthSubscription = self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "jup_shield_health_" .. clientNum ), function ( model )
 				local shield_health = Engine.GetModelValue( model )
 				
 				if shield_health then

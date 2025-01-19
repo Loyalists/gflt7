@@ -41,13 +41,12 @@
 #using scripts\gfl\zm\coldwar_scoreevent;
 #using scripts\gfl\zm\_aae_zombie_health_bar;
 #using scripts\gfl\zm\objective;
+#using scripts\gfl\zm\_zm_jup_hud;
 
 #using scripts\gfl\_chat_notify;
 #using scripts\gfl\clientsystem;
 #using scripts\gfl\core_util;
 #using scripts\gfl\thirdperson;
-
-#using scripts\zm\_zm_s4_hud;
 
 #insert scripts\shared\shared.gsh;
 #insert scripts\zm\_zm_utility.gsh;

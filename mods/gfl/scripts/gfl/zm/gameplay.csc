@@ -13,8 +13,7 @@
 #using scripts\gfl\zm\character_mgr;
 #using scripts\gfl\zm\zm_sub;
 #using scripts\gfl\zm\_aae_zombie_health_bar;
-
-#using scripts\zm\_zm_s4_hud;
+#using scripts\gfl\zm\_zm_jup_hud;
 
 #insert scripts\shared\shared.gsh;
 

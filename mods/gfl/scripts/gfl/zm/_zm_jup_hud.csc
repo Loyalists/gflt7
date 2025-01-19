@@ -13,15 +13,15 @@
 #insert scripts\shared\shared.gsh;
 #insert scripts\shared\version.gsh;
 
-REGISTER_SYSTEM_EX( "zm_s4_hud", &__init__, &__main__, undefined )
+REGISTER_SYSTEM_EX( "zm_jup_hud", &__init__, &__main__, undefined )
 
 function __init__()
 {
     for( i = 0; i < GetDvarInt( "com_maxclients" ); i++ )
     {
-        clientfield::register( "world", "s4_health_" + i, VERSION_SHIP, 7, "float", &set_ui_model_value, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
-        clientfield::register( "world", "s4_shield_" + i, VERSION_SHIP, 1, "int", &set_ui_model_value, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
-        clientfield::register( "world", "s4_shield_health_" + i, VERSION_SHIP, 7, "float", &set_ui_model_value, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
+        clientfield::register( "world", "jup_health_" + i, VERSION_SHIP, 7, "float", &set_ui_model_value, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
+        clientfield::register( "world", "jup_shield_" + i, VERSION_SHIP, 1, "int", &set_ui_model_value, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
+        clientfield::register( "world", "jup_shield_health_" + i, VERSION_SHIP, 7, "float", &set_ui_model_value, !CF_HOST_ONLY, !CF_CALLBACK_ZERO_ON_NEW_ENT );
     }
 }
 

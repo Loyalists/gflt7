@@ -31,7 +31,8 @@ function init_character_table()
 	// level.charactertable["generic"]["vepley"] = &swap_to_vepley;
 	level.charactertable["generic"]["vepley_backpack"] = &swap_to_vepley_backpack;
 	level.charactertable["generic"]["an94"] = &swap_to_an94;
-	level.charactertable["generic"]["lenna"] = &swap_to_lenna;
+	// level.charactertable["generic"]["lenna"] = &swap_to_lenna;
+	level.charactertable["generic"]["lenna_ssr"] = &swap_to_lenna_ssr;
 	level.charactertable["generic"]["macqiato"] = &swap_to_macqiato;
 	level.charactertable["generic"]["centaureissi"] = &swap_to_centaureissi;
 
@@ -249,7 +250,14 @@ function swap_to_an94()
 function swap_to_lenna()
 {
 	self detachall();
-	self setmodel("t7_gfl_lenna_fb");
+	self setmodel("t7_gfl_lenna_base_fb");
+	self thread character_util::set_character_name();
+}
+
+function swap_to_lenna_ssr()
+{
+	self detachall();
+	self setmodel("t7_gfl_lenna_ssr_fb");
 	self thread character_util::set_character_name();
 }
 

@@ -50,7 +50,8 @@ function init_character_table()
 	// level.charactertable["zm"]["tac50"] = create_tac50();
 	level.charactertable["zm"]["dima"] = create_dima();
 	level.charactertable["zm"]["an94"] = create_an94();
-	level.charactertable["zm"]["lenna"] = create_lenna();
+	level.charactertable["zm"]["lenna_base"] = create_lenna_base();
+	level.charactertable["zm"]["lenna_ssr"] = create_lenna_ssr();
 	level.charactertable["zm"]["macqiato"] = create_macqiato();
 	level.charactertable["zm"]["centaureissi"] = create_centaureissi();
 
@@ -384,12 +385,23 @@ function create_ump45()
 	return obj;
 }
 
-function create_lenna()
+function create_lenna_base()
 {
 	obj = SpawnStruct();
 	obj.bodytype = 12;
 	obj.bodystyle = 1;
-	obj.id = "lenna";
+	obj.id = "lenna_base";
+	obj.keywords = array();
+	obj.name = "UMP9";
+	return obj;
+}
+
+function create_lenna_ssr()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 12;
+	obj.bodystyle = 2;
+	obj.id = "lenna_ssr";
 	obj.keywords = array();
 	obj.name = "UMP9";
 	return obj;
