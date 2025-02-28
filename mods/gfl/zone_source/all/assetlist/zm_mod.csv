@@ -146,6 +146,7 @@ rawfile,ui/uieditor/widgets/hud/kingslayerpowerupswidget/juppowerupscontainer.lu
 rawfile,ui/uieditor/widgets/hud/kingslayerpowerupswidget/kingslayerpowerupslistitem.lua
 rawfile,ui/uieditor/widgets/lobby/common/s4buttonlistitem.lua
 rawfile,ui/uieditor/widgets/startmenu/startmenu_gameoptions_kf2.lua
+rawfile,ui/widgets/t6hud/t6pausemenu/t6pausemenuframe.lua
 rawfile,ui/widgets/t6hud/t6pausemenu/t6startmenu_gameoptions_zm.lua
 scriptparsetree,scripts/_nsz/nsz_powerup_money.csc
 scriptparsetree,scripts/_nsz/nsz_powerup_money.gsc

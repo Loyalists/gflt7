@@ -21,6 +21,7 @@ rawfile,ui/uieditor/menus/startmenu/IW7StartMenu_GameOptions_ZM.lua
 rawfile,ui/uieditor/menus/startmenu/S4StartMenu_GameOptions_ZM.lua
 rawfile,ui/uieditor/widgets/startmenu/StartMenu_GameOptions_KF2.lua
 rawfile,ui/widgets/t6hud/t6pausemenu/T6StartMenu_GameOptions_ZM.lua
+rawfile,ui/widgets/t6hud/t6pausemenu/t6pausemenuframe.lua
 
 objective,gfl_objective_power
 objective,gfl_objective_pap
