@@ -196,6 +196,7 @@ CoD.DemoUtility.AddHUDWidgets = function(HudRef, InstanceRef)
     --HudRef.T7HudMenuGameMode.HUDInject = CoD.HUDInject.new(HudRef, InstanceRef)
     --HudRef.T7HudMenuGameMode:addElement(HudRef.T7HudMenuGameMode.HUDInject)
 
+    local mapName = Engine.GetCurrentMap()
     if CoD.isZombie then
         if HudRef.CustomHudMenu == nil then
             HudRef.CustomHudMenu = LUI.createMenu.JUPHud_zm_factory( controller )
@@ -219,6 +220,22 @@ CoD.DemoUtility.AddHUDWidgets = function(HudRef, InstanceRef)
             end
         end)
     
+        HudRef:subscribeToGlobalModel(InstanceRef, "PerController", "scriptNotify", function(model)
+            if not IsParamModelEqualToString(model, "zm_jup_hud_reset") then
+                return
+            end
+            
+            ResetHUDVisibility()
+        end)
+
         ResetHUDVisibility()
+    end
+
+    if mapName and mapName == "zm_die" then
+        CoD.PCUtil.OptionsCheckboxActionStartGame = function ( f12_arg0, f12_arg1 )
+            f12_arg1:playSound( "list_action" )
+            Engine.SendMenuResponse( f12_arg0, "PreGameMenu", "start_game" )
+            return false
+        end
     end
 end

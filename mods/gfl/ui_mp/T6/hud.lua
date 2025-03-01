@@ -340,6 +340,21 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
         end
     end)
 
+    f52_arg0:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "CustomHUD" ), function(model)
+        local ModelValue = Engine.GetModelValue(model)
+        if ModelValue then
+            ResetPowerupsAreaVisibility()
+        end
+    end)
+
+    f52_arg0:subscribeToGlobalModel(f52_arg1, "PerController", "scriptNotify", function(model)
+        if not IsParamModelEqualToString(model, "zm_jup_hud_reset") then
+            return
+        end
+        
+        ResetPowerupsAreaVisibility()
+    end)
+
     ResetPowerupsAreaVisibility()
 
 	if CoD.isZombie == true and Mods_IsUsingMods() then

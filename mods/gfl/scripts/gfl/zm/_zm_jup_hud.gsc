@@ -19,6 +19,8 @@
 
 #insert scripts\zm\_zm_utility.gsh;
 
+#precache( "eventstring", "zm_jup_hud_reset" );
+
 REGISTER_SYSTEM_EX( "zm_jup_hud", &__init__, &__main__, undefined )
 
 function __init__()
@@ -39,26 +41,7 @@ function __main__()
 function on_player_spawned()
 {
 	self thread ui_health_monitor();
-
-	if (!isdefined(self.player_shield_reset_health) || !isdefined(self.player_shield_apply_damage))
-	{
-		return;
-	}
-
 	self thread ui_shield_monitor();
-
-	if ( !isdefined(self._player_shield_reset_health_old) )
-	{
-		self._player_shield_reset_health_old = self.player_shield_reset_health;
-	}
-
-	if ( !isdefined(self._player_shield_apply_damage_old) )
-	{
-		self._player_shield_apply_damage_old = self.player_shield_apply_damage;
-	}
-
-	self.player_shield_reset_health = &player_init_shield_health;
-	self.player_shield_apply_damage = &player_damage_shield;
 }
 
 function ui_health_monitor()
@@ -102,52 +85,45 @@ function ui_shield_monitor()
 				level clientfield::set( shield_cf, shield );
 			}
 
+			if ( !shield || !isdefined(level.weaponRiotshield) || !isdefined(level.weaponRiotshield.weaponstarthitpoints) )
+			{
+				level clientfield::set( "jup_shield_health_" + self GetEntityNumber(), 0.0 );
+				wait 1;
+				continue;
+			}
+
+			damageMax = level.weaponRiotshield.weaponstarthitpoints;
+
+			if( isdefined( self.weaponRiotshield ) )
+			{
+				damageMax = self.weaponRiotshield.weaponstarthitpoints;
+			}
+
+			shieldDamage = 0;
+			shieldHealth = self DamageRiotShield( shieldDamage );
+			if( shieldHealth < 0 )
+			{
+				shieldHealth = 0;
+			}
+
+			value = 0.0;
+			if (isdefined(damageMax) && damageMax > 0) {
+				value = shieldHealth / damageMax;
+			}
+
+			level clientfield::set( "jup_shield_health_" + self GetEntityNumber(), value );
 		}
 
 		wait 0.2;
 	}
 }
 
-function player_init_shield_health()
+function reset_hud()
 {
-	result = 1;
-	func = self._player_shield_reset_health_old;
-	if (IsFunctionPtr(func))
+	if( !isdefined( self ) )
 	{
-		result = self [[func]]();
-	}
-
-	level clientfield::set( "jup_shield_health_" + self GetEntityNumber(), 1.0 );
-	return result;
-}
-
-function player_damage_shield( iDamage, bHeld, fromCode = false, smod = "MOD_UNKNOWN" )
-{
-	func = self._player_shield_apply_damage_old;
-	if (IsFunctionPtr(func))
-	{
-		self [[func]]( iDamage, bHeld, fromCode, smod );
-	}
-
-	if ( !isdefined(level.weaponRiotshield) || !isdefined(level.weaponRiotshield.weaponstarthitpoints) )
-	{
-		level clientfield::set( "jup_shield_health_" + self GetEntityNumber(), 0.0 );
 		return;
 	}
 
-	damageMax = level.weaponRiotshield.weaponstarthitpoints;
-
-	if( isdefined( self.weaponRiotshield ) )
-	{
-		damageMax = self.weaponRiotshield.weaponstarthitpoints;
-	}
-
-	shieldDamage = 0;
-	shieldHealth = self DamageRiotShield( shieldDamage );
-	if( shieldHealth < 0 )
-	{
-		shieldHealth = 0;
-	}
-
-	level clientfield::set( "jup_shield_health_" + self GetEntityNumber(), shieldHealth / damageMax );
+	self LUINotifyEvent( &"zm_jup_hud_reset", 0 );
 }
