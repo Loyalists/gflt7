@@ -4408,7 +4408,7 @@
 	}
 	"t7_menu_mp_hero_background_with_spectre" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_spectre.png"
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_ump45.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_spectre" [ "t7_menu_mp_hero_background_with_spectre" ]

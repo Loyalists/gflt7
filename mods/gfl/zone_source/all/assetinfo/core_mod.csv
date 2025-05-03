@@ -3241,7 +3241,7 @@ index,type,name,resident,streamed,parentStack
 3240,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521424,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3241,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3242,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3243,image,t7_menu_mp_chars_enforcer_body_custom01À®ÇT,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3243,image,t7_menu_mp_chars_enforcer_body_custom01À¦û5,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3244,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3245,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3246,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
