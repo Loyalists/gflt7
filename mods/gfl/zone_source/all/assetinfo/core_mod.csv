@@ -261,8 +261,8 @@ index,type,name,resident,streamed,parentStack
 260,rawfile,ui/uieditor/widgets/lobby/common/fe_talkerwidgetbase.lua,3664,0,|ui/uieditor/widgets/lobby/common/fe_talkerwidgetbase.luac|rawfile|zone_source/core_mod.zone|csv
 261,rawfile,ui/uieditor/datasources.lua,21372,0,|zone_source/core_mod.zone|csv
 262,rawfile,ui/uieditor/datasources_og.lua,731967,0,|ui/uieditor/datasources_og.luac|rawfile|zone_source/core_mod.zone|csv
-263,rawfile,ui/uieditor/actions.lua,21994,0,|zone_source/core_mod.zone|csv
-264,rawfile,ui/uieditor/actions_og.lua,704029,0,|ui/uieditor/actions_og.luac|rawfile|zone_source/core_mod.zone|csv
+263,rawfile,ui/uieditor/actions.lua,22563,0,|zone_source/core_mod.zone|csv
+264,rawfile,ui/uieditor/actions_og.lua,704036,0,|ui/uieditor/actions_og.luac|rawfile|zone_source/core_mod.zone|csv
 265,rawfile,ui/uieditor/conditions.lua,4358,0,|zone_source/core_mod.zone|csv
 266,rawfile,ui/uieditor/conditions_og.lua,399261,0,|ui/uieditor/conditions_og.luac|rawfile|zone_source/core_mod.zone|csv
 267,rawfile,ui/uieditor/modifyfunctions.lua,2843,0,|zone_source/core_mod.zone|csv
@@ -270,8 +270,8 @@ index,type,name,resident,streamed,parentStack
 269,rawfile,lua/shared/codshared.lua,15413,0,|zone_source/core_mod.zone|csv
 270,rawfile,ui/t7/utility/blackmarketutility.lua,5534,0,|zone_source/core_mod.zone|csv
 271,rawfile,ui/t7/utility/blackmarketutility_og.lua,114931,0,|ui/t7/utility/blackmarketutility_og.luac|rawfile|zone_source/core_mod.zone|csv
-272,rawfile,ui/t7/utility/ccutility.lua,26804,0,|zone_source/core_mod.zone|csv
-273,rawfile,ui/t7/utility/ccutility_og.lua,69305,0,|ui/t7/utility/ccutility_og.luac|rawfile|zone_source/core_mod.zone|csv
+272,rawfile,ui/t7/utility/ccutility.lua,27040,0,|zone_source/core_mod.zone|csv
+273,rawfile,ui/t7/utility/ccutility_og.lua,69293,0,|ui/t7/utility/ccutility_og.luac|rawfile|zone_source/core_mod.zone|csv
 274,rawfile,ui/t7/utility/lobbyutility.lua,1332,0,|zone_source/core_mod.zone|csv
 275,rawfile,ui/t7/utility/lobbyutility_og.lua,16174,0,|ui/t7/utility/lobbyutility_og.luac|rawfile|zone_source/core_mod.zone|csv
 276,rawfile,ui/t6/codbase.lua,4223,0,|zone_source/core_mod.zone|csv
@@ -287,7 +287,7 @@ index,type,name,resident,streamed,parentStack
 286,rawfile,ui/uieditor/menus/charactercustomization/choosezmcharacterloadout_ingame.lua,16678,0,|zone_source/core_mod.zone|csv
 287,rawfile,ui/uieditor/widgets/charactercustomization/choosecharacterloadoutcarouselitem_ingame.lua,8750,0,|zone_source/core_mod.zone|csv
 288,rawfile,ui/uieditor/widgets/charactercustomization/choosecharacterloadoutcarouselitem_internal_ingame.lua,6721,0,|zone_source/core_mod.zone|csv
-289,rawfile,ui/uieditor/widgets/charactercustomization/choosecharacterloadoutcarouselitem_infoarea_ingame.lua,13354,0,|zone_source/core_mod.zone|csv
+289,rawfile,ui/uieditor/widgets/charactercustomization/choosecharacterloadoutcarouselitem_infoarea_ingame.lua,13274,0,|zone_source/core_mod.zone|csv
 290,rawfile,ui/uieditor/widgets/charactercustomization/choosecharacter_loadoutlistitem_ingame.lua,20082,0,|zone_source/core_mod.zone|csv
 291,rawfile,ui/uieditor/widgets/charactercustomization/choosecharacter_loadoutlistitem_mousehovericon.lua,4791,0,|ui/uieditor/widgets/charactercustomization/choosecharacter_loadoutlistitem_mousehovericon.luac|rawfile|zone_source/core_mod.zone|csv
 292,rawfile,ui/uieditor/widgets/charactercustomization/choosecharacter_tabbar.lua,7879,0,|ui/uieditor/widgets/charactercustomization/choosecharacter_tabbar.luac|rawfile|zone_source/core_mod.zone|csv
@@ -3241,7 +3241,7 @@ index,type,name,resident,streamed,parentStack
 3240,xmodelmesh,t7_gfl_dima_bodyeb61818e,3304,3521424,|t7_gfl_dima_body_mp|xmodel|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3241,xmodel,t7_gfl_dima_body_mp,5360,0,|pbt_gfl_body_dima|playerbodystyle|pbt_gfl_g11|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
 3242,image,uie_t7_zm_hud_score_char3,16426,0,|pbt_zm_dempsey_zmhd|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv
-3243,image,t7_menu_mp_chars_enforcer_body_custom01°R¦q,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
+3243,image,t7_menu_mp_chars_enforcer_body_custom01À®ÇT,47,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3244,playersoundstable,cp_playersounds,16,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3245,playerfxtable,zm_playerfx,12,0,|zm_character_customization|customizationtable|zone_source/core_mod.zone|csv
 3246,image,uie_t7_zm_hud_score_char1,16410,0,|pbt_zm_nikolai|playerbodytype|zm_character_customization_zmhd|customizationtable|zone_source/core_mod.zone|csv

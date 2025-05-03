@@ -33,7 +33,7 @@ index,type,name,resident,streamed,parentStack
 32,localize,GFL_CHARACTER_M4_SOPMOD_II_BIO,1001,0,||assetlist
 33,localize,GFL_CHARACTER_9A91_NAME,30,0,||assetlist
 34,localize,GFL_CHARACTER_9A91_BIO,1098,0,||assetlist
-35,localize,GFL_CHARACTER_G11_NAME,44,0,||assetlist
+35,localize,GFL_CHARACTER_G11_NAME,30,0,||assetlist
 36,localize,GFL_CHARACTER_G11_BIO,911,0,||assetlist
 37,localize,GFL_CHARACTER_DIMA_NAME,29,0,||assetlist
 38,localize,GFL_CHARACTER_AN94_NAME,30,0,||assetlist
@@ -237,5 +237,5 @@ index,type,name,resident,streamed,parentStack
 236,localize,TF_MENU_SERVER_OPTIONS_DESC,59,0,||assetlist
 237,localize,TF_MENU_INGAME_NOTE,183,0,||assetlist
 238,localize,MENU_GFL,26,0,||assetlist
-239,keyvaluepairs,fr_core_mod,1099,0,||assetlist
+239,keyvaluepairs,fr_core_mod,1097,0,||assetlist
 240,assetlist,,3808,0,

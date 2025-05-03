@@ -4,8 +4,8 @@ index,type,name,resident,streamed,parentStack
 3,sound,zm_mod.all,39935,0,||assetlist
 4,scriptparsetree,scripts/gfl/zm/_zm_jup_hud.gsc,2649,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
 5,scriptparsetree,scripts/gfl/zm/_zm_jup_hud.csc,1552,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
-6,rawfile,ui/uieditor/menus/hud/juphud_zm_factory.lua,25728,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
-7,rawfile,ui/uieditor/widgets/hud/jupammowidget/jupammocontainer.lua,19279,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
+6,rawfile,ui/uieditor/menus/hud/juphud_zm_factory.lua,25708,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
+7,rawfile,ui/uieditor/widgets/hud/jupammowidget/jupammocontainer.lua,19267,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
 8,rawfile,ui/uieditor/widgets/hud/jupammowidget/jupammoequipment.lua,7856,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
 9,rawfile,ui/uieditor/widgets/hud/jupammowidget/jupammoinfo.lua,8369,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv
 10,rawfile,ui/uieditor/widgets/hud/jupnotificationwidget/jupnotification.lua,7976,0,|s4_hud.zpkg|csv|zone_source/zm_mod.zone|csv

@@ -48,25 +48,33 @@ CoD.CCUtility.CreateCarouselItemLoadoutDatasource_InGame = function ( f7_arg0, f
 	local f7_local0 = "HeroCarouselItemLoadoutList_InGame" .. f7_arg0.properties.heroIndex
 	DataSources[f7_local0] = DataSourceHelpers.ListSetup( f7_local0, function ( f8_arg0 )
 		local f8_local0 = {}
-		table.insert( f8_local0, {
-			models = {
-				name = Engine.Localize( "MENU_SELECT_CAPS" ),
-				gameImageOff = f7_arg0.models.gameImageOff,
-				gameImageOn = f7_arg0.models.gameImageOn,
-				description = Engine.Localize( "GFL_CHARACTER_MENU_SELECT_DESC" ),
-				header = "HEROES_HERO_WEAPON_CAPS",
-				equippedSlot = 0,
-				itemIndex = 0,
-				disabled = false,
-				itemType = Enum.VoteItemType.VOTE_ITEM_TYPE_ITEM
-			},
-			properties = {
-				equippedSlot = 0,
-				hintText = "HEROES_HERO_WEAPON_HINT",
-				selectIndex = false,
-				heroIndex = f7_arg0.properties.heroIndex
-			}
-		} )
+		if not f7_arg0.slots then
+			return f8_local0
+		end
+		
+		for i, slot in ipairs(f7_arg0.slots) do
+			if slot then
+				table.insert( f8_local0, {
+					models = {
+						name = Engine.Localize( slot.displayName or "MENU_SELECT_CAPS" ),
+						gameImageOff = slot.gameImageOff or "blacktransparent",
+						gameImageOn = slot.gameImageOn or "blacktransparent",
+						description = Engine.Localize( slot.description or "GFL_CHARACTER_MENU_SELECT_DESC" ),
+						header = CoD.CCUtility.GetHeaderForLoadoutSlot( i ),
+						equippedSlot = i,
+						itemIndex = i,
+						disabled = false,
+						itemType = Enum.VoteItemType.VOTE_ITEM_TYPE_ITEM
+					},
+					properties = {
+						equippedSlot = i,
+						hintText = CoD.CCUtility.GetHintTextForLoadoutSlot( i ),
+						selectIndex = i == 1,
+						heroIndex = f7_arg0.properties.heroIndex
+					}
+				} )
+			end
+		end
 		return f8_local0
 	end, true )
 	return f7_local0
@@ -95,13 +103,12 @@ CoD.CCUtility.GetHeroModels_InGame = function ( f75_arg0, f75_arg1, f75_arg2, f7
 			itemType = Enum.VoteItemType.VOTE_ITEM_TYPE_ITEM,
 			heroIndex = f75_arg0.bodyIndex,
 			breadcrumbCount = 0,
-			gameImageOff = f75_arg0.gameImageOff or "blacktransparent",
-			gameImageOn = f75_arg0.gameImageOn or "blacktransparent",
 		},
 		properties = {
 			heroIndex = f75_arg0.bodyIndex,
 			selectIndex = f75_arg0.bodyIndex == f75_local4
-		}
+		},
+		slots = f75_arg0.slots,
 	}
 	if not f75_local6.models.disabled then
 		f75_local6.models.loadoutDatasource = CoD.CCUtility.CreateCarouselItemLoadoutDatasource_InGame( f75_local6, CoD.CCUtility.customizationMode, f75_arg2 )

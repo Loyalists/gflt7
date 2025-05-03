@@ -131,7 +131,7 @@ LUI.createMenu.JUPHud_zm_factory = function ( controller )
 	self.CursorHint.cursorhinttext0:unsubscribeFromAllModels()
 	self.CursorHint.cursorhinttext0.FEButtonPanel0:setScale( 0 )
 	-- self.CursorHint.cursorhinttext0.CursorHintText:setLetterSpacing( -0.5 )
-	self.CursorHint.cursorhinttext0.CursorHintText:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
+	self.CursorHint.cursorhinttext0.CursorHintText:setTTF( "fonts/escom.ttf" )
 	self.CursorHint.cursorhinttext0.CursorHintText:subscribeToGlobalModel( controller, "HUDItems", "cursorHintText", function ( model )
 		local cursorHintText = Engine.GetModelValue( model )
 

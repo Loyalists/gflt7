@@ -203,19 +203,19 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea_InGame.new = function ( menu, co
 		end
 		return f20_local0
 	end )
-	menu:AddButtonCallbackFunction( loadoutOptions, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f21_arg0, f21_arg1, f21_arg2, f21_arg3 )
-		-- SelectHero( self, f21_arg0, f21_arg2 )
-		-- HeroLoadoutChanged( self, f21_arg0, f21_arg2 )
-		-- CharacterDraftLoadoutSelected( self, f21_arg0, f21_arg2 )
-		-- SendClientScriptMenuChangeNotify( f21_arg2, f21_arg1, false )
-		-- SetPerControllerTableProperty( f21_arg2, "updateNewBreadcrumbs", true )
-		-- ForceLobbyButtonUpdate( f21_arg2 )
+	menu:AddButtonCallbackFunction( loadoutOptions, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		-- SelectHero( self, element, controller )
+		-- HeroLoadoutChanged( self, element, controller )
+		-- CharacterDraftLoadoutSelected( self, element, controller )
+		-- SendClientScriptMenuChangeNotify( controller, menu, false )
+		-- SetPerControllerTableProperty( controller, "updateNewBreadcrumbs", true )
+		-- ForceLobbyButtonUpdate( controller )
 		local heroes = GetHeroesList_InGame( CoD.CCUtility.customizationMode )
-		local char = GetCharacterFromHeroesList(CoD.CCUtility.Heroes.HeroIndexForEdits, heroes)
+		local char = GetCharacterFromHeroesList(heroes, element)
 		if char then
-			SendCharacterSystemResponse(f21_arg2, char)
+			SendCharacterSystemResponse(controller, char)
 		end
-		GoBack( self, f21_arg2 )
+		GoBack( self, controller )
 		return true
 	end, function ( f22_arg0, f22_arg1, f22_arg2 )
 		CoD.Menu.SetButtonLabel( f22_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
