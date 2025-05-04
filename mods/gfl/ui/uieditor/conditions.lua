@@ -88,14 +88,6 @@ function AllowLootHero( f602_arg0 )
 	return true
 end
 
-function IsSOEBeast( f13_arg0 )
-	if f13_arg0 ~= nil and f13_arg0.assetName ~= nil and f13_arg0.assetName == "pbt_zm_zod_beast" then
-		return true
-	else
-		return false
-	end
-end
-
 function UseOldSaveData()
 	if Engine.IsBOIII and Engine.IsBOIII == true then
 		return true

@@ -7,7 +7,7 @@ require( "ui.uieditor.widgets.PC.ChooseCharacter.CharacterMiniSelectorRightButto
 require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 
 DataSources.HeroesListMini_InGame = DataSourceHelpers.ListSetup( "HeroesListMini_InGame", function ( f1_arg0 )
-	local f1_local0 = GetHeroesList_InGame( CoD.CCUtility.customizationMode )
+	local f1_local0 = CoD.CharacterUtil.GetHeroesList_InGame( CoD.CCUtility.customizationMode )
 	local f1_local1 = {}
 	for f1_local5, f1_local6 in ipairs( f1_local0 ) do
 		local f1_local7 = {

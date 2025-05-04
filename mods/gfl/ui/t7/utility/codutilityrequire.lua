@@ -31,6 +31,7 @@ require("ui.T7.Utility.SavingDataUtility")
 require("ui.T7.Utility.DataUtil")
 require("ui.T7.Utility.TFPCUtility")
 require("ui.T7.Utility.PersonalizationUtil")
+require("ui.T7.Utility.CharacterUtil")
 if CoD.isPC then
 	require("ui.T7.Utility.PCUtility")
 	require("ui.T7.Utility.ModsUtility")

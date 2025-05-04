@@ -210,11 +210,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea_InGame.new = function ( menu, co
 		-- SendClientScriptMenuChangeNotify( controller, menu, false )
 		-- SetPerControllerTableProperty( controller, "updateNewBreadcrumbs", true )
 		-- ForceLobbyButtonUpdate( controller )
-		local heroes = GetHeroesList_InGame( CoD.CCUtility.customizationMode )
-		local char = GetCharacterFromHeroesList(heroes, element)
-		if char then
-			SendCharacterSystemResponse(controller, char)
-		end
+		CoD.CharacterUtil.SelectHero_InGame(element, controller)
 		GoBack( self, controller )
 		return true
 	end, function ( f22_arg0, f22_arg1, f22_arg2 )

@@ -3241,6 +3241,7 @@ rawfile,ui/t7/utility/blackmarketutility.lua
 rawfile,ui/t7/utility/blackmarketutility_og.luac
 rawfile,ui/t7/utility/ccutility.lua
 rawfile,ui/t7/utility/ccutility_og.luac
+rawfile,ui/t7/utility/characterutil.lua
 rawfile,ui/t7/utility/codutilityrequire.lua
 rawfile,ui/t7/utility/datautil.lua
 rawfile,ui/t7/utility/lobbyutility.lua

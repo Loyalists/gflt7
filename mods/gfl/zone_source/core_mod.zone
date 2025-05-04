@@ -165,6 +165,7 @@ rawfile,ui/HUDInject/HUDInject.lua
 rawfile,ui/t7/utility/SavingDataUtility.lua
 rawfile,ui/t7/utility/DataUtil.lua
 rawfile,ui/t7/utility/PersonalizationUtil.lua
+rawfile,ui/t7/utility/CharacterUtil.lua
 rawfile,ui/t7/utility/codutilityrequire.lua
 
 rawfile,ui/t6/lobby/lobbymenubuttons.lua

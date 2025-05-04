@@ -428,7 +428,7 @@ LUI.createMenu.ChooseZMCharacterLoadout_InGame = function(controller)
 
     f8_local1:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "R",
         function(f46_arg0, f46_arg1, f46_arg2, f46_arg3)
-			SendCharacterSystemResponse(f46_arg2, "random")
+			CoD.CharacterUtil.SendCharacterSystemResponse(f46_arg2, "random")
             GoBack(self, f46_arg2)
             return true
         end, function(f47_arg0, f47_arg1, f47_arg2)
