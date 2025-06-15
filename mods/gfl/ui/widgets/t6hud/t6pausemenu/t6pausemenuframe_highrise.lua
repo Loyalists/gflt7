@@ -1,9 +1,27 @@
 require( "ui.widgets.t6HUD.T6Utility.T6ButtonListItem" )
+require( "ui.widgets.t6HUD.T6PauseMenu.stats.T6Pause_StatsMenu" )
+require( "ui.widgets.t6HUD.T6PauseMenu.support.T6Pause_SupportMenu" )
 require( "ui.widgets.t6HUD.T6PauseMenu.options.T6Pause_OptionsMenu" )
 
 DataSources.PauseMenuOptions_List = ListHelper_SetupDataSource("PauseMenuOptions_List", function(f1_arg0)
     local f1_local0 = GetZMStartMenuGameOptions(true, true)
 	LocalizeOptions(f1_local0)
+	table.insert( f1_local0, 3, {
+		models = {
+			displayText = "T6_HUD_STATS",
+			action = function ( f2_arg0, f2_arg1, f2_arg2, f2_arg3, f2_arg4 )
+				NavigateToMenu( f2_arg4, "T6Pause_StatsMenu", true, f2_arg2 )
+			end
+		}
+	} )
+	table.insert( f1_local0, 4, {
+		models = {
+			displayText = "T6_HUD_SUPPORT",
+			action = function ( f3_arg0, f3_arg1, f3_arg2, f3_arg3, f3_arg4 )
+				NavigateToMenu( f3_arg4, "T6Pause_SupportMenu", true, f3_arg2 )
+			end
+		}
+	} )
     return f1_local0
 end, true)
 
@@ -31,29 +49,29 @@ CoD.T6PauseMenuFrame.new = function ( menu, controller )
 	self.buttonList:setSpacing( 3.33 )
 	self.buttonList:setDataSource( "PauseMenuOptions_List" )
 	self.buttonList:registerEventHandler( "gain_focus", function ( element, event )
-		local f4_local0 = nil
+		local f6_local0 = nil
 		if element.gainFocus then
-			f4_local0 = element:gainFocus( event )
+			f6_local0 = element:gainFocus( event )
 		elseif element.super.gainFocus then
-			f4_local0 = element.super:gainFocus( event )
+			f6_local0 = element.super:gainFocus( event )
 		end
 		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
-		return f4_local0
+		return f6_local0
 	end )
 	self.buttonList:registerEventHandler( "lose_focus", function ( element, event )
-		local f5_local0 = nil
+		local f7_local0 = nil
 		if element.loseFocus then
-			f5_local0 = element:loseFocus( event )
+			f7_local0 = element:loseFocus( event )
 		elseif element.super.loseFocus then
-			f5_local0 = element.super:loseFocus( event )
+			f7_local0 = element.super:loseFocus( event )
 		end
-		return f5_local0
+		return f7_local0
 	end )
-	menu:AddButtonCallbackFunction( self.buttonList, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f6_arg0, f6_arg1, f6_arg2, f6_arg3 )
-		ProcessListAction( self, f6_arg0, f6_arg2 )
+	menu:AddButtonCallbackFunction( self.buttonList, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f8_arg0, f8_arg1, f8_arg2, f8_arg3 )
+		ProcessListAction( self, f8_arg0, f8_arg2 )
 		return true
-	end, function ( f7_arg0, f7_arg1, f7_arg2 )
-		CoD.Menu.SetButtonLabel( f7_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+	end, function ( f9_arg0, f9_arg1, f9_arg2 )
+		CoD.Menu.SetButtonLabel( f9_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		return true
 	end, false )
 	self:addElement( self.buttonList )

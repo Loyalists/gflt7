@@ -54,6 +54,8 @@ function init_character_table()
 	level.charactertable["zm"]["lenna_ssr"] = create_lenna_ssr();
 	level.charactertable["zm"]["macqiato"] = create_macqiato();
 	level.charactertable["zm"]["centaureissi"] = create_centaureissi();
+	level.charactertable["zm"]["vector_p1"] = create_vector_p1();
+	level.charactertable["zm"]["vector_p2"] = create_vector_p2();
 
 	level.charactertable["zm_moon"] = [];
 	level.charactertable["zm_moon"]["m16a1"] = create_m16a1_moon();
@@ -426,6 +428,28 @@ function create_macqiato()
 	obj.id = "macqiato";
 	obj.keywords = array();
 	obj.name = "WA2000";
+	return obj;
+}
+
+function create_vector_p2()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 13;
+	obj.bodystyle = 2;
+	obj.id = "vector_p2";
+	obj.keywords = array();
+	obj.name = "Vector";
+	return obj;
+}
+
+function create_vector_p1()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 13;
+	obj.bodystyle = 3;
+	obj.id = "vector_p1";
+	obj.keywords = array();
+	obj.name = "Vector";
 	return obj;
 }
 

@@ -209,8 +209,8 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
-REFERENCE            PLAYER_DETERMINED_CHARACTER
-LANG_ENGLISH         "Player-Determined Playermodel"
+REFERENCE            CUSTOM_CHARACTER
+LANG_ENGLISH         "Custom Playermodel"
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -223,36 +223,8 @@ LANG_ITALIAN         "#same"
 LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
-REFERENCE            PLAYER_DETERMINED_CHARACTER_DESC
-LANG_ENGLISH         "Uses the currently selected playermodel from Characters Menu. \n\nDoesn't work on Moon and Origins."
-LANG_GERMAN         "#same"
-LANG_SPANISH         "#same"
-LANG_RUSSIAN         "#same"
-LANG_PORTUGUESE         "#same"
-LANG_POLISH         "#same"
-LANG_JAPANESE         "#same"
-LANG_FRENCH         "#same"
-LANG_ENGLISHARABIC         "#same"
-LANG_ITALIAN         "#same"
-LANG_TRADITIONALCHINESE         "#same"
-LANG_SIMPLIFIEDCHINESE         "#same"
-
-REFERENCE            RANDOMIZED_CHARACTER
-LANG_ENGLISH         "Randomized Playermodel"
-LANG_GERMAN         "#same"
-LANG_SPANISH         "#same"
-LANG_RUSSIAN         "#same"
-LANG_PORTUGUESE         "#same"
-LANG_POLISH         "#same"
-LANG_JAPANESE         "#same"
-LANG_FRENCH         "#same"
-LANG_ENGLISHARABIC         "#same"
-LANG_ITALIAN         "#same"
-LANG_TRADITIONALCHINESE         "#same"
-LANG_SIMPLIFIEDCHINESE         "#same"
-
-REFERENCE            RANDOMIZED_CHARACTER_DESC
-LANG_ENGLISH         "Randomizes the model of each player so that more GFL characters can be chosen, adding additional variety to the gameplay. \n\nIf both 'Player-Determined Playermodel' and 'Randomized Playermodel' are enabled the playermodel will only be randomized for Bots. \n\nDoesn't work on Moon and Origins."
+REFERENCE            CUSTOM_CHARACTER_DESC
+LANG_ENGLISH         "Uses the randomized or currently selected custom playermodel from Characters Menu. \n\nIf disabled there will only be a fixed set of characters (M16A1/AK-12/HK416/Type89). \n\nDoesn't work on Moon and Origins."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -1694,7 +1666,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            THIRDPERSON_DESC
-LANG_ENGLISH         "Enables third person view by default.\n\nThird person can be toggled at any time by using "/tps" in the in-game chat whether this option is enabled or not."
+LANG_ENGLISH         "Enables third person view.\n\nThird person can be also toggled at any time by using "/tps" in the in-game chat."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -1835,6 +1807,34 @@ LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE            CUSTOM_HUD_DESC
 LANG_ENGLISH         "Enables a MW2023-ish custom HUD. Can be toggled in game."
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
+REFERENCE            CHECKPOINTS
+LANG_ENGLISH         "Checkpoints"
+LANG_GERMAN         "#same"
+LANG_SPANISH         "#same"
+LANG_RUSSIAN         "#same"
+LANG_PORTUGUESE         "#same"
+LANG_POLISH         "#same"
+LANG_JAPANESE         "#same"
+LANG_FRENCH         "#same"
+LANG_ENGLISHARABIC         "#same"
+LANG_ITALIAN         "#same"
+LANG_TRADITIONALCHINESE         "#same"
+LANG_SIMPLIFIEDCHINESE         "#same"
+
+REFERENCE            CHECKPOINTS_DESC
+LANG_ENGLISH         "At the beginning of every new round players guns, ammo, score, perks and gumballs are saved and if all players die the round is reset and players return to the last checkpoint with their last saved loadout. \n\nThe game won't end until you end it."
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"

@@ -49,16 +49,32 @@ function init()
     level._round_end_custom_logic_old = level.round_end_custom_logic;
     level.round_end_custom_logic = &roamer;
 
-    if( GetDvarInt("tfoption_roamer_enabled", 0) )
+    if( is_enabled() )
     {
         zombie_utility::set_zombie_var( "zombie_between_round_time", 0);
     }
 }
 
+function is_enabled()
+{
+    // conflicts
+    // if( GetDvarInt("tfoption_checkpoints", 0) )
+    // {
+    //     return false;
+    // }
+
+    if( GetDvarInt("tfoption_roamer_enabled", 0) )
+    {
+        return true;
+    }
+
+	return false;
+}
+
 function roamer() 
 {
     deadlock = get_deadlock();
-    if( !GetDvarInt("tfoption_roamer_enabled", 0) || deadlock )
+    if( !is_enabled() || deadlock || IS_TRUE(level.roamer_disabled) )
     {
         if ( isdefined( level._zombie_between_round_time_old ) )
         {

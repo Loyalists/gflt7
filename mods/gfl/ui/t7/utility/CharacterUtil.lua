@@ -329,6 +329,25 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
     })
 
     table.insert(heroes, {
+        displayName = "Vector",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_vector",
+		frozenMomentRender = "t7_menu_choosespecialist_default_vector",
+		disabled = false,
+		slots = {
+			{
+				character = "vector_p2",
+				displayName = "MENU_CLASSIC",
+				gameImageOff = "t7_gfl_chibi_vector",
+			},
+			{
+				character = "vector_p1",
+				displayName = "School",
+				gameImageOff = "t7_gfl_chibi_vector",
+			},
+		},
+    })
+
+    table.insert(heroes, {
         displayName = "Negev",
         backgroundWithCharacter = "t7_menu_mp_hero_background_with_negev",
 		frozenMomentRender = "t7_menu_choosespecialist_default_negev",

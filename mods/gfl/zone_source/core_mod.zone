@@ -27,6 +27,8 @@ image,t7_crm_gfl_logo
 image,t7_crm_gfl_dday
 image,t7_crm_gfl_intel_room
 image,uie_t7_menu_gfl_welcome_characters
+image,i_mtl_p7_zm_bgb_icon_unbearable_c
+image,i_mtl_p7_zm_bgb_icon_in_plain_sight_c
 
 localize,gfl
 localize,gfl_character
@@ -429,6 +431,8 @@ xmodel,t7_gfl_lenna_base_fb
 xmodel,t7_gfl_lenna_ssr_fb
 xmodel,t7_gfl_macqiato_fb
 xmodel,t7_gfl_centaureissi_fb
+xmodel,t7_gfl_vector_p1_fb
+xmodel,t7_gfl_vector_p2_fb
 
 xmodel,t7_gfl_ouroboros_fb
 xmodel,t7_gfl_dreamer_fb
@@ -1175,6 +1179,7 @@ image,t7_menu_choosespecialist_default_vespid
 image,t7_menu_choosespecialist_default_guard
 image,t7_menu_choosespecialist_default_ripper
 image,t7_menu_choosespecialist_default_dreamer
+image,t7_menu_choosespecialist_default_vector
 
 image,t7_menu_mp_hero_background_with_9a91
 image,t7_menu_mp_hero_background_with_an94
@@ -1194,6 +1199,7 @@ image,t7_menu_mp_hero_background_with_g11
 image,t7_menu_mp_hero_background_with_g36c
 image,t7_menu_mp_hero_background_with_dima
 image,t7_menu_mp_hero_background_with_sf
+image,t7_menu_mp_hero_background_with_vector
 
 image,t7_gfl_chibi_9a91
 image,t7_gfl_chibi_ak12
@@ -1228,6 +1234,7 @@ image,t7_gfl_chibi_guard
 image,t7_gfl_chibi_ripper
 image,t7_gfl_chibi_ouroboros
 image,t7_gfl_chibi_dreamer
+image,t7_gfl_chibi_vector
 
 xmodel,c_zom_zod_boxer_mpc_fb
 xmodel,c_zom_zod_boxer_viewlegs

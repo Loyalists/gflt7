@@ -8,6 +8,7 @@ CoD.PersonalizationDefault = {
     disable_intro_movie = 1,
     hud = 0,
     custom_hud = 1,
+    thirdperson = 0,
 }
 
 CoD.PersonalizationDirtyFlag = false

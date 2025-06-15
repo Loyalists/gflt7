@@ -72,6 +72,7 @@ CoD.TFOptionIndexes = {
     hud = 70,
     hitmarkers_sound = 71,
     objectives = 72,
+    checkpoints = 73,
 }
 
 CoD.TFOptionsDefault = {
@@ -142,6 +143,7 @@ CoD.TFOptionsDefault = {
     hud = 1,
     hitmarkers_sound = 2,
     objectives = 1,
+    checkpoints = 0,
 }
 
 CoD.TFOptionsDirtyFlag = false

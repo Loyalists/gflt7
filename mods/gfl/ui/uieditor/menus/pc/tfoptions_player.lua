@@ -206,6 +206,29 @@ DataSources.TFOptionsHitmarkersSound = DataSourceHelpers.ListSetup("PC.TFOptions
     return f15_local0
 end, true)
 
+DataSources.TFOptionsCustomCharacter = DataSourceHelpers.ListSetup("PC.TFOptionsCustomCharacter", function(f15_arg0)
+    local f15_local0 = {}
+    table.insert(f15_local0, {
+        models = {
+            value = 0,
+            valueDisplay = "MENU_DISABLED"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 1,
+            valueDisplay = "Player-determined"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 2,
+            valueDisplay = "Randomized"
+        }
+    })
+    return f15_local0
+end, true)
+
 DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP1", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
@@ -270,21 +293,13 @@ DataSources.TFOptionsPlayerP1 = DataSourceHelpers.ListSetup("PC.TFOptionsPlayerP
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_PLAYER_DETERMINED_CHARACTER",
-            description = "TF_PLAYER_DETERMINED_CHARACTER_DESC",
+            label = "TF_CUSTOM_CHARACTER",
+            description = "TF_CUSTOM_CHARACTER_DESC",
             profileVarName = "player_determined_character",
-            widgetType = "tfcheckbox"
+            datasource = "TFOptionsCustomCharacter",
+            widgetType = "dropdown"
         },
-        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
-    })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_RANDOMIZED_CHARACTER",
-            description = "TF_RANDOMIZED_CHARACTER_DESC",
-            profileVarName = "randomize_character",
-            widgetType = "tfcheckbox"
-        },
-        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
     })
     table.insert(f26_local0, {
         models = {

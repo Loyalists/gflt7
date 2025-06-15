@@ -18340,6 +18340,7 @@
 	"i_gfl_negev_cf_m_bot_skirt02_c" [ "i_gfl_negev_acs_legl_cheerring_c" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\negev\\images\\mtl_gfl_negev_cf_m_bot_skirt02.png"
+		"coreSemantic" "sRGB3chAlpha"
 	}
 	"i_gfl_negev_cf_m_glove_short_c" [ "i_gfl_negev_acs_legl_cheerring_c" ]
 	{
@@ -18349,6 +18350,7 @@
 	"i_gfl_negev_cf_m_panst_01_c" [ "i_gfl_negev_acs_legl_cheerring_c" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\negev\\images\\mtl_gfl_negev_cf_m_panst_01.png"
+		"coreSemantic" "sRGB3chAlpha"
 	}
 	"i_gfl_negev_cf_m_shoes_manken_c" [ "i_gfl_negev_acs_legl_cheerring_c" ]
 	{
@@ -18358,9 +18360,11 @@
 	"i_gfl_negev_cf_m_top_deco01_c" [ "i_gfl_negev_acs_legl_cheerring_c" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\negev\\images\\mtl_gfl_negev_cf_m_top_deco01.png"
+		"coreSemantic" "sRGB3chAlpha"
 	}
 	"i_gfl_negev_cf_m_top_inner01_c" [ "i_gfl_negev_acs_legl_cheerring_c" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\negev\\images\\mtl_gfl_negev_cf_m_top_inner01.png"
+		"coreSemantic" "sRGB3chAlpha"
 	}
 }

@@ -519,29 +519,29 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	f5_local0.statusLabel:setupLoadingStatusText()
 	f5_local0.loadingBarContainer:addElement( f5_local0.statusLabel )
 
-	local mapDescription = CoD.GetMapValue( Engine.GetCurrentMap(), "mapDescription", "" )
-	if Mods_IsUsingUsermap() then
-		local ModsLists = Engine.Mods_Lists_GetInfoEntries( "usermaps", 0, Engine.Mods_Lists_GetInfoEntriesCount( "usermaps" ) )
-		if ModsLists then
-			for int = 0 , #ModsLists, 1 do
-				local map = ModsLists[int] 
-				if map.ugcName == Dvar.ui_mapname:get() and LUI.startswith( map.internalName, "zm_" ) then
-					mapDescription = map.description
-				end
-			end
-		end
-	end
+	-- local mapDescription = CoD.GetMapValue( Engine.GetCurrentMap(), "mapDescription", "" )
+	-- if Mods_IsUsingUsermap() then
+	-- 	local ModsLists = Engine.Mods_Lists_GetInfoEntries( "usermaps", 0, Engine.Mods_Lists_GetInfoEntriesCount( "usermaps" ) )
+	-- 	if ModsLists then
+	-- 		for int = 0 , #ModsLists, 1 do
+	-- 			local map = ModsLists[int] 
+	-- 			if map.ugcName == Dvar.ui_mapname:get() and LUI.startswith( map.internalName, "zm_" ) then
+	-- 				mapDescription = map.description
+	-- 			end
+	-- 		end
+	-- 	end
+	-- end
 
-	f5_local0.didYouKnow = LUI.UIText.new()
-	f5_local0.didYouKnow:setLeftRight( true, true, f5_local22 + f5_local31, 0 )
-	f5_local0.didYouKnow:setTopBottom( true, false, f5_local28, f5_local28 + CoD.Loading.DYKFontHeight )
-	--f5_local0.didYouKnow:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
-	f5_local0.didYouKnow:setFont( CoD.Loading.DYKFont )
-	f5_local0.didYouKnow:setAlignment( LUI.Alignment.Left )
-	f5_local0.didYouKnow:setText( Engine.Localize( mapDescription ) )
-	--f5_local0.didYouKnow:setPriority( 0 )
-	f5_local0.didYouKnow:setAlpha( 1 )
-	f5_local0.loadingBarContainer:addElement( f5_local0.didYouKnow )
+	-- f5_local0.didYouKnow = LUI.UIText.new()
+	-- f5_local0.didYouKnow:setLeftRight( true, true, f5_local22 + f5_local31, 0 )
+	-- f5_local0.didYouKnow:setTopBottom( true, false, f5_local28, f5_local28 + CoD.Loading.DYKFontHeight )
+	-- --f5_local0.didYouKnow:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
+	-- f5_local0.didYouKnow:setFont( CoD.Loading.DYKFont )
+	-- f5_local0.didYouKnow:setAlignment( LUI.Alignment.Left )
+	-- f5_local0.didYouKnow:setText( Engine.Localize( mapDescription ) )
+	-- --f5_local0.didYouKnow:setPriority( 0 )
+	-- f5_local0.didYouKnow:setAlpha( 1 )
+	-- f5_local0.loadingBarContainer:addElement( f5_local0.didYouKnow )
 
 	if f5_local1 == true then
 		f5_local0.mapImage:setAlpha( 1 )

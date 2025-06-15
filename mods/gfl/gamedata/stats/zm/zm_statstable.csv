@@ -112,7 +112,7 @@ a0,b1,c2,d3,e4,f5,g6,h7,i8,j9,k10,l11,m12,n13,o14,p15,q16,r17,s18,t19,u20
 208,,bubblegum,zmui_bgb_danger_closest,zm_bgb_danger_closest,17,t7_hud_zm_bgb_danger_closest,zmui_bgb_danger_closest_desc,,9,0,,1,equippedbubblegumpack,,,0,1,,,round
 209,,bubblegum,zmui_bgb_firing_on_all_cylinders,zm_bgb_firing_on_all_cylinders,9,t7_hud_zm_bgb_firing_on_all_cylinders,zmui_bgb_firing_on_all_cylinders_desc,,11,0,,1,equippedbubblegumpack,,,0,1,,,round
 210,,bubblegum,zmui_bgb_impatient,zm_bgb_impatient,35,t7_hud_zm_bgb_impatient,zmui_bgb_impatient_desc,,6,0,,1,equippedbubblegumpack,,,0,1,,,event
-211,,bubblegum,zmui_bgb_in_plain_sight,zm_bgb_in_plain_sight,2,t7_hud_zm_bgb_in_plain_sight,zmui_bgb_in_plain_sight_desc,,4,,,1,equippedbubblegumpack,,,0,0,,,activated
+211,,bubblegum,zmui_bgb_in_plain_sight,zm_bgb_in_plain_sight,2,i_mtl_p7_zm_bgb_icon_in_plain_sight_c,zmui_bgb_in_plain_sight_desc,,4,,,1,equippedbubblegumpack,,,0,0,,,activated
 212,,bubblegum,zmui_bgb_lucky_crit,zm_bgb_lucky_crit,36,t7_hud_zm_bgb_lucky_crit,zmui_bgb_lucky_crit_desc,,13,0,,1,equippedbubblegumpack,,,0,1,,,round
 213,,bubblegum,zmui_bgb_now_you_see_me,zm_bgb_now_you_see_me,37,t7_hud_zm_bgb_now_you_see_me,zmui_bgb_now_you_see_me_desc,,14,0,,1,equippedbubblegumpack,,,0,1,,,activated
 214,,bubblegum,zmui_bgb_stock_option,zm_bgb_stock_option,22,t7_hud_zm_bgb_stock_option,zmui_bgb_stock_option_desc,,5,,,1,equippedbubblegumpack,,,0,0,,,time
@@ -142,7 +142,7 @@ a0,b1,c2,d3,e4,f5,g6,h7,i8,j9,k10,l11,m12,n13,o14,p15,q16,r17,s18,t19,u20
 238,,bubblegum,zmui_bgb_fear_in_headlights,zm_bgb_fear_in_headlights,72,t7_hud_zm_bgb_fear_in_headlights,zmui_bgb_fear_in_headlights_desc,,104,,,1,equippedbubblegumpack,,,2,0,5,,activated
 239,,bubblegum,zmui_bgb_secret_shopper,zm_bgb_secret_shopper,24,t7_hud_zm_bgb_secret_shopper,zmui_bgb_secret_shopper_desc,,208,,,1,equippedbubblegumpack,,,3,0,5,,time
 240,,bubblegum,zmui_bgb_temporal_gift,zm_bgb_temporal_gift,25,t7_hud_zm_bgb_temporal_gift,zmui_bgb_temporal_gift_desc,,108,,,1,equippedbubblegumpack,,,2,0,5,,round
-241,,bubblegum,zmui_bgb_unbearable,zm_bgb_unbearable,73,t7_hud_zm_bgb_unbearable,zmui_bgb_unbearable_desc,,19,,,1,equippedbubblegumpack,,,1,0,5,,event
+241,,bubblegum,zmui_bgb_unbearable,zm_bgb_unbearable,73,i_mtl_p7_zm_bgb_icon_unbearable_c,zmui_bgb_unbearable_desc,,19,,,1,equippedbubblegumpack,,,1,0,5,,event
 242,,bubblegum,zmui_bgb_crate_power,zm_bgb_crate_power,42,t7_hud_zm_bgb_crate_power,zmui_bgb_crate_power_desc,,102,,,1,equippedbubblegumpack,,,2,0,6,,event
 243,,bubblegum,zmui_bgb_disorderly_combat,zm_bgb_disorderly_combat,74,t7_hud_zm_bgb_disorderly_combat,zmui_bgb_disorderly_combat_desc,,6,,,1,equippedbubblegumpack,,,1,0,6,,time
 244,,bubblegum,zmui_bgb_projectile_vomiting,zm_bgb_projectile_vomiting,14,t7_hud_zm_bgb_projectile_vomiting,zmui_bgb_projectile_vomiting_desc,,18,,,1,equippedbubblegumpack,,,4,0,6,,round

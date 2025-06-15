@@ -42,6 +42,8 @@
 #using scripts\gfl\zm\_aae_zombie_health_bar;
 #using scripts\gfl\zm\objective;
 #using scripts\gfl\zm\_zm_jup_hud;
+#using scripts\gfl\zm\checkpoints;
+#using scripts\gfl\zm\ugxmods_timedgp;
 
 #using scripts\gfl\_chat_notify;
 #using scripts\gfl\clientsystem;
@@ -72,6 +74,11 @@ function init()
         zm_counter::init();
     }
 
+    //Timed Gameplay
+    if( GetDvarInt("tfoption_timed_gameplay", 0) ) {
+        thread ugxmods_timedgp::timed_gameplay();
+    }
+
     thread map_fixes();
     thread after_blackscreen_setup();
 
@@ -98,10 +105,10 @@ function on_player_spawned()
 	self endon("bled_out");
 	self endon("death");
 
-    if( GetDvarInt("tfoption_thirdperson", 0) )
-    {
-        self thread set_thirdperson_on_spawned();
-    }
+    // if( GetDvarInt("tfoption_thirdperson", 0) )
+    // {
+    //     self thread set_thirdperson_on_spawned();
+    // }
 
     self thread character_popup_think();
     self thread opening_notifications_think();

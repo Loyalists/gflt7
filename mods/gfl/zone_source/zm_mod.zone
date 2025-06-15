@@ -24,6 +24,7 @@ rawfile,ui/uieditor/widgets/startmenu/StartMenu_GameOptions_KF2.lua
 // die rise
 rawfile,ui/widgets/t6hud/t6pausemenu/T6StartMenu_GameOptions_ZM.lua
 rawfile,ui/widgets/t6hud/t6pausemenu/t6pausemenuframe.lua
+rawfile,ui/widgets/t6hud/t6pausemenu/t6pausemenuframe_highrise.lua
 
 objective,gfl_objective_power
 objective,gfl_objective_pap
@@ -69,6 +70,7 @@ scriptparsetree,scripts/gfl/zm/zm_sub.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.csc
 scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 scriptparsetree,scripts/gfl/zm/objective.gsc
+scriptparsetree,scripts/gfl/zm/checkpoints.gsc
 
 //Frost Iceforge's BO4 Carpenter
 scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc
@@ -107,7 +109,7 @@ scriptparsetree,scripts/_ZoekMeMaar/custom_powerup_free_packapunch_with_time.csc
 xmodel,free_packapunch
 
 //timed gameplay
-scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
+scriptparsetree,scripts/gfl/zm/ugxmods_timedgp.gsc
 
 // hitmarkers
 // scriptparsetree,scripts/zm/zm_damagefeedback.gsc
@@ -183,6 +185,7 @@ image,uie_t7_zm_hud_score_vespid
 image,uie_t7_zm_hud_score_guard
 image,uie_t7_zm_hud_score_ouroboros
 image,uie_t7_zm_hud_score_dreamer
+image,uie_t7_zm_hud_score_vector
 
 image,t7_gfl_notification_hk416_gloomy
 

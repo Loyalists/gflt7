@@ -10422,30 +10422,6 @@
 	"c_t7_mp_hunter_viewlegs3_skin9" [ "t7_gfl_super_sass_viewlegs" ]
 	{
 	}
-	"c_hro_playerfemale_sgen_mpc_body" [ "t7_gfl_super_sass_fb_mp" ]
-	{
-	}
-	"c_hro_playermale_sgen_mpc_body" [ "t7_gfl_super_sass_fb_mp" ]
-	{
-	}
-	"c_hro_player_female_sgen_viewbody" [ "t7_gfl_super_sass_body" ]
-	{
-	}
-	"c_hro_player_male_sgen_viewbody" [ "t7_gfl_super_sass_body" ]
-	{
-	}
-	"c_hro_player_female_sgen_viewlegs" [ "t7_gfl_super_sass_viewlegs" ]
-	{
-	}
-	"c_hro_player_male_sgen_viewlegs" [ "t7_gfl_super_sass_viewlegs" ]
-	{
-	}
-	"c_hro_player_female_sgen_viewhands" [ "t7_gfl_super_sass_viewhands" ]
-	{
-	}
-	"c_hro_player_male_sgen_viewhands" [ "t7_gfl_super_sass_viewhands" ]
-	{
-	}
 	"c_civ_sing_police_body" [ "t7_gfl_super_sass_fb" ]
 	{
 	}

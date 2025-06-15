@@ -112,7 +112,7 @@ function on_player_spawned()
 
 function is_enabled()
 {
-	if( GetDvarInt("tfoption_player_determined_character", 0) || GetDvarInt("tfoption_randomize_character", 0) )
+	if( GetDvarInt("tfoption_player_determined_character", 0) )
 	{
 		return true;
 	}
@@ -134,21 +134,31 @@ function set_character_on_spawned()
 
 function pre_give_custom_character()
 {
-	if( GetDvarInt("tfoption_player_determined_character", 0) )
+	dvar = GetDvarInt("tfoption_player_determined_character", 0);
+	if (!dvar)
 	{
-		self save_character_customization();
+		return;
+	}
 
-		if( GetDvarInt("tfoption_randomize_character", 0) )
+	if( dvar == 1 )
+	{
+		// bots always use the first character (dempsey/m16a1)
+		if ( self IsTestClient() )
 		{
-			self set_random_character_for_bot();
+			if ( !isdefined(self.cc_bodytype) || !isdefined(self.cc_bodystyle) )
+			{
+				self set_random_character();
+			}
+
+		}
+		else
+		{
+			self save_character_customization();
 		}
 	}
 	else
 	{
-		if( GetDvarInt("tfoption_randomize_character", 0) )
-		{
-			self set_random_character();
-		}
+		self set_random_character();
 	}
 }
 
@@ -618,12 +628,6 @@ function get_character_struct_by_model()
 
 function save_character_customization()
 {
-	// bots always use the first character (dempsey/m16a1)
-	if ( self IsTestClient() )
-	{
-		return;
-	}
-
 	if ( isdefined(self.cc_bodytype) && isdefined(self.cc_bodystyle) )
 	{
 		return;
@@ -642,11 +646,6 @@ function save_character_customization()
 
 function save_character_customization_moon()
 {
-	if ( self IsTestClient() )
-	{
-		return;
-	}
-
 	if ( isdefined(self.cc_bodytype) && isdefined(self.cc_bodystyle) )
 	{
 		return;
@@ -695,16 +694,6 @@ function set_character_customization()
 	}
 
 	self set_icon(func_index);
-}
-
-function set_random_character_for_bot()
-{
-	if ( !self IsTestClient() )
-	{
-		return;
-	}
-
-	self set_random_character();
 }
 
 function set_random_character()
@@ -768,6 +757,11 @@ function get_simplified_character(name)
     if ( issubstr(name, "lenna") )
     {
         return "lenna";
+    }
+
+    if ( issubstr(name, "vector") )
+    {
+        return "vector";
     }
 
 	return name;

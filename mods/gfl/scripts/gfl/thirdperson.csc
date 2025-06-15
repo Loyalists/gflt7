@@ -86,6 +86,7 @@ function watch_for_command(localClientNum)
     self endon("death");
 
     old_dvar = GetDvarInt("gfl_thirdperson", 0);
+    old_dvar2 = GetDvarInt("gfl_thirdperson2", 0);
     while (true)
     {
         wait 0.2;
@@ -97,12 +98,23 @@ function watch_for_command(localClientNum)
         }
 
         dvar = GetDvarInt("gfl_thirdperson", 0);
-        if (old_dvar == dvar)
+        dvar2 = GetDvarInt("gfl_thirdperson2", 0);
+        if (old_dvar == dvar && old_dvar2 == dvar2)
         {
             continue;
         }
 
-        switch (dvar)
+        changed_dvar = 0;
+        if (old_dvar != dvar)
+        {
+            changed_dvar = dvar;
+        }
+        else
+        {
+            changed_dvar = dvar2;
+        }
+
+        switch (changed_dvar)
         {
         case 1:
             player notify("tps_on_notified");
@@ -115,6 +127,7 @@ function watch_for_command(localClientNum)
         }
 
         old_dvar = dvar;
+        old_dvar2 = dvar2;
     }
 }
 

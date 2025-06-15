@@ -117,6 +117,7 @@ image,uie_t7_zm_hud_score_ripper
 image,uie_t7_zm_hud_score_ro635
 image,uie_t7_zm_hud_score_st_ar15
 image,uie_t7_zm_hud_score_tac50
+image,uie_t7_zm_hud_score_vector
 image,uie_t7_zm_hud_score_vespid
 image,uie_ui_icon_minimap_zm_ai_boss
 image,uie_ui_icon_minimap_zm_ai_elite
@@ -147,6 +148,7 @@ rawfile,ui/uieditor/widgets/hud/kingslayerpowerupswidget/kingslayerpowerupslisti
 rawfile,ui/uieditor/widgets/lobby/common/s4buttonlistitem.lua
 rawfile,ui/uieditor/widgets/startmenu/startmenu_gameoptions_kf2.lua
 rawfile,ui/widgets/t6hud/t6pausemenu/t6pausemenuframe.lua
+rawfile,ui/widgets/t6hud/t6pausemenu/t6pausemenuframe_highrise.lua
 rawfile,ui/widgets/t6hud/t6pausemenu/t6startmenu_gameoptions_zm.lua
 scriptparsetree,scripts/_nsz/nsz_powerup_money.csc
 scriptparsetree,scripts/_nsz/nsz_powerup_money.gsc
@@ -159,6 +161,7 @@ scriptparsetree,scripts/gfl/zm/_zm_jup_hud.gsc
 scriptparsetree,scripts/gfl/zm/bo4_carpenter.gsc
 scriptparsetree,scripts/gfl/zm/character_mgr.csc
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
+scriptparsetree,scripts/gfl/zm/checkpoints.gsc
 scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
 scriptparsetree,scripts/gfl/zm/gameplay.csc
 scriptparsetree,scripts/gfl/zm/gameplay.gsc
@@ -168,6 +171,7 @@ scriptparsetree,scripts/gfl/zm/mule_kick_return.gsc
 scriptparsetree,scripts/gfl/zm/objective.gsc
 scriptparsetree,scripts/gfl/zm/perkplus.gsc
 scriptparsetree,scripts/gfl/zm/t8_perkloss.gsc
+scriptparsetree,scripts/gfl/zm/ugxmods_timedgp.gsc
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
 scriptparsetree,scripts/gfl/zm/zm_character.gsc
 scriptparsetree,scripts/gfl/zm/zm_counter.gsc
@@ -190,7 +194,6 @@ scriptparsetree,scripts/zm/infinityloader.gsc
 scriptparsetree,scripts/zm/roamer.gsc
 scriptparsetree,scripts/zm/tfoptions.csc
 scriptparsetree,scripts/zm/tfoptions.gsc
-scriptparsetree,scripts/zm/ugxmods_timedgp.gsc
 scriptparsetree,scripts/zm/zmsavedata.gsc
 keyvaluepairs,zm_mod
 objective,gfl_objective_pap

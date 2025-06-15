@@ -51,9 +51,6 @@
 //Custom Powerups By ZoekMeMaar
 #using scripts\_ZoekMeMaar\custom_powerup_free_packapunch_with_time;
 
-//timed gameplay
-#using scripts\zm\ugxmods_timedgp;
-
 #using scripts\zm\infinityloader;
 #using scripts\zm\roamer;
 
@@ -134,7 +131,8 @@ function autoexec auto_preload()
     level.tfoptions_default["hud"] = 0;
     level.tfoptions_default["hitmarkers_sound"] = 0;
     level.tfoptions_default["objectives"] = 0;
-    
+    level.tfoptions_default["checkpoints"] = 0;
+
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
         set_default_tfoptions();
@@ -662,11 +660,6 @@ function apply_choices() {
 
     //ROAMER MOD
     roamer::init();
-
-    //Timed Gameplay
-    if( GetDvarInt("tfoption_timed_gameplay", 0) ) {
-        thread ugxmods_timedgp::timed_gameplay();
-    }
 
     //open all doors on start
     if( GetDvarInt("tfoption_open_all_doors", 0) )

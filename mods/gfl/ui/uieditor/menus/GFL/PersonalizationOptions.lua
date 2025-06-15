@@ -28,6 +28,13 @@ local setCustomHUD = function (varNameString, newValue)
     SetGlobalModelValue("CustomHUD", newValue)
 end
 
+local setThirdperson = function (varNameString, newValue)
+    CoD.PersonalizationUtil.SetValueForOption(varNameString, newValue)
+
+    local converted = tonumber(newValue)
+    Engine.SetDvar("gfl_thirdperson2", converted)
+end
+
 DataSources.PersonalizationOptionsP1 = DataSourceHelpers.ListSetup("PersonalizationOptionsP1", function(f26_arg0)
     local f26_local0 = {}
     table.insert(f26_local0, {
@@ -60,6 +67,17 @@ DataSources.PersonalizationOptionsP1 = DataSourceHelpers.ListSetup("Personalizat
             widgetType = "tfcheckbox",
             callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
             callbackSetValueForOption = setCustomHUD,
+        },
+        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_THIRDPERSON",
+            description = "TF_THIRDPERSON_DESC",
+            profileVarName = "thirdperson",
+            widgetType = "tfcheckbox",
+            callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
+            callbackSetValueForOption = setThirdperson,
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })

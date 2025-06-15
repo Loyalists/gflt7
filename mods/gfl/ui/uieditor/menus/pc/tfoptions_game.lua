@@ -147,18 +147,18 @@ DataSources.TFOptionsGameP1 = DataSourceHelpers.ListSetup("PC.TFOptionsGameP1", 
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_THIRDPERSON",
-            description = "TF_THIRDPERSON_DESC",
-            profileVarName = "thirdperson",
+            label = "TF_OBJECTIVES",
+            description = "TF_OBJECTIVES_DESC",
+            profileVarName = "objectives",
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
     table.insert(f26_local0, {
         models = {
-            label = "TF_OBJECTIVES",
-            description = "TF_OBJECTIVES_DESC",
-            profileVarName = "objectives",
+            label = "TF_CHECKPOINTS",
+            description = "TF_CHECKPOINTS_DESC",
+            profileVarName = "checkpoints",
             widgetType = "tfcheckbox"
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties

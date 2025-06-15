@@ -44,6 +44,8 @@ function init_character_icon_table()
     level.character_icon_table["ripper"] = "uie_t7_zm_hud_score_ripper";
     level.character_icon_table["ouroboros"] = "uie_t7_zm_hud_score_ouroboros";
     level.character_icon_table["dreamer"] = "uie_t7_zm_hud_score_dreamer";
+    level.character_icon_table["vector_p1"] = "uie_t7_zm_hud_score_vector";
+    level.character_icon_table["vector_p2"] = "uie_t7_zm_hud_score_vector";
 }
 
 function init_playerlist_icon_uimodel( n_local_client )

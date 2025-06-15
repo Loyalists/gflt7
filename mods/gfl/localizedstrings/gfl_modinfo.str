@@ -168,7 +168,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE           FAQ_EYES_BAD_RENDER
-LANG_ENGLISH     "Eyes are improperly rendered in weird colors"
+LANG_ENGLISH     "Eyes improperly rendered in weird colors"
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"
@@ -224,7 +224,7 @@ LANG_TRADITIONALCHINESE         "#same"
 LANG_SIMPLIFIEDCHINESE         "#same"
 
 REFERENCE           FAQ_CUSTOM_MAPS
-LANG_ENGLISH     "Crash when loading a map"
+LANG_ENGLISH     "Crash during loading"
 LANG_GERMAN         "#same"
 LANG_SPANISH         "#same"
 LANG_RUSSIAN         "#same"

@@ -1868,6 +1868,51 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
+	"i_mtl_p7_zm_bgb_icon_in_plain_sight_c" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "model_export\\t7_gfl\\global\\bgb\\in_plain_sight.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed high color"
+		"coreSemantic" "sRGB3chAlpha"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "0"
+		"noPicMip" "0"
+		"premulAlpha" "0"
+		"semantic" "diffuseMap"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
 	"i_specialty_ads_zombies" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
@@ -5365,6 +5410,26 @@
 	"t7_menu_zm_loadscreen_prison" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
 		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_prison.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"i_mtl_p7_zm_bgb_icon_unbearable_c" [ "i_mtl_p7_zm_bgb_icon_in_plain_sight_c" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\bgb\\unbearable.png"
+		"coreSemantic" "sRGB3chAlpha"
+	}
+	"t7_menu_choosespecialist_default_vector" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_vector.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_vector" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_vector.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_vector" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "model_export\\t7_gfl\\global\\chibi\\vector.png"
 		"coreSemantic" "Linear4ch"
 	}
 }

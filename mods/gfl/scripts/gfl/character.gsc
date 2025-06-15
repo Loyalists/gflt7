@@ -35,6 +35,8 @@ function init_character_table()
 	level.charactertable["generic"]["lenna_ssr"] = &swap_to_lenna_ssr;
 	level.charactertable["generic"]["macqiato"] = &swap_to_macqiato;
 	level.charactertable["generic"]["centaureissi"] = &swap_to_centaureissi;
+	level.charactertable["generic"]["vector_p1"] = &swap_to_vector_p1;
+	level.charactertable["generic"]["vector_p2"] = &swap_to_vector_p2;
 
 	level.charactertable["sf"] = [];
 	level.charactertable["sf"]["vespid"] = &swap_to_vespid;
@@ -279,6 +281,20 @@ function swap_to_centaureissi()
 {
 	self detachall();
 	self setmodel("t7_gfl_centaureissi_fb");
+	self thread character_util::set_character_name();
+}
+
+function swap_to_vector_p1()
+{
+	self detachall();
+	self setmodel("t7_gfl_vector_p1_fb");
+	self thread character_util::set_character_name();
+}
+
+function swap_to_vector_p2()
+{
+	self detachall();
+	self setmodel("t7_gfl_vector_p2_fb");
 	self thread character_util::set_character_name();
 }
 
