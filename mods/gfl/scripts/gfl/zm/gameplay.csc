@@ -54,7 +54,14 @@ function player_screen_cos(localClientNum)
     for(;;)
     {
         speed = self calculate_2D_speed(localClientNum);
-        SetUIModelValue( UpdateHudfire, "" + speed[0] + "," + speed[1] );
+        if (isdefined(speed))
+        {
+            SetUIModelValue( UpdateHudfire, "" + speed[0] + "," + speed[1] );
+        }
+        else
+        {
+            SetUIModelValue( UpdateHudfire, "1" );
+        }
         waitrealtime(0.1);
     }
 }
@@ -62,11 +69,15 @@ function player_screen_cos(localClientNum)
 function calculate_2D_speed(localClientNum)
 {
     view_pos_3D = self.viewpos;
-    
-    pos_2D = Project3Dto2D(localClientNum,view_pos_3D);
+    if (!isdefined(view_pos_3D))
+    {
+        return undefined;
+    }
+
+    pos_2D = Project3Dto2D(localClientNum, view_pos_3D);
     speed_2D_x = pos_2D[0] - 640;
     speed_2D_y = pos_2D[1] - 360;
-    return (speed_2D_x ,speed_2D_y ,0);
+    return (speed_2D_x, speed_2D_y, 0);
 }
 
 function viewpos_update(localClientNum)
