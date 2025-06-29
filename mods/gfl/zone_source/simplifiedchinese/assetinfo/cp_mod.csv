@@ -1,5 +1,0 @@
-index,type,name,resident,streamed,parentStack
-1,string,,0,0,||assetlist
-2,sound,cp_mod.en,38,0,||assetlist
-3,keyvaluepairs,sc_cp_mod,1117,0,||assetlist
-4,assetlist,,32,0,
