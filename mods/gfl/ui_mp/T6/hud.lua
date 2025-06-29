@@ -99,9 +99,37 @@ local function AddCustomHUDElements_Zombie(menu, controller)
     -- local self = menu:getParent()
     local self = menu
     local parent = menu:getParent()
-	if Engine.DvarInt(nil, "personalization_hud") ~= 0 then
-        self:setupHUDShaker()
-	end
+
+    if Engine.DvarInt(nil, "personalization_hud") ~= 0 then
+        menu:setupHUDShaker()
+        menu:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.hud_offset" ), function(model)
+            local ModelValue = Engine.GetModelValue( model )
+            if ModelValue then
+                if tonumber(ModelValue) == 1 then
+                    menu:beginAnimation( "keyframe",150, true, true, CoD.TweenType.Linear )
+                    menu:setYRot(0)
+                    menu:setXRot(0)
+                    menu:setLeftRight( true, false, 0, 1280 )
+                    menu:setTopBottom( true, false, 0 , 720 )
+                else					
+                    local data_array = LUI.splitString( ModelValue, ",")
+                    if data_array then
+                        local data1 = tonumber(data_array[1])
+                        local data2 = tonumber(data_array[2])
+                        local x = GetMaxScreenOffsetLeft(data1) * tonumber(Engine.DvarString(nil, "offset_x_mut"))
+                        local y = GetMaxScreenOffset(data2) * tonumber(Engine.DvarString(nil, "offset_y_mut"))
+                        local yrot = GetMaxScreenRotLeft(data1) * tonumber(Engine.DvarString(nil, "rot_y_mut"))
+                        local xrot = GetMaxScreenRot(data2) * tonumber(Engine.DvarString(nil, "rot_x_mut"))
+                        menu:beginAnimation( "keyframe",100, true, true, CoD.TweenType.Linear )
+                        menu:setXRot(xrot)
+                        menu:setYRot(yrot)
+                        menu:setLeftRight( true, false, 0 + x, 1280 + x )
+                        menu:setTopBottom( true, false, 0 + y, 720 + y )
+                    end
+                end
+            end
+        end)
+    end
 
     local ZMNotificationContainer = CoD.ZMNotificationContainer.new(menu, controller)
     -- if Engine.GetCurrentMap() == "zm_log_kowloon" then
@@ -263,8 +291,8 @@ function HUD_FirstSnapshot_Common(f40_arg0, f40_arg1)
     end
 end
 
-function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
-	CoD.GameMessages.AddSubtitlesWindow( f52_arg0, {
+function HUD_FirstSnapshot_Zombie( menu, controller )
+	CoD.GameMessages.AddSubtitlesWindow( menu, {
 		leftAnchor = true,
 		rightAnchor = true,
 		left = 0,
@@ -278,12 +306,12 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
 	self:setLeftRight( true, true, 0, 0 )
 	self:setTopBottom( true, true, 0, 0 )
 	self:sizeToSafeArea()
-	f52_arg0:addForceClosedChild( self )
+	menu:addForceClosedChild( self )
 	if CoD.Zombie.IsDLCMap( CoD.Zombie.DLC3Maps ) then
 		self:registerEventHandler( "time_bomb_hud_toggle", HUD_ToggleZombieHudContainer )
 	end
 	f0_local10()
-	if f52_arg0.T7HudMenuGameMode == nil then
+	if menu.T7HudMenuGameMode == nil then
 		local powerupsArea = Engine.GetCurrentMap()
 		local hudName
 		if powerupsArea == "zm_zod" then
@@ -300,10 +328,10 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
             createHud = LUI.createMenu.T7Hud_zm_dlc5
         end
 
-        f52_arg0.T7HudMenuGameMode = createHud( f52_arg1.controller )
+        menu.T7HudMenuGameMode = createHud( controller.controller )
 	else
-		f52_arg0.T7HudMenuGameMode:setAlpha( 1 )
-		local powerupsArea = Engine.GetModelForController( f52_arg1.controller )
+		menu.T7HudMenuGameMode:setAlpha( 1 )
+		local powerupsArea = Engine.GetModelForController( controller.controller )
 		if powerupsArea then
 			powerupsArea = Engine.GetModel( powerupsArea, "hudItems.playerSpawned" )
 		end
@@ -311,9 +339,9 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
 			Engine.SetModelValue( powerupsArea, true )
 		end
 	end
-	f52_arg0:addElement( f52_arg0.T7HudMenuGameMode )
+	menu:addElement( menu.T7HudMenuGameMode )
 	
-	local powerupsArea = LUI.createMenu.PowerUpsArea( f52_arg1.controller )
+	local powerupsArea = LUI.createMenu.PowerUpsArea( controller.controller )
 	self:addElement( powerupsArea )
 	self.powerupsArea = powerupsArea
 	
@@ -333,21 +361,21 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
         end
     end
 
-    f52_arg0:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "CustomHUD" ), function(model)
+    menu:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "CustomHUD" ), function(model)
         local ModelValue = Engine.GetModelValue(model)
         if ModelValue then
             ResetPowerupsAreaVisibility()
         end
     end)
 
-    f52_arg0:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "CustomHUD" ), function(model)
+    menu:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "CustomHUD" ), function(model)
         local ModelValue = Engine.GetModelValue(model)
         if ModelValue then
             ResetPowerupsAreaVisibility()
         end
     end)
 
-    f52_arg0:subscribeToGlobalModel(f52_arg1, "PerController", "scriptNotify", function(model)
+    menu:subscribeToGlobalModel(controller, "PerController", "scriptNotify", function(model)
         if not IsParamModelEqualToString(model, "zm_jup_hud_reset") then
             return
         end
@@ -358,18 +386,18 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
     ResetPowerupsAreaVisibility()
 
 	if CoD.isZombie == true and Mods_IsUsingMods() then
-		local f52_local2 = CoD.Console.new( f52_arg0, f52_arg1.controller )
+		local f52_local2 = CoD.Console.new( menu, controller.controller )
 		f52_local2:setLeftRight( true, false, 39, 809 )
 		f52_local2:setTopBottom( false, true, -160, -20 )
 		f52_local2:setAlpha( 1 )
-		f52_arg0:addElement( f52_local2 )
-		f52_arg0.Console = f52_local2
+		menu:addElement( f52_local2 )
+		menu.Console = f52_local2
 	end
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.powerupsArea:close()
 	end )
 	if not Engine.IsSplitscreen() then
-		CoD.GameMessages.AddObituaryWindow( f52_arg0, {
+		CoD.GameMessages.AddObituaryWindow( menu, {
 			leftAnchor = true,
 			rightAnchor = false,
 			left = 13,
@@ -378,8 +406,9 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
 			bottomAnchor = true,
 			top = -220 - CoD.textSize.ExtraSmall,
 			bottom = -220
-		}, f52_arg1.controller )
-		CoD.GameMessages.BoldGameMessagesWindow( f52_arg0, {
+		}, controller.controller )
+
+		CoD.GameMessages.BoldGameMessagesWindow( menu, {
 			leftAnchor = false,
 			rightAnchor = false,
 			left = 0,
@@ -388,10 +417,11 @@ function HUD_FirstSnapshot_Zombie( f52_arg0, f52_arg1 )
 			bottomAnchor = false,
 			top = 50,
 			bottom = 50 + CoD.textSize.Default
-		}, f52_arg1.controller )
+		}, controller.controller )
 	end
-	CoD.DemoUtility.AddHUDWidgets( f52_arg0, f52_arg1 )
-	if f52_arg0.occludedBy and CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f52_arg1.controller ) == "PLATFORM_PROFILE_CHANGE_MESSAGE" then
+
+	CoD.DemoUtility.AddHUDWidgets( menu, controller )
+	if menu.occludedBy and CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( controller.controller ) == "PLATFORM_PROFILE_CHANGE_MESSAGE" then
 		LuaUtils.MessageDialogForceSubscriptionFire( true )
 	end
 end

@@ -332,3 +332,58 @@ function SendChatNotifyResponse( controller, sending_Text )
 	Engine.SendMenuResponse(controller, "popup_leavegame", "ChatNotify" .. "…" .. string.gsub(tostring(sending_Text), " ", "¨"))
 end
 
+function GetMaxScreenRotLeft(rot)
+    if Engine.DvarInt(nil, "rot_y_na") == 1 then
+        rot = 0 - rot
+    end
+    local rot_set = Engine.DvarInt(nil, "rot_y")
+    if rot > rot_set then
+        rot = rot_set
+    end
+    if rot < 0 - rot_set then
+        rot = 0 - rot_set
+    end
+    return rot
+end
+
+function GetMaxScreenRot(rot)
+    if Engine.DvarInt(nil, "rot_x_na") == 1 then
+        rot = 0 - rot
+    end
+    local rot_set = Engine.DvarInt(nil, "rot_x")
+    if rot > rot_set then
+        rot = rot_set
+    end
+    if rot < 0 - rot_set then
+        rot = 0 - rot_set
+    end
+    return rot
+end
+
+function GetMaxScreenOffset(offset)
+    if Engine.DvarInt(nil, "offset_y_na") == 1 then
+        offset = 0 - offset
+    end
+    local offset_set = Engine.DvarInt(nil, "offset_y")
+    if offset > offset_set then
+        offset = offset_set
+    end
+    if offset < 0 - offset_set then
+        offset = 0 - offset_set
+    end
+    return offset
+end
+
+function GetMaxScreenOffsetLeft(offset)    
+    if Engine.DvarInt(nil, "offset_x_na") == 1 then
+        offset = 0 - offset
+    end
+    local offset_set = Engine.DvarInt(nil, "offset_x")
+    if offset > offset_set then
+        offset = offset_set
+    end
+    if offset < 0 - offset_set then
+        offset = 0 - offset_set
+    end
+    return offset
+end

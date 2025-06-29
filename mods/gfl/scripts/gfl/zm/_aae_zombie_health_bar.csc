@@ -13,6 +13,8 @@ REGISTER_SYSTEM_EX( "aae_zombie_health_bar", &__init__, &__main__, undefined )
 
 function private __init__()
 {
+	level.elmg_enemies = [];
+	ai::add_ai_spawn_function( &on_ai_spawned );
     ai::add_ai_spawn_function( &zombie_health_bar_spawn );
 	callback::on_localplayer_spawned(&check_near_zombie);
 	// callback::on_localplayer_spawned(&clear_health_bar);
@@ -120,6 +122,21 @@ function get_zombie_that_player_sees()
 	}
 
 	return ArrayGetClosest(player_cam,new_zombies,250);
+}
+
+function on_ai_spawned( localClientNum )
+{
+	self endon("death");
+	self endon("entityshutdown");
+
+	ArrayInsert(level.elmg_enemies, self, level.elmg_enemies.size);
+	self thread remove_on_death();
+}
+
+function remove_on_death()
+{
+	self util::waittill_any("death", "entityshutdown");
+	ArrayRemoveValue(level.elmg_enemies,self);
 }
 
 function zombie_health_bar_spawn( localClientNum )

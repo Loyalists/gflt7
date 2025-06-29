@@ -5,6 +5,7 @@ for i = 0, Engine.GetMaxControllerCount() - 1, 1 do
     Engine.CreateModel(hudItems, "ThirdpersonCrosshair")
     Engine.CreateModel(hudItems, "CharacterPopup")
     Engine.CreateModel(hudItems, "spawn_actor_healthbar")
+    Engine.CreateModel( hudItems, "hud_offset" )
 end
 Engine.CreateModel( Engine.GetGlobalModel(), "CustomHUD" )
 

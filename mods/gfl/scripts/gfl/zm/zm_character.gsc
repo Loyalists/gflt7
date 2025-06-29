@@ -382,7 +382,7 @@ function create_ump45()
 	obj.bodytype = 12;
 	obj.bodystyle = 0;
 	obj.id = "ump45";
-	obj.keywords = array();
+	obj.keywords = array("leva");
 	obj.name = "UMP45";
 	return obj;
 }

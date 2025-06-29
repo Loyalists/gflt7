@@ -9,6 +9,7 @@ user_aliases.csv
 
 _ignored
 _backup
+**/assetinfo/
 .vscode
 # model_export/
 mods/gfl/sound/zone/
