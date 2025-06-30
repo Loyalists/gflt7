@@ -51,6 +51,7 @@ local CustomMapImageTable = {
 	["zm_sanctuary"] = "t7_menu_zm_loadscreen_sanctuary",
 	["zm_rig"] = "t7_menu_zm_loadscreen_neptune",
 	["zm_prison"] = "t7_menu_zm_loadscreen_prison",
+	["zm_nuked"] = "t7_menu_zm_loadscreen_nuketown",
 }
 
 local IntroMovieDisabledMaps = {
@@ -92,6 +93,7 @@ local IntroMovieDisabledMaps = {
 	["zm_sanctuary"] = true,
 	["zm_rig"] = true,
 	["zm_prison"] = true,
+	["zm_nuked"] = true,
 }
 
 local function GetCustomMapImage( mapName )

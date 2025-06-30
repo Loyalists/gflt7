@@ -1826,7 +1826,7 @@
 	"i_gfl_victory" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\t7_gfl_victory.png"
+		"baseImage" "texture_assets\\t7_gfl\\t7_gfl_victory.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -1871,7 +1871,7 @@
 	"i_mtl_p7_zm_bgb_icon_in_plain_sight_c" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\bgb\\in_plain_sight.png"
+		"baseImage" "texture_assets\\t7_gfl\\bgb\\in_plain_sight.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -1916,7 +1916,7 @@
 	"i_specialty_ads_zombies" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\perk\\ui_icon_perks_zm_deadshot_classic.png"
+		"baseImage" "texture_assets\\t7_gfl\\perk\\ui_icon_perks_zm_deadshot_classic.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -3785,7 +3785,7 @@
 	"i_specialty_three_guns_zombies" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\perk\\ui_icon_perks_zm_mulekick.png"
+		"baseImage" "texture_assets\\t7_gfl\\perk\\ui_icon_perks_zm_mulekick.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -3821,6 +3821,51 @@
 		"noMipMaps" "1"
 		"noPicMip" "1"
 		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "1"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"t7_cp_hud_commswidget_diaz" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_diaz.tiff"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "0"
+		"premulAlpha" "0"
 		"semantic" "2d"
 		"streamable" "1"
 		"textureAtlasColumnCount" "1"
@@ -3965,7 +4010,7 @@
 	"t7_gfl_chibi_m16a1" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\m16a1.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\m16a1.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4010,7 +4055,7 @@
 	"t7_gfl_notification_hk416_gloomy" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\notification\\hkGloomy.png"
+		"baseImage" "texture_assets\\t7_gfl\\notification\\hkGloomy.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4055,7 +4100,7 @@
 	"t7_menu_choosespecialist_default_g11" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_g11.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_g11.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4100,7 +4145,7 @@
 	"t7_menu_choosespecialist_default_prophet" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_prophet.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_prophet.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4145,7 +4190,7 @@
 	"t7_menu_cp_front_end_mapvote_eth_prologue" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_indoorfight.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_indoorfight.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4190,7 +4235,7 @@
 	"t7_menu_gfl_loadscreen_command_room" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_command_room.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_command_room.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4235,7 +4280,7 @@
 	"t7_menu_mp_hero_background_with_blackmarket" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_blackmarket.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_blackmarket.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4280,7 +4325,7 @@
 	"t7_menu_mp_hero_background_with_g11" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_g11.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_g11.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4325,7 +4370,7 @@
 	"t7_menu_zm_loadscreen_sumpf" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_sumpf.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_sumpf.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4370,7 +4415,7 @@
 	"t7_mp_loadingportrait_weapon_battery" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_battery.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_battery.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4414,37 +4459,37 @@
 	}
 	"t7_mp_loadingportrait_weapon_blackmarket" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_blackmarket.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_blackmarket.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_weapon_firebreak" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_firebreak.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_firebreak.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_weapon_nomad" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_nomad.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_nomad.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_weapon_outrider" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_outrider.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_outrider.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_weapon_prophet" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_prophet.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_prophet.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_weapon_reaper" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_reaper.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_reaper.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_weapon_ruin" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_ruin.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_ruin.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_ability_ruin" [ "t7_mp_loadingportrait_weapon_ruin" ]
@@ -4453,7 +4498,7 @@
 	}
 	"t7_menu_mp_hero_background_with_spectre" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_ump45.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_ump45.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_spectre" [ "t7_menu_mp_hero_background_with_spectre" ]
@@ -4462,42 +4507,42 @@
 	}
 	"t7_menu_mp_hero_background_with_enforcer" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_enforcer.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_enforcer.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_firebreak" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_firebreak.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_firebreak.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_grenadier" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_grenadier.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_grenadier.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_mercenary" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_mercenary.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_mercenary.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_outrider" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_outrider.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_outrider.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_reaper" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_reaper.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_reaper.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_technomancer" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_technomancer.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_technomancer.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_trapper" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_trapper.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_trapper.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_enforcer" [ "t7_menu_mp_hero_background_with_enforcer" ]
@@ -4518,7 +4563,7 @@
 	}
 	"t7_mp_loadingportrait_weapon_seraph" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_seraph.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_seraph.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_ability_blackmarket" [ "t7_mp_loadingportrait_weapon_blackmarket" ]
@@ -4551,7 +4596,7 @@
 	}
 	"t7_mp_loadingportrait_weapon_spectre" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_spectre.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_spectre.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_ability_spectre" [ "t7_mp_loadingportrait_weapon_spectre" ]
@@ -4560,47 +4605,47 @@
 	}
 	"t7_menu_choosespecialist_default_battery" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_battery.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_battery.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_blackmarket" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_blackmarket.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_blackmarket.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_firebreak" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_firebreak.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_firebreak.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_nomad" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_nomad.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_nomad.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_outrider" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_outrider.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_outrider.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_reaper" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_reaper.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_reaper.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_ruin" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_ruin.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_ruin.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_seraph" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_seraph.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_seraph.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_spectre" [ "t7_menu_choosespecialist_default_prophet" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_spectre.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_spectre.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_locked_blackmarket" [ "t7_menu_choosespecialist_default_blackmarket" ]
@@ -4630,7 +4675,7 @@
 	"uie_img_t7_menu_frontend_asset_bo3logo" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "model_export\\t7_gfl\\global\\gfl_logo.png"
+		"baseImage" "texture_assets\\t7_gfl\\gfl_logo.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4674,407 +4719,407 @@
 	}
 	"t7_menu_mp_hero_background_with_9a91" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_9a91.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_9a91.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_m16a1" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_m16a1.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_m16a1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_mp7" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_mp7.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_mp7.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_suomi" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_suomi.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_suomi.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_vepley" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_vepley.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_vepley.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_9a91" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_9a91.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_9a91.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_mp7" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_mp7.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_mp7.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_suomi" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_suomi.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_suomi.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_vepley" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_vepley.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_vepley.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_m16a1" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_m16a1.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_m16a1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_negev" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_negev.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_negev.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_negev" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_negev.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_negev.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_ak12" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ak12.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\ak12.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_hk416" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\hk416.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\hk416.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_mp7" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\mp7.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\mp7.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_suomi" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\suomi.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\suomi.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_tololo" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\tololo.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\tololo.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_type89" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\type89.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\type89.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_vepley" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\vepley.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\vepley.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_p90" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\p90.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\p90.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_ump45" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ump45.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\ump45.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_negev" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\negev.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\negev.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_super_sass" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\super_sass.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\super_sass.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_g11" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\g11.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\g11.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_9a91" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\9a91.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\9a91.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_m4_sopmod_ii" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\m4_sopmod_ii.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\m4_sopmod_ii.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"img_loadscreen_zm_factory" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\img_loadscreen_zm_factory.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\img_loadscreen_zm_factory.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_cosmodrome" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_cosmodrome.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_cosmodrome.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_theater" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_theater.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_theater.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_moon" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_moon.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_moon.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_mp_loadingportrait_ability_battery" [ "t7_mp_loadingportrait_weapon_battery" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadingportrait\\t7_mp_loadingportrait_weapon_battery.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadingportrait\\t7_mp_loadingportrait_weapon_battery.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_bus_depot" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_bus_depot.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_bus_depot.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_dlc3" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_dlc3.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_dlc3.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_desert" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_desert.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_desert.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_city" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_city.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_city.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_city2" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_city2.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_city2.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_berlinstreet_dream" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_berlinstreet_dream.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_berlinstreet_dream.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_2019summer_4_1" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_2019summer_4_1.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_2019summer_4_1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_snowmountain" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_snowmountain.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_snowmountain.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_metro" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_metro.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_metro.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_city_burning" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_city_burning.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_city_burning.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_m4a1" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_m4a1.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_m4a1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_tower" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_tower.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_tower.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_indoorfight" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_indoorfight.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_indoorfight.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_gfl_loadscreen_base" [ "t7_menu_gfl_loadscreen_command_room" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_gfl_loadscreen_base.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_gfl_loadscreen_base.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_castle" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_castle.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_castle.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_zod" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_zod.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_zod.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_giant" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_giant.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_giant.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_cotd" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_cotd.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_cotd.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_island" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_island.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_island.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_tomb" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_tomb.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_tomb.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_genesis" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_genesis.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_genesis.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_prototype" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_prototype.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_prototype.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_classified" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_classified.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_classified.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_tuvong" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_tuvong.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_tuvong.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_sh_cairo" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_sh_mobile" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_sh_singapore" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_command_room.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_cairo_aquifer" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_desert.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_desert.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_cairo_infection" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_snowmountain.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_snowmountain.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_cairo_lotus" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_tower.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_tower.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_cairo_ramses" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_base.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_base.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_cairo_ramses2" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_base.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_base.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_sing_biodomes" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_city2.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_city2.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_sing_blackstation" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_berlinstreet_dream.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_berlinstreet_dream.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_sing_sgen" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_metro.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_metro.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_sing_vengeance" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_city_burning.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_city_burning.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_zurich_coalescence" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_2019summer_4_1.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_2019summer_4_1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_cp_front_end_mapvote_zurich_newworld" [ "t7_menu_cp_front_end_mapvote_eth_prologue" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\mapvote\\t7_menu_gfl_loadscreen_city.png"
+		"baseImage" "texture_assets\\t7_gfl\\mapvote\\t7_menu_gfl_loadscreen_city.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_ro635" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ro635.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\ro635.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_st_ar15" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\st_ar15.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\st_ar15.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_tac50" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\tac50.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\tac50.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_rfb" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\rfb.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\rfb.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_an94" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\an94.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\an94.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_dima" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\dima.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\dima.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_lenna" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\lenna.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\lenna.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_macqiato" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\macqiato.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\macqiato.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_m16a1_prime" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\m16a1_prime.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\m16a1_prime.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_m4a1" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\m4a1.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\m4a1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_g36c" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\g36c.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\g36c.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_centaureissi" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\centaureissi.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\centaureissi.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"uie_ui_icon_minimap_zm_ai_normal" ( "image.gdf" )
@@ -5184,172 +5229,172 @@
 	}
 	"t7_menu_choosespecialist_default_m4a1" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_m4a1.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_m4a1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_an94" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_an94.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_an94.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_centaureissi" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_centaureissi.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_centaureissi.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_st_ar15" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_st_ar15.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_st_ar15.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_rfb" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_rfb.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_rfb.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_st_ar15" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_st_ar15.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_st_ar15.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_rfb" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_rfb.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_rfb.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_m4a1" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_m4a1.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_m4a1.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_centaureissi" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_centaureissi.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_centaureissi.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_an94" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_an94.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_an94.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_m16a1_sf" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_m16a1_sf.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_m16a1_sf.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_m16a1_sf" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_m16a1_sf.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_m16a1_sf.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_wa2000" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_wa2000.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_wa2000.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_wa2000" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_wa2000.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_wa2000.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_lenna" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_lenna.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_lenna.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_lenna" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_lenna.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_lenna.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_g36c" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_g36c.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_g36c.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_g36c" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_g36c.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_g36c.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_dima" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_dima.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_dima.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_dima" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_dima.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_dima.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_sf" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_sf.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_sf.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_jaeger" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_jaeger.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_jaeger.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_jaeger" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\jaeger.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\jaeger.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_ripper" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ripper.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\ripper.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_vespid" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\vespid.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\vespid.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_guard" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\guard.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\guard.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_ouroboros" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\ouroboros.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\ouroboros.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_dreamer" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\dreamer.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\dreamer.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_wing" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_wing.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_wing.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_dreamer" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_dreamer.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_dreamer.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_guard" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_guard.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_guard.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_ripper" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_ripper.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_ripper.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_choosespecialist_default_vespid" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_vespid.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_vespid.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_sanctuary" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_sanctuary.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_sanctuary.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"uie_t7_menu_gfl_welcome_characters" ( "image.gdf" )
@@ -5399,37 +5444,1758 @@
 	}
 	"t7_menu_zm_loadscreen_neptune" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_neptune.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_neptune.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_town" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_town.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_town.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_prison" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\loadscreen\\t7_menu_zm_loadscreen_prison.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_prison.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"i_mtl_p7_zm_bgb_icon_unbearable_c" [ "i_mtl_p7_zm_bgb_icon_in_plain_sight_c" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\bgb\\unbearable.png"
+		"baseImage" "texture_assets\\t7_gfl\\bgb\\unbearable.png"
 		"coreSemantic" "sRGB3chAlpha"
 	}
 	"t7_menu_choosespecialist_default_vector" [ "t7_menu_choosespecialist_default_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\choosespecialist\\t7_menu_choosespecialist_default_vector.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_vector.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_vector" [ "t7_menu_mp_hero_background_with_g11" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\t7_menu_mp_hero_background_with_vector.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_vector.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_gfl_chibi_vector" [ "t7_gfl_chibi_m16a1" ]
 	{
-		"baseImage" "model_export\\t7_gfl\\global\\chibi\\vector.png"
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\vector.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_egypt" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_egypt.tiff"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_gohxiulan" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_gohxiulan.tiff"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_hendricks" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_hendricks.tif"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_khalil" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_khalil.tiff"
+	}
+	"t7_cp_hud_commswidget_maretti" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_maretti.tiff"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_rachel" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_rachel.tif"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_rachel_sing" [ "t7_cp_hud_commswidget_rachel" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_sarah" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_sarah.tiff"
+	}
+	"t7_cp_hud_commswidget_taylor" [ "t7_cp_hud_commswidget_diaz" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_taylor.tiff"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_cp_hud_commswidget_vtolpilot" [ "t7_cp_hud_commswidget_egypt" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_9a91" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_9a91.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_an94" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_an94.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_centaureissi" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_centaureissi.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_char1" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_ak12.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_char2" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_type89.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_char3" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_m16a1.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_char4" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_hk416.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_char5_mask" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_vepley.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_dima" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_dima.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_dreamer" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_dreamer.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_g11" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_g11.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_g36c" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_g36c.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_guard" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_guard.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_jaeger" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_jaeger.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_lenna" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_lenna.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_m4_sopmod_ii" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_m4_sopmod_ii.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_m4a1" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_m4a1.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_macqiato" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_macqiato.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_mp7" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_mp7.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_negev" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_negev.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_ouroboros" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_ouroboros.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_p90" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_p90.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_rfb" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_rfb.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_ripper" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_ripper.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_ro635" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_ro635.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_st_ar15" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_st_ar15.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_suomi" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_suomi.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_super_sass" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_super_sass.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_tac50" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_tac50.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_tololo" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_tololo.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_ump45" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_ump45.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_vector" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_vector.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_vepley" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_vepley.tif"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_vespid" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_vespid.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"uie_t7_zm_hud_score_char1_gold_helmet" [ "uie_t7_zm_hud_score_char1" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char1_helmet" [ "uie_t7_zm_hud_score_char1" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char1_mask" [ "uie_t7_zm_hud_score_char1" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char1_old" [ "uie_t7_zm_hud_score_char1" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char1_old_helmet" [ "uie_t7_zm_hud_score_char1" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char2_gold_helmet" [ "uie_t7_zm_hud_score_char2" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char2_helmet" [ "uie_t7_zm_hud_score_char2" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char2_mask" [ "uie_t7_zm_hud_score_char2" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char2_old" [ "uie_t7_zm_hud_score_char2" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char2_old_helmet" [ "uie_t7_zm_hud_score_char2" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char3_gold_helmet" [ "uie_t7_zm_hud_score_char3" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char3_helmet" [ "uie_t7_zm_hud_score_char3" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char3_mask" [ "uie_t7_zm_hud_score_char3" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char3_old" [ "uie_t7_zm_hud_score_char3" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char3_old_helmet" [ "uie_t7_zm_hud_score_char3" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char4_gold_helmet" [ "uie_t7_zm_hud_score_char4" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char4_helmet" [ "uie_t7_zm_hud_score_char4" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char4_mask" [ "uie_t7_zm_hud_score_char4" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char4_old" [ "uie_t7_zm_hud_score_char4" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char4_old_helmet" [ "uie_t7_zm_hud_score_char4" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char5" [ "uie_t7_zm_hud_score_vepley" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char5_gold_helmet" [ "uie_t7_zm_hud_score_vepley" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char5_helmet" [ "uie_t7_zm_hud_score_vepley" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char6" [ "uie_t7_zm_hud_score_suomi" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char6_gold_helmet" [ "uie_t7_zm_hud_score_suomi" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char6_helmet" [ "uie_t7_zm_hud_score_suomi" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char6_mask" [ "uie_t7_zm_hud_score_suomi" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char7" [ "uie_t7_zm_hud_score_mp7" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char7_gold_helmet" [ "uie_t7_zm_hud_score_mp7" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char7_helmet" [ "uie_t7_zm_hud_score_mp7" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char7_mask" [ "uie_t7_zm_hud_score_mp7" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char8" [ "uie_t7_zm_hud_score_tololo" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char8_gold_helmet" [ "uie_t7_zm_hud_score_tololo" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char8_helmet" [ "uie_t7_zm_hud_score_tololo" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_char8_mask" [ "uie_t7_zm_hud_score_tololo" ]
+	{
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_zm_loadscreen_nuketown" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_nuketwon.png"
 		"coreSemantic" "Linear4ch"
 	}
 }
