@@ -25,12 +25,11 @@ function init_character_table()
 	level.charactertable["generic"]["super_sass"] = &swap_to_super_sass;
 	level.charactertable["generic"]["g36c"] = &swap_to_g36c;
 	level.charactertable["generic"]["negev"] = &swap_to_negev;
-	// level.charactertable["generic"]["g11"] = &swap_to_g11;
 	level.charactertable["generic"]["mishty"] = &swap_to_mishty;
 	level.charactertable["generic"]["tololo"] = &swap_to_tololo;
 	// level.charactertable["generic"]["vepley"] = &swap_to_vepley;
 	level.charactertable["generic"]["vepley_backpack"] = &swap_to_vepley_backpack;
-	level.charactertable["generic"]["an94"] = &swap_to_an94;
+	level.charactertable["generic"]["alva"] = &swap_to_alva;
 	// level.charactertable["generic"]["lenna"] = &swap_to_lenna;
 	level.charactertable["generic"]["lenna_ssr"] = &swap_to_lenna_ssr;
 	level.charactertable["generic"]["macqiato"] = &swap_to_macqiato;
@@ -193,13 +192,6 @@ function swap_to_negev()
 	self thread character_util::set_character_name();
 }
 
-function swap_to_g11()
-{
-	self detachall();
-	self setmodel("t7_gfl_g11_fb");
-	self thread character_util::set_character_name();
-}
-
 function swap_to_mishty()
 {
 	self detachall();
@@ -242,10 +234,10 @@ function swap_to_dima()
 	self thread character_util::set_character_name();
 }
 
-function swap_to_an94()
+function swap_to_alva()
 {
 	self detachall();
-	self setmodel("t7_gfl_an94_fb");
+	self setmodel("t7_gfl_alva_fb");
 	self thread character_util::set_character_name();
 }
 

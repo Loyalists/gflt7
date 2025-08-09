@@ -4944,7 +4944,7 @@
 	}
 	"t7_menu_zm_loadscreen_castle" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_castle.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_castle_new.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_zod" [ "t7_menu_zm_loadscreen_sumpf" ]
@@ -4969,7 +4969,7 @@
 	}
 	"t7_menu_zm_loadscreen_tomb" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
-		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_tomb.png"
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_tomb_new.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_zm_loadscreen_genesis" [ "t7_menu_zm_loadscreen_sumpf" ]

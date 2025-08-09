@@ -129,7 +129,7 @@ function create_an94()
 	obj.bodytype = 1;
 	obj.bodystyle = 3;
 	obj.id = "an94";
-	obj.keywords = array();
+	obj.keywords = array("alva");
 	obj.name = "AN-94";
 	return obj;
 }

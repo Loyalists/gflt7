@@ -18995,22 +18995,4 @@
 		"glossRangeMax" "4.0"
 		"glossRangeMin" "0.0"
 	}
-	"c_t7_mp_hunter_mpc_body1_skin5" [ "t7_gfl_an94_fb_mp" ]
-	{
-	}
-	"c_t7_mp_hunter_viewarms1_skin5" [ "t7_gfl_an94_viewhands" ]
-	{
-	}
-	"c_t7_mp_hunter_viewlegs1_skin5" [ "t7_gfl_an94_viewlegs" ]
-	{
-	}
-	"c_t7_mp_gunslinger_mpc_body1_skin4" [ "t7_gfl_an94_fb_mp" ]
-	{
-	}
-	"c_t7_mp_gunslinger_viewarms1_skin4" [ "t7_gfl_an94_viewhands" ]
-	{
-	}
-	"c_t7_mp_gunslinger_viewlegs1_skin4" [ "t7_gfl_an94_viewlegs" ]
-	{
-	}
 }

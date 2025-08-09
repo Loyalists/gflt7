@@ -426,7 +426,7 @@ xmodel,t7_gfl_tololo_fb
 xmodel,t7_gfl_vepley_fb
 xmodel,t7_gfl_vepley_backpack_fb
 xmodel,t7_gfl_dima_fb
-xmodel,t7_gfl_an94_fb
+//xmodel,t7_gfl_an94_fb
 xmodel,t7_gfl_lenna_base_fb
 xmodel,t7_gfl_lenna_ssr_fb
 xmodel,t7_gfl_macqiato_fb
@@ -434,6 +434,7 @@ xmodel,t7_gfl_centaureissi_fb
 xmodel,t7_gfl_vector_p1_fb
 xmodel,t7_gfl_vector_p2_fb
 xmodel,t7_gfl_leva_fb
+xmodel,t7_gfl_alva_fb
 
 xmodel,t7_gfl_ouroboros_fb
 xmodel,t7_gfl_dreamer_fb
