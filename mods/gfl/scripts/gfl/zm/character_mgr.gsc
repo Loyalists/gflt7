@@ -89,7 +89,7 @@ function on_player_spawned()
 		return;
 	}
 
-	self thread set_character_customization();
+	self set_character_customization();
 
 	if ( level.script == "zm_zod" )
 	{
@@ -101,13 +101,23 @@ function on_player_spawned()
     {
 		self save_cc_fix();
 		wait_interval = 1;
-		if ( level.script == "zm_leviathan" || level.script == "zm_prison" || level.script == "zm_dng_christmas" )
+		if ( level.script == "zm_leviathan" || level.script == "zm_prison" )
 		{
 			wait_interval = 0.1;
 		}
 		
         self thread cc_watcher_think(wait_interval);
     }
+	else
+	{
+		// force cc watcher to run for 1 sec after player is spawned
+		// should prevent most maps from messing around with bodytypes
+		self save_cc_fix();
+		wait_interval = 0.05;
+		time = 1;
+		self thread cc_watcher_think(wait_interval);
+		self thread stop_cc_watcher(time);
+	}
 }
 
 function is_enabled()
@@ -207,7 +217,7 @@ function on_message_sent(args)
 
 	if ( !is_enabled() )
 	{
-		self IPrintLnBold("Player-determined and randomized character are disabled by the host.");
+		self IPrintLnBold("Custom playermodels are disabled by the host.");
 		return;
 	}
 
@@ -229,7 +239,7 @@ function on_message_sent(args)
 
 function is_cc_watcher_needed()
 {
-	maps = array( "zm_leviathan", "zm_destiny_tower_beta", "zm_alcatraz_island", "zm_prison", "zm_dng_christmas" );
+	maps = array( "zm_leviathan", "zm_destiny_tower_beta", "zm_alcatraz_island", "zm_prison" );
 	foreach (map in maps)
 	{
 		if ( level.script == map )
@@ -389,11 +399,28 @@ function save_cc_fix(use_ultimis_bodystyle = false)
 	self.cc_bodystyle = bodystyle;
 }
 
+function stop_cc_watcher( time = 1 )
+{
+	self endon("disconnect");
+	self endon("death");
+	self endon("bled_out");
+
+	if ( isdefined(time) )
+	{
+		wait(time);
+	}
+
+	self notify( "stop_cc_watcher_think" );
+	// self IPrintLnBold("stop_cc_watcher_think");
+}
+
 function cc_watcher_think( wait_interval = 1 )
 {
 	self endon("disconnect");
 	self endon("death");
 	self endon("bled_out");
+	self notify( "stop_cc_watcher_think" );
+	self endon( "stop_cc_watcher_think" );
 
     while (true)
     {

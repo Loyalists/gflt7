@@ -53,6 +53,7 @@ image,t7_menu_zm_loadscreen_prison
 image,t7_menu_zm_loadscreen_town
 image,t7_menu_zm_loadscreen_neptune
 image,t7_menu_zm_loadscreen_nuketown
+image,t7_menu_zm_loadscreen_highrise
 
 // zm scripts
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc

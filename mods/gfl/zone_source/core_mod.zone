@@ -86,8 +86,8 @@ scriptparsetree,scripts/core/core_frontend_fx.gsc
 // material,mc/mtl_bloodsplatter_scripted
 
 // T7Overcharged
-rawfile,ui/util/T7Overcharged.lua
-rawfile,ui/util/T7OverchargedUtil.lua
+// rawfile,ui/util/T7Overcharged.lua
+// rawfile,ui/util/T7OverchargedUtil.lua
 
 rawfile,ui/util/json.lua
 
@@ -1164,7 +1164,7 @@ image,t7_menu_choosespecialist_default_an94
 image,t7_menu_choosespecialist_default_centaureissi
 image,t7_menu_choosespecialist_default_lenna
 image,t7_menu_choosespecialist_default_m16a1
-image,t7_menu_choosespecialist_default_m16a1_sf
+//image,t7_menu_choosespecialist_default_m16a1_sf
 image,t7_menu_choosespecialist_default_m4a1
 image,t7_menu_choosespecialist_default_mp7
 image,t7_menu_choosespecialist_default_negev
@@ -1188,7 +1188,7 @@ image,t7_menu_mp_hero_background_with_an94
 image,t7_menu_mp_hero_background_with_centaureissi
 image,t7_menu_mp_hero_background_with_lenna
 image,t7_menu_mp_hero_background_with_m16a1
-image,t7_menu_mp_hero_background_with_m16a1_sf
+//image,t7_menu_mp_hero_background_with_m16a1_sf
 image,t7_menu_mp_hero_background_with_m4a1
 image,t7_menu_mp_hero_background_with_mp7
 image,t7_menu_mp_hero_background_with_negev

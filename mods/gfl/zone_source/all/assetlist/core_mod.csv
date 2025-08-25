@@ -885,9 +885,9 @@ xmodelmesh,t7_gfl_ak12_fb_nomaskf1e720c2
 xmodelmesh,t7_gfl_ak12_fbbda11
 xmodelmesh,t7_gfl_ak12_viewhandsdae0d3ec
 xmodelmesh,t7_gfl_ak12_viewlegs27d464c6
-xmodelmesh,t7_gfl_alva_bodya12da0c5
-xmodelmesh,t7_gfl_alva_fb9274242a
-xmodelmesh,t7_gfl_alva_fbb7d77c3f
+xmodelmesh,t7_gfl_alva_body7e71d9f
+xmodelmesh,t7_gfl_alva_fb66e92b5
+xmodelmesh,t7_gfl_alva_fb8f23ac13
 xmodelmesh,t7_gfl_alva_viewhands7820c3fd
 xmodelmesh,t7_gfl_alva_viewlegs46c3de5d
 xmodelmesh,t7_gfl_centaureissi_body89c29d93
@@ -3198,7 +3198,6 @@ image,t7_menu_choosespecialist_default_guard
 image,t7_menu_choosespecialist_default_jaeger
 image,t7_menu_choosespecialist_default_lenna
 image,t7_menu_choosespecialist_default_m16a1
-image,t7_menu_choosespecialist_default_m16a1_sf
 image,t7_menu_choosespecialist_default_m4a1
 image,t7_menu_choosespecialist_default_mp7
 image,t7_menu_choosespecialist_default_negev
@@ -3240,7 +3239,6 @@ image,t7_menu_mp_hero_background_with_g36c
 image,t7_menu_mp_hero_background_with_grenadier
 image,t7_menu_mp_hero_background_with_lenna
 image,t7_menu_mp_hero_background_with_m16a1
-image,t7_menu_mp_hero_background_with_m16a1_sf
 image,t7_menu_mp_hero_background_with_m4a1
 image,t7_menu_mp_hero_background_with_mercenary
 image,t7_menu_mp_hero_background_with_mp7
@@ -3401,8 +3399,6 @@ rawfile,ui/uieditor/widgets/startmenu/startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/widgets/startmenu/tfoptions_checkboxoption.lua
 rawfile,ui/uieditor/widgets/startmenu/tfoptions_navbutton.lua
 rawfile,ui/util/json.lua
-rawfile,ui/util/t7overcharged.lua
-rawfile,ui/util/t7overchargedutil.lua
 rawfile,ui_mp/t6/hud.lua
 rawfile,ui_mp/t6/hud/loading.lua
 rawfile,ui_mp/t6/hud/loading_og.luac

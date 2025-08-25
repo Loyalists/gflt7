@@ -1,6 +1,6 @@
 require( "ui_mp.T6.HUD.Loading_og" )
 
-require("ui.util.T7Overcharged")
+-- require("ui.util.T7Overcharged")
 
 local options = {
     modname = "gfl",
@@ -52,6 +52,7 @@ local CustomMapImageTable = {
 	["zm_rig"] = "t7_menu_zm_loadscreen_neptune",
 	["zm_prison"] = "t7_menu_zm_loadscreen_prison",
 	["zm_nuked"] = "t7_menu_zm_loadscreen_nuketown",
+	["zm_die"] = "t7_menu_zm_loadscreen_highrise",
 }
 
 local IntroMovieDisabledMaps = {
@@ -94,6 +95,7 @@ local IntroMovieDisabledMaps = {
 	["zm_rig"] = true,
 	["zm_prison"] = true,
 	["zm_nuked"] = true,
+	["zm_die"] = true,
 }
 
 local function GetCustomMapImage( mapName )

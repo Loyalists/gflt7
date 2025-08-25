@@ -4517,7 +4517,7 @@
 	}
 	"t7_menu_mp_hero_background_with_grenadier" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_grenadier.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_hk416.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_mercenary" [ "t7_menu_mp_hero_background_with_blackmarket" ]
@@ -7196,6 +7196,11 @@
 	"t7_menu_zm_loadscreen_nuketown" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
 		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_nuketwon.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_zm_loadscreen_highrise" [ "t7_menu_zm_loadscreen_sumpf" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_highrise.png"
 		"coreSemantic" "Linear4ch"
 	}
 }
