@@ -6,6 +6,10 @@
 
 #insert scripts\shared\shared.gsh;
 
+//How far ahead the focal point of the camera is (where it's pointing)
+#define CAMERA_LOOKAT_DISTANCE 1000
+#define COLLISION_PADDING 10
+
 REGISTER_SYSTEM( "thirdperson", &__init__, undefined )
 
 function private __init__()
@@ -27,6 +31,7 @@ function on_spawned(localClientNum)
     self thread tps_toggle_think(localClientNum);
 }
 
+// old tps
 function on_state_changed(localClientNum, states)
 {
     if (states.size == 0)
@@ -147,11 +152,13 @@ function tps_toggle_think(localClientNum)
         {
             setdvar("cg_thirdperson", 1);
             set_back_camera();
+            self custom_third_person(true);
             self thread update_tps_crosshair(localClientNum);
         }
         else
         {
             setdvar("cg_thirdperson", 0);
+            self custom_third_person(false);
             self stop_updating_tps_crosshair();
             self hide_tps_crosshair(localClientNum);
         }
@@ -162,11 +169,11 @@ function tps_toggle_think(localClientNum)
 
 function set_back_camera()
 {
-    SetDvar("cg_thirdpersonrange", 60);
-    SetDvar("cg_thirdpersonangle", -0.5);
+    SetDvar("cg_thirdpersonrange", 90);
+    SetDvar("cg_thirdpersonangle", 0);
     SetDvar("cg_thirdpersonsideoffset", 20);
     SetDvar("cg_thirdpersoncamoffsetup", -10);
-    SetDvar("cg_thirdpersonupoffset", 5);
+    SetDvar("cg_thirdpersonupoffset", -5);
 }
 
 function set_front_camera()
@@ -267,13 +274,124 @@ function get_trace_pos(localClientNum)
 
     camPos = self GetCamPos();
     camAngles = self GetCamAngles();
-    if ( !isdefined(camPos) || !isdefined(camAngles) )
+
+	ang = GetLocalClientAngles(localClientNum);
+	if(!isdefined(ang))
     {
-        return undefined;
+		return undefined;
+    }
+	// ang = (ang[0], ang[1], 0);
+
+	forward = AnglesToForward(ang);
+	right = AnglesToRight(ang);
+	up = AnglesToUp(ang);
+
+	eye_pos = GetLocalClientEyePos(localClientNum);
+
+	if(!isdefined(eye_pos))
+    {
+		return undefined;
     }
 
-    a_trace = bullettrace(camPos, camPos + AnglesToForward(camAngles) * 1000000, true, undefined);
+    lookat_point = eye_pos + VectorScale( forward, 1000000 );
+    a_trace = bullettrace(eye_pos, lookat_point, true, undefined);
 
     pos = a_trace["position"];
     return pos;
+}
+
+// new tps
+function custom_third_person(enabled = true)
+{
+	if(enabled)
+	{
+		self camerasetupdatecallback(&spectate);
+	}
+	else
+	{
+		self camerasetupdatecallback();
+		self.old_eye_height = undefined;
+	}
+}
+
+function spectate(localclientnum, delta_time)
+{
+	player = getlocalplayer(localclientnum);
+	if(!isdefined(player) || !player isplayer() || !isalive(player))
+	{
+		return;
+	}
+	if(isdefined(player.sessionstate))
+	{
+		if(player.sessionstate == "spectator")
+		{
+			return;
+		}
+		if(player.sessionstate == "intermission")
+		{
+			return;
+		}
+	}
+	ang = GetLocalClientAngles(localClientNum);
+	if(!isdefined(ang))
+		return;
+	ang = (ang[0], ang[1], 0);
+
+	forward = AnglesToForward(ang);
+	right = AnglesToRight(ang);
+	up = AnglesToUp(ang);
+
+	eye_height = GetLocalClientEyePos(localClientNum);
+
+	if(!isdefined(eye_height))
+		return;
+
+	eye_height = eye_height[2] - player.origin[2];
+
+	//Exponential Moving Average smoothing
+	if(isdefined(self.old_eye_height))
+	{
+		eye_height = ema(self.old_eye_height,eye_height,0.05);
+	}
+	self.old_eye_height = eye_height;
+
+	eye_pos = player.origin + (0,0,eye_height);
+
+	cam_pos = eye_pos;
+	cam_pos += VectorScale( right , GetDvarFloat("cg_thirdPersonSideOffset") );
+	cam_pos += VectorScale( up , GetDvarFloat("cg_thirdPersonUpOffset") );
+
+	//Used to check camera collision
+	cam_trace_pos = cam_pos;
+
+	cam_pos += VectorScale( forward , GetDvarFloat("cg_thirdPersonRange") * -1 );
+
+	a_trace = beamtrace(cam_trace_pos, cam_pos, 0, player);
+	if(a_trace["position"] != cam_pos)
+	{
+		cam_pos = a_trace["position"];
+	}
+
+	//We apply collision padding even without collision so the camera doesn't jump when it starts colliding. The effect is subtle, but you could always compensate with more range if you want
+	cam_pos += VectorScale( forward , COLLISION_PADDING );
+	
+
+	lookat_point = eye_pos + VectorScale( forward , CAMERA_LOOKAT_DISTANCE );
+	cam_angles = get_lookat_angles( cam_pos , lookat_point );
+
+	player camerasetposition(cam_pos);
+	player camerasetlookat(cam_angles);
+}
+
+function get_lookat_angles(v_start, v_end)
+{
+    v_dir = v_end - v_start;
+    v_dir = vectornormalize(v_dir);
+    v_angles = vectortoangles(v_dir);
+    return v_angles;
+}
+
+function ema(old_val,new_val,alpha=0.1)
+{
+	return (alpha * new_val + (1 - alpha) * old_val);
 }

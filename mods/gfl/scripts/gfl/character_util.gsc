@@ -33,6 +33,7 @@ function reset_all_characters(type = "generic", wait_interval = 0.5, check_model
 			ai randomize_character(type);
 			ai set_force_reset_flag();
 			ai disable_gib();
+			WAIT_SERVER_FRAME;
 		}
 
 		wait(wait_interval);
@@ -55,6 +56,7 @@ function reset_friendly_characters(type = "generic", wait_interval = 0.5, check_
 			ai randomize_character(type);
 			ai set_force_reset_flag();
 			ai disable_gib();
+			WAIT_SERVER_FRAME;
 		}
 
 		wait(wait_interval);
@@ -77,6 +79,7 @@ function reset_friendly_civilian_characters(type = "generic", wait_interval = 0.
 			ai randomize_character(type);
 			ai set_force_reset_flag();
 			ai disable_gib();
+			WAIT_SERVER_FRAME;
 		}
 
 		wait(wait_interval);
@@ -99,6 +102,7 @@ function reset_enemy_characters(type = "generic", wait_interval = 0.5, check_mod
 			ai randomize_character(type);
 			ai set_force_reset_flag();
 			ai disable_gib();
+			WAIT_SERVER_FRAME;
 		}
 
 		wait(wait_interval);
@@ -121,6 +125,7 @@ function reset_zombie_characters(type = "generic", wait_interval = 0.5, check_mo
 			ai randomize_character(type);
 			ai set_force_reset_flag();
 			ai disable_gib();
+			WAIT_SERVER_FRAME;
 		}
 
 		wait(wait_interval);

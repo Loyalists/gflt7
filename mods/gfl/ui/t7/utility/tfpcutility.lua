@@ -73,6 +73,7 @@ CoD.TFOptionIndexes = {
     hitmarkers_sound = 71,
     objectives = 72,
     checkpoints = 73,
+    bot_health = 74,
 }
 
 CoD.TFOptionsDefault = {
@@ -144,6 +145,7 @@ CoD.TFOptionsDefault = {
     hitmarkers_sound = 2,
     objectives = 1,
     checkpoints = 0,
+    bot_health = 3,
 }
 
 CoD.TFOptionsDirtyFlag = false
@@ -551,6 +553,11 @@ CoD.TFPCUtil.SetOptionValue = function(itemRef, f7_arg1, newValue)
                 end
 
                 callbackSetValue(varNameString, newValue)
+
+                local callbackForController = Engine.GetModel(itemRef, "callbackForController")
+                if callbackForController and type(callbackForController) == "function" then
+                    callbackForController(itemRef, varNameString, newValue)
+                end
             end
             CoD.TFPCUtil.DirtyOptions(f7_arg1)
         end

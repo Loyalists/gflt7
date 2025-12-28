@@ -82,6 +82,12 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 		disabled = false,
 		slots = {
 			{
+				displayName = "Clukay",
+				character = "clukay",
+				gameImageOff = "t7_gfl_chibi_clukay",
+			},
+			{
+				displayName = "HK416",
 				character = "hk416",
 				gameImageOff = "t7_gfl_chibi_hk416",
 			},
@@ -90,7 +96,7 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 
     table.insert(heroes, {
         displayName = "Howa Type 89",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_enforcer",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_type89",
 		frozenMomentRender = "t7_menu_choosespecialist_default_seraph",
 		disabled = false,
 		slots = {
@@ -232,6 +238,38 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
     })
 
     table.insert(heroes, {
+        displayName = "Vector",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_vector",
+		frozenMomentRender = "t7_menu_choosespecialist_default_vector",
+		disabled = false,
+		slots = {
+			{
+				character = "vector_p2",
+				displayName = "MENU_CLASSIC",
+				gameImageOff = "t7_gfl_chibi_vector",
+			},
+			{
+				character = "vector_p1",
+				displayName = "School",
+				gameImageOff = "t7_gfl_chibi_vector",
+			},
+		},
+    })
+
+    table.insert(heroes, {
+        displayName = "9A-91",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_9a91",
+		frozenMomentRender = "t7_menu_choosespecialist_default_9a91",
+		disabled = false,
+		slots = {
+			{
+				character = "9a91",
+				gameImageOff = "t7_gfl_chibi_9a91",
+			},
+		},
+    })
+
+    table.insert(heroes, {
         displayName = "G36",
         backgroundWithCharacter = "t7_menu_mp_hero_background_with_centaureissi",
 		frozenMomentRender = "t7_menu_choosespecialist_default_centaureissi",
@@ -253,19 +291,6 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 			{
 				character = "g36c",
 				gameImageOff = "t7_gfl_chibi_g36c",
-			},
-		},
-    })
-
-    table.insert(heroes, {
-        displayName = "9A-91",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_9a91",
-		frozenMomentRender = "t7_menu_choosespecialist_default_9a91",
-		disabled = false,
-		slots = {
-			{
-				character = "9a91",
-				gameImageOff = "t7_gfl_chibi_9a91",
 			},
 		},
     })
@@ -316,6 +341,19 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
     })
 
     table.insert(heroes, {
+        displayName = "M200",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_cheyanne",
+		frozenMomentRender = "t7_menu_choosespecialist_default_cheyanne",
+		disabled = false,
+		slots = {
+			{
+				character = "cheyanne",
+				gameImageOff = "t7_gfl_chibi_cheyanne",
+			},
+		},
+    })
+
+    table.insert(heroes, {
         displayName = "WA2000",
         backgroundWithCharacter = "t7_menu_mp_hero_background_with_wa2000",
 		frozenMomentRender = "t7_menu_choosespecialist_default_wa2000",
@@ -324,25 +362,6 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 			{
 				character = "macqiato",
 				gameImageOff = "t7_gfl_chibi_macqiato",
-			},
-		},
-    })
-
-    table.insert(heroes, {
-        displayName = "Vector",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_vector",
-		frozenMomentRender = "t7_menu_choosespecialist_default_vector",
-		disabled = false,
-		slots = {
-			{
-				character = "vector_p2",
-				displayName = "MENU_CLASSIC",
-				gameImageOff = "t7_gfl_chibi_vector",
-			},
-			{
-				character = "vector_p1",
-				displayName = "School",
-				gameImageOff = "t7_gfl_chibi_vector",
 			},
 		},
     })

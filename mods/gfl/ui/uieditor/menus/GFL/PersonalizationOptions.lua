@@ -70,17 +70,17 @@ DataSources.PersonalizationOptionsP1 = DataSourceHelpers.ListSetup("Personalizat
         },
         properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     })
-    table.insert(f26_local0, {
-        models = {
-            label = "TF_THIRDPERSON",
-            description = "TF_THIRDPERSON_DESC",
-            profileVarName = "thirdperson",
-            widgetType = "tfcheckbox",
-            callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
-            callbackSetValueForOption = setThirdperson,
-        },
-        properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
-    })
+    -- table.insert(f26_local0, {
+    --     models = {
+    --         label = "TF_THIRDPERSON",
+    --         description = "TF_THIRDPERSON_DESC",
+    --         profileVarName = "thirdperson",
+    --         widgetType = "tfcheckbox",
+    --         callbackGetValueForOption = CoD.PersonalizationUtil.GetValueForOption,
+    --         callbackSetValueForOption = setThirdperson,
+    --     },
+    --     properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
+    -- })
     return f26_local0
 end, true)
 
@@ -233,7 +233,7 @@ LUI.createMenu.PersonalizationOptions = function(InstanceRef)
     
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil,
         function(f40_arg0, f40_arg1, f40_arg2, f40_arg3)
-            -- CoD.TFPCUtil.ApplyChangesInGame(f40_arg2)
+            -- CoD.PersonalizationUtil.ApplyChangesInGame(f40_arg2)
             GoBack(HudRef, f40_arg2)
             return true
         end, function(f41_arg0, f41_arg1, f41_arg2)
@@ -242,7 +242,7 @@ LUI.createMenu.PersonalizationOptions = function(InstanceRef)
         end, false)
     f31_local1:AddButtonCallbackFunction(HudRef, InstanceRef, Enum.LUIButton.LUI_KEY_START, "M",
         function(f42_arg0, f42_arg1, f42_arg2, f42_arg3)
-            -- CoD.TFPCUtil.ApplyChangesInGame(f42_arg2)
+            -- CoD.PersonalizationUtil.ApplyChangesInGame(f42_arg2)
             CloseStartMenu(f42_arg1, f42_arg2)
             return true
         end, function(f43_arg0, f43_arg1, f43_arg2)

@@ -17,6 +17,46 @@ local f0_local3 = function(f30_arg0, f30_arg1)
     f30_arg0.categoryFrame:setForceMouseEventDispatch(true)
 end
 
+DataSources.TFOptionsBotHealth = DataSourceHelpers.ListSetup("PC.TFOptionsBotHealth", function(f15_arg0)
+    local f15_local0 = {}
+    table.insert(f15_local0, {
+        models = {
+            value = 0,
+            valueDisplay = "MENU_DISABLED"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 1,
+            valueDisplay = "0.1x"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 2,
+            valueDisplay = "0.25x"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 3,
+            valueDisplay = "0.5x"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 4,
+            valueDisplay = "1x"
+        }
+    })
+    table.insert(f15_local0, {
+        models = {
+            value = 5,
+            valueDisplay = "2x"
+        }
+    })
+    return f15_local0
+end, true)
 
 DataSources.TFOptionsBot = DataSourceHelpers.ListSetup("PC.TFOptionsBot", function(f26_arg0)
     local f26_local0 = {}
@@ -50,6 +90,16 @@ DataSources.TFOptionsBot = DataSourceHelpers.ListSetup("PC.TFOptionsBot", functi
     --     },
     --     properties = CoD.TFPCUtil.OptionsGenericCheckboxProperties
     -- })
+    table.insert(f26_local0, {
+        models = {
+            label = "TF_BOT_HEALTH",
+            description = "TF_BOT_HEALTH_DESC",
+            profileVarName = "bot_health",
+            datasource = "TFOptionsBotHealth",
+            widgetType = "dropdown"
+        },
+        properties = CoD.TFPCUtil.OptionsGenericDropdownProperties
+    })
     return f26_local0
 end, true)
 

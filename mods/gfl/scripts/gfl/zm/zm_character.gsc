@@ -21,6 +21,7 @@ function init_character_table()
 	level.charactertable["zm"]["m16a1_prime"] = create_m16a1_prime();
 	level.charactertable["zm"]["ak12"] = create_ak12();
 	level.charactertable["zm"]["hk416"] = create_hk416();
+	level.charactertable["zm"]["clukay"] = create_clukay();
 	level.charactertable["zm"]["type89"] = create_type89();
 	level.charactertable["zm"]["m16a1"] = create_m16a1();
 	level.charactertable["zm"]["jaeger"] = create_jaeger();
@@ -56,6 +57,7 @@ function init_character_table()
 	level.charactertable["zm"]["centaureissi"] = create_centaureissi();
 	level.charactertable["zm"]["vector_p1"] = create_vector_p1();
 	level.charactertable["zm"]["vector_p2"] = create_vector_p2();
+	level.charactertable["zm"]["cheyanne"] = create_cheyanne();
 
 	level.charactertable["zm_moon"] = [];
 	level.charactertable["zm_moon"]["m16a1"] = create_m16a1_moon();
@@ -134,13 +136,24 @@ function create_an94()
 	return obj;
 }
 
+function create_clukay()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 2;
+	obj.bodystyle = 1;
+	obj.id = "clukay";
+	obj.keywords = array("_der_richtofen_");
+	obj.name = "HK416";
+	return obj;
+}
+
 function create_hk416()
 {
 	obj = SpawnStruct();
 	obj.bodytype = 2;
-	obj.bodystyle = 0;
+	obj.bodystyle = 2;
 	obj.id = "hk416";
-	obj.keywords = array("_richtofen_");
+	obj.keywords = array("_richtofen_waw_");
 	obj.name = "HK416";
 	return obj;
 }
@@ -343,25 +356,25 @@ function create_p90()
 	return obj;
 }
 
-function create_g36c()
+function create_vector_p2()
 {
 	obj = SpawnStruct();
 	obj.bodytype = 10;
 	obj.bodystyle = 1;
-	obj.id = "g36c";
+	obj.id = "vector_p2";
 	obj.keywords = array();
-	obj.name = "G36C";
+	obj.name = "Vector";
 	return obj;
 }
 
-function create_centaureissi()
+function create_vector_p1()
 {
 	obj = SpawnStruct();
 	obj.bodytype = 10;
 	obj.bodystyle = 2;
-	obj.id = "centaureissi";
+	obj.id = "vector_p1";
 	obj.keywords = array();
-	obj.name = "G36";
+	obj.name = "Vector";
 	return obj;
 }
 
@@ -373,6 +386,28 @@ function create_9a91()
 	obj.id = "9a91";
 	obj.keywords = array();
 	obj.name = "9A-91";
+	return obj;
+}
+
+function create_g36c()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 11;
+	obj.bodystyle = 1;
+	obj.id = "g36c";
+	obj.keywords = array();
+	obj.name = "G36C";
+	return obj;
+}
+
+function create_centaureissi()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 11;
+	obj.bodystyle = 2;
+	obj.id = "centaureissi";
+	obj.keywords = array();
+	obj.name = "G36";
 	return obj;
 }
 
@@ -431,25 +466,14 @@ function create_macqiato()
 	return obj;
 }
 
-function create_vector_p2()
+function create_cheyanne()
 {
 	obj = SpawnStruct();
 	obj.bodytype = 13;
 	obj.bodystyle = 2;
-	obj.id = "vector_p2";
+	obj.id = "cheyanne";
 	obj.keywords = array();
-	obj.name = "Vector";
-	return obj;
-}
-
-function create_vector_p1()
-{
-	obj = SpawnStruct();
-	obj.bodytype = 13;
-	obj.bodystyle = 3;
-	obj.id = "vector_p1";
-	obj.keywords = array();
-	obj.name = "Vector";
+	obj.name = "M200";
 	return obj;
 }
 

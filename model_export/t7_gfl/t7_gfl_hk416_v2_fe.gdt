@@ -44903,9 +44903,6 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_54i_cqb_mpc_fb_fe" [ "t7_gfl_hk416_v2_fb_mp_fe" ]
-	{
-	}
 	"mtl_gfl_hk416_v2_cf_m_hair_b_21_00_fe" [ "mtl_gfl_hk416_v2_cf_m_hair_f_20_00_fe" ]
 	{
 		"colorMap" "i_gfl_hk416_v2_cf_m_hair_b_21_00_c"

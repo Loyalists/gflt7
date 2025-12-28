@@ -88,5 +88,6 @@
 	"zm_character_customization_zmhd" [ "zm_character_customization" ]
 	{
 		"bodyType01" "pbt_zm_dempsey_zmhd"
+		"bodyType03" "pbt_zm_richtofen_zmhd"
 	}
 }

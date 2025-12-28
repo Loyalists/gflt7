@@ -27505,174 +27505,6 @@
 		"glossRangeMax" "4.0"
 		"glossRangeMin" "0.0"
 	}
-	"c_hro_hendricks_base_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_dronepack_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_egypt_body" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_egypt_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_prologue_body" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_sing_body" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_sing_cinematic_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_sing_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_hendricks_undercover_body" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_hro_playermale_hospital_body" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_zom_der_richtofen_cin_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_zom_dlc3_richtofen_cin_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_zom_dlc_richtofen_cin_fb" [ "t7_gfl_hk416_v2_fb" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin1" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin10" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin11" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin12" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin13" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin14" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin15" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin16" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin4" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin6" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin7" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin8" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body1_skin9" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin10" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin11" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin12" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin13" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin14" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin15" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin6" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin7" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin8" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body2_skin9" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin1" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin10" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin11" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin12" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin13" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin14" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin15" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin2" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin3" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin4" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin5" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin6" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin7" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin8" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_body3_skin9" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_battery_mpc_fb1_skin1" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_mp_hunter_mpc_body1_skin2" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_t7_zm_dlchd_richtofen_waw_mpc_fb" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_zom_der_richtofen_mpc_fb" [ "t7_gfl_hk416_v2_fb_mp" ]
-	{
-	}
-	"c_zom_der_richtofen_viewbody" [ "t7_gfl_hk416_v2_body_mp" ]
-	{
-	}
 	"t7_gfl_hk416_v2_viewlegs" ( "xmodel.gdf" )
 	{
 		"arabicUnsafe" "0"
@@ -27888,126 +27720,6 @@
 		"usage_weapon" "0"
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
-	}
-	"c_t7_mp_battery_viewlegs1_skin1" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin10" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin11" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin12" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin13" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin14" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin15" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin4" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin6" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin7" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin8" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs1_skin9" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin10" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin11" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin12" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin13" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin14" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin15" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin6" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin7" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin8" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs2_skin9" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin1" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin10" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin11" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin12" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin13" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin14" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin15" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin2" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin3" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin4" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin5" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin6" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin7" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin8" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_battery_viewlegs3_skin9" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_mp_hunter_viewlegs1_skin2" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_t7_zm_dlchd_richtofen_waw_viewlegs" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
-	}
-	"c_zom_der_richtofen_viewlegs" [ "t7_gfl_hk416_v2_viewlegs" ]
-	{
 	}
 	"t7_gfl_hk416_v2_viewhands" ( "xmodel.gdf" )
 	{
@@ -28225,126 +27937,6 @@
 		"usage_zombie_body" "0"
 		"usage_zombie_world_prop" "0"
 	}
-	"c_t7_mp_battery_viewarms1_skin1" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin10" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin11" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin12" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin13" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin14" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin15" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin4" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin6" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin7" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin8" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms1_skin9" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin10" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin11" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin12" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin13" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin14" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin15" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin6" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin7" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin8" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms2_skin9" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin1" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin10" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin11" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin12" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin13" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin14" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin15" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin2" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin3" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin4" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin5" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin6" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin7" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin8" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_battery_viewarms3_skin9" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_mp_hunter_viewarms1_skin2" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_t7_zm_dlchd_richtofen_waw_viewhands" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
-	"c_zom_der_richtofen_viewhands" [ "t7_gfl_hk416_v2_viewhands" ]
-	{
-	}
 	"mtl_gfl_hk416_v2_hs_rw_cap_sb" [ "mtl_gfl_hk416_v2_hs_rw_cap_sa" ]
 	{
 		"colorMap" "i_gfl_hk416_v2_hs_rw_cap_sb_c"
@@ -28504,7 +28096,52 @@
 		"baseImage" "model_export\\t7_gfl\\hk416_v2\\mtl_gfl_hk416_v2_mf_m_primmaterial.png"
 		"coreSemantic" "sRGB3chAlpha"
 	}
+	"c_hro_hendricks_base_fb" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_hendricks_dronepack_fb" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_hendricks_egypt_body" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_hendricks_egypt_fb" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_hendricks_prologue_body" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_hendricks_sing_body" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_hendricks_sing_cinematic_fb" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_hendricks_sing_fb" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_hro_playermale_hospital_body" [ "t7_gfl_hk416_v2_fb" ]
+	{
+	}
+	"c_t7_mp_battery_viewarms1_skin4" [ "t7_gfl_hk416_v2_viewhands" ]
+	{
+	}
+	"c_t7_mp_battery_viewlegs1_skin4" [ "t7_gfl_hk416_v2_viewlegs" ]
+	{
+	}
 	"c_t7_zm_dlchd_moon_pressuresuit_richtofen_mpc" [ "t7_gfl_hk416_v2_fb_mp" ]
+	{
+	}
+	"c_t7_zm_dlchd_richtofen_waw_mpc_fb" [ "t7_gfl_hk416_v2_fb_mp" ]
+	{
+	}
+	"c_t7_mp_battery_mpc_body1_skin4" [ "t7_gfl_hk416_v2_fb_mp" ]
+	{
+	}
+	"c_t7_zm_dlchd_richtofen_waw_viewhands" [ "t7_gfl_hk416_v2_viewhands" ]
+	{
+	}
+	"c_t7_zm_dlchd_richtofen_waw_viewlegs" [ "t7_gfl_hk416_v2_viewlegs" ]
 	{
 	}
 }

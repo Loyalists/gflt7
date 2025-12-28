@@ -593,12 +593,62 @@ function health_boost()
 	while(true) 
 	{
 		level waittill("start_of_round");
-		health = level.zombie_health;
-		if (self.maxhealth < health)
+
+		dvar = GetDvarInt("tfoption_bot_health", 0);
+		if (dvar == 0)
 		{
-			self SetMaxHealth(health); 
+			WAIT_SERVER_FRAME;
+			continue;
 		}
-		wait(1); 
+
+		multiplier = 0.5;
+		switch(dvar)
+		{
+			case 1:
+			{
+				multiplier = 0.1;
+				break;
+			}
+			case 2:
+			{
+				multiplier = 0.25;
+				break;
+			}
+			case 3:
+			{
+				multiplier = 0.5;
+				break;
+			}
+			case 4:
+			{
+				multiplier = 1;
+				break;
+			}
+			case 5:
+			{
+				multiplier = 2;
+				break;
+			}
+			default:
+			{
+				break;
+			}
+		}
+
+		jugg_health = 100;
+		if (isdefined(level.zombie_vars["zombie_perk_juggernaut_health"]))
+		{
+			jugg_health = level.zombie_vars["zombie_perk_juggernaut_health"];
+		}
+		base_health = level.zombie_vars["player_base_health"] + jugg_health;
+
+		health = level.zombie_health * multiplier;
+		if (health > base_health)
+		{
+			self SetMaxHealth(health);
+		}
+
+		WAIT_SERVER_FRAME;
 	}
 }
 

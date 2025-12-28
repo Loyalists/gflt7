@@ -18,6 +18,14 @@ function GetZMStartMenuGameOptions( short, withOptions )
                 action = StartMenuGoBack_ListElement
             }
         })
+
+        table.insert(f1_local0, {
+            models = {
+                displayText = "CODCASTER_QS_THIRD_PERSON",
+                action = HandleToggleThirdPersonButton
+            }
+        })
+
         if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
             table.insert(f1_local0, {
                 models = {
@@ -372,6 +380,12 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                 action = StartMenuGoBack_ListElement
             }
         })
+        table.insert(f89_local0, {
+            models = {
+                displayText = "CODCASTER_QS_THIRD_PERSON",
+                action = HandleToggleThirdPersonButton
+            }
+        })
         local f89_local1 = CoD.SafeGetModelValue(Engine.GetModelForController(f89_arg0), "safehouse.inTrainingSim") or 0
         if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
             if not CoD.isSafehouse and f89_arg0 == Engine.GetPrimaryController() then
@@ -456,6 +470,14 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                 }
             })
         end
+
+        table.insert(f89_local0, {
+            models = {
+                displayText = "CODCASTER_QS_THIRD_PERSON",
+                action = HandleToggleThirdPersonButton
+            }
+        })
+
         if f89_arg0 == 0 then
             local f89_local2 = "MENU_QUIT_GAME_CAPS"
             if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) and not CoD.isOnlineGame() then
@@ -469,53 +491,7 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
             })
         end
     elseif CoD.isZombie then
-        table.insert(f89_local0, {
-            models = {
-                displayText = "MENU_RESUMEGAME_CAPS",
-                action = StartMenuGoBack_ListElement
-            }
-        })
-        if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) == true then
-            table.insert(f89_local0, {
-                models = {
-                    displayText = "MENU_RESTART_LEVEL_CAPS",
-                    action = RestartGame
-                }
-            })
-            table.insert(f89_local0, {
-                models = {
-                    displayText = "GFL_MENU_TFOPTIONS",
-                    action = OpenTFOptions_InGame
-                }
-            })
-        end
-        table.insert(f89_local0, {
-            models = {
-                displayText = "CPUI_CHOOSE_CHARACTER_CAPS",
-                action = OpenZMChooseCharacterLoadout_InGame
-            }
-        })
-        table.insert(f89_local0, {
-            models = {
-                displayText = "GFL_MENU_MOD_INFO",
-                action = OpenModInfo_InGame
-            }
-        })
-        if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) == true then
-            table.insert(f89_local0, {
-                models = {
-                    displayText = "MENU_END_GAME_CAPS",
-                    action = QuitGame_MP
-                }
-            })
-        else
-            table.insert(f89_local0, {
-                models = {
-                    displayText = "MENU_QUIT_GAME_CAPS",
-                    action = QuitGame_MP
-                }
-            })
-        end
+        return GetZMStartMenuGameOptions(false, false)
     end
     table.insert(f89_local0, {
         models = {

@@ -25727,30 +25727,6 @@
 		"glossRangeMax" "4.0"
 		"glossRangeMin" "0.0"
 	}
-	"c_hro_playerfemale_blackstation_mpc_body" [ "t7_gfl_p90_fb_mp" ]
-	{
-	}
-	"c_hro_playermale_blackstation_mpc_body" [ "t7_gfl_p90_fb_mp" ]
-	{
-	}
-	"c_hro_player_female_blackstation_viewbody" [ "t7_gfl_p90_body" ]
-	{
-	}
-	"c_hro_player_male_blackstation_viewbody" [ "t7_gfl_p90_body" ]
-	{
-	}
-	"c_hro_player_female_blackstation_viewhands" [ "t7_gfl_p90_viewhands" ]
-	{
-	}
-	"c_hro_player_male_blackstation_viewhands" [ "t7_gfl_p90_viewhands" ]
-	{
-	}
-	"c_hro_player_female_blackstation_viewlegs" [ "t7_gfl_p90_viewlegs" ]
-	{
-	}
-	"c_hro_player_male_blackstation_viewlegs" [ "t7_gfl_p90_viewlegs" ]
-	{
-	}
 	"mtl_gfl_p90_cf_m_eyeline_down" [ "mtl_gfl_p90_cf_m_eyeline_00_up" ]
 	{
 		"colorMap" "i_gfl_p90_cf_m_eyeline_down_c"

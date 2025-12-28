@@ -86,6 +86,64 @@
 		"viewArmsModel" "t7_gfl_centaureissi_viewhands"
 		"xmodel" "t7_gfl_centaureissi_fb_mp"
 	}
+	"pbt_gfl_body_cheyanne" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "M200"
+		"firstPersonCinematicModel" "t7_gfl_cheyanne_body_mp"
+		"firstPersonLegsModel" "t7_gfl_cheyanne_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "t7_gfl_cheyanne_viewhands"
+		"xmodel" "t7_gfl_cheyanne_fb_mp"
+	}
+	"pbt_gfl_body_hk416_zmhd" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "HK416"
+		"firstPersonCinematicModel" "t7_gfl_hk416_v2_body_mp"
+		"firstPersonLegsModel" "c_t7_zm_dlchd_richtofen_waw_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "c_t7_zm_dlchd_richtofen_waw_viewhands"
+		"xmodel" "c_t7_zm_dlchd_richtofen_waw_mpc_fb"
+	}
 	"pbt_gfl_body_dima" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"
@@ -996,7 +1054,7 @@
 		"color_1_4" ""
 		"color_1_5" ""
 		"color_1_6" ""
-		"displayName" "HK416"
+		"displayName" "Clukay"
 		"firstPersonCinematicModel" "c_zom_der_richtofen_viewbody"
 		"firstPersonLegsModel" "c_zom_der_richtofen_viewlegs"
 		"gibDef" ""
@@ -1182,7 +1240,7 @@
 	}
 	"pbt_zm_body_nikolai_dlc2" [ "pbt_zm_body_nikolai" ]
 	{
-		"displayName" "AK-12 (Mask)"
+		"displayName" "AK-12"
 		"xmodel" "c_zom_dlc3_nikolai_mpc_fb"
 	}
 	"pbt_zm_body_nikolai_nohat" [ "pbt_zm_body_nikolai" ]

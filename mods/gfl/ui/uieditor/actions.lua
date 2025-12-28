@@ -332,6 +332,10 @@ function SendChatNotifyResponse( controller, sending_Text )
 	Engine.SendMenuResponse(controller, "popup_leavegame", "ChatNotify" .. "…" .. string.gsub(tostring(sending_Text), " ", "¨"))
 end
 
+function HandleToggleThirdPersonButton( self, element, controller )
+	Engine.SendMenuResponse(controller, "popup_leavegame", "ThirdPerson")
+end
+
 function GetMaxScreenRotLeft(rot)
     if Engine.DvarInt(nil, "rot_y_na") == 1 then
         rot = 0 - rot

@@ -101,3 +101,31 @@ CoD.PersonalizationUtil.LoadPersonalization = function()
         end
     end
 end
+
+-- CoD.PersonalizationUtil.GetDirtyFlag = function()
+--     if CoD.PersonalizationDirtyFlag then
+--         return true
+--     end
+
+--     return false
+-- end
+
+-- CoD.PersonalizationUtil.SetDirtyFlag = function()
+--     CoD.PersonalizationDirtyFlag = true
+-- end
+
+-- CoD.PersonalizationUtil.UnsetDirtyFlag = function()
+--     CoD.PersonalizationDirtyFlag = false
+-- end
+
+CoD.PersonalizationUtil.ApplyChangesInGame = function(controller)
+    if CoD.isFrontend then
+        return
+    end
+
+    -- if not CoD.PersonalizationUtil.GetDirtyFlag then
+    --     return
+    -- end
+
+    Engine.SendMenuResponse(controller, "popup_leavegame", "PersonalizationOptionsChanged")
+end

@@ -132,6 +132,7 @@ function autoexec auto_preload()
     level.tfoptions_default["hitmarkers_sound"] = 0;
     level.tfoptions_default["objectives"] = 0;
     level.tfoptions_default["checkpoints"] = 0;
+    level.tfoptions_default["bot_health"] = 0;
 
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {
@@ -202,7 +203,7 @@ function on_player_connect()
 {
 	self endon("disconnect");
 
-    self wait_for_tfoptions_changed();
+    self thread wait_for_tfoptions_changed();
 }
 
 function on_player_spawned()

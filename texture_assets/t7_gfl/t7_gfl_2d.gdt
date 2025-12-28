@@ -4507,7 +4507,7 @@
 	}
 	"t7_menu_mp_hero_background_with_enforcer" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_enforcer.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_cz75.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_firebreak" [ "t7_menu_mp_hero_background_with_blackmarket" ]
@@ -5495,6 +5495,7 @@
 	"t7_cp_hud_commswidget_khalil" [ "t7_cp_hud_commswidget_diaz" ]
 	{
 		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_khalil.tiff"
+		"coreSemantic" "Linear4ch"
 	}
 	"t7_cp_hud_commswidget_maretti" [ "t7_cp_hud_commswidget_diaz" ]
 	{
@@ -5513,6 +5514,7 @@
 	"t7_cp_hud_commswidget_sarah" [ "t7_cp_hud_commswidget_diaz" ]
 	{
 		"baseImage" "texture_assets\\t7_gfl\\cp_hud\\t7_cp_hud_commswidget_sarah.tiff"
+		"coreSemantic" "Linear4ch"
 	}
 	"t7_cp_hud_commswidget_taylor" [ "t7_cp_hud_commswidget_diaz" ]
 	{
@@ -7201,6 +7203,76 @@
 	"t7_menu_zm_loadscreen_highrise" [ "t7_menu_zm_loadscreen_sumpf" ]
 	{
 		"baseImage" "texture_assets\\t7_gfl\\loadscreen\\t7_menu_zm_loadscreen_highrise.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_clukay" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\clukay.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_cheyanne" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\cheyanne.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"uie_t7_zm_hud_score_cheyanne" ( "image.gdf" )
+	{
+		"arabicUnsafe" "0"
+		"baseImage" "texture_assets\\t7_gfl\\zm_hud\\uie_t7_zm_hud_score_cheyanne.png"
+		"clampU" "0"
+		"clampV" "0"
+		"colorSRGB" "0"
+		"compositeChannel1" ""
+		"compositeChannel2" ""
+		"compositeChannel3" ""
+		"compositeChannel4" ""
+		"compositeImage1" ""
+		"compositeImage2" ""
+		"compositeImage3" ""
+		"compositeImage4" ""
+		"compositeSample1" ""
+		"compositeSample2" ""
+		"compositeSample3" ""
+		"compositeSample4" ""
+		"compositeType" ""
+		"compressionMethod" "compressed"
+		"coreSemantic" "Linear4ch"
+		"doNotResize" "0"
+		"forceStreaming" "0"
+		"fromAlpha" "0"
+		"germanUnsafe" "0"
+		"glossVarianceScale" "1"
+		"himipStreaming" "0"
+		"imageType" "Texture"
+		"japaneseUnsafe" "0"
+		"legallyApproved" "0"
+		"matureContent" "0"
+		"mipBase" "1/1"
+		"mipMask" ""
+		"mipMode" "Average"
+		"mipNorm" "0"
+		"noMipMaps" "1"
+		"noPicMip" "1"
+		"premulAlpha" "1"
+		"semantic" "2d"
+		"streamable" "0"
+		"textureAtlasColumnCount" "1"
+		"textureAtlasRowCount" "1"
+		"type" "image"
+	}
+	"t7_menu_mp_hero_background_with_type89" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_enforcer.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_cheyanne" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_cheyanne.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_cheyanne" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_cheyanne.png"
 		"coreSemantic" "Linear4ch"
 	}
 }

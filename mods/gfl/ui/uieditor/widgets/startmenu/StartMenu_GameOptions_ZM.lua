@@ -3,61 +3,9 @@ require( "ui.uieditor.widgets.Utilities.ProgressBar_Rank" )
 require( "ui.uieditor.widgets.ZMPromotional.ZM_PromoIconList" )
 
 DataSources.StartMenuGameOptions_ZM = ListHelper_SetupDataSource("StartMenuGameOptions_ZM", function(f89_arg0)
-    local f89_local0 = {}
-	table.insert(f89_local0, {
-		models = {
-			displayText = "MENU_RESUMEGAME_CAPS",
-			action = StartMenuGoBack_ListElement
-		}
-	})
-	if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) == true then
-		table.insert(f89_local0, {
-			models = {
-				displayText = "MENU_RESTART_LEVEL_CAPS",
-				action = RestartGame
-			}
-		})
-		table.insert(f89_local0, {
-			models = {
-				displayText = "GFL_MENU_TFOPTIONS",
-				action = OpenTFOptions_InGame
-			}
-		})
-	end
-	table.insert(f89_local0, {
-		models = {
-			displayText = "CPUI_CHOOSE_CHARACTER_CAPS",
-			action = OpenZMChooseCharacterLoadout_InGame
-		}
-	})
-	table.insert(f89_local0, {
-		models = {
-			displayText = "GFL_MENU_MOD_INFO",
-			action = OpenModInfo_InGame
-		}
-	})
-	if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) == true then
-		table.insert(f89_local0, {
-			models = {
-				displayText = "MENU_END_GAME_CAPS",
-				action = QuitGame_MP
-			}
-		})
-	else
-		table.insert(f89_local0, {
-			models = {
-				displayText = "MENU_QUIT_GAME_CAPS",
-				action = QuitGame_MP
-			}
-		})
-	end
-    table.insert(f89_local0, {
-        models = {
-            displayText = "QUIT TO DESKTOP",
-            action = OpenPCQuit
-        }
-    })
-    return f89_local0
+    local f1_local0 = GetZMStartMenuGameOptions(false, false)
+	LocalizeOptions(f1_local0)
+    return f1_local0
 end, true)
 
 CoD.StartMenu_GameOptions_ZM = InheritFrom( LUI.UIElement )
@@ -170,25 +118,25 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	self:addElement( ZMPromoIconList )
 	self.ZMPromoIconList = ZMPromoIconList
 	
-	local Shortcuts = LUI.UIText.new()
-	Shortcuts:setLeftRight( true, false, 950, 1200 )
-	Shortcuts:setTopBottom( true, false, 350, 370 )
-	Shortcuts:setText( Engine.Localize( "GFL_ZM_SHORTCUTS_DESC" ) )
-	Shortcuts:setTTF( "fonts/default.ttf" )
-	Shortcuts:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
-	Shortcuts:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
-	self:addElement( Shortcuts )
-	self.Shortcuts = Shortcuts
+	-- local Shortcuts = LUI.UIText.new()
+	-- Shortcuts:setLeftRight( true, false, 950, 1200 )
+	-- Shortcuts:setTopBottom( true, false, 350, 370 )
+	-- Shortcuts:setText( Engine.Localize( "GFL_ZM_SHORTCUTS_DESC" ) )
+	-- Shortcuts:setTTF( "fonts/default.ttf" )
+	-- Shortcuts:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
+	-- Shortcuts:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	-- self:addElement( Shortcuts )
+	-- self.Shortcuts = Shortcuts
 
-	local Shortcuts2 = LUI.UIText.new()
-	Shortcuts2:setLeftRight( true, false, 1100, 1280 )
-	Shortcuts2:setTopBottom( true, false, 350, 370 )
-	Shortcuts2:setText( Engine.Localize( "GFL_ZM_SHORTCUTS" ) )
-	Shortcuts2:setTTF( "fonts/default.ttf" )
-	Shortcuts2:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
-	Shortcuts2:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
-	self:addElement( Shortcuts2 )
-	self.Shortcuts2 = Shortcuts2
+	-- local Shortcuts2 = LUI.UIText.new()
+	-- Shortcuts2:setLeftRight( true, false, 1100, 1280 )
+	-- Shortcuts2:setTopBottom( true, false, 350, 370 )
+	-- Shortcuts2:setText( Engine.Localize( "GFL_ZM_SHORTCUTS" ) )
+	-- Shortcuts2:setTTF( "fonts/default.ttf" )
+	-- Shortcuts2:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
+	-- Shortcuts2:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	-- self:addElement( Shortcuts2 )
+	-- self.Shortcuts2 = Shortcuts2
 
 	self.clipsPerState = {
 		DefaultState = {
@@ -231,8 +179,8 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonList:close()
 		element.ZMPromoIconList:close()
-		element.Shortcuts:close()
-		element.Shortcuts2:close()
+		-- element.Shortcuts:close()
+		-- element.Shortcuts2:close()
 	end )
 	
 	if PostLoadFunc then

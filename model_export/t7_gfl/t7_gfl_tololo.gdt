@@ -1211,7 +1211,7 @@
 		"gFoamUVScale2" "3142"
 		"gFoamUVScale3" "5497"
 		"gHorizonDistance" "10000"
-		"glossRangeMax" "12.0"
+		"glossRangeMax" "17.0"
 		"glossRangeMax1" "17"
 		"glossRangeMax2" "17"
 		"glossRangeMax3" "17"
@@ -1219,7 +1219,7 @@
 		"glossRangeMin1" "0"
 		"glossRangeMin2" "0"
 		"glossRangeMin3" "0"
-		"glossSurfaceType" "<custom>"
+		"glossSurfaceType" "<full>"
 		"gNormalScale00" "1"
 		"gNormalScale01" "1"
 		"gNormalScale02" "1"
@@ -2123,7 +2123,7 @@
 		"gFoamUVScale2" "3142"
 		"gFoamUVScale3" "5497"
 		"gHorizonDistance" "10000"
-		"glossRangeMax" "12.0"
+		"glossRangeMax" "17.0"
 		"glossRangeMax1" "17"
 		"glossRangeMax2" "17"
 		"glossRangeMax3" "17"
@@ -4674,7 +4674,7 @@
 		"colorWriteRed" "Enable"
 		"columnCount" "1"
 		"converterOnlyNormal" "0"
-		"cosinePowerMap" "i_gfl_tololo_hairuber_g"
+		"cosinePowerMap" "$gloss"
 		"customString" ""
 		"customTemplate" ""
 		"depthMultiplier" "3"
@@ -4982,8 +4982,8 @@
 		"locale_tools" "0"
 		"locale_yemen" "0"
 		"locale_zombie" "0"
-		"materialCategory" "Geometry Advanced"
-		"materialType" "lit_emissive_advanced_fullspec"
+		"materialCategory" "Geometry Plus"
+		"materialType" "lit_emissive_plus"
 		"matureContent" "0"
 		"maxRayDepth" "1000"
 		"missileClip" "0"
@@ -5056,7 +5056,7 @@
 		"specColorIntensity1" "0"
 		"specColorIntensity2" "0"
 		"specColorIntensity3" "0"
-		"specColorMap" "i_gfl_tololo_hairuber_s"
+		"specColorMap" ""
 		"specColorStrength" "100"
 		"specColorTint" "0.760757 0.764664 0.764664 1"
 		"specColorTint1" "0.760757 0.764664 0.764664 1"
@@ -6937,7 +6937,7 @@
 		"flickerMax" "1.0"
 		"flickerMin" "1.0"
 		"flickerSpeed" "1.0"
-		"glossRangeMax" "12.0"
+		"glossRangeMax" "17.0"
 		"glossRangeMin" "0.0"
 		"materialType" "lit_transparent_advanced_fullspec"
 	}
@@ -6953,13 +6953,11 @@
 		"detailScaleY" "1.0"
 		"flickerMax" "1.0"
 		"flickerMin" "1.0"
-		"glossRangeMax" "12.0"
-		"glossRangeMin" "0.0"
 		"materialType" "lit_transparent_advanced_fullspec"
 	}
 	"mtl_gfl_tololo_silkstock_uber" [ "mtl_gfl_tololo_cloth2_uber" ]
 	{
-		"glossRangeMax" "4.0"
+		"glossRangeMax" "12.0"
 		"glossRangeMin" "0.0"
 	}
 	"mtl_gfl_tololo_eyelashuber" [ "mtl_gfl_tololo_faceuber" ]
@@ -7878,15 +7876,6 @@
 	{
 	}
 	"c_cia_blackstation_victim_1_fb_corpse" [ "t7_gfl_tololo_fb" ]
-	{
-	}
-	"c_t7_mp_technomancer_mpc_body1_skin2" [ "t7_gfl_tololo_fb_mp" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewarms1_skin2" [ "t7_gfl_tololo_viewhands" ]
-	{
-	}
-	"c_t7_mp_technomancer_viewlegs1_skin2" [ "t7_gfl_tololo_viewlegs" ]
 	{
 	}
 }

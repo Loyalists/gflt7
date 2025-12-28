@@ -16,6 +16,7 @@ function private __init__()
 {
     modvar("gfl_thirdperson", 0);
     callback::on_spawned( &on_player_spawned );
+    callback::on_connect( &on_player_connect );
     chat_notify::register_chat_notify_callback( "tps", &on_message_sent );
     chat_notify::register_chat_notify_callback( "tpscam", &on_tpscam_message_sent );
 }
@@ -25,7 +26,37 @@ function private __main__()
 
 }
 
+function on_player_connect()
+{
+	self endon("disconnect");
+	level endon("game_ended");
+	level endon("end_game");
+
+    level flagsys::wait_till("load_main_complete");
+
+    if (self IsTestClient())
+    {
+        return;
+    }
+
+    while(1)
+    {
+        self waittill("menuresponse", menu, response);
+        if( response == "ThirdPerson" && menu == "popup_leavegame" )
+        {
+            handle_thirdperson();
+        }
+
+        WAIT_SERVER_FRAME;
+    }
+}
+
 function on_message_sent(args)
+{
+    self handle_thirdperson();
+}
+
+function handle_thirdperson()
 {
     if (isDefined(self.no_skip) || isDefined(self.current_player_scene))
     {
@@ -135,6 +166,12 @@ function force_thirdperson()
 
 function set_thirdperson_state(state)
 {
+    enabled = false;
+    if (state == "on")
+    {
+        enabled = true;
+    }
+    self CameraActivate(enabled);
     self clientsystem::set_state("tps", state);
 }
 
