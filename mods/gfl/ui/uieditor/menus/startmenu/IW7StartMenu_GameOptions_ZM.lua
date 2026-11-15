@@ -1,8 +1,8 @@
 require( "ui.uieditor.widgets.Lobby.Common.IW7ButtonListItem" )
 
-DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOptions", function(f1_arg0)
-    local f1_local0 = GetZMStartMenuGameOptions(false, true)
-    return f1_local0
+DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOptions", function(controller)
+    local gameOptions = GetZMStartMenuGameOptions(false, true)
+    return gameOptions
 end, true)
 
 CoD.IW7StartMenu_GameOptions_ZM = InheritFrom( LUI.UIElement )

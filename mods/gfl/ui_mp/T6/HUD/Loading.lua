@@ -133,75 +133,77 @@ local function IsIntroMovieDisabled()
 	return false
 end
 
-local f0_local0 = function ( f1_arg0, f1_arg1 )
+local updateCinematicImage = function ( image, event )
 	if Engine.IsCinematicMp4() then
-		if not f1_arg0.ismp4 then
-			f1_arg0:setImage( RegisterMaterial( "cinematic_mp4" ) )
-			f1_arg0.ismp4 = true
+		if not image.ismp4 then
+			image:setImage( RegisterMaterial( "cinematic_mp4" ) )
+			image.ismp4 = true
 		end
-	elseif f1_arg0.ismp4 then
-		f1_arg0:setImage( RegisterMaterial( "black" ) )
-		f1_arg0.ismp4 = nil
+	elseif image.ismp4 then
+		image:setImage( RegisterMaterial( "black" ) )
+		image.ismp4 = nil
 	end
 end
 
-local f0_local1 = function ( f3_arg0, f3_arg1 )
-	f3_arg0.continueButton:registerEventHandler( "hide_continue_button", CoD.Loading.HideContinueButton )
-	f3_arg0.continueButton:addElement( LUI.UITimer.new( 5000, "hide_continue_button", true, f3_arg0.continueButton ) )
-	f3_arg0.continueButton:beginAnimation( "show", 1000 )
-	f3_arg0.continueButton:setAlpha( 1 )
-	return LUI.UIButton.gainFocus( f3_arg0.continueButton, f3_arg1 )
+local showContinueButton = function ( loadingMenu, event )
+	loadingMenu.continueButton:registerEventHandler( "hide_continue_button", CoD.Loading.HideContinueButton )
+	loadingMenu.continueButton:addElement( LUI.UITimer.new( 5000, "hide_continue_button", true, loadingMenu.continueButton ) )
+	loadingMenu.continueButton:beginAnimation( "show", 1000 )
+	loadingMenu.continueButton:setAlpha( 1 )
+	return LUI.UIButton.gainFocus( loadingMenu.continueButton, event )
 end
 
-local f0_local2 = function ( f4_arg0, f4_arg1 )
+local skipLoadingCinematic = function ( loadingMenu, event )
 	Engine.Stop3DCinematic( 0 )
 	if Engine.IsLobbyHost( Enum.LobbyType.LOBBY_TYPE_GAME ) then
 		Engine.SetLoadingMovieSkippedState( true )
 	end
 end
 
-local function AddContinueButton( f5_local0, f5_arg0 )
-	local f5_local36 = 15
-	local f5_local37 = 15
-	local f5_local38, f5_local39 = Engine.GetUserSafeArea()
-	f5_local0.buttonModel = Engine.CreateModel( Engine.GetModelForController( f5_arg0 ), "Loading.buttonPrompts" )
-	LUI.OverrideFunction_CallOriginalSecond( f5_local0, "close", function ( element )
-		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( f5_arg0 ), "LoadingScreenOverlayForTeamGames.buttonPrompts" ) )
+local function AddContinueButton( loadingMenu, controller )
+	local horizontalPadding = 15
+	local verticalPadding = 15
+	local safeAreaWidth, safeAreaHeight = Engine.GetUserSafeArea()
+	loadingMenu.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "Loading.buttonPrompts" )
+	LUI.OverrideFunction_CallOriginalSecond( loadingMenu, "close", function ( element )
+		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( controller ), "LoadingScreenOverlayForTeamGames.buttonPrompts" ) )
 	end )
-	f5_local0.continueButton = LUI.UIButton.new()
-	f5_local0.continueButton:setLeftRight( false, false, -f5_local38, f5_local38 / 2 - f5_local36 )
-	f5_local0.continueButton:setTopBottom( false, false, f5_local39 / 2 - CoD.textSize.Condensed - f5_local37, f5_local39 / 2 - f5_local37 )
-	f5_local0.continueButton:setAlignment( LUI.Alignment.Right )
-	f5_local0.continueButton:setAlpha( 0 )
-	f5_local0.continueButton:setActionSFX( "uin_mov_skip" )
-	f5_local0:addElement( f5_local0.continueButton )
-	f5_local0.continueButton:setActionEventNameNewStyle( f5_local0, f5_arg0, "loading_startplay" )
-	f5_local0.continueButton:addElement( CoD.ButtonPrompt.new( "start", "", f5_local0, "loading_startplay", true ) )
-	f5_local0.continueButton.label = LUI.UIText.new()
-	f5_local0.continueButton.label:setLeftRight( true, true, 0, 0 )
-	f5_local0.continueButton.label:setTopBottom( true, true, 0, 0 )
-	f5_local0.continueButton.label:setFont( CoD.fonts.Condensed )
-	f5_local0.continueButton.label:setAlignment( LUI.Alignment.Right )
-	f5_local0.continueButton:addElement( f5_local0.continueButton.label )
-	f5_local0.continueButton.label:setText( Engine.Localize( "PLATFORM_SKIP" ) )
-	f5_local0.continueButton:setHandleMouse( false )
+	loadingMenu.continueButton = LUI.UIButton.new()
+	loadingMenu.continueButton:setLeftRight( false, false, -safeAreaWidth, safeAreaWidth / 2 - horizontalPadding )
+	loadingMenu.continueButton:setTopBottom( false, false, safeAreaHeight / 2 - CoD.textSize.Condensed - verticalPadding, safeAreaHeight / 2 - verticalPadding )
+	loadingMenu.continueButton:setAlignment( LUI.Alignment.Right )
+	loadingMenu.continueButton:setAlpha( 0 )
+	loadingMenu.continueButton:setActionSFX( "uin_mov_skip" )
+	loadingMenu:addElement( loadingMenu.continueButton )
+	loadingMenu.continueButton:setActionEventNameNewStyle( loadingMenu, controller, "loading_startplay" )
+	loadingMenu.continueButton:addElement( CoD.ButtonPrompt.new( "start", "", loadingMenu, "loading_startplay", true ) )
+	loadingMenu.continueButton.label = LUI.UIText.new()
+	loadingMenu.continueButton.label:setLeftRight( true, true, 0, 0 )
+	loadingMenu.continueButton.label:setTopBottom( true, true, 0, 0 )
+	loadingMenu.continueButton.label:setFont( CoD.fonts.Condensed )
+	loadingMenu.continueButton.label:setAlignment( LUI.Alignment.Right )
+	loadingMenu.continueButton:addElement( loadingMenu.continueButton.label )
+	loadingMenu.continueButton.label:setText( Engine.Localize( "PLATFORM_SKIP" ) )
+	loadingMenu.continueButton:setHandleMouse( false )
 	if CoD.isPC then
-		f5_local0:setForceMouseEventDispatch( true )
-		f5_local0.continueButtonContainer = LUI.UIElement.new()
-		f5_local0.continueButtonContainer:setLeftRight( true, true, 0, 0 )
-		f5_local0.continueButtonContainer:setTopBottom( true, true, 0, 0 )
-		f5_local0.continueButtonContainer:setAlpha( 1 )
-		f5_local0.continueButtonContainer.id = "continueButtonContainer"
-		f5_local0.continueButtonContainer:setHandleMouse( true )
-		f5_local0:addElement( f5_local0.continueButtonContainer )
-		f5_local0.continueButtonContainer:registerEventHandler( "button_action", function ( element, event )
-			SendButtonPressToMenuEx( f5_local0, event.controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		loadingMenu:setForceMouseEventDispatch( true )
+		loadingMenu.continueButtonContainer = LUI.UIElement.new()
+		loadingMenu.continueButtonContainer:setLeftRight( true, true, 0, 0 )
+		loadingMenu.continueButtonContainer:setTopBottom( true, true, 0, 0 )
+		loadingMenu.continueButtonContainer:setAlpha( 1 )
+		loadingMenu.continueButtonContainer.id = "continueButtonContainer"
+		loadingMenu.continueButtonContainer:setHandleMouse( true )
+		loadingMenu:addElement( loadingMenu.continueButtonContainer )
+		loadingMenu.continueButtonContainer:registerEventHandler( "button_action", function ( element, event )
+			SendButtonPressToMenuEx( loadingMenu, event.controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
 		end )
 	end
 end
 
-LUI.createMenu.Loading = function ( f5_arg0 )
-	local f5_local0 = CoD.Menu.NewFromState( "Loading", {
+LUI.createMenu.Loading = function ( controller )
+	-- Loading music/cinematics replace the lobby's random selection.
+	CoD.GFLRandomMusicState = nil
+	local loadingMenu = CoD.Menu.NewFromState( "Loading", {
 		leftAnchor = true,
 		rightAnchor = true,
 		left = 0,
@@ -211,37 +213,37 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 		top = 0,
 		bottom = 0
 	} )
-	f5_local0.id = "loadingMenu"
-	f5_local0:setOwner( f5_arg0 )
-	f5_local0:registerEventHandler( "start_loading", CoD.Loading.StartLoading )
-	f5_local0:registerEventHandler( "start_spinner", CoD.Loading.StartSpinner )
-	f5_local0:registerEventHandler( "fade_in_map_location", CoD.Loading.FadeInMapLocation )
-	f5_local0:registerEventHandler( "fade_in_gametype", CoD.Loading.FadeInGametype )
-	f5_local0:registerEventHandler( "fade_in_map_image", CoD.Loading.FadeInMapImage )
+	loadingMenu.id = "loadingMenu"
+	loadingMenu:setOwner( controller )
+	loadingMenu:registerEventHandler( "start_loading", CoD.Loading.StartLoading )
+	loadingMenu:registerEventHandler( "start_spinner", CoD.Loading.StartSpinner )
+	loadingMenu:registerEventHandler( "fade_in_map_location", CoD.Loading.FadeInMapLocation )
+	loadingMenu:registerEventHandler( "fade_in_gametype", CoD.Loading.FadeInGametype )
+	loadingMenu:registerEventHandler( "fade_in_map_image", CoD.Loading.FadeInMapImage )
 	if Dvar.fs_game:get() == Dvar.fs_game_saved:get() and Dvar.fs_game_saved:exists() and Dvar.sv_hostname:exists() and Dvar.sv_hostname:get() ~= "BlackOpsPublic" and Dvar.sv_hostname:get() ~= "Dedicated - dedicatedpc" and Dvar.sv_hostname:get() ~= "" then
 	    Engine.SetDvar( "fs_game", "usermaps" )
     end
 
 	local f5_local1 = false
-	local f5_local2 = Engine.GetCurrentMap()
-	local f5_local3 = Engine.GetCurrentGameType()
-	local f5_local4 = CoD.GetMapValue( f5_local2, "loadingImage", "black" )
+	local mapName = Engine.GetCurrentMap()
+	local gameType = Engine.GetCurrentGameType()
+	local imageName = CoD.GetMapValue( mapName, "loadingImage", "black" )
 	if Engine.IsMultiplayerGame() then
-		Engine.PlayMenuMusic( "load_" .. f5_local2 )
+		Engine.PlayMenuMusic( "load_" .. mapName )
 	end
 
 	if CoD.isZombie then
-		if f5_local2 ~= nil and f5_local2 == "zm_island" and IsJapaneseSku() and CoD.LANGUAGE_JAPANESE == Dvar.loc_language:get() then
+		if mapName ~= nil and mapName == "zm_island" and IsJapaneseSku() and CoD.LANGUAGE_JAPANESE == Dvar.loc_language:get() then
 			f5_local1 = false
-		elseif f5_local2 ~= nil and (f5_local2 == "zm_asylum" or f5_local2 == "zm_cosmodrome" or f5_local2 == "zm_moon" or f5_local2 == "zm_sumpf" or f5_local2 == "zm_temple") then
+		elseif mapName ~= nil and (mapName == "zm_asylum" or mapName == "zm_cosmodrome" or mapName == "zm_moon" or mapName == "zm_sumpf" or mapName == "zm_temple") then
 			f5_local1 = false
 		elseif Engine.IsDemoPlaying() or Engine.IsSplitscreen() then
 			f5_local1 = false
 		elseif not IsIntroMovieDisabled() then
 			f5_local1 = true
-			local f5_local5 = CoD.GetMapValue( f5_local2, "introMovie" )
+			local f5_local5 = CoD.GetMapValue( mapName, "introMovie" )
 			if f5_local5 == nil and Mods_IsUsingUsermap() then
-				f5_local5 = f5_local2 .. "_load"
+				f5_local5 = mapName .. "_load"
 			end
 			if f5_local5 ~= nil and not Engine.IsCinematicPlaying() then
 				Engine.StartLoadingCinematic( f5_local5 )
@@ -259,16 +261,16 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 					Engine.PlayMenuMusic( "load_usermaps" )
 				end
 			else
-				Engine.PlayMenuMusic( "load_" .. f5_local2 )
+				Engine.PlayMenuMusic( "load_" .. mapName )
 			end
 		end
 	else
 		if true == Dvar.ui_useloadingmovie:get() or CoD.isCampaign then
 			if true == Engine.IsCampaignModeZombies() then
-				f5_local2 = f5_local2 .. "_nightmares"
+				mapName = mapName .. "_nightmares"
 			end
-			local f5_local6 = CoD.GetMapValue( f5_local2, "introMovie" )
-			if f5_local2 ~= nil and f5_local2 == "cp_sh_singapore" and Dvar.cp_queued_level:get() == "cp_mi_sing_blackstation" then
+			local f5_local6 = CoD.GetMapValue( mapName, "introMovie" )
+			if mapName ~= nil and mapName == "cp_sh_singapore" and Dvar.cp_queued_level:get() == "cp_mi_sing_blackstation" then
 				f5_local6 = "CP_safehouse_load_loadingmovie"
 			end
 			if not IsIntroMovieDisabled() then
@@ -287,26 +289,26 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	end
 	if f5_local1 then
 		Engine.SetDvar( "ui_useloadingmovie", 1 )
-		if CoD.GetMapValue( f5_local2, "fadeToWhite" ) == 1 then
+		if CoD.GetMapValue( mapName, "fadeToWhite" ) == 1 then
 			local f5_local7 = "$white"
 		end
-		f5_local4 = f5_local7 or "black"
+		imageName = f5_local7 or "black"
 	else
 		Engine.SetDvar( "ui_useloadingmovie", 0 )
-		if f5_local4 == nil or f5_local4 == "" or CoD.isMultiplayer then
-			f5_local4 = "black"
+		if imageName == nil or imageName == "" or CoD.isMultiplayer then
+			imageName = "black"
 		end
 	end
-	if Engine.IsLevelPreloaded( f5_local2 ) then
-		f5_local0.addLoadingElement = function ( f6_arg0, f6_arg1 )
+	if Engine.IsLevelPreloaded( mapName ) then
+		loadingMenu.addLoadingElement = function ( element, f6_arg1 )
 			if CoD.isCampaign then
-				f6_arg0:addElement( f6_arg1 )
+				element:addElement( f6_arg1 )
 			end
 		end
 		
 	else
-		f5_local0.addLoadingElement = function ( f7_arg0, f7_arg1 )
-			f7_arg0:addElement( f7_arg1 )
+		loadingMenu.addLoadingElement = function ( element, f7_arg1 )
+			element:addElement( f7_arg1 )
 		end
 		
 	end
@@ -314,21 +316,21 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	local customMapImage = GetCustomMapImage( Engine.GetCurrentMap() )
 	if CoD.isCampaign or not f5_local1 then
 		if customMapImage ~= nil then
-			f5_local4 = customMapImage
+			imageName = customMapImage
 		end
 	end
 
-	f5_local0.mapImage = LUI.UIStreamedImage.new()
-	f5_local0.mapImage.id = "mapImage"
-	f5_local0.mapImage:setLeftRight( false, false, -640, 640 )
-	f5_local0.mapImage:setTopBottom( false, false, -360, 360 )
-	f5_local0.mapImage:setAlpha( 0 )
-	f5_local0.mapImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
-	f5_local0.mapImage:setImage( RegisterImage( f5_local4 ) )
-	f5_local0:addElement( f5_local0.mapImage )
+	loadingMenu.mapImage = LUI.UIStreamedImage.new()
+	loadingMenu.mapImage.id = "mapImage"
+	loadingMenu.mapImage:setLeftRight( false, false, -640, 640 )
+	loadingMenu.mapImage:setTopBottom( false, false, -360, 360 )
+	loadingMenu.mapImage:setAlpha( 0 )
+	loadingMenu.mapImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
+	loadingMenu.mapImage:setImage( RegisterImage( imageName ) )
+	loadingMenu:addElement( loadingMenu.mapImage )
 	if f5_local1 == true then
-		f5_local0.mapImage:setShaderVector( 0, 0, 0, 0, 0 )
-		f5_local0.mapImage.ismp4 = false
+		loadingMenu.mapImage:setShaderVector( 0, 0, 0, 0, 0 )
+		loadingMenu.mapImage.ismp4 = false
 	end
 	local f5_local6 = 10
 	local f5_local5 = 70
@@ -338,35 +340,35 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	local f5_local11 = "Condensed"
 	local f5_local12 = CoD.fonts[f5_local11]
 	local f5_local13 = CoD.textSize[f5_local11]
-	f5_local0.mapNameLabel = LUI.UIText.new()
-	f5_local0.mapNameLabel.id = "mapNameLabel"
-	f5_local0.mapNameLabel:setLeftRight( true, false, f5_local5, f5_local5 + 1 )
-	f5_local0.mapNameLabel:setTopBottom( true, false, f5_local6, f5_local6 + f5_local10 )
-	f5_local0.mapNameLabel:setFont( f5_local9 )
-	f5_local0.mapNameLabel:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
-	f5_local0.mapNameLabel:setAlpha( 0 )
-	f5_local0.mapNameLabel:registerEventHandler( "transition_complete_map_name_fade_in", CoD.Loading.MapNameFadeInComplete )
-	f5_local0:addLoadingElement( f5_local0.mapNameLabel )
+	loadingMenu.mapNameLabel = LUI.UIText.new()
+	loadingMenu.mapNameLabel.id = "mapNameLabel"
+	loadingMenu.mapNameLabel:setLeftRight( true, false, f5_local5, f5_local5 + 1 )
+	loadingMenu.mapNameLabel:setTopBottom( true, false, f5_local6, f5_local6 + f5_local10 )
+	loadingMenu.mapNameLabel:setFont( f5_local9 )
+	loadingMenu.mapNameLabel:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
+	loadingMenu.mapNameLabel:setAlpha( 0 )
+	loadingMenu.mapNameLabel:registerEventHandler( "transition_complete_map_name_fade_in", CoD.Loading.MapNameFadeInComplete )
+	loadingMenu:addLoadingElement( loadingMenu.mapNameLabel )
 	f5_local6 = f5_local6 + f5_local10 - 5
-	f5_local0.mapLocationLabel = LUI.UIText.new()
-	f5_local0.mapLocationLabel.id = "mapLocationLabel"
-	f5_local0.mapLocationLabel:setLeftRight( true, false, f5_local5, f5_local5 + 1 )
-	f5_local0.mapLocationLabel:setTopBottom( true, false, f5_local6, f5_local6 + f5_local13 )
-	f5_local0.mapLocationLabel:setFont( f5_local12 )
-	f5_local0.mapLocationLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
-	f5_local0.mapLocationLabel:setAlpha( 0 )
-	f5_local0.mapLocationLabel:registerEventHandler( "transition_complete_map_location_fade_in", CoD.Loading.MapLocationFadeInComplete )
-	f5_local0:addLoadingElement( f5_local0.mapLocationLabel )
+	loadingMenu.mapLocationLabel = LUI.UIText.new()
+	loadingMenu.mapLocationLabel.id = "mapLocationLabel"
+	loadingMenu.mapLocationLabel:setLeftRight( true, false, f5_local5, f5_local5 + 1 )
+	loadingMenu.mapLocationLabel:setTopBottom( true, false, f5_local6, f5_local6 + f5_local13 )
+	loadingMenu.mapLocationLabel:setFont( f5_local12 )
+	loadingMenu.mapLocationLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
+	loadingMenu.mapLocationLabel:setAlpha( 0 )
+	loadingMenu.mapLocationLabel:registerEventHandler( "transition_complete_map_location_fade_in", CoD.Loading.MapLocationFadeInComplete )
+	loadingMenu:addLoadingElement( loadingMenu.mapLocationLabel )
 	f5_local6 = f5_local6 + f5_local13 - 2
-	f5_local0.gametypeLabel = LUI.UIText.new()
-	f5_local0.gametypeLabel.id = "gametypeLabel"
-	f5_local0.gametypeLabel:setLeftRight( true, false, f5_local5, f5_local5 + 1 )
-	f5_local0.gametypeLabel:setTopBottom( true, false, f5_local6, f5_local6 + f5_local13 )
-	f5_local0.gametypeLabel:setFont( f5_local12 )
-	f5_local0.gametypeLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
-	f5_local0.gametypeLabel:setAlpha( 0 )
-	f5_local0.gametypeLabel:registerEventHandler( "transition_complete_gametype_fade_in", CoD.Loading.GametypeFadeInComplete )
-	f5_local0:addLoadingElement( f5_local0.gametypeLabel )
+	loadingMenu.gametypeLabel = LUI.UIText.new()
+	loadingMenu.gametypeLabel.id = "gametypeLabel"
+	loadingMenu.gametypeLabel:setLeftRight( true, false, f5_local5, f5_local5 + 1 )
+	loadingMenu.gametypeLabel:setTopBottom( true, false, f5_local6, f5_local6 + f5_local13 )
+	loadingMenu.gametypeLabel:setFont( f5_local12 )
+	loadingMenu.gametypeLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
+	loadingMenu.gametypeLabel:setAlpha( 0 )
+	loadingMenu.gametypeLabel:registerEventHandler( "transition_complete_gametype_fade_in", CoD.Loading.GametypeFadeInComplete )
+	loadingMenu:addLoadingElement( loadingMenu.gametypeLabel )
 	f5_local6 = f5_local6 + f5_local13 + 5
 	local DemoTitle = Engine.Localize( "MPUI_TITLE_CAPS" ) .. ":"
 	local f6_local14_1, f6_local14_2, f6_local14_3, f6_local14_4 = GetTextDimensions(DemoTitle, f5_local12, f5_local13)
@@ -377,65 +379,65 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	local f5_local20 = math.max(f6_local14_3, f6_local16_3, f6_local18_3) + 10
 	local f5_local21 = 0
 
-	if not Engine.IsLevelPreloaded( f5_local2 ) then
-		f5_local0.demoInfoContainer = LUI.UIElement.new()
-		f5_local0.demoInfoContainer:setLeftRight( true, false, f5_local5, 600 )
-		f5_local0.demoInfoContainer:setTopBottom( true, false, f5_local6, f5_local6 + 600 )
-		f5_local0.demoInfoContainer:setAlpha( 0 )
-		f5_local0:addLoadingElement( f5_local0.demoInfoContainer )
-		f5_local0.demoTitleTitle = LUI.UIText.new()
-		f5_local0.demoTitleTitle:setLeftRight( true, true, 0, 0 )
-		f5_local0.demoTitleTitle:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
-		f5_local0.demoTitleTitle:setFont( f5_local12 )
-		f5_local0.demoTitleTitle:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
-		f5_local0.demoTitleTitle:setAlignment( LUI.Alignment.Left )
-		f5_local0.demoTitleTitle:setText( DemoTitle )
-		SetupAutoHorizontalAlignArabicText( f5_local0.demoTitleTitle )
-		f5_local0.demoInfoContainer:addElement( f5_local0.demoTitleTitle )
-		f5_local0.demoTitleLabel = LUI.UIText.new()
-		f5_local0.demoTitleLabel:setLeftRight( true, true, f5_local20, 0 )
-		f5_local0.demoTitleLabel:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
-		f5_local0.demoTitleLabel:setFont( f5_local12 )
-		f5_local0.demoTitleLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
-		f5_local0.demoTitleLabel:setAlignment( LUI.Alignment.Left )
-		SetupAutoHorizontalAlignArabicText( f5_local0.demoTitleLabel )
-		f5_local0.demoInfoContainer:addElement( f5_local0.demoTitleLabel )
+	if not Engine.IsLevelPreloaded( mapName ) then
+		loadingMenu.demoInfoContainer = LUI.UIElement.new()
+		loadingMenu.demoInfoContainer:setLeftRight( true, false, f5_local5, 600 )
+		loadingMenu.demoInfoContainer:setTopBottom( true, false, f5_local6, f5_local6 + 600 )
+		loadingMenu.demoInfoContainer:setAlpha( 0 )
+		loadingMenu:addLoadingElement( loadingMenu.demoInfoContainer )
+		loadingMenu.demoTitleTitle = LUI.UIText.new()
+		loadingMenu.demoTitleTitle:setLeftRight( true, true, 0, 0 )
+		loadingMenu.demoTitleTitle:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
+		loadingMenu.demoTitleTitle:setFont( f5_local12 )
+		loadingMenu.demoTitleTitle:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
+		loadingMenu.demoTitleTitle:setAlignment( LUI.Alignment.Left )
+		loadingMenu.demoTitleTitle:setText( DemoTitle )
+		SetupAutoHorizontalAlignArabicText( loadingMenu.demoTitleTitle )
+		loadingMenu.demoInfoContainer:addElement( loadingMenu.demoTitleTitle )
+		loadingMenu.demoTitleLabel = LUI.UIText.new()
+		loadingMenu.demoTitleLabel:setLeftRight( true, true, f5_local20, 0 )
+		loadingMenu.demoTitleLabel:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
+		loadingMenu.demoTitleLabel:setFont( f5_local12 )
+		loadingMenu.demoTitleLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
+		loadingMenu.demoTitleLabel:setAlignment( LUI.Alignment.Left )
+		SetupAutoHorizontalAlignArabicText( loadingMenu.demoTitleLabel )
+		loadingMenu.demoInfoContainer:addElement( loadingMenu.demoTitleLabel )
 		f5_local21 = f5_local21 + f5_local13 - 2
-		f5_local0.demoDurationTitle = LUI.UIText.new()
-		f5_local0.demoDurationTitle:setLeftRight( true, true, 0, 0 )
-		f5_local0.demoDurationTitle:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
-		f5_local0.demoDurationTitle:setFont( f5_local12 )
-		f5_local0.demoDurationTitle:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
-		f5_local0.demoDurationTitle:setAlignment( LUI.Alignment.Left )
-		f5_local0.demoDurationTitle:setText( DemoDuration )
-		SetupAutoHorizontalAlignArabicText( f5_local0.demoDurationTitle )
-		f5_local0.demoInfoContainer:addElement( f5_local0.demoDurationTitle )
-		f5_local0.demoDurationLabel = LUI.UIText.new()
-		f5_local0.demoDurationLabel:setLeftRight( true, true, f5_local20, 0 )
-		f5_local0.demoDurationLabel:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
-		f5_local0.demoDurationLabel:setFont( f5_local12 )
-		f5_local0.demoDurationLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
-		f5_local0.demoDurationLabel:setAlignment( LUI.Alignment.Left )
-		SetupAutoHorizontalAlignArabicText( f5_local0.demoDurationLabel )
-		f5_local0.demoInfoContainer:addElement( f5_local0.demoDurationLabel )
+		loadingMenu.demoDurationTitle = LUI.UIText.new()
+		loadingMenu.demoDurationTitle:setLeftRight( true, true, 0, 0 )
+		loadingMenu.demoDurationTitle:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
+		loadingMenu.demoDurationTitle:setFont( f5_local12 )
+		loadingMenu.demoDurationTitle:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
+		loadingMenu.demoDurationTitle:setAlignment( LUI.Alignment.Left )
+		loadingMenu.demoDurationTitle:setText( DemoDuration )
+		SetupAutoHorizontalAlignArabicText( loadingMenu.demoDurationTitle )
+		loadingMenu.demoInfoContainer:addElement( loadingMenu.demoDurationTitle )
+		loadingMenu.demoDurationLabel = LUI.UIText.new()
+		loadingMenu.demoDurationLabel:setLeftRight( true, true, f5_local20, 0 )
+		loadingMenu.demoDurationLabel:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
+		loadingMenu.demoDurationLabel:setFont( f5_local12 )
+		loadingMenu.demoDurationLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
+		loadingMenu.demoDurationLabel:setAlignment( LUI.Alignment.Left )
+		SetupAutoHorizontalAlignArabicText( loadingMenu.demoDurationLabel )
+		loadingMenu.demoInfoContainer:addElement( loadingMenu.demoDurationLabel )
 		f5_local21 = f5_local21 + f5_local13 - 2
-		f5_local0.demoAuthorTitle = LUI.UIText.new()
-		f5_local0.demoAuthorTitle:setLeftRight( true, true, 0, 0 )
-		f5_local0.demoAuthorTitle:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
-		f5_local0.demoAuthorTitle:setFont( f5_local12 )
-		f5_local0.demoAuthorTitle:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
-		f5_local0.demoAuthorTitle:setAlignment( LUI.Alignment.Left )
-		f5_local0.demoAuthorTitle:setText( DemoAuthor )
-		SetupAutoHorizontalAlignArabicText( f5_local0.demoAuthorTitle )
-		f5_local0.demoInfoContainer:addElement( f5_local0.demoAuthorTitle )
-		f5_local0.demoAuthorLabel = LUI.UIText.new()
-		f5_local0.demoAuthorLabel:setLeftRight( true, true, f5_local20, 0 )
-		f5_local0.demoAuthorLabel:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
-		f5_local0.demoAuthorLabel:setFont( f5_local12 )
-		f5_local0.demoAuthorLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
-		f5_local0.demoAuthorLabel:setAlignment( LUI.Alignment.Left )
-		SetupAutoHorizontalAlignArabicText( f5_local0.demoAuthorLabel )
-		f5_local0.demoInfoContainer:addElement( f5_local0.demoAuthorLabel )
+		loadingMenu.demoAuthorTitle = LUI.UIText.new()
+		loadingMenu.demoAuthorTitle:setLeftRight( true, true, 0, 0 )
+		loadingMenu.demoAuthorTitle:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
+		loadingMenu.demoAuthorTitle:setFont( f5_local12 )
+		loadingMenu.demoAuthorTitle:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )
+		loadingMenu.demoAuthorTitle:setAlignment( LUI.Alignment.Left )
+		loadingMenu.demoAuthorTitle:setText( DemoAuthor )
+		SetupAutoHorizontalAlignArabicText( loadingMenu.demoAuthorTitle )
+		loadingMenu.demoInfoContainer:addElement( loadingMenu.demoAuthorTitle )
+		loadingMenu.demoAuthorLabel = LUI.UIText.new()
+		loadingMenu.demoAuthorLabel:setLeftRight( true, true, f5_local20, 0 )
+		loadingMenu.demoAuthorLabel:setTopBottom( true, false, f5_local21, f5_local21 + f5_local13 )
+		loadingMenu.demoAuthorLabel:setFont( f5_local12 )
+		loadingMenu.demoAuthorLabel:setRGB( CoD.offWhite.r, CoD.offWhite.g, CoD.offWhite.b )
+		loadingMenu.demoAuthorLabel:setAlignment( LUI.Alignment.Left )
+		SetupAutoHorizontalAlignArabicText( loadingMenu.demoAuthorLabel )
+		loadingMenu.demoInfoContainer:addElement( loadingMenu.demoAuthorLabel )
 	end
 	
 	local f5_local22 = 3
@@ -448,12 +450,12 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	local f5_local29 = 2
 	local f5_local30 = f5_local23 - f5_local29 * 2
 	local f5_local31 = 6
-	f5_local0.loadingBarContainer = LUI.UIElement.new()
-	f5_local0.loadingBarContainer.id = "loadingBarContainer"
-	f5_local0.loadingBarContainer:setLeftRight( false, false, -f5_local26 / 2, f5_local26 / 2 )
-	f5_local0.loadingBarContainer:setTopBottom( false, true, f5_local27 - f5_local25, f5_local27 )
-	f5_local0.loadingBarContainer:setAlpha( 0 )
-	f5_local0:addElement( f5_local0.loadingBarContainer )
+	loadingMenu.loadingBarContainer = LUI.UIElement.new()
+	loadingMenu.loadingBarContainer.id = "loadingBarContainer"
+	loadingMenu.loadingBarContainer:setLeftRight( false, false, -f5_local26 / 2, f5_local26 / 2 )
+	loadingMenu.loadingBarContainer:setTopBottom( false, true, f5_local27 - f5_local25, f5_local27 )
+	loadingMenu.loadingBarContainer:setAlpha( 0 )
+	loadingMenu:addElement( loadingMenu.loadingBarContainer )
 	--f5_local0.dykContainer = LUI.UIElement.new()
 	--f5_local0.dykContainer.id = "dykContainer"
 	--f5_local0.dykContainer:setLeftRight( true, true, f5_local22 + f5_local31, 0 )
@@ -465,23 +467,23 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 
 
 	f5_local28 = f5_local28 + f5_local23 + 1
-	f5_local0.spinner = LUI.UIImage.new()
-	f5_local0.spinner.id = "spinner"
+	loadingMenu.spinner = LUI.UIImage.new()
+	loadingMenu.spinner.id = "spinner"
 	f5_local29 = 110
 	f5_local30 = f5_local30 * 5
-	f5_local0.spinner:setLeftRight( false, true, -(f5_local29 + f5_local30 / 2), -(f5_local29 - f5_local30 / 2) )
-	f5_local0.spinner:setTopBottom( false, true, -(f5_local29 + f5_local30 / 2), -(f5_local29 - f5_local30 / 2) )
-	f5_local0.spinner:setImage( RegisterMaterial( "lui_loader" ) )
-	f5_local0.spinner:setShaderVector( 0, 0, 0, 0, 0 )
-	f5_local0.spinner:setAlpha( 0 )
-	f5_local0.spinner:setPriority( 200 )
-	f5_local0:addElement( f5_local0.spinner )
+	loadingMenu.spinner:setLeftRight( false, true, -(f5_local29 + f5_local30 / 2), -(f5_local29 - f5_local30 / 2) )
+	loadingMenu.spinner:setTopBottom( false, true, -(f5_local29 + f5_local30 / 2), -(f5_local29 - f5_local30 / 2) )
+	loadingMenu.spinner:setImage( RegisterMaterial( "lui_loader" ) )
+	loadingMenu.spinner:setShaderVector( 0, 0, 0, 0, 0 )
+	loadingMenu.spinner:setAlpha( 0 )
+	loadingMenu.spinner:setPriority( 200 )
+	loadingMenu:addElement( loadingMenu.spinner )
 	local self = LUI.UIImage.new()
 	self.id = "loadingBarBackground"
 	self:setLeftRight( true, true, 1, -1 )
 	self:setTopBottom( true, false, f5_local28, f5_local28 + f5_local24 )
 	self:setRGB( 0.1, 0.1, 0.1 )
-	f5_local0.loadingBarContainer:addElement( self )
+	loadingMenu.loadingBarContainer:addElement( self )
 	--local self = LUI.UIImage.new()
 	--self:setLeftRight( true, true, 1, -1 )
 	--self:setTopBottom( true, false, f5_local28, f5_local28 + f5_local24 )
@@ -494,7 +496,7 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	self:setTopBottom( true, false, f5_local28, f5_local28 + f5_local34 )
 	self:setRGB( CoD.BOIIOrange.r, CoD.BOIIOrange.g, CoD.BOIIOrange.b )-----loadbar
 	self:setAlpha( 1 )
-	f5_local0.loadingBarContainer:addElement( self )
+	loadingMenu.loadingBarContainer:addElement( self )
 	self:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
 	self:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
 	self:setShaderVector( 1, 0, 0, 0, 0 )
@@ -503,25 +505,25 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	self:setShaderVector( 1, 0, 0, 0, 0 )
 	self:setShaderVector( 2, 1, 0, 0, 0 )
 	self:setShaderVector( 3, 0, 0, 0, 0 )
-	self:subscribeToGlobalModel( f5_arg0, "LoadingScreenTeamInfo", "loadedFraction", function ( modelRef )
+	self:subscribeToGlobalModel( controller, "LoadingScreenTeamInfo", "loadedFraction", function ( modelRef )
 		local loadedFraction = Engine.GetModelValue( modelRef )
 		if loadedFraction then
 			self:setShaderVector( 0, loadedFraction, 0, 0, 0 )
 			self:setShaderVector( 0, loadedFraction, 0, 0, 0 )
 		end
 	end )
-	LUI.OverrideFunction_CallOriginalSecond( f5_local0, "close", function ( element )
+	LUI.OverrideFunction_CallOriginalSecond( loadingMenu, "close", function ( element )
 		self:close()
 	end )
 	f5_local28 = f5_local28 + f5_local24
-	f5_local0.statusLabel = LUI.UIText.new()
-	f5_local0.statusLabel:setLeftRight( true, true, 9, 0 )
-	f5_local0.statusLabel:setTopBottom( true, false, 5, 29 )
-	f5_local0.statusLabel:setAlpha( 1 )
-	f5_local0.statusLabel:setFont(CoD.Loading.DYKFont)
-	f5_local0.statusLabel:setAlignment( LUI.Alignment.Left )
-	f5_local0.statusLabel:setupLoadingStatusText()
-	f5_local0.loadingBarContainer:addElement( f5_local0.statusLabel )
+	loadingMenu.statusLabel = LUI.UIText.new()
+	loadingMenu.statusLabel:setLeftRight( true, true, 9, 0 )
+	loadingMenu.statusLabel:setTopBottom( true, false, 5, 29 )
+	loadingMenu.statusLabel:setAlpha( 1 )
+	loadingMenu.statusLabel:setFont(CoD.Loading.DYKFont)
+	loadingMenu.statusLabel:setAlignment( LUI.Alignment.Left )
+	loadingMenu.statusLabel:setupLoadingStatusText()
+	loadingMenu.loadingBarContainer:addElement( loadingMenu.statusLabel )
 
 	-- local mapDescription = CoD.GetMapValue( Engine.GetCurrentMap(), "mapDescription", "" )
 	-- if Mods_IsUsingUsermap() then
@@ -548,38 +550,38 @@ LUI.createMenu.Loading = function ( f5_arg0 )
 	-- f5_local0.loadingBarContainer:addElement( f5_local0.didYouKnow )
 
 	if f5_local1 == true then
-		f5_local0.mapImage:setAlpha( 1 )
-		CoD.Loading.AddNewLoadingScreen( f5_local0 )
-		f5_local0.cinematicSubtitles = CoD.MovieSubtitles.new( f5_local0, f5_arg0 )
-		f5_local0.cinematicSubtitles:setLeftRight( false, false, -640, 640 )
-		f5_local0.cinematicSubtitles:setTopBottom( false, false, -360, 360 )
-		f5_local0:addElement( f5_local0.cinematicSubtitles )
-		f5_local0.mapImage:registerEventHandler( "loading_updateimage", f0_local0 )
-		f5_local0.mapImage.id = "loadingMenu.mapImage"
-		f5_local0:addElement( LUI.UITimer.new( 16, "loading_updateimage", false, f5_local0.mapImage ) )
+		loadingMenu.mapImage:setAlpha( 1 )
+		CoD.Loading.AddNewLoadingScreen( loadingMenu )
+		loadingMenu.cinematicSubtitles = CoD.MovieSubtitles.new( loadingMenu, controller )
+		loadingMenu.cinematicSubtitles:setLeftRight( false, false, -640, 640 )
+		loadingMenu.cinematicSubtitles:setTopBottom( false, false, -360, 360 )
+		loadingMenu:addElement( loadingMenu.cinematicSubtitles )
+		loadingMenu.mapImage:registerEventHandler( "loading_updateimage", updateCinematicImage )
+		loadingMenu.mapImage.id = "loadingMenu.mapImage"
+		loadingMenu:addElement( LUI.UITimer.new( 16, "loading_updateimage", false, loadingMenu.mapImage ) )
 		Engine.SetDvar( "ui_useloadingmovie", 1 )
-		AddContinueButton( f5_local0, f5_arg0 )
-		f5_local0:registerEventHandler( "loading_displaycontinue", f0_local1 )
-		f5_local0:registerEventHandler( "loading_startplay", f0_local2 )
+		AddContinueButton( loadingMenu, controller )
+		loadingMenu:registerEventHandler( "loading_displaycontinue", showContinueButton )
+		loadingMenu:registerEventHandler( "loading_startplay", skipLoadingCinematic )
 		if Engine.GetCurrentMap() == "zm_theater" then
-			CoD.Loading.StartLoading( f5_local0 )
-			CoD.Loading.StartSpinner( f5_local0 )
-			f5_local0:registerEventHandler( "fade_in_map_image", nil )
+			CoD.Loading.StartLoading( loadingMenu )
+			CoD.Loading.StartSpinner( loadingMenu )
+			loadingMenu:registerEventHandler( "fade_in_map_image", nil )
 		end
 	else
 		if CoD.isCampaign then
-			CoD.Loading.StartLoading( f5_local0 )
-			CoD.Loading.FadeInMapImage( f5_local0 )
+			CoD.Loading.StartLoading( loadingMenu )
+			CoD.Loading.FadeInMapImage( loadingMenu )
 			Engine.SetDvar( "ui_useloadingmovie", 1 )
-			AddContinueButton( f5_local0, f5_arg0 )
-			f5_local0:registerEventHandler( "loading_displaycontinue", f0_local1 )
-			f5_local0:registerEventHandler( "loading_startplay", f0_local2 )
+			AddContinueButton( loadingMenu, controller )
+			loadingMenu:registerEventHandler( "loading_displaycontinue", showContinueButton )
+			loadingMenu:registerEventHandler( "loading_startplay", skipLoadingCinematic )
 		else
-			CoD.Loading.StartLoading( f5_local0 )
-			f5_local0:addElement( LUI.UITimer.new( CoD.Loading.SpinnerDelayTime, "start_spinner", true, f5_local0 ) )
+			CoD.Loading.StartLoading( loadingMenu )
+			loadingMenu:addElement( LUI.UITimer.new( CoD.Loading.SpinnerDelayTime, "start_spinner", true, loadingMenu ) )
 		end
 	end
-	return f5_local0
+	return loadingMenu
 end
 
 CoD.Loading.FadeInMapImage = function ( f22_arg0 )
@@ -595,37 +597,37 @@ CoD.Loading.FadeInMapImage = function ( f22_arg0 )
 	end
 end
 
-CoD.Loading.StartLoading = function ( f13_arg0 )
+CoD.Loading.StartLoading = function ( loadingMenu )
 	Engine.PrintInfo( Enum.consoleLabel.LABEL_DEFAULT, "Opening loading screen...\n" )
-	if f13_arg0.loadingScreenOverlay == nil then
-		CoD.Loading.AddNewLoadingScreen( f13_arg0 )
+	if loadingMenu.loadingScreenOverlay == nil then
+		CoD.Loading.AddNewLoadingScreen( loadingMenu )
 	end
 	if Engine.IsMultiplayerGame() then
 		return 
 	end
-	local f13_local0 = Engine.GetPrimaryController()
-	local f13_local1 = MapNameToLocalizedMapName( Engine.GetCurrentMap() )
-	local f13_local2 = MapNameToLocalizedMapLocation( Engine.GetCurrentMap() )
-	local f13_local3 = Engine.GetCurrentGametypeName( f13_local0 )
-	f13_arg0.mapNameLabel:setText( f13_local1 )
-	f13_arg0.mapLocationLabel:setText( f13_local2 )
-	f13_arg0.gametypeLabel:setText( f13_local3 )
+	local controller = Engine.GetPrimaryController()
+	local localizedMapName = MapNameToLocalizedMapName( Engine.GetCurrentMap() )
+	local localizedMapLocation = MapNameToLocalizedMapLocation( Engine.GetCurrentMap() )
+	local gameTypeName = Engine.GetCurrentGametypeName( controller )
+	loadingMenu.mapNameLabel:setText( localizedMapName )
+	loadingMenu.mapLocationLabel:setText( localizedMapLocation )
+	loadingMenu.gametypeLabel:setText( gameTypeName )
 	if Engine.IsDemoPlaying() then
-		local f13_local4 = Dvar.ls_demotitle:get()
-		local f13_local5 = Dvar.ls_demoduration:get()
-		local f13_local6 = ""
-		if f13_local5 > 0 then
-			f13_local6 = Engine.SecondsAsTime( Dvar.ls_demoduration:get() )
+		local demoTitle = Dvar.ls_demotitle:get()
+		local demoDuration = Dvar.ls_demoduration:get()
+		local demoDurationText = ""
+		if demoDuration > 0 then
+			demoDurationText = Engine.SecondsAsTime( Dvar.ls_demoduration:get() )
 		end
-		local f13_local7 = Dvar.ls_demoauthor:get()
-		f13_arg0.demoTitleLabel:setText( f13_local4 )
-		f13_arg0.demoDurationLabel:setText( f13_local6 )
-		f13_arg0.demoAuthorLabel:setText( f13_local7 )
-		if f13_local7 == "" then
-			f13_arg0.demoAuthorTitle:setAlpha( 0 )
+		local demoAuthor = Dvar.ls_demoauthor:get()
+		loadingMenu.demoTitleLabel:setText( demoTitle )
+		loadingMenu.demoDurationLabel:setText( demoDurationText )
+		loadingMenu.demoAuthorLabel:setText( demoAuthor )
+		if demoAuthor == "" then
+			loadingMenu.demoAuthorTitle:setAlpha( 0 )
 		end
-		if f13_local6 == "" then
-			f13_arg0.demoDurationTitle:setAlpha( 0 )
+		if demoDurationText == "" then
+			loadingMenu.demoDurationTitle:setAlpha( 0 )
 		end
 	end
 	--if CoD.isZombie == true then
@@ -637,6 +639,6 @@ CoD.Loading.StartLoading = function ( f13_arg0 )
 		--end
 		--f13_arg0.didYouKnow:setText( f13_local4 )
 	--end
-	f13_arg0.mapNameLabel:beginAnimation( "map_name_fade_in", CoD.Loading.FadeInTime )
-	f13_arg0.mapNameLabel:setAlpha( 1 )
+	loadingMenu.mapNameLabel:beginAnimation( "map_name_fade_in", CoD.Loading.FadeInTime )
+	loadingMenu.mapNameLabel:setAlpha( 1 )
 end

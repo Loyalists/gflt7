@@ -7258,6 +7258,7 @@
 		"colorMap" "i_gfl_centaureissi_eyeadd_c"
 		"colorMap00" "i_gfl_centaureissi_eyeadd_c"
 		"materialType" "lit_emissive_transparent_plus"
+		"scaleRGB" "1.0"
 	}
 	"t7_gfl_centaureissi_viewhands" ( "xmodel.gdf" )
 	{

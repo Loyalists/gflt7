@@ -46,7 +46,7 @@ function private __init__()
 
 function private __main__()
 {
-	thread wait_for_option_changed();
+	thread sync_checkpoint_option();
 	thread save_checkpoint();
 }
 
@@ -62,7 +62,7 @@ function on_laststand()
 	self endon("disconnect");
 	level endon("end_game");
 
-	if(level.no_end_game_check == true) 
+	if(is_enabled())
 	{
 		self thread no_end_game_check();
 	}
@@ -78,25 +78,35 @@ function is_enabled()
 	return false;
 }
 
-function wait_for_option_changed()
+function sync_checkpoint_option()
 {
 	level endon("game_ended");
 	level endon("end_game");
 	level flag::wait_till("initial_blackscreen_passed");
-	
-    while (true)
-    {
-        if ( is_enabled() )
-        {
-			level.no_end_game_check = true;
-        }
-        else
-        {
-            level.no_end_game_check = false;
-        }
-        WAIT_SERVER_FRAME;
-        level waittill("tfoption_checkpoints_changed");
-    }
+
+	was_enabled = false;
+	while (true)
+	{
+		enabled = is_enabled();
+		if (enabled != was_enabled)
+		{
+			was_enabled = enabled;
+			if (enabled)
+			{
+				zm_utility::increment_no_end_game_check();
+			}
+			else
+			{
+				if (IS_TRUE(level.checkpoints_suppressed_spectator_respawn))
+				{
+					zombie_utility::set_zombie_var("spectators_respawn", true);
+					level.checkpoints_suppressed_spectator_respawn = false;
+				}
+				zm_utility::decrement_no_end_game_check();
+			}
+		}
+		level waittill("tfoption_checkpoints_changed");
+	}
 }
 
 function save_checkpoint()
@@ -113,31 +123,37 @@ function save_checkpoint()
 	while(1)	
 	{
 		level waittill("end_of_round");
-		if(DEBUG == true && level.no_end_game_check == true){IPrintLnBold("num = ^3" + num + " ^7round number = ^3" + level.round_number);}
+		enabled = is_enabled();
+		if(DEBUG == true && enabled){IPrintLnBold("num = ^3" + num + " ^7round number = ^3" + level.round_number);}
 		
 		//if num is greater than level.round_number save a new checkpoint
-		if(level.round_number > num && level.no_end_game_check == true && level.respawning_players != true)
+		if(level.round_number > num && enabled && level.respawning_players != true)
 		{
 			num = level.round_number;
-			if(level.no_end_game_check == true)
-			{
-				thread checkpoint();
-				if(DEBUG == true){IPrintLnBold("^3Saving Checkpoint^7!");}
-			}
+			thread checkpoint();
+			if(DEBUG == true){IPrintLnBold("^3Saving Checkpoint^7!");}
 		}
-		else if(level.no_end_game_check == true){if(DEBUG == true){IPrintLnBold("^1NOT^7 Saving Checkpoint");}}
+		else if(enabled){if(DEBUG == true){IPrintLnBold("^1NOT^7 Saving Checkpoint");}}
 	}
 } 
 
 //call this thread to save the players loadout & score
 function checkpoint()
 {
-	if(level.no_end_game_check == true)
+	if(is_enabled())
 	{
-		zombie_utility::set_zombie_var( "spectators_respawn", 				false );		// Respawn in the spectators in between rounds
+		if (IS_TRUE(level.zombie_vars["spectators_respawn"]))
+		{
+			zombie_utility::set_zombie_var("spectators_respawn", false);
+			level.checkpoints_suppressed_spectator_respawn = true;
+		}
 		players = GetPlayers();
 		for(i = 0; i < players.size; i++)
 		{
+			if (!is_enabled())
+			{
+				return;
+			}
 			if(players[i].sessionstate == "spectator")
 			{
 				client = players[i];
@@ -147,6 +163,10 @@ function checkpoint()
 			}
 		}
 		wait(2);
+		if (!is_enabled())
+		{
+			return;
+		}
 		players = GetPlayers();
 		for(i=0;i<players.size;i++)
 		{
@@ -165,7 +185,6 @@ function checkpoint()
 			player.ignoreme = false;
 		}
 	}
-	else{	zombie_utility::set_zombie_var( "spectators_respawn", 				true );}
 }
 
 function no_end_game_check()
@@ -193,6 +212,10 @@ function no_end_game_check()
 		}
 		level notify("all_players_dead");
 		wait(1);
+		if (!is_enabled())
+		{
+			return;
+		}
 		for(z = 0; z < players.size; z++)
 		{
 			players[z] thread respawn_players();
@@ -330,6 +353,10 @@ function no_end_game_check_save_weapons(weapons,score,perk_list,gum)
 	if(DEBUG == true){IPrintLnBold(self.name + "'s weapons + score has been saved");}
 	//waittill the player is respawned from death
 	self waittill("respawned_players");
+	if (!is_enabled())
+	{
+		return;
+	}
 	
 	if(DEBUG == true){IPrintLnBold(self.name + " respawn weapons notified");}
 

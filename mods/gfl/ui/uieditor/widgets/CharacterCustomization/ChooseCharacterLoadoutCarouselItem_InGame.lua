@@ -4,17 +4,17 @@
 require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacterLoadoutCarouselItem_Internal_InGame" )
 require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 
-local f0_local0 = function ( f1_arg0, f1_arg1 )
-	f1_arg0.m_preventFromBeingCurrentMouseFocus = true
-	f1_arg0.disabledAllowNav = true
+local configureMouseNavigation = function ( self, controller )
+	self.m_preventFromBeingCurrentMouseFocus = true
+	self.disabledAllowNav = true
 end
 
-local PostLoadFunc = function ( f2_arg0, f2_arg1 )
-	local f2_local0, f2_local1 = f2_arg0:getLocalSize()
-	f2_arg0.getWidthInList = function ()
-		if f2_arg0.gridInfoTable then
-			if f2_arg0.gridInfoTable.parentGrid.activeWidget == f2_arg0 then
-				return f2_local0
+local PostLoadFunc = function ( self, controller )
+	local width, height = self:getLocalSize()
+	self.getWidthInList = function ()
+		if self.gridInfoTable then
+			if self.gridInfoTable.parentGrid.activeWidget == self then
+				return width
 			else
 				return 90
 			end
@@ -24,7 +24,7 @@ local PostLoadFunc = function ( f2_arg0, f2_arg1 )
 	end
 	
 	if CoD.isPC then
-		f0_local0( f2_arg0, f2_arg1 )
+		configureMouseNavigation( self, controller )
 	end
 end
 
@@ -56,10 +56,10 @@ CoD.ChooseCharacterLoadoutCarouselItem_InGame.new = function ( menu, controller 
 		item:setModel( model, controller )
 	end )
 	item:registerEventHandler( "list_item_gain_focus", function ( element, event )
-		local f6_local0 = nil
+		local handlerResult = nil
 		-- HeroLoadoutPreviewChange( element, controller )
 		-- SetSpecialistAsOld( self, element, controller )
-		return f6_local0
+		return handlerResult
 	end )
 	self:addElement( item )
 	self.item = item

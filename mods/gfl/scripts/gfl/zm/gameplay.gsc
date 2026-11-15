@@ -95,7 +95,10 @@ function on_player_connect()
 	self endon("disconnect");
 
     self thread revive_at_end_of_round();
-    self thread mw3_intro_zm();
+    if ( GetDvarInt("tfoption_mw3_intro", 1) )
+    {
+        self thread mw3_intro_zm();
+    }
     // self thread menuresponse_test();
 }
 

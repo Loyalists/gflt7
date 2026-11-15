@@ -109,8 +109,8 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 
     table.insert(heroes, {
         displayName = "AK-Alfa",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_technomancer",
-		frozenMomentRender = "t7_menu_choosespecialist_default_prophet",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_tololo",
+		frozenMomentRender = "t7_menu_choosespecialist_default_tololo",
 		disabled = false,
 		slots = {
 			{
@@ -187,7 +187,7 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 
     table.insert(heroes, {
         displayName = "M4 SOPMOD II",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_mercenary",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_soppo",
 		frozenMomentRender = "t7_menu_choosespecialist_default_ruin",
 		disabled = false,
 		slots = {
@@ -219,7 +219,13 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 		slots = {
 			{
 				character = "st_ar15",
+				displayName = "MENU_CLASSIC",
 				gameImageOff = "t7_gfl_chibi_st_ar15",
+			},
+			{
+				character = "asteria_p1",
+				displayName = "School",
+				gameImageOff = "t7_gfl_chibi_asteria",
 			},
 		},
     })
@@ -342,7 +348,7 @@ CoD.CharacterUtil.GetHeroesList_InGame = function(customizationMode)
 
     table.insert(heroes, {
         displayName = "M200",
-        backgroundWithCharacter = "t7_menu_mp_hero_background_with_cheyanne",
+        backgroundWithCharacter = "t7_menu_mp_hero_background_with_technomancer",
 		frozenMomentRender = "t7_menu_choosespecialist_default_cheyanne",
 		disabled = false,
 		slots = {
@@ -521,17 +527,17 @@ CoD.CharacterUtil.SelectHero_InGame = function( element, controller )
     end
 end
 
-CoD.CharacterUtil.CreateCarouselItemLoadoutDatasource_InGame = function ( f7_arg0, f7_arg1, f7_arg2 )
-	local f7_local0 = "HeroCarouselItemLoadoutList_InGame" .. f7_arg0.properties.heroIndex
-	DataSources[f7_local0] = DataSourceHelpers.ListSetup( f7_local0, function ( f8_arg0 )
-		local f8_local0 = {}
-		if not f7_arg0.slots then
-			return f8_local0
+CoD.CharacterUtil.CreateCarouselItemLoadoutDatasource_InGame = function ( heroData, mode, controller )
+	local dataSourceName = "HeroCarouselItemLoadoutList_InGame" .. heroData.properties.heroIndex
+	DataSources[dataSourceName] = DataSourceHelpers.ListSetup( dataSourceName, function ( controller )
+		local loadouts = {}
+		if not heroData.slots then
+			return loadouts
 		end
 		
-		for i, slot in ipairs(f7_arg0.slots) do
+		for i, slot in ipairs(heroData.slots) do
 			if slot then
-				table.insert( f8_local0, {
+				table.insert( loadouts, {
 					models = {
 						name = Engine.Localize( slot.displayName or "MENU_SELECT_CAPS" ),
 						gameImageOff = slot.gameImageOff or "blacktransparent",
@@ -547,73 +553,73 @@ CoD.CharacterUtil.CreateCarouselItemLoadoutDatasource_InGame = function ( f7_arg
 						equippedSlot = i,
 						hintText = CoD.CCUtility.GetHintTextForLoadoutSlot( i ),
 						selectIndex = i == 1,
-						heroIndex = f7_arg0.properties.heroIndex
+						heroIndex = heroData.properties.heroIndex
 					}
 				} )
 			end
 		end
-		return f8_local0
+		return loadouts
 	end, true )
-	return f7_local0
+	return dataSourceName
 end
 
-CoD.CharacterUtil.GetHeroModels_InGame = function ( f75_arg0, f75_arg1, f75_arg2, f75_arg3 )
-	local f75_local4 = CoD.CCUtility.Heroes.HeroIndexForEdits
-	if not f75_local4 then
-		f75_local4 = 0
+CoD.CharacterUtil.GetHeroModels_InGame = function ( hero, heroIndex, controller, f75_arg3 )
+	local selectedHeroIndex = CoD.CCUtility.Heroes.HeroIndexForEdits
+	if not selectedHeroIndex then
+		selectedHeroIndex = 0
 	end
-	local f75_local6 = {
+	local heroData = {
 		models = {
-			backgroundWithCharacter = f75_arg0.backgroundWithCharacter or "blacktransparent",
-			lockedBackgroundWithCharacter = f75_arg0.backgroundWithCharacter or "blacktransparent",
-			name = f75_arg0.displayName,
+			backgroundWithCharacter = hero.backgroundWithCharacter or "blacktransparent",
+			lockedBackgroundWithCharacter = hero.backgroundWithCharacter or "blacktransparent",
+			name = hero.displayName,
 			unlockDescription = "",
 			level = 1,
-			unlockedCharacterSliver = f75_arg0.frozenMomentRender or "blacktransparent",
-			lockedCharacterSliver = f75_arg0.frozenMomentRender or "blacktransparent",
-			disabled = f75_arg0.disabled or false,
+			unlockedCharacterSliver = hero.frozenMomentRender or "blacktransparent",
+			lockedCharacterSliver = hero.frozenMomentRender or "blacktransparent",
+			disabled = hero.disabled or false,
 			equippedSlot = 0,
 			selectedHeadInfo = nil,
 			selectedBodyInfo = nil,
 			selectedShowcaseWeaponInfo = nil,
 			selectedTauntInfo = nil,
 			itemType = Enum.VoteItemType.VOTE_ITEM_TYPE_ITEM,
-			heroIndex = f75_arg0.bodyIndex,
+			heroIndex = hero.bodyIndex,
 			breadcrumbCount = 0,
 		},
 		properties = {
-			heroIndex = f75_arg0.bodyIndex,
-			selectIndex = f75_arg0.bodyIndex == f75_local4
+			heroIndex = hero.bodyIndex,
+			selectIndex = hero.bodyIndex == selectedHeroIndex
 		},
-		slots = f75_arg0.slots,
+		slots = hero.slots,
 	}
-	if not f75_local6.models.disabled then
-		f75_local6.models.loadoutDatasource = CoD.CharacterUtil.CreateCarouselItemLoadoutDatasource_InGame( f75_local6, CoD.CCUtility.customizationMode, f75_arg2 )
+	if not heroData.models.disabled then
+		heroData.models.loadoutDatasource = CoD.CharacterUtil.CreateCarouselItemLoadoutDatasource_InGame( heroData, CoD.CCUtility.customizationMode, controller )
 	end
-	return f75_local6
+	return heroData
 end
 
-CoD.CharacterUtil.HeroesListPrepare_InGame = function ( f77_arg0 )
-	local f77_local1 = CoD.CharacterUtil.GetHeroesList_InGame( CoD.CCUtility.customizationMode )
-	local f77_local2 = {}
-	local f77_local5 = 0
-	for f77_local11, f77_local12 in ipairs( f77_local1 ) do
-		local f77_local10 = CoD.CharacterUtil.GetHeroModels_InGame( f77_local12, f77_local11, f77_arg0, nil )
-		table.insert( f77_local2, f77_local10 )
+CoD.CharacterUtil.HeroesListPrepare_InGame = function ( controller )
+	local heroes = CoD.CharacterUtil.GetHeroesList_InGame( CoD.CCUtility.customizationMode )
+	local heroItems = {}
+	local ignoredHeroCount = 0
+	for f77_local11, hero in ipairs( heroes ) do
+		local heroData = CoD.CharacterUtil.GetHeroModels_InGame( hero, f77_local11, controller, nil )
+		table.insert( heroItems, heroData )
 	end
 	if CoD.isPC then
-		for f77_local11, f77_local12 in ipairs( f77_local2 ) do
-			f77_local12.properties.carouselPos = f77_local11
+		for index, heroItem in ipairs( heroItems ) do
+			heroItem.properties.carouselPos = index
 		end
 	end
-	local f77_local6 = 1
-	for f77_local12, f77_local9 in ipairs( f77_local2 ) do
-		if not f77_local9.shouldIgnoreWhenCounting then
-			f77_local9.models.count = Engine.Localize( "MENU_X_OF_Y", f77_local6, #f77_local2 - f77_local5 )
-			f77_local6 = f77_local6 + 1
+	local displayIndex = 1
+	for index, heroItem in ipairs( heroItems ) do
+		if not heroItem.shouldIgnoreWhenCounting then
+			heroItem.models.count = Engine.Localize( "MENU_X_OF_Y", displayIndex, #heroItems - ignoredHeroCount )
+			displayIndex = displayIndex + 1
 		end
 	end
-	return f77_local2
+	return heroItems
 end
 
 DataSources.HeroesList_InGame = DataSourceHelpers.ListSetup( "HeroesList_InGame", CoD.CharacterUtil.HeroesListPrepare_InGame, true )

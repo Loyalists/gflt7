@@ -1,7 +1,7 @@
 require( "ui.uieditor.widgets.FileShare.FullscreenPopup.FullscreenPopupTemplate" )
 require( "ui.uieditor.widgets.Footer.fe_LeftContainer_NOTLobby" )
 
-local PostLoadFunc = function ( f1_arg0, f1_arg1 )
+local PostLoadFunc = function ( self, controller )
 
 end
 
@@ -16,10 +16,10 @@ LUI.createMenu.GFLCRMBanner = function ( controller )
 	self:setTopBottom( true, true, 0, 0 )
 	self:playSound( "menu_open", controller )
 	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "GFLCRMBanner.buttonPrompts" )
-	local f2_local1 = self
+	local menu = self
 	self.anyChildUsesUpdateState = true
 	
-	local FullscreenPopupTemplate = CoD.FullscreenPopupTemplate.new( f2_local1, controller )
+	local FullscreenPopupTemplate = CoD.FullscreenPopupTemplate.new( menu, controller )
 	FullscreenPopupTemplate:setLeftRight( true, false, -3.04, 1280.96 )
 	FullscreenPopupTemplate:setTopBottom( true, false, 0, 720 )
 	FullscreenPopupTemplate.ButtonList:setDataSource( "GFLCRMButtonList" )
@@ -32,17 +32,17 @@ LUI.createMenu.GFLCRMBanner = function ( controller )
 	self:addElement( FullscreenPopupTemplate )
 	self.FullscreenPopupTemplate = FullscreenPopupTemplate
 	
-	local leftButtonBar = CoD.fe_LeftContainer_NOTLobby.new( f2_local1, controller )
+	local leftButtonBar = CoD.fe_LeftContainer_NOTLobby.new( menu, controller )
 	leftButtonBar:setLeftRight( true, false, 64, 496 )
 	leftButtonBar:setTopBottom( true, false, 531, 563 )
 	self:addElement( leftButtonBar )
 	self.leftButtonBar = leftButtonBar
 
-	f2_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( f13_arg0, f13_arg1, f13_arg2, f13_arg3 )
-		GoBack( self, f13_arg2 )
+	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( element, menu, controller, event )
+		GoBack( self, controller )
 		return true
-	end, function ( f14_arg0, f14_arg1, f14_arg2 )
-		CoD.Menu.SetButtonLabel( f14_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_CLOSE" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_CLOSE" )
 		return true
 	end, false )
 
@@ -54,7 +54,7 @@ LUI.createMenu.GFLCRMBanner = function ( controller )
 	} )
 	self:processEvent( {
 		name = "update_state",
-		menu = f2_local1
+		menu = menu
 	} )
 	if not self:restoreState() then
 		self.FullscreenPopupTemplate:processEvent( {

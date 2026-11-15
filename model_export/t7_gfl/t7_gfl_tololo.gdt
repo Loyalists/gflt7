@@ -6972,6 +6972,7 @@
 		"colorMap" "i_gfl_tololo_eyenewadd_c"
 		"colorMap00" "i_gfl_tololo_eyenewadd_c"
 		"materialType" "lit_emissive_transparent_plus"
+		"scaleRGB" "1.0"
 	}
 	"t7_gfl_tololo_fb_mp" ( "xmodel.gdf" )
 	{

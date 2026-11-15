@@ -46,7 +46,8 @@
 
 //hit markers
 // #using scripts\zm\zm_damagefeedback;
-#using scripts\zm\_hb21_zm_hitmarkers;
+// #using scripts\zm\_hb21_zm_hitmarkers;
+#using scripts\gfl\zm\elmg_hitmarker;
 
 //Custom Powerups By ZoekMeMaar
 #using scripts\_ZoekMeMaar\custom_powerup_free_packapunch_with_time;
@@ -133,6 +134,7 @@ function autoexec auto_preload()
     level.tfoptions_default["objectives"] = 0;
     level.tfoptions_default["checkpoints"] = 0;
     level.tfoptions_default["bot_health"] = 0;
+    level.tfoptions_default["mw3_intro"] = 1;
 
     if( !GetDvarInt("tfoption_tf_enabled", 0) )
     {

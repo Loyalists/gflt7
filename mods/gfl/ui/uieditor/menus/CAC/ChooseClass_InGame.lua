@@ -14,25 +14,25 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.chooseClassWidget_Ingame" )
 require( "ui.uieditor.widgets.Lobby.Common.FE_Menu_LeftGraphics" )
 require( "ui.uieditor.widgets.Footer.fe_FooterContainer_NOTLobby" )
 
-DataSources.ClassSetTabs = DataSourceHelpers.ListSetup( "ClassSetTabs", function ( f1_arg0 )
-	local f1_local0 = {}
-	local f1_local1 = Engine.Localize( "MPUI_CUSTOM_CLASSES" )
+DataSources.ClassSetTabs = DataSourceHelpers.ListSetup( "ClassSetTabs", function ( controller )
+	local items = {}
+	local tabName = Engine.Localize( "MPUI_CUSTOM_CLASSES" )
 	if IsClassSetsAvailableForCurrentGameMode() then
-		f1_local1 = Engine.GetClassSetName( f1_arg0, Engine.GetCurrentClassSetIndex( f1_arg0 ) )
+		tabName = Engine.GetClassSetName( controller, Engine.GetCurrentClassSetIndex( controller ) )
 	end
-	table.insert( f1_local0, {
+	table.insert( items, {
 		models = {
-			tabName = f1_local1,
+			tabName = tabName,
 			classSetId = CoD.PrestigeUtility.ChooseClassSets.Custom
 		}
 	} )
-	table.insert( f1_local0, {
+	table.insert( items, {
 		models = {
 			tabName = Engine.Localize( "MPUI_DEFAULT_CLASSES" ),
 			classSetId = CoD.PrestigeUtility.ChooseClassSets.Default
 		}
 	} )
-	return f1_local0
+	return items
 end )
 
 local PreLoadFunc = function(self, controller)
@@ -44,8 +44,8 @@ local PreLoadFunc = function(self, controller)
         })
     end)
     if not CoD.perController[controller].isInMobileArmory then
-        local f2_local0 = CoD.SafeGetModelValue(self:getModel(), "isInMobileArmory")
-        CoD.perController[controller].isInMobileArmory = f2_local0 and f2_local0 == 1
+        local isInMobileArmory = CoD.SafeGetModelValue(self:getModel(), "isInMobileArmory")
+        CoD.perController[controller].isInMobileArmory = isInMobileArmory and isInMobileArmory == 1
     end
     if IsCampaign() then
         local f2_local0 = nil
@@ -62,12 +62,12 @@ local PreLoadFunc = function(self, controller)
         StartMenuResumeGame(element, event.controller)
         CloseStartMenu(element, event.controller)
     end)
-    local f2_local0 = Engine.GetModelForController(controller)
-    if not Engine.GetModel(f2_local0, "hudItems") then
-        Engine.CreateModel(f2_local0, "hudItems")
+    local parentModel = Engine.GetModelForController(controller)
+    if not Engine.GetModel(parentModel, "hudItems") then
+        Engine.CreateModel(parentModel, "hudItems")
     end
-    if not Engine.GetModel(f2_local0, "hudItems.cybercoreSelectMenuDisabled") then
-        Engine.CreateModel(f2_local0, "hudItems.cybercoreSelectMenuDisabled")
+    if not Engine.GetModel(parentModel, "hudItems.cybercoreSelectMenuDisabled") then
+        Engine.CreateModel(parentModel, "hudItems.cybercoreSelectMenuDisabled")
     end
     if not IsCACCustomClassCountDefault(controller) then
         Engine.SetModelValue(Engine.CreateModel(Engine.GetModelForController(controller), "classSetValue"),
@@ -75,30 +75,30 @@ local PreLoadFunc = function(self, controller)
     end
 end
 
-local PostLoadFunc = function(f5_arg0, f5_arg1)
+local PostLoadFunc = function(self, controller)
     if not CoD.MenuNavigation then
         CoD.MenuNavigation = {}
     end
-    CoD.MenuNavigation[f5_arg1] = {{"class"}}
+    CoD.MenuNavigation[controller] = {{"class"}}
     if IsClassSetsAvailableForCurrentGameMode() then
-        f5_arg0.classSetName:setText(Engine.Localize(Engine.GetClassSetName(f5_arg1,
-            Engine.GetCurrentClassSetIndex(f5_arg1))))
+        self.classSetName:setText(Engine.Localize(Engine.GetClassSetName(controller,
+            Engine.GetCurrentClassSetIndex(controller))))
     end
-    f5_arg0.classList.navigation = {
+    self.classList.navigation = {
         right = nil
     }
-    f5_arg0.chooseClassWidget.m_inputDisabled = true
-    f5_arg0:linkToElementModel(f5_arg0.ClassSetTabWidget.Internal.Tabs, nil, false, function(model)
-        if IsCACCustomClassCountDefault(f5_arg1) then
+    self.chooseClassWidget.m_inputDisabled = true
+    self:linkToElementModel(self.ClassSetTabWidget.Internal.Tabs, nil, false, function(model)
+        if IsCACCustomClassCountDefault(controller) then
             return
         else
-            Engine.SetModelValue(Engine.CreateModel(Engine.GetModelForController(f5_arg1), "classSetValue"),
+            Engine.SetModelValue(Engine.CreateModel(Engine.GetModelForController(controller), "classSetValue"),
                 Engine.GetModelValue(Engine.GetModel(model, "classSetId")))
-            f5_arg0.ClassSetTabWidget.Internal.IndicatorsGrid:updateDataSource()
-            f5_arg0.classList.classList:updateDataSource()
+            self.ClassSetTabWidget.Internal.IndicatorsGrid:updateDataSource()
+            self.classList.classList:updateDataSource()
         end
     end)
-    CoD.CACUtility.ForceStreamAttachmentImages(f5_arg1)
+    CoD.CACUtility.ForceStreamAttachmentImages(controller)
 end
 
 LUI.createMenu.ChooseClass_InGame = function(controller)
@@ -112,7 +112,7 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     self:setTopBottom(true, true, 0, 0)
     self:playSound("menu_open", controller)
     self.buttonModel = Engine.CreateModel(Engine.GetModelForController(controller), "ChooseClass_InGame.buttonPrompts")
-    local f7_local1 = self
+    local menu = self
     self.anyChildUsesUpdateState = true
 
     local blackimage = LUI.UIImage.new()
@@ -141,13 +141,13 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     self:addElement(blackImage)
     self.blackImage = blackImage
 
-    local Texture = CoD.AbilityWheel_Texture.new(f7_local1, controller)
+    local Texture = CoD.AbilityWheel_Texture.new(menu, controller)
     Texture:setLeftRight(false, false, -140, 640)
     Texture:setTopBottom(true, false, 134, 655)
     self:addElement(Texture)
     self.Texture = Texture
 
-    local LeftPanel = CoD.FE_ButtonPanelShaderContainer_ExposedValues.new(f7_local1, controller)
+    local LeftPanel = CoD.FE_ButtonPanelShaderContainer_ExposedValues.new(menu, controller)
     LeftPanel:setLeftRight(false, false, -576, -262)
     LeftPanel:setTopBottom(true, true, 78, 0)
     LeftPanel:setRGB(0.24, 0.24, 0.24)
@@ -162,9 +162,9 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
         end
     }})
     LeftPanel:subscribeToModel(Engine.GetModel(Engine.GetGlobalModel(), "lobbyRoot.lobbyNav"), function(model)
-        f7_local1:updateElementState(LeftPanel, {
+        menu:updateElementState(LeftPanel, {
             name = "model_validation",
-            menu = f7_local1,
+            menu = menu,
             modelValue = Engine.GetModelValue(model),
             modelName = "lobbyRoot.lobbyNav"
         })
@@ -181,7 +181,7 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     self:addElement(Backing)
     self.Backing = Backing
 
-    local background = CoD.CACBackgroundNoHero.new(f7_local1, controller)
+    local background = CoD.CACBackgroundNoHero.new(menu, controller)
     background:setLeftRight(true, true, -6, -6)
     background:setTopBottom(true, true, 4, 4)
     background.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText(Engine.Localize(
@@ -199,7 +199,7 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     self:addElement(title)
     self.title = title
 
-    local CybercoreLoadoutWidget0 = CoD.CybercoreLoadoutWidget.new(f7_local1, controller)
+    local CybercoreLoadoutWidget0 = CoD.CybercoreLoadoutWidget.new(menu, controller)
     CybercoreLoadoutWidget0:setLeftRight(false, false, -555, -262)
     CybercoreLoadoutWidget0:setTopBottom(true, false, 111, 290)
     CybercoreLoadoutWidget0:setAlpha(0)
@@ -215,20 +215,20 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     self:addElement(loadoutSubHeader)
     self.loadoutSubHeader = loadoutSubHeader
 
-    local chooseClassCPClientIngame0 = CoD.chooseClassCPClient_Ingame.new(f7_local1, controller)
+    local chooseClassCPClientIngame0 = CoD.chooseClassCPClient_Ingame.new(menu, controller)
     chooseClassCPClientIngame0:setLeftRight(false, false, -555, -275)
     chooseClassCPClientIngame0:setTopBottom(true, false, 89, 134)
     chooseClassCPClientIngame0:setAlpha(0)
     self:addElement(chooseClassCPClientIngame0)
     self.chooseClassCPClientIngame0 = chooseClassCPClientIngame0
 
-    local classList = CoD.chooseClassInGameClassList.new(f7_local1, controller)
+    local classList = CoD.chooseClassInGameClassList.new(menu, controller)
     classList:setLeftRight(false, false, -555, -275)
     classList:setTopBottom(true, false, 134, 642)
     self:addElement(classList)
     self.classList = classList
 
-    local ClassSetTabWidget = CoD.ChooseClass_ClassSetTabWidget.new(f7_local1, controller)
+    local ClassSetTabWidget = CoD.ChooseClass_ClassSetTabWidget.new(menu, controller)
     ClassSetTabWidget:setLeftRight(false, false, -559.5, -270.5)
     ClassSetTabWidget:setTopBottom(true, false, 94, 134)
     ClassSetTabWidget:setAlpha(0)
@@ -258,7 +258,7 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     self:addElement(classSetName)
     self.classSetName = classSetName
 
-    local chooseClassWidget = CoD.chooseClassWidget_Ingame.new(f7_local1, controller)
+    local chooseClassWidget = CoD.chooseClassWidget_Ingame.new(menu, controller)
     chooseClassWidget:setLeftRight(false, false, -251.5, 89.5)
     chooseClassWidget:setTopBottom(true, false, 80, 684)
     self:addElement(chooseClassWidget)
@@ -272,13 +272,13 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     self:addElement(FooterBacking)
     self.FooterBacking = FooterBacking
 
-    local FEMenuLeftGraphics = CoD.FE_Menu_LeftGraphics.new(f7_local1, controller)
+    local FEMenuLeftGraphics = CoD.FE_Menu_LeftGraphics.new(menu, controller)
     FEMenuLeftGraphics:setLeftRight(true, false, 19, 71)
     FEMenuLeftGraphics:setTopBottom(true, true, 86, -16.75)
     self:addElement(FEMenuLeftGraphics)
     self.FEMenuLeftGraphics = FEMenuLeftGraphics
 
-    local feFooterContainer = CoD.fe_FooterContainer_NOTLobby.new(f7_local1, controller)
+    local feFooterContainer = CoD.fe_FooterContainer_NOTLobby.new(menu, controller)
     feFooterContainer:setLeftRight(true, true, 0, 0)
     feFooterContainer:setTopBottom(false, true, -65, 0)
     feFooterContainer:registerEventHandler("menu_loaded", function(element, event)
@@ -541,14 +541,14 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     }, {
         stateName = "ClassSetTabs",
         condition = function(menu, element, event)
-            local f21_local0 = IsMultiplayer()
-            if f21_local0 then
-                f21_local0 = IsPublicOrLeagueGame(controller)
-                if f21_local0 then
-                    f21_local0 = not IsCACCustomClassCountDefault(controller)
+            local isMultiplayer = IsMultiplayer()
+            if isMultiplayer then
+                isMultiplayer = IsPublicOrLeagueGame(controller)
+                if isMultiplayer then
+                    isMultiplayer = not IsCACCustomClassCountDefault(controller)
                 end
             end
-            return f21_local0
+            return isMultiplayer
         end
     }, {
         stateName = "ClassSetNoPrestige",
@@ -557,46 +557,46 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
         end
     }})
     self:subscribeToModel(Engine.GetModel(Engine.GetGlobalModel(), "lobbyRoot.lobbyNav"), function(model)
-        f7_local1:updateElementState(self, {
+        menu:updateElementState(self, {
             name = "model_validation",
-            menu = f7_local1,
+            menu = menu,
             modelValue = Engine.GetModelValue(model),
             modelName = "lobbyRoot.lobbyNav"
         })
     end)
     self:subscribeToModel(Engine.GetModel(Engine.GetModelForController(controller),
         "hudItems.cybercoreSelectMenuDisabled"), function(model)
-        f7_local1:updateElementState(self, {
+        menu:updateElementState(self, {
             name = "model_validation",
-            menu = f7_local1,
+            menu = menu,
             modelValue = Engine.GetModelValue(model),
             modelName = "hudItems.cybercoreSelectMenuDisabled"
         })
     end)
     self:subscribeToModel(Engine.GetModel(Engine.GetGlobalModel(), "lobbyRoot.lobbyNav"), function(model)
-        local f25_local0 = self
-        local f25_local1 = {
+        local menu2 = self
+        local event = {
             controller = controller,
             name = "model_validation",
             modelValue = Engine.GetModelValue(model),
             modelName = "lobbyRoot.lobbyNav"
         }
-        CoD.Menu.UpdateButtonShownState(f25_local0, f7_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE)
-        CoD.Menu.UpdateButtonShownState(f25_local0, f7_local1, controller, Enum.LUIButton.LUI_KEY_LB)
-        CoD.Menu.UpdateButtonShownState(f25_local0, f7_local1, controller, Enum.LUIButton.LUI_KEY_RB)
+        CoD.Menu.UpdateButtonShownState(menu2, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE)
+        CoD.Menu.UpdateButtonShownState(menu2, menu, controller, Enum.LUIButton.LUI_KEY_LB)
+        CoD.Menu.UpdateButtonShownState(menu2, menu, controller, Enum.LUIButton.LUI_KEY_RB)
     end)
     self:subscribeToModel(Engine.GetModel(Engine.GetModelForController(controller),
         "hudItems.cybercoreSelectMenuDisabled"), function(model)
-        local f26_local0 = self
-        local f26_local1 = {
+        local menu2 = self
+        local event = {
             controller = controller,
             name = "model_validation",
             modelValue = Engine.GetModelValue(model),
             modelName = "hudItems.cybercoreSelectMenuDisabled"
         }
-        CoD.Menu.UpdateButtonShownState(f26_local0, f7_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE)
+        CoD.Menu.UpdateButtonShownState(menu2, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE)
     end)
-    CoD.Menu.AddNavigationHandler(f7_local1, self, controller)
+    CoD.Menu.AddNavigationHandler(menu, self, controller)
     self:registerEventHandler("menu_loaded", function(element, event)
         local f27_local0 = nil
         if IsCampaign() then
@@ -614,87 +614,87 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
         end
         return f27_local0
     end)
-    f7_local1:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil,
-        function(f28_arg0, f28_arg1, f28_arg2, f28_arg3)
-            if IsPerControllerTablePropertyValue(f28_arg2, "isInMobileArmory", true) then
-                SendMenuResponse(self, "ChooseClass_InGame", "cancel", f28_arg2)
-                LockInput(self, f28_arg2, false)
-                ClearMenuSavedState(f28_arg1)
+    menu:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil,
+        function(element, menu, controller, event)
+            if IsPerControllerTablePropertyValue(controller, "isInMobileArmory", true) then
+                SendMenuResponse(self, "ChooseClass_InGame", "cancel", controller)
+                LockInput(self, controller, false)
+                ClearMenuSavedState(menu)
                 PlaySoundSetSound(self, "menu_go_back")
-                Close(self, f28_arg2)
-                SetPerControllerTableProperty(f28_arg2, "isInMobileArmory", false)
+                Close(self, controller)
+                SetPerControllerTableProperty(controller, "isInMobileArmory", false)
                 return true
             else
-                SendMenuResponse(self, "ChooseClass_InGame", "cancel", f28_arg2)
-                PrepareCloseMenuInSafehouse(f28_arg2)
-                GoBack(self, f28_arg2)
+                SendMenuResponse(self, "ChooseClass_InGame", "cancel", controller)
+                PrepareCloseMenuInSafehouse(controller)
+                GoBack(self, controller)
                 return true
             end
-        end, function(f29_arg0, f29_arg1, f29_arg2)
-            if IsPerControllerTablePropertyValue(f29_arg2, "isInMobileArmory", true) then
-                CoD.Menu.SetButtonLabel(f29_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK")
+        end, function(element, menu, controller)
+            if IsPerControllerTablePropertyValue(controller, "isInMobileArmory", true) then
+                CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK")
                 return true
             else
-                CoD.Menu.SetButtonLabel(f29_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MP_BACK")
+                CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MP_BACK")
                 return true
             end
         end, false)
-    f7_local1:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "C",
-        function(f30_arg0, f30_arg1, f30_arg2, f30_arg3)
+    menu:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "C",
+        function(element, menu, controller, event)
             if IsCampaign() then
                 SetProperty(self, "isOpeningCybercore", true)
-                NavigateToMenu(self, "CybercoreSelectionMenu", true, f30_arg2)
+                NavigateToMenu(self, "CybercoreSelectionMenu", true, controller)
                 return true
             else
 
             end
-        end, function(f31_arg0, f31_arg1, f31_arg2)
+        end, function(element, menu, controller)
             if IsCampaign() then
-                CoD.Menu.SetButtonLabel(f31_arg1, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "")
+                CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "")
                 return false
             else
                 return false
             end
         end, false)
-    f7_local1:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_LB, nil,
-        function(f32_arg0, f32_arg1, f32_arg2, f32_arg3)
-            if IsCampaign() and CanUseSharedLoadouts(f32_arg2) then
-                chooseClass_ClientChanged(self, f32_arg0, f32_arg2, "-1")
+    menu:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_LB, nil,
+        function(element, menu, controller, event)
+            if IsCampaign() and CanUseSharedLoadouts(controller) then
+                chooseClass_ClientChanged(self, element, controller, "-1")
                 return true
-            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(f32_arg2) then
-                chooseClass_TabMPClassesListLeft(self, f32_arg2)
+            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(controller) then
+                chooseClass_TabMPClassesListLeft(self, controller)
                 return true
             else
 
             end
-        end, function(f33_arg0, f33_arg1, f33_arg2)
-            if IsCampaign() and CanUseSharedLoadouts(f33_arg2) then
-                CoD.Menu.SetButtonLabel(f33_arg1, Enum.LUIButton.LUI_KEY_LB, "")
+        end, function(element, menu, controller)
+            if IsCampaign() and CanUseSharedLoadouts(controller) then
+                CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_LB, "")
                 return false
-            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(f33_arg2) then
-                CoD.Menu.SetButtonLabel(f33_arg1, Enum.LUIButton.LUI_KEY_LB, "")
+            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(controller) then
+                CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_LB, "")
                 return false
             else
                 return false
             end
         end, false)
-    f7_local1:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_RB, nil,
-        function(f34_arg0, f34_arg1, f34_arg2, f34_arg3)
-            if IsCampaign() and CanUseSharedLoadouts(f34_arg2) then
-                chooseClass_ClientChanged(self, f34_arg0, f34_arg2, "1")
+    menu:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_RB, nil,
+        function(element, menu, controller, event)
+            if IsCampaign() and CanUseSharedLoadouts(controller) then
+                chooseClass_ClientChanged(self, element, controller, "1")
                 return true
-            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(f34_arg2) then
-                chooseClass_TabMPClassesListRight(self, f34_arg2)
+            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(controller) then
+                chooseClass_TabMPClassesListRight(self, controller)
                 return true
             else
 
             end
-        end, function(f35_arg0, f35_arg1, f35_arg2)
-            if IsCampaign() and CanUseSharedLoadouts(f35_arg2) then
-                CoD.Menu.SetButtonLabel(f35_arg1, Enum.LUIButton.LUI_KEY_RB, "")
+        end, function(element, menu, controller)
+            if IsCampaign() and CanUseSharedLoadouts(controller) then
+                CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_RB, "")
                 return false
-            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(f35_arg2) then
-                CoD.Menu.SetButtonLabel(f35_arg1, Enum.LUIButton.LUI_KEY_RB, "")
+            elseif IsMultiplayer() and not IsCACCustomClassCountDefault(controller) then
+                CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_RB, "")
                 return false
             else
                 return false
@@ -716,7 +716,7 @@ LUI.createMenu.ChooseClass_InGame = function(controller)
     })
     self:processEvent({
         name = "update_state",
-        menu = f7_local1
+        menu = menu
     })
     if not self:restoreState() then
         self.classList:processEvent({

@@ -57,6 +57,35 @@
 		"viewArmsModel" "t7_gfl_alva_viewhands"
 		"xmodel" "t7_gfl_alva_fb_mp"
 	}
+	"pbt_gfl_body_asteria_p1" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "Asteria"
+		"firstPersonCinematicModel" "t7_gfl_asteria_p1_body_mp"
+		"firstPersonLegsModel" "t7_gfl_asteria_p1_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "t7_gfl_asteria_p1_viewhands"
+		"xmodel" "t7_gfl_asteria_p1_fb_mp"
+	}
 	"pbt_gfl_body_centaureissi" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"
@@ -128,7 +157,7 @@
 		"color_1_6" ""
 		"displayName" "HK416"
 		"firstPersonCinematicModel" "t7_gfl_hk416_v2_body_mp"
-		"firstPersonLegsModel" "c_t7_zm_dlchd_richtofen_waw_viewlegs"
+		"firstPersonLegsModel" "t7_gfl_hk416_v2_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -141,8 +170,8 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_t7_zm_dlchd_richtofen_waw_viewhands"
-		"xmodel" "c_t7_zm_dlchd_richtofen_waw_mpc_fb"
+		"viewArmsModel" "t7_gfl_hk416_v2_viewhands"
+		"xmodel" "t7_gfl_hk416_v2_fb_mp"
 	}
 	"pbt_gfl_body_dima" ( "playerbodystyle.gdf" )
 	{
@@ -388,8 +417,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "M4 SOPMOD II"
-		"firstPersonCinematicModel" "t7_gfl_m4_sopmod_ii_v2_body_mp"
-		"firstPersonLegsModel" "t7_gfl_m4_sopmod_ii_v2_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_soppo_body_mp"
+		"firstPersonLegsModel" "t7_gfl_soppo_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -402,8 +431,8 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "t7_gfl_m4_sopmod_ii_v2_viewhands"
-		"xmodel" "t7_gfl_m4_sopmod_ii_v2_fb_mp"
+		"viewArmsModel" "t7_gfl_soppo_viewhands"
+		"xmodel" "t7_gfl_soppo_fb_mp"
 	}
 	"pbt_gfl_body_m4a1" ( "playerbodystyle.gdf" )
 	{
@@ -707,8 +736,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "ST AR-15"
-		"firstPersonCinematicModel" "t7_gfl_st_ar15_v2_body_mp"
-		"firstPersonLegsModel" "t7_gfl_st_ar15_v2_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_asteria_p2_body_mp"
+		"firstPersonLegsModel" "t7_gfl_asteria_p2_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -721,8 +750,8 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "t7_gfl_st_ar15_v2_viewhands"
-		"xmodel" "t7_gfl_st_ar15_v2_fb_mp"
+		"viewArmsModel" "t7_gfl_asteria_p2_viewhands"
+		"xmodel" "t7_gfl_asteria_p2_fb_mp"
 	}
 	"pbt_gfl_body_suomi" ( "playerbodystyle.gdf" )
 	{
@@ -810,6 +839,35 @@
 		"impactTypeCorpse" "flesh"
 		"viewArmsModel" "t7_gfl_tac50_v2_viewhands"
 		"xmodel" "t7_gfl_tac50_v2_fb_mp"
+	}
+	"pbt_gfl_body_tololo" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "AK-Alfa"
+		"firstPersonCinematicModel" "t7_gfl_tololo_body_mp"
+		"firstPersonLegsModel" "t7_gfl_tololo_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "t7_gfl_tololo_viewhands"
+		"xmodel" "t7_gfl_tololo_fb_mp"
 	}
 	"pbt_gfl_body_ump45" ( "playerbodystyle.gdf" )
 	{
@@ -910,8 +968,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "Vepley (w/o Backpack)"
-		"firstPersonCinematicModel" "c_zom_zod_femme_viewbody"
-		"firstPersonLegsModel" "c_zom_zod_femme_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_vepley_body_mp"
+		"firstPersonLegsModel" "t7_gfl_vepley_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -924,7 +982,7 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_zod_femme_viewhands"
+		"viewArmsModel" "t7_gfl_vepley_viewhands"
 		"xmodel" "t7_gfl_vepley_fb_mp"
 	}
 	"pbt_gfl_body_vepley_backpack" ( "playerbodystyle.gdf" )
@@ -939,8 +997,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "Vepley"
-		"firstPersonCinematicModel" "c_zom_zod_femme_viewbody"
-		"firstPersonLegsModel" "c_zom_zod_femme_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_vepley_body_mp"
+		"firstPersonLegsModel" "t7_gfl_vepley_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -953,7 +1011,7 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_zod_femme_viewhands"
+		"viewArmsModel" "t7_gfl_vepley_viewhands"
 		"xmodel" "t7_gfl_vepley_backpack_fb_mp"
 	}
 	"pbt_gfl_body_vespid" ( "playerbodystyle.gdf" )
@@ -985,36 +1043,7 @@
 		"viewArmsModel" "t7_gfl_vespid_viewhands"
 		"xmodel" "t7_gfl_vespid_fb_mp"
 	}
-	"pbt_zm_body_dempsey" ( "playerbodystyle.gdf" )
-	{
-		"accentColor1OptionsCount" "3"
-		"accentColorCount" "0"
-		"characterMovementFxOverride" ""
-		"color_1_1" ""
-		"color_1_2" ""
-		"color_1_3" ""
-		"color_1_4" ""
-		"color_1_5" ""
-		"color_1_6" ""
-		"displayName" "M16A1"
-		"firstPersonCinematicModel" "c_zom_der_dempsey_viewbody"
-		"firstPersonLegsModel" "c_zom_der_dempsey_viewlegs"
-		"gibDef" ""
-		"gibLegsBoth" ""
-		"gibLegsClean" ""
-		"gibLegsLeft" ""
-		"gibLegsRight" ""
-		"gibTorsoClean" ""
-		"gibTorsoLeft" ""
-		"gibTorsoRight" ""
-		"hideTags" ""
-		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
-		"impactType" "flesh"
-		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_der_dempsey_viewhands"
-		"xmodel" "c_zom_der_dempsey_mpc_fb"
-	}
-	"pbt_zm_body_nikolai" ( "playerbodystyle.gdf" )
+	"pbt_gfl_body_ak12" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"
 		"accentColorCount" "0"
@@ -1026,8 +1055,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "AK-12"
-		"firstPersonCinematicModel" "c_zom_der_nikolai_viewbody"
-		"firstPersonLegsModel" "c_zom_der_nikolai_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_ak12_v2_body_mp"
+		"firstPersonLegsModel" "t7_gfl_ak12_v2_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -1040,10 +1069,10 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_der_nikolai_viewhands"
-		"xmodel" "c_zom_der_nikolai_mpc_fb"
+		"viewArmsModel" "t7_gfl_ak12_v2_viewhands"
+		"xmodel" "t7_gfl_ak12_v2_fb_mp"
 	}
-	"pbt_zm_body_richtofen" ( "playerbodystyle.gdf" )
+	"pbt_gfl_body_hk416" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"
 		"accentColorCount" "0"
@@ -1055,8 +1084,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "Clukay"
-		"firstPersonCinematicModel" "c_zom_der_richtofen_viewbody"
-		"firstPersonLegsModel" "c_zom_der_richtofen_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_clukay_body_mp"
+		"firstPersonLegsModel" "t7_gfl_clukay_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -1069,10 +1098,39 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_der_richtofen_viewhands"
-		"xmodel" "c_zom_der_richtofen_mpc_fb"
+		"viewArmsModel" "t7_gfl_clukay_viewhands"
+		"xmodel" "t7_gfl_clukay_fb_mp"
 	}
-	"pbt_zm_body_takeo" ( "playerbodystyle.gdf" )
+	"pbt_gfl_body_m16a1" ( "playerbodystyle.gdf" )
+	{
+		"accentColor1OptionsCount" "3"
+		"accentColorCount" "0"
+		"characterMovementFxOverride" ""
+		"color_1_1" ""
+		"color_1_2" ""
+		"color_1_3" ""
+		"color_1_4" ""
+		"color_1_5" ""
+		"color_1_6" ""
+		"displayName" "M16A1"
+		"firstPersonCinematicModel" "t7_gfl_m16a1_prime_body_mp"
+		"firstPersonLegsModel" "t7_gfl_m16a1_prime_viewlegs"
+		"gibDef" ""
+		"gibLegsBoth" ""
+		"gibLegsClean" ""
+		"gibLegsLeft" ""
+		"gibLegsRight" ""
+		"gibTorsoClean" ""
+		"gibTorsoLeft" ""
+		"gibTorsoRight" ""
+		"hideTags" ""
+		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
+		"impactType" "flesh"
+		"impactTypeCorpse" "flesh"
+		"viewArmsModel" "t7_gfl_m16a1_prime_viewhands"
+		"xmodel" "t7_gfl_m16a1_prime_fb_mp"
+	}
+	"pbt_gfl_body_type89" ( "playerbodystyle.gdf" )
 	{
 		"accentColor1OptionsCount" "3"
 		"accentColorCount" "0"
@@ -1084,8 +1142,8 @@
 		"color_1_5" ""
 		"color_1_6" ""
 		"displayName" "Howa Type 89"
-		"firstPersonCinematicModel" "c_zom_der_takeo_viewbody"
-		"firstPersonLegsModel" "c_zom_der_takeo_viewlegs"
+		"firstPersonCinematicModel" "t7_gfl_type89_body_mp"
+		"firstPersonLegsModel" "t7_gfl_type89_viewlegs"
 		"gibDef" ""
 		"gibLegsBoth" ""
 		"gibLegsClean" ""
@@ -1098,172 +1156,30 @@
 		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
 		"impactType" "flesh"
 		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_der_takeo_viewhands"
-		"xmodel" "c_zom_der_takeo_mpc_fb"
+		"viewArmsModel" "t7_gfl_type89_viewhands"
+		"xmodel" "t7_gfl_type89_fb_mp"
 	}
-	"pbt_zm_zod_body_beast" ( "playerbodystyle.gdf" )
+	"pbt_gfl_body_m16a1_dlc2" [ "pbt_gfl_body_m16a1" ]
 	{
-		"accentColorCount" "0"
-		"characterMovementFxOverride" ""
-		"displayName" "ZM_BEAST"
-		"firstPersonCinematicModel" "c_zom_beastmode_test_viewarms"
-		"firstPersonLegsModel" ""
-		"gibDef" ""
-		"gibLegsBoth" ""
-		"gibLegsClean" ""
-		"gibLegsLeft" ""
-		"gibLegsRight" ""
-		"gibTorsoClean" ""
-		"gibTorsoLeft" ""
-		"gibTorsoRight" ""
-		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
-		"impactTypeCorpse" "flesh"
-		"impactType" "flesh"
-		"viewArmsModel" "c_zom_beastmode_test_viewarms"
-		"xmodel" "c_zom_zod_beast_mpc_fb"
 	}
-	"pbt_zm_body_zod_boxer" ( "playerbodystyle.gdf" )
-	{
-		"accentColor1OptionsCount" "3"
-		"accentColorCount" "0"
-		"characterMovementFxOverride" ""
-		"color_1_1" ""
-		"color_1_2" ""
-		"color_1_3" ""
-		"color_1_4" ""
-		"color_1_5" ""
-		"color_1_6" ""
-		"displayName" "AK-Alfa"
-		"firstPersonCinematicModel" "c_zom_zod_boxer_viewbody"
-		"firstPersonLegsModel" "c_zom_zod_boxer_viewlegs"
-		"gibDef" ""
-		"gibLegsBoth" ""
-		"gibLegsClean" ""
-		"gibLegsLeft" ""
-		"gibLegsRight" ""
-		"gibTorsoClean" ""
-		"gibTorsoLeft" ""
-		"gibTorsoRight" ""
-		"hideTags" ""
-		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
-		"impactType" "flesh"
-		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_zod_boxer_viewhands"
-		"xmodel" "c_zom_zod_boxer_mpc_fb"
-	}
-	"pbt_zm_body_zod_detective" ( "playerbodystyle.gdf" )
-	{
-		"accentColor1OptionsCount" "3"
-		"accentColorCount" "0"
-		"characterMovementFxOverride" ""
-		"color_1_1" ""
-		"color_1_2" ""
-		"color_1_3" ""
-		"color_1_4" ""
-		"color_1_5" ""
-		"color_1_6" ""
-		"displayName" "Suomi"
-		"firstPersonCinematicModel" "c_zom_zod_detective_viewbody"
-		"firstPersonLegsModel" "c_zom_zod_detective_viewlegs"
-		"gibDef" ""
-		"gibLegsBoth" ""
-		"gibLegsClean" ""
-		"gibLegsLeft" ""
-		"gibLegsRight" ""
-		"gibTorsoClean" ""
-		"gibTorsoLeft" ""
-		"gibTorsoRight" ""
-		"hideTags" ""
-		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
-		"impactType" "flesh"
-		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_zod_detective_viewhands"
-		"xmodel" "c_zom_zod_detective_mpc_fb"
-	}
-	"pbt_zm_body_zod_femme" ( "playerbodystyle.gdf" )
-	{
-		"accentColor1OptionsCount" "3"
-		"accentColorCount" "0"
-		"characterMovementFxOverride" ""
-		"color_1_1" ""
-		"color_1_2" ""
-		"color_1_3" ""
-		"color_1_4" ""
-		"color_1_5" ""
-		"color_1_6" ""
-		"displayName" "Vepley"
-		"firstPersonCinematicModel" "c_zom_zod_femme_viewbody"
-		"firstPersonLegsModel" "c_zom_zod_femme_viewlegs"
-		"gibDef" ""
-		"gibLegsBoth" ""
-		"gibLegsClean" ""
-		"gibLegsLeft" ""
-		"gibLegsRight" ""
-		"gibTorsoClean" ""
-		"gibTorsoLeft" ""
-		"gibTorsoRight" ""
-		"hideTags" ""
-		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
-		"impactType" "flesh"
-		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_zod_femme_viewhands"
-		"xmodel" "c_zom_zod_femme_mpc_fb"
-	}
-	"pbt_zm_body_zod_magician" ( "playerbodystyle.gdf" )
-	{
-		"accentColor1OptionsCount" "3"
-		"accentColorCount" "0"
-		"characterMovementFxOverride" ""
-		"color_1_1" ""
-		"color_1_2" ""
-		"color_1_3" ""
-		"color_1_4" ""
-		"color_1_5" ""
-		"color_1_6" ""
-		"displayName" "MP7"
-		"firstPersonCinematicModel" "c_zom_zod_magician_viewbody"
-		"firstPersonLegsModel" "c_zom_zod_magician_viewlegs"
-		"gibDef" ""
-		"gibLegsBoth" ""
-		"gibLegsClean" ""
-		"gibLegsLeft" ""
-		"gibLegsRight" ""
-		"gibTorsoClean" ""
-		"gibTorsoLeft" ""
-		"gibTorsoRight" ""
-		"hideTags" ""
-		"iconImage" "t7_menu_mp_chars_enforcer_body_custom01"
-		"impactType" "flesh"
-		"impactTypeCorpse" "flesh"
-		"viewArmsModel" "c_zom_zod_magician_viewhands"
-		"xmodel" "c_zom_zod_magician_mpc_fb"
-	}
-	"pbt_zm_body_nikolai_dlc2" [ "pbt_zm_body_nikolai" ]
-	{
-		"displayName" "AK-12"
-		"xmodel" "c_zom_dlc3_nikolai_mpc_fb"
-	}
-	"pbt_zm_body_nikolai_nohat" [ "pbt_zm_body_nikolai" ]
-	{
-		"xmodel" "c_zom_dlc3_nikolai_mpc_fb_nohat"
-	}
-	"pbt_zm_body_dempsey_dlc2" [ "pbt_zm_body_dempsey" ]
-	{
-		"xmodel" "c_zom_dlc3_dempsey_mpc_fb"
-	}
-	"pbt_zm_body_dempsey_zmhd" [ "pbt_zm_body_dempsey" ]
+	"pbt_gfl_body_m16a1_zmhd" [ "pbt_gfl_body_m16a1" ]
 	{
 		"displayName" "M16A1 (SF)"
-		"firstPersonLegsModel" "c_t7_dlchd_dempsey_waw_viewlegs"
-		"viewArmsModel" "c_t7_dlchd_dempsey_waw_viewhands"
-		"xmodel" "c_t7_zm_dlchd_waw_dempsey_mpc_fb"
+		"firstPersonCinematicModel" "t7_gfl_m16a1_v2_body_mp"
+		"firstPersonLegsModel" "t7_gfl_m16a1_v2_viewlegs"
+		"viewArmsModel" "t7_gfl_m16a1_v2_viewhands"
+		"xmodel" "t7_gfl_m16a1_v2_fb_mp"
 	}
-	"pbt_zm_body_takeo_dlc2" [ "pbt_zm_body_takeo" ]
+	"pbt_gfl_body_ak12_dlc2" [ "pbt_gfl_body_ak12" ]
 	{
-		"xmodel" "c_zom_dlc3_takeo_mpc_fb"
 	}
-	"pbt_zm_body_takeo_nohat" [ "pbt_zm_body_takeo" ]
+	"pbt_gfl_body_ak12_nohat" [ "pbt_gfl_body_ak12" ]
 	{
-		"xmodel" "c_zom_dlc3_takeo_mpc_fb_nohat"
+	}
+	"pbt_gfl_body_type89_dlc2" [ "pbt_gfl_body_type89" ]
+	{
+	}
+	"pbt_gfl_body_type89_nohat" [ "pbt_gfl_body_type89" ]
+	{
 	}
 }

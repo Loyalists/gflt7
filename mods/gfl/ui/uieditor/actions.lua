@@ -17,8 +17,8 @@ function OpenChangeLogs(InstanceRef, arg1, arg2)
     Engine.OpenURL("https://steamcommunity.com/sharedfiles/filedetails/changelog/3019676071")
 end
 
-function NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)
-    if f355_arg1 == "ZMLobbyOnlineCustomGame" or f355_arg1 == "ZMLobbyOnline" or f355_arg1 == "ZMLobbyLANGame" then
+function NavigateToLobby(menu, lobbyName, addToHistory, controller)
+    if lobbyName == "ZMLobbyOnlineCustomGame" or lobbyName == "ZMLobbyOnline" or lobbyName == "ZMLobbyLANGame" then
         CoD.TFPCUtil.CheckForRecentUpdate()
         CoD.TFPCUtil.LoadTFOptions()
     end
@@ -26,50 +26,50 @@ function NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)
 	CoD.PersonalizationUtil.CheckForRecentUpdate()
 	CoD.PersonalizationUtil.LoadPersonalization()
 
-    CoD.LobbyBase.NavigateToLobby(f355_arg0, f355_arg1, f355_arg2, f355_arg3)
+    CoD.LobbyBase.NavigateToLobby(menu, lobbyName, addToHistory, controller)
 end
 
-function OpenZMChooseCharacterLoadout( f1122_arg0, f1122_arg1, f1122_arg2, f1122_arg3, f1122_arg4 )
+function OpenZMChooseCharacterLoadout( self, element, controller, actionParam, menu )
 	CoD.CCUtility.customizationMode = Enum.eModes.MODE_ZOMBIES
-	OpenZMChooseCharacterLoadout_Override( f1122_arg4, f1122_arg2, f1122_arg3 )
+	OpenZMChooseCharacterLoadout_Override( menu, controller, actionParam )
 end
 
-function OpenZMChooseCharacterLoadout_Override( f77_arg0, f77_arg1, f77_arg2 )
-	CoD.LobbyBase.SetLeaderActivity( f77_arg1, CoD.LobbyBase.LeaderActivity.MODIFYING_HERO )
-	local f77_local0 = OpenOverlay( f77_arg0, "ChooseZMCharacterLoadout", f77_arg1, f77_arg2 )
-	LUI.OverrideFunction_CallOriginalFirst( f77_local0, "close", function ()
-		CoD.LobbyBase.ResetLeaderActivity( f77_arg1 )
+function OpenZMChooseCharacterLoadout_Override( menu, controller, openParams )
+	CoD.LobbyBase.SetLeaderActivity( controller, CoD.LobbyBase.LeaderActivity.MODIFYING_HERO )
+	local overlay = OpenOverlay( menu, "ChooseZMCharacterLoadout", controller, openParams )
+	LUI.OverrideFunction_CallOriginalFirst( overlay, "close", function ()
+		CoD.LobbyBase.ResetLeaderActivity( controller )
 	end )
-	return f77_local0
+	return overlay
 end
 
-function OpenZMChooseCharacterLoadout_InGame( f427_arg0, f427_arg1, f427_arg2 )
-	OpenOverlay( f427_arg0, "ChooseZMCharacterLoadout_InGame", f427_arg2 )
+function OpenZMChooseCharacterLoadout_InGame( menu, element, controller )
+	OpenOverlay( menu, "ChooseZMCharacterLoadout_InGame", controller )
 end
 
-function OpenTFOptions( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )
-	CoD.LobbyBase.OpenTFOptions( f206_arg0, f206_arg2 )
+function OpenTFOptions( menu, element, controller, actionParam, parentMenu )
+	CoD.LobbyBase.OpenTFOptions( menu, controller )
 end
 
-function OpenTFOptions_InGame( f427_arg0, f427_arg1, f427_arg2 )
+function OpenTFOptions_InGame( menu, element, controller )
 	if not (Dvar.tfoption_tf_enabled:exists() and Dvar.tfoption_tf_enabled:get() == 0) then
 		CoD.TFPCUtil.CheckForRecentUpdate()
 		CoD.TFPCUtil.LoadTFOptions()
 	end
 
-	OpenOverlay(f427_arg0, "TFOptions", f427_arg2)
+	OpenOverlay(menu, "TFOptions", controller)
 end
 
-function OpenPersonalizationOptions( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )
-	CoD.LobbyBase.OpenPersonalizationOptions( f206_arg0, f206_arg2 )
+function OpenPersonalizationOptions( menu, element, controller, actionParam, parentMenu )
+	CoD.LobbyBase.OpenPersonalizationOptions( menu, controller )
 end
 
-function OpenModInfo( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )
-	OpenOverlay(f206_arg0, "ModInfo", f206_arg2)
+function OpenModInfo( menu, element, controller, actionParam, parentMenu )
+	OpenOverlay(menu, "ModInfo", controller)
 end
 
-function OpenModInfo_InGame( f427_arg0, f427_arg1, f427_arg2 )
-	OpenOverlay(f427_arg0, "ModInfo", f427_arg2)
+function OpenModInfo_InGame( menu, element, controller )
+	OpenOverlay(menu, "ModInfo", controller)
 end
 
 function OpenZMWelcomeMenu( self, element, controller )
@@ -94,15 +94,15 @@ function OpenZMInfoPopupOverlay( self, menu, controller, overlayName, expression
 		title = "GFL_MODINFO_ZM_INFO_TITLE",
 		description = "GFL_MODINFO_ZM_INFO_DESC",
 		listDatasource = function ()
-			DataSources.ZMInfoPopup_List = DataSourceHelpers.ListSetup( "ZMInfoPopup_List", function ( f110_arg0 )
+			DataSources.ZMInfoPopup_List = DataSourceHelpers.ListSetup( "ZMInfoPopup_List", function ( controller )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_OK_CAPS" )
 						},
 						properties = {
-							action = function ( f30_arg0, f30_arg1, f30_arg2, f30_arg3, f30_arg4 )
-								GoBack( f30_arg4, f30_arg2 )
+							action = function ( self, element, controller, actionParam, menu )
+								GoBack( menu, controller )
 							end
 							
 						}
@@ -129,60 +129,60 @@ function splitString(inputstr, sep)
 end
 
 function FeaturedCardsActionButtonHandler( self, element, controller, param, menu )
-	local f726_local0 = self:getParentMenu()
+	local parentMenu = self:getParentMenu()
 	local f726_local1 = nil
 	local f726_local2 = ""
 	local f726_local3 = nil
 	if FeaturedCards_IsEnabled( element, controller ) == false then
 		return 
 	end
-	local f726_local4 = nil
+	local model = nil
 	if self.LeftContainer.FEFeaturedCardsContainer.CardsList.activeWidget ~= nil then
-		f726_local4 = self.LeftContainer.FEFeaturedCardsContainer.CardsList.activeWidget:getModel()
+		model = self.LeftContainer.FEFeaturedCardsContainer.CardsList.activeWidget:getModel()
 	end
-	if f726_local4 then
-		f726_local2 = CoD.SafeGetModelValue( f726_local4, "action" )
-		f726_local3 = CoD.SafeGetModelValue( f726_local4, "isExperimentPromo" )
+	if model then
+		f726_local2 = CoD.SafeGetModelValue( model, "action" )
+		f726_local3 = CoD.SafeGetModelValue( model, "isExperimentPromo" )
 	end
 	if f726_local2 == "openwelcome" then
-		OpenOverlay( f726_local0, "WelcomeMenu", controller )
+		OpenOverlay( parentMenu, "WelcomeMenu", controller )
 	elseif f726_local2 ~= nil and LUI.startswith( f726_local2, "store" ) then
 		LUI.CoDMetrics.CRMMessageInteraction( self, controller, "crm_featured" )
 		if CoD.isPC then
-			OpenSteamStore( self, element, controller, "FeaturedWidget", f726_local0 )
+			OpenSteamStore( self, element, controller, "FeaturedWidget", parentMenu )
 		else
 			CoD.StoreUtility.SetupFocusCategory( controller, f726_local2 )
-			OpenStore( self, element, controller, "FeaturedWidget", f726_local0 )
+			OpenStore( self, element, controller, "FeaturedWidget", parentMenu )
 		end
 	elseif f726_local2 == "opengroups" then
-		OpenGroups( self, element, controller, param, f726_local0 )
+		OpenGroups( self, element, controller, param, parentMenu )
 	elseif f726_local2 == "opencrm" then
 		LUI.CoDMetrics.CRMMessageInteraction( self, controller, "crm_featured" )
 		local f726_local5 = false
-		if f726_local4 then
-			local f726_local6 = CoD.SafeGetModelValue( f726_local4, "index" )
-			if f726_local6 then
-				local f726_local7 = Engine.GetMarketingMessage( controller, "crm_featured", f726_local6 )
-				if f726_local7 and f726_local7.action == "popup_video" and f726_local7.popup_image then
-					Engine.SetModelValue( Engine.GetModel( DataSources.VoDViewer.getModel( controller ), "stream" ), f726_local7.popup_image )
-					OpenPopup( f726_local0, "VoDViewer", controller )
+		if model then
+			local index = CoD.SafeGetModelValue( model, "index" )
+			if index then
+				local marketingMessage = Engine.GetMarketingMessage( controller, "crm_featured", index )
+				if marketingMessage and marketingMessage.action == "popup_video" and marketingMessage.popup_image then
+					Engine.SetModelValue( Engine.GetModel( DataSources.VoDViewer.getModel( controller ), "stream" ), marketingMessage.popup_image )
+					OpenPopup( parentMenu, "VoDViewer", controller )
 					f726_local5 = true
 				end
 			end
 		end
 		if not f726_local5 then
-			OpenCRMFeaturedPopup( self, element, controller, "Featured", f726_local0 )
+			OpenCRMFeaturedPopup( self, element, controller, "Featured", parentMenu )
 		end
 	elseif f726_local2 == "openmotd" then
-		OpenMOTDPopup( self, element, controller, "FeaturedWidget", f726_local0 )
+		OpenMOTDPopup( self, element, controller, "FeaturedWidget", parentMenu )
 	elseif f726_local2 == "liveevent" then
 		if CoD.isPC then
-			local f726_local6 = CoD.SafeGetModelValue( DataSources.LiveEventViewer.getModel( controller ), "stream" )
-			if f726_local6 and f726_local6 ~= "" then
-				Engine.OpenURL( "http://www.twitch.tv/" .. f726_local6 )
+			local stream = CoD.SafeGetModelValue( DataSources.LiveEventViewer.getModel( controller ), "stream" )
+			if stream and stream ~= "" then
+				Engine.OpenURL( "http://www.twitch.tv/" .. stream )
 			end
 		else
-			OpenPopup( f726_local0, "LiveEventViewer", controller )
+			OpenPopup( parentMenu, "LiveEventViewer", controller )
 		end
 	elseif f726_local2 == "blackmarket" then
 		if f726_local3 then
@@ -198,7 +198,7 @@ function FeaturedCardsActionButtonHandler( self, element, controller, param, men
 		CoD.perController[controller].cameFromFeaturedCard = true
 		Engine.SetModelValue( Engine.CreateModel( Engine.GetGlobalModel(), "megachewOpenSource" ), Engine.GetCurrentMode() )
 		Engine.SwitchMode( controller, "zm" )
-		OpenMegaChewFactorymenu( self, element, controller, param, f726_local0 )
+		OpenMegaChewFactorymenu( self, element, controller, param, parentMenu )
 	elseif f726_local2 == "contracts" then
 		Engine.SetModelValue( Engine.CreateModel( Engine.GetGlobalModel(), "contractsOpenSource" ), Engine.GetCurrentMode() )
 		Engine.SwitchMode( controller, "mp" )
@@ -215,14 +215,14 @@ function FeaturedCardsActionButtonHandler( self, element, controller, param, men
 	elseif f726_local2 == "open_cookbook" then
 		Engine.SetModelValue( Engine.CreateModel( Engine.GetGlobalModel(), "cookbookRecipeOpenSource" ), Engine.GetCurrentMode() )
 		Engine.SwitchMode( controller, "zm" )
-		OpenGobbleGumCookbookMenu( self, element, controller, param, f726_local0 )
+		OpenGobbleGumCookbookMenu( self, element, controller, param, parentMenu )
 	elseif f726_local2 == "open_zmhd_thermometer" then
 		OpenOverlay( self, "ZMHD_Community_Theme", controller )
 	elseif f726_local2 == "gfl_open_zm_intel" then
 		-- OpenZMInfoPopupOverlay( self, f726_local0, controller )
 		OpenZMInfoPopup( controller )
 	elseif f726_local2 == "gfl_open_welcomemenu" then
-		OpenZMWelcomeMenu( f726_local0, nil, controller )
+		OpenZMWelcomeMenu( parentMenu, nil, controller )
 	elseif f726_local2 == "gfl_open_changelogs" then
 		OpenChangeLogs( controller )
 	end
@@ -234,16 +234,16 @@ function OpenConfigureCheatsPopup( f108_arg0, f108_arg1, f108_arg2, f108_arg3, f
 		title = "GFL_MENU_CONFIGURE_CHEATS",
 		description = "TF_CHEATS_DESC",
 		listDatasource = function ()
-			DataSources.ConfigureCheatsPopup_List = DataSourceHelpers.ListSetup( "ConfigureCheatsPopup_List", function ( f110_arg0 )
+			DataSources.ConfigureCheatsPopup_List = DataSourceHelpers.ListSetup( "ConfigureCheatsPopup_List", function ( controller )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_DISABLE_CAPS" )
 						},
 						properties = {
-							action = function ( f30_arg0, f30_arg1, f30_arg2, f30_arg3, f30_arg4 )
+							action = function ( self, element, controller, actionParam, menu )
                                 Engine.SetDvar( "tfoption_cheats", 0 )
-								GoBack( f30_arg4, f30_arg2 )
+								GoBack( menu, controller )
 							end
 							
 						}
@@ -253,9 +253,9 @@ function OpenConfigureCheatsPopup( f108_arg0, f108_arg1, f108_arg2, f108_arg3, f
 							displayText = Engine.Localize( "MENU_ENABLE_CAPS" )
 						},
 						properties = {
-							action = function ( f31_arg0, f31_arg1, f31_arg2, f31_arg3, f31_arg4 )
+							action = function ( self, element, controller, actionParam, menu )
                                 Engine.SetDvar( "tfoption_cheats", 1 )
-                                GoBack( f31_arg4, f31_arg2 )
+                                GoBack( menu, controller )
 							end
 							
 						}

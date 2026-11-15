@@ -3,12 +3,12 @@ require( "ui.uieditor.widgets.MPHudWidgets.ScorePopup.MPScr_PlusPointsContainer"
 
 local PostLoadFunc = function ( self, controller, menu )
 	self.ScoreFeedItem0.TextBox:setText( "" )
-	local f1_local0, f1_local1, f1_local2, f1_local3 = self.ScoreFeedItem0:getLocalTopBottom()
-	local f1_local4 = f1_local3 - f1_local2
-	self.ScoreFeedItem0.top = f1_local2
+	local topAnchor, bottomAnchor, top, bottom = self.ScoreFeedItem0:getLocalTopBottom()
+	local feedItemHeight = bottom - top
+	self.ScoreFeedItem0.top = top
 	self.MPScrPlusPointsContainer:setAlpha( 0 )
 	self.lastAnim = 0
-	self.AddScoreFeed = function ( f2_arg0, f2_arg1, f2_arg2 )
+	self.AddScoreFeed = function ( self2, scoreText, isThiefScore )
 		self:setLeftRight(false, false, -50, 400)
 		self:setTopBottom(false, true, -330.000000, -280.000000)
 		for i = 14, 1, -1 do
@@ -21,18 +21,18 @@ local PostLoadFunc = function ( self, controller, menu )
 					self:addElement( ScoreFeedItem_Next )
 				end
 				ScoreFeedItem_Next:setLeftRight( false, false, 50, 290 )
-				ScoreFeedItem_Next:setTopBottom( f1_local0, f1_local1, ScoreFeedItem.top, ScoreFeedItem.top + f1_local4 )
+				ScoreFeedItem_Next:setTopBottom( topAnchor, bottomAnchor, ScoreFeedItem.top, ScoreFeedItem.top + feedItemHeight )
 				ScoreFeedItem_Next.textColor = ScoreFeedItem.textColor
 				ScoreFeedItem_Next:setRGB( ScoreFeedItem_Next.textColor.r, ScoreFeedItem_Next.textColor.g, ScoreFeedItem_Next.textColor.b )
 				ScoreFeedItem_Next.text = ScoreFeedItem.text
 				ScoreFeedItem_Next.TextBox:setText( ScoreFeedItem_Next.text )
 				ScoreFeedItem_Next:beginAnimation( "keyframe", 100, false, true, CoD.TweenType.Linear )
-				local f2_local5, f2_local6, f2_local7, f2_local8 = ScoreFeedItem_Next:getLocalTopBottom()
-				ScoreFeedItem_Next:setTopBottom( f2_local5, f2_local6, f2_local7 + f1_local4, f2_local8 + f1_local4 )
-				ScoreFeedItem_Next.top = f2_local7 + f1_local4
+				local topAnchor, bottomAnchor, top, bottom = ScoreFeedItem_Next:getLocalTopBottom()
+				ScoreFeedItem_Next:setTopBottom( topAnchor, bottomAnchor, top + feedItemHeight, bottom + feedItemHeight )
+				ScoreFeedItem_Next.top = top + feedItemHeight
 			end
 		end
-		if f2_arg2 then
+		if isThiefScore then
 			self.ScoreFeedItem0.textColor = ColorSet.ThiefScoreFeedColor
 		else
 			self.ScoreFeedItem0.textColor = {
@@ -42,7 +42,7 @@ local PostLoadFunc = function ( self, controller, menu )
 			}
 		end
 		self.ScoreFeedItem0:setRGB( self.ScoreFeedItem0.textColor.r, self.ScoreFeedItem0.textColor.g, self.ScoreFeedItem0.textColor.b )
-		self.ScoreFeedItem0.text = f2_arg1
+		self.ScoreFeedItem0.text = scoreText
 		self.ScoreFeedItem0.TextBox:setText( self.ScoreFeedItem0.text )
 		self.ScoreFeedItem0:playClip( "DefaultClip" )
 		
@@ -54,73 +54,73 @@ local PostLoadFunc = function ( self, controller, menu )
 		self.ScoreFeedItem0:setAlpha(1)
 	end
 	
-	self.AddCenterScore = function ( f3_arg0, f3_arg1, f3_arg2 )
-		if f3_arg1 ~= nil then
-			if f3_arg2 >= 0 and f3_arg2 <= 0 then
+	self.AddCenterScore = function ( self, scoreName, score )
+		if scoreName ~= nil then
+			if score >= 0 and score <= 0 then
 				return 
-			elseif f3_arg0.currentScore == nil then
-				f3_arg0.currentScore = 0
+			elseif self.currentScore == nil then
+				self.currentScore = 0
 			end
-			f3_arg0.currentScore = f3_arg0.currentScore + f3_arg2
-			local f3_local0
-			if f3_arg0.currentScore > 0 then
-				f3_local0 = Engine.Localize( "MP_PLUS" )
-				if not f3_local0 then
+			self.currentScore = self.currentScore + score
+			local scorePrefix
+			if self.currentScore > 0 then
+				scorePrefix = Engine.Localize( "MP_PLUS" )
+				if not scorePrefix then
 				
 				else
-					f3_arg0.Score:setText( f3_local0 .. f3_arg0.currentScore )
-					if f3_arg1 ~= "SCORE_KILL" then
-						f3_arg0:AddScoreFeed( Engine.Localize( f3_arg1 ) )
+					self.Score:setText( scorePrefix .. self.currentScore )
+					if scoreName ~= "SCORE_KILL" then
+						self:AddScoreFeed( Engine.Localize( scoreName ) )
 					end
 				end
 			end
-			f3_local0 = ""
-		elseif f3_arg0.streakLabel ~= nil then
-			f3_arg0.streakLabel:out()
-			f3_arg0.streakLabel = nil
+			scorePrefix = ""
+		elseif self.streakLabel ~= nil then
+			self.streakLabel:out()
+			self.streakLabel = nil
 		end
 	end
 	
-	self.AddCombatEfficiencyScore = function ( f4_arg0, f4_arg1, f4_arg2, f4_arg3 )
-		if f4_arg2 == 0 or f4_arg2 > 10000 then
+	self.AddCombatEfficiencyScore = function ( self2, menu, score, controller )
+		if score == 0 or score > 10000 then
 			return 
 		end
-		local f4_local0 = CoD.MPScr_PlusPointsContainer.new( f4_arg1, f4_arg3 )
-		f4_local0:setScale( 0.4 )
-		f4_local0.MPScr_PlusPoints.Label1:setText( "+" .. f4_arg2 )
-		f4_local0.MPScr_PlusPoints.Label2:setText( "+" .. f4_arg2 )
-		f4_local0.MPScr_PlusPoints:playClip( "DefaultClip" )
-		f4_local0:setLeftRight( f4_arg0:getLocalLeftRight() )
-		f4_local0:setTopBottom( f4_arg0:getLocalTopBottom() )
+		local mPScr_PlusPointsContainer = CoD.MPScr_PlusPointsContainer.new( menu, controller )
+		mPScr_PlusPointsContainer:setScale( 0.4 )
+		mPScr_PlusPointsContainer.MPScr_PlusPoints.Label1:setText( "+" .. score )
+		mPScr_PlusPointsContainer.MPScr_PlusPoints.Label2:setText( "+" .. score )
+		mPScr_PlusPointsContainer.MPScr_PlusPoints:playClip( "DefaultClip" )
+		mPScr_PlusPointsContainer:setLeftRight( self2:getLocalLeftRight() )
+		mPScr_PlusPointsContainer:setTopBottom( self2:getLocalTopBottom() )
 		self:setLeftRight(false, false, -50, 400)
 		self:setTopBottom(false, true, -330.000000, -280.000000)
-		f4_arg0.lastAnim = f4_arg0.lastAnim + 1
+		self2.lastAnim = self2.lastAnim + 1
 		Engine.PlaySound( "gdt_ce_score" )
-		f4_local0:setState( "DefaultState" )
-		if not f4_local0:hasClip( "Anim" .. f4_arg0.lastAnim ) then
-			f4_arg0.lastAnim = 1
+		mPScr_PlusPointsContainer:setState( "DefaultState" )
+		if not mPScr_PlusPointsContainer:hasClip( "Anim" .. self2.lastAnim ) then
+			self2.lastAnim = 1
 		end
-		f4_local0:registerEventHandler( "clip_over", function ( element, event )
+		mPScr_PlusPointsContainer:registerEventHandler( "clip_over", function ( element, event )
 			element:close()
 		end )
-		local f4_local1 = f4_arg0:getParent()
-		f4_local1:addElement( f4_local0 )
-		f4_local0:playClip( "Anim" .. f4_arg0.lastAnim )
+		local parentElement = self2:getParent()
+		parentElement:addElement( mPScr_PlusPointsContainer )
+		mPScr_PlusPointsContainer:playClip( "Anim" .. self2.lastAnim )
 	end
 	
 	self:registerEventHandler( "clip_over", function ( element, event )
 		element.currentScore = 0
-		for f6_local0 = 0, 14, 1 do
-			if not element["ScoreFeedItem" .. f6_local0] then
+		for feedIndex = 0, 14, 1 do
+			if not element["ScoreFeedItem" .. feedIndex] then
 				break
-			elseif f6_local0 == 0 then
-				local f6_local3 = "ScoreFeedItem"
-				element["ScoreFeedItem" .. f6_local0].TextBox:setText( "" )
-				f6_local3 = "ScoreFeedItem"
-				element["ScoreFeedItem" .. f6_local0].text = nil
+			elseif feedIndex == 0 then
+				local feedItemPrefix = "ScoreFeedItem"
+				element["ScoreFeedItem" .. feedIndex].TextBox:setText( "" )
+				feedItemPrefix = "ScoreFeedItem"
+				element["ScoreFeedItem" .. feedIndex].text = nil
 			else
-				element["ScoreFeedItem" .. f6_local0]:close()
-				element["ScoreFeedItem" .. f6_local0] = nil
+				element["ScoreFeedItem" .. feedIndex]:close()
+				element["ScoreFeedItem" .. feedIndex] = nil
 			end
 		end
 	end )
@@ -491,20 +491,20 @@ CoD.MPScr.new = function ( menu, controller )
 		{
 			stateName = "Hidden",
 			condition = function ( menu, element, event )
-				local f31_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_FINAL_KILLCAM )
-				if not f31_local0 then
-					f31_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_ROUND_END_KILLCAM )
-					if not f31_local0 then
-						f31_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM )
-						if not f31_local0 then
-							f31_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_ALL_GAME_HUD_HIDDEN )
-							if not f31_local0 then
-								f31_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_UI_ACTIVE )
+				local isVisibilityBitSet = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_FINAL_KILLCAM )
+				if not isVisibilityBitSet then
+					isVisibilityBitSet = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_ROUND_END_KILLCAM )
+					if not isVisibilityBitSet then
+						isVisibilityBitSet = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM )
+						if not isVisibilityBitSet then
+							isVisibilityBitSet = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_ALL_GAME_HUD_HIDDEN )
+							if not isVisibilityBitSet then
+								isVisibilityBitSet = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_UI_ACTIVE )
 							end
 						end
 					end
 				end
-				return f31_local0
+				return isVisibilityBitSet
 			end
 		}
 	} )

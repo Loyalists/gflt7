@@ -66,11 +66,11 @@ CoD.MPScrFeedItem.new = function ( menu, controller )
 		{
 			stateName = "Hidden",
 			condition = function ( menu, element, event )
-				local f6_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_ALL_GAME_HUD_HIDDEN )
-				if not f6_local0 then
-					f6_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM )
+				local isVisibilityBitSet = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_ALL_GAME_HUD_HIDDEN )
+				if not isVisibilityBitSet then
+					isVisibilityBitSet = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM )
 				end
-				return f6_local0
+				return isVisibilityBitSet
 			end
 		}
 	} )

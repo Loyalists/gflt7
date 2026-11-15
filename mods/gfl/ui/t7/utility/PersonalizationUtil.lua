@@ -9,6 +9,9 @@ CoD.PersonalizationDefault = {
     hud = 0,
     custom_hud = 1,
     thirdperson = 0,
+    thirdperson_range = 90,
+    thirdperson_side_offset = 20,
+    thirdperson_up_offset = -5,
 }
 
 CoD.PersonalizationDirtyFlag = false

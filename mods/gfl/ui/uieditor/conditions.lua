@@ -1,23 +1,23 @@
 require("ui.uieditor.conditions_og")
 
 function FeaturedCards_IsEnabled( element, controller )
-	local f1049_local0 = LobbyData.GetLobbyNav()
+	local lobbyNav = LobbyData.GetLobbyNav()
 	
-	if f1049_local0 ~= LobbyData.UITargets.UI_MODESELECT.id and f1049_local0 ~= LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
+	if lobbyNav ~= LobbyData.UITargets.UI_MODESELECT.id and lobbyNav ~= LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
 		return false
 	else
-		local f1049_local1 = Engine.GetModelValue( Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "FeaturedCardsRoot", true ), "Enabled", true ) )
+		local enabled = Engine.GetModelValue( Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "FeaturedCardsRoot", true ), "Enabled", true ) )
 		if HasLiveEvent( controller ) then
 			return true
-		elseif f1049_local0 == LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
+		elseif lobbyNav == LobbyData.UITargets.UI_ZMLOBBYONLINE.id then
 			return true
 		elseif Dvar.ui_enableZMHDFeaturedCard:get() == 1 or Dvar.ui_enableZMHDFeaturedCard:get() == "1" then
 			return true
 		else
-			local f1049_local2 = Engine.GetFeaturedCardsData()
-			if Dvar.live_featuredEnabled:get() == false or f1049_local2.enabled == false then
+			local featuredCardsData = Engine.GetFeaturedCardsData()
+			if Dvar.live_featuredEnabled:get() == false or featuredCardsData.enabled == false then
 				return false
-			elseif f1049_local2.validCardsCount == 0 then
+			elseif featuredCardsData.validCardsCount == 0 then
 				return false
 			else
 				return true
@@ -54,30 +54,30 @@ function IsItemAttachmentLocked( f9_arg0, f9_arg1, f9_arg2, f9_arg3, f9_arg4 )
 	return false
 end
 
-function CharacterHasAnyWeaponUnlocked( f952_arg0, f952_arg1 )
+function CharacterHasAnyWeaponUnlocked( controller, element )
     if CoD.CCUtility.customizationMode == Enum.eModes.MODE_ZOMBIES then
         return true
     end
 
-	if not IsProgressionEnabled( f952_arg0 ) and (not IsLive() or not IsFirstTimeSetup( f952_arg0, Enum.eModes.MODE_MULTIPLAYER )) then
+	if not IsProgressionEnabled( controller ) and (not IsLive() or not IsFirstTimeSetup( controller, Enum.eModes.MODE_MULTIPLAYER )) then
 		return true
 	end
-	local f952_local0 = f952_arg1.heroIndex
-	if not f952_local0 then
-		f952_local0 = CoD.SafeGetModelValue( f952_arg1:getModel(), "heroIndex" )
+	local heroIndex = element.heroIndex
+	if not heroIndex then
+		heroIndex = CoD.SafeGetModelValue( element:getModel(), "heroIndex" )
 	end
-	if not f952_local0 then
+	if not heroIndex then
 		return false
 	elseif IsMultiplayer() then
-		local f952_local1 = Engine.GetHeroList( Enum.eModes.MODE_MULTIPLAYER )
-		local f952_local2 = f952_local1[f952_local0 + 1]
+		local heroes = Engine.GetHeroList( Enum.eModes.MODE_MULTIPLAYER )
+		local f952_local2 = heroes[heroIndex + 1]
 		if f952_local2 and CoDShared.IsLootHero( f952_local2 ) then
 			return true
 		end
 	end
-	for f952_local1 = 0, Enum.heroLoadoutTypes_e.HERO_LOADOUT_TYPE_COUNT - 1, 1 do
-		local f952_local4 = Engine.GetLoadoutInfoForHero( Enum.eModes.MODE_MULTIPLAYER, f952_local0, f952_local1 )
-		if not Engine.IsItemLocked( f952_arg0, f952_local4.itemIndex, Enum.eModes.MODE_MULTIPLAYER ) and Engine.IsItemPurchased( f952_arg0, f952_local4.itemIndex, Enum.eModes.MODE_MULTIPLAYER ) then
+	for loadoutType = 0, Enum.heroLoadoutTypes_e.HERO_LOADOUT_TYPE_COUNT - 1, 1 do
+		local loadoutInfo = Engine.GetLoadoutInfoForHero( Enum.eModes.MODE_MULTIPLAYER, heroIndex, loadoutType )
+		if not Engine.IsItemLocked( controller, loadoutInfo.itemIndex, Enum.eModes.MODE_MULTIPLAYER ) and Engine.IsItemPurchased( controller, loadoutInfo.itemIndex, Enum.eModes.MODE_MULTIPLAYER ) then
 			return true
 		end
 	end
@@ -100,7 +100,7 @@ function IsModInBetaTest()
 	return false
 end
 
-Engine.IsItemLocked = function(f43_arg0, f43_local6, f43_local7)
+Engine.IsItemLocked = function(controller, f43_local6, f43_local7)
 	return false
 end
 

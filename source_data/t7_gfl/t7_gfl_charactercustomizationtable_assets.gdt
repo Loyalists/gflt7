@@ -26,15 +26,15 @@
 	}
 	"zm_character_customization" ( "charactercustomizationtable.gdf" )
 	{
-		"bodyType01" "pbt_zm_dempsey"
-		"bodyType02" "pbt_zm_nikolai"
-		"bodyType03" "pbt_zm_richtofen"
-		"bodyType04" "pbt_zm_takeo"
+		"bodyType01" "pbt_gfl_m16a1"
+		"bodyType02" "pbt_gfl_ak12"
+		"bodyType03" "pbt_gfl_hk416"
+		"bodyType04" "pbt_gfl_type89"
 		"bodyType05" "pbt_gfl_sf"
-		"bodyType06" "pbt_zm_zod_boxer"
-		"bodyType07" "pbt_zm_zod_detective"
-		"bodyType08" "pbt_zm_zod_femme"
-		"bodyType09" "pbt_zm_zod_magician"
+		"bodyType06" "pbt_gfl_tololo"
+		"bodyType07" "pbt_gfl_suomi"
+		"bodyType08" "pbt_gfl_vepley"
+		"bodyType09" "pbt_gfl_mp7"
 		"bodyType10" "pbt_gfl_m4_sopmod_ii"
 		"bodyType11" "pbt_gfl_p90"
 		"bodyType12" "pbt_gfl_9a91"
@@ -87,7 +87,7 @@
 	}
 	"zm_character_customization_zmhd" [ "zm_character_customization" ]
 	{
-		"bodyType01" "pbt_zm_dempsey_zmhd"
-		"bodyType03" "pbt_zm_richtofen_zmhd"
+		"bodyType01" "pbt_gfl_m16a1_zmhd"
+		"bodyType03" "pbt_gfl_hk416_zmhd"
 	}
 }

@@ -473,27 +473,27 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		{
 			stateName = "ArenaPlaylist",
 			condition = function ( menu, element, event )
-				local f19_local0 = IsArenaMode()
-				if f19_local0 then
-					f19_local0 = ShowHeaderKicker( menu )
-					if f19_local0 then
-						f19_local0 = ShowHeaderIcon( menu )
+				local isArenaMode = IsArenaMode()
+				if isArenaMode then
+					isArenaMode = ShowHeaderKicker( menu )
+					if isArenaMode then
+						isArenaMode = ShowHeaderIcon( menu )
 					end
 				end
-				return f19_local0
+				return isArenaMode
 			end
 		},
 		{
 			stateName = "GroupHQ_Header",
 			condition = function ( menu, element, event )
-				local f20_local0 = ShowHeaderIcon( menu )
-				if f20_local0 then
-					f20_local0 = ShowHeaderKicker( menu )
-					if f20_local0 then
-						f20_local0 = ShowHeaderEmblem( menu )
+				local showHeaderIcon = ShowHeaderIcon( menu )
+				if showHeaderIcon then
+					showHeaderIcon = ShowHeaderKicker( menu )
+					if showHeaderIcon then
+						showHeaderIcon = ShowHeaderEmblem( menu )
 					end
 				end
-				return f20_local0
+				return showHeaderIcon
 			end
 		},
 		{
@@ -526,11 +526,11 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		} )
 	end )
 	if self.m_eventHandlers.menu_loaded then
-		local f2_local10 = self.m_eventHandlers.menu_loaded
+		local menu_loaded = self.m_eventHandlers.menu_loaded
 		self:registerEventHandler( "menu_loaded", function ( element, event )
 			event.menu = event.menu or menu
 			element:updateState( event )
-			return f2_local10( element, event )
+			return menu_loaded( element, event )
 		end )
 	else
 		self:registerEventHandler( "menu_loaded", LUI.UIElement.updateState )

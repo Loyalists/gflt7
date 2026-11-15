@@ -3,10 +3,10 @@ require("ui.uieditor.widgets.PC.Utility.OptionInfoWidget")
 require("ui.uieditor.widgets.Scrollbars.verticalScrollbar")
 
 CoD.ModInfoP1 = InheritFrom(LUI.UIElement)
-CoD.ModInfoP1.new = function (HudRef, InstanceRef)
+CoD.ModInfoP1.new = function (HudRef, controller)
 	local Widget = LUI.UIElement.new()
 	if PreLoadFunc then
-		PreLoadFunc(Widget, InstanceRef)
+		PreLoadFunc(Widget, controller)
 	end
 	Widget:setUseStencil(false)
 	Widget:setClass(CoD.ModInfoP1)
@@ -30,7 +30,7 @@ CoD.ModInfoP1.new = function (HudRef, InstanceRef)
 	-- Widget:addElement(gameOptionList)
 	-- Widget.gameOptionList = gameOptionList
 
-	local optionInfo = CoD.OptionInfoWidget.new(HudRef, InstanceRef)
+	local optionInfo = CoD.OptionInfoWidget.new(HudRef, controller)
 	optionInfo:setLeftRight(true, false, 0, 1050)
 	optionInfo:setTopBottom(true, false, 30, 330)
 	optionInfo.title.itemName:setText(Engine.Localize("GFL_MODINFO_WELCOME_TITLE"))

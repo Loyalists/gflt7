@@ -7,26 +7,26 @@ CoD.LobbyButtons = {}
 CoD.LobbyButtons.DISABLED = 1
 CoD.LobbyButtons.HIDDEN = 2
 CoD.LobbyButtons.STARTERPACK_UPGRADE = 3
-local f0_local0 = function(f1_arg0)
-    local f1_local0 = Engine.GetMostRecentPlayedMode(Engine.GetPrimaryController())
-    local f1_local1 = Dvar.ui_gametype
-    local f1_local2 = Engine.ToUpper(f1_local1:get())
-    if f1_local0 == Enum.eModes.MODE_CAMPAIGN and f1_local2 == "DOA" then
+local isBonusMode = function(f1_arg0)
+    local mostRecentMode = Engine.GetMostRecentPlayedMode(Engine.GetPrimaryController())
+    local ui_gametype = Dvar.ui_gametype
+    local gameType = Engine.ToUpper(ui_gametype:get())
+    if mostRecentMode == Enum.eModes.MODE_CAMPAIGN and gameType == "DOA" then
         return true
-    elseif f1_local0 == Enum.eModes.MODE_CAMPAIGN and f1_local2 == "CPZM" then
+    elseif mostRecentMode == Enum.eModes.MODE_CAMPAIGN and gameType == "CPZM" then
         return true
-    elseif f1_local0 == Enum.eModes.MODE_MULTIPLAYER and f1_local2 == "FR" then
+    elseif mostRecentMode == Enum.eModes.MODE_MULTIPLAYER and gameType == "FR" then
         return true
     else
         return false
     end
 end
 
-function IsMostRecentSessionMode(f2_arg0)
-    if f0_local0(f2_arg0) then
+function IsMostRecentSessionMode(mode)
+    if isBonusMode(mode) then
         return false
     else
-        return Engine.GetMostRecentPlayedMode(Engine.GetPrimaryController()) == f2_arg0
+        return Engine.GetMostRecentPlayedMode(Engine.GetPrimaryController()) == mode
     end
 end
 
@@ -38,29 +38,29 @@ function IsMpUnavailable()
     end
 end
 
-local f0_local1 = function()
+local isMultiplayerUnavailable = function()
     if CoD.isPC then
-        local f4_local0
+        local isUnavailable
         if Engine.IsMpOwned() then
             if not Mods_IsUsingMods() and
                 not (Engine.GetLobbyNetworkMode() == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE) then
-                f4_local0 = Engine.IsShipBuild()
+                isUnavailable = Engine.IsShipBuild()
             else
-                f4_local0 = false
+                isUnavailable = false
             end
         else
-            f4_local0 = true
+            isUnavailable = true
         end
-        return f4_local0
+        return isUnavailable
     end
-    local f4_local1 = Engine.IsMpInitialStillDownloading()
-    if not f4_local1 then
-        f4_local1 = Engine.IsMpStillDownloading()
+    local isDownloading = Engine.IsMpInitialStillDownloading()
+    if not isDownloading then
+        isDownloading = Engine.IsMpStillDownloading()
     end
-    return f4_local1
+    return isDownloading
 end
 
-local f0_local2 = function()
+local isZombiesUnavailable = function()
     if CoD.isPC then
         return not Engine.IsZmOwned()
     else
@@ -68,15 +68,15 @@ local f0_local2 = function()
     end
 end
 
-local f0_local3 = function()
+local isZombiesDownloading = function()
     if CoD.isPC then
         return not Engine.IsZmOwned()
     end
-    local f6_local0 = Engine.IsZmInitialStillDownloading()
-    if not f6_local0 then
-        f6_local0 = Engine.IsZmStillDownloading()
+    local isDownloading = Engine.IsZmInitialStillDownloading()
+    if not isDownloading then
+        isDownloading = Engine.IsZmStillDownloading()
     end
-    return f6_local0
+    return isDownloading
 end
 
 function IsCpUnavailable()
@@ -87,34 +87,34 @@ function IsCpUnavailable()
     end
 end
 
-local f0_local4 = function()
-    local f8_local0 = Engine.IsCpStillDownloading()
-    if not f8_local0 then
-        f8_local0 = f0_local3()
+local isCampaignOrZombiesDownloading = function()
+    local isDownloading = Engine.IsCpStillDownloading()
+    if not isDownloading then
+        isDownloading = isZombiesDownloading()
     end
-    return f8_local0
+    return isDownloading
 end
 
-local f0_local5 = function()
-    local f11_local0 = Engine.IsCpStillDownloading()
-    if not f11_local0 then
-        f11_local0 = Engine.IsZmStillDownloading()
-        if not f11_local0 then
-            f11_local0 = Engine.IsMpStillDownloading()
+local isAnyModeDownloading = function()
+    local isDownloading = Engine.IsCpStillDownloading()
+    if not isDownloading then
+        isDownloading = Engine.IsZmStillDownloading()
+        if not isDownloading then
+            isDownloading = Engine.IsMpStillDownloading()
         end
     end
-    return f11_local0
+    return isDownloading
 end
 
-local f0_local6 = function()
-    local f12_local0
+local isPartyTooLargeForSolo = function()
+    local isPartyTooLarge
     if 1 >= Engine.GetLobbyClientCount(Enum.LobbyType.LOBBY_TYPE_GAME) and 1 >= Engine.GetUsedControllerCount() and
         Engine.GetLobbyClientCount(Enum.LobbyType.LOBBY_TYPE_GAME) ~= 0 then
-        f12_local0 = false
+        isPartyTooLarge = false
     else
-        f12_local0 = true
+        isPartyTooLarge = true
     end
-    return f12_local0
+    return isPartyTooLarge
 end
 
 function MPStartCustomButtonDisabled()
@@ -148,13 +148,13 @@ CoD.LobbyButtons.BONUSMODES_ONLINE = {
     stringRef = "MENU_BONUSMODES",
     action = OpenBonusModesFlyout,
     customId = "btnBonusModes",
-    selectedFunc = f0_local0
+    selectedFunc = isBonusMode
 }
 CoD.LobbyButtons.BONUSMODES_LAN = {
     stringRef = "MENU_BONUSMODES",
     action = OpenBonusModesFlyout,
     customId = "btnBonusModes",
-    selectedFunc = f0_local0
+    selectedFunc = isBonusMode
 }
 CoD.LobbyButtons.MODS_LOAD = {
     stringRef = "MENU_MODS_CAPS",
@@ -200,7 +200,7 @@ CoD.LobbyButtons.CPZM_ONLINE = {
         firstTimeFlowAction = OpenCPFirstTimeFlow
     },
     customId = "btnCPZM",
-    disabledFunc = f0_local4,
+    disabledFunc = isCampaignOrZombiesDownloading,
     starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE,
     visibleFunc = ShouldShowNightmares
 }
@@ -214,7 +214,7 @@ CoD.LobbyButtons.CPZM_LAN = {
     },
     customId = "btnCPZM",
     demo_gamescom = CoD.LobbyButtons.HIDDEN,
-    disabledFunc = f0_local4,
+    disabledFunc = isCampaignOrZombiesDownloading,
     starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE,
     visibleFunc = ShouldShowNightmares
 }
@@ -229,14 +229,14 @@ CoD.LobbyButtons.MP_ONLINE = {
     customId = "btnMP",
     selectedFunc = IsMostRecentSessionMode,
     selectedParam = Enum.eModes.MODE_MULTIPLAYER,
-    disabledFunc = f0_local1
+    disabledFunc = isMultiplayerUnavailable
 }
 CoD.LobbyButtons.MP_PUBLIC_MATCH = {
     stringRef = "MENU_MATCHMAKING_CAPS",
     action = NavigateToLobby_SelectionList,
     param = "MPLobbyOnline",
     customId = "btnPublicMatch",
-    disabledFunc = f0_local1,
+    disabledFunc = isMultiplayerUnavailable,
     unloadMod = true
 }
 CoD.LobbyButtons.MP_ARENA = {
@@ -254,7 +254,7 @@ CoD.LobbyButtons.MP_LAN = {
     selectedFunc = IsMostRecentSessionMode,
     selectedParam = Enum.eModes.MODE_MULTIPLAYER,
     demo_gamescom = CoD.LobbyButtons.HIDDEN,
-    disabledFunc = f0_local1
+    disabledFunc = isMultiplayerUnavailable
 }
 CoD.LobbyButtons.ZM_ONLINE = {
     stringRef = "MENU_ZOMBIES_CAPS",
@@ -263,7 +263,7 @@ CoD.LobbyButtons.ZM_ONLINE = {
     customId = "btnZM",
     selectedFunc = IsMostRecentSessionMode,
     selectedParam = Enum.eModes.MODE_ZOMBIES,
-    disabledFunc = f0_local3,
+    disabledFunc = isZombiesDownloading,
     starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
 CoD.LobbyButtons.ZM_LAN = {
@@ -274,7 +274,7 @@ CoD.LobbyButtons.ZM_LAN = {
     selectedFunc = IsMostRecentSessionMode,
     selectedParam = Enum.eModes.MODE_ZOMBIES,
     demo_gamescom = CoD.LobbyButtons.HIDDEN,
-    disabledFunc = f0_local2,
+    disabledFunc = isZombiesUnavailable,
     starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
 CoD.LobbyButtons.FR_LAN = {
@@ -292,11 +292,11 @@ CoD.LobbyButtons.THEATER_MP = {
     param = "MPLobbyOnlineTheater",
     customId = "btnTheater",
     disabledFunc = function()
-        local f9_local0 = IsMpUnavailable()
-        if not f9_local0 then
-            f9_local0 = Engine.IsMpStillDownloading()
+        local isMpUnavailable = IsMpUnavailable()
+        if not isMpUnavailable then
+            isMpUnavailable = Engine.IsMpStillDownloading()
         end
-        return f9_local0
+        return isMpUnavailable
     end
 }
 CoD.LobbyButtons.THEATER_ZM = {
@@ -305,7 +305,7 @@ CoD.LobbyButtons.THEATER_ZM = {
     param = "ZMLobbyOnlineTheater",
     customId = "btnTheater",
     disabledFunc = function()
-        local f10_local0 = f0_local2()
+        local f10_local0 = isZombiesUnavailable()
         if not f10_local0 then
             f10_local0 = Engine.IsZmStillDownloading()
         end
@@ -455,7 +455,7 @@ CoD.LobbyButtons.MP_FIND_MATCH = {
     stringRef = "MPUI_FIND_MATCH_CAPS",
     action = OpenFindMatch,
     customId = "btnFindMatch",
-    disabledFunc = f0_local1,
+    disabledFunc = isMultiplayerUnavailable,
     unloadMod = true
 }
 CoD.LobbyButtons.MP_CUSTOM_GAMES = {
@@ -540,14 +540,14 @@ CoD.LobbyButtons.MP_ARENA_FIND_MATCH = {
     action = NavigateToLobby_SelectionList,
     param = "MPLobbyOnlineArenaGame",
     customId = "btnArenaFindMatch",
-    disabledFunc = f0_local1,
+    disabledFunc = isMultiplayerUnavailable,
     unloadMod = true
 }
 CoD.LobbyButtons.MP_ARENA_SELECT_ARENA = {
     stringRef = "MENU_SELECT_ARENA_CAPS",
     action = OpenCompetitivePlaylist,
     customId = "btnSelectArena",
-    disabledFunc = f0_local1,
+    disabledFunc = isMultiplayerUnavailable,
     unloadMod = true
 }
 CoD.LobbyButtons.MP_ARENA_LEADERBOARD = {
@@ -602,6 +602,15 @@ CoD.LobbyButtons.ZM_READY_UP = {
     disabledFunc = function()
         return false
     end
+}
+CoD.LobbyButtons.ZM_SETUP_GAME = {
+    stringRef = "MPUI_SETUP_GAME_CAPS",
+    action = function(context, element, controller, param, menu)
+        CoD.LobbyBase.OpenSetupGame(menu, controller, "GameSettingsFlyoutZM")
+    end,
+    customId = "btnSetupGame",
+    disabledFunc = MapVoteTimerActive,
+    starterPack = CoD.LobbyButtons.STARTERPACK_UPGRADE
 }
 CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS = {
     stringRef = "MENU_BUBBLEGUM_BUFFS_CAPS",
@@ -758,22 +767,22 @@ CoD.LobbyButtons.CP_DOA_LEADERBOARD = {
     end
 }
 
-CoD.LobbyBase.OpenTFOptions = function(arg0, arg1)
-    CoD.LobbyBase.SetLeaderActivity(arg1, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
+CoD.LobbyBase.OpenTFOptions = function(menu, controller)
+    CoD.LobbyBase.SetLeaderActivity(controller, CoD.LobbyBase.LeaderActivity.EDITING_GAME_RULES)
 
     CoD.TFPCUtil.CheckForRecentUpdate()
     CoD.TFPCUtil.LoadTFOptions()
 
-    LUI.OverrideFunction_CallOriginalFirst(OpenOverlay(arg0, "TFOptions", arg1), "close", function()
+    LUI.OverrideFunction_CallOriginalFirst(OpenOverlay(menu, "TFOptions", controller), "close", function()
 
-        CoD.LobbyBase.ResetLeaderActivity(arg1)
+        CoD.LobbyBase.ResetLeaderActivity(controller)
     end)
 end
 
-CoD.LobbyBase.OpenPersonalizationOptions = function(arg0, arg1)
+CoD.LobbyBase.OpenPersonalizationOptions = function(menu, controller)
 	CoD.PersonalizationUtil.CheckForRecentUpdate()
 	CoD.PersonalizationUtil.LoadPersonalization()
-    OpenOverlay(arg0, "PersonalizationOptions", arg1)
+    OpenOverlay(menu, "PersonalizationOptions", controller)
 end
 
 CoD.LobbyButtons.OPEN_WORKSHOP = {

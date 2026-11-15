@@ -1,5 +1,20 @@
 require("ui.t6.CoDBase_og")
 
+CoD.GFLRandomMusicState = nil
+
+CoD.StopFrontendMusic = function ()
+    CoD.GFLRandomMusicState = nil
+    Engine.PlayMenuMusic( "" )
+    if CoD.curLobbyTrack then
+        Engine.StopSound( CoD.curLobbyTrack.alias )
+        CoD.curLobbyTrack = nil
+        if LUI.primaryRoot and LUI.primaryRoot.musicTrackTimer then
+            LUI.primaryRoot.musicTrackTimer:close()
+            LUI.primaryRoot.musicTrackTimer = nil
+        end
+    end
+end
+
 CoD.randomMusicTracks = {}
 CoD.randomMusicTracks["titlescreen"] = {
     "gfl_brain_loop", 
@@ -123,26 +138,28 @@ CoD.PlayMenuMusic_Internal = function(f25_arg0, f25_arg1, f25_arg2)
         return
     end
     CoD.curLobbyMusic = f25_arg0
-    local f25_local0 = Engine.GetPrimaryController()
-    local f25_local1 = Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_DEFAULT
+    local controller = Engine.GetPrimaryController()
+    local fRONTEND_MUSIC_STATE_DEFAULT = Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_DEFAULT
     local f25_local2 = LuaUtils.FindItemInArray(CoD.musicTracks.allowInLobbies, CoD.curLobbyMusic) ~= nil
-    local f25_local3 = Engine.StorageGetBuffer(f25_local0, Enum.StorageFileType.STORAGE_COMMON_SETTINGS)
-    if f25_local3 then
-        f25_local1 = f25_local3.snd_frontendTracksState:get()
-        if f25_local1 == Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_ON and CoD.curLobbyTrack and f25_local2 and
+    local sTORAGE_COMMON_SETTINGSBuffer = Engine.StorageGetBuffer(controller, Enum.StorageFileType.STORAGE_COMMON_SETTINGS)
+    if sTORAGE_COMMON_SETTINGSBuffer then
+        fRONTEND_MUSIC_STATE_DEFAULT = sTORAGE_COMMON_SETTINGSBuffer.snd_frontendTracksState:get()
+        if fRONTEND_MUSIC_STATE_DEFAULT == Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_ON and CoD.curLobbyTrack and f25_local2 and
             not f25_arg1 then
             return
         end
     end
-    if f25_local1 == Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_DEFAULT or not f25_local2 then
+    CoD.GFLRandomMusicState = nil
+    if fRONTEND_MUSIC_STATE_DEFAULT == Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_DEFAULT or not f25_local2 then
         CoD.EndCurrentTrack()
         local randomMusic = CoD.GetRandomMusicTracks(CoD.curLobbyMusic)
         if randomMusic ~= nil then
             Engine.PlayMenuMusic(randomMusic)
+            CoD.GFLRandomMusicState = randomMusic
         else
             Engine.PlayMenuMusic(CoD.curLobbyMusic)
         end
-    elseif f25_local1 == Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_ON then
+    elseif fRONTEND_MUSIC_STATE_DEFAULT == Enum.FrontendMusicTrackStates.FRONTEND_MUSIC_STATE_ON then
         CoD.SetupMusicTracks(f25_arg2)
         Engine.PlayMenuMusic("")
         if not f25_arg2 then

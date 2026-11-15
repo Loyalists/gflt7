@@ -45,6 +45,7 @@ function init_character_table()
 	level.charactertable["zm"]["g36c"] = create_g36c();
 	level.charactertable["zm"]["rfb"] = create_rfb();
 	level.charactertable["zm"]["st_ar15"] = create_st_ar15();
+	level.charactertable["zm"]["asteria_p1"] = create_asteria_p1();
 	level.charactertable["zm"]["vepley"] = create_vepley();
 	level.charactertable["zm"]["m4a1"] = create_m4a1();
 	level.charactertable["zm"]["mp7_casual_tights"] = create_mp7_casual_tights();
@@ -318,7 +319,7 @@ function create_m4_sopmod_ii()
 	obj.bodytype = 9;
 	obj.bodystyle = 0;
 	obj.id = "m4_sopmod_ii";
-	obj.keywords = array();
+	obj.keywords = array("soppo");
 	obj.name = "M4 SOPMOD II";
 	return obj;
 }
@@ -340,6 +341,17 @@ function create_st_ar15()
 	obj.bodytype = 9;
 	obj.bodystyle = 2;
 	obj.id = "st_ar15";
+	obj.keywords = array("asteria_p2");
+	obj.name = "ST AR-15";
+	return obj;
+}
+
+function create_asteria_p1()
+{
+	obj = SpawnStruct();
+	obj.bodytype = 9;
+	obj.bodystyle = 3;
+	obj.id = "asteria_p1";
 	obj.keywords = array();
 	obj.name = "ST AR-15";
 	return obj;

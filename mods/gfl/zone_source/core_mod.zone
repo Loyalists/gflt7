@@ -92,8 +92,11 @@ scriptparsetree,scripts/core/core_frontend_fx.gsc
 rawfile,ui/util/json.lua
 
 rawfile,ui/uieditor/menus/zm/zmmapselection.lua
+rawfile,ui/uieditor/widgets/GFL/MapSelectionButton.lua
 rawfile,ui/uieditor/menus/Lobby/Common/Popups/BonusModesFlyout.lua
 rawfile,ui/uieditor/menus/Lobby/Common/Popups/GameSettingsFlyoutMP.lua
+rawfile,ui/uieditor/menus/Lobby/Common/Popups/GameSettingsFlyoutZM.lua
+rawfile,ui/uieditor/menus/Lobby/Lobby.lua
 
 // gfl logo in main menu
 rawfile,ui/uieditor/widgets/lobby/common/FE_3dTitleInternal.lua
@@ -227,6 +230,11 @@ rawfile,ui/uieditor/menus/core_frontend_patch_require.lua
 rawfile,ui/uieditor/menus/core_ui_require.lua
 
 rawfile,ui/uieditor/widgets/GFL/HUD/ThirdpersonCrosshair.lua
+rawfile,ui/uieditor/widgets/GFL/HUD/IW8DamageFeedback.lua
+rawfile,ui/uieditor/widgets/GFL/HUD/IW8DamageFeedbackContainer.lua
+image,t10_hit
+image,t10_head
+image,t10_splah_hit
 
 // score event
 rawfile,ui/uieditor/widgets/mphudwidgets/scorepopup/mpscr.lua
@@ -275,6 +283,9 @@ xmodel,t7_gfl_leva_fb
 xmodel,t7_gfl_alva_fb
 xmodel,t7_gfl_clukay_fb
 xmodel,t7_gfl_cheyanne_fb
+xmodel,t7_gfl_soppo_fb
+xmodel,t7_gfl_asteria_p1_fb
+xmodel,t7_gfl_asteria_p2_fb
 
 xmodel,t7_gfl_ouroboros_fb
 xmodel,t7_gfl_dreamer_fb
@@ -348,6 +359,7 @@ image,t7_menu_choosespecialist_default_ripper
 image,t7_menu_choosespecialist_default_dreamer
 image,t7_menu_choosespecialist_default_vector
 image,t7_menu_choosespecialist_default_cheyanne
+image,t7_menu_choosespecialist_default_tololo
 
 image,t7_menu_mp_hero_background_with_type89
 image,t7_menu_mp_hero_background_with_9a91
@@ -369,7 +381,9 @@ image,t7_menu_mp_hero_background_with_g36c
 image,t7_menu_mp_hero_background_with_dima
 image,t7_menu_mp_hero_background_with_sf
 image,t7_menu_mp_hero_background_with_vector
-image,t7_menu_mp_hero_background_with_cheyanne
+//image,t7_menu_mp_hero_background_with_cheyanne
+image,t7_menu_mp_hero_background_with_tololo
+image,t7_menu_mp_hero_background_with_soppo
 
 image,t7_gfl_chibi_9a91
 image,t7_gfl_chibi_ak12
@@ -407,6 +421,7 @@ image,t7_gfl_chibi_dreamer
 image,t7_gfl_chibi_vector
 image,t7_gfl_chibi_clukay
 image,t7_gfl_chibi_cheyanne
+image,t7_gfl_chibi_asteria
 
 xmodel,c_zom_zod_boxer_mpc_fb
 xmodel,c_zom_zod_boxer_viewlegs

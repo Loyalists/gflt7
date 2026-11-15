@@ -101,7 +101,7 @@ function on_player_spawned()
     {
 		self save_cc_fix();
 		wait_interval = 1;
-		if ( level.script == "zm_leviathan" || level.script == "zm_prison" )
+		if ( level.script == "zm_leviathan" || level.script == "zm_prison" || level.script == "zm_buried" )
 		{
 			wait_interval = 0.1;
 		}
@@ -239,7 +239,7 @@ function on_message_sent(args)
 
 function is_cc_watcher_needed()
 {
-	maps = array( "zm_leviathan", "zm_destiny_tower_beta", "zm_alcatraz_island", "zm_prison" );
+	maps = array( "zm_leviathan", "zm_destiny_tower_beta", "zm_alcatraz_island", "zm_prison", "zm_buried" );
 	foreach (map in maps)
 	{
 		if ( level.script == map )
@@ -789,6 +789,11 @@ function get_simplified_character(name)
     if ( issubstr(name, "vector") )
     {
         return "vector";
+    }
+
+    if ( issubstr(name, "asteria") )
+    {
+        return "asteria";
     }
 
 	return name;

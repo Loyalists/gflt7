@@ -6,14 +6,14 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon" )
 require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacter_LoadoutListItem_InGame" )
 
-local f0_local0 = function ( f1_arg0, f1_arg1 )
+local f0_local0 = function ( self, controller )
 end
 
 local PreLoadFunc = function ( self, controller )
-	local f3_local0 = IsFirstTimeSetup( controller, Enum.eModes.MODE_MULTIPLAYER )
-	local f3_local1 = Engine.GetModelValue( Engine.CreateModel( Engine.GetModelForController( controller ), "firstTimeFlowState" ) )
-	if f3_local1 == nil or f3_local1 == CoD.CCUtility.FirstTimeFlowState.None then
-		if f3_local0 and not CharacterDraftActive() then
+	local isFirstTimeSetup = IsFirstTimeSetup( controller, Enum.eModes.MODE_MULTIPLAYER )
+	local firstTimeFlowState = Engine.GetModelValue( Engine.CreateModel( Engine.GetModelForController( controller ), "firstTimeFlowState" ) )
+	if firstTimeFlowState == nil or firstTimeFlowState == CoD.CCUtility.FirstTimeFlowState.None then
+		if isFirstTimeSetup and not CharacterDraftActive() then
 			FirstTimeSetup_SetOverview( controller )
 		else
 			FirstTimeSetup_SetNone( controller )
@@ -21,22 +21,22 @@ local PreLoadFunc = function ( self, controller )
 	end
 end
 
-local PostLoadFunc = function ( f4_arg0, f4_arg1 )
+local PostLoadFunc = function ( self, controller )
 	if CoD.isPC then
-		f0_local0( f4_arg0, f4_arg1 )
+		f0_local0( self, controller )
 	end
-	if FirstTimeSetup_Overview( f4_arg1 ) then
-		f4_arg0.loadoutOptions:makeNotFocusable()
-		f4_arg0.loadoutOptions:processEvent( {
+	if FirstTimeSetup_Overview( controller ) then
+		self.loadoutOptions:makeNotFocusable()
+		self.loadoutOptions:processEvent( {
 			name = "lose_focus",
-			controller = f4_arg1
+			controller = controller
 		} )
-		f4_arg0:subscribeToModel( Engine.CreateModel( Engine.GetModelForController( f4_arg1 ), "firstTimeFlowState" ), function ( model )
-			if FirstTimeSetup_Overview( f4_arg1 ) == false then
-				f4_arg0.loadoutOptions:makeFocusable()
-				f4_arg0.loadoutOptions:processEvent( {
+		self:subscribeToModel( Engine.CreateModel( Engine.GetModelForController( controller ), "firstTimeFlowState" ), function ( model )
+			if FirstTimeSetup_Overview( controller ) == false then
+				self.loadoutOptions:makeFocusable()
+				self.loadoutOptions:processEvent( {
 					name = "gain_focus",
-					controller = f4_arg1
+					controller = controller
 				} )
 			end
 		end )
@@ -132,76 +132,76 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea_InGame.new = function ( menu, co
 		end
 	end )
 	loadoutOptions:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "firstTimeFlowState" ), function ( model )
-		local f10_local0 = loadoutOptions
-		local f10_local1 = {
+		local element = loadoutOptions
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "firstTimeFlowState"
 		}
-		CoD.Menu.UpdateButtonShownState( f10_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
 	end )
 	loadoutOptions:registerEventHandler( "input_source_changed", function ( element, event )
 		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
 	end )
 	loadoutOptions:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "LastInput" ), function ( model )
-		local f12_local0 = loadoutOptions
-		local f12_local1 = {
+		local element = loadoutOptions
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "LastInput"
 		}
-		CoD.Menu.UpdateButtonShownState( f12_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
 	end )
 	loadoutOptions:linkToElementModel( loadoutOptions, "disabled", true, function ( model )
-		local f13_local0 = loadoutOptions
-		local f13_local1 = {
+		local element = loadoutOptions
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "disabled"
 		}
-		CoD.Menu.UpdateButtonShownState( f13_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
 	end )
 	loadoutOptions:linkToElementModel( loadoutOptions, "itemIndex", true, function ( model )
-		local f16_local0 = loadoutOptions
-		local f16_local1 = {
+		local element = loadoutOptions
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "itemIndex"
 		}
-		CoD.Menu.UpdateButtonShownState( f16_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
 	end )
 	loadoutOptions:linkToElementModel( loadoutOptions, nil, true, function ( model )
-		local f17_local0 = loadoutOptions
-		local f17_local1 = {
+		local element = loadoutOptions
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = nil
 		}
-		CoD.Menu.UpdateButtonShownState( f17_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
 	end )
 	loadoutOptions:registerEventHandler( "gain_focus", function ( element, event )
-		local f19_local0 = nil
+		local focusResult = nil
 		if element.gainFocus then
-			f19_local0 = element:gainFocus( event )
+			focusResult = element:gainFocus( event )
 		elseif element.super.gainFocus then
-			f19_local0 = element.super:gainFocus( event )
+			focusResult = element.super:gainFocus( event )
 		end
 		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
-		return f19_local0
+		return focusResult
 	end )
 	loadoutOptions:registerEventHandler( "lose_focus", function ( element, event )
-		local f20_local0 = nil
+		local focusResult = nil
 		if element.loseFocus then
-			f20_local0 = element:loseFocus( event )
+			focusResult = element:loseFocus( event )
 		elseif element.super.loseFocus then
-			f20_local0 = element.super:loseFocus( event )
+			focusResult = element.super:loseFocus( event )
 		end
-		return f20_local0
+		return focusResult
 	end )
 	menu:AddButtonCallbackFunction( loadoutOptions, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
 		-- SelectHero( self, element, controller )
@@ -213,8 +213,8 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea_InGame.new = function ( menu, co
 		CoD.CharacterUtil.SelectHero_InGame(element, controller)
 		GoBack( self, controller )
 		return true
-	end, function ( f22_arg0, f22_arg1, f22_arg2 )
-		CoD.Menu.SetButtonLabel( f22_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		return true
 	end, false )
 	self:addElement( loadoutOptions )
@@ -261,11 +261,11 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea_InGame.new = function ( menu, co
 		} )
 	end )
 	if self.m_eventHandlers.input_source_changed then
-		local f6_local11 = self.m_eventHandlers.input_source_changed
+		local input_source_changed = self.m_eventHandlers.input_source_changed
 		self:registerEventHandler( "input_source_changed", function ( element, event )
 			event.menu = event.menu or menu
 			element:updateState( event )
-			return f6_local11( element, event )
+			return input_source_changed( element, event )
 		end )
 	else
 		self:registerEventHandler( "input_source_changed", LUI.UIElement.updateState )

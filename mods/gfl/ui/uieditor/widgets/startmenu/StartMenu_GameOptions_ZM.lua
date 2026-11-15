@@ -2,10 +2,10 @@ require( "ui.uieditor.widgets.Lobby.Common.List1ButtonLarge_PH" )
 require( "ui.uieditor.widgets.Utilities.ProgressBar_Rank" )
 require( "ui.uieditor.widgets.ZMPromotional.ZM_PromoIconList" )
 
-DataSources.StartMenuGameOptions_ZM = ListHelper_SetupDataSource("StartMenuGameOptions_ZM", function(f89_arg0)
-    local f1_local0 = GetZMStartMenuGameOptions(false, false)
-	LocalizeOptions(f1_local0)
-    return f1_local0
+DataSources.StartMenuGameOptions_ZM = ListHelper_SetupDataSource("StartMenuGameOptions_ZM", function(controller)
+    local gameOptions = GetZMStartMenuGameOptions(false, false)
+	LocalizeOptions(gameOptions)
+    return gameOptions
 end, true)
 
 CoD.StartMenu_GameOptions_ZM = InheritFrom( LUI.UIElement )
@@ -34,29 +34,29 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	buttonList:setVerticalCount( 10 )
 	buttonList:setDataSource( "StartMenuGameOptions_ZM" )
 	buttonList:registerEventHandler( "gain_focus", function ( element, event )
-		local f2_local0 = nil
+		local focusResult = nil
 		if element.gainFocus then
-			f2_local0 = element:gainFocus( event )
+			focusResult = element:gainFocus( event )
 		elseif element.super.gainFocus then
-			f2_local0 = element.super:gainFocus( event )
+			focusResult = element.super:gainFocus( event )
 		end
 		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
-		return f2_local0
+		return focusResult
 	end )
 	buttonList:registerEventHandler( "lose_focus", function ( element, event )
-		local f3_local0 = nil
+		local focusResult = nil
 		if element.loseFocus then
-			f3_local0 = element:loseFocus( event )
+			focusResult = element:loseFocus( event )
 		elseif element.super.loseFocus then
-			f3_local0 = element.super:loseFocus( event )
+			focusResult = element.super:loseFocus( event )
 		end
-		return f3_local0
+		return focusResult
 	end )
-	menu:AddButtonCallbackFunction( buttonList, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f4_arg0, f4_arg1, f4_arg2, f4_arg3 )
-		ProcessListAction( self, f4_arg0, f4_arg2 )
+	menu:AddButtonCallbackFunction( buttonList, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, event )
+		ProcessListAction( self, element, controller )
 		return true
-	end, function ( f5_arg0, f5_arg1, f5_arg2 )
-		CoD.Menu.SetButtonLabel( f5_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		return true
 	end, false )
 	self:addElement( buttonList )

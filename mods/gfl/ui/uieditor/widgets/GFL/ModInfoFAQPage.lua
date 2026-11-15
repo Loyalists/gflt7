@@ -2,26 +2,26 @@ require("ui.uieditor.widgets.PC.StartMenu.Dropdown.OptionDropdown")
 require("ui.uieditor.widgets.PC.Utility.OptionInfoWidget")
 require("ui.uieditor.widgets.Scrollbars.verticalScrollbar")
 
-local f0_local0 = function (f1_arg0, f1_arg1)
-    f1_arg0:dispatchEventToChildren({name = "options_refresh", controller = f1_arg1})
-    f1_arg0.gameOptionList.m_managedItemPriority = true
-    f1_arg0:registerEventHandler("dropdown_triggered", function (Sender, Event)
-        for f3_local0 = 1, Sender.gameOptionList.requestedRowCount, 1 do
-            local f3_local1 = Sender.gameOptionList:getItemAtPosition(f3_local0, 1)
-            if Event.inUse and f3_local1 ~= Event.widget then
-                f3_local1.m_inputDisabled = true
+local setupOptionsRefresh = function (element, controller)
+    element:dispatchEventToChildren({name = "options_refresh", controller = controller})
+    element.gameOptionList.m_managedItemPriority = true
+    element:registerEventHandler("dropdown_triggered", function (Sender, Event)
+        for rowIndex = 1, Sender.gameOptionList.requestedRowCount, 1 do
+            local item = Sender.gameOptionList:getItemAtPosition(rowIndex, 1)
+            if Event.inUse and item ~= Event.widget then
+                item.m_inputDisabled = true
             else
-                f3_local1.m_inputDisabled = false
+                item.m_inputDisabled = false
             end
         end
     end)
 end
 
 CoD.ModInfoFAQPage = InheritFrom(LUI.UIElement)
-CoD.ModInfoFAQPage.new = function (HudRef, InstanceRef)
+CoD.ModInfoFAQPage.new = function (HudRef, controller)
 	local Widget = LUI.UIElement.new()
 	if PreLoadFunc then
-		PreLoadFunc(Widget, InstanceRef)
+		PreLoadFunc(Widget, controller)
 	end
 	Widget:setUseStencil(false)
 	Widget:setClass(CoD.ModInfoFAQPage)
@@ -33,7 +33,7 @@ CoD.ModInfoFAQPage.new = function (HudRef, InstanceRef)
 	Widget.onlyChildrenFocusable = true
 	Widget.anyChildUsesUpdateState = true
 
-	local gameOptionList = LUI.UIList.new(HudRef, InstanceRef, 0, 0, nil, false, false, 0, 0, false, false)
+	local gameOptionList = LUI.UIList.new(HudRef, controller, 0, 0, nil, false, false, 0, 0, false, false)
 	gameOptionList:makeFocusable()
 	gameOptionList:setLeftRight(true, false, 0, 500)
 	gameOptionList:setTopBottom(true, false, 30, 506)
@@ -44,7 +44,7 @@ CoD.ModInfoFAQPage.new = function (HudRef, InstanceRef)
 	Widget:addElement(gameOptionList)
 	Widget.gameOptionList = gameOptionList
 	
-	local optionInfo = CoD.OptionInfoWidget.new(HudRef, InstanceRef)
+	local optionInfo = CoD.OptionInfoWidget.new(HudRef, controller)
 	optionInfo:setLeftRight(true, false, 550, 1050)
 	optionInfo:setTopBottom(true, false, 30, 330)
 	Widget:addElement(optionInfo)
@@ -65,8 +65,8 @@ CoD.ModInfoFAQPage.new = function (HudRef, InstanceRef)
 	gameOptionList.id = "gameOptionList"
 	Widget:registerEventHandler("gain_focus", function (Sender, Event)
 		if Sender.m_focusable then
-			local f6_local0 = Sender.gameOptionList
-			if f6_local0:processEvent(Event) then
+			local gameOptionList = Sender.gameOptionList
+			if gameOptionList:processEvent(Event) then
 				return true
 			end
 		end
@@ -76,8 +76,8 @@ CoD.ModInfoFAQPage.new = function (HudRef, InstanceRef)
 		Sender.gameOptionList:close()
 		Sender.optionInfo:close()
 	end)
-	if f0_local0 then
-		f0_local0(Widget, InstanceRef, HudRef)
+	if setupOptionsRefresh then
+		setupOptionsRefresh(Widget, controller, HudRef)
 	end
 
 	return Widget

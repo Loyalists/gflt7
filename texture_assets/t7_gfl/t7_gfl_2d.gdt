@@ -4145,7 +4145,7 @@
 	"t7_menu_choosespecialist_default_prophet" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_prophet.png"
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_cheyanne.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -4522,7 +4522,7 @@
 	}
 	"t7_menu_mp_hero_background_with_mercenary" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_mercenary.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\ak15.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_outrider" [ "t7_menu_mp_hero_background_with_blackmarket" ]
@@ -4537,7 +4537,7 @@
 	}
 	"t7_menu_mp_hero_background_with_technomancer" [ "t7_menu_mp_hero_background_with_blackmarket" ]
 	{
-		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_technomancer.png"
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\cheyanne.png"
 		"coreSemantic" "Linear4ch"
 	}
 	"t7_menu_mp_hero_background_with_trapper" [ "t7_menu_mp_hero_background_with_blackmarket" ]
@@ -7273,6 +7273,26 @@
 	"t7_menu_choosespecialist_default_cheyanne" [ "t7_menu_choosespecialist_default_g11" ]
 	{
 		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_cheyanne.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_gfl_chibi_asteria" [ "t7_gfl_chibi_m16a1" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\chibi\\asteria_p1.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_soppo" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_mercenary.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_mp_hero_background_with_tololo" [ "t7_menu_mp_hero_background_with_g11" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\hero_background\\t7_menu_mp_hero_background_with_technomancer.png"
+		"coreSemantic" "Linear4ch"
+	}
+	"t7_menu_choosespecialist_default_tololo" [ "t7_menu_choosespecialist_default_g11" ]
+	{
+		"baseImage" "texture_assets\\t7_gfl\\choosespecialist\\t7_menu_choosespecialist_default_prophet.png"
 		"coreSemantic" "Linear4ch"
 	}
 }

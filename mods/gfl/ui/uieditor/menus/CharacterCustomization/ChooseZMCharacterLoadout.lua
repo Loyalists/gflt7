@@ -13,13 +13,13 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacter_HelpBubble"
 require( "ui.uieditor.widgets.Lobby.Common.FE_TalkersWidget" )
 require( "ui.uieditor.widgets.PC.ChooseCharacter.CharacterMiniSelector" )
 
-local f0_local0 = function ( f1_arg0, f1_arg1 )
-	local f1_local0 = f1_arg0.characterCarousel.activeWidget
-	if f1_local0 and f1_local0.carouselPos then
-		f1_arg0.charMiniSelector.characterGrid:setActiveIndex( 1, f1_local0.carouselPos )
+local synchronizeMiniSelector = function ( self, controller )
+	local activeWidget = self.characterCarousel.activeWidget
+	if activeWidget and activeWidget.carouselPos then
+		self.charMiniSelector.characterGrid:setActiveIndex( 1, activeWidget.carouselPos )
 	end
-	f1_arg0:registerEventHandler( "mini_item_selected", function ( element, event )
-		local f2_local0 = element.characterCarousel
+	self:registerEventHandler( "mini_item_selected", function ( element, event )
+		local characterCarousel = element.characterCarousel
 		if event.index then
 			if not element.m_sync then
 				element.m_sync = true
@@ -29,46 +29,46 @@ local f0_local0 = function ( f1_arg0, f1_arg1 )
 			end
 		end
 	end )
-	f1_arg0:registerEventHandler( "list_active_changed", function ( element, event )
-		if event.list == f1_arg0.characterCarousel then
-			local f3_local0 = event.list.activeWidget
-			if f3_local0 and f3_local0.carouselPos then
-				if not f1_arg0.m_sync then
-					f1_arg0.m_sync = true
-					f1_arg0.charMiniSelector:processEvent( {
+	self:registerEventHandler( "list_active_changed", function ( element, event )
+		if event.list == self.characterCarousel then
+			local activeWidget = event.list.activeWidget
+			if activeWidget and activeWidget.carouselPos then
+				if not self.m_sync then
+					self.m_sync = true
+					self.charMiniSelector:processEvent( {
 						name = "sync_mini_selector",
-						index = f3_local0.carouselPos,
-						controller = f1_arg1
+						index = activeWidget.carouselPos,
+						controller = controller
 					} )
 				else
-					f1_arg0.m_sync = nil
+					self.m_sync = nil
 				end
 			end
 		end
 		return true
 	end )
-	f1_arg0:registerEventHandler( "list_focus_changed", function ( element, event )
-		local f4_local0 = element.characterCarousel.activeWidget
-		if not f4_local0 then
+	self:registerEventHandler( "list_focus_changed", function ( element, event )
+		local activeWidget = element.characterCarousel.activeWidget
+		if not activeWidget then
 			return 
 		end
-		f4_local0:setHandleMouseButton( false )
-		local f4_local1 = f4_local0:getParent()
-		local f4_local2 = f4_local1:getFirstChild()
-		while f4_local2 do
-			if f4_local2 ~= f4_local0 then
-				f4_local2:setFocus( false )
-				f4_local2:setHandleMouseButton( true )
-				if f4_local2.currentState == "Flipped" then
-					f4_local2:setState( "DefaultState", true )
+		activeWidget:setHandleMouseButton( false )
+		local parentElement = activeWidget:getParent()
+		local firstChild = parentElement:getFirstChild()
+		while firstChild do
+			if firstChild ~= activeWidget then
+				firstChild:setFocus( false )
+				firstChild:setHandleMouseButton( true )
+				if firstChild.currentState == "Flipped" then
+					firstChild:setState( "DefaultState", true )
 				end
 			end
-			f4_local2 = f4_local2:getNextSibling()
+			firstChild = firstChild:getNextSibling()
 		end
 	end )
-	f1_arg0:processEvent( {
+	self:processEvent( {
 		name = "list_focus_changed",
-		controller = f1_arg1
+		controller = controller
 	} )
 end
 
@@ -80,14 +80,14 @@ local PreLoadFunc = function ( self, controller )
 	CheckGCCatchUp()
 end
 
-local PostLoadFunc = function ( f7_arg0, f7_arg1 )
-	f7_arg0.characterCarousel.m_disableNavigation = true
+local PostLoadFunc = function ( self, controller )
+	self.characterCarousel.m_disableNavigation = true
 	if CoD.isPC then
-		f0_local0( f7_arg0, f7_arg1 )
+		synchronizeMiniSelector( self, controller )
 	end
-	CoD.perController[f7_arg1].weaponCategory = "specialist"
-	CoD.CACUtility.CreateUnlockTokenModels( f7_arg1 )
-	CoD.PrestigeUtility.CreatePermanentUnlockTokenModel( f7_arg1 )
+	CoD.perController[controller].weaponCategory = "specialist"
+	CoD.CACUtility.CreateUnlockTokenModels( controller )
+	CoD.PrestigeUtility.CreatePermanentUnlockTokenModel( controller )
 end
 
 LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
@@ -101,7 +101,7 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:setTopBottom( true, true, 0, 0 )
 	self:playSound( "menu_open", controller )
 	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "ChooseZMCharacterLoadout.buttonPrompts" )
-	local f8_local1 = self
+	local menu = self
 	self.anyChildUsesUpdateState = true
 	
 	local BGblack = LUI.UIImage.new()
@@ -120,7 +120,7 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self.BlackBG = BlackBG
 	
 	local title = Engine.Localize( "CPUI_CHOOSE_CHARACTER_CAPS" )
-	local GenericMenuFrame0 = CoD.GenericMenuFrame.new( f8_local1, controller )
+	local GenericMenuFrame0 = CoD.GenericMenuFrame.new( menu, controller )
 	GenericMenuFrame0:setLeftRight( true, false, 0, 1280 )
 	GenericMenuFrame0:setTopBottom( true, false, 0, 720 )
 	GenericMenuFrame0.titleLabel:setText( title )
@@ -172,7 +172,7 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:addElement( Image5 )
 	self.Image5 = Image5
 	
-	local FEMenuLeftGraphics = CoD.FE_Menu_LeftGraphics.new( f8_local1, controller )
+	local FEMenuLeftGraphics = CoD.FE_Menu_LeftGraphics.new( menu, controller )
 	FEMenuLeftGraphics:setLeftRight( true, false, 19, 71 )
 	FEMenuLeftGraphics:setTopBottom( true, false, 86, 703.25 )
 	self:addElement( FEMenuLeftGraphics )
@@ -186,7 +186,7 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:addElement( CategoryListLine )
 	self.CategoryListLine = CategoryListLine
 	
-	local PregameTimerOverlay = CoD.Pregame_TimerOverlay.new( f8_local1, controller )
+	local PregameTimerOverlay = CoD.Pregame_TimerOverlay.new( menu, controller )
 	PregameTimerOverlay:setLeftRight( true, true, 0, 0 )
 	PregameTimerOverlay:setTopBottom( true, true, 0, 0 )
 	PregameTimerOverlay:mergeStateConditions( {
@@ -198,9 +198,9 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 		}
 	} )
 	PregameTimerOverlay:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.Pregame.state" ), function ( model )
-		f8_local1:updateElementState( PregameTimerOverlay, {
+		menu:updateElementState( PregameTimerOverlay, {
 			name = "model_validation",
-			menu = f8_local1,
+			menu = menu,
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "lobbyRoot.Pregame.state"
 		} )
@@ -224,7 +224,7 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:addElement( Image10 )
 	self.Image10 = Image10
 	
-	local UnlockTokensWidget = CoD.UnlockTokensWidget.new( f8_local1, controller )
+	local UnlockTokensWidget = CoD.UnlockTokensWidget.new( menu, controller )
 	UnlockTokensWidget:setLeftRight( false, true, -362, -123 )
 	UnlockTokensWidget:setTopBottom( true, false, 36, 80 )
 	UnlockTokensWidget:setAlpha( HideIfInPermanentUnlockMenu( 1 ) )
@@ -232,7 +232,7 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:addElement( UnlockTokensWidget )
 	self.UnlockTokensWidget = UnlockTokensWidget
 	
-	local PermanentUnlockTokensWidget = CoD.Prestige_PermanentUnlockTokensWidget.new( f8_local1, controller )
+	local PermanentUnlockTokensWidget = CoD.Prestige_PermanentUnlockTokensWidget.new( menu, controller )
 	PermanentUnlockTokensWidget:setLeftRight( false, true, -362, -81 )
 	PermanentUnlockTokensWidget:setTopBottom( true, false, 36, 80 )
 	PermanentUnlockTokensWidget:setAlpha( ShowIfInPermanentUnlockMenu( 0 ) )
@@ -240,13 +240,13 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:addElement( PermanentUnlockTokensWidget )
 	self.PermanentUnlockTokensWidget = PermanentUnlockTokensWidget
 	
-	local ChooseCharacterTabBar = CoD.ChooseCharacter_TabBar.new( f8_local1, controller )
+	local ChooseCharacterTabBar = CoD.ChooseCharacter_TabBar.new( menu, controller )
 	ChooseCharacterTabBar:setLeftRight( true, false, 232, 1048 )
 	ChooseCharacterTabBar:setTopBottom( true, false, 91.25, 134.5 )
 	self:addElement( ChooseCharacterTabBar )
 	self.ChooseCharacterTabBar = ChooseCharacterTabBar
 	
-	local characterCarousel = LUI.UIList.new( f8_local1, controller, 4, 200, nil, false, true, 232, 0, false, false )
+	local characterCarousel = LUI.UIList.new( menu, controller, 4, 200, nil, false, true, 232, 0, false, false )
 	characterCarousel:makeFocusable()
 	characterCarousel:setLeftRight( true, true, 0, 0 )
 	characterCarousel:setTopBottom( true, false, 136.75, 636.75 )
@@ -255,188 +255,188 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	characterCarousel:setSpacing( 4 )
 	characterCarousel:setDataSource( "HeroesList" )
 	characterCarousel:linkToElementModel( characterCarousel, "disabled", true, function ( model )
-		local f11_local0 = characterCarousel
-		local f11_local1 = {
+		local element = characterCarousel
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "disabled"
 		}
-		CoD.Menu.UpdateButtonShownState( f11_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
-		CoD.Menu.UpdateButtonShownState( f11_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
 	end )
 	characterCarousel:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.Pregame.state" ), function ( model )
-		local f12_local0 = characterCarousel
-		local f12_local1 = {
+		local element = characterCarousel
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "lobbyRoot.Pregame.state"
 		}
-		CoD.Menu.UpdateButtonShownState( f12_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
-		CoD.Menu.UpdateButtonShownState( f12_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
 	end )
 	characterCarousel:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "firstTimeFlowState" ), function ( model )
-		local f13_local0 = characterCarousel
-		local f13_local1 = {
+		local element = characterCarousel
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "firstTimeFlowState"
 		}
-		CoD.Menu.UpdateButtonShownState( f13_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
-		CoD.Menu.UpdateButtonShownState( f13_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
 	end )
 	characterCarousel:linkToElementModel( characterCarousel, "heroIndex", true, function ( model )
-		local f14_local0 = characterCarousel
-		local f14_local1 = {
+		local element = characterCarousel
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "heroIndex"
 		}
-		CoD.Menu.UpdateButtonShownState( f14_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
 	end )
 	characterCarousel:linkToElementModel( characterCarousel, nil, true, function ( model )
-		local f15_local0 = characterCarousel
-		local f15_local1 = {
+		local element = characterCarousel
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = nil
 		}
-		CoD.Menu.UpdateButtonShownState( f15_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
 	end )
 	characterCarousel:registerEventHandler( "list_item_gain_focus", function ( element, event )
-		local f16_local0 = nil
+		local handlerResult = nil
 		UpdateEditingHero( element, controller )
 		UpdateElementState( self, "leftBumper", controller )
 		UpdateElementState( self, "rightBumper", controller )
 		PlaySoundSetSound( self, "navigate" )
 		SetSpecialistAsOld( self, element, controller )
-		return f16_local0
+		return handlerResult
 	end )
 	characterCarousel:registerEventHandler( "gain_focus", function ( element, event )
-		local f17_local0 = nil
+		local focusResult = nil
 		if element.gainFocus then
-			f17_local0 = element:gainFocus( event )
+			focusResult = element:gainFocus( event )
 		elseif element.super.gainFocus then
-			f17_local0 = element.super:gainFocus( event )
+			focusResult = element.super:gainFocus( event )
 		end
-		CoD.Menu.UpdateButtonShownState( element, f8_local1, controller, Enum.LUIButton.LUI_KEY_RB )
-		CoD.Menu.UpdateButtonShownState( element, f8_local1, controller, Enum.LUIButton.LUI_KEY_LB )
-		CoD.Menu.UpdateButtonShownState( element, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
-		CoD.Menu.UpdateButtonShownState( element, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
-		CoD.Menu.UpdateButtonShownState( element, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE )
-		return f17_local0
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_RB )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_LB )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE )
+		return focusResult
 	end )
 	characterCarousel:registerEventHandler( "lose_focus", function ( element, event )
-		local f18_local0 = nil
+		local focusResult = nil
 		if element.loseFocus then
-			f18_local0 = element:loseFocus( event )
+			focusResult = element:loseFocus( event )
 		elseif element.super.loseFocus then
-			f18_local0 = element.super:loseFocus( event )
+			focusResult = element.super:loseFocus( event )
 		end
-		return f18_local0
+		return focusResult
 	end )
-	f8_local1:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_RB, nil, function ( f19_arg0, f19_arg1, f19_arg2, f19_arg3 )
-		if not IsRepeatButtonPress( f19_arg3 ) then
-			NavigateToNextHeroCard( f19_arg1, self, f19_arg0, f19_arg2 )
+	menu:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_RB, nil, function ( element, menu, controller, event )
+		if not IsRepeatButtonPress( event ) then
+			NavigateToNextHeroCard( menu, self, element, controller )
 			return true
 		else
 			
 		end
-	end, function ( f20_arg0, f20_arg1, f20_arg2 )
+	end, function ( element, menu, controller )
 		if not IsRepeatButtonPress( nil ) then
-			CoD.Menu.SetButtonLabel( f20_arg1, Enum.LUIButton.LUI_KEY_RB, "" )
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_RB, "" )
 			return false
 		else
 			return false
 		end
 	end, false )
-	f8_local1:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_LB, nil, function ( f21_arg0, f21_arg1, f21_arg2, f21_arg3 )
-		if not IsRepeatButtonPress( f21_arg3 ) then
-			NavigateToPreviousHeroCard( f21_arg1, self, f21_arg0, f21_arg2 )
+	menu:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_LB, nil, function ( element, menu, controller, event )
+		if not IsRepeatButtonPress( event ) then
+			NavigateToPreviousHeroCard( menu, self, element, controller )
 			return true
 		else
 			
 		end
-	end, function ( f22_arg0, f22_arg1, f22_arg2 )
+	end, function ( element, menu, controller )
 		if not IsRepeatButtonPress( nil ) then
-			CoD.Menu.SetButtonLabel( f22_arg1, Enum.LUIButton.LUI_KEY_LB, "" )
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_LB, "" )
 			return false
 		else
 			return false
 		end
 	end, false )
-	f8_local1:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "P", function ( f23_arg0, f23_arg1, f23_arg2, f23_arg3 )
-		if not IsDisabled( f23_arg0, f23_arg2 ) and not PregameActive() and CharacterCustomization_IsEnabled( f23_arg2 ) and IsElementInState( f23_arg0, "DefaultState" ) then
-			NavigateToMenu( self, "PersonalizeCharacter", true, f23_arg2 )
+	menu:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "P", function ( element, menu, controller, event )
+		if not IsDisabled( element, controller ) and not PregameActive() and CharacterCustomization_IsEnabled( controller ) and IsElementInState( element, "DefaultState" ) then
+			NavigateToMenu( self, "PersonalizeCharacter", true, controller )
 			return true
-		elseif not IsDisabled( f23_arg0, f23_arg2 ) and not PregameActive() and IsElementInState( f23_arg0, "DefaultState" ) then
-			SetElementState( self, f23_arg0, f23_arg2, "Challenges" )
-			UpdateAllMenuButtonPrompts( f23_arg1, f23_arg2 )
+		elseif not IsDisabled( element, controller ) and not PregameActive() and IsElementInState( element, "DefaultState" ) then
+			SetElementState( self, element, controller, "Challenges" )
+			UpdateAllMenuButtonPrompts( menu, controller )
 			PlaySoundSetSound( self, "navigate" )
 			return true
-		elseif not IsDisabled( f23_arg0, f23_arg2 ) and not PregameActive() and IsElementInState( f23_arg0, "Challenges" ) then
-			SetElementState( self, f23_arg0, f23_arg2, "DefaultState" )
-			UpdateAllMenuButtonPrompts( f23_arg1, f23_arg2 )
+		elseif not IsDisabled( element, controller ) and not PregameActive() and IsElementInState( element, "Challenges" ) then
+			SetElementState( self, element, controller, "DefaultState" )
+			UpdateAllMenuButtonPrompts( menu, controller )
 			PlaySoundAlias( "uin_paint_decal_nav" )
 			return true
 		else
 			
 		end
 
-	end, function ( f24_arg0, f24_arg1, f24_arg2 )
-		if not IsDisabled( f24_arg0, f24_arg2 ) and not PregameActive() and CharacterCustomization_IsEnabled( f24_arg2 ) and IsElementInState( f24_arg0, "DefaultState" ) then
-			CoD.Menu.SetButtonLabel( f24_arg1, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "" )
+	end, function ( element, menu, controller )
+		if not IsDisabled( element, controller ) and not PregameActive() and CharacterCustomization_IsEnabled( controller ) and IsElementInState( element, "DefaultState" ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "" )
 			return false
-		elseif not IsDisabled( f24_arg0, f24_arg2 ) and not PregameActive() and IsElementInState( f24_arg0, "DefaultState" ) then
-			CoD.Menu.SetButtonLabel( f24_arg1, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "" )
+		elseif not IsDisabled( element, controller ) and not PregameActive() and IsElementInState( element, "DefaultState" ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "" )
 			return false
-		elseif not IsDisabled( f24_arg0, f24_arg2 ) and not PregameActive() and IsElementInState( f24_arg0, "Challenges" ) then
-			CoD.Menu.SetButtonLabel( f24_arg1, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "" )
-			return false
-		else
-			return false
-		end
-	end, false )
-	f8_local1:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "C", function ( f25_arg0, f25_arg1, f25_arg2, f25_arg3 )
-		if IsElementInState( f25_arg0, "DefaultState" ) and not IsDisabled( f25_arg0, f25_arg2 ) and not IsInPermanentUnlockMenu( f25_arg2 ) then
-			SetElementState( self, f25_arg0, f25_arg2, "Flipped" )
-			UpdateAllMenuButtonPrompts( f25_arg1, f25_arg2 )
-			return true
-		elseif IsElementInState( f25_arg0, "Flipped" ) and not IsDisabled( f25_arg0, f25_arg2 ) and not IsInPermanentUnlockMenu( f25_arg2 ) then
-			SetElementState( self, f25_arg0, f25_arg2, "DefaultState" )
-			UpdateAllMenuButtonPrompts( f25_arg1, f25_arg2 )
-			PlaySoundAlias( "uin_paint_decal_nav" )
-			return true
-		else
-			
-		end
-	end, function ( f26_arg0, f26_arg1, f26_arg2 )
-		if IsElementInState( f26_arg0, "DefaultState" ) and not IsDisabled( f26_arg0, f26_arg2 ) and not IsInPermanentUnlockMenu( f26_arg2 ) then
-			CoD.Menu.SetButtonLabel( f26_arg1, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "" )
-			return false
-		elseif IsElementInState( f26_arg0, "Flipped" ) and not IsDisabled( f26_arg0, f26_arg2 ) and not IsInPermanentUnlockMenu( f26_arg2 ) then
-			CoD.Menu.SetButtonLabel( f26_arg1, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "" )
+		elseif not IsDisabled( element, controller ) and not PregameActive() and IsElementInState( element, "Challenges" ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "" )
 			return false
 		else
 			return false
 		end
 	end, false )
-	f8_local1:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( f27_arg0, f27_arg1, f27_arg2, f27_arg3 )
-		if IsElementInAnyState( f27_arg0, "Flipped", "Challenges" ) then
-			SetElementState( self, f27_arg0, f27_arg2, "DefaultState" )
-			UpdateAllMenuButtonPrompts( f27_arg1, f27_arg2 )
+	menu:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "C", function ( element, menu, controller, event )
+		if IsElementInState( element, "DefaultState" ) and not IsDisabled( element, controller ) and not IsInPermanentUnlockMenu( controller ) then
+			SetElementState( self, element, controller, "Flipped" )
+			UpdateAllMenuButtonPrompts( menu, controller )
+			return true
+		elseif IsElementInState( element, "Flipped" ) and not IsDisabled( element, controller ) and not IsInPermanentUnlockMenu( controller ) then
+			SetElementState( self, element, controller, "DefaultState" )
+			UpdateAllMenuButtonPrompts( menu, controller )
 			PlaySoundAlias( "uin_paint_decal_nav" )
 			return true
 		else
 			
 		end
-	end, function ( f28_arg0, f28_arg1, f28_arg2 )
-		if IsElementInAnyState( f28_arg0, "Flipped", "Challenges" ) then
-			CoD.Menu.SetButtonLabel( f28_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
+	end, function ( element, menu, controller )
+		if IsElementInState( element, "DefaultState" ) and not IsDisabled( element, controller ) and not IsInPermanentUnlockMenu( controller ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "" )
+			return false
+		elseif IsElementInState( element, "Flipped" ) and not IsDisabled( element, controller ) and not IsInPermanentUnlockMenu( controller ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBX_PSSQUARE, "" )
+			return false
+		else
+			return false
+		end
+	end, false )
+	menu:AddButtonCallbackFunction( characterCarousel, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( element, menu, controller, event )
+		if IsElementInAnyState( element, "Flipped", "Challenges" ) then
+			SetElementState( self, element, controller, "DefaultState" )
+			UpdateAllMenuButtonPrompts( menu, controller )
+			PlaySoundAlias( "uin_paint_decal_nav" )
+			return true
+		else
+			
+		end
+	end, function ( element, menu, controller )
+		if IsElementInAnyState( element, "Flipped", "Challenges" ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
 			return true
 		else
 			return false
@@ -445,30 +445,30 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	self:addElement( characterCarousel )
 	self.characterCarousel = characterCarousel
 	
-	local ChooseCharacterHelpBubble = CoD.ChooseCharacter_HelpBubble.new( f8_local1, controller )
+	local ChooseCharacterHelpBubble = CoD.ChooseCharacter_HelpBubble.new( menu, controller )
 	ChooseCharacterHelpBubble:setLeftRight( true, false, 64, 241 )
 	ChooseCharacterHelpBubble:setTopBottom( true, false, 93.75, 633.5 )
 	self:addElement( ChooseCharacterHelpBubble )
 	self.ChooseCharacterHelpBubble = ChooseCharacterHelpBubble
 	
-	local FETalkersWidget = CoD.FE_TalkersWidget.new( f8_local1, controller )
+	local FETalkersWidget = CoD.FE_TalkersWidget.new( menu, controller )
 	FETalkersWidget:setLeftRight( false, true, -254, -64 )
 	FETalkersWidget:setTopBottom( true, false, 88, 475 )
 	self:addElement( FETalkersWidget )
 	self.FETalkersWidget = FETalkersWidget
 	
-	local f8_local21 = nil
+	local element = nil
 	if IsPC() then
-		f8_local21 = CoD.CharacterMiniSelector.new( f8_local1, controller )
+		element = CoD.CharacterMiniSelector.new( menu, controller )
 	else
-		f8_local21 = LUI.UIElement.createFake()
+		element = LUI.UIElement.createFake()
 	end
-	f8_local21:setLeftRight( true, false, 491, 791 )
-	f8_local21:setTopBottom( true, false, 641.5, 671.5 )
+	element:setLeftRight( true, false, 491, 791 )
+	element:setTopBottom( true, false, 641.5, 671.5 )
 	if IsPC() then
-		self:addElement( f8_local21 )
+		self:addElement( element )
 	end
-	self.charMiniSelector = f8_local21
+	self.charMiniSelector = element
 	ChooseCharacterTabBar:linkToElementModel( characterCarousel, nil, false, function ( model )
 		ChooseCharacterTabBar:setModel( model, controller )
 	end )
@@ -505,24 +505,24 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 		}
 	}
 	self:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.Pregame.state" ), function ( model )
-		local f33_local0 = self
-		local f33_local1 = {
+		local menu2 = self
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "lobbyRoot.Pregame.state"
 		}
-		CoD.Menu.UpdateButtonShownState( f33_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE )
+		CoD.Menu.UpdateButtonShownState( menu2, menu, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE )
 	end )
 	self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "firstTimeFlowState" ), function ( model )
-		local f34_local0 = self
-		local f34_local1 = {
+		local menu2 = self
+		local event = {
 			controller = controller,
 			name = "model_validation",
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "firstTimeFlowState"
 		}
-		CoD.Menu.UpdateButtonShownState( f34_local0, f8_local1, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE )
+		CoD.Menu.UpdateButtonShownState( menu2, menu, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE )
 	end )
 	self:registerEventHandler( "menu_opened", function ( element, event )
 		local f35_local0 = nil
@@ -535,8 +535,8 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 		local f36_local0 = nil
 		SetCharacterModeToSessionMode( self, element, controller, Enum.eModes.MODE_ZOMBIES )
 		RefreshCharacterCustomization( self, element, controller )
-		SendClientScriptMenuChangeNotify( controller, f8_local1, true )
-		ShowHeaderKickerAndIcon( f8_local1 )
+		SendClientScriptMenuChangeNotify( controller, menu, true )
+		ShowHeaderKickerAndIcon( menu )
 		SetElementStateByElementName( self, "GenericMenuFrame0", controller, "Update" )
 		PlayClipOnElement( self, {
 			elementName = "cac3dTitleIntermediary0",
@@ -549,43 +549,43 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 		end
 		return f36_local0
 	end )
-	f8_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( f37_arg0, f37_arg1, f37_arg2, f37_arg3 )
-		ClearSavedHeroForEdits( f37_arg2 )
-		ClearSavedState( self, f37_arg2 )
+	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( element, menu, controller, event )
+		ClearSavedHeroForEdits( controller )
+		ClearSavedState( self, controller )
 		PlaySoundSetSound( self, "menu_go_back" )
-		SendClientScriptMenuChangeNotify( f37_arg2, f37_arg1, false )
-		SetPerControllerTableProperty( f37_arg2, "updateNewBreadcrumbs", true )
-		GoBack( self, f37_arg2 )
-		ForceLobbyButtonUpdate( f37_arg2 )
+		SendClientScriptMenuChangeNotify( controller, menu, false )
+		SetPerControllerTableProperty( controller, "updateNewBreadcrumbs", true )
+		GoBack( self, controller )
+		ForceLobbyButtonUpdate( controller )
 		return true
-	end, function ( f38_arg0, f38_arg1, f38_arg2 )
-		CoD.Menu.SetButtonLabel( f38_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
 		return true
 	end, false )
-	f8_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f39_arg0, f39_arg1, f39_arg2, f39_arg3 )
+	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, event )
 		if AlwaysFalse() then
 			return true
 		else
 			
 		end
-	end, function ( f40_arg0, f40_arg1, f40_arg2 )
-		CoD.Menu.SetButtonLabel( f40_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		if AlwaysFalse() then
 			return true
 		else
 			return false
 		end
 	end, true )
-	f8_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_LTRIG, "U", function ( f41_arg0, f41_arg1, f41_arg2, f41_arg3 )
-		if IsStarterPack( f41_arg2 ) then
-			StarterParckPurchase( self, f41_arg2, f41_arg1 )
+	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_LTRIG, "U", function ( element, menu, controller, event )
+		if IsStarterPack( controller ) then
+			StarterParckPurchase( self, controller, menu )
 			return true
 		else
 			
 		end
-	end, function ( f42_arg0, f42_arg1, f42_arg2 )
-		if IsStarterPack( f42_arg2 ) then
-			CoD.Menu.SetButtonLabel( f42_arg1, Enum.LUIButton.LUI_KEY_LTRIG, "PLATFORM_STARTER_PACK_UPGRADE_TITLE" )
+	end, function ( element, menu, controller )
+		if IsStarterPack( controller ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_LTRIG, "PLATFORM_STARTER_PACK_UPGRADE_TITLE" )
 			return true
 		else
 			return false
@@ -599,7 +599,7 @@ LUI.createMenu.ChooseZMCharacterLoadout = function ( controller )
 	} )
 	self:processEvent( {
 		name = "update_state",
-		menu = f8_local1
+		menu = menu
 	} )
 	if not self:restoreState() then
 		self.characterCarousel:processEvent( {

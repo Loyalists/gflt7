@@ -6,61 +6,61 @@ require( "ui.uieditor.widgets.PC.ChooseCharacter.CharacterMiniSelectorLeftButton
 require( "ui.uieditor.widgets.PC.ChooseCharacter.CharacterMiniSelectorRightButton" )
 require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 
-DataSources.HeroesListMini_InGame = DataSourceHelpers.ListSetup( "HeroesListMini_InGame", function ( f1_arg0 )
-	local f1_local0 = CoD.CharacterUtil.GetHeroesList_InGame( CoD.CCUtility.customizationMode )
-	local f1_local1 = {}
-	for f1_local5, f1_local6 in ipairs( f1_local0 ) do
-		local f1_local7 = {
+DataSources.HeroesListMini_InGame = DataSourceHelpers.ListSetup( "HeroesListMini_InGame", function ( controller )
+	local heroes = CoD.CharacterUtil.GetHeroesList_InGame( CoD.CCUtility.customizationMode )
+	local items = {}
+	for index, hero in ipairs( heroes ) do
+		local heroItem = {
 			models = {
-				name = f1_local6.displayName,
-				disabled = f1_local6.disabled
+				name = hero.displayName,
+				disabled = hero.disabled
 			}
 		}
-		table.insert( f1_local1, f1_local7 )
+		table.insert( items, heroItem )
 	end
-	for f1_local5, f1_local6 in ipairs( f1_local1 ) do
-		f1_local6.models.index = f1_local5
+	for index, item in ipairs( items ) do
+		item.models.index = index
 	end
-	return f1_local1
+	return items
 end, true )
 
-local f0_local0 = function ( f2_arg0 )
-	local f2_local0, f2_local1 = f2_arg0.characterGrid:getLocalSize()
-	f2_arg0.characterGrid:setLeftRight( false, false, -(f2_local0 / 2), f2_local0 / 2 )
-	local f2_local2 = (f2_local0 + 100) / 2
-	f2_arg0:setLeftRight( false, false, -f2_local2, f2_local2 )
+local resizeToCharacterGrid = function ( element )
+	local width, height = element.characterGrid:getLocalSize()
+	element.characterGrid:setLeftRight( false, false, -(width / 2), width / 2 )
+	local halfWidth = (width + 100) / 2
+	element:setLeftRight( false, false, -halfWidth, halfWidth )
 end
 
-local PostLoadFunc = function ( f3_arg0, f3_arg1 )
-	f3_arg0:setForceMouseEventDispatch( true )
-	f3_arg0.characterGrid:setDataSource( "HeroesListMini_InGame" )
-	f3_arg0:registerEventHandler( "list_active_changed", function ( element, event )
-		if event.list == f3_arg0.characterGrid then
-			local f4_local0 = event.model
-			if f4_local0 then
-				local f4_local1 = Engine.GetModel( f4_local0, "index" )
-				if f4_local1 then
-					f3_arg0:dispatchEventToParent( {
+local PostLoadFunc = function ( self, controller )
+	self:setForceMouseEventDispatch( true )
+	self.characterGrid:setDataSource( "HeroesListMini_InGame" )
+	self:registerEventHandler( "list_active_changed", function ( element, event )
+		if event.list == self.characterGrid then
+			local model = event.model
+			if model then
+				local indexModel = Engine.GetModel( model, "index" )
+				if indexModel then
+					self:dispatchEventToParent( {
 						name = "mini_item_selected",
-						index = Engine.GetModelValue( f4_local1 ),
-						controller = f3_arg1
+						index = Engine.GetModelValue( indexModel ),
+						controller = controller
 					} )
 				end
 			end
 		end
 		return true
 	end )
-	f3_arg0:registerEventHandler( "sync_mini_selector", function ( element, event )
+	self:registerEventHandler( "sync_mini_selector", function ( element, event )
 		element.characterGrid:setActiveIndex( 1, event.index )
 	end )
-	f3_arg0:registerEventHandler( "mini_selector_left", function ( element, event )
-		SelectPreviousItemIfPossible( element, element.characterGrid, f3_arg1 )
+	self:registerEventHandler( "mini_selector_left", function ( element, event )
+		SelectPreviousItemIfPossible( element, element.characterGrid, controller )
 	end )
-	f3_arg0:registerEventHandler( "mini_selector_right", function ( element, event )
-		SelectNextItemIfPossible( element, element.characterGrid, f3_arg1 )
+	self:registerEventHandler( "mini_selector_right", function ( element, event )
+		SelectNextItemIfPossible( element, element.characterGrid, controller )
 	end )
-	f3_arg0:registerEventHandler( "menu_opened", function ( element, event )
-		f0_local0( element )
+	self:registerEventHandler( "menu_opened", function ( element, event )
+		resizeToCharacterGrid( element )
 	end )
 end
 
@@ -174,11 +174,11 @@ CoD.CharacterMiniSelector_InGame.new = function ( menu, controller )
 		}
 	} )
 	if self.m_eventHandlers.input_source_changed then
-		local f9_local5 = self.m_eventHandlers.input_source_changed
+		local input_source_changed = self.m_eventHandlers.input_source_changed
 		self:registerEventHandler( "input_source_changed", function ( element, event )
 			event.menu = event.menu or menu
 			element:updateState( event )
-			return f9_local5( element, event )
+			return input_source_changed( element, event )
 		end )
 	else
 		self:registerEventHandler( "input_source_changed", LUI.UIElement.updateState )

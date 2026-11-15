@@ -14,7 +14,7 @@ LUI.createMenu.GFLWelcomeMenu = function(controller)
     self:setTopBottom(true, true, 0, 0)
     self:playSound("menu_open", controller)
     self.buttonModel = Engine.CreateModel(Engine.GetModelForController(controller), "GFLWelcomeMenu.buttonPrompts")
-    local f1_local1 = self
+    local menu = self
     self.anyChildUsesUpdateState = true
 
     local background = LUI.UIImage.new()
@@ -25,7 +25,7 @@ LUI.createMenu.GFLWelcomeMenu = function(controller)
     self:addElement(background)
     self.background = background
 
-    local FEButtonPanel = CoD.FE_ButtonPanelShader.new(f1_local1, controller)
+    local FEButtonPanel = CoD.FE_ButtonPanelShader.new(menu, controller)
     FEButtonPanel:setLeftRight(true, true, -24, 21)
     FEButtonPanel:setTopBottom(true, true, 105, -105)
     FEButtonPanel:setRGB(0.38, 0.38, 0.38)
@@ -88,7 +88,7 @@ LUI.createMenu.GFLWelcomeMenu = function(controller)
     self:addElement(Token)
     self.Token = Token
 
-    local TokenBox = CoD.cac_ButtonBoxLrgInactiveStroke.new(f1_local1, controller)
+    local TokenBox = CoD.cac_ButtonBoxLrgInactiveStroke.new(menu, controller)
     TokenBox:setLeftRight(false, false, -89.11, 40.15)
     TokenBox:setTopBottom(false, false, -17, 110.7)
     TokenBox:setAlpha(0)
@@ -164,7 +164,7 @@ LUI.createMenu.GFLWelcomeMenu = function(controller)
     self:addElement(Glow20)
     self.Glow20 = Glow20
 
-    local WelcomeMenuButton0 = CoD.WelcomeMenu_Button.new(f1_local1, controller)
+    local WelcomeMenuButton0 = CoD.WelcomeMenu_Button.new(menu, controller)
     WelcomeMenuButton0:setLeftRight(true, false, 672.73, 807.73)
     WelcomeMenuButton0:setTopBottom(true, false, 545.45, 590.45)
     WelcomeMenuButton0.TextBox2:setText(Engine.Localize("MENU_LETS_GO"))
@@ -179,7 +179,7 @@ LUI.createMenu.GFLWelcomeMenu = function(controller)
     -- self:addElement(logo)
     -- self.logo = logo
 
-	local leftButtonBar = CoD.fe_LeftContainer_NOTLobby.new( f1_local1, controller )
+	local leftButtonBar = CoD.fe_LeftContainer_NOTLobby.new( menu, controller )
 	leftButtonBar:setLeftRight( true, false, 64, 496 )
 	leftButtonBar:setTopBottom( true, false, 620, 620 + 32 )
 	self:addElement( leftButtonBar )
@@ -214,39 +214,39 @@ LUI.createMenu.GFLWelcomeMenu = function(controller)
         end
     }})
     if self.m_eventHandlers.input_source_changed then
-        local f1_local20 = self.m_eventHandlers.input_source_changed
+        local input_source_changed = self.m_eventHandlers.input_source_changed
         self:registerEventHandler("input_source_changed", function(element, event)
-            event.menu = event.menu or f1_local1
+            event.menu = event.menu or menu
             element:updateState(event)
-            return f1_local20(element, event)
+            return input_source_changed(element, event)
         end)
     else
         self:registerEventHandler("input_source_changed", LUI.UIElement.updateState)
     end
     self:subscribeToModel(Engine.GetModel(Engine.GetModelForController(controller), "LastInput"), function(model)
-        f1_local1:updateElementState(self, {
+        menu:updateElementState(self, {
             name = "model_validation",
-            menu = f1_local1,
+            menu = menu,
             modelValue = Engine.GetModelValue(model),
             modelName = "LastInput"
         })
     end)
-    f1_local1:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil,
-        function(f40_arg0, f40_arg1, f40_arg2, f40_arg3)
-            GoBack(self, f40_arg2)
+    menu:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil,
+        function(element, menu, controller, event)
+            GoBack(self, controller)
             return true
-        end, function(f41_arg0, f41_arg1, f41_arg2)
-            CoD.Menu.SetButtonLabel(f41_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK")
+        end, function(element, menu, controller)
+            CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK")
             return true
         end, false)
-    f1_local1:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER",
-        function(f9_arg0, f9_arg1, f9_arg2, f9_arg3)
+    menu:AddButtonCallbackFunction(self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER",
+        function(element, menu, controller, event)
             -- OpenChooseCharacterFromFirstTimeFlow( self, f9_arg0, f9_arg2, "", f9_arg1 )
-			GoBack(self, f9_arg2)
+			GoBack(self, controller)
             PlaySoundSetSound(self, "list_action")
             return true
-        end, function(f10_arg0, f10_arg1, f10_arg2)
-            CoD.Menu.SetButtonLabel(f10_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "")
+        end, function(element, menu, controller)
+            CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "")
             return false
         end, false)
 
@@ -257,7 +257,7 @@ LUI.createMenu.GFLWelcomeMenu = function(controller)
     })
     self:processEvent({
         name = "update_state",
-        menu = f1_local1
+        menu = menu
     })
     LUI.OverrideFunction_CallOriginalSecond(self, "close", function(element)
         element.FEButtonPanel:close()

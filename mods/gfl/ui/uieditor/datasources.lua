@@ -10,16 +10,16 @@ end
 Engine.CreateModel( Engine.GetGlobalModel(), "CustomHUD" )
 
 function GetZMStartMenuGameOptions( short, withOptions )
-    local f1_local0 = {}
+    local options = {}
     if CoD.isZombie then
-        table.insert(f1_local0, {
+        table.insert(options, {
             models = {
                 displayText = "MENU_RESUMEGAME_CAPS",
                 action = StartMenuGoBack_ListElement
             }
         })
 
-        table.insert(f1_local0, {
+        table.insert(options, {
             models = {
                 displayText = "CODCASTER_QS_THIRD_PERSON",
                 action = HandleToggleThirdPersonButton
@@ -27,7 +27,7 @@ function GetZMStartMenuGameOptions( short, withOptions )
         })
 
         if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
-            table.insert(f1_local0, {
+            table.insert(options, {
                 models = {
                     displayText = "MENU_RESTART_LEVEL_CAPS",
                     action = RestartGame
@@ -38,7 +38,7 @@ function GetZMStartMenuGameOptions( short, withOptions )
             if short then
                 tfoptionsText = "GFL_MENU_TFOPTIONS_SHORT"
             end
-            table.insert(f1_local0, {
+            table.insert(options, {
                 models = {
                     displayText = tfoptionsText,
                     action = OpenTFOptions_InGame
@@ -47,11 +47,11 @@ function GetZMStartMenuGameOptions( short, withOptions )
         end
 
         if withOptions then
-            table.insert(f1_local0, {
+            table.insert(options, {
                 models = {
                     displayText = "MENU_OPTIONS_CAPS",
-                    action = function(f2_arg0, f2_arg1, f2_arg2, f2_arg3, f2_arg4)
-                        NavigateToMenu(f2_arg4, "GenericStartMenu_Options", true, f2_arg2)
+                    action = function(self, element, controller, actionParam, menu)
+                        NavigateToMenu(menu, "GenericStartMenu_Options", true, controller)
                     end
                 }
             })
@@ -61,41 +61,41 @@ function GetZMStartMenuGameOptions( short, withOptions )
         if short then
             charactersText = "GFL_MENU_CHARACTERS"
         end
-        table.insert(f1_local0, {
+        table.insert(options, {
             models = {
                 displayText = charactersText,
                 action = OpenZMChooseCharacterLoadout_InGame
             }
         })
-        table.insert(f1_local0, {
+        table.insert(options, {
             models = {
                 displayText = "GFL_MENU_MOD_INFO",
                 action = OpenModInfo_InGame
             }
         })
         if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
-            table.insert(f1_local0, {
+            table.insert(options, {
                 models = {
                     displayText = "MENU_END_GAME_CAPS",
                     action = QuitGame_MP
                 }
             })
         else
-            table.insert(f1_local0, {
+            table.insert(options, {
                 models = {
                     displayText = "MENU_QUIT_GAME_CAPS",
                     action = QuitGame_MP
                 }
             })
         end
-        table.insert(f1_local0, {
+        table.insert(options, {
             models = {
                 displayText = "QUIT TO DESKTOP",
                 action = OpenPCQuit
             }
         })
     end
-    return f1_local0
+    return options
 end
 
 function LocalizeOptions(options)
@@ -106,55 +106,55 @@ function LocalizeOptions(options)
     end
 end
 
-DataSources.FeaturedCardHelper = function ( f196_arg0, f196_arg1 )
-	local f196_local0 = {}
-	local f196_local1 = 0
+DataSources.FeaturedCardHelper = function ( controller, f196_arg1 )
+	local featuredCards = {}
+	local sequence = 0
 
 	if 1 == Dvar.ui_enableZMHDFeaturedCard:get() or Dvar.ui_enableZMHDFeaturedCard:get() == "1" then
-		local f196_local2 = "t7_crm_zmhd_cosmic_featured_thermometerlocked"
+		local background = "t7_crm_zmhd_cosmic_featured_thermometerlocked"
 		if IsThermometerProgressEqualTo( 1 ) then
-			f196_local2 = "t7_crm_zmhd_cosmic_featured_thermometer"
+			background = "t7_crm_zmhd_cosmic_featured_thermometer"
 		end
-		table.insert( f196_local0, {
+		table.insert( featuredCards, {
 			models = {
 				title = "",
 				actionTitle = "MENU_DETAILS",
 				action = "open_zmhd_thermometer",
-				background = f196_local2,
-				sequence = f196_local1
+				background = background,
+				sequence = sequence
 			}
 		} )
-		f196_local1 = f196_local1 + 1
+		sequence = sequence + 1
 	end
 
-	local f196_local2 = Engine.GetFeaturedCardsData()
-	if f196_local2 ~= nil then
-		local f196_local3 = f196_local2.cardsCountToShow
-		if f196_local2.enabled == true and 0 < f196_local3 then
-			for f196_local4 = 0, f196_local3 - 1, 1 do
-				local f196_local7 = Engine.GetFeaturedCard( f196_local4 )
-				if f196_local7.valid == true then
-					local f196_local8 = true
-					if f196_local7.subTitle == "zm" and not CoD.isZombie then
-						f196_local8 = false
+	local featuredCardsData = Engine.GetFeaturedCardsData()
+	if featuredCardsData ~= nil then
+		local cardsCountToShow = featuredCardsData.cardsCountToShow
+		if featuredCardsData.enabled == true and 0 < cardsCountToShow then
+			for index = 0, cardsCountToShow - 1, 1 do
+				local featuredCard = Engine.GetFeaturedCard( index )
+				if featuredCard.valid == true then
+					local includeCard = true
+					if featuredCard.subTitle == "zm" and not CoD.isZombie then
+						includeCard = false
 					end
-					if f196_local7.subTitle == "mp" and not CoD.isMultiplayer then
-						f196_local8 = false
+					if featuredCard.subTitle == "mp" and not CoD.isMultiplayer then
+						includeCard = false
 					end
-					if f196_local8 then
-						table.insert( f196_local0, {
+					if includeCard then
+						table.insert( featuredCards, {
 							models = {
-								index = f196_local4,
-								title = f196_local7.title,
-								subTitle = f196_local7.subTitle,
-								type = f196_local7.type,
-								actionTitle = f196_local7.actionTitle,
-								action = f196_local7.action,
-								background = f196_local7.bg,
-								sequence = f196_local1
+								index = index,
+								title = featuredCard.title,
+								subTitle = featuredCard.subTitle,
+								type = featuredCard.type,
+								actionTitle = featuredCard.actionTitle,
+								action = featuredCard.action,
+								background = featuredCard.bg,
+								sequence = sequence
 							}
 						} )
-						f196_local1 = f196_local1 + 1
+						sequence = sequence + 1
 					end
 				end
 			end
@@ -163,38 +163,38 @@ DataSources.FeaturedCardHelper = function ( f196_arg0, f196_arg1 )
 
 	if CoD.isZombie then
 		local f196_local3 = nil
-		table.insert( f196_local0, {
+		table.insert( featuredCards, {
 			models = {
                 title = "MENU_INTEL_CAPS",
 				actionTitle = "MENU_DETAILS",
 				action = "gfl_open_welcomemenu",
                 background = "t7_crm_gfl_intel_room",
-				sequence = f196_local1
+				sequence = sequence
 			},
 		} )
-		f196_local1 = f196_local1 + 1
+		sequence = sequence + 1
 
-		table.insert( f196_local0, {
+		table.insert( featuredCards, {
 			models = {
                 title = "Latest Changelogs",
 				actionTitle = "MENU_DETAILS",
 				action = "gfl_open_changelogs",
                 background = "t7_crm_gfl_dday",
-				sequence = f196_local1
+				sequence = sequence
 			},
 		} )
-		f196_local1 = f196_local1 + 1
+		sequence = sequence + 1
 	end
 
-	return f196_local0
+	return featuredCards
 end
 
-DataSources.FeaturedCards = ListHelper_SetupDataSource( "FeaturedCards", function ( f201_arg0 )
-	return DataSources.FeaturedCardHelper( f201_arg0, true )
+DataSources.FeaturedCards = ListHelper_SetupDataSource( "FeaturedCards", function ( controller )
+	return DataSources.FeaturedCardHelper( controller, true )
 end, nil, nil, DataSources.FeaturedCardPostCreationHelper )
 
-DataSources.FeaturedCardTicks = ListHelper_SetupDataSource( "FeaturedCardTicks", function ( f202_arg0 )
-	return DataSources.FeaturedCardHelper( f202_arg0, false )
+DataSources.FeaturedCardTicks = ListHelper_SetupDataSource( "FeaturedCardTicks", function ( controller )
+	return DataSources.FeaturedCardHelper( controller, false )
 end, nil, nil, DataSources.FeaturedCardPostCreationHelper )
 
 DataSources.GFLCRMButtonList = {
@@ -208,13 +208,13 @@ DataSources.GFLCRMButtonList = {
 				action = GoBack
 			}
 		}
-		local f651_local1 = Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "GFLCRMButtonList" ), "list" )
-		for f651_local5, f651_local6 in ipairs( f651_local0 ) do
-			f651_arg1.optionModels[f651_local5] = Engine.CreateModel( f651_local1, "buttonModel_" .. f651_local5 )
-			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "displayText" ), Engine.Localize( f651_local6.displayText ) )
-			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "displayImage" ), f651_local6.displayImage )
-			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "hintText" ), Engine.Localize( f651_local6.displayDesc ) )
-			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[f651_local5], "action" ), f651_local6.action )
+		local listModel = Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "GFLCRMButtonList" ), "list" )
+		for index, f651_local6 in ipairs( f651_local0 ) do
+			f651_arg1.optionModels[index] = Engine.CreateModel( listModel, "buttonModel_" .. index )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[index], "displayText" ), Engine.Localize( f651_local6.displayText ) )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[index], "displayImage" ), f651_local6.displayImage )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[index], "hintText" ), Engine.Localize( f651_local6.displayDesc ) )
+			Engine.SetModelValue( Engine.CreateModel( f651_arg1.optionModels[index], "action" ), f651_local6.action )
 		end
 	end,
 	getCount = function ( f652_arg0 )
@@ -225,18 +225,18 @@ DataSources.GFLCRMButtonList = {
 	end
 }
 
-DataSources.GalleryList = ListHelper_SetupDataSource("GalleryList", function(f777_arg0)
-    local f777_local0 = {}
-    local f777_local1 = {"cp_mi_eth_prologue", "cp_mi_zurich_newworld", "cp_mi_sing_blackstation",
+DataSources.GalleryList = ListHelper_SetupDataSource("GalleryList", function(controller)
+    local galleryItems = {}
+    local campaignMaps = {"cp_mi_eth_prologue", "cp_mi_zurich_newworld", "cp_mi_sing_blackstation",
                          "cp_mi_sing_biodomes", "cp_mi_sing_sgen", "cp_mi_sing_vengeance", "cp_mi_cairo_ramses",
                          "cp_mi_cairo_infection", "cp_mi_cairo_aquifer", "cp_mi_cairo_lotus", "cp_mi_zurich_coalescence"}
-    local f777_local2 = Engine.GetPlayerStats(f777_arg0)
-    local f777_local3 = Engine.GetAssetList("cp_default_gallery")
-    for f777_local4 = 1, #f777_local3, 1 do
-        table.insert(f777_local0, {
+    local playerStats = Engine.GetPlayerStats(controller)
+    local assets = Engine.GetAssetList("cp_default_gallery")
+    for f777_local4 = 1, #assets, 1 do
+        table.insert(galleryItems, {
             models = {
-                displayName = f777_local3[f777_local4].displayName,
-                image = f777_local3[f777_local4].image,
+                displayName = assets[f777_local4].displayName,
+                image = assets[f777_local4].image,
                 unlocked = true
             },
             properties = {
@@ -245,9 +245,9 @@ DataSources.GalleryList = ListHelper_SetupDataSource("GalleryList", function(f77
             }
         })
     end
-    for f777_local4 = 1, #f777_local1, 1 do
-        local f777_local7 = f777_local1[f777_local4]
-        local f777_local8 = CoD.mapsTable[f777_local7]
+    for f777_local4 = 1, #campaignMaps, 1 do
+        local mapName = campaignMaps[f777_local4]
+        local mapInfo = CoD.mapsTable[mapName]
         local f777_local9
         -- if f777_local2.PlayerStatsByMap[f777_local7].hasBeenCompleted:get() ~= 1 then
         --     f777_local9 = f777_local8.isSafeHouse
@@ -256,13 +256,13 @@ DataSources.GalleryList = ListHelper_SetupDataSource("GalleryList", function(f77
         -- end
         f777_local9 = true
         if f777_local9 then
-            f777_local3 = Engine.GetAssetList(f777_local7 .. "_list")
-            if f777_local3 ~= nil then
-                for f777_local10 = 1, #f777_local3, 1 do
-                    table.insert(f777_local0, {
+            assets = Engine.GetAssetList(mapName .. "_list")
+            if assets ~= nil then
+                for f777_local10 = 1, #assets, 1 do
+                    table.insert(galleryItems, {
                         models = {
-                            displayName = f777_local3[f777_local10].displayName,
-                            image = f777_local3[f777_local10].image,
+                            displayName = assets[f777_local10].displayName,
+                            image = assets[f777_local10].image,
                             unlocked = true
                         },
                         properties = {
@@ -274,7 +274,7 @@ DataSources.GalleryList = ListHelper_SetupDataSource("GalleryList", function(f77
             end
         end
     end
-    return f777_local0
+    return galleryItems
 end)
 
 DataSources.StartMenuSelectionList = {
@@ -307,13 +307,13 @@ DataSources.StartMenuSelectionList = {
         if not f99_local0 then
             return
         end
-        local f99_local1 = Engine.CreateModel(Engine.GetGlobalModel(), "StartMenuSelectionModel")
-        for f99_local5, f99_local6 in ipairs(f99_local0) do
-            local f99_local7 = Engine.CreateModel(f99_local1, "buttonModel_" .. f99_local5)
-            f99_arg1.options[f99_local5] = f99_local7
-            Engine.SetModelValue(Engine.CreateModel(f99_local7, "displayText"),
+        local startMenuSelectionModelModel = Engine.CreateModel(Engine.GetGlobalModel(), "StartMenuSelectionModel")
+        for index, f99_local6 in ipairs(f99_local0) do
+            local model = Engine.CreateModel(startMenuSelectionModelModel, "buttonModel_" .. index)
+            f99_arg1.options[index] = model
+            Engine.SetModelValue(Engine.CreateModel(model, "displayText"),
                 Engine.Localize(f99_local6.optionDisplay))
-            Engine.SetModelValue(Engine.CreateModel(f99_local7, "action"), f99_local6.action)
+            Engine.SetModelValue(Engine.CreateModel(model, "action"), f99_local6.action)
         end
     end,
     getCount = function(f100_arg0)
@@ -324,16 +324,16 @@ DataSources.StartMenuSelectionList = {
     end
 }
 
-DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOptions", function(f89_arg0)
-    local f89_local0 = {}
+DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOptions", function(controller)
+    local options = {}
     if Engine.IsDemoPlaying() then
-        local f89_local1 = Engine.GetDemoSegmentCount()
-        local f89_local2 = Engine.IsDemoHighlightReelMode()
-        local f89_local3 = Engine.IsDemoClipPlaying()
+        local demoSegmentCount = Engine.GetDemoSegmentCount()
+        local isDemoHighlightReelMode = Engine.IsDemoHighlightReelMode()
+        local isDemoClipPlaying = Engine.IsDemoClipPlaying()
         if not IsDemoRestrictedBasicMode() then
-            table.insert(f89_local0, {
+            table.insert(options, {
                 models = {
-                    displayText = Engine.ToUpper(Engine.Localize("MENU_UPLOAD_CLIP", f89_local1)),
+                    displayText = Engine.ToUpper(Engine.Localize("MENU_UPLOAD_CLIP", demoSegmentCount)),
                     action = StartMenuUploadClip,
                     disabledFunction = IsUploadClipButtonDisabled
                 },
@@ -342,8 +342,8 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                 }
             })
         end
-        if f89_local2 then
-            table.insert(f89_local0, {
+        if isDemoHighlightReelMode then
+            table.insert(options, {
                 models = {
                     displayText = Engine.ToUpper(Engine.Localize("MENU_DEMO_CUSTOMIZE_HIGHLIGHT_REEL")),
                     action = StartMenuOpenCustomizeHighlightReel,
@@ -351,7 +351,7 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                 }
             })
         end
-        table.insert(f89_local0, {
+        table.insert(options, {
             models = {
                 displayText = Engine.ToUpper(Engine.ToUpper(Engine.Localize("MENU_JUMP_TO_START"))),
                 action = StartMenuJumpToStart,
@@ -362,48 +362,48 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
             }
         })
         local f89_local4 = nil
-        if f89_local3 then
+        if isDemoClipPlaying then
             f89_local4 = Engine.ToUpper(Engine.Localize("MENU_END_CLIP"))
         else
             f89_local4 = Engine.ToUpper(Engine.Localize("MENU_END_FILM"))
         end
-        table.insert(f89_local0, {
+        table.insert(options, {
             models = {
                 displayText = Engine.ToUpper(f89_local4),
                 action = StartMenuEndDemo
             }
         })
     elseif CoD.isCampaign then
-        table.insert(f89_local0, {
+        table.insert(options, {
             models = {
                 displayText = "MENU_RESUMEGAME_CAPS",
                 action = StartMenuGoBack_ListElement
             }
         })
-        table.insert(f89_local0, {
+        table.insert(options, {
             models = {
                 displayText = "CODCASTER_QS_THIRD_PERSON",
                 action = HandleToggleThirdPersonButton
             }
         })
-        local f89_local1 = CoD.SafeGetModelValue(Engine.GetModelForController(f89_arg0), "safehouse.inTrainingSim") or 0
+        local f89_local1 = CoD.SafeGetModelValue(Engine.GetModelForController(controller), "safehouse.inTrainingSim") or 0
         if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) then
-            if not CoD.isSafehouse and f89_arg0 == Engine.GetPrimaryController() then
-                table.insert(f89_local0, {
+            if not CoD.isSafehouse and controller == Engine.GetPrimaryController() then
+                table.insert(options, {
                     models = {
                         displayText = "MENU_RESTART_MISSION_CAPS",
                         action = RestartMission
                     }
                 })
-                table.insert(f89_local0, {
+                table.insert(options, {
                     models = {
                         displayText = "MENU_RESTART_CHECKPOINT_CAPS",
                         action = RestartFromCheckpoint
                     }
                 })
             end
-            if f89_arg0 == Engine.GetPrimaryController() then
-                table.insert(f89_local0, {
+            if controller == Engine.GetPrimaryController() then
+                table.insert(options, {
                     models = {
                         displayText = "MENU_CHANGE_DIFFICULTY_CAPS",
                         action = OpenDifficultySelect
@@ -411,22 +411,22 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                 })
             end
             if CoD.isSafehouse and f89_local1 == 1 then
-                table.insert(f89_local0, {
+                table.insert(options, {
                     models = {
                         displayText = "MENU_END_TRAINING_SIM",
                         action = EndTrainingSim
                     }
                 })
-            elseif f89_arg0 == Engine.GetPrimaryController() then
+            elseif controller == Engine.GetPrimaryController() then
                 if Engine.DvarBool(0, "ui_blocksaves") then
-                    table.insert(f89_local0, {
+                    table.insert(options, {
                         models = {
                             displayText = "MENU_EXIT_CAPS",
                             action = SaveAndQuitGame
                         }
                     })
                 else
-                    table.insert(f89_local0, {
+                    table.insert(options, {
                         models = {
                             displayText = "MENU_SAVE_AND_QUIT_CAPS",
                             action = SaveAndQuitGame
@@ -435,14 +435,14 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
                 end
             end
         elseif CoD.isSafehouse and f89_local1 == 1 then
-            table.insert(f89_local0, {
+            table.insert(options, {
                 models = {
                     displayText = "MENU_END_TRAINING_SIM",
                     action = EndTrainingSim
                 }
             })
         else
-            table.insert(f89_local0, {
+            table.insert(options, {
                 models = {
                     displayText = "MENU_LEAVE_PARTY_AND_EXIT_CAPS",
                     action = QuitGame
@@ -450,8 +450,8 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
             })
         end
     elseif CoD.isMultiplayer then
-        if Engine.Team(f89_arg0, "name") ~= "TEAM_SPECTATOR" and Engine.GetGametypeSetting("disableClassSelection") ~= 1 then
-            table.insert(f89_local0, {
+        if Engine.Team(controller, "name") ~= "TEAM_SPECTATOR" and Engine.GetGametypeSetting("disableClassSelection") ~= 1 then
+            table.insert(options, {
                 models = {
                     displayText = "MPUI_CHOOSE_CLASS_BUTTON_CAPS",
                     action = ChooseClass
@@ -460,10 +460,10 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
         end
         if Engine.GameModeIsMode(CoD.GAMEMODE_PUBLIC_MATCH) == false and
             Engine.GameModeIsMode(CoD.GAMEMODE_LEAGUE_MATCH) == false and
-            not Engine.IsVisibilityBitSet(f89_arg0, Enum.UIVisibilityBit.BIT_ROUND_END_KILLCAM) and
-            not Engine.IsVisibilityBitSet(f89_arg0, Enum.UIVisibilityBit.BIT_FINAL_KILLCAM) and
+            not Engine.IsVisibilityBitSet(controller, Enum.UIVisibilityBit.BIT_ROUND_END_KILLCAM) and
+            not Engine.IsVisibilityBitSet(controller, Enum.UIVisibilityBit.BIT_FINAL_KILLCAM) and
             CoD.IsTeamChangeAllowed() then
-            table.insert(f89_local0, {
+            table.insert(options, {
                 models = {
                     displayText = "MPUI_CHANGE_TEAM_BUTTON_CAPS",
                     action = ChooseTeam
@@ -471,21 +471,21 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
             })
         end
 
-        table.insert(f89_local0, {
+        table.insert(options, {
             models = {
                 displayText = "CODCASTER_QS_THIRD_PERSON",
                 action = HandleToggleThirdPersonButton
             }
         })
 
-        if f89_arg0 == 0 then
-            local f89_local2 = "MENU_QUIT_GAME_CAPS"
+        if controller == 0 then
+            local displayText = "MENU_QUIT_GAME_CAPS"
             if Engine.IsLobbyHost(Enum.LobbyType.LOBBY_TYPE_GAME) and not CoD.isOnlineGame() then
-                f89_local2 = "MENU_END_GAME_CAPS"
+                displayText = "MENU_END_GAME_CAPS"
             end
-            table.insert(f89_local0, {
+            table.insert(options, {
                 models = {
-                    displayText = f89_local2,
+                    displayText = displayText,
                     action = QuitGame_MP
                 }
             })
@@ -493,13 +493,13 @@ DataSources.StartMenuGameOptions = ListHelper_SetupDataSource("StartMenuGameOpti
     elseif CoD.isZombie then
         return GetZMStartMenuGameOptions(false, false)
     end
-    table.insert(f89_local0, {
+    table.insert(options, {
         models = {
             displayText = "QUIT TO DESKTOP",
             action = OpenPCQuit
         }
     })
-    return f89_local0
+    return options
 end, true)
 
 DataSources.ChatClientEntriesList = {
@@ -530,16 +530,16 @@ DataSources.ChatClientEntriesList = {
                 Engine.CreateModel(menu.chatClientEntriesModel, "entry_" .. f914_local1)
             menu.chatEntries[f914_local1].model = Engine.CreateModel(menu.chatEntries[f914_local1].root, "model")
             menu.chatEntries[f914_local1].properties = {}
-            for f914_local7, f914_local8 in pairs(f914_local0) do
-                local f914_local9 = Engine.CreateModel(menu.chatEntries[f914_local1].model, f914_local7)
+            for modelName, f914_local8 in pairs(f914_local0) do
+                local model = Engine.CreateModel(menu.chatEntries[f914_local1].model, modelName)
             end
         end
-        menu.updateModels = function(f915_arg0, f915_arg1, f915_arg2, f915_arg3)
-            if not f915_arg1.GetList then
+        menu.updateModels = function(controller2, menu, f915_arg2, f915_arg3)
+            if not menu.GetList then
                 return
             end
             local f915_local0 = {}
-            f915_local0 = f915_arg1.GetList(f915_arg0, f915_arg2, f915_arg3, f915_arg1.filter)
+            f915_local0 = menu.GetList(controller2, f915_arg2, f915_arg3, menu.filter)
             if f915_local0 then
                 local sending_timeMs = 0
                 local sending_User = 0
@@ -560,23 +560,23 @@ DataSources.ChatClientEntriesList = {
                 for f915_local1 = 1, #f915_local0, 1 do
                     local f915_local4 = f915_local0[f915_local1]
                     local f915_local5 = #f915_local0 + 1 - f915_local1
-                    for f915_local9, f915_local10 in pairs(f915_local4) do
-                        local f915_local11 = Engine.GetModel(f915_arg1.chatEntries[f915_local5].model, f915_local9)
-                        if f915_local11 ~= nil then
-                            Engine.SetModelValue(f915_local11, f915_local10)
+                    for modelName, value in pairs(f915_local4) do
+                        local model = Engine.GetModel(menu.chatEntries[f915_local5].model, modelName)
+                        if model ~= nil then
+                            Engine.SetModelValue(model, value)
                         end
-                        f915_arg1.chatEntries[f915_local5].properties[f915_local9] = f915_local10
-                        if f915_local9 == "timeMs" then
-                            sending_timeMs = math.floor(f915_local10 / 1000)
+                        menu.chatEntries[f915_local5].properties[modelName] = value
+                        if modelName == "timeMs" then
+                            sending_timeMs = math.floor(value / 1000)
                         end
-                        if f915_local9 == "xuid" then
-                            sending_User = f915_local10
+                        if modelName == "xuid" then
+                            sending_User = value
                         end
-                        if f915_local9 == "fullname" then
-                            sending_Name = string.sub(tostring(f915_local10), 1, -2)
+                        if modelName == "fullname" then
+                            sending_Name = string.sub(tostring(value), 1, -2)
                         end
-                        if f915_local9 == "text" then
-                            sending_Text = f915_local10
+                        if modelName == "text" then
+                            sending_Text = value
                         end
                     end
                     if tostring(Engine.GetXUID64(controller)) == tostring(sending_User) then
@@ -599,7 +599,7 @@ DataSources.ChatClientEntriesList = {
                     end
                 end
             end
-            return f915_arg1.chatEntries[f915_arg2 % f915_arg1.numElementsInList + 1].model
+            return menu.chatEntries[f915_arg2 % menu.numElementsInList + 1].model
         end
 
         menu.updateModels(controller, menu, 0, menu.numElementsInList)
@@ -618,9 +618,9 @@ DataSources.ChatClientEntriesList = {
     end
 }
 
-DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", function ( f44_arg0 )
-	local f44_local0 = {}
-	table.insert( f44_local0, {
+DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", function ( controller )
+	local tabs = {}
+	table.insert( tabs, {
 		models = {
 			tabIcon = CoD.buttonStrings.shoulderl
 		},
@@ -633,7 +633,7 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 		if Engine.IsZombiesGame() then
 			f44_local1 = "CoD.StartMenu_GameOptions_ZM"
 		end
-		table.insert( f44_local0, {
+		table.insert( tabs, {
 			models = {
 				tabName = Engine.Localize( "MENU_THEATER_CAPS" ),
 				tabWidget = f44_local1,
@@ -645,7 +645,7 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 		} )
 	elseif Engine.IsInGame() then
 		if IsGameTypeDOA() and not InSafehouse() then
-			table.insert( f44_local0, {
+			table.insert( tabs, {
 				models = {
 					tabName = "DOA",
 					tabWidget = "CoD.StartMenu_GameOptions_DOA",
@@ -656,7 +656,7 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 				}
 			} )
 		elseif CoD.isCampaign then
-			table.insert( f44_local0, {
+			table.insert( tabs, {
 				models = {
 					tabName = SessionModeToUnlocalizedSessionModeCaps( Engine.CurrentSessionMode() ),
 					tabWidget = "CoD.StartMenu_GameOptions_CP",
@@ -667,8 +667,8 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 				}
 			} )
 			if not Engine.IsCampaignModeZombies() then
-				if CoD.isSafehouse and CoD.isOnlineGame() and not IsInTrainingSim( f44_arg0 ) and Dvar.ui_safehousebarracks:get() and not IsPlayerAGuest( f44_arg0 ) then
-					table.insert( f44_local0, {
+				if CoD.isSafehouse and CoD.isOnlineGame() and not IsInTrainingSim( controller ) and Dvar.ui_safehousebarracks:get() and not IsPlayerAGuest( controller ) then
+					table.insert( tabs, {
 						models = {
 							tabName = "CPUI_BARRACKS_CAPS",
 							tabWidget = "CoD.CombatRecordCP_Contents",
@@ -679,8 +679,8 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 						}
 					} )
 				end
-				if HighestMapReachedGreaterThan( f44_arg0, 1 ) or LUI.DEV ~= nil then
-					table.insert( f44_local0, {
+				if HighestMapReachedGreaterThan( controller, 1 ) or LUI.DEV ~= nil then
+					table.insert( tabs, {
 						models = {
 							tabName = "CPUI_TACTICAL_MODE_CAPS",
 							tabWidget = "CoD.StartMenu_TacticalMode",
@@ -691,8 +691,8 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 						}
 					} )
 				end
-				if not CoD.isSafehouse and not IsPlayerAGuest( f44_arg0 ) then
-					table.insert( f44_local0, {
+				if not CoD.isSafehouse and not IsPlayerAGuest( controller ) then
+					table.insert( tabs, {
 						models = {
 							tabName = "CPUI_ACCOLADES",
 							tabWidget = "CoD.MissionRecordVault_Challenges",
@@ -705,7 +705,7 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 				end
 			end
 		elseif Engine.IsZombiesGame() then
-			table.insert( f44_local0, {
+			table.insert( tabs, {
 				models = {
 					tabName = SessionModeToUnlocalizedSessionModeCaps( Engine.CurrentSessionMode() ),
 					tabWidget = "CoD.StartMenu_GameOptions_ZM",
@@ -716,7 +716,7 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 				}
 			} )
 		else
-			table.insert( f44_local0, {
+			table.insert( tabs, {
 				models = {
 					tabName = SessionModeToUnlocalizedSessionModeCaps( Engine.CurrentSessionMode() ),
 					tabWidget = "CoD.StartMenu_GameOptions",
@@ -728,8 +728,8 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 			} )
 		end
 	else
-		if not IsPlayerAGuest( f44_arg0 ) then
-			table.insert( f44_local0, {
+		if not IsPlayerAGuest( controller ) then
+			table.insert( tabs, {
 				models = {
 					tabName = "MENU_TAB_IDENTITY_CAPS",
 					tabWidget = "CoD.StartMenu_Identity",
@@ -741,8 +741,8 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 				}
 			} )
 		end
-		if not IsLobbyNetworkModeLAN() and not Dvar.ui_execdemo:get() and not Engine.IsCampaignModeZombies() and not IsPlayerAGuest( f44_arg0 ) then
-			table.insert( f44_local0, {
+		if not IsLobbyNetworkModeLAN() and not Dvar.ui_execdemo:get() and not Engine.IsCampaignModeZombies() and not IsPlayerAGuest( controller ) then
+			table.insert( tabs, {
 				models = {
 					tabName = "MENU_TAB_CHALLENGES_CAPS",
 					tabWidget = "CoD.StartMenu_Challenges",
@@ -752,25 +752,25 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 					tabId = "challenges"
 				}
 			} )
-			local f44_local1 = CoD.isPC
-			if f44_local1 then
-				f44_local1 = Mods_IsUsingMods()
+			local isPC = CoD.isPC
+			if isPC then
+				isPC = Mods_IsUsingMods()
 			end
-			table.insert( f44_local0, {
+			table.insert( tabs, {
 				models = {
 					tabName = "MENU_TAB_BARRACKS_CAPS",
 					tabWidget = "CoD.StartMenu_Barracks",
 					tabIcon = "",
-					disabled = f44_local1
+					disabled = isPC
 				},
 				properties = {
 					tabId = "barracks"
 				}
 			} )
 			if CommunityOptionsEnabled() then
-				local f44_local2 = CoD.perController[f44_arg0].openMediaTabAfterClosingGroups
-				CoD.perController[f44_arg0].openMediaTabAfterClosingGroups = false
-				table.insert( f44_local0, {
+				local openMediaTabAfterClosingGroups = CoD.perController[controller].openMediaTabAfterClosingGroups
+				CoD.perController[controller].openMediaTabAfterClosingGroups = false
+				table.insert( tabs, {
 					models = {
 						tabName = "MENU_TAB_MEDIA_CAPS",
 						tabWidget = "CoD.StartMenu_Media",
@@ -778,15 +778,15 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 					},
 					properties = {
 						tabId = "media",
-						selectIndex = f44_local2
+						selectIndex = openMediaTabAfterClosingGroups
 					}
 				} )
 			end
 		end
 	end
 	if IsGameTypeDOA() and Engine.IsInGame() and not InSafehouse() then
-		local f44_local1 = table.insert
-		local f44_local2 = f44_local0
+		local insert = table.insert
+		local f44_local2 = tabs
 		local f44_local3 = {
 			models = {
 				tabName = "MENU_TAB_OPTIONS_CAPS",
@@ -797,16 +797,16 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 		local f44_local4 = {
 			tabId = "options"
 		}
-		local f44_local5 = Dvar.ui_execdemo:get()
-		if f44_local5 then
-			f44_local5 = not Engine.IsInGame()
+		local ui_execdemo = Dvar.ui_execdemo:get()
+		if ui_execdemo then
+			ui_execdemo = not Engine.IsInGame()
 		end
-		f44_local4.selectIndex = f44_local5
+		f44_local4.selectIndex = ui_execdemo
 		f44_local3.properties = f44_local4
-		f44_local1( f44_local2, f44_local3 )
+		insert( f44_local2, f44_local3 )
 	else
-		local f44_local1 = table.insert
-		local f44_local2 = f44_local0
+		local insert = table.insert
+		local f44_local2 = tabs
 		local f44_local3 = {
 			models = {
 				tabName = "MENU_TAB_OPTIONS_CAPS",
@@ -817,13 +817,13 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 		local f44_local4 = {
 			tabId = "options"
 		}
-		local f44_local5 = Dvar.ui_execdemo_gamescom:get()
-		if f44_local5 then
-			f44_local5 = not Engine.IsInGame()
+		local ui_execdemo_gamescom = Dvar.ui_execdemo_gamescom:get()
+		if ui_execdemo_gamescom then
+			ui_execdemo_gamescom = not Engine.IsInGame()
 		end
-		f44_local4.selectIndex = f44_local5
+		f44_local4.selectIndex = ui_execdemo_gamescom
 		f44_local3.properties = f44_local4
-		f44_local1( f44_local2, f44_local3 )
+		insert( f44_local2, f44_local3 )
 	end
 
     if Engine.IsInGame() and CoD.isZombie then
@@ -837,10 +837,10 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
                 tabId = "personalization"
             }
         }
-        table.insert( f44_local0, newOption )
+        table.insert( tabs, newOption )
     end
 
-	table.insert( f44_local0, {
+	table.insert( tabs, {
 		models = {
 			tabIcon = CoD.buttonStrings.shoulderr
 		},
@@ -848,5 +848,5 @@ DataSources.StartMenuTabs = ListHelper_SetupDataSource( "StartMenuTabs", functio
 			m_mouseDisabled = true
 		}
 	} )
-	return f44_local0
+	return tabs
 end, true )

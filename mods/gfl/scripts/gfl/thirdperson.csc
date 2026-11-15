@@ -9,6 +9,7 @@
 //How far ahead the focal point of the camera is (where it's pointing)
 #define CAMERA_LOOKAT_DISTANCE 1000
 #define COLLISION_PADDING 10
+#define BACK_CAMERA_HEIGHT -10.0
 
 REGISTER_SYSTEM( "thirdperson", &__init__, undefined )
 
@@ -169,11 +170,11 @@ function tps_toggle_think(localClientNum)
 
 function set_back_camera()
 {
-    SetDvar("cg_thirdpersonrange", 90);
+    SetDvar("cg_thirdpersonrange", GetDvarFloat("personalization_thirdperson_range", 90.0));
     SetDvar("cg_thirdpersonangle", 0);
-    SetDvar("cg_thirdpersonsideoffset", 20);
-    SetDvar("cg_thirdpersoncamoffsetup", -10);
-    SetDvar("cg_thirdpersonupoffset", -5);
+    SetDvar("cg_thirdpersonsideoffset", GetDvarFloat("personalization_thirdperson_side_offset", 20.0));
+    SetDvar("cg_thirdpersoncamoffsetup", BACK_CAMERA_HEIGHT);
+    SetDvar("cg_thirdpersonupoffset", GetDvarFloat("personalization_thirdperson_up_offset", -5.0));
 }
 
 function set_front_camera()
@@ -356,6 +357,8 @@ function spectate(localclientnum, delta_time)
 	self.old_eye_height = eye_height;
 
 	eye_pos = player.origin + (0,0,eye_height);
+
+	player set_back_camera();
 
 	cam_pos = eye_pos;
 	cam_pos += VectorScale( right , GetDvarFloat("cg_thirdPersonSideOffset") );

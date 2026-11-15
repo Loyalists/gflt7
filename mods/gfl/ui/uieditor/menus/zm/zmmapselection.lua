@@ -2,37 +2,38 @@ require("ui.uieditor.widgets.Lobby.Common.FE_ButtonPanelShaderContainer")
 require("ui.uieditor.widgets.Lobby.LobbyStreamerBlackFade")
 require("ui.uieditor.widgets.BackgroundFrames.GenericMenuFrame")
 require("ui.uieditor.widgets.List1Button_Playlist")
+require("ui.uieditor.widgets.GFL.MapSelectionButton")
 require("ui.uieditor.widgets.Scrollbars.verticalScrollbar")
 require("ui.uieditor.widgets.MP.MatchSettings.matchSettingsInfo")
 require("ui.uieditor.widgets.Lobby.Common.FE_Menu_LeftGraphics")
 
-local f0_local0 = function(f1_arg0, f1_arg1)
+local configureMouseInput = function(self, controller)
     if not CoD.useMouse then
         return
     else
-        LUI.OverrideFunction_CallOriginalFirst(f1_arg0, "setState", function(element, controller)
-            if IsSelfInState(f1_arg0, "SelectingMap") then
-                f1_arg0.mapList:setMouseDisabled(false)
-                f1_arg0.mapCategoriesList:setMouseDisabled(true)
-                f1_arg0.m_categorySet = false
+        LUI.OverrideFunction_CallOriginalFirst(self, "setState", function(element, controller)
+            if IsSelfInState(self, "SelectingMap") then
+                self.mapList:setMouseDisabled(false)
+                self.mapCategoriesList:setMouseDisabled(true)
+                self.m_categorySet = false
             else
-                f1_arg0.mapList:setMouseDisabled(true)
-                f1_arg0.mapCategoriesList:setMouseDisabled(false)
+                self.mapList:setMouseDisabled(true)
+                self.mapCategoriesList:setMouseDisabled(false)
             end
         end)
-        f1_arg0.mapList:setMouseDisabled(true)
-        f1_arg0.mapList:registerEventHandler("leftclick_outside", function(element, event)
-            if IsSelfInState(f1_arg0, "SelectingMap") and f1_arg0.m_categorySet then
-                CoD.PCUtil.SimulateButtonPress(f1_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE)
+        self.mapList:setMouseDisabled(true)
+        self.mapList:registerEventHandler("leftclick_outside", function(element, event)
+            if IsSelfInState(self, "SelectingMap") and self.m_categorySet then
+                CoD.PCUtil.SimulateButtonPress(controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE)
             end
-            f1_arg0.m_categorySet = true
+            self.m_categorySet = true
             return true
         end)
     end
 end
 
-local PostLoadFunc = function(f4_arg0, f4_arg1)
-    f0_local0(f4_arg0, f4_arg1)
+local PostLoadFunc = function(self, controller)
+    configureMouseInput(self, controller)
 end
 
 local f0_local2 = 10000
@@ -52,7 +53,7 @@ local sort_map_index = function(mapname)
     end
 end
 
-DataSources.ZMMapCategoriesDataSource = DataSourceHelpers.ListSetup("ZMMapCategoriesDataSource", function(f6_arg0)
+DataSources.ZMMapCategoriesDataSource = DataSourceHelpers.ListSetup("ZMMapCategoriesDataSource", function(controller)
     local categories_array = {}
     local current_dlcIndex = CoD.GetMapValue(Engine.DvarString(nil, "ui_mapname"), "dlc_pack",
         CoD.CONTENT_ORIGINAL_MAP_INDEX)
@@ -146,7 +147,7 @@ DataSources.ZMMapListDataSource = DataSourceHelpers.ListSetup("ZMMapListDataSour
 				table.insert(MapList, {
 					models = {
 						text = UserMaps[i].name,
-						buttonText = LocalizeToUpperString(string.sub(UserMaps[i].name, 1, 32)),
+						buttonText = LocalizeToUpperString(UserMaps[i].name),
 						image = UserMaps[i].ugcName,
 						description = UserMaps[i].description
 					},
@@ -220,23 +221,23 @@ LUI.createMenu.ZMMapSelection = function(controller)
     mapCategoriesList:setVerticalCount(16)
     mapCategoriesList:setDataSource("ZMMapCategoriesDataSource")
     mapCategoriesList:registerEventHandler("gain_focus", function(element, event)
-        local f17_local0 = nil
+        local focusResult = nil
         if element.gainFocus then
-            f17_local0 = element:gainFocus(event)
+            focusResult = element:gainFocus(event)
         elseif element.super.gainFocus then
-            f17_local0 = element.super:gainFocus(event)
+            focusResult = element.super:gainFocus(event)
         end
         CoD.Menu.UpdateButtonShownState(element, self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS)
-        return f17_local0
+        return focusResult
     end)
     mapCategoriesList:registerEventHandler("lose_focus", function(element, event)
-        local f18_local0 = nil
+        local focusResult = nil
         if element.loseFocus then
-            f18_local0 = element:loseFocus(event)
+            focusResult = element:loseFocus(event)
         elseif element.super.loseFocus then
-            f18_local0 = element.super:loseFocus(event)
+            focusResult = element.super:loseFocus(event)
         end
-        return f18_local0
+        return focusResult
     end)
     self:AddButtonCallbackFunction(mapCategoriesList, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER",
         function(element, menu, controller, model)
@@ -285,45 +286,48 @@ LUI.createMenu.ZMMapSelection = function(controller)
     mapList:makeFocusable()
     mapList:setLeftRight(true, false, 287, 567)
     mapList:setTopBottom(true, false, 109, 651)
-    mapList:setWidgetType(CoD.List1Button_Playlist)
+    mapList:setWidgetType(CoD.GFLMapSelectionButton)
     mapList:setVerticalCount(16)
     mapList:setVerticalScrollbar(CoD.verticalScrollbar)
+    -- The list resizes to its visible buttons; keep the scrollbar at the
+    -- maximum column edge instead of anchoring it to that changing width.
+    mapList.verticalScrollbar:setLeftRight(true, false, 285, 295)
     mapList:setDataSource("ZMMapListDataSource")
     mapList:registerEventHandler("gain_focus", function(element, event)
-        local f24_local0 = nil
+        local focusResult = nil
         if element.gainFocus then
-            f24_local0 = element:gainFocus(event)
+            focusResult = element:gainFocus(event)
         elseif element.super.gainFocus then
-            f24_local0 = element.super:gainFocus(event)
+            focusResult = element.super:gainFocus(event)
         end
         CoD.Menu.UpdateButtonShownState(element, self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS)
-        return f24_local0
+        return focusResult
     end)
     mapList:registerEventHandler("lose_focus", function(element, event)
-        local f25_local0 = nil
+        local focusResult = nil
         if element.loseFocus then
-            f25_local0 = element:loseFocus(event)
+            focusResult = element:loseFocus(event)
         elseif element.super.loseFocus then
-            f25_local0 = element.super:loseFocus(event)
+            focusResult = element.super:loseFocus(event)
         end
-        return f25_local0
+        return focusResult
     end)
 
     self:AddButtonCallbackFunction(mapList, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER",
-        function(f26_arg0, f26_arg1, f26_arg2, f26_arg3)
-            if not IsElementPropertyValue(f26_arg0, "purchasable", true) then
-                MapSelected(f26_arg0, f26_arg2)
+        function(element, menu, controller, event)
+            if not IsElementPropertyValue(element, "purchasable", true) then
+                MapSelected(element, controller)
                 self.mapSelected = true
-                GoBack(self, f26_arg2)
-                ClearSavedState(self, f26_arg2)
+                GoBack(self, controller)
+                ClearSavedState(self, controller)
                 -- PlaySoundSetSound( self, "action" )
                 return true
             else
-                OpenPurchaseMapPackConfirmation(f26_arg2, f26_arg0, "ZMMapSelect", f26_arg1)
+                OpenPurchaseMapPackConfirmation(controller, element, "ZMMapSelect", menu)
                 return true
             end
-        end, function(f27_arg0, f27_arg1, f27_arg2)
-            CoD.Menu.SetButtonLabel(f27_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT")
+        end, function(element, menu, controller)
+            CoD.Menu.SetButtonLabel(menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT")
             return true
         end, false)
 

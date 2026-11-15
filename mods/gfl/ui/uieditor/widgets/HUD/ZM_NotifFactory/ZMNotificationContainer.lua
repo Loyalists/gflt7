@@ -8,57 +8,57 @@ require( "ui.uieditor.widgets.ZMInventoryStalingrad.ZmNotif1_Notification_Cursor
 local PreLoadFunc = function ( self, controller )
 end
 
-local PostLoadFunc = function ( f2_arg0, f2_arg1 )
-	f2_arg0.notificationQueueEmptyModel = Engine.CreateModel( Engine.GetModelForController( f2_arg1 ), "NotificationQueueEmpty" )
-	f2_arg0.playNotification = function ( f3_arg0, f3_arg1 )
-		f3_arg0.ZmNotif1CursorHint0.CursorHintText:setText( f3_arg1.description )
-		f3_arg0.ZmNotifFactory.Label1:setText( f3_arg1.title )
-		f3_arg0.ZmNotifFactory.Label2:setText( f3_arg1.title )
-		if f3_arg1.clip == "TextandImageBGB" or f3_arg1.clip == "TextandImageBGBToken" or f3_arg1.clip == "TextandTimeAttack" then
-			f3_arg0.bgbTexture:setImage( f3_arg1.bgbImage )
-			f3_arg0.bgbTextureLabel:setText( f3_arg1.bgbImageText or "" )
-			f3_arg0.bgbTextureLabelBlur:setText( f3_arg1.bgbImageText or "" )
-			if f3_arg1.clip == "TextandTimeAttack" then
-				f3_arg0.xpaward.Label1:setText( f3_arg1.xpAward )
-				f3_arg0.xpaward.Label2:setText( f3_arg1.xpAward )
-				f3_arg0.CursorHint.CursorHintText:setText( f3_arg1.rewardText )
+local PostLoadFunc = function ( self, controller )
+	self.notificationQueueEmptyModel = Engine.CreateModel( Engine.GetModelForController( controller ), "NotificationQueueEmpty" )
+	self.playNotification = function ( self, notification )
+		self.ZmNotif1CursorHint0.CursorHintText:setText( notification.description )
+		self.ZmNotifFactory.Label1:setText( notification.title )
+		self.ZmNotifFactory.Label2:setText( notification.title )
+		if notification.clip == "TextandImageBGB" or notification.clip == "TextandImageBGBToken" or notification.clip == "TextandTimeAttack" then
+			self.bgbTexture:setImage( notification.bgbImage )
+			self.bgbTextureLabel:setText( notification.bgbImageText or "" )
+			self.bgbTextureLabelBlur:setText( notification.bgbImageText or "" )
+			if notification.clip == "TextandTimeAttack" then
+				self.xpaward.Label1:setText( notification.xpAward )
+				self.xpaward.Label2:setText( notification.xpAward )
+				self.CursorHint.CursorHintText:setText( notification.rewardText )
 			end
 		end
-		f3_arg0:playClip( f3_arg1.clip )
+		self:playClip( notification.clip )
 	end
 	
-	f2_arg0.appendNotification = function ( f4_arg0, f4_arg1 )
-		if f4_arg0.notificationInProgress == true or Engine.GetModelValue( f4_arg0.notificationQueueEmptyModel ) ~= true then
-			local f4_local0 = f4_arg0.nextNotification
-			if f4_local0 == nil then
-				f4_arg0.nextNotification = LUI.ShallowCopy( f4_arg1 )
+	self.appendNotification = function ( self, notification )
+		if self.notificationInProgress == true or Engine.GetModelValue( self.notificationQueueEmptyModel ) ~= true then
+			local nextNotification = self.nextNotification
+			if nextNotification == nil then
+				self.nextNotification = LUI.ShallowCopy( notification )
 			else
-				while f4_local0 and f4_local0.next ~= nil do
-					f4_local0 = f4_local0.next
+				while nextNotification and nextNotification.next ~= nil do
+					nextNotification = nextNotification.next
 				end
-				f4_local0.next = LUI.ShallowCopy( f4_arg1 )
+				nextNotification.next = LUI.ShallowCopy( notification )
 			end
 		else
-			f4_arg0:playNotification( LUI.ShallowCopy( f4_arg1 ) )
+			self:playNotification( LUI.ShallowCopy( notification ) )
 		end
 	end
 	
-	f2_arg0.notificationInProgress = false
-	f2_arg0.nextNotification = nil
+	self.notificationInProgress = false
+	self.nextNotification = nil
 
-	LUI.OverrideFunction_CallOriginalSecond( f2_arg0, "playClip", function ( element )
+	LUI.OverrideFunction_CallOriginalSecond( self, "playClip", function ( element )
 		element.notificationInProgress = true
 	end )
-	f2_arg0:registerEventHandler( "clip_over", function ( element, event )
-		f2_arg0.notificationInProgress = false
-		if f2_arg0.nextNotification ~= nil then
-			f2_arg0:playNotification( f2_arg0.nextNotification )
-			f2_arg0.nextNotification = f2_arg0.nextNotification.next
+	self:registerEventHandler( "clip_over", function ( element, event )
+		self.notificationInProgress = false
+		if self.nextNotification ~= nil then
+			self:playNotification( self.nextNotification )
+			self.nextNotification = self.nextNotification.next
 		end
 	end )
-	f2_arg0:subscribeToModel( f2_arg0.notificationQueueEmptyModel, function ( model )
+	self:subscribeToModel( self.notificationQueueEmptyModel, function ( model )
 		if Engine.GetModelValue( model ) == true then
-			f2_arg0:processEvent( {
+			self:processEvent( {
 				name = "clip_over"
 			} )
 		end

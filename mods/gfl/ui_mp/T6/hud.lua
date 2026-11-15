@@ -1,6 +1,7 @@
 require("ui_mp.t6.hud_og")
 require("ui.uieditor.widgets.GFL.HUD.ThirdpersonCrosshair")
 if CoD.isZombie then
+    require("ui.uieditor.widgets.GFL.HUD.IW8DamageFeedbackContainer")
     require( "ui.uieditor.menus.hud.JUPHud_zm_factory" )
 end
 
@@ -15,12 +16,12 @@ local PreLoadFunc = function( self, controller )
     end
 end
 
-local f0_local10 = function ()
-    local f0_local9 = false
-	if f0_local9 then
+local loadInGameMenus = function ()
+    local isLoaded = false
+	if isLoaded then
 		return 
 	end
-	f0_local9 = true
+	isLoaded = true
 	require( "ui_mp.T6.HUD.InGameMenus" )
 	require( "ui.uieditor.menus.Core_UI_require" )
 	require( "ui.uieditor.menus.core_patch_require" )
@@ -99,6 +100,10 @@ local function AddCustomHUDElements_Zombie(menu, controller)
     -- local self = menu:getParent()
     local self = menu
     local parent = menu:getParent()
+
+    local Hitmarker = CoD.IW8DamageFeedbackContainer.new(menu, controller)
+    parent.IW8DamageFeedback = Hitmarker
+    parent:addElement(Hitmarker)
 
     if Engine.DvarInt(nil, "personalization_hud") ~= 0 then
         menu:setupHUDShaker()
@@ -223,6 +228,10 @@ local function AddCustomHUDElements_Zombie(menu, controller)
         element.ZombieHealthBar:close()
 		element.KingslayerWaypointsContainer:close()
 	end )
+
+	LUI.OverrideFunction_CallOriginalSecond( parent, "close", function ( element )
+        element.IW8DamageFeedback:close()
+	end )
 end
 
 local function AddCustomHUDElements_Common(menu, controller)
@@ -236,58 +245,58 @@ local function AddCustomHUDElements_Common(menu, controller)
 	end )
 end
 
-function HUD_FirstSnapshot_Common(f40_arg0, f40_arg1)
+function HUD_FirstSnapshot_Common(f40_arg0, controller)
 	if PreLoadFunc then
-		PreLoadFunc( f40_arg0, f40_arg1 )
+		PreLoadFunc( f40_arg0, controller )
 	end
 
-    CoD.CACUtility.ForceStreamAttachmentImages(f40_arg1.controller)
+    CoD.CACUtility.ForceStreamAttachmentImages(controller.controller)
     if not CoD.isMultiplayer then
-        f40_arg0.cinematicSubtitles = CoD.MovieSubtitles.new(f40_arg0, f40_arg1.controller)
+        f40_arg0.cinematicSubtitles = CoD.MovieSubtitles.new(f40_arg0, controller.controller)
         f40_arg0.cinematicSubtitles:setLeftRight(false, false, -640, 640)
         f40_arg0.cinematicSubtitles:setTopBottom(false, false, -360, 360)
         f40_arg0:addElement(f40_arg0.cinematicSubtitles)
     end
-    local f40_local0 = f40_arg1.controller
-    HUD_AddHintTextElements(f40_arg0, f40_local0)
-    local f40_local1 = CoD.Menu.NewSafeAreaFromState("hud_safearea", f40_arg1.controller)
-    f40_local1:setPriority(100)
-    f40_local1:setOwner(f40_arg1.controller)
-    f40_arg0:addElement(f40_local1)
+    local controller2 = controller.controller
+    HUD_AddHintTextElements(f40_arg0, controller2)
+    local safeArea = CoD.Menu.NewSafeAreaFromState("hud_safearea", controller.controller)
+    safeArea:setPriority(100)
+    safeArea:setOwner(controller.controller)
+    f40_arg0:addElement(safeArea)
     if f40_arg0.safeArea and f40_arg0.safeArea.buttonModel then
         Engine.UnsubscribeAndFreeModel(f40_arg0.safeArea.buttonModel)
         f40_arg0.safeArea:close()
     end
-    f40_arg0.safeArea = f40_local1
-    f40_arg0.safeArea.buttonModel = Engine.CreateModel(Engine.GetModelForController(f40_local0), "HUD.buttonPrompts")
-    local f40_local2 = CoD.GrenadeEffect.new(f40_local0)
-    f40_local2:setLeftRight(true, true, 0, 0)
-    f40_local2:setTopBottom(true, true, 0, 0)
-    f40_arg0:addForceClosedSafeAreaChild(f40_local2)
+    f40_arg0.safeArea = safeArea
+    f40_arg0.safeArea.buttonModel = Engine.CreateModel(Engine.GetModelForController(controller2), "HUD.buttonPrompts")
+    local grenadeEffect = CoD.GrenadeEffect.new(controller2)
+    grenadeEffect:setLeftRight(true, true, 0, 0)
+    grenadeEffect:setTopBottom(true, true, 0, 0)
+    f40_arg0:addForceClosedSafeAreaChild(grenadeEffect)
     if CoD.isZombie == true then
         CoD.Zombie.SoloQuestMode = false
-        local f40_local3 = Engine.GetLobbyClientCount(Enum.LobbyType.LOBBY_TYPE_GAME)
-        if f40_local3 == 1 and
+        local clientCount = Engine.GetLobbyClientCount(Enum.LobbyType.LOBBY_TYPE_GAME)
+        if clientCount == 1 and
             (CoD.isOnlineGame() == false or Engine.GameModeIsMode(CoD.GAMEMODE_PRIVATE_MATCH) == false) then
             CoD.Zombie.SoloQuestMode = true
         end
-        if Engine.GameModeIsMode(CoD.GAMEMODE_LOCAL_SPLITSCREEN) == true and f40_local3 > 2 then
+        if Engine.GameModeIsMode(CoD.GAMEMODE_LOCAL_SPLITSCREEN) == true and clientCount > 2 then
             CoD.Zombie.LocalSplitscreenMultiplePlayers = true
         end
     end
-    HUD_CloseScoreBoard(f40_arg0, f40_arg1)
+    HUD_CloseScoreBoard(f40_arg0, controller)
     if Dvar.ui_gametype:get() ~= "fr" and not CoD.ShowNewScoreboard() then
-        f40_arg0.scoreBoard = LUI.createMenu.Scoreboard(f40_arg1.controller)
+        f40_arg0.scoreBoard = LUI.createMenu.Scoreboard(controller.controller)
         f40_arg0.scoreboardUpdateTimer = LUI.UITimer.new(1000, {
             name = "update_scoreboard",
-            controller = f40_arg1.controller
+            controller = controller.controller
         }, false)
     end
     Engine.Durango_CheckPrimaryStolenPopupAfterLoading()
 
-    AddCustomHUDElements_Common(f40_arg0, f40_arg1.controller)
+    AddCustomHUDElements_Common(f40_arg0, controller.controller)
     if CoD.isZombie then
-        AddCustomHUDElements_Zombie(f40_arg0, f40_arg1.controller)
+        AddCustomHUDElements_Zombie(f40_arg0, controller.controller)
     end
 end
 
@@ -310,7 +319,7 @@ function HUD_FirstSnapshot_Zombie( menu, controller )
 	if CoD.Zombie.IsDLCMap( CoD.Zombie.DLC3Maps ) then
 		self:registerEventHandler( "time_bomb_hud_toggle", HUD_ToggleZombieHudContainer )
 	end
-	f0_local10()
+	loadInGameMenus()
 	if menu.T7HudMenuGameMode == nil then
 		local powerupsArea = Engine.GetCurrentMap()
 		local hudName
@@ -386,12 +395,12 @@ function HUD_FirstSnapshot_Zombie( menu, controller )
     ResetPowerupsAreaVisibility()
 
 	if CoD.isZombie == true and Mods_IsUsingMods() then
-		local f52_local2 = CoD.Console.new( menu, controller.controller )
-		f52_local2:setLeftRight( true, false, 39, 809 )
-		f52_local2:setTopBottom( false, true, -160, -20 )
-		f52_local2:setAlpha( 1 )
-		menu:addElement( f52_local2 )
-		menu.Console = f52_local2
+		local console = CoD.Console.new( menu, controller.controller )
+		console:setLeftRight( true, false, 39, 809 )
+		console:setTopBottom( false, true, -160, -20 )
+		console:setAlpha( 1 )
+		menu:addElement( console )
+		menu.Console = console
 	end
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.powerupsArea:close()

@@ -134,6 +134,8 @@ rawfile,ui/uieditor/menus/hud/juphud_zm_factory.lua
 rawfile,ui/uieditor/menus/startmenu/h1startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/menus/startmenu/iw7startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/menus/startmenu/s4startmenu_gameoptions_zm.lua
+rawfile,ui/uieditor/menus/startmenu/t4startmenu_gameoptions_zm.lua
+rawfile,ui/uieditor/menus/startmenu/t5startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/menus/startmenu/t6startmenu_gameoptions_zm.lua
 rawfile,ui/uieditor/widgets/hud/jupammowidget/jupammocontainer.lua
 rawfile,ui/uieditor/widgets/hud/jupammowidget/jupammoequipment.lua
@@ -166,6 +168,7 @@ scriptparsetree,scripts/gfl/zm/character_mgr.csc
 scriptparsetree,scripts/gfl/zm/character_mgr.gsc
 scriptparsetree,scripts/gfl/zm/checkpoints.gsc
 scriptparsetree,scripts/gfl/zm/coldwar_scoreevent.gsc
+scriptparsetree,scripts/gfl/zm/elmg_hitmarker.gsc
 scriptparsetree,scripts/gfl/zm/gameplay.csc
 scriptparsetree,scripts/gfl/zm/gameplay.gsc
 scriptparsetree,scripts/gfl/zm/magicboxshare.gsc
@@ -176,11 +179,16 @@ scriptparsetree,scripts/gfl/zm/perkplus.gsc
 scriptparsetree,scripts/gfl/zm/t8_perkloss.gsc
 scriptparsetree,scripts/gfl/zm/ugxmods_timedgp.gsc
 scriptparsetree,scripts/gfl/zm/zm_bot.gsc
+scriptparsetree,scripts/gfl/zm/zm_bot_combat.gsc
+scriptparsetree,scripts/gfl/zm/zm_bot_navigation.gsc
+scriptparsetree,scripts/gfl/zm/zm_bot_pap.gsc
+scriptparsetree,scripts/gfl/zm/zm_bot_purchase.gsc
+scriptparsetree,scripts/gfl/zm/zm_bot_revive.gsc
+scriptparsetree,scripts/gfl/zm/zm_bot_util.gsc
 scriptparsetree,scripts/gfl/zm/zm_character.gsc
 scriptparsetree,scripts/gfl/zm/zm_counter.gsc
 scriptparsetree,scripts/gfl/zm/zm_sub.csc
 scriptparsetree,scripts/gfl/zm/zm_sub.gsc
-scriptparsetree,scripts/zm/_hb21_zm_hitmarkers.gsc
 scriptparsetree,scripts/zm/_zm_bgb.csc
 scriptparsetree,scripts/zm/_zm_bgb.gsc
 scriptparsetree,scripts/zm/_zm_bgb_machine.csc

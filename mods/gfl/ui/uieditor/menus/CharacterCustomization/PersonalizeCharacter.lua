@@ -34,106 +34,106 @@ local PreLoadFunc = function ( self, controller )
 	self.currentMode = CoD.CCUtility.PersonalizeHeroData.Modes.ExploringOptions
 end
 
-local f0_local2 = function ( f3_arg0, f3_arg1, f3_arg2 )
-	local f3_local0 = f3_arg0.optionsList.optionsList
+local onTabChanged = function ( menu, tab, controller )
+	local optionsList = menu.optionsList.optionsList
 	-- if f3_arg1.isBlackMarket then
 	-- 	f3_local0.filter = CoD.CCUtility.PersonalizeHeroData.BlackMarketFilter
 	-- else
 	-- 	f3_local0.filter = CoD.CCUtility.PersonalizeHeroData.StandardFilter
 	-- end
-	f3_local0.filter = CoD.CCUtility.PersonalizeHeroData.StandardFilter
-	f3_local0:updateDataSource()
+	optionsList.filter = CoD.CCUtility.PersonalizeHeroData.StandardFilter
+	optionsList:updateDataSource()
 end
 
-local PostLoadFunc = function ( f4_arg0, f4_arg1 )
-	f4_arg0.tabChanged = f0_local2
-	f4_arg0.personalizeList:clearNavigationTable()
-	f4_arg0.optionsList:clearNavigationTable()
-	local f4_local0 = nil
-	f4_arg0.updateMode = function ( f5_arg0, f5_arg1, f5_arg2, f5_arg3 )
+local PostLoadFunc = function ( self, controller )
+	self.tabChanged = onTabChanged
+	self.personalizeList:clearNavigationTable()
+	self.optionsList:clearNavigationTable()
+	local previousElement = nil
+	self.updateMode = function ( mode, customizationArea, selectedOption, editFirstItem )
 		CoD.CCUtility.PersonalizeHeroData.EdittingAreaItemIndex = nil
-		local f5_local0 = nil
-		if f5_arg0 == CoD.CCUtility.PersonalizeHeroData.Modes.ExploringOptions then
+		local titleKey = nil
+		if mode == CoD.CCUtility.PersonalizeHeroData.Modes.ExploringOptions then
 			if CoD.CCUtility.PersonalizeHeroData.EdittingArea ~= CoD.CCUtility.TauntCategoryIndex then
-				SendClientScriptNotify( f4_arg1, "camera_change" .. CoD.GetLocalClientAdjustedNum( f4_arg1 ), "exploring" )
+				SendClientScriptNotify( controller, "camera_change" .. CoD.GetLocalClientAdjustedNum( controller ), "exploring" )
 			end
 			CoD.CCUtility.PersonalizeHeroData.EdittingArea = nil
-			f5_local0 = "MENU_SPECIALIST_PERSONALIZATION_CAPS"
-			f4_arg0.reloadSelectionList()
-			if f5_arg1 then
-				f4_arg0.personalizeList.customizationList:updateDataSource()
-				f4_arg0.personalizeList.customizationList:findItem( nil, {
+			titleKey = "MENU_SPECIALIST_PERSONALIZATION_CAPS"
+			self.reloadSelectionList()
+			if customizationArea then
+				self.personalizeList.customizationList:updateDataSource()
+				self.personalizeList.customizationList:findItem( nil, {
 					categorySize = CoD.CCUtility.Heroes.LargeCategory,
-					customizationArea = f5_arg1
+					customizationArea = customizationArea
 				}, true )
 			end
-			f4_arg0.categoryTabs.Tabs.m_disableNavigation = true
-			f4_arg0.categoryTabs:setAlpha( 0 )
-			CoD.SwapFocusableElements( f4_arg1, f4_local0, f4_arg0.personalizeList )
-			f4_local0 = f4_arg0.personalizeList
-			f4_arg0:setState( "DefaultState" )
-		elseif f5_arg0 == CoD.CCUtility.PersonalizeHeroData.Modes.EdittingOption then
-			local f5_local1 = "EdittingItem"
-			if f5_arg2.customizationArea == Enum.CharacterItemType.CHARACTER_ITEM_TYPE_HELMET then
-				SendClientScriptNotify( f4_arg1, "camera_change" .. CoD.GetLocalClientAdjustedNum( f4_arg1 ), "inspecting_helmet" )
-				f5_local0 = "MENU_SPECIALIST_HEADS_CAPS"
-			elseif f5_arg2.customizationArea == Enum.CharacterItemType.CHARACTER_ITEM_TYPE_BODY then
-				SendClientScriptNotify( f4_arg1, "camera_change" .. CoD.GetLocalClientAdjustedNum( f4_arg1 ), "inspecting_body" )
-				f5_local0 = "MENU_SPECIALIST_BODIES_CAPS"
-			elseif f5_arg2.customizationArea ~= CoD.CCUtility.TauntCategoryIndex then
-				SendClientScriptNotify( f4_arg1, "camera_change" .. CoD.GetLocalClientAdjustedNum( f4_arg1 ), "exploring" )
+			self.categoryTabs.Tabs.m_disableNavigation = true
+			self.categoryTabs:setAlpha( 0 )
+			CoD.SwapFocusableElements( controller, previousElement, self.personalizeList )
+			previousElement = self.personalizeList
+			self:setState( "DefaultState" )
+		elseif mode == CoD.CCUtility.PersonalizeHeroData.Modes.EdittingOption then
+			local stateName = "EdittingItem"
+			if selectedOption.customizationArea == Enum.CharacterItemType.CHARACTER_ITEM_TYPE_HELMET then
+				SendClientScriptNotify( controller, "camera_change" .. CoD.GetLocalClientAdjustedNum( controller ), "inspecting_helmet" )
+				titleKey = "MENU_SPECIALIST_HEADS_CAPS"
+			elseif selectedOption.customizationArea == Enum.CharacterItemType.CHARACTER_ITEM_TYPE_BODY then
+				SendClientScriptNotify( controller, "camera_change" .. CoD.GetLocalClientAdjustedNum( controller ), "inspecting_body" )
+				titleKey = "MENU_SPECIALIST_BODIES_CAPS"
+			elseif selectedOption.customizationArea ~= CoD.CCUtility.TauntCategoryIndex then
+				SendClientScriptNotify( controller, "camera_change" .. CoD.GetLocalClientAdjustedNum( controller ), "exploring" )
 			end
-			CoD.CCUtility.PersonalizeHeroData.EdittingArea = f5_arg2.customizationArea
-			CoD.CCUtility.PersonalizeHeroData.EdittingElement = f5_arg2
-			if f5_arg2.customizationArea == CoD.CCUtility.ShowcaseWeaponCategoryIndex then
-				OpenChooseShowcaseWeapon( f4_arg0, f5_arg2, f4_arg1 )
-			elseif f5_arg2.customizationArea == CoD.CCUtility.TauntCategoryIndex then
-				NavigateToMenu( f4_arg0, "ChooseTaunts", true, f4_arg1 )
+			CoD.CCUtility.PersonalizeHeroData.EdittingArea = selectedOption.customizationArea
+			CoD.CCUtility.PersonalizeHeroData.EdittingElement = selectedOption
+			if selectedOption.customizationArea == CoD.CCUtility.ShowcaseWeaponCategoryIndex then
+				OpenChooseShowcaseWeapon( self, selectedOption, controller )
+			elseif selectedOption.customizationArea == CoD.CCUtility.TauntCategoryIndex then
+				NavigateToMenu( self, "ChooseTaunts", true, controller )
 			else
-				if f5_arg3 then
+				if editFirstItem then
 					CoD.CCUtility.PersonalizeHeroData.EdittingAreaItemIndex = 1
 				else
 					CoD.CCUtility.PersonalizeHeroData.EdittingAreaItemIndex = nil
 					if Enum.eModes.MODE_MULTIPLAYER == Engine.CurrentSessionMode() then
-						f5_local1 = "EdittingItemTabs"
-						f4_arg0.categoryTabs.Tabs.grid:setActiveItem( f4_arg0.categoryTabs.Tabs.grid:getItemAtPosition( 1, 2, false ) )
-						f4_arg0.categoryTabs.Tabs.m_disableNavigation = false
-						f4_arg0.categoryTabs:setAlpha( 1 )
-						local f5_local2 = Engine.CharacterCustomizationNewItemCount( f4_arg1, CoD.CCUtility.Heroes.HeroIndexForEdits, CoD.CCUtility.PersonalizeHeroData.EdittingArea )
-						for f5_local8, f5_local9 in ipairs( CoD.CCUtility.PersonalizeHeroData.HeroCustomizationTabCategories ) do
-							local f5_local10 = f4_arg0.categoryTabs.Tabs.grid:findItem( nil, {
-								filterName = f5_local9
+						stateName = "EdittingItemTabs"
+						self.categoryTabs.Tabs.grid:setActiveItem( self.categoryTabs.Tabs.grid:getItemAtPosition( 1, 2, false ) )
+						self.categoryTabs.Tabs.m_disableNavigation = false
+						self.categoryTabs:setAlpha( 1 )
+						local newItemCounts = Engine.CharacterCustomizationNewItemCount( controller, CoD.CCUtility.Heroes.HeroIndexForEdits, CoD.CCUtility.PersonalizeHeroData.EdittingArea )
+						for index, filterName in ipairs( CoD.CCUtility.PersonalizeHeroData.HeroCustomizationTabCategories ) do
+							local item = self.categoryTabs.Tabs.grid:findItem( nil, {
+								filterName = filterName
 							}, false, false )
-							if f5_local10 then
-								local f5_local6 = f5_local10:getModel( f4_arg1, "breadcrumbCount" )
-								if f5_local6 then
-									local f5_local7 = 0
-									if f5_local9 == "loot" then
-										f5_local7 = f5_local2.loot
+							if item then
+								local model = item:getModel( controller, "breadcrumbCount" )
+								if model then
+									local value = 0
+									if filterName == "loot" then
+										value = newItemCounts.loot
 									else
-										f5_local7 = f5_local2.standard
+										value = newItemCounts.standard
 									end
-									Engine.SetModelValue( f5_local6, f5_local7 )
+									Engine.SetModelValue( model, value )
 								end
 							end
 						end
 					end
 				end
-				f4_arg0.optionsList.optionsList.filter = CoD.CCUtility.PersonalizeHeroData.StandardFilter
-				f4_arg0.optionsList.optionsList:updateDataSource()
-				CoD.SwapFocusableElements( f4_arg1, f4_local0, f4_arg0.optionsList )
-				f4_local0 = f4_arg0.optionsList
-				f4_arg0:setState( f5_local1 )
+				self.optionsList.optionsList.filter = CoD.CCUtility.PersonalizeHeroData.StandardFilter
+				self.optionsList.optionsList:updateDataSource()
+				CoD.SwapFocusableElements( controller, previousElement, self.optionsList )
+				previousElement = self.optionsList
+				self:setState( stateName )
 			end
 		end
-		f4_arg0.currentMode = f5_arg0
-		if f5_local0 then
-			f4_arg0.Frame.titleLabel:setText( Engine.Localize( ConvertToUpperString( LocalizeWithEdittingHeroName( f4_arg1, f5_local0 ) ) ) )
-			f4_arg0.Frame.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText( Engine.Localize( ConvertToUpperString( LocalizeWithEdittingHeroName( f4_arg1, f5_local0 ) ) ) )
+		self.currentMode = mode
+		if titleKey then
+			self.Frame.titleLabel:setText( Engine.Localize( ConvertToUpperString( LocalizeWithEdittingHeroName( controller, titleKey ) ) ) )
+			self.Frame.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText( Engine.Localize( ConvertToUpperString( LocalizeWithEdittingHeroName( controller, titleKey ) ) ) )
 		end
 	end
 	
-	f4_arg0.updateMode( CoD.CCUtility.PersonalizeHeroData.Modes.ExploringOptions )
+	self.updateMode( CoD.CCUtility.PersonalizeHeroData.Modes.ExploringOptions )
 end
 
 LUI.createMenu.PersonalizeCharacter = function ( controller )
@@ -147,10 +147,10 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 	self:setTopBottom( true, true, 0, 0 )
 	self:playSound( "menu_open", controller )
 	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "PersonalizeCharacter.buttonPrompts" )
-	local f6_local1 = self
+	local menu = self
 	self.anyChildUsesUpdateState = true
 	
-	local LeftPanel = CoD.FE_ButtonPanelShaderContainer.new( f6_local1, controller )
+	local LeftPanel = CoD.FE_ButtonPanelShaderContainer.new( menu, controller )
 	LeftPanel:setLeftRight( false, false, -576, -215 )
 	LeftPanel:setTopBottom( true, true, 84, -53 )
 	LeftPanel:setRGB( 0.5, 0.5, 0.5 )
@@ -165,7 +165,7 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 	self:addElement( TabBacking )
 	self.TabBacking = TabBacking
 	
-	local Frame = CoD.GenericMenuFrame.new( f6_local1, controller )
+	local Frame = CoD.GenericMenuFrame.new( menu, controller )
 	Frame:setLeftRight( true, true, 0, 0 )
 	Frame:setTopBottom( true, true, 0, 0 )
 	Frame.titleLabel:setText( ConvertToUpperString( LocalizeWithEdittingHeroName( controller, "HEROES_OUTFITS_CAPS" ) ) )
@@ -174,19 +174,19 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 	self:addElement( Frame )
 	self.Frame = Frame
 	
-	local personalizeList = CoD.PersonalizeCharacter_PersonalizeList.new( f6_local1, controller )
+	local personalizeList = CoD.PersonalizeCharacter_PersonalizeList.new( menu, controller )
 	personalizeList:setLeftRight( false, false, -563, -233 )
 	personalizeList:setTopBottom( true, true, 136, -13 )
 	self:addElement( personalizeList )
 	self.personalizeList = personalizeList
 	
-	local optionsList = CoD.heroSelectOptionList.new( f6_local1, controller )
+	local optionsList = CoD.heroSelectOptionList.new( menu, controller )
 	optionsList:setLeftRight( false, false, -573, -225 )
 	optionsList:setTopBottom( true, true, 136, -20 )
 	self:addElement( optionsList )
 	self.optionsList = optionsList
 	
-	local categoryInfoBlock = CoD.PersonalizeHero_InfoBlock.new( f6_local1, controller )
+	local categoryInfoBlock = CoD.PersonalizeHero_InfoBlock.new( menu, controller )
 	categoryInfoBlock:setLeftRight( false, false, -205, 72 )
 	categoryInfoBlock:setTopBottom( true, false, 136, 605 )
 	categoryInfoBlock:mergeStateConditions( {
@@ -200,7 +200,7 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 	self:addElement( categoryInfoBlock )
 	self.categoryInfoBlock = categoryInfoBlock
 	
-	local optionInfoBlock = CoD.PersonalizeHero_InfoBlock.new( f6_local1, controller )
+	local optionInfoBlock = CoD.PersonalizeHero_InfoBlock.new( menu, controller )
 	optionInfoBlock:setLeftRight( false, false, -205, 95 )
 	optionInfoBlock:setTopBottom( true, false, 136, 605 )
 	optionInfoBlock.CategoryDesc.weaponDescTextBox:setText( Engine.Localize( "HEROES_SHOWCASE_WEAPON_DESC" ) )
@@ -208,13 +208,13 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 	self:addElement( optionInfoBlock )
 	self.optionInfoBlock = optionInfoBlock
 	
-	local PersonalizeCharacterCPProgressionMessage0 = CoD.PersonalizeCharacter_CPProgressionMessage.new( f6_local1, controller )
+	local PersonalizeCharacterCPProgressionMessage0 = CoD.PersonalizeCharacter_CPProgressionMessage.new( menu, controller )
 	PersonalizeCharacterCPProgressionMessage0:setLeftRight( false, false, 328, 576 )
 	PersonalizeCharacterCPProgressionMessage0:setTopBottom( true, false, 556.75, 581.75 )
 	self:addElement( PersonalizeCharacterCPProgressionMessage0 )
 	self.PersonalizeCharacterCPProgressionMessage0 = PersonalizeCharacterCPProgressionMessage0
 	
-	local progressionInfo = CoD.ChallengeProgressionInfo.new( f6_local1, controller )
+	local progressionInfo = CoD.ChallengeProgressionInfo.new( menu, controller )
 	progressionInfo:setLeftRight( false, false, 156, 576 )
 	progressionInfo:setTopBottom( true, false, 573, 657 )
 	progressionInfo:setAlpha( 0 )
@@ -247,17 +247,17 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 		}
 	} )
 	progressionInfo:linkToElementModel( progressionInfo, "optionIndex", true, function ( model )
-		f6_local1:updateElementState( progressionInfo, {
+		menu:updateElementState( progressionInfo, {
 			name = "model_validation",
-			menu = f6_local1,
+			menu = menu,
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "optionIndex"
 		} )
 	end )
 	progressionInfo:linkToElementModel( progressionInfo, "unlockProgressAndTarget", true, function ( model )
-		f6_local1:updateElementState( progressionInfo, {
+		menu:updateElementState( progressionInfo, {
 			name = "model_validation",
-			menu = f6_local1,
+			menu = menu,
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "unlockProgressAndTarget"
 		} )
@@ -265,33 +265,33 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 	self:addElement( progressionInfo )
 	self.progressionInfo = progressionInfo
 	
-	local FEMenuLeftGraphics = CoD.FE_Menu_LeftGraphics.new( f6_local1, controller )
+	local FEMenuLeftGraphics = CoD.FE_Menu_LeftGraphics.new( menu, controller )
 	FEMenuLeftGraphics:setLeftRight( true, false, 19, 71 )
 	FEMenuLeftGraphics:setTopBottom( true, true, 84, -19 )
 	self:addElement( FEMenuLeftGraphics )
 	self.FEMenuLeftGraphics = FEMenuLeftGraphics
 	
-	local categoryTabs = CoD.FE_TabBar.new( f6_local1, controller )
+	local categoryTabs = CoD.FE_TabBar.new( menu, controller )
 	categoryTabs:setLeftRight( true, true, 0, 1280 )
 	categoryTabs:setTopBottom( true, false, 85, 120 )
 	categoryTabs.Tabs.grid:setWidgetType( CoD.WeaponGroupsTabWidget )
 	categoryTabs.Tabs.grid:setHorizontalCount( 8 )
 	categoryTabs.Tabs.grid:setDataSource( "HeroCustomizationTabs" )
 	categoryTabs:registerEventHandler( "list_active_changed", function ( element, event )
-		local f14_local0 = nil
+		local handlerResult = nil
 		CallCustomElementFunction_Self( self, "tabChanged", element, controller )
-		return f14_local0
+		return handlerResult
 	end )
 	self:addElement( categoryTabs )
 	self.categoryTabs = categoryTabs
 	
-	local XCamMouseControl = CoD.XCamMouseControl.new( f6_local1, controller )
+	local XCamMouseControl = CoD.XCamMouseControl.new( menu, controller )
 	XCamMouseControl:setLeftRight( false, false, -66.5, 475 )
 	XCamMouseControl:setTopBottom( true, true, 168, -63 )
 	self:addElement( XCamMouseControl )
 	self.XCamMouseControl = XCamMouseControl
 	
-	local LockIcon = CoD.cac_LockBig.new( f6_local1, controller )
+	local LockIcon = CoD.cac_LockBig.new( menu, controller )
 	LockIcon:setLeftRight( false, false, 159, 255 )
 	LockIcon:setTopBottom( true, false, 14, 684 )
 	LockIcon:setAlpha( 0 )
@@ -310,17 +310,17 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 		}
 	} )
 	LockIcon:linkToElementModel( LockIcon, "optionIndex", true, function ( model )
-		f6_local1:updateElementState( LockIcon, {
+		menu:updateElementState( LockIcon, {
 			name = "model_validation",
-			menu = f6_local1,
+			menu = menu,
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "optionIndex"
 		} )
 	end )
 	LockIcon:linkToElementModel( LockIcon, "isBMClassified", true, function ( model )
-		f6_local1:updateElementState( LockIcon, {
+		menu:updateElementState( LockIcon, {
 			name = "model_validation",
-			menu = f6_local1,
+			menu = menu,
 			modelValue = Engine.GetModelValue( model ),
 			modelName = "isBMClassified"
 		} )
@@ -869,11 +869,11 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 			end
 		}
 	}
-	CoD.Menu.AddNavigationHandler( f6_local1, self, controller )
+	CoD.Menu.AddNavigationHandler( menu, self, controller )
 	self:registerEventHandler( "menu_opened", function ( element, event )
 		local f61_local0 = nil
 		if TestAndSetFirstTimeMenu( controller, "com_firsttime_wardrobe" ) and IsCampaign() then
-			OpenGenericLargePopup( f6_local1, controller, "MENU_FIRSTTIME_WARDROBE", "MENU_FIRSTTIME_WARDROBE2", "com_firsttime_wardrobe_image", "MENU_FIRSTTIME_WARDROBE_BUTTONTEXT", "", "" )
+			OpenGenericLargePopup( menu, controller, "MENU_FIRSTTIME_WARDROBE", "MENU_FIRSTTIME_WARDROBE2", "com_firsttime_wardrobe_image", "MENU_FIRSTTIME_WARDROBE_BUTTONTEXT", "", "" )
 		end
 		if not f61_local0 then
 			f61_local0 = element:dispatchEventToChildren( event )
@@ -884,10 +884,10 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 		local f62_local0 = nil
 		if IsInGame() then
 			RefreshCharacterCustomization( self, element, controller )
-			SendClientScriptMenuChangeNotify( controller, f6_local1, true )
+			SendClientScriptMenuChangeNotify( controller, menu, true )
 			LockInput( self, controller, true )
 			PrepareOpenMenuInSafehouse( controller )
-			ShowHeaderIconOnly( f6_local1 )
+			ShowHeaderIconOnly( menu )
 			SetElementStateByElementName( self, "Frame", controller, "Update" )
 			PlayClipOnElement( self, {
 				elementName = "Frame",
@@ -895,11 +895,11 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 			}, controller )
 		elseif InCharacterCustomizationMode( Enum.eModes.MODE_CAMPAIGN ) then
 			RefreshCharacterCustomization( self, element, controller )
-			SendClientScriptMenuChangeNotify( controller, f6_local1, true )
-			ShowHeaderIconOnly( f6_local1 )
+			SendClientScriptMenuChangeNotify( controller, menu, true )
+			ShowHeaderIconOnly( menu )
 		else
-			SendClientScriptMenuChangeNotify( controller, f6_local1, true )
-			ShowHeaderKickerAndIcon( f6_local1 )
+			SendClientScriptMenuChangeNotify( controller, menu, true )
+			ShowHeaderKickerAndIcon( menu )
 		end
 		if not f62_local0 then
 			f62_local0 = element:dispatchEventToChildren( event )
@@ -907,56 +907,56 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 		return f62_local0
 	end )
 	self:registerEventHandler( "list_item_gain_focus", function ( element, event )
-		local f63_local0 = nil
+		local handlerResult = nil
 		if IsElementPropertyValue( element, "headItem", true ) then
 			SetElementStateByElementName( self, "PersonalizeCharacterCPProgressionMessage0", controller, "NeedMessage" )
 		else
 			SetElementStateByElementName( self, "PersonalizeCharacterCPProgressionMessage0", controller, "DefaultState" )
 		end
-		return f63_local0
+		return handlerResult
 	end )
-	f6_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( f64_arg0, f64_arg1, f64_arg2, f64_arg3 )
-		if not IsEdittingHeroOption( f64_arg1 ) and IsInGame() then
-			SaveLoadout( self, f64_arg2 )
-			ClearSavedState( self, f64_arg2 )
-			SendClientScriptMenuChangeNotify( f64_arg2, f64_arg1, false )
-			PrepareCloseMenuInSafehouse( f64_arg2 )
-			LockInput( self, f64_arg2, false )
-			SendOwnMenuResponse( f64_arg1, f64_arg2, "closed" )
-			Close( self, f64_arg2 )
+	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( element, menu, controller, event )
+		if not IsEdittingHeroOption( menu ) and IsInGame() then
+			SaveLoadout( self, controller )
+			ClearSavedState( self, controller )
+			SendClientScriptMenuChangeNotify( controller, menu, false )
+			PrepareCloseMenuInSafehouse( controller )
+			LockInput( self, controller, false )
+			SendOwnMenuResponse( menu, controller, "closed" )
+			Close( self, controller )
 			return true
-		elseif not IsEdittingHeroOption( f64_arg1 ) then
-			SaveLoadout( self, f64_arg2 )
-			ClearSavedState( self, f64_arg2 )
-			SendClientScriptMenuChangeNotify( f64_arg2, f64_arg1, false )
-			GoBack( self, f64_arg2 )
+		elseif not IsEdittingHeroOption( menu ) then
+			SaveLoadout( self, controller )
+			ClearSavedState( self, controller )
+			SendClientScriptMenuChangeNotify( controller, menu, false )
+			GoBack( self, controller )
 			return true
-		elseif IsEdittingHeroOption( f64_arg1 ) then
-			DisableMouseOnMenuElement( f64_arg1, "optionsList", f64_arg2 )
-			CancelHeroOptionSelection( f64_arg1, f64_arg2 )
+		elseif IsEdittingHeroOption( menu ) then
+			DisableMouseOnMenuElement( menu, "optionsList", controller )
+			CancelHeroOptionSelection( menu, controller )
 			PlaySoundSetSound( self, "menu_go_back" )
 			return true
 		else
 			
 		end
-	end, function ( f65_arg0, f65_arg1, f65_arg2 )
-		if not IsEdittingHeroOption( f65_arg1 ) and IsInGame() then
-			CoD.Menu.SetButtonLabel( f65_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
+	end, function ( element, menu, controller )
+		if not IsEdittingHeroOption( menu ) and IsInGame() then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
 			return true
-		elseif not IsEdittingHeroOption( f65_arg1 ) then
-			CoD.Menu.SetButtonLabel( f65_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
+		elseif not IsEdittingHeroOption( menu ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
 			return true
-		elseif IsEdittingHeroOption( f65_arg1 ) then
-			CoD.Menu.SetButtonLabel( f65_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
+		elseif IsEdittingHeroOption( menu ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MENU_BACK" )
 			return true
 		else
 			return false
 		end
 	end, false )
-	f6_local1:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_RSTICK_PRESSED, nil, function ( f66_arg0, f66_arg1, f66_arg2, f66_arg3 )
+	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_RSTICK_PRESSED, nil, function ( element, menu, controller, event )
 		return true
-	end, function ( f67_arg0, f67_arg1, f67_arg2 )
-		CoD.Menu.SetButtonLabel( f67_arg1, Enum.LUIButton.LUI_KEY_RSTICK_PRESSED, "PLATFORM_EMBLEM_ROTATE_LAYER" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_RSTICK_PRESSED, "PLATFORM_EMBLEM_ROTATE_LAYER" )
 		return true
 	end, false )
 	Frame:setModel( self.buttonModel, controller )
@@ -968,7 +968,7 @@ LUI.createMenu.PersonalizeCharacter = function ( controller )
 	} )
 	self:processEvent( {
 		name = "update_state",
-		menu = f6_local1
+		menu = menu
 	} )
 	if not self:restoreState() then
 		self.personalizeList:processEvent( {

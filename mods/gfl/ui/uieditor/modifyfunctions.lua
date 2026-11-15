@@ -11,9 +11,9 @@ function GetAttachmentImageFromIndex( controller, index, attachment )
 		if attachmentVariantModel == 0 then
 			final_image = Engine.GetAttachmentUniqueImageByAttachmentIndex( CoD.CraftUtility.GetCraftMode(), weapon_index, attachment_int )
 		else
-			local f262_local6 = Engine.GetAttachmentCosmeticVariant( CoD.CraftUtility.Gunsmith.GetWeaponPlusAttachmentsForVariant( controller, gunsmithvariant ), attachment_int )
-			if f262_local6 and f262_local6.image then
-				final_image = f262_local6.image
+			local attachmentCosmeticVariant = Engine.GetAttachmentCosmeticVariant( CoD.CraftUtility.Gunsmith.GetWeaponPlusAttachmentsForVariant( controller, gunsmithvariant ), attachment_int )
+			if attachmentCosmeticVariant and attachmentCosmeticVariant.image then
+				final_image = attachmentCosmeticVariant.image
 			else
 				final_image = Engine.GetAttachmentUniqueImageByAttachmentIndex( CoD.CraftUtility.GetCraftMode(), weapon_index, attachment_int )
 			end
@@ -34,7 +34,7 @@ local function getUsermapInfo()
     return nil
 end
 
-function MapNameToLocalizedMapName( f185_arg0 )
+function MapNameToLocalizedMapName( mapName )
     -- Only works when loading into the map
     if Engine.IsUsingUsermap() then
         return Engine.UsingUsermapTitle()
@@ -57,7 +57,7 @@ function MapNameToLocalizedMapName( f185_arg0 )
         end
 
         -- Otherwise normal logic
-        return Engine.Localize( CoD.GetMapValue( f185_arg0, "mapNameCaps", f185_arg0 ) )
+        return Engine.Localize( CoD.GetMapValue( mapName, "mapNameCaps", mapName ) )
     end
 end
 

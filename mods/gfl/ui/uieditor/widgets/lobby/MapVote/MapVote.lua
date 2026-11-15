@@ -10,13 +10,13 @@ require( "ui.uieditor.widgets.FileShare.FileshareSpinner" )
 require( "ui.uieditor.widgets.Lobby.MapVote.MapVoteOfficial" )
 require( "ui.uieditor.widgets.ZMInventory.ZMMapSelection.ZMLobbyEEWidgetSmall" )
 
-local f0_local0 = function ( f1_arg0 )
-	f1_arg0:registerEventHandler( "gain_focus", function ( element, event )
-		local f2_local0 = element.MapVoteItemNext
+local f0_local0 = function ( self )
+	self:registerEventHandler( "gain_focus", function ( element, event )
+		local mapVoteItemNext = element.MapVoteItemNext
 		if event.button and event.button == "up" then
-			f2_local0 = element.MapVoteItemRandom
+			mapVoteItemNext = element.MapVoteItemRandom
 		end
-		if element.m_focusable and f2_local0:processEvent( event ) then
+		if element.m_focusable and mapVoteItemNext:processEvent( event ) then
 			return true
 		else
 			return LUI.UIElement.gainFocus( element, event )
@@ -24,78 +24,78 @@ local f0_local0 = function ( f1_arg0 )
 	end )
 end
 
-local f0_local1 = function ( f3_arg0, f3_arg1 )
-	f3_arg0.MapVoteItemNext.navigation = nil
-	f3_arg0.MapVoteItemNext.navigation = {}
-	f3_arg0.MapVoteItemNext.navigation.up = f3_arg1.LeftContainer
-	f3_arg0.MapVoteItemNext.navigation.down = f3_arg0.MapVoteItemPrevious
-	f3_arg0.MapVoteItemPrevious.navigation = nil
-	f3_arg0.MapVoteItemPrevious.navigation = {}
-	f3_arg0.MapVoteItemPrevious.navigation.up = f3_arg0.MapVoteItemNext
-	f3_arg0.MapVoteItemPrevious.navigation.down = f3_arg0.MapVoteItemRandom
-	f3_arg0.MapVoteItemRandom.navigation = nil
-	f3_arg0.MapVoteItemRandom.navigation = {}
-	f3_arg0.MapVoteItemRandom.navigation.up = f3_arg0.MapVoteItemPrevious
-	f3_arg0.MapVoteItemRandom.navigation.down = f3_arg1.LeftContainer
+local f0_local1 = function ( self, menu )
+	self.MapVoteItemNext.navigation = nil
+	self.MapVoteItemNext.navigation = {}
+	self.MapVoteItemNext.navigation.up = menu.LeftContainer
+	self.MapVoteItemNext.navigation.down = self.MapVoteItemPrevious
+	self.MapVoteItemPrevious.navigation = nil
+	self.MapVoteItemPrevious.navigation = {}
+	self.MapVoteItemPrevious.navigation.up = self.MapVoteItemNext
+	self.MapVoteItemPrevious.navigation.down = self.MapVoteItemRandom
+	self.MapVoteItemRandom.navigation = nil
+	self.MapVoteItemRandom.navigation = {}
+	self.MapVoteItemRandom.navigation.up = self.MapVoteItemPrevious
+	self.MapVoteItemRandom.navigation.down = menu.LeftContainer
 end
 
-local f0_local2 = function ( f4_arg0, f4_arg1, f4_arg2 )
-	f4_arg0:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.mapVote" ), function ()
-		local f5_local0 = LobbyData.GetLobbyNav()
-		if f5_local0 ~= LobbyData.UITargets.UI_MPLOBBYONLINEPUBLICGAME.id and f5_local0 ~= LobbyData.UITargets.UI_CPLOBBYONLINEPUBLICGAME.id and f5_local0 ~= LobbyData.UITargets.UI_ZMLOBBYONLINEPUBLICGAME.id and f5_local0 ~= LobbyData.UITargets.UI_MPLOBBYONLINEARENAGAME.id then
+local f0_local2 = function ( element, controller, menu )
+	element:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.mapVote" ), function ()
+		local lobbyNav = LobbyData.GetLobbyNav()
+		if lobbyNav ~= LobbyData.UITargets.UI_MPLOBBYONLINEPUBLICGAME.id and lobbyNav ~= LobbyData.UITargets.UI_CPLOBBYONLINEPUBLICGAME.id and lobbyNav ~= LobbyData.UITargets.UI_ZMLOBBYONLINEPUBLICGAME.id and lobbyNav ~= LobbyData.UITargets.UI_MPLOBBYONLINEARENAGAME.id then
 			return 
 		end
-		local f5_local1 = Engine.GetModelValue( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.mapVote" ) )
-		if f5_local1 == LuaEnums.MAP_VOTE_STATE.HIDDEN then
-			f4_arg0:processEvent( {
+		local mapVote = Engine.GetModelValue( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.mapVote" ) )
+		if mapVote == LuaEnums.MAP_VOTE_STATE.HIDDEN then
+			element:processEvent( {
 				name = "lose_focus",
-				controller = f4_arg1
+				controller = controller
 			} )
-			f4_arg0:makeNotFocusable()
-			f4_arg0:setMouseDisabled( true )
-		elseif f5_local1 == LuaEnums.MAP_VOTE_STATE.VOTING then
-			f4_arg0:makeFocusable()
-			f4_arg0:setMouseDisabled( false )
-		elseif f5_local1 == LuaEnums.MAP_VOTE_STATE.LOCKEDIN then
-			f4_arg0:makeNotFocusable()
-			f4_arg0:setMouseDisabled( true )
-			local f5_local2 = Engine.CreateModel( Engine.GetGlobalModel(), "MapVote", true )
-			local f5_local3 = Engine.GetModelValue( Engine.CreateModel( f5_local2, "mapVoteCountNext", true ) ) or 0
-			local f5_local4 = Engine.GetModelValue( Engine.CreateModel( f5_local2, "mapVoteCountPrevious", true ) ) or 0
-			local f5_local5 = Engine.GetModelValue( Engine.CreateModel( f5_local2, "mapVoteCountRandom", true ) ) or 0
+			element:makeNotFocusable()
+			element:setMouseDisabled( true )
+		elseif mapVote == LuaEnums.MAP_VOTE_STATE.VOTING then
+			element:makeFocusable()
+			element:setMouseDisabled( false )
+		elseif mapVote == LuaEnums.MAP_VOTE_STATE.LOCKEDIN then
+			element:makeNotFocusable()
+			element:setMouseDisabled( true )
+			local mapVoteModel = Engine.CreateModel( Engine.GetGlobalModel(), "MapVote", true )
+			local f5_local3 = Engine.GetModelValue( Engine.CreateModel( mapVoteModel, "mapVoteCountNext", true ) ) or 0
+			local f5_local4 = Engine.GetModelValue( Engine.CreateModel( mapVoteModel, "mapVoteCountPrevious", true ) ) or 0
+			local f5_local5 = Engine.GetModelValue( Engine.CreateModel( mapVoteModel, "mapVoteCountRandom", true ) ) or 0
 			local f5_local6 = f5_local3
-			local f5_local7 = Enum.LobbyMapVote.LOBBY_MAPVOTE_NEXT
+			local lOBBY_MAPVOTE_NEXT = Enum.LobbyMapVote.LOBBY_MAPVOTE_NEXT
 			if f5_local6 < f5_local4 then
 				f5_local6 = f5_local4
-				f5_local7 = Enum.LobbyMapVote.LOBBY_MAPVOTE_PREVIOUS
+				lOBBY_MAPVOTE_NEXT = Enum.LobbyMapVote.LOBBY_MAPVOTE_PREVIOUS
 			end
 			if f5_local6 < f5_local5 then
-				f5_local7 = Enum.LobbyMapVote.LOBBY_MAPVOTE_RANDOM
+				lOBBY_MAPVOTE_NEXT = Enum.LobbyMapVote.LOBBY_MAPVOTE_RANDOM
 			end
 			if not LuaUtils.IsArenaMode() then
-				if f5_local7 == Enum.LobbyMapVote.LOBBY_MAPVOTE_NEXT then
-					f4_arg0:setState( "MapVoteChosenNext" )
-				elseif f5_local7 == Enum.LobbyMapVote.LOBBY_MAPVOTE_PREVIOUS then
-					f4_arg0:setState( "MapVoteChosenPrevious" )
-				elseif f5_local7 == Enum.LobbyMapVote.LOBBY_MAPVOTE_RANDOM then
-					f4_arg0:setState( "MapVoteChosenRandom" )
+				if lOBBY_MAPVOTE_NEXT == Enum.LobbyMapVote.LOBBY_MAPVOTE_NEXT then
+					element:setState( "MapVoteChosenNext" )
+				elseif lOBBY_MAPVOTE_NEXT == Enum.LobbyMapVote.LOBBY_MAPVOTE_PREVIOUS then
+					element:setState( "MapVoteChosenPrevious" )
+				elseif lOBBY_MAPVOTE_NEXT == Enum.LobbyMapVote.LOBBY_MAPVOTE_RANDOM then
+					element:setState( "MapVoteChosenRandom" )
 				end
 			end
-			f4_arg0:setState( "SelectedMap" )
-			f4_arg0:makeNotFocusable()
-			f4_arg0:setMouseDisabled( true )
-			if f4_arg0:getParent() then
-				local f5_local8 = f4_arg0:getParent()
-				f5_local8 = f5_local8.LeftContainer
-				if f5_local8 then
-					f4_arg0:processEvent( {
+			element:setState( "SelectedMap" )
+			element:makeNotFocusable()
+			element:setMouseDisabled( true )
+			if element:getParent() then
+				local parentElement = element:getParent()
+				parentElement = parentElement.LeftContainer
+				if parentElement then
+					element:processEvent( {
 						name = "lose_focus",
-						controller = f4_arg1
+						controller = controller
 					} )
-					if not f5_local8:getParent() or not IsMenuInState( f5_local8:getParent(), "Right" ) then
-						f5_local8:processEvent( {
+					if not parentElement:getParent() or not IsMenuInState( parentElement:getParent(), "Right" ) then
+						parentElement:processEvent( {
 							name = "gain_focus",
-							controller = f4_arg1
+							controller = controller
 						} )
 					end
 				end
@@ -104,35 +104,35 @@ local f0_local2 = function ( f4_arg0, f4_arg1, f4_arg2 )
 	end )
 end
 
-local f0_local3 = function ( f6_arg0, f6_arg1, f6_arg2 )
-	f6_arg0:makeNotFocusable()
-	f6_arg0:setMouseDisabled( true )
+local f0_local3 = function ( element, controller, menu )
+	element:makeNotFocusable()
+	element:setMouseDisabled( true )
 end
 
-local f0_local4 = function ( f7_arg0 )
-	local f7_local0 = Dvar.ui_mapname:get()
-	if f7_arg0.mapName and f7_local0 == f7_arg0.mapName then
+local f0_local4 = function ( element )
+	local ui_mapname = Dvar.ui_mapname:get()
+	if element.mapName and ui_mapname == element.mapName then
 		return 
 	else
-		f7_arg0.mapName = f7_local0
-		local f7_local1 = CoD.GetMapValue( f7_local0, "loadingImage", "black" )
+		element.mapName = ui_mapname
+		local imageName = CoD.GetMapValue( ui_mapname, "loadingImage", "black" )
 		local self = LUI.UIStreamedImage.new()
 		self.id = "mapImage"
 		self:setLeftRight( false, false, -640, 640 )
 		self:setTopBottom( false, false, -360, 360 )
 		self:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
-		self:setImage( RegisterImage( f7_local1 ) )
+		self:setImage( RegisterImage( imageName ) )
 		self:setAlpha( 0 )
-		f7_arg0:addElement( self )
+		element:addElement( self )
 	end
 end
 
-local f0_local5 = function ( f8_arg0, f8_arg1, f8_arg2 )
-	local f8_local0 = LobbyData.GetLobbyNav()
-	if f8_local0 == LobbyData.UITargets.UI_MPLOBBYONLINEPUBLICGAME.id or f8_local0 == LobbyData.UITargets.UI_CPLOBBYONLINEPUBLICGAME.id or f8_local0 == LobbyData.UITargets.UI_ZMLOBBYONLINEPUBLICGAME.id or f8_local0 == LobbyData.UITargets.UI_MPLOBBYONLINEARENAGAME.id or f8_local0 == LobbyData.UITargets.UI_CP2LOBBYONLINEPUBLICGAME.id or f8_local0 == LobbyData.UITargets.UI_DOALOBBYONLINEPUBLICGAME.id then
-		f0_local2( f8_arg0, f8_arg1, f8_arg2 )
-	elseif f8_local0 == LobbyData.UITargets.UI_CPLOBBYONLINECUSTOMGAME.id or f8_local0 == LobbyData.UITargets.UI_CPLOBBYLANGAME.id or f8_local0 == LobbyData.UITargets.UI_CP2LOBBYONLINECUSTOMGAME.id or f8_local0 == LobbyData.UITargets.UI_CP2LOBBYLANGAME.id or f8_local0 == LobbyData.UITargets.UI_MPLOBBYONLINECUSTOMGAME.id or f8_local0 == LobbyData.UITargets.UI_MPLOBBYONLINETHEATER.id or f8_local0 == LobbyData.UITargets.UI_MPLOBBYLANGAME.id or f8_local0 == LobbyData.UITargets.UI_FRLOBBYONLINEGAME.id or f8_local0 == LobbyData.UITargets.UI_FRLOBBYLANGAME.id or f8_local0 == LobbyData.UITargets.UI_ZMLOBBYONLINECUSTOMGAME.id or f8_local0 == LobbyData.UITargets.UI_ZMLOBBYONLINETHEATER.id or f8_local0 == LobbyData.UITargets.UI_ZMLOBBYLANGAME.id or f8_local0 == LobbyData.UITargets.UI_DOALOBBYLANGAME.id or f8_local0 == LobbyData.UITargets.UI_DOALOBBYONLINE.id then
-		f0_local3( f8_arg0, f8_arg1, f8_arg2 )
+local f0_local5 = function ( f8_arg0, controller, menu )
+	local lobbyNav = LobbyData.GetLobbyNav()
+	if lobbyNav == LobbyData.UITargets.UI_MPLOBBYONLINEPUBLICGAME.id or lobbyNav == LobbyData.UITargets.UI_CPLOBBYONLINEPUBLICGAME.id or lobbyNav == LobbyData.UITargets.UI_ZMLOBBYONLINEPUBLICGAME.id or lobbyNav == LobbyData.UITargets.UI_MPLOBBYONLINEARENAGAME.id or lobbyNav == LobbyData.UITargets.UI_CP2LOBBYONLINEPUBLICGAME.id or lobbyNav == LobbyData.UITargets.UI_DOALOBBYONLINEPUBLICGAME.id then
+		f0_local2( f8_arg0, controller, menu )
+	elseif lobbyNav == LobbyData.UITargets.UI_CPLOBBYONLINECUSTOMGAME.id or lobbyNav == LobbyData.UITargets.UI_CPLOBBYLANGAME.id or lobbyNav == LobbyData.UITargets.UI_CP2LOBBYONLINECUSTOMGAME.id or lobbyNav == LobbyData.UITargets.UI_CP2LOBBYLANGAME.id or lobbyNav == LobbyData.UITargets.UI_MPLOBBYONLINECUSTOMGAME.id or lobbyNav == LobbyData.UITargets.UI_MPLOBBYONLINETHEATER.id or lobbyNav == LobbyData.UITargets.UI_MPLOBBYLANGAME.id or lobbyNav == LobbyData.UITargets.UI_FRLOBBYONLINEGAME.id or lobbyNav == LobbyData.UITargets.UI_FRLOBBYLANGAME.id or lobbyNav == LobbyData.UITargets.UI_ZMLOBBYONLINECUSTOMGAME.id or lobbyNav == LobbyData.UITargets.UI_ZMLOBBYONLINETHEATER.id or lobbyNav == LobbyData.UITargets.UI_ZMLOBBYLANGAME.id or lobbyNav == LobbyData.UITargets.UI_DOALOBBYLANGAME.id or lobbyNav == LobbyData.UITargets.UI_DOALOBBYONLINE.id then
+		f0_local3( f8_arg0, controller, menu )
 	else
 		f8_arg0:setState( "DefaultState" )
 		f8_arg0:makeNotFocusable()
@@ -140,27 +140,27 @@ local f0_local5 = function ( f8_arg0, f8_arg1, f8_arg2 )
 	end
 end
 
-local f0_local6 = function ( f9_arg0, f9_arg1 )
-	local f9_local0 = Engine.GetModelValue( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.selectedMapId" ) )
-	f9_arg0.FRDifficulty.SubTitle:setText( Engine.Localize( GetDifficultyForSelectedFreerunMap( f9_arg1, f9_local0 ) ) )
-	f9_arg0.FRBestTime.BestTimeValueText:setText( Engine.Localize( GetBestTimeForSelectedFreerunMap( f9_arg1, f9_local0 ) ) )
+local f0_local6 = function ( self, controller )
+	local selectedMapId = Engine.GetModelValue( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.selectedMapId" ) )
+	self.FRDifficulty.SubTitle:setText( Engine.Localize( GetDifficultyForSelectedFreerunMap( controller, selectedMapId ) ) )
+	self.FRBestTime.BestTimeValueText:setText( Engine.Localize( GetBestTimeForSelectedFreerunMap( controller, selectedMapId ) ) )
 end
 
 local PreLoadFunc = function ( self, controller )
 	Engine.CreateModel( Engine.GetGlobalModel(), "lobbyRoot.lobbyStatus" )
 	Engine.CreateModel( Engine.GetGlobalModel(), "lobbyRoot.theaterDownloadPercent" )
 	Engine.SetModelValue( Engine.CreateModel( Engine.GetGlobalModel(), "lobbyRoot.selectedMapId" ), Dvar.ui_mapname:get() )
-	local f10_local0 = Engine.CreateModel( Engine.GetGlobalModel(), "MapVote", true )
-	Engine.CreateModel( f10_local0, "mapVoteCountNext" )
-	Engine.CreateModel( f10_local0, "mapVoteCountPrevious" )
-	Engine.CreateModel( f10_local0, "mapVoteCountRandom" )
-	Engine.CreateModel( f10_local0, "mapVoteGameModeNext" )
-	Engine.CreateModel( f10_local0, "mapVoteGameModePrevious" )
-	Engine.CreateModel( f10_local0, "mapVoteMapNext" )
-	Engine.CreateModel( f10_local0, "mapVoteMapPrevious" )
-	Engine.CreateModel( f10_local0, "mapVoteMapPreviousGametype" )
-	Engine.CreateModel( f10_local0, "timerActive" )
-	Engine.CreateModel( f10_local0, "mapVoteCustomGameName" )
+	local mapVoteModel = Engine.CreateModel( Engine.GetGlobalModel(), "MapVote", true )
+	Engine.CreateModel( mapVoteModel, "mapVoteCountNext" )
+	Engine.CreateModel( mapVoteModel, "mapVoteCountPrevious" )
+	Engine.CreateModel( mapVoteModel, "mapVoteCountRandom" )
+	Engine.CreateModel( mapVoteModel, "mapVoteGameModeNext" )
+	Engine.CreateModel( mapVoteModel, "mapVoteGameModePrevious" )
+	Engine.CreateModel( mapVoteModel, "mapVoteMapNext" )
+	Engine.CreateModel( mapVoteModel, "mapVoteMapPrevious" )
+	Engine.CreateModel( mapVoteModel, "mapVoteMapPreviousGametype" )
+	Engine.CreateModel( mapVoteModel, "timerActive" )
+	Engine.CreateModel( mapVoteModel, "mapVoteCustomGameName" )
 end
 
 local PostLoadFunc = function ( self, controller, menu )
@@ -180,9 +180,9 @@ local PostLoadFunc = function ( self, controller, menu )
 	if self.customGameSubscription then
 		self:removeSubscription( self.customGameSubscription )
 	end
-	local f11_local0 = Engine.GetModel( Engine.GetGlobalModel(), "MapVote" )
-	self.customGameSubscription = self:subscribeToModel( Engine.GetModel( f11_local0, "mapVoteCustomGameName" ), function ()
-		Engine.ForceNotifyModelSubscriptions( Engine.GetModel( f11_local0, "mapVoteGameModeNext" ) )
+	local mapVoteModel = Engine.GetModel( Engine.GetGlobalModel(), "MapVote" )
+	self.customGameSubscription = self:subscribeToModel( Engine.GetModel( mapVoteModel, "mapVoteCustomGameName" ), function ()
+		Engine.ForceNotifyModelSubscriptions( Engine.GetModel( mapVoteModel, "mapVoteGameModeNext" ) )
 	end, false )
 end
 
@@ -231,8 +231,8 @@ CoD.MapVote.new = function ( menu, controller )
 		end
 	end )
 	MapVoteItemVoteDecided:subscribeToGlobalModel( controller, "MapVote", "mapVoteGameModeNext", function ( model )
-		local f11_local0 = Engine.GetModel( Engine.GetGlobalModel(), "MapVote" )
-		local mapVoteMapNextModel = Engine.GetModel( f11_local0, "mapVoteMapNext" )
+		local mapVoteModel = Engine.GetModel( Engine.GetGlobalModel(), "MapVote" )
+		local mapVoteMapNextModel = Engine.GetModel( mapVoteModel, "mapVoteMapNext" )
 		if mapVoteMapNextModel then
 			local internalName = Engine.GetModelValue( mapVoteMapNextModel )
 			if internalName and LUI.startswith( internalName, "zm_" ) then
@@ -272,30 +272,30 @@ CoD.MapVote.new = function ( menu, controller )
 		return f19_local0
 	end )
 	MapVoteItemRandom:registerEventHandler( "gain_focus", function ( element, event )
-		local f20_local0 = nil
+		local focusResult = nil
 		if element.gainFocus then
-			f20_local0 = element:gainFocus( event )
+			focusResult = element:gainFocus( event )
 		elseif element.super.gainFocus then
-			f20_local0 = element.super:gainFocus( event )
+			focusResult = element.super:gainFocus( event )
 		end
 		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
-		return f20_local0
+		return focusResult
 	end )
 	MapVoteItemRandom:registerEventHandler( "lose_focus", function ( element, event )
-		local f21_local0 = nil
+		local focusResult = nil
 		if element.loseFocus then
-			f21_local0 = element:loseFocus( event )
+			focusResult = element:loseFocus( event )
 		elseif element.super.loseFocus then
-			f21_local0 = element.super:loseFocus( event )
+			focusResult = element.super:loseFocus( event )
 		end
-		return f21_local0
+		return focusResult
 	end )
-	menu:AddButtonCallbackFunction( MapVoteItemRandom, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f22_arg0, f22_arg1, f22_arg2, f22_arg3 )
-		LobbyMapVoteSelectRandom( self, f22_arg2 )
+	menu:AddButtonCallbackFunction( MapVoteItemRandom, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, event )
+		LobbyMapVoteSelectRandom( self, controller )
 		PlaySoundSetSound( self, "menu_open" )
 		return true
-	end, function ( f23_arg0, f23_arg1, f23_arg2 )
-		CoD.Menu.SetButtonLabel( f23_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		return true
 	end, false )
 	self:addElement( MapVoteItemRandom )
@@ -340,30 +340,30 @@ CoD.MapVote.new = function ( menu, controller )
 		return f28_local0
 	end )
 	MapVoteItemPrevious:registerEventHandler( "gain_focus", function ( element, event )
-		local f29_local0 = nil
+		local focusResult = nil
 		if element.gainFocus then
-			f29_local0 = element:gainFocus( event )
+			focusResult = element:gainFocus( event )
 		elseif element.super.gainFocus then
-			f29_local0 = element.super:gainFocus( event )
+			focusResult = element.super:gainFocus( event )
 		end
 		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
-		return f29_local0
+		return focusResult
 	end )
 	MapVoteItemPrevious:registerEventHandler( "lose_focus", function ( element, event )
-		local f30_local0 = nil
+		local focusResult = nil
 		if element.loseFocus then
-			f30_local0 = element:loseFocus( event )
+			focusResult = element:loseFocus( event )
 		elseif element.super.loseFocus then
-			f30_local0 = element.super:loseFocus( event )
+			focusResult = element.super:loseFocus( event )
 		end
-		return f30_local0
+		return focusResult
 	end )
-	menu:AddButtonCallbackFunction( MapVoteItemPrevious, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f31_arg0, f31_arg1, f31_arg2, f31_arg3 )
-		LobbyMapVoteSelectPrevious( self, f31_arg2 )
+	menu:AddButtonCallbackFunction( MapVoteItemPrevious, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, event )
+		LobbyMapVoteSelectPrevious( self, controller )
 		PlaySoundSetSound( self, "menu_open" )
 		return true
-	end, function ( f32_arg0, f32_arg1, f32_arg2 )
-		CoD.Menu.SetButtonLabel( f32_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		return true
 	end, false )
 	MapVoteItemPrevious:mergeStateConditions( {
@@ -424,8 +424,8 @@ CoD.MapVote.new = function ( menu, controller )
 		end
 	end )
 	MapVoteItemNext:subscribeToGlobalModel( controller, "MapVote", "mapVoteGameModeNext", function ( model )
-		local f11_local0 = Engine.GetModel( Engine.GetGlobalModel(), "MapVote" )
-		local mapVoteMapNextModel = Engine.GetModel( f11_local0, "mapVoteMapNext" )
+		local mapVoteModel = Engine.GetModel( Engine.GetGlobalModel(), "MapVote" )
+		local mapVoteMapNextModel = Engine.GetModel( mapVoteModel, "mapVoteMapNext" )
 		if mapVoteMapNextModel then
 			local internalName = Engine.GetModelValue( mapVoteMapNextModel )
 			if internalName and LUI.startswith( internalName, "zm_" ) then
@@ -447,30 +447,30 @@ CoD.MapVote.new = function ( menu, controller )
 		return f40_local0
 	end )
 	MapVoteItemNext:registerEventHandler( "gain_focus", function ( element, event )
-		local f41_local0 = nil
+		local focusResult = nil
 		if element.gainFocus then
-			f41_local0 = element:gainFocus( event )
+			focusResult = element:gainFocus( event )
 		elseif element.super.gainFocus then
-			f41_local0 = element.super:gainFocus( event )
+			focusResult = element.super:gainFocus( event )
 		end
 		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
-		return f41_local0
+		return focusResult
 	end )
 	MapVoteItemNext:registerEventHandler( "lose_focus", function ( element, event )
-		local f42_local0 = nil
+		local focusResult = nil
 		if element.loseFocus then
-			f42_local0 = element:loseFocus( event )
+			focusResult = element:loseFocus( event )
 		elseif element.super.loseFocus then
-			f42_local0 = element.super:loseFocus( event )
+			focusResult = element.super:loseFocus( event )
 		end
-		return f42_local0
+		return focusResult
 	end )
-	menu:AddButtonCallbackFunction( MapVoteItemNext, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( f43_arg0, f43_arg1, f43_arg2, f43_arg3 )
-		LobbyMapVoteSelectNext( self, f43_arg2 )
+	menu:AddButtonCallbackFunction( MapVoteItemNext, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, event )
+		LobbyMapVoteSelectNext( self, controller )
 		PlaySoundSetSound( self, "menu_open" )
 		return true
-	end, function ( f44_arg0, f44_arg1, f44_arg2 )
-		CoD.Menu.SetButtonLabel( f44_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		return true
 	end, false )
 	self:addElement( MapVoteItemNext )
@@ -4780,14 +4780,14 @@ CoD.MapVote.new = function ( menu, controller )
 		{
 			stateName = "DemoSelectedDownloading",
 			condition = function ( menu, element, event )
-				local f242_local0 = IsInTheaterMode()
-				if f242_local0 then
-					f242_local0 = IsFilmSelected()
-					if f242_local0 then
-						f242_local0 = not IsGlobalModelValueGreaterThan( controller, "lobbyRoot.theaterDownloadPercent", 99 )
+				local isInTheaterMode = IsInTheaterMode()
+				if isInTheaterMode then
+					isInTheaterMode = IsFilmSelected()
+					if isInTheaterMode then
+						isInTheaterMode = not IsGlobalModelValueGreaterThan( controller, "lobbyRoot.theaterDownloadPercent", 99 )
 					end
 				end
-				return f242_local0
+				return isInTheaterMode
 			end
 		},
 		{
@@ -4805,14 +4805,14 @@ CoD.MapVote.new = function ( menu, controller )
 		{
 			stateName = "DemoSelectedFinished",
 			condition = function ( menu, element, event )
-				local f245_local0 = IsInTheaterMode()
-				if f245_local0 then
-					f245_local0 = IsFilmSelected()
-					if f245_local0 then
-						f245_local0 = IsGlobalModelValueGreaterThan( controller, "lobbyRoot.theaterDownloadPercent", 99 )
+				local isInTheaterMode = IsInTheaterMode()
+				if isInTheaterMode then
+					isInTheaterMode = IsFilmSelected()
+					if isInTheaterMode then
+						isInTheaterMode = IsGlobalModelValueGreaterThan( controller, "lobbyRoot.theaterDownloadPercent", 99 )
 					end
 				end
-				return f245_local0
+				return isInTheaterMode
 			end
 		}
 	} )

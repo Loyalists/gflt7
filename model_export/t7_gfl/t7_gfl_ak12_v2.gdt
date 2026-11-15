@@ -6711,6 +6711,7 @@
 	}
 	"mtl_gfl_ak12_v2_eye_highlight" [ "mtl_gfl_ak12_v2_eye" ]
 	{
+		"scaleRGB" "1.0"
 	}
 	"mtl_gfl_ak12_v2_eyewhite" [ "mtl_gfl_ak12_v2_faceuber" ]
 	{

@@ -74,6 +74,7 @@ CoD.TFOptionIndexes = {
     objectives = 72,
     checkpoints = 73,
     bot_health = 74,
+    mw3_intro = 75,
 }
 
 CoD.TFOptionsDefault = {
@@ -143,9 +144,10 @@ CoD.TFOptionsDefault = {
     zombie_healthbar = 1,
     hud = 1,
     hitmarkers_sound = 2,
-    objectives = 1,
+    objectives = 0,
     checkpoints = 0,
     bot_health = 3,
+    mw3_intro = 1,
 }
 
 CoD.TFOptionsDirtyFlag = false
@@ -153,83 +155,83 @@ CoD.TFOptionsDirtyFlag = false
 if not CoD.TFPCUtil then
     CoD.TFPCUtil = {}
 end
-CoD.TFPCUtil.GetModelValues = function(f1_arg0, f1_arg1)
-    local f1_local0 = {}
-    if type(f1_arg1) == "string" then
-        return CoD.SafeGetModelValue(f1_arg0, f1_arg1)
-    elseif type(f1_arg1) == "table" then
-        for f1_local4, f1_local5 in ipairs(f1_arg1) do
-            f1_local0[f1_local5] = CoD.SafeGetModelValue(f1_arg0, f1_local5)
+CoD.TFPCUtil.GetModelValues = function(model, modelNames)
+    local values = {}
+    if type(modelNames) == "string" then
+        return CoD.SafeGetModelValue(model, modelNames)
+    elseif type(modelNames) == "table" then
+        for index, modelName in ipairs(modelNames) do
+            values[modelName] = CoD.SafeGetModelValue(model, modelName)
         end
-        return f1_local0
+        return values
     end
     return nil
 end
 
-CoD.TFPCUtil.GetElementModelValues = function(f2_arg0, f2_arg1)
-    local f2_local0 = f2_arg0:getModel()
-    if f2_local0 then
-        return CoD.TFPCUtil.GetModelValues(f2_local0, f2_arg1)
+CoD.TFPCUtil.GetElementModelValues = function(element, modelNames)
+    local model = element:getModel()
+    if model then
+        return CoD.TFPCUtil.GetModelValues(model, modelNames)
     else
         return nil
     end
 end
 
-CoD.TFPCUtil.TrimString = function(f3_arg0)
-    return string.gsub(f3_arg0, "^%s*(.-)%s*$", "%1")
+CoD.TFPCUtil.TrimString = function(text)
+    return string.gsub(text, "^%s*(.-)%s*$", "%1")
 end
 
-CoD.TFPCUtil.TokenizeString = function(f4_arg0, f4_arg1)
-    local f4_local0 = {}
-    local f4_local1 = f4_arg0
-    local f4_local2 = 0
-    local f4_local3 = string.find(f4_arg0, f4_arg1)
-    while f4_local3 do
-        f4_local1 = CoD.TFPCUtil.TrimString(string.sub(f4_arg0, f4_local2, f4_local3 - 1))
-        if f4_local1 ~= "" then
-            table.insert(f4_local0, f4_local1)
+CoD.TFPCUtil.TokenizeString = function(text, separator)
+    local tokens = {}
+    local token = text
+    local startIndex = 0
+    local separatorIndex = string.find(text, separator)
+    while separatorIndex do
+        token = CoD.TFPCUtil.TrimString(string.sub(text, startIndex, separatorIndex - 1))
+        if token ~= "" then
+            table.insert(tokens, token)
         end
-        f4_local2 = f4_local3 + 1
-        f4_local3 = string.find(f4_arg0, f4_arg1, f4_local2)
+        startIndex = separatorIndex + 1
+        separatorIndex = string.find(text, separator, startIndex)
     end
-    f4_local1 = CoD.TFPCUtil.TrimString(string.sub(f4_arg0, f4_local2, string.len(f4_arg0)))
-    if f4_local1 ~= "" then
-        table.insert(f4_local0, f4_local1)
+    token = CoD.TFPCUtil.TrimString(string.sub(text, startIndex, string.len(text)))
+    if token ~= "" then
+        table.insert(tokens, token)
     end
-    return f4_local0
+    return tokens
 end
 
 CoD.TFPCUtil.GetVersion = function()
     return version
 end
 
-CoD.TFPCUtil.GetFromSaveData = function(varName, InstanceRef)
+CoD.TFPCUtil.GetFromSaveData = function(varName, controller)
     if varName ~= "starting_points" then
         local index = CoD.TFOptionIndexes[varName]
         index = (index * 2) + 50
-        local multiple = CoD.SavingDataUtility.GetData(InstanceRef, index)
-        local remainder = CoD.SavingDataUtility.GetData(InstanceRef, index + 1)
+        local multiple = CoD.SavingDataUtility.GetData(controller, index)
+        local remainder = CoD.SavingDataUtility.GetData(controller, index + 1)
         local result = (255 * multiple) + remainder
 
         return result
     else
         local index = CoD.TFOptionIndexes[varName]
         index = (index * 2) + 50
-        local multof65025 = CoD.SavingDataUtility.GetData(InstanceRef, index)
-        local multof255 = CoD.SavingDataUtility.GetData(InstanceRef, index + 1)
-        local remainder = CoD.SavingDataUtility.GetData(InstanceRef, index + 2)
+        local multof65025 = CoD.SavingDataUtility.GetData(controller, index)
+        local multof255 = CoD.SavingDataUtility.GetData(controller, index + 1)
+        local remainder = CoD.SavingDataUtility.GetData(controller, index + 2)
         local result = (65025 * multof65025) + (255 * multof255) + remainder
 
         return result
     end
 end
 
-CoD.TFPCUtil.LoadFromSaveData = function(varName, InstanceRef)
-    local result = CoD.TFPCUtil.GetFromSaveData(varName, InstanceRef)
+CoD.TFPCUtil.LoadFromSaveData = function(varName, controller)
+    local result = CoD.TFPCUtil.GetFromSaveData(varName, controller)
     Engine.SetDvar("tfoption_" .. varName, result)
 end
 
-CoD.TFPCUtil.SetToSaveData = function(varName, value, InstanceRef)
+CoD.TFPCUtil.SetToSaveData = function(varName, value, controller)
     Engine.SetDvar("tfoption_" .. varName, value)
 
     if varName ~= "starting_points" then
@@ -238,8 +240,8 @@ CoD.TFPCUtil.SetToSaveData = function(varName, value, InstanceRef)
 
         local remainder = value % 255
         local multiple = math.floor(value / 255)
-        CoD.SavingDataUtility.SaveData(InstanceRef, index, multiple)
-        CoD.SavingDataUtility.SaveData(InstanceRef, index + 1, remainder)
+        CoD.SavingDataUtility.SaveData(controller, index, multiple)
+        CoD.SavingDataUtility.SaveData(controller, index + 1, remainder)
     else
         local index = CoD.TFOptionIndexes[varName]
         index = (index * 2) + 50
@@ -248,9 +250,9 @@ CoD.TFPCUtil.SetToSaveData = function(varName, value, InstanceRef)
         local multof255 = math.floor((value % 65025) / 255)
         local remainder = value % 255;
 
-        CoD.SavingDataUtility.SaveData(InstanceRef, index, multof65025)
-        CoD.SavingDataUtility.SaveData(InstanceRef, index + 1, multof255)
-        CoD.SavingDataUtility.SaveData(InstanceRef, index + 2, remainder)
+        CoD.SavingDataUtility.SaveData(controller, index, multof65025)
+        CoD.SavingDataUtility.SaveData(controller, index + 1, multof255)
+        CoD.SavingDataUtility.SaveData(controller, index + 2, remainder)
     end
 end
 
@@ -355,15 +357,15 @@ CoD.TFPCUtil.IsOptionExisted = function(varName)
 end
 
 CoD.TFPCUtil.CheckBoxOptionChecked = function(itemRef, updateTable)
-    local f914_local0 = nil
+    local controller = nil
     if updateTable.menu then
-        f914_local0 = updateTable.menu.m_ownerController
+        controller = updateTable.menu.m_ownerController
     else
-        f914_local0 = updateTable.controller
+        controller = updateTable.controller
     end
     local itemRefModel = itemRef:getModel()
     if itemRefModel then
-        local result = CoD.TFPCUtil.GetOptionInfo(itemRefModel, f914_local0)
+        local result = CoD.TFPCUtil.GetOptionInfo(itemRefModel, controller)
         if type(result.currentValue) == "number" then
             return math.abs(result.currentValue - result.highValue) < 0.01
         elseif type(result.currentValue) == "string" then
@@ -384,43 +386,43 @@ CoD.TFPCUtil.GetValueForOption = function(varNameString)
     return curVal
 end
 
-CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
+CoD.TFPCUtil.GetOptionInfo = function(itemRef, controller)
     if itemRef then
         local result = {}
 
         local varNameModel = Engine.GetModel(itemRef, "profileVarName")
         if varNameModel then
             local varNameString = Engine.GetModelValue(varNameModel)
-            local f6_local3 = false
-            local f6_local4 = Engine.GetModel(itemRef, "profileType")
-            if f6_local4 then
-                local f6_local5 = Engine.GetModelValue(f6_local4)
-                local f6_local6 = nil
-                if f6_local5 == "user" then
-                    f6_local6 = Engine.ProfileValueAsString(f6_arg1, varNameString)
+            local isUserProfile = false
+            local profileTypeModel = Engine.GetModel(itemRef, "profileType")
+            if profileTypeModel then
+                local profileType = Engine.GetModelValue(profileTypeModel)
+                local profileValue = nil
+                if profileType == "user" then
+                    profileValue = Engine.ProfileValueAsString(controller, varNameString)
 
-                    f6_local3 = true
-                elseif f6_local5 == "function" then
-                    f6_local6 = "errorValueString"
-                    local f6_local7 = Engine.GetModel(itemRef, "getFunction")
-                    if f6_local7 then
-                        local f6_local8 = f6_arg1
-                        local f6_local9 = Engine.GetModel(itemRef, "optionController")
-                        if f6_local9 then
-                            f6_local8 = Engine.GetModelValue(f6_local9)
+                    isUserProfile = true
+                elseif profileType == "function" then
+                    profileValue = "errorValueString"
+                    local getFunctionModel = Engine.GetModel(itemRef, "getFunction")
+                    if getFunctionModel then
+                        local optionController = controller
+                        local optionControllerModel = Engine.GetModel(itemRef, "optionController")
+                        if optionControllerModel then
+                            optionController = Engine.GetModelValue(optionControllerModel)
                         end
-                        result.getValueFunction = Engine.GetModelValue(f6_local7)
-                        f6_local6 = result.getValueFunction(f6_local8)
+                        result.getValueFunction = Engine.GetModelValue(getFunctionModel)
+                        profileValue = result.getValueFunction(optionController)
                     end
                 else
-                    f6_local6 = Engine.GetHardwareProfileValueAsString(varNameString)
+                    profileValue = Engine.GetHardwareProfileValueAsString(varNameString)
 
                 end
-                result.currentValue = tonumber(f6_local6)
+                result.currentValue = tonumber(profileValue)
                 if not result.currentValue then
-                    result.currentValue = f6_local6
+                    result.currentValue = profileValue
                 end
-                result.profileType = f6_local5
+                result.profileType = profileType
             else
                 local getValModel = Engine.GetModel(itemRef, "callbackGetValueForOption")
                 local callbackGetValue = CoD.TFPCUtil.GetValueForOption
@@ -435,12 +437,12 @@ CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
                 end
             end
             result.profileVarName = varNameString
-            local f6_local5 = Engine.GetModel(itemRef, "lowValue")
-            local f6_local6 = Engine.GetModel(itemRef, "highValue")
-            if f6_local5 and f6_local6 then
-                result.lowValue = Engine.GetModelValue(f6_local5)
-                result.highValue = Engine.GetModelValue(f6_local6)
-            elseif f6_local3 then
+            local lowValueModel = Engine.GetModel(itemRef, "lowValue")
+            local highValueModel = Engine.GetModel(itemRef, "highValue")
+            if lowValueModel and highValueModel then
+                result.lowValue = Engine.GetModelValue(lowValueModel)
+                result.highValue = Engine.GetModelValue(highValueModel)
+            elseif isUserProfile then
                 result.lowValue = 0
                 result.highValue = 1
             else
@@ -471,36 +473,36 @@ CoD.TFPCUtil.GetOptionInfo = function(itemRef, f6_arg1)
                 result.isFloat = 0
             end
 
-            local f6_local8 = Engine.GetModel(itemRef, "widgetType")
-            if f6_local8 then
-                local f6_local9 = Engine.GetModelValue(f6_local8)
-                if f6_local9 == "slider" then
-                    local f6_local10 = Engine.GetModel(itemRef, "sliderSpeed")
-                    if f6_local10 then
-                        result.sliderSpeed = Engine.GetModelValue(f6_local10)
+            local widgetTypeModel = Engine.GetModel(itemRef, "widgetType")
+            if widgetTypeModel then
+                local widgetType = Engine.GetModelValue(widgetTypeModel)
+                if widgetType == "slider" then
+                    local sliderSpeedModel = Engine.GetModel(itemRef, "sliderSpeed")
+                    if sliderSpeedModel then
+                        result.sliderSpeed = Engine.GetModelValue(sliderSpeedModel)
                     else
-                        local f6_local11 = result.highValue - result.lowValue
+                        local valueRange = result.highValue - result.lowValue
                         if result.useIntegerDisplay == 1 then
-                            result.sliderSpeed = 10 / f6_local11
+                            result.sliderSpeed = 10 / valueRange
                         elseif result.useMultipleOf10Display == 1 then
-                            result.sliderSpeed = 100 / f6_local11
+                            result.sliderSpeed = 100 / valueRange
                         elseif result.useMultipleOf100Display == 1 then
-                            result.sliderSpeed = 1000 / f6_local11
+                            result.sliderSpeed = 1000 / valueRange
                         else
-                            result.sliderSpeed = 0.1 / f6_local11
+                            result.sliderSpeed = 0.1 / valueRange
                         end
                     end
                 end
-                result.widgetType = f6_local9
+                result.widgetType = widgetType
             end
-            local f6_local9 = Engine.GetModel(itemRef, "getLabelFn")
-            if f6_local9 then
-                result.getLabelFn = Engine.GetModelValue(f6_local9)
+            local getLabelFnModel = Engine.GetModel(itemRef, "getLabelFn")
+            if getLabelFnModel then
+                result.getLabelFn = Engine.GetModelValue(getLabelFnModel)
             end
-            local f6_local10 = Engine.GetModel(itemRef, "chatChannel")
-            if f6_local10 then
-                result.chatChannel = Engine.GetModelValue(f6_local10)
-                if 0 < Engine.ChatClient_FilterChannelGet(f6_arg1, result.chatChannel) then
+            local chatChannelModel = Engine.GetModel(itemRef, "chatChannel")
+            if chatChannelModel then
+                result.chatChannel = Engine.GetModelValue(chatChannelModel)
+                if 0 < Engine.ChatClient_FilterChannelGet(controller, result.chatChannel) then
                     result.currentValue = 1
                 else
                     result.currentValue = 0
@@ -520,7 +522,7 @@ CoD.TFPCUtil.SetValueForOption = function(varNameString, newValue)
     end
 end
 
-CoD.TFPCUtil.SetOptionValue = function(itemRef, f7_arg1, newValue)
+CoD.TFPCUtil.SetOptionValue = function(itemRef, controller, newValue)
     if itemRef then
 
         local varNameModel = Engine.GetModel(itemRef, "profileVarName")
@@ -530,17 +532,17 @@ CoD.TFPCUtil.SetOptionValue = function(itemRef, f7_arg1, newValue)
             if profileTypeModel then
                 local profileType = Engine.GetModelValue(profileTypeModel)
                 if profileType == "user" then
-                    Engine.SetProfileVar(f7_arg1, varNameString, newValue)
+                    Engine.SetProfileVar(controller, varNameString, newValue)
                 elseif profileType == "function" then
-                    local f7_local4 = Engine.GetModel(itemRef, "setFunction")
-                    if f7_local4 then
-                        local f7_local5 = f7_arg1
-                        local f7_local6 = Engine.GetModel(itemRef, "optionController")
-                        if f7_local6 then
-                            f7_local5 = Engine.GetModelValue(f7_local6)
+                    local setFunctionModel = Engine.GetModel(itemRef, "setFunction")
+                    if setFunctionModel then
+                        local optionController = controller
+                        local optionControllerModel = Engine.GetModel(itemRef, "optionController")
+                        if optionControllerModel then
+                            optionController = Engine.GetModelValue(optionControllerModel)
                         end
-                        local f7_local7 = Engine.GetModelValue(f7_local4)
-                        f7_local7(f7_local5, newValue)
+                        local setFunction = Engine.GetModelValue(setFunctionModel)
+                        setFunction(optionController, newValue)
                     end
                 else
                     Engine.SetHardwareProfileValue(varNameString, newValue)
@@ -559,7 +561,7 @@ CoD.TFPCUtil.SetOptionValue = function(itemRef, f7_arg1, newValue)
                     callbackForController(itemRef, varNameString, newValue)
                 end
             end
-            CoD.TFPCUtil.DirtyOptions(f7_arg1)
+            CoD.TFPCUtil.DirtyOptions(controller)
         end
     end
 end
@@ -592,63 +594,63 @@ CoD.TFPCUtil.ApplyChangesInGame = function(controller)
     Engine.SendMenuResponse(controller, "popup_leavegame", "TFOptionsChanged")
 end
 
-CoD.TFPCUtil.GetOptionsDirtyModel = function(f8_arg0, f8_arg1)
-    local f8_local0 = Engine.GetModel(Engine.GetModelForController(f8_arg0), "PC.OptionsDirty")
-    if not f8_local0 and f8_arg1 then
-        f8_local0 = Engine.CreateModel(Engine.GetModelForController(f8_arg0), "PC.OptionsDirty")
+CoD.TFPCUtil.GetOptionsDirtyModel = function(controller, createIfMissing)
+    local optionsDirtyModel = Engine.GetModel(Engine.GetModelForController(controller), "PC.OptionsDirty")
+    if not optionsDirtyModel and createIfMissing then
+        optionsDirtyModel = Engine.CreateModel(Engine.GetModelForController(controller), "PC.OptionsDirty")
     end
-    return f8_local0
+    return optionsDirtyModel
 end
 
-CoD.TFPCUtil.FreeOptionsDirtyModel = function(f9_arg0)
-    local f9_local0 = CoD.TFPCUtil.GetOptionsDirtyModel(f9_arg0)
-    if f9_local0 then
-        Engine.UnsubscribeAndFreeModel(f9_local0)
+CoD.TFPCUtil.FreeOptionsDirtyModel = function(controller)
+    local optionsDirtyModel = CoD.TFPCUtil.GetOptionsDirtyModel(controller)
+    if optionsDirtyModel then
+        Engine.UnsubscribeAndFreeModel(optionsDirtyModel)
     end
 end
 
-CoD.TFPCUtil.DirtyOptions = function(f10_arg0)
-    Engine.SetModelValue(CoD.TFPCUtil.GetOptionsDirtyModel(f10_arg0, true), 1)
+CoD.TFPCUtil.DirtyOptions = function(controller)
+    Engine.SetModelValue(CoD.TFPCUtil.GetOptionsDirtyModel(controller, true), 1)
     CoD.TFPCUtil.SetDirtyFlag()
 end
 
-CoD.TFPCUtil.IsOptionsDirty = function(f11_arg0)
-    local f11_local0 = CoD.TFPCUtil.GetOptionsDirtyModel(f11_arg0)
-    if f11_local0 then
-        return Engine.GetModelValue(f11_local0) ~= 0
+CoD.TFPCUtil.IsOptionsDirty = function(controller)
+    local optionsDirtyModel = CoD.TFPCUtil.GetOptionsDirtyModel(controller)
+    if optionsDirtyModel then
+        return Engine.GetModelValue(optionsDirtyModel) ~= 0
     else
         return false
     end
 end
 
-CoD.TFPCUtil.RefreshAllOptions = function(f12_arg0, f12_arg1)
-    f12_arg0:dispatchEventToRoot({
+CoD.TFPCUtil.RefreshAllOptions = function(element, controller)
+    element:dispatchEventToRoot({
         name = "options_refresh",
-        controller = f12_arg1
+        controller = controller
     })
 end
 
-CoD.TFPCUtil.SimulateButtonPress = function(f13_arg0, f13_arg1)
-    local f13_local0 = Engine.GetModel(Engine.GetModelForController(f13_arg0), "ButtonBits." .. f13_arg1)
-    if f13_local0 then
-        Engine.SetModelValue(f13_local0, Enum.LUIButtonFlags.FLAG_DOWN)
+CoD.TFPCUtil.SimulateButtonPress = function(controller, button)
+    local model = Engine.GetModel(Engine.GetModelForController(controller), "ButtonBits." .. button)
+    if model then
+        Engine.SetModelValue(model, Enum.LUIButtonFlags.FLAG_DOWN)
     end
 end
 
-CoD.TFPCUtil.SimulateButtonPressUsingElement = function(f14_arg0, f14_arg1)
-    local f14_local0 = f14_arg1:getModel()
-    if f14_local0 then
-        local f14_local1 = Engine.GetModel(f14_local0, "Button")
-        if f14_local1 then
-            CoD.TFPCUtil.SimulateButtonPress(f14_arg0, Engine.GetModelValue(f14_local1))
+CoD.TFPCUtil.SimulateButtonPressUsingElement = function(controller, element)
+    local model = element:getModel()
+    if model then
+        local buttonModel = Engine.GetModel(model, "Button")
+        if buttonModel then
+            CoD.TFPCUtil.SimulateButtonPress(controller, Engine.GetModelValue(buttonModel))
         end
     end
 end
 
-CoD.TFPCUtil.OptionsCheckboxAction = function(f16_arg0, checkbox)
+CoD.TFPCUtil.OptionsCheckboxAction = function(controller, checkbox)
     local checkboxModel = checkbox:getModel()
     if checkboxModel then
-        local result = CoD.TFPCUtil.GetOptionInfo(checkboxModel, f16_arg0)
+        local result = CoD.TFPCUtil.GetOptionInfo(checkboxModel, controller)
 
         if result then
             local newValue = nil
@@ -663,7 +665,7 @@ CoD.TFPCUtil.OptionsCheckboxAction = function(f16_arg0, checkbox)
             else
                 newValue = result.lowValue
             end
-            CoD.TFPCUtil.SetOptionValue(checkboxModel, f16_arg0, newValue)
+            CoD.TFPCUtil.SetOptionValue(checkboxModel, controller, newValue)
             checkbox:playSound("list_action")
             return newValue
         end
@@ -671,21 +673,21 @@ CoD.TFPCUtil.OptionsCheckboxAction = function(f16_arg0, checkbox)
     return false
 end
 
-CoD.TFPCUtil.OptionsChatClientChannelFilterCheckboxProperties = function(f17_arg0, f17_arg1)
-    local f17_local0 = f17_arg1:getModel()
-    if f17_local0 then
-        local f17_local1 = CoD.TFPCUtil.GetOptionInfo(f17_local0, f17_arg0)
-        if f17_local1 then
-            local f17_local2 = nil
-            if f17_local1.currentValue == f17_local1.lowValue then
-                f17_local2 = f17_local1.highValue
+CoD.TFPCUtil.OptionsChatClientChannelFilterCheckboxProperties = function(controller, element)
+    local model = element:getModel()
+    if model then
+        local optionInfo = CoD.TFPCUtil.GetOptionInfo(model, controller)
+        if optionInfo then
+            local newValue = nil
+            if optionInfo.currentValue == optionInfo.lowValue then
+                newValue = optionInfo.highValue
             else
-                f17_local2 = f17_local1.lowValue
+                newValue = optionInfo.lowValue
             end
-            Engine.ChatClient_FilterChannelSet(f17_arg0, f17_local1.chatChannel, 0 < f17_local2)
-            CoD.TFPCUtil.SetOptionValue(f17_local0, f17_arg0, Engine.ChatClient_FilterChannelGet(f17_arg0,
+            Engine.ChatClient_FilterChannelSet(controller, optionInfo.chatChannel, 0 < newValue)
+            CoD.TFPCUtil.SetOptionValue(model, controller, Engine.ChatClient_FilterChannelGet(controller,
                 Enum.chatChannel_e.CHAT_CHANNEL_COUNT))
-            return f17_local2
+            return newValue
         end
     end
     return false
@@ -746,66 +748,66 @@ CoD.TFPCUtil.OptionsGenericCheckboxProperties = {
 CoD.TFPCUtil.OptionsChatClientChannelFilterCheckboxProperties = {
     checkboxAction = CoD.TFPCUtil.OptionsChatClientChannelFilterCheckboxProperties
 }
-CoD.TFPCUtil.OptionsDropdownItemSelected = function(f18_arg0, f18_arg1, f18_arg2)
-    local f18_local0 = ""
-    local f18_local1 = f18_arg2:getModel()
-    if f18_local1 then
-        local f18_local2 = Engine.GetModel(f18_local1, "valueDisplay")
-        if f18_local2 then
-            f18_local0 = Engine.GetModelValue(f18_local2)
+CoD.TFPCUtil.OptionsDropdownItemSelected = function(controller, dropdown, selectedItem)
+    local valueDisplay = ""
+    local model = selectedItem:getModel()
+    if model then
+        local valueDisplayModel = Engine.GetModel(model, "valueDisplay")
+        if valueDisplayModel then
+            valueDisplay = Engine.GetModelValue(valueDisplayModel)
         end
-        local f18_local3 = nil
-        local f18_local4 = Engine.GetModel(f18_local1, "value")
-        if f18_local4 then
-            f18_local3 = Engine.GetModelValue(f18_local4)
+        local value = nil
+        local valueModel = Engine.GetModel(model, "value")
+        if valueModel then
+            value = Engine.GetModelValue(valueModel)
         end
-        CoD.TFPCUtil.SetOptionValue(f18_arg1:getModel(), f18_arg0, f18_local3)
-        f18_arg1:playSound("list_action")
+        CoD.TFPCUtil.SetOptionValue(dropdown:getModel(), controller, value)
+        dropdown:playSound("list_action")
     end
-    return f18_local0
+    return valueDisplay
 end
 
-CoD.TFPCUtil.OptionsDropdownRefresh = function(f19_arg0, f19_arg1, f19_arg2)
-    local f19_local0 = ""
-    local f19_local1 = f19_arg1:getModel()
-    if f19_local1 then
-        local f19_local2 = CoD.TFPCUtil.GetOptionInfo(f19_local1, f19_arg0)
-        if f19_local2 then
-            local f19_local3 = f19_local2.profileVarName
-            local f19_local4, f19_local5 = false
-            local f19_local6 = f19_arg2:findItem({
-                value = f19_local2.currentValue
-            }, nil, f19_local4, f19_local5)
-            local f19_local7 = false
-            if not f19_local6 then
-                f19_local6 = f19_arg2:getFirstSelectableItem()
-                f19_local7 = true
+CoD.TFPCUtil.OptionsDropdownRefresh = function(controller, dropdown, list)
+    local valueDisplay = ""
+    local model = dropdown:getModel()
+    if model then
+        local optionInfo = CoD.TFPCUtil.GetOptionInfo(model, controller)
+        if optionInfo then
+            local profileVarName = optionInfo.profileVarName
+            local model2, f19_local5 = false
+            local item = list:findItem({
+                value = optionInfo.currentValue
+            }, nil, model2, f19_local5)
+            local usedFallbackItem = false
+            if not item then
+                item = list:getFirstSelectableItem()
+                usedFallbackItem = true
             end
-            if f19_local6 then
-                local f19_local8 = f19_local6:getModel()
-                if f19_local8 then
-                    local f19_local9 = Engine.GetModel(f19_local8, "valueDisplay")
-                    if f19_local9 then
-                        f19_local0 = Engine.GetModelValue(f19_local9)
+            if item then
+                local model3 = item:getModel()
+                if model3 then
+                    local valueDisplayModel = Engine.GetModel(model3, "valueDisplay")
+                    if valueDisplayModel then
+                        valueDisplay = Engine.GetModelValue(valueDisplayModel)
                     end
-                    if f19_local7 then
-                        f19_local4 = Engine.GetModel(f19_local8, "value")
-                        if f19_local4 then
-                            CoD.TFPCUtil.SetOptionValue(f19_local1, f19_arg0, Engine.GetModelValue(f19_local4))
+                    if usedFallbackItem then
+                        model2 = Engine.GetModel(model3, "value")
+                        if model2 then
+                            CoD.TFPCUtil.SetOptionValue(model, controller, Engine.GetModelValue(model2))
                         end
                     end
                 end
             end
         end
     end
-    return f19_local0
+    return valueDisplay
 end
 
-CoD.TFPCUtil.OptionsDropdownCurrentValue = function(f20_arg0, f20_arg1)
-    local f20_local0 = f20_arg1:getModel()
-    if f20_local0 then
-        local f20_local1 = CoD.TFPCUtil.GetOptionInfo(f20_local0, f20_arg0)
-        return f20_local1.currentValue
+CoD.TFPCUtil.OptionsDropdownCurrentValue = function(controller, dropdown)
+    local model = dropdown:getModel()
+    if model then
+        local optionInfo = CoD.TFPCUtil.GetOptionInfo(model, controller)
+        return optionInfo.currentValue
     else
 
     end
@@ -817,49 +819,49 @@ CoD.TFPCUtil.OptionsGenericDropdownProperties = {
     dropDownCurrentValue = CoD.TFPCUtil.OptionsDropdownCurrentValue
 }
 CoD.TFPCUtil.DependantDropdownProperties = {
-    dropDownItemSelected = function(f21_arg0, f21_arg1, f21_arg2)
-        CoD.TFPCUtil.RefreshAllOptions(f21_arg1, f21_arg0)
-        return CoD.TFPCUtil.OptionsDropdownItemSelected(f21_arg0, f21_arg1, f21_arg2)
+    dropDownItemSelected = function(controller, f21_arg1, selectedItem)
+        CoD.TFPCUtil.RefreshAllOptions(f21_arg1, controller)
+        return CoD.TFPCUtil.OptionsDropdownItemSelected(controller, f21_arg1, selectedItem)
     end,
     dropDownRefresh = CoD.TFPCUtil.OptionsDropdownRefresh,
     dropDownCurrentValue = CoD.TFPCUtil.OptionsDropdownCurrentValue
 }
 CoD.TFPCUtil.ShadowOptionIndex = 0
-CoD.TFPCUtil.ShadowDropdownItemSelected = function(f22_arg0, f22_arg1, f22_arg2)
-    local f22_local0 = ""
-    local f22_local1 = CoD.TFPCUtil.GetModelValues(f22_arg2:getModel(), {"value", "valueDisplay"})
-    if f22_local1 then
-        f22_local0 = f22_local1.valueDisplay
-        CoD.TFPCUtil.ShadowOptionIndex = f22_local1.value
-        CoD.TFPCUtil.DirtyOptions(f22_arg0)
-        f22_arg1:playSound("list_action")
+CoD.TFPCUtil.ShadowDropdownItemSelected = function(controller, dropdown, selectedItem)
+    local valueDisplay = ""
+    local optionValues = CoD.TFPCUtil.GetModelValues(selectedItem:getModel(), {"value", "valueDisplay"})
+    if optionValues then
+        valueDisplay = optionValues.valueDisplay
+        CoD.TFPCUtil.ShadowOptionIndex = optionValues.value
+        CoD.TFPCUtil.DirtyOptions(controller)
+        dropdown:playSound("list_action")
     end
-    return f22_local0
+    return valueDisplay
 end
 
-CoD.TFPCUtil.ShadowDropdownRefresh = function(f23_arg0, f23_arg1, f23_arg2)
-    local f23_local0 = ""
+CoD.TFPCUtil.ShadowDropdownRefresh = function(controller, dropdown, list)
+    local valueDisplay = ""
     local f23_local1, f23_local2 = false
-    local f23_local3 = f23_arg2:findItem({
+    local item = list:findItem({
         value = CoD.TFPCUtil.ShadowOptionIndex
     }, nil, f23_local1, f23_local2)
-    local f23_local4 = false
-    if not f23_local3 then
-        f23_local3 = f23_arg2:getFirstSelectableItem()
-        f23_local4 = true
+    local usedFallbackItem = false
+    if not item then
+        item = list:getFirstSelectableItem()
+        usedFallbackItem = true
     end
-    if f23_local3 then
-        local f23_local5 = CoD.TFPCUtil.GetModelValues(f23_local3:getModel(), {"value", "valueDisplay"})
-        f23_local0 = f23_local5.valueDisplay
-        if f23_local4 then
-            CoD.TFPCUtil.ShadowOptionIndex = f23_local5.value
-            CoD.TFPCUtil.DirtyOptions(f23_arg0)
+    if item then
+        local optionValues = CoD.TFPCUtil.GetModelValues(item:getModel(), {"value", "valueDisplay"})
+        valueDisplay = optionValues.valueDisplay
+        if usedFallbackItem then
+            CoD.TFPCUtil.ShadowOptionIndex = optionValues.value
+            CoD.TFPCUtil.DirtyOptions(controller)
         end
     end
-    return f23_local0
+    return valueDisplay
 end
 
-CoD.TFPCUtil.ShadowDropdownCurrentValue = function(f24_arg0, f24_arg1)
+CoD.TFPCUtil.ShadowDropdownCurrentValue = function(controller, dropdown)
     return CoD.TFPCUtil.ShadowOptionIndex
 end
 
@@ -869,41 +871,41 @@ CoD.TFPCUtil.ShadowDropdownProperties = {
     dropDownCurrentValue = CoD.TFPCUtil.ShadowDropdownCurrentValue
 }
 CoD.TFPCUtil.VolumetricOptionIndex = 0
-CoD.TFPCUtil.VolumetricDropdownItemSelected = function(f25_arg0, f25_arg1, f25_arg2)
-    local f25_local0 = ""
-    local f25_local1 = CoD.TFPCUtil.GetModelValues(f25_arg2:getModel(), {"value", "valueDisplay"})
-    if f25_local1 then
-        f25_local0 = f25_local1.valueDisplay
-        CoD.TFPCUtil.VolumetricOptionIndex = f25_local1.value
-        CoD.TFPCUtil.DirtyOptions(f25_arg0)
-        f25_arg1:playSound("list_action")
+CoD.TFPCUtil.VolumetricDropdownItemSelected = function(controller, dropdown, selectedItem)
+    local valueDisplay = ""
+    local optionValues = CoD.TFPCUtil.GetModelValues(selectedItem:getModel(), {"value", "valueDisplay"})
+    if optionValues then
+        valueDisplay = optionValues.valueDisplay
+        CoD.TFPCUtil.VolumetricOptionIndex = optionValues.value
+        CoD.TFPCUtil.DirtyOptions(controller)
+        dropdown:playSound("list_action")
     end
-    return f25_local0
+    return valueDisplay
 end
 
-CoD.TFPCUtil.VolumetricDropdownRefresh = function(f26_arg0, f26_arg1, f26_arg2)
-    local f26_local0 = ""
+CoD.TFPCUtil.VolumetricDropdownRefresh = function(controller, dropdown, list)
+    local valueDisplay = ""
     local f26_local1, f26_local2 = false
-    local f26_local3 = f26_arg2:findItem({
+    local item = list:findItem({
         value = CoD.TFPCUtil.VolumetricOptionIndex
     }, nil, f26_local1, f26_local2)
-    local f26_local4 = false
-    if not f26_local3 then
-        f26_local3 = f26_arg2:getFirstSelectableItem()
-        f26_local4 = true
+    local usedFallbackItem = false
+    if not item then
+        item = list:getFirstSelectableItem()
+        usedFallbackItem = true
     end
-    if f26_local3 then
-        local f26_local5 = CoD.TFPCUtil.GetModelValues(f26_local3:getModel(), {"value", "valueDisplay"})
-        f26_local0 = f26_local5.valueDisplay
-        if f26_local4 then
-            CoD.TFPCUtil.VolumetricOptionIndex = f26_local5.value
-            CoD.TFPCUtil.DirtyOptions(f26_arg0)
+    if item then
+        local optionValues = CoD.TFPCUtil.GetModelValues(item:getModel(), {"value", "valueDisplay"})
+        valueDisplay = optionValues.valueDisplay
+        if usedFallbackItem then
+            CoD.TFPCUtil.VolumetricOptionIndex = optionValues.value
+            CoD.TFPCUtil.DirtyOptions(controller)
         end
     end
-    return f26_local0
+    return valueDisplay
 end
 
-CoD.TFPCUtil.VolumetricDropdownCurrentValue = function(f27_arg0, f27_arg1)
+CoD.TFPCUtil.VolumetricDropdownCurrentValue = function(controller, dropdown)
     return CoD.TFPCUtil.VolumetricOptionIndex
 end
 
@@ -921,42 +923,42 @@ CoD.TFPCUtil.RevertUnsavedGraphicsOptions = function()
     Engine.SetVolumetricQuality(CoD.TFPCUtil.VolumetricOptionIndex)
 end
 
-CoD.TFPCUtil.OptionsSliderRefresh = function(f30_arg0, f30_arg1)
-    local itemRef = f30_arg1:getModel()
+CoD.TFPCUtil.OptionsSliderRefresh = function(controller, element)
+    local itemRef = element:getModel()
     if itemRef then
-        local sliderInfo = CoD.TFPCUtil.GetOptionInfo(itemRef, f30_arg0)
+        local sliderInfo = CoD.TFPCUtil.GetOptionInfo(itemRef, controller)
         if sliderInfo then
             if sliderInfo.useIntegerDisplay == 1 then
-                f30_arg1.m_formatString = "%u"
+                element.m_formatString = "%u"
             end
             if sliderInfo.useMultipleOf10Display == 1 then
-                f30_arg1.m_formatString = "%u"
+                element.m_formatString = "%u"
             end
             if sliderInfo.useMultipleOf100Display == 1 then
-                f30_arg1.m_formatString = "%u"
+                element.m_formatString = "%u"
             end
-            local f30_local2 = (sliderInfo.currentValue - sliderInfo.lowValue) /
+            local fraction = (sliderInfo.currentValue - sliderInfo.lowValue) /
                                    (sliderInfo.highValue - sliderInfo.lowValue)
-            if f30_local2 < 0 then
-                f30_local2 = 0
+            if fraction < 0 then
+                fraction = 0
             end
-            if 1 < f30_local2 then
-                f30_local2 = 1
+            if 1 < fraction then
+                fraction = 1
             end
-            f30_arg1.m_fraction = f30_local2
-            f30_arg1.m_currentValue = sliderInfo.currentValue
-            f30_arg1.m_sliderSpeed = sliderInfo.sliderSpeed
-            f30_arg1.m_range = sliderInfo.highValue - sliderInfo.lowValue
+            element.m_fraction = fraction
+            element.m_currentValue = sliderInfo.currentValue
+            element.m_sliderSpeed = sliderInfo.sliderSpeed
+            element.m_range = sliderInfo.highValue - sliderInfo.lowValue
         end
     end
 end
 
-CoD.TFPCUtil.OptionsSliderUpdated = function(f31_arg0, f31_arg1, f31_arg2)
-    local itemRef = f31_arg1:getModel()
+CoD.TFPCUtil.OptionsSliderUpdated = function(controller, element, fraction)
+    local itemRef = element:getModel()
     if itemRef then
-        local sliderInfo = CoD.TFPCUtil.GetOptionInfo(itemRef, f31_arg0)
-        local newValue = string.format(f31_arg1.m_formatString,
-            (sliderInfo.highValue - sliderInfo.lowValue) * f31_arg2 + sliderInfo.lowValue)
+        local sliderInfo = CoD.TFPCUtil.GetOptionInfo(itemRef, controller)
+        local newValue = string.format(element.m_formatString,
+            (sliderInfo.highValue - sliderInfo.lowValue) * fraction + sliderInfo.lowValue)
         if sliderInfo.useMultipleOf10Display == 1 then
             newValue = string.format("%u0", tonumber(newValue) / 10)
         end
@@ -964,14 +966,14 @@ CoD.TFPCUtil.OptionsSliderUpdated = function(f31_arg0, f31_arg1, f31_arg2)
             newValue = string.format("%u00", tonumber(newValue) / 100)
         end
         if sliderInfo.isFloat == 1 then
-            CoD.TFPCUtil.SetOptionValue(itemRef, f31_arg0, newValue * 100)
+            CoD.TFPCUtil.SetOptionValue(itemRef, controller, newValue * 100)
         else
-            CoD.TFPCUtil.SetOptionValue(itemRef, f31_arg0, newValue)
+            CoD.TFPCUtil.SetOptionValue(itemRef, controller, newValue)
         end
-        f31_arg1.m_currentValue = newValue
-        f31_arg1.m_fraction = f31_arg2
-        f31_arg1.m_sliderSpeed = sliderInfo.sliderSpeed
-        f31_arg1.m_range = sliderInfo.highValue - sliderInfo.lowValue
+        element.m_currentValue = newValue
+        element.m_fraction = fraction
+        element.m_sliderSpeed = sliderInfo.sliderSpeed
+        element.m_range = sliderInfo.highValue - sliderInfo.lowValue
     end
 end
 

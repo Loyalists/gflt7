@@ -5,19 +5,19 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacter_LoadoutList
 require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_AbilityGlow" )
 -- require( "ui.uieditor.widgets.CAC.cac_IconTokenStatic" )
 
-local f0_local0 = function ( f1_arg0, f1_arg1 )
-	f1_arg0:setHandleMouse( true )
-	f1_arg0.m_forceMouseEventDispatch = true
-	f1_arg0.disabledAllowNav = true
+local configureMouseInput = function ( self, controller )
+	self:setHandleMouse( true )
+	self.m_forceMouseEventDispatch = true
+	self.disabledAllowNav = true
 end
 
 local PostLoadFunc = function ( self, controller, menu )
 	if CoD.isPC then
-		f0_local0( self, controller )
+		configureMouseInput( self, controller )
 	end
-	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_RIGHT, nil, function ( f3_arg0, f3_arg1, f3_arg2, f3_arg3 )
-		if FirstTimeSetup_ChangedCharacter( f3_arg2 ) then
-			FirstTimeSetup_SetComplete( f3_arg2 )
+	menu:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_RIGHT, nil, function ( element, menu, controller, event )
+		if FirstTimeSetup_ChangedCharacter( controller ) then
+			FirstTimeSetup_SetComplete( controller )
 			return false
 		else
 			

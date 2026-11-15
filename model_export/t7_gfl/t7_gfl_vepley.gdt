@@ -7606,6 +7606,7 @@
 		"colorMap" "i_gfl_vepley_eyenewadd_c"
 		"colorMap00" "i_gfl_vepley_eyenewadd_c"
 		"materialType" "lit_emissive_transparent_plus"
+		"scaleRGB" "1.0"
 	}
 	"mtl_gfl_vepley_eyewhite" [ "mtl_gfl_vepley_faceuber" ]
 	{

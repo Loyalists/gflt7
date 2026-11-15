@@ -22,22 +22,22 @@ local loadoutSlotNames =  {
     "secondaryattachment3cosmeticvariant", "secondaryattachment4cosmeticvariant", "secondaryattachment5cosmeticvariant", "secondaryattachment6cosmeticvariant"
 }
 
-function CoD.SavingDataUtility.SaveData(InstanceRef, SaveSpot, SaveValue)
+function CoD.SavingDataUtility.SaveData(controller, SaveSpot, SaveValue)
     if SaveSpot < 50 then
-        Engine.SetBubbleGumBuff(InstanceRef, math.floor(SaveSpot / 5), SaveSpot % 5, SaveValue)
-        Engine.StorageWrite(InstanceRef, Enum.StorageFileType.STORAGE_ZM_LOADOUTS_OFFLINE)
+        Engine.SetBubbleGumBuff(controller, math.floor(SaveSpot / 5), SaveSpot % 5, SaveValue)
+        Engine.StorageWrite(controller, Enum.StorageFileType.STORAGE_ZM_LOADOUTS_OFFLINE)
     else
         SaveSpot = SaveSpot - 50
-        Engine.SetClassItem(InstanceRef, math.floor(SaveSpot / #loadoutSlotNames), loadoutSlotNames[(SaveSpot % #loadoutSlotNames) + 1], SaveValue)
-        Engine.Exec(InstanceRef, "saveLoadout")
+        Engine.SetClassItem(controller, math.floor(SaveSpot / #loadoutSlotNames), loadoutSlotNames[(SaveSpot % #loadoutSlotNames) + 1], SaveValue)
+        Engine.Exec(controller, "saveLoadout")
     end
 end
 
-function CoD.SavingDataUtility.GetData(InstanceRef, SaveSpot)
+function CoD.SavingDataUtility.GetData(controller, SaveSpot)
     if SaveSpot < 50 then
-        return Engine.GetBubbleGumBuff(InstanceRef, math.floor(SaveSpot / 5), SaveSpot % 5)
+        return Engine.GetBubbleGumBuff(controller, math.floor(SaveSpot / 5), SaveSpot % 5)
     else
         SaveSpot = SaveSpot - 50
-        return Engine.GetClassItem(InstanceRef, math.floor(SaveSpot / #loadoutSlotNames), loadoutSlotNames[(SaveSpot % #loadoutSlotNames) + 1], false)
+        return Engine.GetClassItem(controller, math.floor(SaveSpot / #loadoutSlotNames), loadoutSlotNames[(SaveSpot % #loadoutSlotNames) + 1], false)
     end
 end

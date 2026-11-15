@@ -5,7 +5,7 @@ CoD.HUDInject = InheritFrom(LUI.UIElement)
 CoD.HUDInject.Maps = {}
 
 -- Removes score from All HUDs. Add more here to remove items from the HUD.
-local function zmAllRemoveElements(InjectionWidget, HudRef, InstanceRef)
+local function zmAllRemoveElements(InjectionWidget, HudRef, controller)
     -- Removes score HUD from all maps
     --local mapHUD = HudRef.T7HudMenuGameMode
     --mapHUD:removeElement(mapHUD.Score)
@@ -14,7 +14,7 @@ local function zmAllRemoveElements(InjectionWidget, HudRef, InstanceRef)
 end
 
 -- Adds injection text to Factory HUD. Add more here to inject into HUD.
-local function zmFactoryInjectElements(InjectionWidget, HudRef, InstanceRef)
+local function zmFactoryInjectElements(InjectionWidget, HudRef, controller)
     --InjectionWidget.DevWins = CoD.TextWithBg.new(HudRef, InstanceRef)
     --InjectionWidget.DevWins:setLeftRight(true, true, 240, -240)
     --InjectionWidget.DevWins:setTopBottom(true, false, 20, 50)
@@ -26,7 +26,7 @@ local function zmFactoryInjectElements(InjectionWidget, HudRef, InstanceRef)
 end
 
 --Inject widgets to all maps
-local function zmAllInjectElements(InjectionWidget, HudRef, InstanceRef)
+local function zmAllInjectElements(InjectionWidget, HudRef, controller)
     --InjectionWidget.DevWins = CoD.TextWithBg.new(HudRef, InstanceRef)
     --InjectionWidget.DevWins:setLeftRight(true, true, 240, -240)
     --InjectionWidget.DevWins:setTopBottom(true, false, 20, 50)
@@ -70,7 +70,7 @@ local function CreateMapsTable()
 end
 
 -- Injection widget. This will be injected into the map specific HUD.
-function CoD.HUDInject.new(HudRef, InstanceRef)
+function CoD.HUDInject.new(HudRef, controller)
     local Widget = LUI.UIElement.new()
     Widget:setClass(CoD.HUDInject)
     Widget.id = "HUDInject"
@@ -90,11 +90,11 @@ function CoD.HUDInject.new(HudRef, InstanceRef)
         if mapTable.mapName == mapName or mapTable.mapName == "zm_all" then
             -- Remove elements from the map's hud
             if mapTable.removeElements then
-                mapTable.removeElements(Widget, HudRef, InstanceRef)
+                mapTable.removeElements(Widget, HudRef, controller)
             end
             -- Add elements to the map's hud
             if mapTable.injectElements then
-                mapTable.injectElements(Widget, HudRef, InstanceRef)
+                mapTable.injectElements(Widget, HudRef, controller)
             end
             -- Setup close function to cleanup
             if mapTable.cleanupElements then
@@ -178,21 +178,21 @@ end
 -- HudRef is the HUD that was opened. This is not t7hud_zm_MAPNAME. This is the parent menu file, one level up from map hud.
 -- To access the MAP HUD, simply use HudRef.T7HudMenuGameMode
 -- Powerup HUD can also be accessed this way: HudRef.powerupsArea
-CoD.DemoUtility.AddHUDWidgets = function(HudRef, InstanceRef)
-    AddHUDWidgetsOriginal(HudRef, InstanceRef)
-    local controller = InstanceRef.controller
+CoD.DemoUtility.AddHUDWidgets = function(HudRef, controller2)
+    AddHUDWidgetsOriginal(HudRef, controller2)
+    local controller = controller2.controller
     
     local function CheckForSaveData(ModelRef)
         if IsParamModelEqualToString(ModelRef, "setSaveData") then
            local notifyData = CoD.GetScriptNotifyData( ModelRef )
-           CoD.SavingDataUtility.SaveData(InstanceRef, notifyData[1], notifyData[2])
+           CoD.SavingDataUtility.SaveData(controller2, notifyData[1], notifyData[2])
         elseif IsParamModelEqualToString(ModelRef, "getSaveData") then
            local notifyData = CoD.GetScriptNotifyData( ModelRef )
-           local SaveDataValue = CoD.SavingDataUtility.GetData(InstanceRef, notifyData[1])
-           Engine.SendMenuResponse(InstanceRef, "restartgamepopup", notifyData[1] .. "," .. SaveDataValue)
+           local SaveDataValue = CoD.SavingDataUtility.GetData(controller2, notifyData[1])
+           Engine.SendMenuResponse(controller2, "restartgamepopup", notifyData[1] .. "," .. SaveDataValue)
         end
     end
-    HudRef:subscribeToGlobalModel(InstanceRef, "PerController", "scriptNotify", CheckForSaveData)
+    HudRef:subscribeToGlobalModel(controller2, "PerController", "scriptNotify", CheckForSaveData)
     --HudRef.T7HudMenuGameMode.HUDInject = CoD.HUDInject.new(HudRef, InstanceRef)
     --HudRef.T7HudMenuGameMode:addElement(HudRef.T7HudMenuGameMode.HUDInject)
 
@@ -220,7 +220,7 @@ CoD.DemoUtility.AddHUDWidgets = function(HudRef, InstanceRef)
             end
         end)
     
-        HudRef:subscribeToGlobalModel(InstanceRef, "PerController", "scriptNotify", function(model)
+        HudRef:subscribeToGlobalModel(controller2, "PerController", "scriptNotify", function(model)
             if not IsParamModelEqualToString(model, "zm_jup_hud_reset") then
                 return
             end
